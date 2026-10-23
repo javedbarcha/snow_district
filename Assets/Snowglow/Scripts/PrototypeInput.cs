@@ -8,14 +8,19 @@ namespace Snowglow {
   void Update(){
    var k=Keyboard.current;
    Steer=Mathf.Clamp(touchSteer+(k==null?0:(k.dKey.isPressed||k.rightArrowKey.isPressed?1:0)-(k.aKey.isPressed||k.leftArrowKey.isPressed?1:0)),-1,1);
-   Throttle=Mathf.Max(touchThrottle,k!=null&&(k.wKey.isPressed||k.upArrowKey.isPressed)?1:0);
-   Brake=Mathf.Max(touchBrake,k!=null&&(k.spaceKey.isPressed||k.sKey.isPressed||k.downArrowKey.isPressed)?1:0);
+   bool forward=k!=null&&(k.wKey.isPressed||k.upArrowKey.isPressed);
+   bool reverse=k!=null&&(k.sKey.isPressed||k.downArrowKey.isPressed);
+   // Direction keys select a gear and apply throttle. The physics controller brakes
+   // before changing travel direction, so reversing never snaps vehicle velocity.
+   if(forward!=reverse)Reverse=reverse;
+   Throttle=forward&&reverse?0:Mathf.Max(touchThrottle,forward||reverse?1:0);
+   Brake=Mathf.Max(touchBrake,k!=null&&(k.spaceKey.isPressed||(forward&&reverse))?1:0);
    Lift=Mathf.Clamp(touchLift+(k==null?0:(k.rKey.isPressed?1:0)-(k.fKey.isPressed?1:0)),-1,1);
    Tilt=Mathf.Clamp(touchTilt+(k==null?0:(k.tKey.isPressed?1:0)-(k.gKey.isPressed?1:0)),-1,1);
    var game=PrototypeSession.Instance;if(k==null||game==null)return;
    if(k.escapeKey.wasPressedThisFrame)game.TogglePause();
    if(!game.IsRunning)return;
-   if(k.xKey.wasPressedThisFrame)Reverse=!Reverse;
+   if(k.xKey.wasPressedThisFrame&&!forward&&!reverse)Reverse=!Reverse;
    if(k.cKey.wasPressedThisFrame)game.CameraRig.Toggle();
    if(k.eKey.wasPressedThisFrame)game.Active.Tool.ToggleWork();
    if(k.qKey.wasPressedThisFrame)game.Active.Tool.CycleAngle();

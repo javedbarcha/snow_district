@@ -53,7 +53,7 @@ namespace Snowglow.Editor {
       Text(panel,"A one-kilometre winter world, with a compact working district.\nDrive from the depot to the marked job. Plow snow sideways, then use the loader to move piles.\nBoth machinery and environment are editable primitive assemblies.",24,75,1140,100);
       Button(panel,"CONTINUE JOB","continue",24,210);Button(panel,"CONTRACT BOARD","open:contracts",250,210);Button(panel,"GARAGE","open:garage",476,210);Button(panel,"SHOPS","open:shop",702,210);Button(panel,"SETTINGS","open:settings",928,210);
       Button(panel,"FREE WORK","free",24,282);Button(panel,"FRESH SNOWFALL","fresh",250,282);Button(panel,"DUMMY STORE","open:store",476,282);
-      Text(panel,"DESKTOP: WASD steer / drive / brake | X reverse | E work/carry | Q blade angle\nV Auto/Manual | R/F lift | T/G tilt | B dump | C camera | H recover | Esc pause",24,371,1140,70,17);break;
+      Text(panel,"DESKTOP: W/S drive/reverse | A/D steer | Space brake | E work/carry | Q blade angle\nV Auto/Manual | R/F lift | T/G tilt | B dump | C camera | H recover | Esc pause",24,371,1140,70,17);break;
      case "contracts":
       Text(panel,"Clear 90% of the marked area. Late completion reduces pay.\nSnow placed back in the work area obstructs it again. Use the storage yard at X94 / Z-85.",24,76,1140,74);
       Button(panel,"DEPOT ACCESS\nX -65, Z -90","job:0",24,192,350,90);Button(panel,"PARKING LOT\nX 94, Z 21","job:1",426,192,350,90);Button(panel,"MAIN STREET\nX 0, Z 0","job:2",828,192,350,90);

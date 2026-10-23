@@ -264993,7 +264993,7 @@ GameObject:
   - component: {fileID: 1694164427}
   - component: {fileID: 1694164426}
   m_Layer: 0
-  m_Name: 'DESKTOP: WASD steer / drive / brake | X reverse | E work/carry | Q blade
+  m_Name: 'DESKTOP: W/S drive/reverse | A/D steer | Space brake | E work/carry | Q blade
     angle'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265052,7 +265052,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'DESKTOP: WASD steer / drive / brake | X reverse | E work/carry | Q blade
+  m_Text: 'DESKTOP: W/S drive/reverse | A/D steer | Space brake | E work/carry | Q blade
     angle
 
     V Auto/Manual | R/F lift | T/G tilt | B dump | C camera | H recover

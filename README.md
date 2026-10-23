@@ -53,8 +53,9 @@ Snow columns are combined into chunk meshes for performance; they originate from
 | Control | Touch | Keyboard |
 | --- | --- | --- |
 | Steer | Drag the steering panel left/right | A/D or left/right |
-| Accelerate | DRIVE | W/up |
-| Brake | BRAKE | S/down/Space |
+| Drive forward | DRIVE with F selected | W/up |
+| Drive reverse | DRIVE with R selected | S/down |
+| Brake | BRAKE | Space |
 | Forward/reverse | F/R | X |
 | Work / raise / carry | WORK/CARRY | E |
 | Blade angle | ANGLE L/C/R | Q |
