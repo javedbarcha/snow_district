@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54780f8bf490cd5472785cf279ecb318, type: 3}
+  m_Name: PlowDefinition
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.VehicleDefinition
+  id: municipal-plow-01
+  displayName: Clementine municipal plow
+  mountId: municipal-front-A
+  loader: 0
+  mass: 2800
+  wheelRadius: 0.58
+  wheelbase: 3
+  track: 1.95
+  torque: 1900
+  brakeTorque: 7000
+  maxSpeed: 12
+  steering: 32
+  fuelCapacity: 70
+  maxAttachmentMass: 900
+  maxWorkingWidth: 4
+  hydraulics: 1
+  price: 1400

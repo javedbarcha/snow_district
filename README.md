@@ -1,0 +1,100 @@
+# Snowglow — editable primitive district prototype
+
+Unity 6.3 LTS / URP / Android / offline. Reference device: Samsung Galaxy A07. Target: 30 FPS; device performance is not yet measured.
+
+## Important: how the concrete scene is authored
+
+The district has now been baked with **Unity 6000.3.8f1**. `Assets/Scenes/Pinefall.unity` contains the concrete terrain, colored primitive scenery, machinery prefab instances and snow chunks. Keep `Assets/Snowglow/Generated/` with the project. The editor tool creates this content **in Edit mode, before Play**. Nothing calls the district or vehicle factories at runtime.
+
+After baking, all objects are present in the Hierarchy, inspectable and editable with Play stopped. Generated assets remain on disk and travel with the project. You can change them manually without rerunning the baker. Only gameplay state, wheel animation, bucket movement, and mutable snow geometry change at runtime.
+
+## Open and bake
+
+1. Extract the ZIP and add the `Snowglow` folder in Unity Hub.
+2. Open in **Unity 6000.3.8f1** with Android Build Support installed (the version recorded in ProjectSettings).
+3. Allow URP 17.3, Input System 1.18 and uGUI dependencies to import. The built-in Vehicles module supplies WheelCollider; do not remove it. Accept any requested input-system editor restart.
+4. The first-import authoring tool attempts to bake the district in Edit mode. If it does not, choose **Snowglow → Bake editable test district**. Stop Play mode first. Baking can take time because it writes terrain and snow geometry assets.
+5. Open `Assets/Scenes/Pinefall.unity`. Inspect the concrete objects in Scene view. The editor frames the plow near the depot; select the Terrain and press F to inspect the kilometre-wide world.
+6. Press Play. Choose a contract from the dashboard. Use the on-screen touch controls or keyboard.
+
+The saved scene is populated and included in Build Settings. Use **Snowglow > Validate saved district and snow ledger** to reopen it and check persisted rigs/assets and volume invariants. This writes `Logs/SceneValidation.txt`. Manual baking replaces the layout; use it only when you intend to author a fresh district.
+
+## What the bake saves
+
+- A **1000 × 1000 m Unity Terrain**, with a flat central worksite and rising surrounding terrain.
+- A compact working district within approximately 250 × 250 m. The whole kilometre is landscape, not densely populated city content.
+- Grey cube roads, parking area, service depot, fuel tank, retaining walls, curbs, slope and ice test lanes.
+- Primitive cottages: brown/teal walls, sloped cube roofs, windows, doors, steps, chimneys and fences.
+- Trees using brown cylinder trunks, green sphere foliage and white snow crowns.
+- Grey sphere-based mountains with white caps, plus a roadside boulder.
+- Cylinder-and-cube light poles, signs, and parked primitive cars.
+- A detailed orange municipal plow and yellow wheeled loader, saved as connected prefabs. Tyres are cylinders with hub cylinders and individual tread cubes; cabs, mirrors, lights, exhausts, steps, and working equipment are separate objects.
+- URP pipeline, renderer, shared colored materials, terrain layer and texture, vehicle/equipment definitions.
+- Initial snow volume data, combined-cube chunk meshes and substantial-pile collision meshes.
+- A preauthored mobile Canvas, menus, touch controls, camera, audio sources and imported synth WAV files.
+
+Snow columns are combined into chunk meshes for performance; they originate from cubes but are not individual per-cell GameObjects. The carried bucket load is a preplaced sphere whose size changes. Snow particles are visual feedback only.
+
+## First playthrough
+
+- Start **Depot Access**. The target is the outlined strip at **X −65 / Z −90**; drive east from the depot and then along that access road.
+- Blade starts lowered. Drive forward to push snow; use ANGLE L/C/R to discharge to one side. Raise the blade for travel.
+- Clear 90% of the selected contract area. Pushing snow back into it blocks progress again. Only original work in that contract area builds the combo/reward.
+- Parking Lot is at **X94 / Z21**; Main Street is centered at **X0 / Z0**. Coordinates appear in the optional debug overlay.
+- Buy the loader in the machinery shop (1,400 coins; the prototype starts with 1,800). Stop at the depot and select it in Garage.
+- Loader WORK lowers the bucket; CARRY lifts it. In Auto mode a nearly full bucket lifts automatically. DUMP lifts/tips and deposits from the bucket mouth. Use Manual mode for lift/tilt buttons.
+- The storage yard is at **X94 / Z−85**. Deposited snow remains visible up to a retained depth; excess is processed in bounded batches and recorded as disposed volume.
+- Contract deadlines reduce pay by 30% when late, rather than fail the job. Fuel and collision damage are functional. Refuel/repair at the depot. Free recovery preserves the worksite and bucket contents.
+- A fresh contract resets the snow to the authored initial state and returns both machines to the depot with empty buckets. Machine switching within one contract preserves the snow and loads.
+- Use the dummy store to obtain test currency. All transactions are explicitly simulated; no billing or network access.
+
+## Controls
+
+| Control | Touch | Keyboard |
+| --- | --- | --- |
+| Steer | Drag the steering panel left/right | A/D or left/right |
+| Accelerate | DRIVE | W/up |
+| Brake | BRAKE | S/down/Space |
+| Forward/reverse | F/R | X |
+| Work / raise / carry | WORK/CARRY | E |
+| Blade angle | ANGLE L/C/R | Q |
+| Auto/manual | AUTO/MANUAL | V |
+| Lift/lower | LIFT +/− | R/F |
+| Tilt/curl | TILT +/− | T/G |
+| Dump bucket | DUMP | B |
+| Camera | CAMERA | C |
+| Recover | RECOVER | H |
+| Pause | PAUSE | Escape |
+
+The steering panel commands vehicle steering, not screen-direction movement. Camera changes do not remap steering.
+
+## Physics and machinery
+
+Both machines use a Rigidbody, four WheelColliders, powered wheels, front-wheel steering, tuned suspension, tyre surface grip and torque/braking. Assistance provides steering moderation, traction assistance and anti-roll/upright torque. It does not directly translate the machine or guarantee forward speed. Load adds 250 kg per cubic metre to mass and shifts the calculated center of mass.
+
+The loader uses a rigid chassis and front-wheel steering. Boom/bucket movement is transform-driven equipment articulation, not a solver-based hydraulic-joint simulation. Snow is a conservative depth/volume field with pile collision proxies, not granular snow physics. Thin snow affects resistance/grip; substantial piles have collider geometry. These are prototype approximations requiring playtesting.
+
+## Editing assets and compatibility
+
+Generated assets are under `Assets/Snowglow/Generated/Bake_<timestamp>/`. Keep this folder when moving the finished project.
+
+- Vehicle definitions contain stable IDs, mount IDs, mass, wheel geometry, torque, speed and load ratings.
+- Attachment definitions validate mount ID, mass, width, hydraulics and machine rig type.
+- Replace meshes under `VisualRoot`, preserving wheel, mount, bucket and working-edge anchors. Adjust the physical rig for changed real dimensions.
+- The supplied truck/blade and loader/bucket are the supported pairings. There is no generic visual fitting solver. Additional attachment behaviors or rig types need implementation as well as matching definitions.
+- Tyre and engine upgrades are functional (three levels). Alternate blade widths, adapter equipment, tracked locomotion and snowblower behavior are future work.
+- A manual bake creates a **new** timestamped asset folder and replaces the test scene after the save prompt. It does not overwrite your earlier generated assets. Do not rebake after hand-editing the scene unless you intend to replace its layout.
+
+## Save, pause and menus
+
+A versioned local JSON file and backup are stored at `Application.persistentDataPath/snowglow-v2.json`. It stores wallet, XP, owned machines, upgrades, fuel, condition, equipment state, active contract, positions, snow/piles and the last rewarded/simulated transaction IDs. Menus and application suspension pause simulation and contract time. It autosaves every 30 seconds and at important actions.
+
+Menus include dashboard, three contract choices, garage, machinery shop, parts, service, dummy store, settings, pause and results. Settings expose low/standard rendering, sound, assistance and debug. The first region is one district; a globe screen and other regions are not implemented in this build.
+
+## Android build
+
+Bake and test in Editor first. In Build Profiles select Android and include `Assets/Scenes/Pinefall.unity`. The authoring command assigns `com.snowglow.prototype`, landscape orientation, and the mobile URP asset. Install Android SDK/NDK/OpenJDK through Unity Hub and use a Development Build for initial Galaxy A07 profiling. No APK was built here.
+
+## Verification
+
+Read `VALIDATION.md` for current evidence, known limits and the required Unity/device acceptance checklist. Unity editor compilation and the Edit-mode bake have now run. Physics tuning, rendered scene inspection, touch behavior and phone performance still require testing. No APK has been built.

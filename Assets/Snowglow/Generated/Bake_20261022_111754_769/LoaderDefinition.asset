@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54780f8bf490cd5472785cf279ecb318, type: 3}
+  m_Name: LoaderDefinition
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.VehicleDefinition
+  id: wheeled-loader-01
+  displayName: Birch wheeled loader
+  mountId: loader-quick-A
+  loader: 1
+  mass: 4200
+  wheelRadius: 0.72
+  wheelbase: 3.3
+  track: 2.25
+  torque: 2900
+  brakeTorque: 7000
+  maxSpeed: 7
+  steering: 32
+  fuelCapacity: 70
+  maxAttachmentMass: 1200
+  maxWorkingWidth: 4
+  hydraulics: 1
+  price: 1400
