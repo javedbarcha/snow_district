@@ -1,0 +1,5 @@
+C:/Users/jrbar/Documents/repos/Unity/snow_district/.utmp/RelWithDebInfo/6x2v3o4g/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/jrbar/Documents/repos/Unity/snow_district/.utmp/RelWithDebInfo/6x2v3o4g/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/jrbar/Documents/repos/Unity/snow_district/.utmp/RelWithDebInfo/6x2v3o4g/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Users/jrbar/Documents/repos/Unity/snow_district/.utmp/RelWithDebInfo/6x2v3o4g/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Users/jrbar/Documents/repos/Unity/snow_district/.utmp/RelWithDebInfo/6x2v3o4g/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir
