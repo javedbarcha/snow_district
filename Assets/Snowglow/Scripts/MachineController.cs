@@ -27,7 +27,7 @@ namespace Snowglow
             float direction = input.Reverse ? -1 : 1; float targetSteering = input.Steer * definition.steering / (1 + Speed * .055f);
             steering = Mathf.MoveTowards(steering, targetSteering, 100 * Time.fixedDeltaTime);
             float mass = definition.mass + equipment.mass + Tool.Load * 250;
-            Body.mass = mass; Body.centerOfMass = (new Vector3(0, -.24f, 0) * definition.mass + Tool.mount.localPosition * equipment.mass + transform.InverseTransformPoint(Tool.mouth.position) * (Tool.Load * 250)) / mass;
+            Body.mass = mass; Body.centerOfMass = (definition.dryCenterOfMass * definition.mass + transform.InverseTransformPoint(Tool.mount.position) * equipment.mass + transform.InverseTransformPoint(Tool.mouth.position) * (Tool.Load * 250)) / mass;
             int grounded = 0; Slip = 0;
             for (int i = 0; i < wheels.Length; i++)
             {
@@ -35,7 +35,7 @@ namespace Snowglow
                 if (w.GetGroundHit(out WheelHit hit))
                 {
                     grounded++; Slip += Mathf.Abs(hit.forwardSlip) + Mathf.Abs(hit.sidewaysSlip);
-                    float depth = game.Snow.Depth(hit.point); grip = Mathf.Lerp(SurfaceZone.Sample(hit.point), .67f, Mathf.Clamp01(depth / .25f)); grip *= 1 + Tyres * .12f;
+                    float depth = game.Snow.Depth(hit.point); grip = Mathf.Lerp(SurfaceZone.Sample(hit.point), .67f, Mathf.Clamp01(depth / .25f)); grip *= definition.baseGrip * (1 + Tyres * .12f);
                 }
                 var f = w.forwardFriction; f.stiffness = grip; w.forwardFriction = f; var s = w.sidewaysFriction; s.stiffness = grip * (Assistance ? 1.2f : 1); w.sidewaysFriction = s;
                 float traction = Assistance && w.GetGroundHit(out WheelHit wh) && Mathf.Abs(wh.forwardSlip) > .65f ? .55f : 1;

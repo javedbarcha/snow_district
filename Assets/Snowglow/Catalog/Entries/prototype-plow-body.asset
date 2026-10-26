@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca395da9c16194d8575fece1ac0cf8, type: 3}
+  m_Name: prototype-plow-body
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.CatalogAsset
+  id: prototype-plow-body
+  displayName: Clementine municipal plow body
+  kind: 0
+  status: 1
+  prefab: {fileID: 5371345107293027394, guid: d4813ebd134424b4e92439b72cad0705, type: 3}
+  tags: []
+  sourceType: 4
+  sourceGuid: 
+  sourcePath: 
+  creationSourcePath: 
+  reviewedPrefabHash: 
+  provenance: Extracted from the existing authored primitive prototype. Source preserved.
+  assumptions: Review pivots, footprint, clearance and gameplay use before publishing.
+  reviewNotes: 
+  visualReviewed: 0
+  localBounds:
+    m_Center: {x: 0, y: 0.9658307, z: 0}
+    m_Extent: {x: 1.2750001, y: 1.8941694, z: 2.25}
+  triangles: 1824
+  renderers: 84
+  materialSlots: 84
+  price: 0
+  vehicle: {fileID: 11400000, guid: ec41daa219d81f64b9b1270f5cd0526d, type: 2}
+  attachment: {fileID: 0}
+  interfaceId: 
+  addedMass: 0
+  torqueMultiplier: 1
+  gripMultiplier: 1
+  wheelRadius: 0.5
+  wheelWidth: 0.3
+  wheelMass: 45
+  minimumScale: 1
+  maximumScale: 1
+  blocksSnow: 0

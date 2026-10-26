@@ -1,5 +1,13 @@
 # Prototype structure and extension boundaries
 
+## Asset Workshop phase
+
+`CatalogAsset`/`AssetCatalog` store stable content IDs, provenance, approval state, measured bounds, constraints and prefab references. `AssetAnchor`, `AssetSocket` and `PreparedVehicleRig` describe authored connection and physical bindings. `FittingProfile` and `AssemblyRecipe` keep mounting adjustments and loadout composition separate from imported visuals. The importer preserves originals and creates reviewable prefab copies with suggested proxies/rigs; Ready approval includes a dependency/physics fingerprint.
+
+All construction remains under Editor code: `CatalogPreparation`, `CatalogAssembly`, `CatalogBootstrap` and `CatalogScenePlans`. The latter exports a Ready-only manifest and resolves declarative JSON before writing a new layout scene. It does not execute model generators, generate runtime objects, replace existing contracts, or automatically register new machines in the current session fleet. `AssetWorkshopWindow` exposes the workflows; `CatalogChecks` exercises preparation, fitting, approval invalidation and scene persistence with disposable fixtures. See ASSET_WORKSHOP.md.
+
+Vehicle definitions now optionally provide base grip and dry centre of mass, with defaults matching the original machines. Assembly baking derives these from approved parts. Attachment controllers optionally retain authored mount/boom/bucket rest transforms; the legacy primitive rigs retain their existing behavior.
+
 ## Authored content lifetime
 
 `Editor/SnowMeshAssets` persists visual/collision meshes in native mesh-part files, grouping eight snow chunks per part. The SnowSeed stores only volume data. Scene MeshFilter/MeshCollider references point to those saved mesh assets. Both full district baking and snow-only rebuilding use this writer, which rejects snow files at or above 90 MB. Splitting an existing bundled seed keeps its GUID and snow data, saves new mesh references before removing old subassets, and validates the reopened scene.

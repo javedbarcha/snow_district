@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "name": "Catalog district example",
+  "terrain": true,
+  "placements": [
+    {"id":"road-01","assetId":"prototype-road-16m","position":{"x":0,"y":0,"z":0},"rotation":{"x":0,"y":0,"z":0},"scale":1},
+    {"id":"road-02","assetId":"prototype-road-16m","position":{"x":0,"y":0,"z":0},"rotation":{"x":0,"y":0,"z":0},"scale":1,"connectTo":"road-01","ownAnchor":"road-a","targetAnchor":"road-b"},
+    {"id":"cottage-01","assetId":"prototype-cottage-lot","position":{"x":-18,"y":0,"z":4},"rotation":{"x":0,"y":90,"z":0},"scale":1},
+    {"id":"tree-01","assetId":"prototype-snow-tree","position":{"x":18,"y":0,"z":20},"rotation":{"x":0,"y":0,"z":0},"scale":1}
+  ]
+}

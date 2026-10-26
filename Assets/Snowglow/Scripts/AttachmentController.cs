@@ -3,8 +3,10 @@ namespace Snowglow {
  public sealed class AttachmentController : MonoBehaviour {
   public Transform mount,boom,bucket,mouth,loadVisual;public ParticleSystem spray;
   public bool Auto=true,Working=true;public float Angle,Lift,Tilt,Load;
+  public bool useAuthoredRig;public float bladeRaiseDistance=.7f;
+  Vector3 mountRest;Quaternion mountRotation,boomRotation,bucketRotation;
   MachineController machine;Vector3 last;bool haveLast,dumping;float lastVolume;
-  public void Initialize(MachineController owner){machine=owner;ResetSweep();}
+  public void Initialize(MachineController owner){machine=owner;mountRest=mount.localPosition;mountRotation=mount.localRotation;if(boom)boomRotation=boom.localRotation;if(bucket)bucketRotation=bucket.localRotation;ResetSweep();}
   public void ResetSweep(){haveLast=false;}
   public void ToggleAuto(){Auto=!Auto;}
   public void CycleAngle(){Angle=Angle<-.1f?0:Angle<.1f?1:-1;}
@@ -42,8 +44,9 @@ namespace Snowglow {
   }
   void Update(){
    if(machine==null)return;
-   if(machine.definition.loader){boom.localRotation=Quaternion.Euler(-Lift*40,0,0);bucket.localRotation=Quaternion.Euler(Tilt*65+Lift*15,0,0);
+   if(machine.definition.loader){boom.localRotation=(useAuthoredRig?boomRotation:Quaternion.identity)*Quaternion.Euler(-Lift*40,0,0);bucket.localRotation=(useAuthoredRig?bucketRotation:Quaternion.identity)*Quaternion.Euler(Tilt*65+Lift*15,0,0);
     if(loadVisual!=null){loadVisual.gameObject.SetActive(Load>.001f);loadVisual.localScale=new Vector3(machine.equipment.width*.82f,Mathf.Max(.03f,Load/machine.equipment.capacity*.65f),1);}}
+   else if(useAuthoredRig){mount.localPosition=mountRest+Vector3.up*(Auto?(Working?0:bladeRaiseDistance):Lift*bladeRaiseDistance);mount.localRotation=mountRotation*Quaternion.Euler(0,Angle*28,0);}
    else {mount.localPosition=new Vector3(0,Auto?(Working?-.65f:.05f):Mathf.Lerp(-.65f,.4f,Lift),2.55f);mount.localRotation=Quaternion.Euler(0,Angle*28,0);}
   }
  }

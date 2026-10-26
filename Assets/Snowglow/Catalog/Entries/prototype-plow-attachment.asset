@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca395da9c16194d8575fece1ac0cf8, type: 3}
+  m_Name: prototype-plow-attachment
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.CatalogAsset
+  id: prototype-plow-attachment
+  displayName: 2.6 m municipal blade
+  kind: 1
+  status: 1
+  prefab: {fileID: 6511883063868285514, guid: 1b8dfaa0c8937c148801fcdd50ced113, type: 3}
+  tags: []
+  sourceType: 4
+  sourceGuid: 
+  sourcePath: 
+  creationSourcePath: 
+  reviewedPrefabHash: 
+  provenance: Extracted from the existing authored primitive prototype. Source preserved.
+  assumptions: Review pivots, footprint, clearance and gameplay use before publishing.
+  reviewNotes: 
+  visualReviewed: 0
+  localBounds:
+    m_Center: {x: 0, y: 0.16979644, z: -0.39499998}
+    m_Extent: {x: 1.3, y: 0.56979644, z: 0.605}
+  triangles: 356
+  renderers: 7
+  materialSlots: 7
+  price: 0
+  vehicle: {fileID: 0}
+  attachment: {fileID: 11400000, guid: 43bd35ce2c40f3a49aa0980f160b5edc, type: 2}
+  interfaceId: municipal-front-A
+  addedMass: 0
+  torqueMultiplier: 1
+  gripMultiplier: 1
+  wheelRadius: 0.5
+  wheelWidth: 0.3
+  wheelMass: 45
+  mirrorRightWheels: 1
+  minimumScale: 1
+  maximumScale: 1
+  blocksSnow: 0

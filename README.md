@@ -2,6 +2,10 @@
 
 Unity 6.3 LTS / URP / Android / offline. Reference device: Samsung Galaxy A07. Target: 30 FPS; device performance is not yet measured.
 
+## Asset preparation and reusable catalogs
+
+Open **Snowglow > Asset Workshop** for model intake, draft/review/Ready catalog entries, drag-and-drop vehicle fittings, equipped prefab baking and validated AI scene plans. The supplied prototype building blocks are separate catalog copies and require review before publication. See [ASSET_WORKSHOP.md](ASSET_WORKSHOP.md) for the complete workflow and current boundaries. Pinefall's gameplay and player inventory are not replaced by catalog authoring.
+
 ## Important: how the concrete scene is authored
 
 The district has now been baked with **Unity 6000.3.8f1**. `Assets/Scenes/Pinefall.unity` contains the concrete terrain, colored primitive scenery, machinery prefab instances and snow chunks. Keep `Assets/Snowglow/Generated/` with the project. The editor tool creates this content **in Edit mode, before Play**. Nothing calls the district or vehicle factories at runtime.

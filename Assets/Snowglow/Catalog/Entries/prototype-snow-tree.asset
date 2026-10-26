@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca395da9c16194d8575fece1ac0cf8, type: 3}
+  m_Name: prototype-snow-tree
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.CatalogAsset
+  id: prototype-snow-tree
+  displayName: Snow tree assembly
+  kind: 6
+  status: 1
+  prefab: {fileID: 1051093770186563675, guid: e4808f4ce8d1e294ea122a13d5cafbbe, type: 3}
+  tags: []
+  sourceType: 4
+  sourceGuid: 
+  sourcePath: 
+  creationSourcePath: 
+  reviewedPrefabHash: 
+  provenance: Extracted from the existing authored primitive prototype. Source preserved.
+  assumptions: Review pivots, footprint, clearance and gameplay use before publishing.
+  reviewNotes: 
+  visualReviewed: 0
+  localBounds:
+    m_Center: {x: 0, y: 4.0503755, z: 0}
+    m_Extent: {x: 2.6096377, y: 4.0503755, z: 2.6096377}
+  triangles: 4688
+  renderers: 7
+  materialSlots: 7
+  price: 0
+  vehicle: {fileID: 0}
+  attachment: {fileID: 0}
+  interfaceId: 
+  addedMass: 0
+  torqueMultiplier: 1
+  gripMultiplier: 1
+  wheelRadius: 0.5
+  wheelWidth: 0.3
+  wheelMass: 45
+  minimumScale: 1
+  maximumScale: 1
+  blocksSnow: 1

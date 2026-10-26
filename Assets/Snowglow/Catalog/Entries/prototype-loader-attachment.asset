@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca395da9c16194d8575fece1ac0cf8, type: 3}
+  m_Name: prototype-loader-attachment
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.CatalogAsset
+  id: prototype-loader-attachment
+  displayName: "1.6 m\xB3 loader bucket"
+  kind: 1
+  status: 1
+  prefab: {fileID: 8452630550648073011, guid: 29de1e983c10ec84d85a59ebbded9e0e, type: 3}
+  tags: []
+  sourceType: 4
+  sourceGuid: 
+  sourcePath: 
+  creationSourcePath: 
+  reviewedPrefabHash: 
+  provenance: Extracted from the existing authored primitive prototype. Source preserved.
+  assumptions: Review pivots, footprint, clearance and gameplay use before publishing.
+  reviewNotes: 
+  visualReviewed: 0
+  localBounds:
+    m_Center: {x: 0, y: 0.1625, z: 0.76250005}
+    m_Extent: {x: 1.2700001, y: 0.5125, z: 0.88750005}
+  triangles: 888
+  renderers: 11
+  materialSlots: 11
+  price: 0
+  vehicle: {fileID: 0}
+  attachment: {fileID: 11400000, guid: 1e02823103225074d9caad1139ec7f3d, type: 2}
+  interfaceId: loader-quick-A
+  addedMass: 0
+  torqueMultiplier: 1
+  gripMultiplier: 1
+  wheelRadius: 0.5
+  wheelWidth: 0.3
+  wheelMass: 45
+  mirrorRightWheels: 1
+  minimumScale: 1
+  maximumScale: 1
+  blocksSnow: 0
