@@ -2,6 +2,8 @@
 
 ## Authored content lifetime
 
+`Editor/SnowMeshAssets` persists visual/collision meshes in native mesh-part files, grouping eight snow chunks per part. The SnowSeed stores only volume data. Scene MeshFilter/MeshCollider references point to those saved mesh assets. Both full district baking and snow-only rebuilding use this writer, which rejects snow files at or above 90 MB. Splitting an existing bundled seed keeps its GUID and snow data, saves new mesh references before removing old subassets, and validates the reopened scene.
+
 `Editor/PrototypeAuthoring` orchestrates `DistrictFactory`, `MachineFactory` and `HUDFactory` in Edit mode. It writes native assets and the populated Pinefall scene. Generated objects are not recreated by runtime callbacks. Re-running the command intentionally replaces the scene and creates a fresh timestamped asset folder; earlier folders are retained.
 
 `VehicleDefinition`, `AttachmentDefinition`, `PrototypePalette` and `SnowSeed` are immutable authored inputs. Scene references point directly to saved machinery, controls, camera, audio and snow chunks. Wheel/mount/body visual anchors are separate from chassis and wheel physics.

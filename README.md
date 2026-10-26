@@ -8,6 +8,8 @@ The district has now been baked with **Unity 6000.3.8f1**. `Assets/Scenes/Pinefa
 
 After baking, all objects are present in the Hierarchy, inspectable and editable with Play stopped. Generated assets remain on disk and travel with the project. You can change them manually without rerunning the baker. Only gameplay state, wheel animation, bucket movement, and mutable snow geometry change at runtime.
 
+Snow volume data lives in the seed asset; visual and collision meshes are saved separately in its sibling `_Meshes` folder, with eight chunks per native `.asset` part. Keep that folder and its `.meta` files with the scene. Editor authoring enforces a 90 MB per-file safety budget for snow assets so they can be committed to ordinary Git without Git LFS.
+
 ## Open and bake
 
 1. Extract the ZIP and add the `Snowglow` folder in Unity Hub.
@@ -33,7 +35,9 @@ The saved scene is populated and included in Build Settings. Use **Snowglow > Va
 - Initial snow volume data, combined-cube chunk meshes and substantial-pile collision meshes.
 - A preauthored mobile Canvas, menus, touch controls, camera, audio sources and imported synth WAV files.
 
-Snow columns are combined into chunk meshes for performance; they originate from cubes but are not individual per-cell GameObjects. The carried bucket load is a preplaced sphere whose size changes. Snow particles are visual feedback only.
+Snow columns use 50 cm cells, half the width and length of this project's original 1 m cells, giving four times the horizontal resolution over the same 256 m working field. They are combined into chunk meshes rather than individual GameObjects. Transfers remain cubic metres, and old 1 m seeds/saves retain their total volume when upgraded. To update older authored snow without replacing the scenery or machinery, stop Play and choose **Snowglow > Rebuild snow at 50 cm resolution**. The carried bucket load is a preplaced sphere whose size changes. Snow particles are visual feedback only.
+
+Piles spread as they grow. Deposits prefer lower nearby cells within a mound-shaped support envelope; steep sides then slump gradually toward a tuned 32 degree resting slope with a small cohesive lip. Settling conserves volume, avoids static obstacles, freezes while paused and creates no work credit. Loaded piles resume settling when simulation starts. The simulation processes at most 512 active cells per frame and retains the existing mesh-update budget; live feel and phone performance still require testing.
 
 ## First playthrough
 

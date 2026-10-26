@@ -23,7 +23,7 @@ namespace Snowglow {
     }
    }
    if(!Active.Owned)Profile.active=0;
-   if(Profile.snow!=null&&(Profile.snow.depth==null||Profile.snow.depth.Length!=65536||Profile.snow.credit==null||Profile.snow.credit.Length!=65536))Profile.snow=null;
+   Profile.snow=SnowVolumeGrid.Upgrade(Profile.snow);
    Snow.Initialize(Profile.job,Profile.inJob?Profile.snow:null);
    foreach(var m in Fleet)m.SetActiveMachine(m==Active);
    Audio.SetMuted(Profile.muted);ready=true;ApplyQuality();HUD.RefreshMenu();

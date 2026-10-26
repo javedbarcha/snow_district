@@ -46,7 +46,7 @@ namespace Snowglow.Editor {
     PrefabUtility.SaveAsPrefabAssetAndConnect(second.gameObject,folder+"/WheeledLoader.prefab",InteractionMode.AutomatedAction);
     var snow=new GameObject("05 Snow | baked primitive columns and editable seed").AddComponent<SnowField>();var seed=ScriptableObject.CreateInstance<SnowSeed>();Asset(seed,"SnowSeed");snow.Bake(p,seed);
     EditorUtility.DisplayProgressBar("Snowglow","Saving snow geometry and collision assets",.55f);
-    foreach(Transform child in snow.transform){var mf=child.GetComponent<MeshFilter>();if(mf==null)continue;AssetDatabase.AddObjectToAsset(mf.sharedMesh,seed);var c=child.GetComponent<MeshCollider>();if(c.sharedMesh!=null)AssetDatabase.AddObjectToAsset(c.sharedMesh,seed);}
+    SnowMeshAssets.SaveChunks(snow,seed);
     EditorUtility.SetDirty(seed);
     var session=new GameObject("06 Game systems | no runtime scene generation").AddComponent<PrototypeSession>();
     session.Fleet=new[]{first,second};session.Snow=snow;session.Input=session.gameObject.AddComponent<PrototypeInput>();

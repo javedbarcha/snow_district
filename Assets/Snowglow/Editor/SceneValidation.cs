@@ -37,8 +37,9 @@ namespace Snowglow.Editor {
    }
    var snow=session.Snow;
    Require(snow&&snow.seed&&AssetDatabase.Contains(snow.seed),"saved snow seed missing");
-   Require(snow.seed.grid.depth.Length==65536&&snow.seed.grid.credit.Length==65536&&snow.seed.grid.blocked.Length==65536,"invalid snow seed dimensions");
-   Require(snow.transform.childCount==256,"expected 256 baked snow chunks");
+   int cells=SnowVolumeGrid.Size*SnowVolumeGrid.Size;
+   Require(snow.seed.grid.depth.Length==cells&&snow.seed.grid.credit.Length==cells&&snow.seed.grid.blocked.Length==cells,"invalid snow seed dimensions");
+   Require(snow.transform.childCount==SnowField.Across*SnowField.Across,"incorrect baked snow chunk count");
    foreach(Transform chunk in snow.transform){
     var mf=chunk.GetComponent<MeshFilter>();var mc=chunk.GetComponent<MeshCollider>();
     Require(mf&&mf.sharedMesh&&AssetDatabase.Contains(mf.sharedMesh)&&mc,"saved snow mesh/collider missing on "+chunk.name);
@@ -61,7 +62,7 @@ namespace Snowglow.Editor {
    try{
     var scene=EditorSceneManager.OpenScene(ScenePath,OpenSceneMode.Single);
     Validate(scene);MechanicsChecks.Run();
-    string report="PASS: Unity "+Application.unityVersion+" / "+EditorUserBuildSettings.activeBuildTarget+"\nSaved district reopened; authored rigs, terrain, materials, snow meshes/colliders, URP and nine ledger invariants validated.\nPlay handling, rendering, touch, Android build and Galaxy A07 performance require separate testing.\n";
+    string report="PASS: Unity "+Application.unityVersion+" / "+EditorUserBuildSettings.activeBuildTarget+"\nSaved district reopened; authored rigs, terrain, materials, 50 cm snow meshes/colliders, URP and 19 ledger checks validated.\nPlay handling, rendering, touch, Android build and Galaxy A07 performance require separate testing.\n";
     File.WriteAllText("Logs/SceneValidation.txt",report);Debug.Log(report);
    }catch(Exception e){File.WriteAllText("Logs/SceneValidation.txt","FAIL: "+e);throw;}
   }
