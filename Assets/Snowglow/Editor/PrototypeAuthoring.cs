@@ -32,15 +32,12 @@ namespace Snowglow.Editor {
     var p=ScriptableObject.CreateInstance<PrototypePalette>();
     p.snow=Material("Snow white","#EDF4F8");p.asphalt=Material("Road grey","#52616B");p.orange=Material("Plow orange","#D8873F");p.teal=Material("Municipal teal","#3F777D");p.dark=Material("Tyres and steel","#28333B");
     p.glass=Material("Blue glazing","#78BCCB");p.amber=Material("Loader yellow and lamps","#E9BC56");p.wood=Material("Timber brown","#815C46");p.green=Material("Foliage green","#3C6952");p.stone=Material("Mountain grey","#829098");p.ice=Material("Ice blue","#9ECEDB");p.red=Material("Service red","#B85E52");p.terrain=Material("Terrain snow","#FFFFFF","Universal Render Pipeline/Terrain/Lit");Asset(p,"Palette");
-    var loader=ScriptableObject.CreateInstance<VehicleDefinition>();loader.id="wheeled-loader-01";loader.displayName="Birch wheeled loader";loader.mountId="loader-quick-A";loader.loader=true;loader.mass=4200;loader.wheelRadius=.72f;loader.track=2.25f;loader.wheelbase=3.3f;loader.torque=2900;loader.maxSpeed=7;loader.maxAttachmentMass=1200;Asset(loader,"LoaderDefinition");
-    var bucket=ScriptableObject.CreateInstance<AttachmentDefinition>();bucket.id="loader-bucket-16";bucket.displayName="1.6 m³ loader bucket";bucket.mountId=loader.mountId;bucket.kind=AttachmentKind.Bucket;bucket.width=2.4f;bucket.mass=550;Asset(bucket,"BucketDefinition");
     var data=DistrictFactory.CreateTerrainData();
     var texture=new Texture2D(2,2);texture.SetPixels(new[]{Color.white,Color.white,Color.white,Color.white});texture.Apply();Asset(texture,"SnowTerrainTexture");
     var layer=new TerrainLayer{diffuseTexture=texture,tileSize=new Vector2(20,20)};Asset(layer,"SnowTerrainLayer");data.terrainLayers=new[]{layer};Asset(data,"Terrain_1000m");
     EditorUtility.DisplayProgressBar("Snowglow","Placing coloured primitives on the terrain",.25f);
     var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);DistrictFactory.Build(data,p);
-    var first=StarterPlowAuthoring.Create(new Vector3(-99,SnowField.Ground+.25f,-87),Quaternion.identity,p.snow);var second=MachineFactory.Build(loader,bucket,p,new Vector3(-90,6.8f,-87));
-    PrefabUtility.SaveAsPrefabAssetAndConnect(second.gameObject,folder+"/WheeledLoader.prefab",InteractionMode.AutomatedAction);
+    var first=StarterPlowAuthoring.Create(new Vector3(-99,SnowField.Ground+.25f,-87),Quaternion.identity,p.snow);var second=LoaderModelIntake.Create(new Vector3(-90,SnowField.Ground+.25f,-87),Quaternion.identity,p.snow);
     var snow=new GameObject("05 Snow | baked primitive columns and editable seed").AddComponent<SnowField>();var seed=ScriptableObject.CreateInstance<SnowSeed>();Asset(seed,"SnowSeed");snow.Bake(p,seed);
     EditorUtility.DisplayProgressBar("Snowglow","Saving snow geometry and collision assets",.55f);
     SnowMeshAssets.SaveChunks(snow,seed);

@@ -94288,7 +94288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Snowglow.PrototypeSession
   Fleet:
   - {fileID: 891662383}
-  - {fileID: 8450646630303528732}
+  - {fileID: 1995884787}
   Snow: {fileID: 1483895109}
   Input: {fileID: 1188373503}
   CameraRig: {fileID: 689696410}
@@ -285409,6 +285409,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993598636}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1995884786
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1886260343562273734, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_Name
+      value: ImportedSnowLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136146570248357240, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136146570248357240, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136146570248357240, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -87
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136146570248357240, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136146570248357240, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136146570248357240, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136146570248357240, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136146570248357240, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136146570248357240, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136146570248357240, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+--- !u!114 &1995884787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8159920996775267127, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+  m_PrefabInstance: {fileID: 1995884786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db34807222b66b1a39cf5a4ef8191614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.MachineController
 --- !u!1 &1995948959
 GameObject:
   m_ObjectHideFlags: 0
@@ -297713,80 +297781,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147431348}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &8450646630303528731
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2137480439839905955, guid: 4919bd503586d2a48a1c6e659e3318e3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2137480439839905955, guid: 4919bd503586d2a48a1c6e659e3318e3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2137480439839905955, guid: 4919bd503586d2a48a1c6e659e3318e3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -87
-      objectReference: {fileID: 0}
-    - target: {fileID: 2137480439839905955, guid: 4919bd503586d2a48a1c6e659e3318e3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2137480439839905955, guid: 4919bd503586d2a48a1c6e659e3318e3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2137480439839905955, guid: 4919bd503586d2a48a1c6e659e3318e3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2137480439839905955, guid: 4919bd503586d2a48a1c6e659e3318e3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2137480439839905955, guid: 4919bd503586d2a48a1c6e659e3318e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2137480439839905955, guid: 4919bd503586d2a48a1c6e659e3318e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2137480439839905955, guid: 4919bd503586d2a48a1c6e659e3318e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7052533996806037185, guid: 4919bd503586d2a48a1c6e659e3318e3, type: 3}
-      propertyPath: m_Name
-      value: Birch wheeled loader | authored primitive machinery
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4919bd503586d2a48a1c6e659e3318e3, type: 3}
---- !u!114 &8450646630303528732 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8623519987141989928, guid: 4919bd503586d2a48a1c6e659e3318e3, type: 3}
-  m_PrefabInstance: {fileID: 8450646630303528731}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db34807222b66b1a39cf5a4ef8191614, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.MachineController
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2146506883}
-  - {fileID: 8450646630303528731}
   - {fileID: 1483895111}
   - {fileID: 1188373505}
   - {fileID: 689696414}
@@ -297794,3 +297793,4 @@ SceneRoots:
   - {fileID: 55990419}
   - {fileID: 188072787}
   - {fileID: 891662382}
+  - {fileID: 1995884786}

@@ -66,7 +66,9 @@ namespace Snowglow.Editor {
    }
    if(a.kind==CatalogKind.WheelSet&&(a.wheelRadius<=0||a.wheelWidth<=0||a.wheelMass<=0||string.IsNullOrWhiteSpace(a.interfaceId)))r.errors.Add("Wheel radius, width, mass and interface ID are required.");
    if(a.kind==CatalogKind.RoadAssembly&&anchors.Count(x=>x.role==AnchorRole.RoadConnection)<2)r.errors.Add("Road assembly requires at least two connection anchors.");
-   if(a.triangles>50000||a.materialSlots>12)r.warnings.Add("High geometry/material count for the mobile reference target; profile on Galaxy A07.");
+   if(a.kind==CatalogKind.Vehicle&&a.triangles>15000)r.warnings.Add("Vehicle exceeds Snowglow's provisional 15,000 triangle review threshold. Aim for 5,000-10,000 including fitted parts; this is a project budget, not a device guarantee.");
+   if(a.kind==CatalogKind.Vehicle){int vertices=0;foreach(var mesh in a.prefab.GetComponentsInChildren<MeshFilter>(true))if(mesh.sharedMesh)vertices+=mesh.sharedMesh.vertexCount;if(vertices>30000)r.warnings.Add("Vehicle exceeds 30,000 imported vertices; inspect hard-edge/UV splits and profile on Galaxy A07.");}
+   if(a.triangles>50000||a.materialSlots>12)r.warnings.Add("High geometry/material-slot count for the mobile reference target; profile on Galaxy A07. Material slots can require separate draws even when colors share a shader.");
    if(!a.visualReviewed)r.warnings.Add("Scale, axes, collision proxy and moving-part alignment require visual approval.");
    return r;
   }

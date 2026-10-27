@@ -4,6 +4,7 @@ namespace Snowglow {
   public Transform mount,boom,bucket,mouth,loadVisual;public ParticleSystem spray;
   public bool Auto=true,Working=true;public float Angle,Lift,Tilt,Load;
   public bool useAuthoredRig;public float bladeRaiseDistance=.7f;
+  [Range(0,1)] public float dumpMinimumLift=.55f;
   Vector3 mountRest;Quaternion mountRotation,boomRotation,bucketRotation;
   MachineController machine;Vector3 last;bool haveLast,dumping;float lastVolume;
   public void Initialize(MachineController owner){machine=owner;mountRest=mount.localPosition;mountRotation=mount.localRotation;if(boom)boomRotation=boom.localRotation;if(bucket)bucketRotation=bucket.localRotation;ResetSweep();}
@@ -14,7 +15,7 @@ namespace Snowglow {
    if(machine.definition.loader){Working=!Working;Lift=Working?0:.6f;Tilt=Working?0:-.6f;}
    else {Working=!Working;Lift=Working?0:1;}
   }
-  public void RequestDump(){if(!machine.definition.loader)return;dumping=true;Working=false;Lift=Mathf.Max(.55f,Lift);Tilt=1;}
+  public void RequestDump(){if(!machine.definition.loader)return;dumping=true;Working=false;Lift=Mathf.Max(dumpMinimumLift,Lift);Tilt=1;}
   public float Simulate(float dt,float forwardSpeed){
    var game=PrototypeSession.Instance;var input=game.Input;
    if(!Auto){Lift=Mathf.Clamp01(Lift+input.Lift*dt*.6f);Tilt=Mathf.Clamp(Tilt+input.Tilt*dt,-1,1);}

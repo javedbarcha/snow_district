@@ -18,6 +18,11 @@ lights are excluded. All 209 vehicle meshes are accounted for by `PartMap.json`.
 Named source meshes are combined per rigid module, retaining material slots and
 four wheel-centred pivots; the original Blender file keeps each original part editable.
 
+Prepared tyre grips have corrected outward winding (40 blocks per rear wheel,
+32 per front wheel). The original source had mixed face directions, producing
+recessed-looking bumps. Export asserts each repaired block's outward normals and
+saves `TreadValidation.json`; no vertices or triangles were added.
+
 Unity menu: **Snowglow > Asset intake**. Inspect can be rerun; Prepare deliberately
 refuses duplicate catalog IDs. Review/edit existing entries for subsequent adjustments.
 

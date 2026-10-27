@@ -2,7 +2,8 @@
 import bpy, json, os
 from mathutils import Vector
 
-out = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'Logs', 'PlowerIntake')
+out = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'Logs',
+    'LoaderIntake' if os.path.basename(bpy.data.filepath)=='snow_loader_lp.blend' else 'PlowerIntake')
 os.makedirs(out, exist_ok=True)
 objects = []
 for obj in bpy.data.objects:

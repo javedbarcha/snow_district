@@ -1,0 +1,37 @@
+{
+  "body": {
+    "vertices": 1064,
+    "triangles": 1792,
+    "materials": 2
+  },
+  "boom": {
+    "vertices": 520,
+    "triangles": 868,
+    "materials": 1
+  },
+  "bucket": {
+    "vertices": 180,
+    "triangles": 292,
+    "materials": 1
+  },
+  "wheel_fl": {
+    "vertices": 744,
+    "triangles": 1176,
+    "materials": 1
+  },
+  "wheel_fr": {
+    "vertices": 744,
+    "triangles": 1176,
+    "materials": 1
+  },
+  "wheel_rl": {
+    "vertices": 744,
+    "triangles": 1176,
+    "materials": 1
+  },
+  "wheel_rr": {
+    "vertices": 744,
+    "triangles": 1176,
+    "materials": 1
+  }
+}

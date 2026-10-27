@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734dbd505ccf9ff3a61bb98ed888a343, type: 3}
+  m_Name: imported-loader-bucket-equipment
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.AttachmentDefinition
+  id: loader-bucket-16
+  displayName: Golden loader | wide snow bucket
+  mountId: imported-loader-quick-A
+  kind: 1
+  mass: 550
+  width: 2.84
+  capacity: 1.6
+  requiresHydraulics: 1

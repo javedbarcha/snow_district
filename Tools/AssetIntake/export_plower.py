@@ -3,7 +3,7 @@ Usage: blender --background --factory-startup --disable-autoexec SOURCE --python
 Source stays untouched. FBX uses metres, +Y up/-Z forward; Unity's importer converts
 to +Z forward. The Blender mapping first makes original +X forward into -Y.
 """
-import bpy, json, os, math
+import bpy, bmesh, json, os, math
 from mathutils import Matrix, Vector
 
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -32,6 +32,26 @@ for o in original:
 assert sum(map(len,groups.values()))==len(original)
 mapping={key:[o.name for o in objects] for key,objects in groups.items()}
 with open(os.path.join(out,'PartMap.json'),'w') as f: json.dump(mapping,f,indent=2)
+
+# Repair inconsistent tread winding in prepared copies, preserving the source.
+tread_report=[]
+for obj in original:
+    if not obj.name.startswith('Chevron tyre grips'):continue
+    obj.data=obj.data.copy();bm=bmesh.new();bm.from_mesh(obj.data)
+    bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.normal_update()
+    unseen=set(bm.verts);blocks=0
+    while unseen:
+        pending=[unseen.pop()];verts=set(pending)
+        while pending:
+            for edge in pending.pop().link_edges:
+                for v in edge.verts:
+                    if v in unseen:unseen.remove(v);verts.add(v);pending.append(v)
+        center=sum((v.co for v in verts),Vector())/len(verts)
+        faces={f for v in verts for f in v.link_faces}
+        assert all(f.normal.dot(f.calc_center_median()-center)>0 for f in faces)
+        blocks+=1
+    bm.to_mesh(obj.data);bm.free();tread_report.append(dict(name=obj.name,outward_blocks=blocks))
+with open(os.path.join(out,'TreadValidation.json'),'w') as f:json.dump(tread_report,f,indent=2)
 
 # Save a source-view image before modifying the in-memory model.
 for o in bpy.context.scene.objects:

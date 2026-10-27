@@ -2,6 +2,8 @@
 
 Unity 6.3 LTS / URP / Android / offline. Reference device: Samsung Galaxy A07. Target: 30 FPS; device performance is not yet measured.
 
+The active fleet now uses the imported Golden tractor (free starter) and Golden snow loader (1,400 coins). Both are saved Editor-authored prefabs. See [mobile asset budgets](MOBILE_ASSET_BUDGET.md) for measured geometry and future intake thresholds.
+
 ## Asset preparation and reusable catalogs
 
 Open **Snowglow > Asset Workshop** for model intake, draft/review/Ready catalog entries, drag-and-drop vehicle fittings, equipped prefab baking and validated AI scene plans. The supplied prototype building blocks are separate catalog copies and require review before publication. See [ASSET_WORKSHOP.md](ASSET_WORKSHOP.md) for the complete workflow and current boundaries. Pinefall's gameplay and player inventory are not replaced by catalog authoring.

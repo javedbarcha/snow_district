@@ -53,7 +53,7 @@ namespace Snowglow.Editor {
    var session=all.Select(t=>t.GetComponent<PrototypeSession>()).FirstOrDefault(s=>s);if(!session)throw new InvalidOperationException("Open the baked Pinefall scene first.");
    foreach(var m in session.Fleet){
     string type=m.definition.loader?"loader":"plow";Register(m.gameObject,CatalogKind.Vehicle,m.definition.displayName+" body","prototype-"+type+"-body",true);
-    if(!m.definition.loader){var wheels=Register(m.wheelVisuals[0].gameObject,CatalogKind.WheelSet,"Municipal wheel set","prototype-wheel-set");wheels.interfaceId="wheel-standard";wheels.wheelRadius=m.definition.wheelRadius;wheels.wheelWidth=wheels.localBounds.size.x;wheels.wheelMass=m.wheels[0].mass;EditorUtility.SetDirty(wheels);}
+    if(!m.definition.loader&&!CatalogPreparation.Library().Find("prototype-wheel-set")){var wheels=Register(m.wheelVisuals[0].gameObject,CatalogKind.WheelSet,"Municipal wheel set","prototype-wheel-set");wheels.interfaceId="wheel-standard";wheels.wheelRadius=m.definition.wheelRadius;wheels.wheelWidth=wheels.localBounds.size.x;wheels.wheelMass=m.wheels[0].mass;EditorUtility.SetDirty(wheels);}
     Transform original=m.definition.loader?m.Tool.bucket:m.Tool.mount;var part=UnityEngine.Object.Instantiate(original.gameObject);part.transform.position=Vector3.zero;part.transform.rotation=Quaternion.identity;
     try{
      string mouthPath=AnimationUtility.CalculateTransformPath(m.Tool.mouth,original);var mouth=part.transform.Find(mouthPath);var edge=mouth.gameObject.AddComponent<AssetAnchor>();edge.id="working-edge";edge.role=AnchorRole.WorkingEdge;
