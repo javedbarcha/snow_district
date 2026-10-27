@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca395da9c16194d8575fece1ac0cf8, type: 3}
+  m_Name: Golden tractor | curved plow and lift frame
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.CatalogAsset
+  id: imported-tractor-plow
+  displayName: Golden tractor | curved plow and lift frame
+  kind: 1
+  status: 1
+  prefab: {fileID: 415675497744111624, guid: 971769ee8ed233540b6f146adde00a4f, type: 3}
+  tags:
+  - blade
+  - curved
+  - orange
+  - tractor-front-frame
+  sourceType: 0
+  sourceGuid: 5cb944965f622bd4f823207c3db04c63
+  sourcePath: Assets/Snowglow/Catalog/Sources/LowPolySnowPlower/PlowAttachment.fbx
+  creationSourcePath: SourceAssets/LowPolySnowPlower/low_poly_snow_plower.blend
+  reviewedPrefabHash: 
+  provenance: Supplied low_poly_snow_plower.blend; source SHA256 8F48568B0051F2379707F15809558090DE7128C23637BAD6E6A8774BA815B85C.
+    Embedded text was not executed.
+  assumptions: Plow and lift hardware grouped as a single rigid attachment. Connection
+    is lower chassis pivot (source X1.12/Z0.55). Working edge is cutting-edge bottom
+    centre. Source shows no yaw joint/animation rig; generic vertical lift/yaw would
+    move all hardware rigidly and needs clearance review before gameplay approval.
+  reviewNotes: Needs Unity visual/movement review before Ready publication.
+  visualReviewed: 0
+  localBounds:
+    m_Center: {x: 0, y: 0.71, z: 0}
+    m_Extent: {x: 1.425, y: 0.71, z: 0.83000004}
+  triangles: 1654
+  renderers: 1
+  materialSlots: 4
+  price: 0
+  vehicle: {fileID: 0}
+  attachment: {fileID: 11400000, guid: ef577942955c2b644bd58a2eb22a82ac, type: 2}
+  interfaceId: tractor-front-frame
+  addedMass: 0
+  torqueMultiplier: 1
+  gripMultiplier: 1
+  wheelRadius: 0.5
+  wheelWidth: 0.3
+  wheelMass: 45
+  mirrorRightWheels: 1
+  minimumScale: 1
+  maximumScale: 1
+  blocksSnow: 0

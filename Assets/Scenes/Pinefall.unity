@@ -71794,6 +71794,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891491978}
   m_CullTransparentMesh: 1
+--- !u!1001 &891662382
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 919504607794672995, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_Name
+      value: GoldenTractor-Starter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625829200839805835, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -99
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625829200839805835, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625829200839805835, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -87
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625829200839805835, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625829200839805835, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625829200839805835, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625829200839805835, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625829200839805835, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625829200839805835, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625829200839805835, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+--- !u!114 &891662383 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3776840980706278228, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+  m_PrefabInstance: {fileID: 891662382}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db34807222b66b1a39cf5a4ef8191614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.MachineController
 --- !u!1 &893036846
 GameObject:
   m_ObjectHideFlags: 0
@@ -94219,7 +94287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowglow.PrototypeSession
   Fleet:
-  - {fileID: 6770534791839171071}
+  - {fileID: 891662383}
   - {fileID: 8450646630303528732}
   Snow: {fileID: 1483895109}
   Input: {fileID: 1188373503}
@@ -297645,74 +297713,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147431348}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &6770534791839171070
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2077864047330086018, guid: 85659f3e71c30324f990c0482eed3dd4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -99
-      objectReference: {fileID: 0}
-    - target: {fileID: 2077864047330086018, guid: 85659f3e71c30324f990c0482eed3dd4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2077864047330086018, guid: 85659f3e71c30324f990c0482eed3dd4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -87
-      objectReference: {fileID: 0}
-    - target: {fileID: 2077864047330086018, guid: 85659f3e71c30324f990c0482eed3dd4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2077864047330086018, guid: 85659f3e71c30324f990c0482eed3dd4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2077864047330086018, guid: 85659f3e71c30324f990c0482eed3dd4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2077864047330086018, guid: 85659f3e71c30324f990c0482eed3dd4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2077864047330086018, guid: 85659f3e71c30324f990c0482eed3dd4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2077864047330086018, guid: 85659f3e71c30324f990c0482eed3dd4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2077864047330086018, guid: 85659f3e71c30324f990c0482eed3dd4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2393358237525878720, guid: 85659f3e71c30324f990c0482eed3dd4, type: 3}
-      propertyPath: m_Name
-      value: Clementine municipal plow | authored primitive machinery
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 85659f3e71c30324f990c0482eed3dd4, type: 3}
---- !u!114 &6770534791839171071 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2201950153611139191, guid: 85659f3e71c30324f990c0482eed3dd4, type: 3}
-  m_PrefabInstance: {fileID: 6770534791839171070}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db34807222b66b1a39cf5a4ef8191614, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.MachineController
 --- !u!1001 &8450646630303528731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -297786,7 +297786,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2146506883}
-  - {fileID: 6770534791839171070}
   - {fileID: 8450646630303528731}
   - {fileID: 1483895111}
   - {fileID: 1188373505}
@@ -297794,3 +297793,4 @@ SceneRoots:
   - {fileID: 1832539578}
   - {fileID: 55990419}
   - {fileID: 188072787}
+  - {fileID: 891662382}

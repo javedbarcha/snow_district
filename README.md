@@ -45,6 +45,8 @@ Piles spread as they grow. Deposits prefer lower nearby cells within a mound-sha
 
 ## First playthrough
 
+- The imported **Golden snow-plowing tractor** is the free, already-owned starting machine. Its blade and beacon are fitted in the saved scene. It retains the previous starter save ID so upgrades carry over. The loader remains a separate purchase.
+
 - Start **Depot Access**. The target is the outlined strip at **X −65 / Z −90**; drive east from the depot and then along that access road.
 - Blade starts lowered. Drive forward to push snow; use ANGLE L/C/R to discharge to one side. Raise the blade for travel.
 - Clear 90% of the selected contract area. Pushing snow back into it blocks progress again. Only original work in that contract area builds the combo/reward.

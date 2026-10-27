@@ -1,5 +1,21 @@
 # Verification record
 
+## Imported tractor as free starter - 27 October 2026
+
+- Replaced only Pinefall's first fleet machine with the saved `GoldenTractor-Starter.prefab`. Its physics definition costs zero, uses the existing `municipal-plow-01` save ID, and is owned initially. Session initialization now guarantees starter ownership even if an old profile recorded it as unowned. Existing coins, upgrades, active selection and loader purchase behavior are preserved.
+- Bound the imported model's four wheel pivots to WheelColliders with separate front/rear radii, and connected its fitted blade working edge, existing work/lift/angle controls and preauthored snow spray. Mass includes the beacon and plow. Full district Editor baking also uses this starter prefab. Catalog source entries retain their review status; this is an explicit prototype integration, not a claim of production approval.
+- Unity 6000.3.8f1 / Android compiled and saved/reopened Pinefall. Checked connected starter prefab in Fleet[0], zero price/owned state, legacy ID, unchanged loader prefab, unequal wheel radii, equipment compatibility, controller initialization, work/raise/angle commands and drive/park activation. Scene validation and all 19 snow checks passed. No player save was loaded or modified by these checks. Report: `Logs/StarterPlowValidation.txt`.
+- The blade/lift hardware moves as one rigid module under the prototype controls. Faithful hydraulic linkage, motion clearance, live driving/snow interaction, Android packaging and Galaxy A07 performance remain untested. The scene replacement did not regenerate terrain, snow, scenery or the loader.
+
+## Supplied Blender tractor intake - 27 October 2026
+
+- Inspected `low_poly_snow_plower.blend` using Blender 5.2 with embedded script autoexecution disabled. Preserved a byte-identical original under `SourceAssets/LowPolySnowPlower`; source/copy SHA256 is `8F48568B0051F2379707F15809558090DE7128C23637BAD6E6A8774BA815B85C`. The embedded generator was not executed.
+- Accounted for all 209 named vehicle meshes in a saved part map. Excluded the unrelated cube, studio floor, cameras and lights. Exported body/four wheels, plow/lift hardware and beacon as separate FBX modules. Rigid modules are combined while the original Blender parts remain editable.
+- Unity 6000.3.8f1 with Android selected compiled the intake and imported metre-scale, Y-up/Z-forward meshes. Verified all four wheel pivots and fitted front/roof sockets. Prepared three Needs Review catalog entries, two unapproved fittings, a recipe and `GoldenTractor-REVIEW.prefab`. All geometry and materials are persisted through Editor authoring; no runtime construction or Pinefall/fleet replacement was added.
+- Model-specific structural checks passed: prefab save/reopen, persistent meshes, wheel bindings, front/roof compatibility and refusal to bake unapproved assets. Source render and the combined Unity prefab were visually inspected at rest. Original toon materials are approximated with a URP palette; this does not establish shading fidelity in gameplay.
+- Reran all 39 Asset Workshop acceptance checks, saved Pinefall validation and all 19 snow checks successfully. Reports: `Logs/PlowerIntake/UnityIntake.txt`, `Logs/AssetWorkshopChecks.txt`, `Logs/SceneValidation.txt`. Saved Pinefall and Generated assets have no changes.
+- Remaining: author/review lift linkage and yaw behavior, full movement/clipping clearance, physical mass/COM/suspension tuning, driving and snow interaction, Android build and Galaxy A07 profiling. The source has unequal front/rear wheels; the uniform wheel-set socket is omitted. The review preview has no MachineController and is not a drivable machine. Total 7,274 triangles / 7 renderers / 30 material slots; phone performance is unmeasured. See `SourceAssets/LowPolySnowPlower/README.md`.
+
 ## Asset Workshop phase - 26 October 2026
 
 - Added Editor-only model preparation, source-only prompt/image/script drafts, a categorized prefab catalog, explicit review/Ready publication, fitting profiles, modular vehicle assembly and a Ready-only JSON manifest/scene-plan workflow. Nine prototype catalog entries are saved as separate prefab copies and remain Needs Review.

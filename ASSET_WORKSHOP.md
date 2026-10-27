@@ -69,4 +69,11 @@ Provide the actual model/imported prefab or the generation script plus dependenc
 
 ## Verification
 
+The first supplied Blender tractor has been prepared as three Needs Review entries
+(body/four wheels, curved plow/lift frame, roof beacon), with a saved recipe and review
+prefab. Use **Snowglow > Asset intake > Open tractor review prefab** to inspect it.
+See [the intake record](SourceAssets/LowPolySnowPlower/README.md) for part mapping,
+source preservation, wheel differences and the required articulation work before
+gameplay approval.
+
 Run **Snowglow > Run asset workshop checks** in Edit mode. Results go to `Logs/AssetWorkshopChecks.txt`. Checks exercise actual Unity prefab preparation, source preservation, approval invalidation, fitting, wheel upgrades and scene serialization using disposable fixtures. They restore Pinefall and remove their fixtures. Rendering, imported production model quality, touch handling and Galaxy A07 performance require separate testing.

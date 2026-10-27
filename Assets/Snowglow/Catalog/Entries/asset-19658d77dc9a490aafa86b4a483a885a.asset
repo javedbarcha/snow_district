@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca395da9c16194d8575fece1ac0cf8, type: 3}
+  m_Name: Golden tractor | body and wheels
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.CatalogAsset
+  id: imported-tractor-body
+  displayName: Golden tractor | body and wheels
+  kind: 0
+  status: 1
+  prefab: {fileID: 7612987501173588279, guid: d4973b9bc2de3954fadd3e21b77e3b8b, type: 3}
+  tags:
+  - tractor
+  - snowplow
+  - four-wheels
+  - unequal-tyres
+  - yellow
+  sourceType: 0
+  sourceGuid: a3737c5f854f0d64fa2ea249276016eb
+  sourcePath: Assets/Snowglow/Catalog/Sources/LowPolySnowPlower/TractorBody.fbx
+  creationSourcePath: SourceAssets/LowPolySnowPlower/low_poly_snow_plower.blend
+  reviewedPrefabHash: 
+  provenance: Supplied low_poly_snow_plower.blend; source SHA256 8F48568B0051F2379707F15809558090DE7128C23637BAD6E6A8774BA815B85C.
+    Embedded text was not executed.
+  assumptions: Metre scale from source. Four independently bound wheels; front radius
+    0.578 m, rear 0.888 m including treads. Mass 2800 kg, speed 8 m/s and COM are
+    provisional. Uniform four-wheel replacement socket omitted because this tractor
+    has unequal axles. Rendered Blender source inspected; Unity appearance and handling
+    need review.
+  reviewNotes: Needs Unity visual/movement review before Ready publication.
+  visualReviewed: 0
+  localBounds:
+    m_Center: {x: -0.00000011920929, y: 1.4065093, z: -0.15374601}
+    m_Extent: {x: 1.257, y: 1.4064908, z: 1.873746}
+  triangles: 5548
+  renderers: 5
+  materialSlots: 24
+  price: 0
+  vehicle: {fileID: 11400000, guid: 47d631dacb775cd4fb1edc054c0dde9f, type: 2}
+  attachment: {fileID: 0}
+  interfaceId: 
+  addedMass: 0
+  torqueMultiplier: 1
+  gripMultiplier: 1
+  wheelRadius: 0.5
+  wheelWidth: 0.3
+  wheelMass: 45
+  mirrorRightWheels: 1
+  minimumScale: 1
+  maximumScale: 1
+  blocksSnow: 0

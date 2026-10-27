@@ -22,6 +22,8 @@ namespace Snowglow {
      if(Profile.inJob&&save.position.y>0&&Mathf.Abs(save.position.x)<480&&Mathf.Abs(save.position.z)<480)m.transform.SetPositionAndRotation(save.position,save.rotation);
     }
    }
+   // The starter is always free, including profiles that stored owned=false.
+   Fleet[0].Owned=true;
    if(!Active.Owned)Profile.active=0;
    Profile.snow=SnowVolumeGrid.Upgrade(Profile.snow);
    Snow.Initialize(Profile.job,Profile.inJob?Profile.snow:null);
