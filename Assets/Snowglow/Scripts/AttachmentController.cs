@@ -18,8 +18,11 @@ namespace Snowglow {
   public void RequestDump(){if(!machine.definition.loader)return;dumping=true;Working=false;Lift=Mathf.Max(dumpMinimumLift,Lift);Tilt=1;}
   public float Simulate(float dt,float forwardSpeed){
    var game=PrototypeSession.Instance;var input=game.Input;
+   // Explicit lift/tilt commands take over immediately, including from Auto.
+   if(Mathf.Abs(input.Lift)>.01f||Mathf.Abs(input.Tilt)>.01f){Auto=false;dumping=false;}
    if(!Auto){Lift=Mathf.Clamp01(Lift+input.Lift*dt*.6f);Tilt=Mathf.Clamp(Tilt+input.Tilt*dt,-1,1);}
-   if(!machine.definition.loader&&!Auto)Working=Lift<.3f;
+   if(!Auto)Working=machine.definition.loader?Lift<.18f&&Tilt<.35f:Lift<.3f;
+   UpdateAutoCarry();
    float force=0;Vector3 center=mouth.position;
    if(dumping&&Load>.0001f){
     float accepted=game.Snow.Dump(center+machine.transform.forward*1.3f,Mathf.Min(Load,dt*.9f));Load-=accepted;
@@ -39,9 +42,13 @@ namespace Snowglow {
     float encountered=game.Snow.Depth(center);force=moved/dt*1700+encountered*machine.equipment.width*1200;
     force=Mathf.Min(force,machine.definition.mass*4);
     if(moved>0){spray.Emit(Mathf.Clamp(Mathf.CeilToInt(moved*80),1,10));game.RecordWork(fresh);}
-    if(Auto&&machine.definition.loader&&Load>=machine.equipment.capacity*.92f){Working=false;Lift=.6f;Tilt=-.6f;}
+    UpdateAutoCarry();
    }
    last=center;haveLast=true;return force;
+  }
+  void UpdateAutoCarry(){
+   // Also recover a stationary/restored full bucket. Never interrupt dumping.
+   if(Auto&&machine.definition.loader&&!dumping&&Load>=machine.equipment.capacity*.92f){Working=false;Lift=Mathf.Max(Lift,.6f);Tilt=-.6f;}
   }
   void Update(){
    if(machine==null)return;

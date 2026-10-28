@@ -41,6 +41,9 @@ The most important continuing requirements are:
   driving test, Android build or measured phone performance.
 - Current window style is **opaque bright cyan toon glazing with pale diagonal
   highlights**, following the user's image. Do not restore transparent glass.
+- Current snow art direction is **pure-white tops with pale cyan side shading**, following the user's snowy mountain reference. This supersedes the initial off-white palette.
+  See `SNOW_MATERIAL.md`. The user listed a finished scenery replacement as task 2
+  but explicitly limited this work to task 1 (snow material); task 2 is deferred.
 
 Initial planning messages explicitly asked not to build yet. The user later
 authorized implementation, the asset-management phase and the individual model
@@ -565,6 +568,29 @@ compilation and opaque state/bindings passed in the Editor with Android selected
 the tractor's cyan finish/highlights were visually inspected. Android player shader
 build and phone frame-time benefit remain untested.
 
+### 10.1 Soft matte snow material: next requested task
+
+On 28 October the user listed two tasks: change the snow material, then replace one
+essential distinct scenery item with a finished model (home, pole, tree, mountain,
+etc.). They explicitly asked to focus **only on the material**. They selected the
+recommended off-white/icy-blue matte toon option over flat white or textured grain.
+
+`SnowMaterialAuthoring` updates the existing shared snow/terrain materials in place.
+`SoftToonSnow.shader` and `SoftSnowLighting.hlsl` provide a soft main-light/shadow
+ramp without specular, reflection probes, detail textures, displacement or new
+geometry for snow meshes. Terrain retains supported URP Terrain/Lit and patch
+instancing; its existing layer has off-white diffuse remap and zero metallic/
+smoothness. An experimental custom terrain shader failed to draw during visual
+review and was removed. The authoring command expects one snow terrain layer.
+
+The user then supplied a mountain reference and requested pure-white tops. Current
+starting colors are `#FFFFFF` / `#BFE7EE`, with an upward-normal ramp ensuring white
+mesh tops and pale cyan shaded sides. Terrain layer tint is now white. The command is
+`Snowglow > Art > Apply soft matte toon snow`; future district bakes use it too.
+Material identity, snow seed/hash, bindings and terrain instancing are checked;
+reports go to `Logs/SoftSnowMaterial.txt`. No new scenery model or snow-physics
+change belongs to this task. Phone performance/Android shader build remain untested.
+
 ## 11. Mobile geometry and rendering budget
 
 These are project targets, **not universal mobile hardware limits**. Profile the
@@ -682,6 +708,17 @@ and their temporary entries; do not mistake leftovers for production content.
   a stale log describes it as temporary.
 
 ## 13. Remaining work / TODO, ordered by practical importance
+
+28 October control follow-up: user reported dead keyboard keys and a full loader
+bucket staying down. `PrototypeInput` now disables UI navigation/submit while
+driving (arrow/Space conflict) and restores it in menus. The full keyboard outage
+is not reproduced; Editor/build context awaits the user. `AttachmentController`
+checks Auto full-bucket carry outside collection, preserves higher lift/dump,
+accepts manual lift/tilt immediately and re-enables loading when manually lowered.
+Runtime/Editor C# compile passed using Unity's compiler; native Editor execution
+is pending refresh. `DrivingControlsChecks` has a queued request; require a fresh
+`Logs/DrivingControls.txt` PASS before claiming fixture or keyboard event checks
+ran. No authoring rebake, player-save modification or live/device pass occurred.
 
 ### A. Prove the current machinery and snow on device
 

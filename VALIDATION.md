@@ -1,5 +1,20 @@
 # Verification record
 
+## Keyboard / loaded-bucket control fixes - 28 October 2026
+
+- Prevent arrow/Space gameplay input from also navigating/submitting selected HUD buttons; restore UI keyboard navigation in menus. This addresses a confirmed input-routing conflict, but the user's complete keyboard outage has not yet been reproduced and its Editor/build context is awaiting clarification.
+- Move the loader's 92%-full Auto carry check outside the moving/collecting branch, covering stationary/restored loads. Preserve a higher lift and the dump pose. Explicit lift/tilt axes immediately enter Manual; lowering into the work pose re-enables collection. Snow transfer arithmetic and saved equipment geometry are unchanged.
+- Runtime and Editor sources (including the new regression helper) compiled with Unity 6000.3.8f1's Roslyn compiler and the project's existing Unity assembly/reference response files. Output is isolated in ignored `Logs/ControlsCompile`, not installed into the running Editor. Editor compile has one pre-existing `AssetWorkshopWindow.title` hiding warning. This is a C# compile check, not a completed Unity scene/play test.
+- Added **Snowglow > Run driving input and loaded bucket checks**, queued with `Logs/DrivingControls.request`. It exercises injected keyboard events, HUD navigation routing, actual imported loader mouth elevation/full/partial/manual/dump poses and the 19 snow ledger checks without loading/writing player saves. Execution is pending refresh of the existing Editor, whose main window was unavailable to automation. Read a fresh `Logs/DrivingControls.txt` before claiming these checks passed. Physical keyboard/Game view focus, continuous driving/loading and Android device testing remain pending.
+
+## Soft matte toon snow - 28 October 2026
+
+- Reference revision: user requested pure-white tops and pale cyan shading from a snowy mountain image. Updated mesh palette to `#FFFFFF` / `#BFE7EE`, added upward-normal whitening and reset terrain layer tint to white. Unity imported the shader and passed the material/binding/seed/scene checks again (`Logs/SoftSnowMaterial.txt`). Final reference revision was not visually inspected because the Unity window closed before capture; Android appearance remains untested. The off-white palette below records the earlier iteration.
+
+- Applied off-white `#F1F3EE` and icy-blue shade `#AFCBE2` to the shared opaque snow mesh material using a lightweight URP shader. This covers plowable snow, piles, snow caps and carried snow through existing palette bindings. Terrain retains supported URP Terrain/Lit with its snow layer tinted off-white and metallic/smoothness zero. An experimental custom terrain pass failed visual review and was removed.
+- Unity 6000.3.8f1 / Android compiled Editor code and imported the mesh shader without reported shader errors. Material GUIDs, seed dependency hash, chunk bindings and terrain instancing were preserved; Pinefall scene structural validation passed. Visually inspected snow surfaces, roof caps and restored terrain rendering in Unity Scene view. See `Logs/SoftSnowMaterial.txt`. Future Editor district bakes apply the same defaults; a full district rebake was not run for this material change.
+- Snow geometry, volume mechanics, vehicle physics and scenery layout are unchanged. Android player shader compilation, current gameplay with the new material and Galaxy A07 appearance/frame timing remain untested. Task 2 (finished scenery asset) is deferred.
+
 ## Bright opaque vehicle windows - 28 October 2026
 
 - Replaced transparent glazing on both imported vehicles with the shared `Snowglow/Toon Vehicle Windows` URP shader: bright cyan, pale diagonal painted reflection streaks, opaque geometry queue, solid alpha and depth writes. Object-space projection works with both existing combined meshes without new UVs, textures, triangles or runtime construction. Imported single-plane windows remain visible from both sides.
