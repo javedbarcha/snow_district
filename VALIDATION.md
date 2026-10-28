@@ -1,5 +1,11 @@
 # Verification record
 
+## Bright opaque vehicle windows - 28 October 2026
+
+- Replaced transparent glazing on both imported vehicles with the shared `Snowglow/Toon Vehicle Windows` URP shader: bright cyan, pale diagonal painted reflection streaks, opaque geometry queue, solid alpha and depth writes. Object-space projection works with both existing combined meshes without new UVs, textures, triangles or runtime construction. Imported single-plane windows remain visible from both sides.
+- Updated the two existing shared window materials in place, preserving prefab/scene references, plus future model-intake material creation. The shader is unlit and does not sample lighting, reflection probes or textures. This removes transparent window blending/sorting; it does not establish a measured FPS improvement.
+- Unity 6000.3.8f1 / Android compiled runtime/Editor code and the Editor shader, verified opaque material state, both saved equipped prefab bindings and the current Pinefall scene. Inspected the tractor's opaque cyan windows and diagonal highlights in Unity. See `Logs/ToonWindows.txt`. Android player shader compilation and Galaxy A07 timings remain untested.
+
 ## Loader tyre clearance and raised tread repair - 27 October 2026
 
 - Corrected the bucket/tyre overlap by extending the prepared boom reach 0.8 m, moving its bucket pin accordingly, and reducing the working boom pitch from 18 to 9 degrees. The boom mesh stretches with the new pin; bucket-local shape, intake and snow-load anchors are unchanged. Updated both catalog body and equipped prefab, its equipment COM and Pinefall in Edit mode.

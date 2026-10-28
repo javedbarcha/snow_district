@@ -57,7 +57,7 @@ namespace Snowglow.Editor {
       Color[] palette={Color.white,new Color(.95f,.60f,.055f),new Color(.95f,.32f,.055f),new Color(.16f,.16f,.19f),new Color(.23f,.24f,.29f),new Color(.48f,.51f,.58f),new Color(.98f,.94f,.72f),new Color(.14f,.15f,.17f),new Color(.76f,.76f,.8f),new Color(.53f,.72f,.8f,.22f)};
       // Blender stores scene-linear colors; material UI values in Unity are sRGB.
       Color color=palette[code].gamma;color.a=palette[code].a;mat.SetColor("_BaseColor",color);mat.SetFloat("_Smoothness",.15f);
-      if(code==9){mat.SetFloat("_Surface",1);mat.SetFloat("_SrcBlend",5);mat.SetFloat("_DstBlend",10);mat.SetFloat("_ZWrite",0);mat.SetFloat("_Cull",0);mat.SetOverrideTag("RenderType","Transparent");mat.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");mat.renderQueue=3000;}
+      if(code==9)ToonWindowsAuthoring.Configure(mat);
       AssetDatabase.CreateAsset(mat,path);
      }materials[i]=mat;
     }r.sharedMaterials=materials;

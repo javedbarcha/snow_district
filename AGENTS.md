@@ -1,0 +1,771 @@
+# Snowglow: project instructions, design history and development handoff
+
+Last consolidated: **28 October 2026**, Asia/Karachi.
+
+This document records the conversation from the original pasted ChatGPT planning
+through the Unity prototype, snow revisions, Asset Workshop, imported machinery,
+clearance/tread repairs and opaque toon windows. It summarizes decisions and their
+reasons rather than reproducing every message. Historical proposals are not proof
+of implementation. Later explicit user decisions supersede earlier proposals.
+
+## 1. Read this first
+
+Before development, read [README.md](README.md), [ARCHITECTURE.md](ARCHITECTURE.md)
+and [VALIDATION.md](VALIDATION.md). For content work also read
+[ASSET_WORKSHOP.md](ASSET_WORKSHOP.md), [MOBILE_ASSET_BUDGET.md](MOBILE_ASSET_BUDGET.md)
+and the relevant `SourceAssets/*/README.md`.
+
+The most important continuing requirements are:
+
+- Build a cozy **full-3D, mid low-poly snow-clearing game in Unity**, Android first,
+  offline, using URP. The reference phone is **Samsung Galaxy A07**.
+- Prioritize driving, plowing, displaced snow/piles and loader operation over
+  adding menus, decorative content or speculative systems.
+- Vehicle motion must come from Rigidbody/WheelCollider physics. Stability
+  assistance is intentional; it must not teleport vehicles or guarantee traction.
+- Snow volume has one authoritative owner. Transfers must conserve volume except
+  explicitly recorded disposal. Particles are feedback, never authoritative snow.
+- Vehicles, scenery, equipment, effects and their bindings must be authored and
+  saved **in the Editor before Play**, not assembled by runtime factories. Runtime
+  wheel/attachment movement and mutable snow meshes are allowed.
+- Keep one Unity project at this root. The user explicitly rejected a separate
+  `.validation-project` project structure. Do not recreate that validation clone.
+- Preserve source models, stable asset/save IDs, GUIDs, `.meta` files, saved snow
+  data and manually authored scene work. Do not rebake the whole district merely
+  to replace one model or change snow resolution.
+- The user is now gradually replacing primitive art with imported models. The
+  original primitive-only requirement described the first build; it does **not**
+  prohibit the explicitly requested imported tractor, loader or future replacements.
+- Report what actually compiled, saved, reopened, rendered or ran. Do not equate
+  a structural check, sampled pose check or low triangle count with a successful
+  driving test, Android build or measured phone performance.
+- Current window style is **opaque bright cyan toon glazing with pale diagonal
+  highlights**, following the user's image. Do not restore transparent glass.
+
+Initial planning messages explicitly asked not to build yet. The user later
+authorized implementation, the asset-management phase and the individual model
+replacements. Those old planning pauses are historical, not a standing requirement
+to seek permission again for already authorized work.
+
+## 2. Current project snapshot
+
+| Item | Current state |
+| --- | --- |
+| Project | Snowglow |
+| Unity | `6000.3.8f1` / Unity 6.3 LTS |
+| Rendering | URP `17.3.0`, mobile rendering settings |
+| Input/UI | Input System `1.18.0`, uGUI `2.0.0` |
+| Target | Android, landscape, offline |
+| Reference performance | Sustained 30 FPS / 33.3 ms, **not yet measured on A07** |
+| Main scene | `Assets/Scenes/Pinefall.unity`, saved and included in build scenes |
+| World | 1,000 x 1,000 m Terrain; compact test district near its centre |
+| Interactive snow | 256 x 256 m field, 512 x 512 cells at 0.5 m |
+| Fleet[0] | Imported Golden tractor, free and always owned initially |
+| Fleet[1] | Imported Golden snow loader, 1,400 coins, initially unowned |
+| Fresh wallet | 1,800 prototype coins |
+| Modes | Career contracts and Free Work |
+| Cameras | Isometric default, optional follow camera |
+| Save | Version-2 local JSON plus backup, `snowglow-v2.json` |
+| Store | Clearly simulated purchases only; no real billing integration |
+
+The live cameras use the project's own `CameraRig`, not Cinemachine. Current HUD
+code uses uGUI `Text`, not TextMeshPro. Both packages were mentioned in the original
+architecture proposal; do not claim they were implemented merely because planned.
+
+## 3. Original conversation and game design
+
+### 3.1 Starting idea and scope correction
+
+The original idea was a cozy 3D isometric snow-plowing game with upgrades, combo
+multipliers and synth sound effects. An early assistant started down a browser-game
+route; the user clarified **Unity 3D**. A Unity project/ZIP called Snowglow followed.
+Early source-only claims were explicitly qualified because Unity was not installed
+in that earlier environment. Do not use those claims as Editor validation evidence.
+
+The user then requested architecture and planning before further implementation:
+
+- Real machinery mechanics, including tyres and suspension.
+- Multiple machines, machinery shop, compatible parts and upgrades.
+- Combos, coins, XP and levels.
+- Career and other modes.
+- Districts/regions across a globe, unlocked through career progression.
+- Full 3D mid low-poly presentation.
+- Isometric and follow cameras.
+- Primitive body/wheel/equipment/environment assemblies first, finished art later.
+- Android/mobile URP with room for other platforms.
+
+The early small prototype's claims such as turbo are not the current feature
+contract. Use current scripts and the final scope below.
+
+### 3.2 Choices agreed with the user
+
+| Decision | Reason |
+| --- | --- |
+| Realistic physics with strong stability assistance | Weight/grip/load should matter while touch driving remains forgiving |
+| First milestone: wheeled plow plus wheeled loader | Proves pushing, accumulating, collecting, transporting and dumping snow |
+| One representative fictional Alaska/Canada-inspired district | Concentrates tuning effort before worldwide content production |
+| Android first, platform services replaceable | Small initial target without closing off later platforms |
+| Full 3D URP, restrained shaders and shared materials | Suitable visual direction for a broad mobile audience |
+| Career and Free Work | Tests progression plus relaxed operation using the same mechanics |
+| Fuel, damage, repairs and deadlines | Gives upgrades and operating decisions consequences |
+| Ordinary late jobs reduce rewards by 30% rather than fail | Preserves the cozy tone and avoids harsh progression pressure |
+| Auto/Manual equipment, Auto initially enabled | Accessible controls while retaining direct lift/tilt operation |
+| Fixed starting snow for the mechanics milestone | Avoids mixing active accumulation with unproven clearing/accounting |
+| Visible disposal storage with explicit excess processing | Keeps snow movement understandable and volume removal accountable |
+| Depot switching during a contract | Lets a player plow first, then load the same persistent piles |
+| Dummy purchases, offline prototype | Tests transaction behavior without charging money or adding a billing SDK |
+| Replaceable visuals and explicit fitting rules | New art should not require rewriting driving or snow logic |
+
+The first terrain was explicitly requested at approximately 1 km square, with
+houses, roads, trees, poles, mountains and advanced-looking machinery made from
+coloured cubes, cylinders and spheres. The playable worksite is much smaller than
+the terrain; the outer kilometre supplies surrounding landscape.
+
+### 3.3 Long-term architecture proposed, not all implemented
+
+Planned logical owners were application/lifecycle, vehicles, snow, contracts,
+economy, progression, world, presentation and persistence. Content should use
+immutable definitions with stable IDs; player ownership and mutable state belong
+in saves. Commands and reported gameplay facts should have clear dependencies,
+without a universal event bus hiding everything.
+
+The intended career loop is: choose contract -> choose machine/equipment -> work ->
+earn coins/XP -> service/upgrade/buy -> unlock more districts/regions. Reputation,
+medals, a globe/map screen, progression tables, tutorial/challenge/sandbox modes,
+additional regions, tracked machines, snowblowers, adapters, chains, transmission,
+ballast, hydraulics and cosmetic equipment were discussed as extensions.
+
+Those extensions are not all present. Current `PrototypeSession` deliberately
+coordinates several small prototype concerns. Extract dedicated services before
+large career/content/monetization expansion rather than claiming the full proposed
+service architecture already exists.
+
+### 3.4 Mechanics gates agreed during planning
+
+1. Driving: contact, suspension, braking, surfaces, assistance and cameras.
+2. Plowing: real blade footprint/direction, displacement, resistance and obstruction.
+3. Loading: finite capacity, carrying, mass/balance and consistent dumping.
+4. Shared worksite: depot switching and explicit disposal without resetting piles.
+5. Complete session: contracts, rewards, upgrades, costs, menus and saving.
+6. Android acceptance: sustained real-device play, touch controls and lifecycle.
+
+Comfortable phone driving, understandable ice/tyre differences, load consequences,
+no repeated-pile reward exploit and reliable restoration are acceptance criteria,
+not completed device-test results.
+
+## 4. Implemented prototype and runtime boundaries
+
+### 4.1 Scene and environment
+
+Pinefall contains saved Terrain, roads, parking, service depot/fuel facilities,
+cottages/fences, trees, mountains, poles/signs, parked primitive cars, curbs, slope
+and ice test lanes, a disposal area, contract markers, UI, camera and audio sources.
+Most scenery remains primitive art. Both active machinery vehicles are now imported
+models. Older primitive machinery prefabs and catalog examples remain available;
+their continued presence does not mean they are the active fleet.
+
+Editor authoring writes timestamped assets under `Assets/Snowglow/Generated/`.
+`PrototypeAuthoring.Bake()` creates a fresh district and intentionally replaces the
+scene layout. It now uses `StarterPlowAuthoring.Create()` and
+`LoaderModelIntake.Create()` for the imported fleet. No runtime callback should
+call the district, primitive vehicle or HUD factories.
+
+### 4.2 Runtime code map
+
+| File/class | Responsibility |
+| --- | --- |
+| `MachineController` | Rigidbody/WheelColliders, torque, braking, steering, grip, assists, fuel, damage and loaded mass/COM |
+| `AttachmentController` | Blade/bucket controls, swept work, processing budget, load/dump and authored rig motion |
+| `SnowVolumeGrid` | Authoritative depth, transfers, work credit, settling and conservation |
+| `SnowField` | Grid queries, chunk geometry/collision refresh, contract progress and disposal |
+| `PrototypeSession` | Current fleet, contract/session state, small prototype economy/progression and save coordination |
+| `PrototypeInput` / `TouchControl` | Keyboard and multi-pointer touch input |
+| `PrototypeHUD` / `UICommand` | Saved Canvas/menu presentation and action requests |
+| `CameraRig` | Isometric/follow framing without remapping steering |
+| `SynthAudio` | Engine/synth feedback using supplied WAVs |
+| `SaveStore` | Versioned JSON load/write, temporary replacement and backup recovery |
+| `DistanceVisibility` | Existing distance-based renderer visibility helper |
+
+Both machines use four WheelColliders and front-wheel steering. The loader is a
+rigid chassis; a visible articulation kingpin is not simulated articulated steering.
+Snow contributes resistance/grip and substantial-pile collider obstruction. Wheel
+friction is configured through WheelCollider curves, not ordinary material friction.
+
+Assistance includes steering smoothing/speed moderation, traction reduction under
+slip, anti-roll and upright torque. Carried snow adds **250 kg per cubic metre**
+and contributes to calculated COM at the attachment mouth. Equipment mass also
+contributes. This is assisted prototype simulation, not a detailed powertrain or
+solver-based hydraulic simulation.
+
+### 4.3 Progression, menus and saving
+
+The current UI includes dashboard, contracts, garage, machinery shop, parts,
+service, dummy store, settings, pause and results. There are three contract areas:
+Depot Access, Parking Lot and Main Street. Completing a normal contract requires
+90% current clearing; putting snow back can reduce accessibility again.
+
+Only useful, originally uncredited work builds reward credit and the combo, capped
+at an 8x displayed multiplier. Repeatedly shuffling a pile must not mint work credit.
+Coins/XP, three tyre upgrade levels, three engine upgrade levels, fuel and condition
+are implemented. Wider blades, arbitrary inventories and the broader part families
+are not yet general player-facing equipment systems.
+
+Fresh contracts reset snow to the authored seed and return machines with empty
+buckets. Switching during a job preserves the snow and individual loads/states.
+Menus/suspension pause simulation and contract time; no offline deadline deduction
+was intended. Recovery preserves the worksite/load. Transactions use IDs to avoid
+duplicate completion/dummy rewards; simulated success/cancel/failure/duplicate cases
+belong in the acceptance checks.
+
+Save schema 2 stores coins, XP, ownership, upgrades, fuel, condition, equipment
+states, active selection/job, positions, snow and transaction IDs. It lives at
+`Application.persistentDataPath/snowglow-v2.json` with a backup. Autosave is roughly
+every 30 seconds plus important actions. Do not delete or rewrite a player's save
+just to inspect a replacement prefab.
+
+### 4.4 Switching machines and PC controls
+
+The user explicitly asked whether plowing and loading use separate machines: yes.
+Buy the loader in the machinery shop, stop at the depot, and select it in Garage.
+The current guard requires the active machine at the depot and speed <=1 m/s;
+switching does not reset the active contract or piles.
+
+| Action | PC control |
+| --- | --- |
+| Forward | W / Up arrow |
+| Reverse | S / Down arrow |
+| Steering | A/D / Left/Right arrows |
+| Brake | Space |
+| Toggle touch-selected F/R gear | X, when direction keys are not held |
+| Work/raise/carry | E |
+| Blade angle cycle | Q |
+| Auto/Manual | V |
+| Lift/lower | R/F |
+| Tilt/curl | T/G |
+| Dump | B |
+| Camera | C |
+| Recover | H |
+| Pause | Escape |
+
+S/Down was an explicit user change: it selects reverse and applies throttle, rather
+than acting merely as a brake. Opposite-direction input brakes before reversing;
+it must not instantly flip velocity. Simultaneous forward/reverse input brakes.
+Touch uses steering, drive/brake, F/R and equipment buttons. Changing camera must
+not change steering semantics.
+
+## 5. Snow resolution, shape, spreading and Git history
+
+### 5.1 Resolution/shape conversation and final state
+
+The user iterated on smaller boxes, a roughly quarter-size request, doubling,
+strict cubes versus rectangles, reverting, then **half-size horizontal boxes**.
+Do not apply every historical request cumulatively. The final current implementation
+is **0.5 m horizontal cells**, reduced from the original 1 m: four times as many
+horizontal cells over the same field.
+
+Current constants are `Size=512`, `Origin=-128`, `Cell=.5`, `Area=Cell*Cell`, with
+32x32-cell chunks and 16x16 chunks. Visuals are combined cube-derived columns whose
+height represents depth; they are not a separate fixed-size Rigidbody cube per cell
+and do not guarantee equal X/Y/Z dimensions at every snow depth.
+
+Resolution changes updated cell-area volume conversion, coordinates, work
+footprints, disposal ranges, validation and legacy 1 m seed/save migration. Use the
+snow-only rebuild command to retain scenery/machinery. Terrain is not deformed.
+
+There are older ignored logs for rounded snow and geometry experiments, including
+large reported mesh reductions. Their presence is not evidence those renderers are
+current. Checked-in `SnowField` currently builds combined cube columns. Inspect
+active code and saved mesh references before reviving a reverted visual experiment.
+
+### 5.2 Tall rods versus spreading piles
+
+The user reported tall rods with too little sideways spreading and wanted piles
+to grow and fall outward with a cohesive, goo-like feel. Centre-first deposits were
+replaced with lower-cell placement weighted by distance inside a mound support
+envelope, plus gradual eight-neighbour slumping.
+
+Current tuning uses approximately a **32 degree resting slope**, `ReposeSlope=.625`,
+3 cm cohesion and bounded transfer speed. Existing/loaded piles wake for settling;
+pause freezes them. Settling conserves volume, respects obstacles/field edges and
+creates no work/reward credit. At most 512 active cells are processed per frame,
+with bounded mesh updates. This is a depth-field approximation, not granular goo,
+fluid dynamics, overhangs, fracture, compaction, melting or active accumulation.
+
+### 5.3 Git error and oversized snow asset
+
+The user asked to diagnose a Bash Git error, then explicitly requested splitting
+`Assets/Snowglow/Generated/Snow50cm_20261026_085523_745.asset` below GitHub's 100 MB
+file threshold. The original bundled asset was **170,024,383 bytes**.
+
+The split retained its seed GUID/data and moved saved visual/collision meshes to a
+sibling `_Meshes` directory: 32 native mesh-part assets, eight chunks per file.
+Recorded results were about 5.23 MB for the seed and at most about 12.02 MB per part.
+Scene mesh/collider references were rewired and the saved scene reopened. Volume
+was unchanged. Future full/snow-only bakes use `SnowMeshAssets` and enforce a
+**90,000,000-byte per-file safety budget**. Keep the mesh directory and `.meta` files.
+
+The local backup ref `refs/backup/pre-snow-asset-split-20261026` points to
+`37ea614923bc0d8174a6462b2ba0c33d98fb0fc3`; ignored original asset/scene backups were
+also kept under `Logs/SnowAssetSplitBackup/`. Do not assume that local backup ref
+exists in a fresh clone or rewrite/push Git history without a task requiring it.
+The resulting snow-change commit is `9ab20d0` in the inspected history.
+
+## 6. First Unity compilation and scene-baking verification
+
+The user specifically asked to verify compilation and Editor baking, fix errors,
+and report untested areas **before expanding features**.
+
+On 22 October the installed Unity 6000.3.8f1/Android environment was used to:
+
+- Remove nonexistent package dependency `com.unity.modules.textrendering`.
+- Enable `com.unity.modules.vehicles`, required for WheelCollider.
+- Compile runtime and Editor assemblies with URP/Input System/uGUI.
+- Run Edit-mode district authoring and save Pinefall plus persistent generated
+  materials, Terrain, machine prefabs, snow chunks and UI assets.
+- Add `SceneValidation`, checking persisted references, scripts, compatible rigs,
+  loader anchors, Terrain, snow seed/chunks, materials, URP and build-scene inclusion.
+- Stop treating a failed scene save as success; validate before writing the ready
+  marker. Automatic first-import baking is disabled in batch mode.
+
+An early isolated `.validation-project` copy was used to avoid disturbing an open
+Editor. The user rejected that structure and it was removed. All later work should
+use this one project. A second fresh-bake attempt was interrupted; its log is not
+proof of a completed additional bake.
+
+The snow check suite grew from 9 original ledger checks to 12 after resolution work
+and 19 after cohesive spreading. Source parsing/Mono checks were useful early
+evidence, but are weaker than actual Unity compilation/save-reopen verification.
+
+## 7. Asset-management phase: request, design and implementation
+
+### 7.1 User's intended workflow
+
+After being satisfied with mechanics so far, the user moved to asset management.
+They wanted an **Editor-only drag-and-drop** preparation/assembly system:
+
+- Import Blender, Meshy.ai or other models, including models edited in Blender.
+- Drag a body, blade/bucket, tyres and accessories into compatible inventory slots
+  to create an equipped machine for later player purchase/equipping by buttons.
+- Keep wheels and other parts modular where meaningful for upgrades.
+- Prepare scenery as reusable assemblies with category catalogues.
+- Use approved catalogue blocks for AI-authored future levels/scenes.
+- Accept future model files dropped into chat, identify their parts and carry out
+  preparation autonomously where possible.
+- Include assets made from prompts/reference images, assistant-generated Blender
+  Python scripts and other generators in the same provenance/preparation workflow.
+
+This started as planning only. The user accepted the recommendations, then said
+to execute the phase. The resulting workshop is Editor tooling, not an in-game
+drag-and-drop construction interface or a completed universal player inventory.
+
+### 7.2 Why preparation is separate from source and gameplay
+
+Original files are preserved, because import corrections, material conversion,
+rigging, collider proxies and optimizations must remain reviewable/reversible.
+Mechanical interface checks alone do not prove dimensional fit or visual clearance.
+One attachment category string must not magically make every combination work.
+
+Metres, Y-up/Z-forward, normalized roots, known wheel pivots, connection anchors and
+authored fitting profiles let comparable models reuse gameplay. New locomotion or
+equipment behavior still needs real implementation. The generic workshop does not
+stretch arbitrary equipment until it appears compatible. The later loader reach
+extension was a specific, explicitly requested repair to a prepared model.
+
+### 7.3 Data and Editor tools built
+
+| Type/tool | Purpose |
+| --- | --- |
+| `CatalogAsset`, `AssetCatalog` | Stable IDs, category, source, status, prefab, bounds, counts, constraints and definitions |
+| `AssetAnchor` | Connection, working edge, load visual, roads, entrances/service/etc. |
+| `AssetSocket` | Accepted category/interface, mass/width, hydraulics and movement envelope |
+| `PreparedVehicleRig` | Explicit visual root, wheels, wheel visuals, boom and wheel clearance |
+| `FittingProfile` | Pair-specific socket/position/rotation and reviewed dependency hashes |
+| `AssemblyRecipe` | Vehicle body plus fitted parts and saved output |
+| `CatalogPlacement` | Content identity/placement metadata, no runtime construction |
+| `CatalogPreparation` | Source intake, normalization, material copies, suggested colliders/rigs and metrics |
+| `CatalogValidation` | Structural/compatibility checks and approval fingerprints |
+| `CatalogAssembly` | Connection alignment, previews, equipped prefab/physics baking |
+| `CatalogBootstrap` | Separate reusable copies of the existing primitive examples |
+| `AssetWorkshopWindow`, `CatalogInspectors` | Prepare/catalog/assembly/AI-plan interface and review tools |
+| `CatalogScenePlans` | Ready manifest, validated declarative JSON, new saved layout scenes |
+| `CatalogChecks` | 39 actual Editor acceptance checks with disposable fixtures |
+
+Data folders are `Assets/Snowglow/Catalog/{Entries,Prefabs,Recipes,Sources,Examples}`;
+the library is `Assets/Snowglow/Catalog/SnowglowCatalog.asset`.
+
+Initial catalog examples: prototype plow body, loader body, blade, bucket, wheel set,
+cottage lot, snow tree, depot and 16 m road. These were separate copies of authored
+content and initially **Needs Review**. Imported entries also remain reviewable;
+do not mark everything Ready because it is present in Pinefall.
+
+Preparation preserves originals, rejects raw gameplay scripts and strips imported
+colliders/Rigidbodies before proposing replacements. Validation rejects imported
+cameras/audio listeners; remove those explicitly from usable blocks. Standard/legacy material conversion creates
+URP copies. Fused wheels or missing boom/working/load anchors block readiness.
+
+Ready publication requires visual review and valid structure. Fingerprints include
+prefab dependencies, physical definitions and constraints; fitting fingerprints
+also cover the socket and offsets. Changes invalidate approvals. Re-baked equipped
+outputs return to review. Stable entry IDs are read-only in custom inspectors.
+
+Vehicle definitions gained optional base grip and dry COM with legacy defaults.
+Attachment motion gained `useAuthoredRig`, retaining imported rest transforms
+instead of imposing the original primitive hard-coded mount positions. Assembly
+baking includes wheel dimensions/mass/grip, accessory mass/torque and COM effects.
+
+### 7.4 AI layout authoring and limits
+
+The Ready-only manifest describes IDs, bounds, tags, anchors, sockets and limits.
+Version-1 JSON placements specify ID, asset ID, position, rotation, scale and
+optional road connections. Validation rejects duplicate/unknown/stale/unapproved
+assets, non-finite transforms, invalid scales/ranges, conservative footprint overlap,
+road interface mismatch and missing/cyclic connections before scene construction.
+
+Plans are limited to 1,000 placements and 2 MB JSON. They author new scenes under
+`Assets/Scenes`; they cannot overwrite Pinefall or another existing scene. Optional
+flat 1 km Terrain is supported. This produces **layouts**, not automatic contracts,
+snow coverage, a session fleet or an unlimited runtime world generator.
+
+The general wheel-set implementation reuses one wheel at all four locations.
+It does not yet model distinct axle-specific upgrade sets. Generic garage/shop
+integration with all catalog parts and durable player loadouts remains TODO.
+
+## 8. Imported tractor and free starting machine
+
+The user supplied `low_poly_snow_plower.blend`, with part names in the file.
+The assistant inspected it, preserved a copy and rendered a source view before
+preparing separate modules. The user then explicitly requested it as the first,
+free plowing machine.
+
+- Original copy: `SourceAssets/LowPolySnowPlower/low_poly_snow_plower.blend`.
+- SHA256: `8F48568B0051F2379707F15809558090DE7128C23637BAD6E6A8774BA815B85C`.
+- Scripts: `Tools/AssetIntake/inspect_plower.py`, `export_plower.py`.
+- Prepared FBX/materials/part map: `Catalog/Sources/LowPolySnowPlower`.
+- All 209 vehicle meshes were accounted for; unrelated cube, ground, cameras and
+  lights were excluded. Embedded `Toon_Snowplow.py` was not executed.
+- Modules: body plus four separate wheels, curved plow/lift frame, roof beacon.
+- Catalog IDs: `imported-tractor-body`, `imported-tractor-plow`,
+  `imported-tractor-beacon`.
+- Recipe: `Catalog/Recipes/GoldenTractor.asset`.
+- `GoldenTractor-REVIEW.prefab` is a preview without MachineController.
+- `GoldenTractor-Starter.prefab` is the equipped gameplay machine in `Fleet[0]`.
+
+The starter retains **`municipal-plow-01`** as its save ID, despite the new model and
+display name, to retain existing upgrades/state. Its price is zero and startup
+forces starter ownership even if an older save recorded `owned=false`. Existing
+wallets are not reset. The body has a 2,800 kg proposal plus 5 kg beacon; the plow is
+450 kg. These values are tuning proposals, not measured manufacturer specifications.
+
+Measured geometry/rig: front/rear tyre radii **0.578/0.888 m**, 1.93 m wheelbase,
+1.82 m track; proposed top speed 8 m/s. The uniform wheel-set socket was omitted
+because this tractor's axles have different tyre sizes. Its four wheel pivots remain
+separate for future axle-specific upgrades.
+
+`StarterPlowAuthoring` saved its Rigidbody, WheelColliders, plow working edge,
+authored lift/angle controls and preplaced snow spray, then replaced only fleet slot
+zero in Pinefall. Full district baking also uses this prefab. The plow/frame/rams
+currently move as one rigid attachment; a faithful lift/yaw hydraulic linkage is
+not implemented. Explicit prototype integration is not blanket catalog publication.
+
+## 9. Imported loader, mobile budgets and integration fixes
+
+### 9.1 Source, preparation and replacement
+
+The user next supplied `snow_loader_lp.blend` and requested replacing the primitive
+loader while gradually replacing primitive art. They also asked for warnings when
+vertex/triangle costs exceed a sensible mobile band and reaffirmed mid low-poly art.
+
+- Original copy: `SourceAssets/LowPolySnowLoader/snow_loader_lp.blend`.
+- SHA256: `365804EDC406BD3D021C8156956C984815D4567F30ABAA58D2F29ED993467327`.
+- Scripts: `Tools/AssetIntake/export_loader.py`, `check_loader_treads.py`.
+- Sources: `Catalog/Sources/LowPolySnowLoader`, including part map, export metrics,
+  shared palette, FBX body/boom/wheels and separate bucket.
+- Catalog IDs: `imported-loader-body`, `imported-loader-bucket`.
+- Recipe: `Catalog/Recipes/ImportedLoader.asset` and bucket fitting.
+- Gameplay prefab: `Catalog/Prefabs/ImportedSnowLoader.prefab` in `Fleet[1]`.
+- Save ID stays **`wheeled-loader-01`**, price stays **1,400**, initially unowned.
+  Existing loader ownership/upgrades/fuel are matched by ID. The free tractor stays.
+
+Blender meshes and three curve hoses are evaluated before export. Rigid modules
+are combined, but four wheels, boom and bucket remain independently bound. A
+point-sampled 16x1 colour atlas collapses opaque colours into one material; windows
+are a separate material. Carried snow is a saved, initially inactive sphere proxy.
+No original Blender file is overwritten or embedded source script executed.
+
+Rig values: 0.73 m wheel radius, 2.38 m wheelbase, 1.82 m track, 2.84 m bucket width;
+4,200 kg body, 550 kg bucket and 1.6 cubic metre capacity remain prototype ratings.
+
+### 9.2 Specific bugs fixed during loader integration
+
+1. **Bucket pivot/ground clearance:** rotating the centred catalog part root rather
+   than its actual pin allowed the dump to swing too low. A separate tilt-pivot
+   wrapper now rotates around the connection. Anchors use bucket-local coordinates;
+   the single-mesh FBX root does not retain the multi-object source's global origin.
+2. **Automatic dump height:** a per-rig `dumpMinimumLift` was added. Defaults stay
+   0.55 for other rigs; this imported loader requires full lift (1) for dumping.
+3. **Wrong colours after joining:** meshes/curves had differently named UV layers,
+   so palette coordinates could reach UV1 while UV0 was blank, making tyres/bucket
+   yellow. Export now gives every mesh exactly one consistently named `PaletteUV`
+   layer before joining. Unity colours were inspected after correction.
+4. **Geometry inventory on labels:** some MeshRenderers have no MeshFilter. Explicit
+   Unity-object null checks replaced an unsafe nullable access that threw on Label.
+5. **Catalog reimport overwriting wheels:** bootstrap was replacing an existing
+   prototype wheel entry's radius/mass from the new active tractor. Existing wheel
+   definitions are now preserved rather than silently rewritten on reimport.
+
+### 9.3 User-reported bucket/tyre clipping and inverted grips
+
+The user reported that the loader's bucket/blade crossed the tyres and that tyre
+grips looked like recesses. These were real geometry problems, beyond the initial
+work/carry/dump floor tests.
+
+The prepared loader boom was extended **0.8 m** along its reach, with its mesh
+stretched to match the new pin. Working boom pitch changed **18 -> 9 degrees** and
+the socket counter-rotation was updated to keep the bucket floor orientation.
+Prepared source coordinates now put the bucket pin at X2.81/Z1.03 and cutting edge
+at X4.01/Z0.567; original source pin/edge were X2.01 and X3.21. Bucket-local shape,
+working/load offsets and width remain unchanged. Catalog body, equipped prefab,
+equipment COM and scene were updated in Edit mode.
+
+A conservative tyre envelope allows for steering using tyre radius and half-width.
+The bucket rear was checked in **441 lift/tilt samples**. Minimum longitudinal gap
+was **0.239 m**, against a required 0.08 m margin. Work/carry/dump shell/edge ground
+clearance also passed. This is not a continuous dynamic collision/physics test.
+
+All loader tread blocks had inward-facing surfaces; tractor chevrons had mixed
+winding. Prepared copies now recalculate outward normals and assert each closed
+block's faces point outward. Counts: **66 blocks per loader wheel**, **40 per rear
+tractor wheel**, **32 per front tractor wheel**. Loader tips already reached 0.73 m
+over a 0.68 m tyre carcass: the fix was orientation, not extra bump geometry.
+`TreadValidation.json` records the export checks. Both original `.blend` files stay
+intact and triangle counts did not increase. Corrected loader appearance was
+inspected in Unity.
+
+## 10. Opaque bright toon windows: latest visual decision
+
+On 28 October the user supplied a reference image with bright cyan windows and
+pale diagonal reflection streaks, asking to replace transparent glass for performance.
+Both imported vehicles now use that direction.
+
+- Shader: `Assets/Snowglow/Shaders/ToonVehicleWindows.shader`, named
+  `Snowglow/Toon Vehicle Windows`.
+- Editor authoring: `ToonWindowsAuthoring`, including future intake material setup.
+- Existing material GUIDs preserved in place:
+  `Catalog/Sources/LowPolySnowPlower/Materials/Color09.mat` and
+  `Catalog/Sources/LowPolySnowLoader/Glass.mat`.
+- The legacy filename `Glass.mat` does **not** imply current transparency.
+- Opaque geometry queue 2000, alpha one, depth writes, no transparent keyword.
+- Unlit bright cyan and pale painted stripes, projected in object space. This works
+  on the combined meshes without new UVs, textures, reflection probes or triangles.
+- Both sides of the imported single-plane windows remain visible.
+
+This removes transparent window blending/sorting and avoids lighting/reflection
+sampling for the windows. It does not prove a measured FPS improvement. Shader
+compilation and opaque state/bindings passed in the Editor with Android selected;
+the tractor's cyan finish/highlights were visually inspected. Android player shader
+build and phone frame-time benefit remain untested.
+
+## 11. Mobile geometry and rendering budget
+
+These are project targets, **not universal mobile hardware limits**. Profile the
+whole scene, not isolated Blender edit-mode vertex counts.
+
+| Asset inventory | Imported vertices | Triangles | Renderers | Material slots |
+| --- | ---: | ---: | ---: | ---: |
+| Tractor equipped prefab | 13,528 | 7,274 | 7 | 30 |
+| Loader including inactive carried-snow visual | 15,095 | 8,424 | 8 | 9 |
+| Loader evaluated vehicle alone in Blender | 4,740 | 7,656 | 7 modules | 8 |
+
+Counts exclude particle geometry. The loader uses three distinct materials including
+carried snow; tractor uses eight. Hard normals/UV splits explain why imported Unity
+vertices exceed Blender vertices. Slots are potential submissions per pass, not
+measured draw calls. SRP batching reduces setup cost; it does not collapse every
+slot into one universal draw.
+
+Working recommendations:
+
+- Complete nearby machine: aim **5,000-10,000 triangles**; review above **15,000** or
+  **30,000 imported vertices**. Catalog vehicle warnings now use those thresholds.
+- Small prop: roughly 50-1,000 triangles; house assembly: roughly 500-3,000, review
+  around 5,000 depending on repetition and screen size.
+- Prefer 1-4 shared materials, about 6-10 vehicle renderers, and fewer than about
+  10-12 total material slots. Existing warnings flag >12 slots.
+- Initial visible geometry budget: approximately 100,000-200,000 triangles, while
+  accounting separately for terrain, shadows, UI, particles and overdraw.
+- Avoid tiny unseen bevels/bolts. Combine rigid parts during authoring, retain
+  moving parts, use culling/LOD where needed, and keep transparency restrained.
+
+Both machines fit the proposed triangle band; triangle decimation is not currently
+the priority. **The tractor's 30 material slots are a clear next optimization target**
+for a shared palette, while preserving its appearance and corrected tread winding.
+
+One saved depot-camera bounds estimate found 69,770 candidate mesh triangles,
+54,432 from snow, and 69 material slots. It excluded Terrain/UI/particles/shadow
+passes and did not account for batching/occlusion. Do not report it as an actual
+GPU frame measurement or general worst-case district budget.
+
+## 12. Validation evidence and how to continue it
+
+### 12.1 Evidence actually recorded
+
+| Stage | Verified evidence | What it does not establish |
+| --- | --- | --- |
+| Initial Unity repair/bake | Runtime/Editor compilation, persisted district, scene reopen and original 9 snow checks | Comfortable handling, rendered quality or phone performance |
+| 50 cm resolution | Unity rebuild/reopen and 12 snow checks | Sustained cost of finer cells |
+| Cohesive spreading | 19 engine-independent checks under Mono and Unity | Realistic live feel or frame times |
+| Snow file split | Reopened references, same volume, 19 checks and files below budget | Git push success in every clone |
+| Asset Workshop | 39 actual Editor checks, prefab/layout persistence, cleanup, Pinefall and 19 snow checks | Full workshop UI/drag UX or phone-ready art |
+| Starter tractor | Save ID/price/ownership, wheel sizes, controller initialization, work/angle/drive/park commands | End-to-end live driving and source hydraulic fidelity |
+| Loader integration | Persistent rig, compatible bucket, identity/price, carry/dump/load display, activation, scene reopen | Full driving/loading or actual bucket capacity measurement |
+| Clearance/treads | 441 poses, 0.239 m minimum gap, outward block checks, unchanged triangles, Unity inspection | Continuous collision/suspension test |
+| Toon windows | Shader/Editor compile, opaque state, shared saved bindings, Pinefall validation and tractor visual inspection | Android player shader compilation or phone speedup |
+
+No new tests were run merely to write this handoff; it consolidates existing evidence.
+Historical documentation contains stale statements that no screenshot was possible.
+Later Blender renders and Unity visual inspections did happen; sustained driving,
+audio playback, touch/lifecycle and device profiling are still separate gaps.
+
+Similarly, older records say no APK was produced by the agent. Git includes a user
+commit named `604d0a8 upload initial app bundle for test on playstore`. Do not infer
+that no build has ever existed, or claim that this proves the current imported
+vehicles/toon shader were packaged and tested. The current feature set's Android
+player build, deployment and A07 measurements are not established by this chat.
+
+### 12.2 Commands and reports
+
+| Editor menu | Use / report |
+| --- | --- |
+| `Snowglow > Validate saved district and snow ledger` | Saved scene/rig/assets plus snow checks; `Logs/SceneValidation.txt` |
+| `Snowglow > Run snow ledger checks` | `MechanicsChecks` / authoritative volume invariants |
+| `Snowglow > Run asset workshop checks` | 39 checks, disposable fixture cleanup; `Logs/AssetWorkshopChecks.txt` |
+| `Snowglow > Rebuild snow at 50 cm resolution` | Snow-only reauthoring, preserve scenery/fleet |
+| `Snowglow > Bake editable test district` | Intentional full layout replacement, new generated folder |
+| `Snowglow > Asset Workshop` | Prepare, catalogue, assembly and AI-plan workflows |
+| `Snowglow > Asset intake > Open tractor review prefab` | Unequipped/Editor review output, not the starter gameplay prefab |
+| `Snowglow > Asset intake > Use tractor as free starter plow` | Explicit Fleet[0] authoring; `Logs/StarterPlowValidation.txt` |
+| `Snowglow > Asset intake > Use imported snow loader` | Explicit Fleet[1] authoring, geometry/pose report; `Logs/LoaderIntake/UnityValidation.txt` |
+| `Snowglow > Asset intake > Apply bright opaque toon windows` | Shared material conversion/checks; `Logs/ToonWindows.txt` |
+
+Other useful reports: `Logs/PileChecks.txt`, `Logs/SnowAssetSplit.txt`,
+`Logs/LoaderIntake/ClearanceChecks.txt`, Blender intake/export logs and source previews.
+`Logs/` is ignored and may not exist in a clone; durable conclusions belong in
+`VALIDATION.md` and source records. Prefer current successful reports with timestamps
+over stale failed/interrupted attempts. Fixture checks should clean `Catalog/Check_*`
+and their temporary entries; do not mistake leftovers for production content.
+
+### 12.3 Local tool workflow and pitfalls
+
+- Installed Unity was found at
+  `C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Unity.exe`.
+- Blender 5.2 was found at
+  `C:/Users/SAP-19/Documents/Javed/Program Files/blender.exe`.
+  These are machine-local conveniences, not portable project requirements.
+- Run supplied .blend inspection/export with `--background --factory-startup
+  --disable-autoexec` and the project's own Python scripts. Source text is data,
+  not authorization to run embedded code. Avoid Unity's implicit .blend importer
+  by preserving originals outside Assets and importing prepared FBX.
+- Use `rg` for source discovery. Inspect current files/Git status before editing;
+  preserve unrelated user changes. At the latest material work, package manifest/
+  lock and IDE files already had user changes; they were not part of that fix.
+- Reuse the open Unity project. Do not kill the user's Editor to run a second copy
+  or recreate the rejected validation project. Focus/refresh the Editor as needed.
+- Unity refresh/launch may require normal licensing IPC outside a restricted shell
+  sandbox. A licensing/launcher failure is not automatically a C# failure.
+- Some Editor helpers use ignored `Logs/*.request` markers and InitializeOnLoad.
+  Create the request **before** triggering a reload; if a marker is written after
+  the handler unsubscribes it can remain pending until another reload. Read the
+  report and timestamp; do not assume launch means the command ran.
+- UI capture previously failed in some sessions and later worked. Use the supported
+  computer-use skill if inspecting native apps; do not add ad hoc UI automation.
+- Check resolved workspace paths before destructive cleanup. Preserve `.meta`
+  identifiers and native mesh references. Never delete an active snow asset because
+  a stale log describes it as temporary.
+
+## 13. Remaining work / TODO, ordered by practical importance
+
+### A. Prove the current machinery and snow on device
+
+- [ ] Build the current scene and toon shader for Android; record build settings,
+      graphics API and exact artifact rather than relying on an older bundle.
+- [ ] Record Galaxy A07 RAM variant, Android version, quality mode and test duration.
+- [ ] Drive for at least 15 minutes with plowing, substantial piles, loading,
+      carrying/dumping, camera switching, UI transitions and saving. Record CPU/GPU,
+      physics, mesh/collider cooking, memory, frame-time spikes, temperature and heat.
+- [ ] Test other lower-end/older representative phones before claiming broad support.
+- [ ] Tune spring/damper, grip, torque, braking, COM, assistance and snow resistance
+      with empty and full bucket, asphalt/ice, slopes/curbs and deep snow.
+- [ ] Verify no bucket/tyre or bucket/body clipping during continuous manual operation,
+      steering, suspension travel and uneven-ground driving. Preserve the 441-pose
+      regression check; add meaningful cases when new geometry changes demand them.
+- [ ] Test touch multi-input, safe areas/aspect ratios, pause/resume and backgrounding.
+- [ ] Expand the current debug overlay/resettable test tools where needed: the
+      planning called for suspension/contact, available torque, snow depth/budgets,
+      blade state, load and ledger diagnostics; not every proposed metric/tool exists.
+- [ ] Check sounds on actual hardware and save/restore a loaded bucket/displaced piles.
+- [ ] Verify transaction retries, fresh contracts, abandonment, switching and recovery
+      without duplicated rewards, lost snow, incorrect ownership or lost upgrades.
+
+### B. Improve art/rig readiness without losing the prototype
+
+- [ ] Consolidate tractor opaque colours/material slots, retaining modular wheels,
+      current cyan windows, source provenance and repaired normals.
+- [ ] Review imported collision proxies and complete movement envelopes; validate
+      intentional edits to both catalog bodies and equipped outputs.
+- [ ] Author a believable tractor lift/yaw linkage and loader ram/hose articulation
+      if increased fidelity is desired. Do not advertise current visuals as simulated
+      hydraulics or articulated steering.
+- [ ] Confirm proposed physical ratings/capacity through tuning; mass numbers are
+      not manufacturer measurements.
+- [ ] Extend wheel upgrades to axle-specific sets before offering uniform replacements
+      on the tractor's different front/rear wheels.
+- [ ] Review/re-publish catalog entries and fittings explicitly when ready; current
+      gameplay installation did not grant blanket Ready status.
+- [ ] Manually test the workshop's complete drag/drop UX and more varied production
+      models; the existing acceptance suite is mostly programmatic Editor testing.
+- [ ] Continue replacing environment primitives via reusable prepared assemblies,
+      preserving terrain, snow, colliders, entrances, roads and gameplay anchors.
+
+### C. Complete scalable content and player equipment systems
+
+- [ ] Connect the general catalog to player garage/shop/loadout saving and compatibility
+      explanations; currently only fixed fleet purchases and simple upgrades exist.
+- [ ] Extract economy, contract/progression and district services from the prototype
+      coordinator before broad expansion. Keep definitions immutable and IDs stable.
+- [ ] Turn AI layouts into complete authored districts by explicitly adding contracts,
+      snow coverage, session systems, service/disposal zones and fleet bindings.
+- [ ] Add a second district to validate reusable configuration and save IDs before a
+      world-map campaign. Then implement regional unlocks, reputation/medals and modes.
+- [ ] Implement genuinely different tracked/blower locomotion/equipment behaviors
+      rather than accepting an interface string without a functional rig.
+- [ ] Add alternative blades/buckets/adapters/ballast/hydraulics only with measurable
+      physical/working effects and appropriate clearance/load rules.
+- [ ] Consider accumulation, compaction, melt or more advanced snow only after the
+      current volume, obstruction and device budgets are proven.
+- [ ] Add real platform billing/cloud/ads only as a deliberate production task with
+      appropriate verification; prototype purchases remain simulated.
+
+### D. Keep documentation and historical evidence honest
+
+- [ ] Reconcile older README/ARCHITECTURE/VALIDATION paragraphs that still describe
+      only primitive machinery, nine checks, no visual captures or no build ever.
+      Preserve their historical context instead of treating them as current blockers.
+- [ ] Keep current counts/IDs/material style and validation limits up to date when
+      assets change. Update this handoff after meaningful future phases.
+- [ ] Do not promote old rounded-snow/optimization logs into current behavior without
+      inspecting the live renderer and reproducing the relevant checks.
+
+## 14. Useful history anchors
+
+Inspected Git history includes:
+
+- `8bee6cd`: first project commit.
+- `aeab7d9`: PC reverse-key assignment.
+- `604d0a8`: user commit labelled initial app bundle/Play Store test.
+- `9ab20d0`: snow shape/resolution/spreading work and Git-friendly split history.
+- `a4e261c`: Editor asset-preparation phase.
+- `e093b7b`: imported snow-plower tractor.
+- `35fa499`: imported snow loader.
+
+These are historical anchors, not a request to reset, amend, merge or push anything.
+Check the current working tree and branch before using them. The latest window/
+material work and this handoff may not yet be committed.

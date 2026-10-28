@@ -13,7 +13,8 @@ part names; the original Blender hierarchy remains editable. `ExportMetrics.json
 records evaluated Blender counts before Unity's normal/UV vertex splits.
 
 The opaque source colors use one shared point-sampled 16x1 palette texture and
-URP Simple Lit material. Glass has a separate transparent material. Each module
+URP Simple Lit material. Windows use a separate opaque unlit cyan toon material
+with pale diagonal reflection streaks (updated 28 October 2026). Each module
 has exactly one UV layer, preserving palette coordinates through FBX joining.
 The source's toon shading is approximated; no textures or colors were discarded.
 

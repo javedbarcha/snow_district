@@ -10,7 +10,7 @@ phones and the A07 with snow simulation, UI, shadows and saving enabled.
 | Complete nearby vehicle, including wheels and equipment | 5,000–10,000 triangles | Above 15,000 triangles or 30,000 imported vertices |
 | Small scenery prop | 50–1,000 triangles | Repeated instances or tiny screen footprint justify less detail |
 | House/building assembly | 500–3,000 triangles | Above 5,000; consider repeated windows/trim and LOD |
-| Vehicle materials | 1–4 shared materials, preferably one opaque palette plus glass | Above 12 material slots; count slots across every renderer |
+| Vehicle materials | 1–4 shared materials, preferably one opaque palette plus opaque toon windows | Above 12 material slots; count slots across every renderer |
 | Vehicle renderers | About 6–10 for separate moving modules | Many tiny renderers; combine rigid parts in the Editor |
 | Visible scene geometry | Initially aim around 100,000–200,000 triangles | Includes snow/terrain; count extra shadow passes separately |
 
@@ -36,7 +36,8 @@ can cost more. It is not a rendered-frame or FPS measurement.
 Future catalog vehicle checks now warn above 15,000 triangles / 30,000 imported
 vertices. Existing material-slot warnings remain active. Recheck whole equipped
 vehicles: reviewing body, wheels and equipment separately can hide their total.
-Use LOD/culling for distant/repeated assets, keep transparent glass modest, and
+Both vehicles now use opaque toon windows to avoid transparent window blending
+and sorting. Use LOD/culling for distant/repeated assets, limit transparency, and
 avoid adding tiny unseen bevels/bolts. Preserve each original source before any
 optimization; author prepared meshes and proxies in the Editor.
 

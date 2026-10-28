@@ -60,7 +60,8 @@ separate for future axle-specific upgrade support.
 Source-render preview was visually inspected. Unity import confirmed metre scale,
 Y-up/Z-forward axes and all four pivots. Unity structural checks passed for saved/reopened
 prefabs, persistent mesh references, fittings and rejection of unapproved gameplay baking.
-URP Simple Lit palette is copied from source colors, with transparent double-sided glass;
+URP Simple Lit palette is copied from source colors. Windows now use opaque,
+double-sided cyan toon shading with pale diagonal reflections (28 October 2026);
 the original Blender toon shading is approximated. 7,274 total triangles, 7 renderers
 and 30 material slots require device profiling; the renderer reduction is not evidence
 of acceptable phone performance. Driving, lift/angle clipping, snow interaction, Android

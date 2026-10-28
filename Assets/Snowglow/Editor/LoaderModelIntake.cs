@@ -25,7 +25,7 @@ namespace Snowglow.Editor {
   static Material Palette(bool glass){
    string path=Source+(glass?"Glass.mat":"OpaquePalette.mat");var mat=AssetDatabase.LoadAssetAtPath<Material>(path);if(mat)return mat;
    mat=new Material(Shader.Find("Universal Render Pipeline/Simple Lit")){name=glass?"Loader glass":"Loader opaque palette",enableInstancing=true};mat.SetFloat("_Smoothness",.12f);
-   if(glass){var c=new Color(.53f,.72f,.8f).gamma;c.a=.22f;mat.SetColor("_BaseColor",c);mat.SetFloat("_Surface",1);mat.SetFloat("_SrcBlend",5);mat.SetFloat("_DstBlend",10);mat.SetFloat("_ZWrite",0);mat.SetFloat("_Cull",0);mat.SetOverrideTag("RenderType","Transparent");mat.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");mat.SetShaderPassEnabled("ShadowCaster",false);mat.renderQueue=3000;}
+   if(glass)ToonWindowsAuthoring.Configure(mat);
    else{mat.SetColor("_BaseColor",Color.white);mat.SetTexture("_BaseMap",AssetDatabase.LoadAssetAtPath<Texture2D>(Source+"Palette.png"));}
    AssetDatabase.CreateAsset(mat,path);return mat;
   }
