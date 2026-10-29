@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca395da9c16194d8575fece1ac0cf8, type: 3}
+  m_Name: Green Porch
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.CatalogAsset
+  id: winter-home-02
+  displayName: Green Porch
+  kind: 4
+  status: 1
+  prefab: {fileID: 7608318919736851386, guid: cf78080332322ee4caaffc22a2120f01, type: 3}
+  tags:
+  - winter-home
+  - greenporch
+  - removable-snow
+  - warm-windows
+  - opaque-palette
+  sourceType: 0
+  sourceGuid: 7a6e20d3766f7e64bb8bafc2604992d2
+  sourcePath: Assets/Snowglow/Catalog/Sources/SevenWinterHomes/GreenPorch.fbx
+  creationSourcePath: SourceAssets/SevenWinterHomes/Seven_Winter_Homes.blend
+  reviewedPrefabHash: 
+  provenance: User supplied Seven_Winter_Homes.blend, collection 02 Green Porch;
+    SHA256 2AD3BEC380E5EE05A400561C0E9CA5445607C4D389EBFBF46EF4E4DECB9F8CDE. Embedded
+    source text was not executed.
+  assumptions: Metres, Y-up, entrance +Z. Combined rigid architecture and opaque
+    unlit warm windows; roof and ground snow remain separately removable under SnowCover.
+    Square display tile, text, cameras and lights excluded. Ground drifts clipped
+    to the architectural ground plane on prepared copies. Compound wall/deck/step
+    boxes are collision proposals, not enterable interiors. Decorative snow does
+    not enter the plowing volume ledger.
+  reviewNotes: Authorized prototype placement. Needs visual/clearance and Galaxy
+    A07 review before Ready publication.
+  visualReviewed: 0
+  localBounds:
+    m_Center: {x: 0, y: 2.696, z: 0}
+    m_Extent: {x: 3.8125224, y: 2.696, z: 3.435}
+  triangles: 1944
+  renderers: 4
+  materialSlots: 4
+  price: 0
+  vehicle: {fileID: 0}
+  attachment: {fileID: 0}
+  interfaceId: 
+  addedMass: 0
+  torqueMultiplier: 1
+  gripMultiplier: 1
+  wheelRadius: 0.5
+  wheelWidth: 0.3
+  wheelMass: 45
+  mirrorRightWheels: 1
+  minimumScale: 0.75
+  maximumScale: 1.5
+  blocksSnow: 1

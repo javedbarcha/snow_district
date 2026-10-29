@@ -1,6 +1,6 @@
 # Snowglow: project instructions, design history and development handoff
 
-Last consolidated: **28 October 2026**, Asia/Karachi.
+Last consolidated: **29 October 2026**, Asia/Karachi.
 
 This document records the conversation from the original pasted ChatGPT planning
 through the Unity prototype, snow revisions, Asset Workshop, imported machinery,
@@ -42,8 +42,9 @@ The most important continuing requirements are:
 - Current window style is **opaque bright cyan toon glazing with pale diagonal
   highlights**, following the user's image. Do not restore transparent glass.
 - Current snow art direction is **pure-white tops with pale cyan side shading**, following the user's snowy mountain reference. This supersedes the initial off-white palette.
-  See `SNOW_MATERIAL.md`. The user listed a finished scenery replacement as task 2
-  but explicitly limited this work to task 1 (snow material); task 2 is deferred.
+  See `SNOW_MATERIAL.md`. All seven collections from `Seven_Winter_Homes.blend`
+  are now prepared and saved across all 16 Pinefall house lots through Editor
+  authoring. Preserve separable decorative snow and opaque warm windows.
 
 Initial planning messages explicitly asked not to build yet. The user later
 authorized implementation, the asset-management phase and the individual model
@@ -63,6 +64,7 @@ to seek permission again for already authorized work.
 | Main scene | `Assets/Scenes/Pinefall.unity`, saved and included in build scenes |
 | World | 1,000 x 1,000 m Terrain; compact test district near its centre |
 | Interactive snow | 256 x 256 m field, 512 x 512 cells at 0.5 m |
+| Housing | All 16 lots use a shuffled mix of seven imported variants at 1.5x former lot-fitted scale; other scenery remains mostly primitive |
 | Fleet[0] | Imported Golden tractor, free and always owned initially |
 | Fleet[1] | Imported Golden snow loader, 1,400 coins, initially unowned |
 | Fresh wallet | 1,800 prototype coins |
@@ -708,6 +710,80 @@ and their temporary entries; do not mistake leftovers for production content.
   a stale log describes it as temporary.
 
 ## 13. Remaining work / TODO, ordered by practical importance
+
+29 October all-house replacement: user requested replacing every prototype house
+with randomly distributed imported variants, each used at least once, and making
+houses 1.5x bigger. All 16 lots are now converted. A balanced bag shuffled with
+Editor seed 291026 gives Red Cottage/Green Porch three placements each and the
+other five variants two each. The layout is saved, not randomized during Play.
+Scale is 1.5x the former per-lot fit calculation. Foundation X/Z expand 1.5x while
+height/ground level and fences remain unchanged. Existing seven placement IDs are
+preserved; the other nine receive unique IDs. The 1.5x layout marker makes repeat
+intake preserve the saved layout without multiplying scale again. Future full
+bakes use the same all-lot authoring path. Catalog placement maximum scale is 1.5.
+Unity 6000.3.8f1 / Android compiled, saved/reopened all 16 homes, passed no-house/
+road or house/house footprint-overlap preflight, saved-scene structural validation
+and all 19 ledger checks. Independent saved-YAML checks confirm 16 unique IDs,
+zero primitive cottage groups and exactly 1.5x horizontal foundation scaling.
+Scene-view district overview was inspected. Snow/terrain/fleet assets and player
+saves were not rebuilt or modified. Live vehicle/house clearance, enlarged-house
+snow interaction, Android appearance and sustained Galaxy A07 timings remain
+untested. Report: Logs/WinterHomes/UnityIntake.txt. Pre-change scene backup:
+Logs/WinterHomes/Pinefall-before-all-homes.unity. Earlier seven-lot notes below
+record the first intake and are superseded by this layout.
+
+
+28-29 October scenery intake: the user supplied `Seven_Winter_Homes.blend` with
+seven named collections and authorized importing the entire set. The original and
+preserved copy under `SourceAssets/SevenWinterHomes` match SHA256
+`2AD3BEC380E5EE05A400561C0E9CA5445607C4D389EBFBF46EF4E4DECB9F8CDE`.
+Embedded text was never executed. All seven source views were inspected. Exports
+combine architecture, opaque warm windows, roof snow and ground drifts into four
+mesh groups, sharing three materials across the set. Display tiles, text, cameras
+and lights are excluded; prepared drift bases are clipped/capped at ground level.
+Snow is removable under SnowCover and remains outside the authoritative plow ledger.
+
+After the usage-limit interruption, the existing Editor was refreshed and the
+native import failure was diagnosed: six exports have eight zero-area architecture
+triangles each. Blender round-trip inspection confirmed them; export metadata now
+records them and the Unity assertion checks the remaining triangle count exactly.
+No arbitrary tolerance or original-model edits were needed. Prepared prefabs have
+1,002-2,848 triangles / 2,078-5,820 imported vertices each. See the per-house table in
+`MOBILE_ASSET_BUDGET.md`; geometry is within project targets, not phone profiling.
+
+Unity 6000.3.8f1 / Android compiled, prepared seven catalog entries/prefabs with
+stable IDs winter-home-01 through winter-home-07, fitted one of each to existing
+foundations nearest the depot, saved and reopened Pinefall, and passed structural
+validation and all 19 snow-ledger checks. Foundations/fences, seed and fleet were
+preserved; no district/snow rebake or player-save modification occurred. Compound
+wall/step/deck proxies and entrance anchors are proposals for review. The intake
+is repeat-safe; future full bakes reuse the prepared entries. Native Unity previews
+were rendered; their key light was corrected for facade review and the installed
+cottage was inspected in Scene view. Catalog status remains Needs Review.
+`Logs/WinterHomes/UnityIntake.txt` records native results. Live driving clearance,
+full lot/collider walkthrough, Android packaging/appearance and Galaxy A07 frame
+timings remain untested. See `SourceAssets/SevenWinterHomes/README.md` and export
+part/metrics JSON files. The pre-intake scene backup is under ignored
+`Logs/WinterHomes/Pinefall-before.unity`.
+
+
+### Wall winding correction - 29 October 2026
+
+The right wing of Red Cottage, living wing of Garage Home and cross wing of White
+Colonial had inward-facing closed wall shells (seven polygons each). Prepared
+exports now recalculate consistent outward face winding per closed source solid
+before joining; intentionally open facade panels retain their authored direction.
+All 958 closed solids passed outward-volume checks, and a Blender FBX round trip
+found zero inward closed shells across all seven exports. NormalValidation.json
+records the three repairs. Tools/AssetIntake/check_winter_home_normals.py repeats
+the exported-shell check with Blender --background --factory-startup --disable-autoexec.
+
+Unity reimported the FBXs, saved/reopened Pinefall, passed structural validation
+and all 19 snow-ledger checks, and regenerated the seven prefab previews. The three
+corrected facades were visually inspected. Triangle/vertex counts, mesh/material
+GUIDs, original .blend, existing placements, removable snow and opaque windows
+are preserved. No district or snow rebuild was performed. Android/device rendering
+and continuous vehicle clearance remain untested.
 
 28 October control follow-up: user reported dead keyboard keys and a full loader
 bucket staying down. `PrototypeInput` now disables UI navigation/submit while

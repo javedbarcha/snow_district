@@ -10,6 +10,8 @@ Snow now uses pure-white tops with pale cyan toon shading, following the supplie
 
 Open **Snowglow > Asset Workshop** for model intake, draft/review/Ready catalog entries, drag-and-drop vehicle fittings, equipped prefab baking and validated AI scene plans. The supplied prototype building blocks are separate catalog copies and require review before publication. See [ASSET_WORKSHOP.md](ASSET_WORKSHOP.md) for the complete workflow and current boundaries. Pinefall's gameplay and player inventory are not replaced by catalog authoring.
 
+All [seven winter homes](SourceAssets/SevenWinterHomes/README.md) are saved as reusable catalog prefabs and placed across all 16 Pinefall house lots in a shuffled mix, using every variant at least twice. Homes are 1.5x the previous lot-fitted size; foundation footprints expand horizontally to match. Roof/ground snow stays separately removable in the Editor and warm windows are opaque. **Snowglow > Asset intake > Import seven winter homes** installs the set without a district rebake and preserves existing placements when repeated. Unity compilation, scene save/reopen, structural checks and 19 snow-ledger checks passed; Android performance and continuous vehicle clearance remain untested. Entries remain Needs Review.
+
 ## Important: how the concrete scene is authored
 
 The district has now been baked with **Unity 6000.3.8f1**. `Assets/Scenes/Pinefall.unity` contains the concrete terrain, colored primitive scenery, machinery prefab instances and snow chunks. Keep `Assets/Snowglow/Generated/` with the project. The editor tool creates this content **in Edit mode, before Play**. Nothing calls the district or vehicle factories at runtime.
@@ -34,7 +36,7 @@ The saved scene is populated and included in Build Settings. Use **Snowglow > Va
 - A **1000 × 1000 m Unity Terrain**, with a flat central worksite and rising surrounding terrain.
 - A compact working district within approximately 250 × 250 m. The whole kilometre is landscape, not densely populated city content.
 - Grey cube roads, parking area, service depot, fuel tank, retaining walls, curbs, slope and ice test lanes.
-- Primitive cottages: brown/teal walls, sloped cube roofs, windows, doors, steps, chimneys and fences.
+- All 16 house lots use a shuffled mix of seven imported winter-home variants at 1.5x the former fitted size, with removable decorative snow, opaque warm windows, expanded foundation footprints and preserved fences.
 - Trees using brown cylinder trunks, green sphere foliage and white snow crowns.
 - Grey sphere-based mountains with white caps, plus a roadside boulder.
 - Cylinder-and-cube light poles, signs, and parked primitive cars.

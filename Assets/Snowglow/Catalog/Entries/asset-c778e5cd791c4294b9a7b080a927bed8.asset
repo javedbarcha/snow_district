@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca395da9c16194d8575fece1ac0cf8, type: 3}
+  m_Name: Storybook Cottage
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.CatalogAsset
+  id: winter-home-05
+  displayName: Storybook Cottage
+  kind: 4
+  status: 1
+  prefab: {fileID: 3860289854180138459, guid: 8df68f33e6111d841b5d3439143c9414, type: 3}
+  tags:
+  - winter-home
+  - storybookcottage
+  - removable-snow
+  - warm-windows
+  - opaque-palette
+  sourceType: 0
+  sourceGuid: d62bea837e737f0449b7b774649f8f90
+  sourcePath: Assets/Snowglow/Catalog/Sources/SevenWinterHomes/StorybookCottage.fbx
+  creationSourcePath: SourceAssets/SevenWinterHomes/Seven_Winter_Homes.blend
+  reviewedPrefabHash: 
+  provenance: User supplied Seven_Winter_Homes.blend, collection 05 Storybook Cottage;
+    SHA256 2AD3BEC380E5EE05A400561C0E9CA5445607C4D389EBFBF46EF4E4DECB9F8CDE. Embedded
+    source text was not executed.
+  assumptions: Metres, Y-up, entrance +Z. Combined rigid architecture and opaque
+    unlit warm windows; roof and ground snow remain separately removable under SnowCover.
+    Square display tile, text, cameras and lights excluded. Ground drifts clipped
+    to the architectural ground plane on prepared copies. Compound wall/deck/step
+    boxes are collision proposals, not enterable interiors. Decorative snow does
+    not enter the plowing volume ledger.
+  reviewNotes: Authorized prototype placement. Needs visual/clearance and Galaxy
+    A07 review before Ready publication.
+  visualReviewed: 0
+  localBounds:
+    m_Center: {x: 0, y: 2.7574997, z: 0}
+    m_Extent: {x: 4.1800585, y: 2.7574997, z: 3.5237458}
+  triangles: 1748
+  renderers: 4
+  materialSlots: 4
+  price: 0
+  vehicle: {fileID: 0}
+  attachment: {fileID: 0}
+  interfaceId: 
+  addedMass: 0
+  torqueMultiplier: 1
+  gripMultiplier: 1
+  wheelRadius: 0.5
+  wheelWidth: 0.3
+  wheelMass: 45
+  mirrorRightWheels: 1
+  minimumScale: 0.75
+  maximumScale: 1.5
+  blocksSnow: 1

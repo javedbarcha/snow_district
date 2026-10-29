@@ -1,5 +1,39 @@
 # Verification record
 
+## All houses replaced and enlarged - 29 October 2026
+
+- Replaced every prototype cottage: all 16 saved lots now use imported homes. Editor-only balanced shuffling (seed 291026) places Red Cottage and Green Porch three times each; Garage Home, White Colonial, Storybook Cottage, Twin A Frame and Brick Barn twice each. Every variant is used; no runtime randomization/construction was added.
+- Houses are uniformly enlarged 1.5x relative to the previous per-lot fitting calculation. Foundation X/Z footprints increase exactly 1.5x; height/ground level and fences remain unchanged. Catalog maximum placement scale is 1.5. Existing home IDs are preserved, new IDs are unique, and repeat intake preserves the saved layout without cumulative scaling. Future full bakes use this all-lot path.
+- Unity 6000.3.8f1 / Android compiled, saved/reopened Pinefall, confirmed all 16 placements and seven variants, passed house/road and house/house footprint overlap preflight, scene structural validation and all 19 snow-ledger checks. Independent saved-YAML checks verified 16 unique home IDs, no primitive cottage groups, and all 16 foundations' exact horizontal size change with unchanged height. District overview inspected in Scene view. Report: `Logs/WinterHomes/UnityIntake.txt`.
+- No snow seed/geometry, terrain, vehicle prefab or player save was regenerated. Pre-change scene backup: `Logs/WinterHomes/Pinefall-before-all-homes.unity`. Live vehicle clearance, snow interaction around larger foundations, current Android build/appearance and sustained Galaxy A07 profiling remain untested.
+
+
+## Wall winding correction - 29 October 2026
+
+The right wing of Red Cottage, living wing of Garage Home and cross wing of White
+Colonial had inward-facing closed wall shells (seven polygons each). Prepared
+exports now recalculate consistent outward face winding per closed source solid
+before joining; intentionally open facade panels retain their authored direction.
+All 958 closed solids passed outward-volume checks, and a Blender FBX round trip
+found zero inward closed shells across all seven exports. NormalValidation.json
+records the three repairs. Tools/AssetIntake/check_winter_home_normals.py repeats
+the exported-shell check with Blender --background --factory-startup --disable-autoexec.
+
+Unity reimported the FBXs, saved/reopened Pinefall, passed structural validation
+and all 19 snow-ledger checks, and regenerated the seven prefab previews. The three
+corrected facades were visually inspected. Triangle/vertex counts, mesh/material
+GUIDs, original .blend, existing placements, removable snow and opaque windows
+are preserved. No district or snow rebuild was performed. Android/device rendering
+and continuous vehicle clearance remain untested.
+
+## Seven winter homes intake - completed 29 October 2026
+
+- Preserved the supplied Blender file byte-for-byte (SHA256 `2AD3BEC380E5EE05A400561C0E9CA5445607C4D389EBFBF46EF4E4DECB9F8CDE`). Inspected all seven collections and rendered their source views with embedded-script autoexecution disabled. Complete part maps account for every house-collection object without duplicates; display tiles, fonts, cameras and lights are excluded.
+- Prepared seven catalog entries/prefabs, IDs `winter-home-01` through `winter-home-07`. Four merged renderers per house retain architecture, opaque warm windows, detachable roof snow and ground drifts. Ground drift bases are clipped/capped on prepared copies; source geometry stays intact. Compound wall/deck/step colliders and entrance anchors are saved for review.
+- Fixed the initial triangle-count assertion: six FBX architecture meshes contain eight zero-area triangles each, verified by Blender round-trip inspection. Export metrics now record these explicitly; native Unity counts must equal export triangles minus zero-area triangles. Actual prepared geometry is 1,002-2,848 triangles / 2,078-5,820 imported vertices per home. See `MOBILE_ASSET_BUDGET.md` for individual counts.
+- Unity 6000.3.8f1 with Android selected compiled the Editor intake, prepared/validated all seven prefabs, replaced seven cottage buildings near the depot, saved and reopened Pinefall, and passed scene structural validation plus all 19 snow-ledger checks. Foundations/fences, fleet bindings and snow seed dependency hash were preserved. Existing generated snow assets, terrain and vehicle prefabs were not regenerated; player saves were not loaded or written.
+- Rendered seven native Unity prefab previews and inspected the saved cottage in Scene view. Preview key-light direction was corrected to illuminate the visible facades; all seven corrected previews were inspected. Repeated intake preserved exactly seven placements and passed the same saved-scene checks. Entries remain Needs Review; live vehicle/house clearance, full placement/collider walkthrough, Android packaging, shader appearance on phone and sustained Galaxy A07 timings remain untested. Reports/previews: `Logs/WinterHomes/UnityIntake.txt`, `NN-unity.png`; scene backup: `Pinefall-before.unity` in the same ignored folder.
+
 ## Keyboard / loaded-bucket control fixes - 28 October 2026
 
 - Prevent arrow/Space gameplay input from also navigating/submitting selected HUD buttons; restore UI keyboard navigation in menus. This addresses a confirmed input-routing conflict, but the user's complete keyboard outage has not yet been reproduced and its Editor/build context is awaiting clarification.

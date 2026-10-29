@@ -20,6 +20,27 @@ mesh updates and physics can dominate at a low triangle count. Use Unity's devic
 Profiler and Frame Debugger for actual timings and submissions. The SRP Batcher
 reduces submission/setup work; it does not make every material slot a single draw.
 
+The seven saved winter-home prefabs include detachable roof/ground snow:
+
+| House | Unity triangles | Imported vertices |
+| --- | ---: | ---: |
+| Red Cottage | 1,724 | 3,566 |
+| Green Porch | 1,944 | 3,960 |
+| Garage Home | 1,828 | 3,762 |
+| White Colonial | 1,728 | 3,568 |
+| Storybook Cottage | 1,748 | 3,600 |
+| Twin A Frame | 1,002 | 2,078 |
+| Brick Barn | 2,848 | 5,820 |
+
+Each is within the project's 500-3,000 building working band. No decimation was
+needed. Four renderers/material slots per house use three shared materials across
+the set (opaque palette, unlit warm windows and snow). Six exports contain eight
+zero-area architecture triangles each, verified in Blender; Unity removes them.
+Export metadata records these separately so import checks compare visible geometry.
+Unity prepared and saved all seven and reopened their Pinefall placements on
+29 October 2026 (`Logs/WinterHomes/UnityIntake.txt`). These counts do not establish
+Android frame times, overdraw, draw submissions or sustained phone performance.
+
 The new loader is within the vehicle geometry target: 7,656 vehicle triangles,
 8,424 including its preauthored carried-snow visual. The complete prefab has
 15,095 imported vertices, eight renderers and nine material slots / three distinct
