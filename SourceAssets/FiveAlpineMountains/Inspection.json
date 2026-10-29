@@ -1,0 +1,776 @@
+{
+  "units": 1.0,
+  "collections": [
+    {
+      "name": "00 Presentation | hide for export",
+      "objects": [
+        "Ground",
+        "01 Needle Peak | label",
+        "02 Twin Summits | label",
+        "03 Sawtooth Ridge | label",
+        "04 Glacier Massif | label",
+        "05 Alpine Cirque | label",
+        "Sun | faceted winter light",
+        "Soft sky fill",
+        "Overview camera",
+        "01 Needle Peak | detail camera",
+        "02 Twin Summits | detail camera",
+        "03 Sawtooth Ridge | detail camera",
+        "04 Glacier Massif | detail camera",
+        "05 Alpine Cirque | detail camera"
+      ]
+    },
+    {
+      "name": "01 Needle Peak",
+      "objects": [
+        "01 Needle Peak | MOVE MOUNTAIN",
+        "01 Needle Peak | Rock",
+        "01 Needle Peak | Snow cap"
+      ]
+    },
+    {
+      "name": "02 Twin Summits",
+      "objects": [
+        "02 Twin Summits | MOVE MOUNTAIN",
+        "02 Twin Summits | Rock",
+        "02 Twin Summits | Snow cap"
+      ]
+    },
+    {
+      "name": "03 Sawtooth Ridge",
+      "objects": [
+        "03 Sawtooth Ridge | MOVE MOUNTAIN",
+        "03 Sawtooth Ridge | Rock",
+        "03 Sawtooth Ridge | Snow cap"
+      ]
+    },
+    {
+      "name": "04 Glacier Massif",
+      "objects": [
+        "04 Glacier Massif | MOVE MOUNTAIN",
+        "04 Glacier Massif | Rock",
+        "04 Glacier Massif | Snow cap"
+      ]
+    },
+    {
+      "name": "05 Alpine Cirque",
+      "objects": [
+        "05 Alpine Cirque | MOVE MOUNTAIN",
+        "05 Alpine Cirque | Rock",
+        "05 Alpine Cirque | Snow cap"
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "name": "01 Needle Peak | detail camera",
+      "type": "CAMERA",
+      "collections": [
+        "00 Presentation | hide for export"
+      ]
+    },
+    {
+      "name": "01 Needle Peak | label",
+      "type": "FONT",
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "vertices": 296,
+      "triangles": 280,
+      "materials": [
+        "Presentation / ink"
+      ],
+      "bounds": [
+        [
+          -26.28937530517578,
+          3.2950499057769775,
+          -0.10000000149011612
+        ],
+        [
+          -21.69467544555664,
+          3.6800498962402344,
+          -0.10000000149011612
+        ]
+      ]
+    },
+    {
+      "name": "01 Needle Peak | MOVE MOUNTAIN",
+      "type": "EMPTY",
+      "collections": [
+        "01 Needle Peak"
+      ]
+    },
+    {
+      "name": "01 Needle Peak | Rock",
+      "type": "MESH",
+      "collections": [
+        "01 Needle Peak"
+      ],
+      "vertices": 179,
+      "triangles": 354,
+      "materials": [
+        "Rock / blue slate",
+        "Rock / cool granite"
+      ],
+      "bounds": [
+        [
+          -32.07040786743164,
+          5.08314847946167,
+          -0.11999999731779099
+        ],
+        [
+          -16.17470932006836,
+          19.126220703125,
+          13.399999618530273
+        ]
+      ]
+    },
+    {
+      "name": "01 Needle Peak | Snow cap",
+      "type": "MESH",
+      "collections": [
+        "01 Needle Peak"
+      ],
+      "vertices": 170,
+      "triangles": 336,
+      "materials": [
+        "Snow / ivory",
+        "Snow / glacier blue",
+        "Snow / pale highlight",
+        "Snow / subtle facet 1",
+        "Snow / subtle facet 2"
+      ],
+      "bounds": [
+        [
+          -28.730037689208984,
+          8.780741691589355,
+          3.8058671951293945
+        ],
+        [
+          -20.771652221679688,
+          15.927587509155273,
+          13.4350004196167
+        ]
+      ]
+    },
+    {
+      "name": "02 Twin Summits | detail camera",
+      "type": "CAMERA",
+      "collections": [
+        "00 Presentation | hide for export"
+      ]
+    },
+    {
+      "name": "02 Twin Summits | label",
+      "type": "FONT",
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "vertices": 584,
+      "triangles": 560,
+      "materials": [
+        "Presentation / ink"
+      ],
+      "bounds": [
+        [
+          -2.5473251342773438,
+          2.9950499534606934,
+          -0.10000000149011612
+        ],
+        [
+          2.5462253093719482,
+          3.38004994392395,
+          -0.10000000149011612
+        ]
+      ]
+    },
+    {
+      "name": "02 Twin Summits | MOVE MOUNTAIN",
+      "type": "EMPTY",
+      "collections": [
+        "02 Twin Summits"
+      ]
+    },
+    {
+      "name": "02 Twin Summits | Rock",
+      "type": "MESH",
+      "collections": [
+        "02 Twin Summits"
+      ],
+      "vertices": 177,
+      "triangles": 350,
+      "materials": [
+        "Rock / cool granite",
+        "Rock / deep ridge"
+      ],
+      "bounds": [
+        [
+          -10.333881378173828,
+          4.666646480560303,
+          -0.11999999731779099
+        ],
+        [
+          9.928389549255371,
+          19.3695125579834,
+          10.800000190734863
+        ]
+      ]
+    },
+    {
+      "name": "02 Twin Summits | Snow cap",
+      "type": "MESH",
+      "collections": [
+        "02 Twin Summits"
+      ],
+      "vertices": 192,
+      "triangles": 376,
+      "materials": [
+        "Snow / ivory",
+        "Snow / glacier blue",
+        "Snow / pale highlight",
+        "Snow / subtle facet 1",
+        "Snow / subtle facet 2"
+      ],
+      "bounds": [
+        [
+          -5.621654033660889,
+          9.528749465942383,
+          3.8296589851379395
+        ],
+        [
+          6.028556823730469,
+          16.021686553955078,
+          10.835000038146973
+        ]
+      ]
+    },
+    {
+      "name": "03 Sawtooth Ridge | detail camera",
+      "type": "CAMERA",
+      "collections": [
+        "00 Presentation | hide for export"
+      ]
+    },
+    {
+      "name": "03 Sawtooth Ridge | label",
+      "type": "FONT",
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "vertices": 875,
+      "triangles": 857,
+      "materials": [
+        "Presentation / ink"
+      ],
+      "bounds": [
+        [
+          21.89525032043457,
+          4.495049953460693,
+          -0.10000000149011612
+        ],
+        [
+          28.10529899597168,
+          4.880050182342529,
+          -0.10000000149011612
+        ]
+      ]
+    },
+    {
+      "name": "03 Sawtooth Ridge | MOVE MOUNTAIN",
+      "type": "EMPTY",
+      "collections": [
+        "03 Sawtooth Ridge"
+      ]
+    },
+    {
+      "name": "03 Sawtooth Ridge | Rock",
+      "type": "MESH",
+      "collections": [
+        "03 Sawtooth Ridge"
+      ],
+      "vertices": 208,
+      "triangles": 412,
+      "materials": [
+        "Rock / deep ridge",
+        "Rock / silver granite"
+      ],
+      "bounds": [
+        [
+          12.937588691711426,
+          6.102564334869385,
+          -0.11999999731779099
+        ],
+        [
+          36.507049560546875,
+          17.842363357543945,
+          10.5
+        ]
+      ]
+    },
+    {
+      "name": "03 Sawtooth Ridge | Snow cap",
+      "type": "MESH",
+      "collections": [
+        "03 Sawtooth Ridge"
+      ],
+      "vertices": 308,
+      "triangles": 604,
+      "materials": [
+        "Snow / ivory",
+        "Snow / glacier blue",
+        "Snow / pale highlight",
+        "Snow / subtle facet 1",
+        "Snow / subtle facet 2"
+      ],
+      "bounds": [
+        [
+          16.054058074951172,
+          8.94093132019043,
+          2.5969290733337402
+        ],
+        [
+          33.63360595703125,
+          15.353899955749512,
+          10.53499984741211
+        ]
+      ]
+    },
+    {
+      "name": "04 Glacier Massif | detail camera",
+      "type": "CAMERA",
+      "collections": [
+        "00 Presentation | hide for export"
+      ]
+    },
+    {
+      "name": "04 Glacier Massif | label",
+      "type": "FONT",
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "vertices": 722,
+      "triangles": 702,
+      "materials": [
+        "Presentation / ink"
+      ],
+      "bounds": [
+        [
+          -16.677949905395508,
+          -21.904949188232422,
+          -0.10000000149011612
+        ],
+        [
+          -11.321499824523926,
+          -21.519948959350586,
+          -0.10000000149011612
+        ]
+      ]
+    },
+    {
+      "name": "04 Glacier Massif | MOVE MOUNTAIN",
+      "type": "EMPTY",
+      "collections": [
+        "04 Glacier Massif"
+      ]
+    },
+    {
+      "name": "04 Glacier Massif | Rock",
+      "type": "MESH",
+      "collections": [
+        "04 Glacier Massif"
+      ],
+      "vertices": 211,
+      "triangles": 418,
+      "materials": [
+        "Rock / silver granite",
+        "Rock / glacial charcoal"
+      ],
+      "bounds": [
+        [
+          -24.741146087646484,
+          -20.148021697998047,
+          -0.11999999731779099
+        ],
+        [
+          -3.147897720336914,
+          -3.9480953216552734,
+          8.122121810913086
+        ]
+      ]
+    },
+    {
+      "name": "04 Glacier Massif | Snow cap",
+      "type": "MESH",
+      "collections": [
+        "04 Glacier Massif"
+      ],
+      "vertices": 258,
+      "triangles": 512,
+      "materials": [
+        "Snow / ivory",
+        "Snow / glacier blue",
+        "Snow / pale highlight",
+        "Snow / subtle facet 1",
+        "Snow / subtle facet 2"
+      ],
+      "bounds": [
+        [
+          -19.98505210876465,
+          -16.507539749145508,
+          3.061647653579712
+        ],
+        [
+          -7.486474514007568,
+          -6.889929294586182,
+          8.157121658325195
+        ]
+      ]
+    },
+    {
+      "name": "05 Alpine Cirque | detail camera",
+      "type": "CAMERA",
+      "collections": [
+        "00 Presentation | hide for export"
+      ]
+    },
+    {
+      "name": "05 Alpine Cirque | label",
+      "type": "FONT",
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "vertices": 683,
+      "triangles": 665,
+      "materials": [
+        "Presentation / ink"
+      ],
+      "bounds": [
+        [
+          11.411700248718262,
+          -22.176450729370117,
+          -0.10000000149011612
+        ],
+        [
+          16.588850021362305,
+          -21.71994972229004,
+          -0.10000000149011612
+        ]
+      ]
+    },
+    {
+      "name": "05 Alpine Cirque | MOVE MOUNTAIN",
+      "type": "EMPTY",
+      "collections": [
+        "05 Alpine Cirque"
+      ]
+    },
+    {
+      "name": "05 Alpine Cirque | Rock",
+      "type": "MESH",
+      "collections": [
+        "05 Alpine Cirque"
+      ],
+      "vertices": 209,
+      "triangles": 414,
+      "materials": [
+        "Rock / glacial charcoal",
+        "Rock / blue slate"
+      ],
+      "bounds": [
+        [
+          3.2620458602905273,
+          -20.611549377441406,
+          -0.11999999731779099
+        ],
+        [
+          24.67072296142578,
+          -3.5458831787109375,
+          11.0
+        ]
+      ]
+    },
+    {
+      "name": "05 Alpine Cirque | Snow cap",
+      "type": "MESH",
+      "collections": [
+        "05 Alpine Cirque"
+      ],
+      "vertices": 286,
+      "triangles": 560,
+      "materials": [
+        "Snow / ivory",
+        "Snow / glacier blue",
+        "Snow / pale highlight",
+        "Snow / subtle facet 1",
+        "Snow / subtle facet 2"
+      ],
+      "bounds": [
+        [
+          6.112229824066162,
+          -15.913934707641602,
+          3.6235194206237793
+        ],
+        [
+          22.192298889160156,
+          -4.417184829711914,
+          11.03499984741211
+        ]
+      ]
+    },
+    {
+      "name": "Ground",
+      "type": "MESH",
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "vertices": 4,
+      "triangles": 2,
+      "materials": [
+        "Presentation / snowy ground"
+      ],
+      "bounds": [
+        [
+          -100.0,
+          -100.0,
+          -0.12999999523162842
+        ],
+        [
+          100.0,
+          100.0,
+          -0.12999999523162842
+        ]
+      ]
+    },
+    {
+      "name": "Overview camera",
+      "type": "CAMERA",
+      "collections": [
+        "00 Presentation | hide for export"
+      ]
+    },
+    {
+      "name": "Soft sky fill",
+      "type": "LIGHT",
+      "collections": [
+        "00 Presentation | hide for export"
+      ]
+    },
+    {
+      "name": "Sun | faceted winter light",
+      "type": "LIGHT",
+      "collections": [
+        "00 Presentation | hide for export"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Dots Stroke",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "nodes": [
+        "FRAME",
+        "OUTPUT_MATERIAL",
+        "BSDF_PRINCIPLED",
+        "OUTPUT_MATERIAL",
+        "BSDF_DIFFUSE"
+      ]
+    },
+    {
+      "name": "Presentation / ink",
+      "color": [
+        0.10999999940395355,
+        0.23000000417232513,
+        0.3100000023841858,
+        1.0
+      ],
+      "nodes": [
+        "BSDF_DIFFUSE",
+        "SHADERTORGB",
+        "VALTORGB",
+        "EMISSION",
+        "OUTPUT_MATERIAL"
+      ]
+    },
+    {
+      "name": "Presentation / snowy ground",
+      "color": [
+        0.699999988079071,
+        0.8199999928474426,
+        0.8999999761581421,
+        1.0
+      ],
+      "nodes": [
+        "BSDF_PRINCIPLED",
+        "OUTPUT_MATERIAL"
+      ]
+    },
+    {
+      "name": "Rock / blue slate",
+      "color": [
+        0.3199999928474426,
+        0.4300000071525574,
+        0.5199999809265137,
+        1.0
+      ],
+      "nodes": [
+        "BSDF_DIFFUSE",
+        "SHADERTORGB",
+        "VALTORGB",
+        "EMISSION",
+        "OUTPUT_MATERIAL"
+      ]
+    },
+    {
+      "name": "Rock / cool granite",
+      "color": [
+        0.4000000059604645,
+        0.49000000953674316,
+        0.550000011920929,
+        1.0
+      ],
+      "nodes": [
+        "BSDF_DIFFUSE",
+        "SHADERTORGB",
+        "VALTORGB",
+        "EMISSION",
+        "OUTPUT_MATERIAL"
+      ]
+    },
+    {
+      "name": "Rock / deep ridge",
+      "color": [
+        0.25,
+        0.3400000035762787,
+        0.4300000071525574,
+        1.0
+      ],
+      "nodes": [
+        "BSDF_DIFFUSE",
+        "SHADERTORGB",
+        "VALTORGB",
+        "EMISSION",
+        "OUTPUT_MATERIAL"
+      ]
+    },
+    {
+      "name": "Rock / glacial charcoal",
+      "color": [
+        0.3100000023841858,
+        0.4000000059604645,
+        0.4399999976158142,
+        1.0
+      ],
+      "nodes": [
+        "BSDF_DIFFUSE",
+        "SHADERTORGB",
+        "VALTORGB",
+        "EMISSION",
+        "OUTPUT_MATERIAL"
+      ]
+    },
+    {
+      "name": "Rock / silver granite",
+      "color": [
+        0.46000000834465027,
+        0.5299999713897705,
+        0.5600000023841858,
+        1.0
+      ],
+      "nodes": [
+        "BSDF_DIFFUSE",
+        "SHADERTORGB",
+        "VALTORGB",
+        "EMISSION",
+        "OUTPUT_MATERIAL"
+      ]
+    },
+    {
+      "name": "Snow / glacier blue",
+      "color": [
+        0.8399999737739563,
+        0.9300000071525574,
+        1.0,
+        1.0
+      ],
+      "nodes": [
+        "BSDF_DIFFUSE",
+        "SHADERTORGB",
+        "VALTORGB",
+        "EMISSION",
+        "OUTPUT_MATERIAL"
+      ]
+    },
+    {
+      "name": "Snow / ivory",
+      "color": [
+        0.9599999785423279,
+        0.9800000190734863,
+        1.0,
+        1.0
+      ],
+      "nodes": [
+        "BSDF_DIFFUSE",
+        "SHADERTORGB",
+        "VALTORGB",
+        "EMISSION",
+        "OUTPUT_MATERIAL"
+      ]
+    },
+    {
+      "name": "Snow / pale highlight",
+      "color": [
+        0.9800000190734863,
+        0.9900000095367432,
+        1.0,
+        1.0
+      ],
+      "nodes": [
+        "BSDF_DIFFUSE",
+        "SHADERTORGB",
+        "VALTORGB",
+        "EMISSION",
+        "OUTPUT_MATERIAL"
+      ]
+    },
+    {
+      "name": "Snow / subtle facet 1",
+      "color": [
+        0.9599999785423279,
+        0.9800000190734863,
+        1.0,
+        1.0
+      ],
+      "nodes": [
+        "BSDF_DIFFUSE",
+        "SHADERTORGB",
+        "VALTORGB",
+        "EMISSION",
+        "OUTPUT_MATERIAL"
+      ]
+    },
+    {
+      "name": "Snow / subtle facet 2",
+      "color": [
+        0.9599999785423279,
+        0.9800000190734863,
+        1.0,
+        1.0
+      ],
+      "nodes": [
+        "BSDF_DIFFUSE",
+        "SHADERTORGB",
+        "VALTORGB",
+        "EMISSION",
+        "OUTPUT_MATERIAL"
+      ]
+    }
+  ],
+  "embeddedTexts": [
+    "START HERE | Five Alpine Mountains"
+  ]
+}

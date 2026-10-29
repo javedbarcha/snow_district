@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca395da9c16194d8575fece1ac0cf8, type: 3}
+  m_Name: Alpine Cirque
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.CatalogAsset
+  id: alpine-mountain-05
+  displayName: Alpine Cirque
+  kind: 6
+  status: 1
+  prefab: {fileID: 5197290852376173751, guid: 9650d98ad535f6846b389cd6f18b16ab, type: 3}
+  tags:
+  - alpine-mountain
+  - background-landscape
+  - removable-snow
+  - alpinecirque
+  sourceType: 0
+  sourceGuid: 2377a955776bfae4881827a02ab18a9a
+  sourcePath: Assets/Snowglow/Catalog/Sources/FiveAlpineMountains/AlpineCirque.fbx
+  creationSourcePath: SourceAssets/FiveAlpineMountains/Five_Alpine_Mountains.blend
+  reviewedPrefabHash: 
+  provenance: User supplied Five_Alpine_Mountains.blend; collection 05 Alpine Cirque;
+    SHA256 382B0050FB4E9ACB40D17B4904C4B35950DCF2400A42D0F5863F47574CFCBF73. Embedded
+    text was not executed.
+  assumptions: Metres, Y-up, centred ground pivot. Two opaque renderers with shared
+    rock palette and existing toon snow. Separate SnowCap remains removable. Source
+    material node graphs are approximated for URP; original preserved. Box collision
+    proxy is conservative background scenery, not a climbable mountain surface. Snow
+    cap is decorative and outside the plowing ledger.
+  reviewNotes: Authorized background replacement. Review terrain seating, sightlines
+    and device rendering before Ready publication.
+  visualReviewed: 0
+  localBounds:
+    m_Center: {x: 0, y: 5.5775, z: 0}
+    m_Extent: {x: 10.704338, y: 5.5775, z: 8.532833}
+  triangles: 974
+  renderers: 2
+  materialSlots: 2
+  price: 0
+  vehicle: {fileID: 0}
+  attachment: {fileID: 0}
+  interfaceId: 
+  addedMass: 0
+  torqueMultiplier: 1
+  gripMultiplier: 1
+  wheelRadius: 0.5
+  wheelWidth: 0.3
+  wheelMass: 45
+  mirrorRightWheels: 1
+  minimumScale: 0.25
+  maximumScale: 12
+  blocksSnow: 1

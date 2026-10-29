@@ -1,0 +1,208 @@
+{
+  "mountains": [
+    {
+      "index": "01",
+      "name": "Needle Peak",
+      "model": "NeedlePeak",
+      "size": [
+        15.895698547363281,
+        13.55500041693449,
+        14.04307222366333
+      ],
+      "groups": {
+        "Rock": {
+          "vertices": 179,
+          "triangles": 354
+        },
+        "SnowCap": {
+          "vertices": 170,
+          "triangles": 336
+        }
+      },
+      "triangles": 690
+    },
+    {
+      "index": "02",
+      "name": "Twin Summits",
+      "model": "TwinSummits",
+      "size": [
+        20.2622709274292,
+        10.955000035464764,
+        14.702866077423096
+      ],
+      "groups": {
+        "Rock": {
+          "vertices": 177,
+          "triangles": 350
+        },
+        "SnowCap": {
+          "vertices": 192,
+          "triangles": 376
+        }
+      },
+      "triangles": 726
+    },
+    {
+      "index": "03",
+      "name": "Sawtooth Ridge",
+      "model": "SawtoothRidge",
+      "size": [
+        23.56946086883545,
+        10.6549998447299,
+        11.73979902267456
+      ],
+      "groups": {
+        "Rock": {
+          "vertices": 208,
+          "triangles": 412
+        },
+        "SnowCap": {
+          "vertices": 308,
+          "triangles": 604
+        }
+      },
+      "triangles": 1016
+    },
+    {
+      "index": "04",
+      "name": "Glacier Massif",
+      "model": "GlacierMassif",
+      "size": [
+        21.59324836730957,
+        8.277121655642986,
+        16.199926376342773
+      ],
+      "groups": {
+        "Rock": {
+          "vertices": 211,
+          "triangles": 418
+        },
+        "SnowCap": {
+          "vertices": 258,
+          "triangles": 512
+        }
+      },
+      "triangles": 930
+    },
+    {
+      "index": "05",
+      "name": "Alpine Cirque",
+      "model": "AlpineCirque",
+      "size": [
+        21.408677101135254,
+        11.1549998447299,
+        17.06566619873047
+      ],
+      "groups": {
+        "Rock": {
+          "vertices": 209,
+          "triangles": 414
+        },
+        "SnowCap": {
+          "vertices": 286,
+          "triangles": 560
+        }
+      },
+      "triangles": 974
+    }
+  ],
+  "normalChecks": [
+    {
+      "object": "01 Needle Peak | Rock",
+      "closed": true,
+      "flippedFaces": 0
+    },
+    {
+      "object": "01 Needle Peak | Snow cap",
+      "closed": true,
+      "flippedFaces": 0
+    },
+    {
+      "object": "02 Twin Summits | Rock",
+      "closed": true,
+      "flippedFaces": 0
+    },
+    {
+      "object": "02 Twin Summits | Snow cap",
+      "closed": true,
+      "flippedFaces": 0
+    },
+    {
+      "object": "03 Sawtooth Ridge | Rock",
+      "closed": true,
+      "flippedFaces": 0
+    },
+    {
+      "object": "03 Sawtooth Ridge | Snow cap",
+      "closed": true,
+      "flippedFaces": 0
+    },
+    {
+      "object": "04 Glacier Massif | Rock",
+      "closed": true,
+      "flippedFaces": 0
+    },
+    {
+      "object": "04 Glacier Massif | Snow cap",
+      "closed": true,
+      "flippedFaces": 0
+    },
+    {
+      "object": "05 Alpine Cirque | Rock",
+      "closed": true,
+      "flippedFaces": 0
+    },
+    {
+      "object": "05 Alpine Cirque | Snow cap",
+      "closed": true,
+      "flippedFaces": 0
+    }
+  ],
+  "rockPalette": [
+    {
+      "name": "Rock / blue slate",
+      "color": [
+        0.3199999928474426,
+        0.4300000071525574,
+        0.5199999809265137,
+        1.0
+      ]
+    },
+    {
+      "name": "Rock / cool granite",
+      "color": [
+        0.4000000059604645,
+        0.49000000953674316,
+        0.550000011920929,
+        1.0
+      ]
+    },
+    {
+      "name": "Rock / deep ridge",
+      "color": [
+        0.25,
+        0.3400000035762787,
+        0.4300000071525574,
+        1.0
+      ]
+    },
+    {
+      "name": "Rock / glacial charcoal",
+      "color": [
+        0.3100000023841858,
+        0.4000000059604645,
+        0.4399999976158142,
+        1.0
+      ]
+    },
+    {
+      "name": "Rock / silver granite",
+      "color": [
+        0.46000000834465027,
+        0.5299999713897705,
+        0.5600000023841858,
+        1.0
+      ]
+    }
+  ]
+}

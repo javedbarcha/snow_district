@@ -41,6 +41,15 @@ Unity prepared and saved all seven and reopened their Pinefall placements on
 29 October 2026 (`Logs/WinterHomes/UnityIntake.txt`). These counts do not establish
 Android frame times, overdraw, draw submissions or sustained phone performance.
 
+Five alpine mountains use 690 / 726 / 1,016 / 930 / 974 triangles and
+1,524 / 1,601 / 2,380 / 2,041 / 2,247 Unity-imported vertices respectively
+(Needle Peak, Twin Summits, Sawtooth Ridge, Glacier Massif, Alpine Cirque).
+Each has two renderers/material slots, sharing rock and snow materials across the
+set. Twelve saved placements total 10,088 mesh triangles, before shadow passes.
+Geometry is modest for background assets and did not require decimation. Terrain,
+view coverage, fog and shadow costs still need device profiling; these counts are
+not frame-time or draw-submission measurements.
+
 The new loader is within the vehicle geometry target: 7,656 vehicle triangles,
 8,424 including its preauthored carried-snow visual. The complete prefab has
 15,095 imported vertices, eight renderers and nine material slots / three distinct

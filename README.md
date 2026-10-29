@@ -12,6 +12,8 @@ Open **Snowglow > Asset Workshop** for model intake, draft/review/Ready catalog 
 
 All [seven winter homes](SourceAssets/SevenWinterHomes/README.md) are saved as reusable catalog prefabs and placed across all 16 Pinefall house lots in a shuffled mix, using every variant at least twice. Homes are 1.5x the previous lot-fitted size; foundation footprints expand horizontally to match. Roof/ground snow stays separately removable in the Editor and warm windows are opaque. **Snowglow > Asset intake > Import seven winter homes** installs the set without a district rebake and preserves existing placements when repeated. Unity compilation, scene save/reopen, structural checks and 19 snow-ledger checks passed; Android performance and continuous vehicle clearance remain untested. Entries remain Needs Review.
 
+All 12 former primitive mountains now use a shuffled mix of the [five imported alpine variants](SourceAssets/FiveAlpineMountains/README.md), with every variant used at least twice. They are saved Editor-authored catalog instances with separate snow caps; original horizontal locations are preserved. Editor-authored mesh copies follow the local terrain with shallow buried bases, keeping the mountains above ground. Use **Snowglow > Asset intake > Import five alpine mountains** for repeat-safe installation.
+
 ## Important: how the concrete scene is authored
 
 The district has now been baked with **Unity 6000.3.8f1**. `Assets/Scenes/Pinefall.unity` contains the concrete terrain, colored primitive scenery, machinery prefab instances and snow chunks. Keep `Assets/Snowglow/Generated/` with the project. The editor tool creates this content **in Edit mode, before Play**. Nothing calls the district or vehicle factories at runtime.
@@ -38,7 +40,7 @@ The saved scene is populated and included in Build Settings. Use **Snowglow > Va
 - Grey cube roads, parking area, service depot, fuel tank, retaining walls, curbs, slope and ice test lanes.
 - All 16 house lots use a shuffled mix of seven imported winter-home variants at 1.5x the former fitted size, with removable decorative snow, opaque warm windows, expanded foundation footprints and preserved fences.
 - Trees using brown cylinder trunks, green sphere foliage and white snow crowns.
-- Grey sphere-based mountains with white caps, plus a roadside boulder.
+- Twelve imported low-poly mountains using five variants with separate white/cyan snow caps, plus a primitive roadside boulder.
 - Cylinder-and-cube light poles, signs, and parked primitive cars.
 - A detailed orange municipal plow and yellow wheeled loader, saved as connected prefabs. Tyres are cylinders with hub cylinders and individual tread cubes; cabs, mirrors, lights, exhausts, steps, and working equipment are separate objects.
 - URP pipeline, renderer, shared colored materials, terrain layer and texture, vehicle/equipment definitions.

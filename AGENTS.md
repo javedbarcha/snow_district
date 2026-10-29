@@ -163,7 +163,7 @@ not completed device-test results.
 ### 4.1 Scene and environment
 
 Pinefall contains saved Terrain, roads, parking, service depot/fuel facilities,
-cottages/fences, trees, mountains, poles/signs, parked primitive cars, curbs, slope
+16 imported homes/fences, trees, 12 imported alpine mountains, poles/signs, parked primitive cars, curbs, slope
 and ice test lanes, a disposal area, contract markers, UI, camera and audio sources.
 Most scenery remains primitive art. Both active machinery vehicles are now imported
 models. Older primitive machinery prefabs and catalog examples remain available;
@@ -710,6 +710,60 @@ and their temporary entries; do not mistake leftovers for production content.
   a stale log describes it as temporary.
 
 ## 13. Remaining work / TODO, ordered by practical importance
+
+29 October mountain seating correction: user screenshots showed excessive burial
+from the initial lowest-footprint rule. AlpineTerrainFitting now authors separate
+terrain-conforming meshes for every Rock/SnowCap instance: vertex height above the
+source base is added to sampled Terrain height, minus a small burial depth. The
+original catalogue meshes/FBXs/Blender source are preserved. Base side-wall edges
+are sampled at 33 positions to tuck them below terrain hollows. Current burial is
+2.00-4.13m, around 2.4-6.1% of model height; all cap vertices are above Terrain.
+The correction keeps X/Z, yaw, scale, distribution and vertex/index counts. Mesh
+normals/bounds and conservative background box proxies are refreshed. There are
+24 saved mesh assets under Catalog/SceneMeshes/AlpineMountains. Always refit from
+the original catalogue meshes, not the existing fitted copies, to avoid cumulative
+warping. Intake/future full-bake hooks invoke this Editor-only authoring path.
+Native Unity compiled, saved/reopened and checked mesh persistence, counts,
+buried base vertices, every cap vertex above Terrain and >85% peak height relief
+for all twelve mountains. Scene checks and all 19 snow-ledger checks passed.
+Several mountains/base seams were inspected in Scene view. Homes/fleet/snow and
+Terrain assets remain unchanged; no player save or district rebuild. Reports:
+Logs/AlpineMountains/TerrainFit.txt and TerrainFitValidation.txt. Scene backup:
+Logs/AlpineMountains/Pinefall-before-terrain-fit.unity. Full perimeter/collision
+walkthrough and current Android/A07 rendering/performance remain untested.
+Earlier lowest-footprint placement notes below are historical and superseded.
+
+
+29 October alpine mountains: user supplied Five_Alpine_Mountains.blend and asked to
+replace all primitive mountains at their existing locations with shuffled imported
+variants, each used. Original is preserved under SourceAssets/FiveAlpineMountains,
+SHA256 382B0050FB4E9ACB40D17B4904C4B35950DCF2400A42D0F5863F47574CFCBF73.
+No embedded text was executed. Five collections: Needle Peak, Twin Summits,
+Sawtooth Ridge, Glacier Massif, Alpine Cirque. Ten closed rock/snow mesh solids
+passed outward-normal checks; cameras/labels/lights/display ground are excluded.
+Separate Rock/SnowCap meshes use shared opaque rock palette and current white/cyan
+toon snow. Stable catalogue IDs alpine-mountain-01..05 remain Needs Review.
+Triangles/Unity vertices: 690/1524, 726/1601, 1016/2380, 930/2041, 974/2247;
+two renderers/slots each. All 12 saved placements total 10,088 triangles before
+shadow passes. Background box proxies are conservative, not climbable surfaces.
+
+AlpineMountainsIntake compiled in native Unity 6000.3.8f1 / Android, prepared five
+prefabs, replaced all 12 primitive spheres/caps, saved/reopened Pinefall and passed
+scene checks and 19 ledger checks. Balanced shuffle seed 291029 gives first two
+variants three uses each and remaining variants two. X/Z positions and old width/
+depth envelopes are retained; random yaw/uniform scaling preserve shape proportions.
+Bases are seated two metres below the lowest 9x9 terrain sample in each footprint.
+Cap-vertex readback confirmed every placement emerges 18.97-101.11 m above terrain.
+Repeated intake preserved the saved layout. Five Unity previews and one Scene-view
+placement were visually inspected. Home IDs/assets/transforms, fleet, seed and
+existing terrain/generated assets were preserved; no player save was loaded or
+written. No full district rebake; future bakes call PlacePreparedMountains after
+DistrictFactory builds. Entry preparation/placement is Editor-only, never in Play.
+Report: Logs/AlpineMountains/UnityIntake.txt. Source pipeline/readme and part maps:
+SourceAssets/FiveAlpineMountains and Catalog/Sources/FiveAlpineMountains. Original
+scene backup: Logs/AlpineMountains/Pinefall-before.unity. Full seam/sightline and
+collision walkthrough, Android packaging/appearance and A07 profiling remain TODO.
+
 
 29 October all-house replacement: user requested replacing every prototype house
 with randomly distributed imported variants, each used at least once, and making

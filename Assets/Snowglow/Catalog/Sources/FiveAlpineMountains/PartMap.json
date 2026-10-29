@@ -1,0 +1,65 @@
+{
+  "collections": {
+    "01 Needle Peak": {
+      "included": [
+        "01 Needle Peak | Rock",
+        "01 Needle Peak | Snow cap"
+      ],
+      "excluded": [
+        "01 Needle Peak | MOVE MOUNTAIN"
+      ]
+    },
+    "02 Twin Summits": {
+      "included": [
+        "02 Twin Summits | Rock",
+        "02 Twin Summits | Snow cap"
+      ],
+      "excluded": [
+        "02 Twin Summits | MOVE MOUNTAIN"
+      ]
+    },
+    "03 Sawtooth Ridge": {
+      "included": [
+        "03 Sawtooth Ridge | Rock",
+        "03 Sawtooth Ridge | Snow cap"
+      ],
+      "excluded": [
+        "03 Sawtooth Ridge | MOVE MOUNTAIN"
+      ]
+    },
+    "04 Glacier Massif": {
+      "included": [
+        "04 Glacier Massif | Rock",
+        "04 Glacier Massif | Snow cap"
+      ],
+      "excluded": [
+        "04 Glacier Massif | MOVE MOUNTAIN"
+      ]
+    },
+    "05 Alpine Cirque": {
+      "included": [
+        "05 Alpine Cirque | Rock",
+        "05 Alpine Cirque | Snow cap"
+      ],
+      "excluded": [
+        "05 Alpine Cirque | MOVE MOUNTAIN"
+      ]
+    }
+  },
+  "excludedPresentation": [
+    "Ground",
+    "01 Needle Peak | label",
+    "02 Twin Summits | label",
+    "03 Sawtooth Ridge | label",
+    "04 Glacier Massif | label",
+    "05 Alpine Cirque | label",
+    "Sun | faceted winter light",
+    "Soft sky fill",
+    "Overview camera",
+    "01 Needle Peak | detail camera",
+    "02 Twin Summits | detail camera",
+    "03 Sawtooth Ridge | detail camera",
+    "04 Glacier Massif | detail camera",
+    "05 Alpine Cirque | detail camera"
+  ]
+}
