@@ -1,6 +1,6 @@
 # Snowglow: project instructions, design history and development handoff
 
-Last consolidated: **29 October 2026**, Asia/Karachi.
+Last updated: **31 October 2026**, Asia/Karachi.
 
 This document records the conversation from the original pasted ChatGPT planning
 through the Unity prototype, snow revisions, Asset Workshop, imported machinery,
@@ -33,9 +33,15 @@ The most important continuing requirements are:
 - Preserve source models, stable asset/save IDs, GUIDs, `.meta` files, saved snow
   data and manually authored scene work. Do not rebake the whole district merely
   to replace one model or change snow resolution.
-- The user is now gradually replacing primitive art with imported models. The
-  original primitive-only requirement described the first build; it does **not**
-  prohibit the explicitly requested imported tractor, loader or future replacements.
+- The active next phase is **weather, day/night and lighting**, superseding asset
+  importing/furnishing as the immediate priority. Imported assets remain supported;
+  preserve completed preparation and scene work. Further replacements are deferred
+  unless requested or needed for these milestones.
+- **Snowfall effects are deferred to a future phase; omit them from current work.**
+  When added later, falling snow must be visual only, localized around/in front of
+  the active camera, with no increase to ground snow, piles, bucket loads or volume.
+- Home windows, **including door windows**, must glow with bloom in daylight as
+  well as at night. Night lighting must not disable their daytime glow.
 - Report what actually compiled, saved, reopened, rendered or ran. Do not equate
   a structural check, sampled pose check or low triangle count with a successful
   driving test, Android build or measured phone performance.
@@ -50,6 +56,64 @@ Initial planning messages explicitly asked not to build yet. The user later
 authorized implementation, the asset-management phase and the individual model
 replacements. Those old planning pauses are historical, not a standing requirement
 to seek permission again for already authorized work.
+
+## Upcoming milestones: weather and lighting (31 October 2026)
+
+The user has shifted the next development goal from importing, furnishing and
+replacing prototype assets to weather and lighting. The milestones below record
+**upcoming work**, not implemented or validated features. This request updates
+the handoff; it does not itself implement these systems.
+
+1. **Day/night foundation.** Establish a coordinated time-of-day system with
+   smooth daylight, dusk, night and dawn transitions. Coordinate directional
+   lighting, sky/background, ambient light and fog so the district and machinery
+   remain readable in the cozy toon style. Cycle duration, starting time,
+   player controls and time persistence are still design choices, not settled
+   requirements. Define pause/lifecycle behavior consistently with the session.
+2. **Wind.** Establish visual wind direction/strength and gentle variation as
+   appropriate for the existing environment. Wind must not move authoritative snow
+   or apply vehicle forces without a separate explicit decision. Snowfall effects
+   are excluded from this milestone and deferred to future work.
+3. **Home window emission and bloom.** Give every home window, including glazing
+   in doors, visible glow with URP bloom **during daylight too**, retained through
+   dusk and night. Preserve opaque warm home glazing and the established opaque
+   cyan toon vehicle glazing; emission must not introduce transparent glass.
+   Tune material emission and camera/post-processing together: an unlit bright
+   surface alone is not evidence of bloom. Keep highlights controlled so the
+   white snow retains detail. Per-window real-time lights are not required to
+   achieve emissive glow.
+4. **Street lighting at night.** Coordinate street-lamp luminous meshes and
+   useful ground illumination with dusk/dawn, using smooth transitions. Reuse
+   the prepared fixtures and their optional authored lights where appropriate.
+   Budget real-time light range, overlap and shadows deliberately rather than
+   enabling every optional light indiscriminately. Distinguish visible lamp
+   glow/bloom from actual illumination of roads and snow.
+5. **Vehicle lighting.** Prepare and bind headlights, rear/brake/reverse lights,
+   work lights and existing beacons as applicable to each machine. Coordinate
+   night visibility and driving-state cues with the existing controllers;
+   exact controls and automatic switching remain to be decided. Preserve rigs,
+   attachment motion, save IDs and opaque toon glazing.
+6. **Integration and acceptance.** Save all controllers, effect objects, lights,
+   materials and URP volume/camera bindings in the Editor before Play. Runtime
+   may update those authored bindings and lighting values;
+   do not introduce runtime scene factories. Verify scene save/reopen, all four
+   cameras, day/night transitions, daylight bloom on home and door windows,
+   night street/vehicle illumination, pause and machine switching. Check that
+   weather alone leaves snow depth, credit and volume accounting unchanged.
+   Report rendered inspection, playtesting and Galaxy A07 profiling separately;
+   light counts and Editor checks do not prove sustained 30 FPS.
+
+**Deferred: visual snowfall.** Do not implement falling-snow effects in the current
+phase. When requested in future, use camera-local particles around/in front of the
+active camera, supporting all four camera modes with bounded mobile overdraw.
+Snowfall must remain purely atmospheric: no accumulation, ground-depth changes,
+pile growth, work credit, disposal changes or bucket filling.
+
+Additional weather types or systems implied by ?etc.? remain open scope; do not
+assume rain, storms, seasonal changes, melting, accumulation or a weather service
+has been requested. Preserve the current house distribution, source assets,
+GUIDs, snow seed/mesh assets and player saves. Apply this phase to the existing
+Pinefall scene without a whole-district rebake.
 
 ## 2. Current project snapshot
 
