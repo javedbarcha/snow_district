@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca395da9c16194d8575fece1ac0cf8, type: 3}
+  m_Name: Fallen Cut Log
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.CatalogAsset
+  id: alpine-tree-25
+  displayName: Fallen Cut Log
+  kind: 6
+  status: 1
+  prefab: {fileID: 4347309476862208811, guid: 79628eff6208b1d47827c918d189e87a, type: 3}
+  tags:
+  - alpine-tree
+  - snow-free
+  - forest-floor
+  - fallencutlog
+  sourceType: 0
+  sourceGuid: 155b0897c5810dd43b7ef0ed2090e110
+  sourcePath: Assets/Snowglow/Catalog/Sources/AlpineTrees/FallenCutLog.fbx
+  creationSourcePath: SourceAssets/AlpineTrees/Alpine_Trees_26_Variants.blend
+  reviewedPrefabHash: 
+  provenance: User supplied Alpine_Trees_26_Variants.blend; collection 25 Fallen
+    Cut Log; SHA256 C8FA426AEAB4D38B8FFBCD378212D1376E139CA831F8437676D6F3720FBFE06F.
+    Embedded text was not executed.
+  assumptions: Metres, Y-up, original horizontal mounting origin and normalized ground
+    floor. Source Tree or Wood rigid assembly stays one opaque palette mesh; snowy
+    variants have independently removable decorative SnowCap. Snow-free source variants
+    are kept snow-free. Two shared materials across the set; no transparent foliage
+    cards, wind animation, runtime assembly or plowable decorative snow. Upright
+    trees have a narrow trunk capsule, stumps/logs have a compact box; collision
+    shapes are review proposals. Existing 230 m DistanceVisibility is retained. Placement
+    follows Terrain at the base; stumps/logs align with local terrain normal without
+    deforming shared meshes.
+  reviewNotes: Authorized prototype replacement. Needs visual collision/terrain review
+    and A07 profiling before Ready publication.
+  visualReviewed: 0
+  localBounds:
+    m_Center: {x: 0.004139304, y: 0.34908134, z: 0}
+    m_Extent: {x: 1.9131393, y: 0.34908134, z: 0.5690697}
+  triangles: 232
+  renderers: 1
+  materialSlots: 1
+  price: 0
+  vehicle: {fileID: 0}
+  attachment: {fileID: 0}
+  interfaceId: 
+  addedMass: 0
+  torqueMultiplier: 1
+  gripMultiplier: 1
+  wheelRadius: 0.5
+  wheelWidth: 0.3
+  wheelMass: 45
+  mirrorRightWheels: 1
+  minimumScale: 0.75
+  maximumScale: 1.6
+  blocksSnow: 1

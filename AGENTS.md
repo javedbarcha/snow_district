@@ -163,7 +163,7 @@ not completed device-test results.
 ### 4.1 Scene and environment
 
 Pinefall contains saved Terrain, roads, parking, service depot/fuel facilities,
-40 imported homes/fences, trees, 12 imported alpine mountains, 14 imported alpine light fixtures, primitive signs/cars, curbs, slope
+40 imported homes/fences, 97 imported alpine tree/wood assemblies, 12 imported alpine mountains, 14 imported alpine light fixtures, primitive signs/cars, curbs, slope
 and ice test lanes, a disposal area, contract markers, UI, camera and audio sources.
 Most scenery remains primitive art. Both active machinery vehicles are now imported
 models. Older primitive machinery prefabs and catalog examples remain available;
@@ -1031,3 +1031,65 @@ heritage fixtures exceed the small-prop 1,000-triangle working target slightly,
 with multiple lantern heads. No decimation was needed for this intake. Counts do
 not establish frame times. Full driving/collision walkthrough, optional night-light
 appearance, Android packaging/rendering and Galaxy A07 performance remain untested.
+
+## Twenty-six alpine tree variants - 30 October 2026
+
+Replaced all **97 primitive tree roots** in Pinefall with prepared models from
+`Alpine_Trees_26_Variants.blend`. Original preserved under SourceAssets/AlpineTrees,
+SHA256 `C8FA426AEAB4D38B8FFBCD378212D1376E139CA831F8437676D6F3720FBFE06F`.
+Embedded START HERE text was treated as data and never executed. All 26 numbered
+collections/source previews were inspected: eight live forms, eight snowy forms,
+four bare/dead forms, four stumps and two fallen logs. All 700 closed mesh components
+passed winding checks without reversals; open surfaces retain their direction.
+No source overwrite, decimation or transparent foliage cards.
+
+Scripts `Tools/AssetIntake/inspect_alpine_trees.py` and `export_alpine_trees.py`
+produce the source inventory, 26 FBXs, point-filtered 16x1 palette, full part map,
+metrics and source renders with Blender autoexecution disabled. Stable catalog
+IDs `alpine-tree-01` through `26` remain Needs Review. Each uses one opaque TreeWood
+mesh/material plus an independently removable SnowCap where supplied (09-16, 24,
+26); two shared materials across the set. Source Tree or Wood was already a joined
+rigid assembly, which is retained. Snow-free source variants stay snow-free.
+
+`Editor/AlpineTreesIntake.cs` authors a deterministic mix/yaw (seed 301026), using
+every variant and weighting remaining slots toward winter evergreens. Six forest
+floor variants each occur once. Original X/Z positions and uniform scales are
+preserved, with 8 cm buried foot probes; stumps/logs align with local Terrain normal.
+Native read-only vertex checks verify sufficient relief above terrain without
+changing shared meshes. Narrow proposed trunk capsules avoid canopy-wide invisible
+barriers; stumps/logs use compact box proxies. Existing 230 m DistanceVisibility is
+retained. No wind, runtime assembly, interactive tree cutting, new snow simulation
+or plowable decorative snow was introduced.
+
+Unity 6000.3.8f1 / Android compiled, prepared all 26 prefabs, saved/reopened Pinefall
+and passed scene validation plus all 19 snow-ledger checks. All 26 native prefab
+previews were rendered and inspected, and a placed Snowy Tower Spruce was inspected
+in Scene view. Preview cameras fit the full projected bounds (including wide stump
+roots/log ends). Repeated actual menu intake passed with 97 unique placement IDs,
+unchanged saved mix/poses/scales and zero obstacle changes. After scene reopening,
+unused catalog asset handles are reacquired before native prefab checks/previews.
+Failed unsaved placement validation restores the original saved scene, avoiding a
+partial replacement pass.
+
+The new forest totals **96,243 mesh triangles / 145 renderer-material slots**, down
+from **454,736 / 679** for the original primitive forest inventory (about 79% fewer
+triangles/renderers). These are complete placement inventories, not visible-frame,
+shadow-pass, batching or FPS measurements. Per-variant counts are 220-2,633 triangles;
+Open Alpine Larch (1,966) and Snowy Open Alpine Larch (2,633) are the heaviest, with
+two and eight placements respectively. Review their device cost before denser use.
+No Android build or phone-performance claim follows from these counts.
+
+All 66 existing home/mountain/light prefab-instance records are independently
+byte-identical to the pre-intake scene. Fleet bindings, Terrain and saved snow mesh
+assets are preserved by native snapshots. Nearby trunk checks changed **zero** snow
+obstacle cells; the current street-light seed reference and data stay unchanged,
+and no tree-specific seed asset was needed. No district/snow rebake or player-save
+writes. Unrelated user edits to build-version settings were left untouched.
+
+Menu: **Snowglow > Asset intake > Import twenty six alpine trees**. The future
+full district bake calls PlacePreparedTrees when all 26 prepared entries exist;
+that full bake was not run. Reports/previews and the pre-edit scene copy are under
+`Logs/AlpineTrees` (`UnityIntake.txt`, `NN-source.png`, `NN-unity.png`,
+`Pinefall-before.unity`). Source details: `SourceAssets/AlpineTrees/README.md`.
+Full forest/collision walkthrough, runtime culling behavior, Android rendering/
+packaging and sustained Galaxy A07 profiling remain untested in this task.

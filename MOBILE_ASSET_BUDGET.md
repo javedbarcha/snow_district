@@ -105,3 +105,43 @@ All 21 placed optional point lights are inactive by default and shadowless when
 enabled; use their small proposed ranges deliberately and profile night scenes.
 Opaque unlit luminous surfaces avoid transparent glazing. Native save/reopen and
 structural checks do not establish A07 frame times or a safe active-light count.
+
+The 26 alpine tree/wood prefabs use two shared opaque materials across the set,
+one body renderer and one additional renderer on supplied snowy variants:
+
+| Variant | Triangles | Unity vertices |
+| --- | ---: | ---: |
+| Tower Spruce | 904 | 1,590 |
+| Broad Fir | 694 | 1,224 |
+| Slender Spruce | 942 | 1,600 |
+| Irregular Drooping Fir | 780 | 1,338 |
+| Wind Bent Pine | 646 | 1,130 |
+| Open Alpine Larch | 1,966 | 3,460 |
+| Young Fir | 426 | 724 |
+| Spruce Sapling | 388 | 650 |
+| Snowy Tower Spruce | 1,290 | 2,280 |
+| Snowy Broad Fir | 981 | 1,745 |
+| Snowy Slender Spruce | 1,361 | 2,303 |
+| Snowy Irregular Drooping Fir | 1,100 | 1,882 |
+| Snowy Wind Bent Pine | 893 | 1,567 |
+| Snowy Open Alpine Larch | 2,633 | 4,523 |
+| Snowy Young Fir | 647 | 1,121 |
+| Snowy Spruce Sapling | 576 | 986 |
+| Tall Dead Snag | 1,054 | 1,988 |
+| Thin Bare Snag | 874 | 1,628 |
+| Broken Alpine Trunk | 750 | 1,394 |
+| Bare Young Sapling | 562 | 1,028 |
+| Low Cut Stump | 220 | 357 |
+| Tall Cut Stump | 220 | 357 |
+| Split Cut Stump | 252 | 417 |
+| Snow Capped Stump | 223 | 362 |
+| Fallen Cut Log | 232 | 300 |
+| Snowy Broken Log | 318 | 464 |
+
+Ninety-seven placed forest assemblies total 96,243 triangles / 145 renderer-material
+slots, versus 454,736 / 679 in the original primitive forest. Existing 230 m distance
+visibility is retained. These are whole-placement inventories, excluding extra
+shadow passes, and do not establish active-frame costs or A07 performance. The
+Larch / Snowy Larch are heaviest (1,966 / 2,633 triangles, placed 2 / 8 times);
+review these in device profiling before increasing forest density. No transparent
+foliage cards, per-tree material copies, wind animation or per-instance mesh copies.

@@ -53,3 +53,12 @@ inactive prefab groups and enabled deliberately in the Editor. StreetLightsIntak
 places catalog prefabs before Play, refreshing only a scene-specific snow obstacle
 mask while preserving volumes and original seeds. TownBlockAuthoring extends a
 newer scene-specific seed rather than reverting another intake's obstacle mask.
+
+
+AlpineTreesIntake replaces only saved primitive forest roots with prepared catalog
+prefabs. It retains horizontal positions/scales and existing DistanceVisibility;
+Editor-authored foot-probe seating and terrain-normal orientation for logs/stumps
+preserve shared meshes. Decorative caps remain separate from the snow ledger. Snow
+obstacle flags are considered only near new trunk proxies; no-change intake retains
+the current seed reference rather than creating another asset. No tree factories
+or new runtime rendering behavior are added.

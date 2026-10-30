@@ -85,3 +85,10 @@ remove/disable the cap in the Editor for a snow-free variant. Optional point lig
 are inactive by default under the clearly named group. Wall Lantern requires a
 facade mount; the other eleven variants retain their original ground/pole origin.
 See SourceAssets/AlpineStreetLights/README.md for provenance, counts and controls.
+
+
+The 26 alpine tree/wood catalog entries remain Needs Review. Each is an opaque
+TreeWood assembly plus independently removable SnowCap only where supplied. Tags
+distinguish evergreen, deadwood and forest-floor variants. Existing 230 m distance
+visibility is saved on prepared prefabs; trunk capsules and log/stump boxes require
+collision review. See SourceAssets/AlpineTrees/README.md for provenance and metrics.

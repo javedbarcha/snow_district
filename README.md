@@ -16,6 +16,8 @@ All 12 former primitive mountains now use a shuffled mix of the [five imported a
 
 All [12 alpine street-light variants](SourceAssets/AlpineStreetLights/README.md) are prepared as reusable catalog prefabs and used across 14 Pinefall fixtures, replacing the nine primitive poles and adding depot bollards, neighborhood globes and a workshop wall lantern. Frame, opaque luminous surfaces and removable snow caps are separate. Optional shadowless point lights are saved under an inactive **Optional lights | enable in Editor (mobile default off)** group. Use **Snowglow > Asset intake > Import twelve alpine street lights** for repeat-safe installation. Unity save/reopen, scene checks and 19 snow checks passed; night lighting and device performance remain untested.
 
+All 97 former primitive tree locations now use the [26 alpine tree/wood variants](SourceAssets/AlpineTrees/README.md), with every variant represented and the existing 230 m distance culling retained. Snow caps stay removable on snowy variants; stumps/logs follow the local terrain slope. **Snowglow > Asset intake > Import twenty six alpine trees** preserves this saved mix on repetition. The forest inventory is 96,243 triangles / 145 renderers, reduced from 454,736 / 679; these are geometry counts, not measured phone performance. Scene save/reopen and 19 snow checks passed; the snow seed is unchanged.
+
 ## Important: how the concrete scene is authored
 
 The district has now been baked with **Unity 6000.3.8f1**. `Assets/Scenes/Pinefall.unity` contains the concrete terrain, colored primitive scenery, machinery prefab instances and snow chunks. Keep `Assets/Snowglow/Generated/` with the project. The editor tool creates this content **in Edit mode, before Play**. Nothing calls the district or vehicle factories at runtime.
@@ -41,7 +43,7 @@ The saved scene is populated and included in Build Settings. Use **Snowglow > Va
 - A compact working district within approximately 250 × 250 m. The whole kilometre is landscape, not densely populated city content.
 - Grey cube roads, parking area, service depot, fuel tank, retaining walls, curbs, slope and ice test lanes.
 - All 40 house lots use seven imported winter-home variants at the enlarged 1.5x fitting convention, with removable decorative snow, opaque warm windows, expanded foundation footprints and preserved fences.
-- Trees using brown cylinder trunks, green sphere foliage and white snow crowns.
+- Ninety-seven imported alpine tree/wood assemblies using all 26 variants, including removable snowy trees, bare snags, stumps and logs.
 - Twelve imported low-poly mountains using five variants with separate white/cyan snow caps, plus a primitive roadside boulder.
 - Fourteen imported alpine light fixtures using all twelve variants, plus primitive signs and parked cars.
 - A detailed orange municipal plow and yellow wheeled loader, saved as connected prefabs. Tyres are cylinders with hub cylinders and individual tread cubes; cabs, mirrors, lights, exhausts, steps, and working equipment are separate objects.

@@ -1,0 +1,525 @@
+{
+  "collections": {
+    "01 Tower Spruce": {
+      "included": [
+        "01 Tower Spruce | Tree or Wood"
+      ],
+      "excluded": [
+        "01 Tower Spruce | MOVE ASSET"
+      ],
+      "origin": [
+        -22.399999618530273,
+        11.0,
+        -0.0169138815253973
+      ],
+      "groups": [
+        "TreeWood"
+      ]
+    },
+    "02 Broad Fir": {
+      "included": [
+        "02 Broad Fir | Tree or Wood"
+      ],
+      "excluded": [
+        "02 Broad Fir | MOVE ASSET"
+      ],
+      "origin": [
+        -16.0,
+        11.0,
+        -0.0169138815253973
+      ],
+      "groups": [
+        "TreeWood"
+      ]
+    },
+    "03 Slender Spruce": {
+      "included": [
+        "03 Slender Spruce | Tree or Wood"
+      ],
+      "excluded": [
+        "03 Slender Spruce | MOVE ASSET"
+      ],
+      "origin": [
+        -9.600000381469727,
+        11.0,
+        -0.0169138815253973
+      ],
+      "groups": [
+        "TreeWood"
+      ]
+    },
+    "04 Irregular Drooping Fir": {
+      "included": [
+        "04 Irregular Drooping Fir | Tree or Wood"
+      ],
+      "excluded": [
+        "04 Irregular Drooping Fir | MOVE ASSET"
+      ],
+      "origin": [
+        -3.200000047683716,
+        11.0,
+        -0.0169138815253973
+      ],
+      "groups": [
+        "TreeWood"
+      ]
+    },
+    "05 Wind Bent Pine": {
+      "included": [
+        "05 Wind Bent Pine | Tree or Wood"
+      ],
+      "excluded": [
+        "05 Wind Bent Pine | MOVE ASSET"
+      ],
+      "origin": [
+        3.200000047683716,
+        11.0,
+        -0.0169138815253973
+      ],
+      "groups": [
+        "TreeWood"
+      ]
+    },
+    "06 Open Alpine Larch": {
+      "included": [
+        "06 Open Alpine Larch | Tree or Wood"
+      ],
+      "excluded": [
+        "06 Open Alpine Larch | MOVE ASSET"
+      ],
+      "origin": [
+        9.600000381469727,
+        11.0,
+        -0.0169138815253973
+      ],
+      "groups": [
+        "TreeWood"
+      ]
+    },
+    "07 Young Fir": {
+      "included": [
+        "07 Young Fir | Tree or Wood"
+      ],
+      "excluded": [
+        "07 Young Fir | MOVE ASSET"
+      ],
+      "origin": [
+        16.0,
+        11.0,
+        0.0
+      ],
+      "groups": [
+        "TreeWood"
+      ]
+    },
+    "08 Spruce Sapling": {
+      "included": [
+        "08 Spruce Sapling | Tree or Wood"
+      ],
+      "excluded": [
+        "08 Spruce Sapling | MOVE ASSET"
+      ],
+      "origin": [
+        22.399999618530273,
+        11.0,
+        0.0
+      ],
+      "groups": [
+        "TreeWood"
+      ]
+    },
+    "09 Snowy Tower Spruce": {
+      "included": [
+        "09 Snowy Tower Spruce | Tree or Wood",
+        "09 Snowy Tower Spruce | Snow"
+      ],
+      "excluded": [
+        "09 Snowy Tower Spruce | MOVE ASSET"
+      ],
+      "origin": [
+        -22.399999618530273,
+        0.0,
+        -0.0169138815253973
+      ],
+      "groups": [
+        "TreeWood",
+        "SnowCap"
+      ]
+    },
+    "10 Snowy Broad Fir": {
+      "included": [
+        "10 Snowy Broad Fir | Tree or Wood",
+        "10 Snowy Broad Fir | Snow"
+      ],
+      "excluded": [
+        "10 Snowy Broad Fir | MOVE ASSET"
+      ],
+      "origin": [
+        -16.0,
+        0.0,
+        -0.0169138815253973
+      ],
+      "groups": [
+        "TreeWood",
+        "SnowCap"
+      ]
+    },
+    "11 Snowy Slender Spruce": {
+      "included": [
+        "11 Snowy Slender Spruce | Tree or Wood",
+        "11 Snowy Slender Spruce | Snow"
+      ],
+      "excluded": [
+        "11 Snowy Slender Spruce | MOVE ASSET"
+      ],
+      "origin": [
+        -9.600000381469727,
+        0.0,
+        -0.0169138815253973
+      ],
+      "groups": [
+        "TreeWood",
+        "SnowCap"
+      ]
+    },
+    "12 Snowy Irregular Drooping Fir": {
+      "included": [
+        "12 Snowy Irregular Drooping Fir | Tree or Wood",
+        "12 Snowy Irregular Drooping Fir | Snow"
+      ],
+      "excluded": [
+        "12 Snowy Irregular Drooping Fir | MOVE ASSET"
+      ],
+      "origin": [
+        -3.200000047683716,
+        0.0,
+        -0.0169138815253973
+      ],
+      "groups": [
+        "TreeWood",
+        "SnowCap"
+      ]
+    },
+    "13 Snowy Wind Bent Pine": {
+      "included": [
+        "13 Snowy Wind Bent Pine | Tree or Wood",
+        "13 Snowy Wind Bent Pine | Snow"
+      ],
+      "excluded": [
+        "13 Snowy Wind Bent Pine | MOVE ASSET"
+      ],
+      "origin": [
+        3.200000047683716,
+        0.0,
+        -0.0169138815253973
+      ],
+      "groups": [
+        "TreeWood",
+        "SnowCap"
+      ]
+    },
+    "14 Snowy Open Alpine Larch": {
+      "included": [
+        "14 Snowy Open Alpine Larch | Tree or Wood",
+        "14 Snowy Open Alpine Larch | Snow"
+      ],
+      "excluded": [
+        "14 Snowy Open Alpine Larch | MOVE ASSET"
+      ],
+      "origin": [
+        9.600000381469727,
+        0.0,
+        -0.0169138815253973
+      ],
+      "groups": [
+        "TreeWood",
+        "SnowCap"
+      ]
+    },
+    "15 Snowy Young Fir": {
+      "included": [
+        "15 Snowy Young Fir | Tree or Wood",
+        "15 Snowy Young Fir | Snow"
+      ],
+      "excluded": [
+        "15 Snowy Young Fir | MOVE ASSET"
+      ],
+      "origin": [
+        16.0,
+        0.0,
+        0.0
+      ],
+      "groups": [
+        "TreeWood",
+        "SnowCap"
+      ]
+    },
+    "16 Snowy Spruce Sapling": {
+      "included": [
+        "16 Snowy Spruce Sapling | Tree or Wood",
+        "16 Snowy Spruce Sapling | Snow"
+      ],
+      "excluded": [
+        "16 Snowy Spruce Sapling | MOVE ASSET"
+      ],
+      "origin": [
+        22.399999618530273,
+        0.0,
+        0.0
+      ],
+      "groups": [
+        "TreeWood",
+        "SnowCap"
+      ]
+    },
+    "17 Tall Dead Snag": {
+      "included": [
+        "17 Tall Dead Snag | Tree or Wood"
+      ],
+      "excluded": [
+        "17 Tall Dead Snag | MOVE ASSET"
+      ],
+      "origin": [
+        -23.399999618530273,
+        -11.0,
+        -0.01445799134671688
+      ],
+      "groups": [
+        "TreeWood"
+      ]
+    },
+    "18 Thin Bare Snag": {
+      "included": [
+        "18 Thin Bare Snag | Tree or Wood"
+      ],
+      "excluded": [
+        "18 Thin Bare Snag | MOVE ASSET"
+      ],
+      "origin": [
+        -18.200000762939453,
+        -11.0,
+        -0.0003636855399236083
+      ],
+      "groups": [
+        "TreeWood"
+      ]
+    },
+    "19 Broken Alpine Trunk": {
+      "included": [
+        "19 Broken Alpine Trunk | Tree or Wood"
+      ],
+      "excluded": [
+        "19 Broken Alpine Trunk | MOVE ASSET"
+      ],
+      "origin": [
+        -13.0,
+        -11.0,
+        -0.01445799134671688
+      ],
+      "groups": [
+        "TreeWood"
+      ]
+    },
+    "20 Bare Young Sapling": {
+      "included": [
+        "20 Bare Young Sapling | Tree or Wood"
+      ],
+      "excluded": [
+        "20 Bare Young Sapling | MOVE ASSET"
+      ],
+      "origin": [
+        -7.800000190734863,
+        -11.0,
+        -0.0009587916429154575
+      ],
+      "groups": [
+        "TreeWood"
+      ]
+    },
+    "21 Low Cut Stump": {
+      "included": [
+        "21 Low Cut Stump | Tree or Wood"
+      ],
+      "excluded": [
+        "21 Low Cut Stump | MOVE ASSET"
+      ],
+      "origin": [
+        -2.5999999046325684,
+        -11.0,
+        -0.05394180864095688
+      ],
+      "groups": [
+        "TreeWood"
+      ]
+    },
+    "22 Tall Cut Stump": {
+      "included": [
+        "22 Tall Cut Stump | Tree or Wood"
+      ],
+      "excluded": [
+        "22 Tall Cut Stump | MOVE ASSET"
+      ],
+      "origin": [
+        2.5999999046325684,
+        -11.0,
+        -0.03988254815340042
+      ],
+      "groups": [
+        "TreeWood"
+      ]
+    },
+    "23 Split Cut Stump": {
+      "included": [
+        "23 Split Cut Stump | Tree or Wood"
+      ],
+      "excluded": [
+        "23 Split Cut Stump | MOVE ASSET"
+      ],
+      "origin": [
+        7.800000190734863,
+        -11.0,
+        -0.06513198465108871
+      ],
+      "groups": [
+        "TreeWood"
+      ]
+    },
+    "24 Snow Capped Stump": {
+      "included": [
+        "24 Snow Capped Stump | Tree or Wood",
+        "24 Snow Capped Stump | Snow"
+      ],
+      "excluded": [
+        "24 Snow Capped Stump | MOVE ASSET"
+      ],
+      "origin": [
+        13.0,
+        -11.0,
+        -0.06415824592113495
+      ],
+      "groups": [
+        "TreeWood",
+        "SnowCap"
+      ]
+    },
+    "25 Fallen Cut Log": {
+      "included": [
+        "25 Fallen Cut Log | Tree or Wood"
+      ],
+      "excluded": [
+        "25 Fallen Cut Log | MOVE ASSET"
+      ],
+      "origin": [
+        18.200000762939453,
+        -11.0,
+        -0.03444232419133186
+      ],
+      "groups": [
+        "TreeWood"
+      ]
+    },
+    "26 Snowy Broken Log": {
+      "included": [
+        "26 Snowy Broken Log | Tree or Wood",
+        "26 Snowy Broken Log | Snow"
+      ],
+      "excluded": [
+        "26 Snowy Broken Log | MOVE ASSET"
+      ],
+      "origin": [
+        23.399999618530273,
+        -11.0,
+        -0.039034634828567505
+      ],
+      "groups": [
+        "TreeWood",
+        "SnowCap"
+      ]
+    }
+  },
+  "excludedPresentation": [
+    "Studio snowy ground",
+    "Model presentation tile",
+    "Label 01 Tower Spruce",
+    "Model presentation tile.001",
+    "Label 02 Broad Fir",
+    "Model presentation tile.002",
+    "Label 03 Slender Spruce",
+    "Model presentation tile.003",
+    "Label 04 Irregular Drooping Fir",
+    "Model presentation tile.004",
+    "Label 05 Wind Bent Pine",
+    "Model presentation tile.005",
+    "Label 06 Open Alpine Larch",
+    "Model presentation tile.006",
+    "Label 07 Young Fir",
+    "Model presentation tile.007",
+    "Label 08 Spruce Sapling",
+    "Model presentation tile.008",
+    "Label 09 Snowy Tower Spruce",
+    "Model presentation tile.009",
+    "Label 10 Snowy Broad Fir",
+    "Model presentation tile.010",
+    "Label 11 Snowy Slender Spruce",
+    "Model presentation tile.011",
+    "Label 12 Snowy Irregular Drooping Fir",
+    "Model presentation tile.012",
+    "Label 13 Snowy Wind Bent Pine",
+    "Model presentation tile.013",
+    "Label 14 Snowy Open Alpine Larch",
+    "Model presentation tile.014",
+    "Label 15 Snowy Young Fir",
+    "Model presentation tile.015",
+    "Label 16 Snowy Spruce Sapling",
+    "Model presentation tile.016",
+    "Label 17 Tall Dead Snag",
+    "Model presentation tile.017",
+    "Label 18 Thin Bare Snag",
+    "Model presentation tile.018",
+    "Label 19 Broken Alpine Trunk",
+    "Model presentation tile.019",
+    "Label 20 Bare Young Sapling",
+    "Model presentation tile.020",
+    "Label 21 Low Cut Stump",
+    "Model presentation tile.021",
+    "Label 22 Tall Cut Stump",
+    "Model presentation tile.022",
+    "Label 23 Split Cut Stump",
+    "Model presentation tile.023",
+    "Label 24 Snow Capped Stump",
+    "Model presentation tile.024",
+    "Label 25 Fallen Cut Log",
+    "Model presentation tile.025",
+    "Label 26 Snowy Broken Log",
+    "Large soft sky",
+    "Cool fill",
+    "Winter sun",
+    "Alpine forest overview",
+    "01 Tower Spruce | Detail camera",
+    "02 Broad Fir | Detail camera",
+    "03 Slender Spruce | Detail camera",
+    "04 Irregular Drooping Fir | Detail camera",
+    "05 Wind Bent Pine | Detail camera",
+    "06 Open Alpine Larch | Detail camera",
+    "07 Young Fir | Detail camera",
+    "08 Spruce Sapling | Detail camera",
+    "09 Snowy Tower Spruce | Detail camera",
+    "10 Snowy Broad Fir | Detail camera",
+    "11 Snowy Slender Spruce | Detail camera",
+    "12 Snowy Irregular Drooping Fir | Detail camera",
+    "13 Snowy Wind Bent Pine | Detail camera",
+    "14 Snowy Open Alpine Larch | Detail camera",
+    "15 Snowy Young Fir | Detail camera",
+    "16 Snowy Spruce Sapling | Detail camera",
+    "17 Tall Dead Snag | Detail camera",
+    "18 Thin Bare Snag | Detail camera",
+    "19 Broken Alpine Trunk | Detail camera",
+    "20 Bare Young Sapling | Detail camera",
+    "21 Low Cut Stump | Detail camera",
+    "22 Tall Cut Stump | Detail camera",
+    "23 Split Cut Stump | Detail camera",
+    "24 Snow Capped Stump | Detail camera",
+    "25 Fallen Cut Log | Detail camera",
+    "26 Snowy Broken Log | Detail camera"
+  ]
+}

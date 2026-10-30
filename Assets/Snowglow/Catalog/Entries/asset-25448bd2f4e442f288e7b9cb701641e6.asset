@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca395da9c16194d8575fece1ac0cf8, type: 3}
+  m_Name: Snowy Broken Log
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.CatalogAsset
+  id: alpine-tree-26
+  displayName: Snowy Broken Log
+  kind: 6
+  status: 1
+  prefab: {fileID: 408171836722857297, guid: 02927513e6c1cf34a96af1582c10e3d3, type: 3}
+  tags:
+  - alpine-tree
+  - removable-snow
+  - forest-floor
+  - snowybrokenlog
+  sourceType: 0
+  sourceGuid: 2fbfcebd3ef029747add3aaff2d8279f
+  sourcePath: Assets/Snowglow/Catalog/Sources/AlpineTrees/SnowyBrokenLog.fbx
+  creationSourcePath: SourceAssets/AlpineTrees/Alpine_Trees_26_Variants.blend
+  reviewedPrefabHash: 
+  provenance: User supplied Alpine_Trees_26_Variants.blend; collection 26 Snowy Broken
+    Log; SHA256 C8FA426AEAB4D38B8FFBCD378212D1376E139CA831F8437676D6F3720FBFE06F.
+    Embedded text was not executed.
+  assumptions: Metres, Y-up, original horizontal mounting origin and normalized ground
+    floor. Source Tree or Wood rigid assembly stays one opaque palette mesh; snowy
+    variants have independently removable decorative SnowCap. Snow-free source variants
+    are kept snow-free. Two shared materials across the set; no transparent foliage
+    cards, wind animation, runtime assembly or plowable decorative snow. Upright
+    trees have a narrow trunk capsule, stumps/logs have a compact box; collision
+    shapes are review proposals. Existing 230 m DistanceVisibility is retained. Placement
+    follows Terrain at the base; stumps/logs align with local terrain normal without
+    deforming shared meshes.
+  reviewNotes: Authorized prototype replacement. Needs visual collision/terrain review
+    and A07 profiling before Ready publication.
+  visualReviewed: 0
+  localBounds:
+    m_Center: {x: -0.2330041, y: 0.36877745, z: 0}
+    m_Extent: {x: 1.8562436, y: 0.36877745, z: 0.5690697}
+  triangles: 318
+  renderers: 2
+  materialSlots: 2
+  price: 0
+  vehicle: {fileID: 0}
+  attachment: {fileID: 0}
+  interfaceId: 
+  addedMass: 0
+  torqueMultiplier: 1
+  gripMultiplier: 1
+  wheelRadius: 0.5
+  wheelWidth: 0.3
+  wheelMass: 45
+  mirrorRightWheels: 1
+  minimumScale: 0.75
+  maximumScale: 1.6
+  blocksSnow: 1
