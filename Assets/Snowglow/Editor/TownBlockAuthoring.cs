@@ -97,7 +97,10 @@ namespace Snowglow.Editor {
   static int UpdateObstacleMask(Scene scene,SnowField snow){
    // Keep the original seed and its GUID intact. Only the scene-specific copy's
    // obstacle mask changes; depth, credit and all volume accounting are preserved.
-   var seed=AssetDatabase.LoadAssetAtPath<SnowSeed>(SeedPath);
+   // A later scenery intake may already own a newer scene-specific mask.
+   // Extend that mask rather than restoring the earlier town-only copy.
+   bool sceneCopy=AssetDatabase.GetAssetPath(snow.seed).StartsWith(CatalogPreparation.Root+"/SceneData/",StringComparison.Ordinal);
+   var seed=sceneCopy?snow.seed:AssetDatabase.LoadAssetAtPath<SnowSeed>(SeedPath);
    if(!seed){Directory.CreateDirectory(Path.GetDirectoryName(SeedPath));AssetDatabase.Refresh();seed=UnityEngine.Object.Instantiate(snow.seed);seed.name="Pinefall | expanded residential obstacle mask";AssetDatabase.CreateAsset(seed,SeedPath);}
    Require(SnowData(seed)==SnowData(snow.seed),"scene-specific seed has different snow volumes");
    snow.seed=seed;Physics.SyncTransforms();int changed=0;
@@ -122,7 +125,7 @@ namespace Snowglow.Editor {
    Directory.CreateDirectory("Logs/TownBlocks");if(!File.Exists("Logs/TownBlocks/Pinefall-before.unity"))File.Copy(scene.path,"Logs/TownBlocks/Pinefall-before.unity");
    var original=Homes(scene).ToDictionary(h=>h.placementId,h=>h.assetId+"|"+Pose(h.transform));
    var session=All<PrototypeSession>(scene).Single();var volumes=SnowData(session.Snow.seed);
-   var protectedAssets=All<Terrain>(scene).Select(t=>AssetDatabase.GetAssetPath(t.terrainData)).Concat(session.Snow.GetComponentsInChildren<MeshFilter>().Select(m=>AssetDatabase.GetAssetPath(m.sharedMesh))).Concat(new[]{AssetDatabase.GetAssetPath(session.Snow.seed)}).Where(p=>!string.IsNullOrEmpty(p)&&p!=SeedPath).Distinct().ToDictionary(p=>p,p=>AssetDatabase.GetAssetDependencyHash(p).ToString());
+   var protectedAssets=All<Terrain>(scene).Select(t=>AssetDatabase.GetAssetPath(t.terrainData)).Concat(session.Snow.GetComponentsInChildren<MeshFilter>().Select(m=>AssetDatabase.GetAssetPath(m.sharedMesh))).Concat(new[]{AssetDatabase.GetAssetPath(session.Snow.seed)}).Where(p=>!string.IsNullOrEmpty(p)&&!p.StartsWith(CatalogPreparation.Root+"/SceneData/",StringComparison.Ordinal)).Distinct().ToDictionary(p=>p,p=>AssetDatabase.GetAssetDependencyHash(p).ToString());
    var mountains=All<CatalogPlacement>(scene).Where(p=>(p.placementId??"").StartsWith("pinefall-mountain-",StringComparison.Ordinal)).ToDictionary(p=>p.placementId,p=>Pose(p.transform));
    var fleet=session.Fleet.Select(m=>m.GetInstanceID()).ToArray();
    PlacePreparedBlocks(scene);int blocked=UpdateObstacleMask(scene,session.Snow);

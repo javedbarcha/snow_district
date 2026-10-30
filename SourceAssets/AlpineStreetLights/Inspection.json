@@ -1,0 +1,3597 @@
+{
+  "units": 1.0,
+  "collections": [
+    {
+      "name": "00 Presentation | hide for export",
+      "children": [],
+      "objects": [
+        "Winter ground",
+        "Display plinth",
+        "Display snow top",
+        "Label 01 Path Bollard",
+        "Height label",
+        "Display plinth.001",
+        "Display snow top.001",
+        "Label 02 Park Globe",
+        "Height label.001",
+        "Display plinth.002",
+        "Display snow top.002",
+        "Label 03 Compact Village Lantern",
+        "Height label.002",
+        "Display plinth.003",
+        "Display snow top.003",
+        "Label 04 Heritage Single",
+        "Height label.003",
+        "Display plinth.004",
+        "Display snow top.004",
+        "Label 05 Heritage Twin",
+        "Height label.004",
+        "Display plinth.005",
+        "Display snow top.005",
+        "Label 06 Wall Lantern",
+        "Height label.005",
+        "Display plinth.006",
+        "Display snow top.006",
+        "Label 07 Alpine Hanging Lantern",
+        "Height label.006",
+        "Display plinth.007",
+        "Display snow top.007",
+        "Label 08 Heritage Triple",
+        "Height label.007",
+        "Display plinth.008",
+        "Display snow top.008",
+        "Label 09 Residential Curved LED",
+        "Height label.008",
+        "Display plinth.009",
+        "Display snow top.009",
+        "Label 10 Main Road Outreach",
+        "Height label.009",
+        "Display plinth.010",
+        "Display snow top.010",
+        "Label 11 Dual Median LED",
+        "Height label.010",
+        "Display plinth.011",
+        "Display snow top.011",
+        "Label 12 Four Way Area Light",
+        "Height label.011",
+        "Wall mount demo block",
+        "Demo wall snow",
+        "Demo timber seam",
+        "Demo timber seam.001",
+        "Demo timber seam.002",
+        "Demo timber seam.003",
+        "Demo timber seam.004",
+        "Demo timber seam.005",
+        "Demo timber seam.006",
+        "Large winter key",
+        "Soft sky fill",
+        "Winter sun",
+        "All variants overview",
+        "01 Path Bollard | Detail camera",
+        "02 Park Globe | Detail camera",
+        "03 Compact Village Lantern | Detail camera",
+        "04 Heritage Single | Detail camera",
+        "05 Heritage Twin | Detail camera",
+        "06 Wall Lantern | Detail camera",
+        "07 Alpine Hanging Lantern | Detail camera",
+        "08 Heritage Triple | Detail camera",
+        "09 Residential Curved LED | Detail camera",
+        "10 Main Road Outreach | Detail camera",
+        "11 Dual Median LED | Detail camera",
+        "12 Four Way Area Light | Detail camera"
+      ]
+    },
+    {
+      "name": "01 Path Bollard",
+      "children": [],
+      "objects": [
+        "01 Path Bollard | MOVE FIXTURE",
+        "Bollard warm light",
+        "01 Path Bollard | Fixture",
+        "01 Path Bollard | Snow"
+      ]
+    },
+    {
+      "name": "02 Park Globe",
+      "children": [],
+      "objects": [
+        "02 Park Globe | MOVE FIXTURE",
+        "Globe light",
+        "02 Park Globe | Fixture",
+        "02 Park Globe | Snow"
+      ]
+    },
+    {
+      "name": "03 Compact Village Lantern",
+      "children": [],
+      "objects": [
+        "03 Compact Village Lantern | MOVE FIXTURE",
+        "Warm lantern light",
+        "03 Compact Village Lantern | Fixture",
+        "03 Compact Village Lantern | Snow"
+      ]
+    },
+    {
+      "name": "04 Heritage Single",
+      "children": [],
+      "objects": [
+        "04 Heritage Single | MOVE FIXTURE",
+        "Warm lantern light.001",
+        "04 Heritage Single | Fixture",
+        "04 Heritage Single | Snow"
+      ]
+    },
+    {
+      "name": "05 Heritage Twin",
+      "children": [],
+      "objects": [
+        "05 Heritage Twin | MOVE FIXTURE",
+        "Warm lantern light.002",
+        "Warm lantern light.003",
+        "05 Heritage Twin | Fixture",
+        "05 Heritage Twin | Snow"
+      ]
+    },
+    {
+      "name": "06 Wall Lantern",
+      "children": [],
+      "objects": [
+        "06 Wall Lantern | MOVE FIXTURE",
+        "Warm lantern light.004",
+        "06 Wall Lantern | Fixture",
+        "06 Wall Lantern | Snow"
+      ]
+    },
+    {
+      "name": "07 Alpine Hanging Lantern",
+      "children": [],
+      "objects": [
+        "07 Alpine Hanging Lantern | MOVE FIXTURE",
+        "Hanging lantern light",
+        "07 Alpine Hanging Lantern | Fixture",
+        "07 Alpine Hanging Lantern | Snow"
+      ]
+    },
+    {
+      "name": "08 Heritage Triple",
+      "children": [],
+      "objects": [
+        "08 Heritage Triple | MOVE FIXTURE",
+        "Warm lantern light.005",
+        "Warm lantern light.006",
+        "Warm lantern light.007",
+        "08 Heritage Triple | Fixture",
+        "08 Heritage Triple | Snow"
+      ]
+    },
+    {
+      "name": "09 Residential Curved LED",
+      "children": [],
+      "objects": [
+        "09 Residential Curved LED | MOVE FIXTURE",
+        "Road illumination",
+        "09 Residential Curved LED | Fixture",
+        "09 Residential Curved LED | Snow"
+      ]
+    },
+    {
+      "name": "10 Main Road Outreach",
+      "children": [],
+      "objects": [
+        "10 Main Road Outreach | MOVE FIXTURE",
+        "Road illumination.001",
+        "10 Main Road Outreach | Fixture",
+        "10 Main Road Outreach | Snow"
+      ]
+    },
+    {
+      "name": "11 Dual Median LED",
+      "children": [],
+      "objects": [
+        "11 Dual Median LED | MOVE FIXTURE",
+        "Road illumination.002",
+        "Road illumination.003",
+        "11 Dual Median LED | Fixture",
+        "11 Dual Median LED | Snow"
+      ]
+    },
+    {
+      "name": "12 Four Way Area Light",
+      "children": [],
+      "objects": [
+        "12 Four Way Area Light | MOVE FIXTURE",
+        "Road illumination.004",
+        "Road illumination.005",
+        "Road illumination.006",
+        "Road illumination.007",
+        "12 Four Way Area Light | Fixture",
+        "12 Four Way Area Light | Snow"
+      ]
+    },
+    {
+      "name": "Collection",
+      "children": [],
+      "objects": []
+    }
+  ],
+  "objects": [
+    {
+      "name": "01 Path Bollard | Detail camera",
+      "type": "CAMERA",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -12.5,
+        -14.0,
+        4.0
+      ]
+    },
+    {
+      "name": "01 Path Bollard | Fixture",
+      "type": "MESH",
+      "parent": "01 Path Bollard | MOVE FIXTURE",
+      "collections": [
+        "01 Path Bollard"
+      ],
+      "position": [
+        -17.5,
+        -5.0,
+        0.0
+      ],
+      "vertices": 116,
+      "triangles": 200,
+      "materials": [
+        "Alpine iron | blue charcoal",
+        "Warm lantern glazing"
+      ],
+      "bounds": [
+        [
+          -17.67119026184082,
+          -5.179999828338623,
+          0.0
+        ],
+        [
+          -17.32880973815918,
+          -4.820000171661377,
+          1.0699999332427979
+        ]
+      ]
+    },
+    {
+      "name": "01 Path Bollard | MOVE FIXTURE",
+      "type": "EMPTY",
+      "parent": null,
+      "collections": [
+        "01 Path Bollard"
+      ],
+      "position": [
+        -17.5,
+        -5.0,
+        0.0
+      ]
+    },
+    {
+      "name": "01 Path Bollard | Snow",
+      "type": "MESH",
+      "parent": "01 Path Bollard | MOVE FIXTURE",
+      "collections": [
+        "01 Path Bollard"
+      ],
+      "position": [
+        -17.5,
+        -5.0,
+        0.0
+      ],
+      "vertices": 16,
+      "triangles": 28,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          -17.649999618530273,
+          -5.150000095367432,
+          1.0600000619888306
+        ],
+        [
+          -17.350000381469727,
+          -4.849999904632568,
+          1.100000023841858
+        ]
+      ]
+    },
+    {
+      "name": "02 Park Globe | Detail camera",
+      "type": "CAMERA",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -5.5,
+        -14.0,
+        4.0
+      ]
+    },
+    {
+      "name": "02 Park Globe | Fixture",
+      "type": "MESH",
+      "parent": "02 Park Globe | MOVE FIXTURE",
+      "collections": [
+        "02 Park Globe"
+      ],
+      "position": [
+        -10.5,
+        -5.0,
+        0.0
+      ],
+      "vertices": 310,
+      "triangles": 564,
+      "materials": [
+        "Alpine iron | blue charcoal",
+        "Collars | graphite steel",
+        "Warm lantern glazing"
+      ],
+      "bounds": [
+        [
+          -10.800000190734863,
+          -5.300000190734863,
+          0.0
+        ],
+        [
+          -10.199999809265137,
+          -4.699999809265137,
+          3.5300002098083496
+        ]
+      ]
+    },
+    {
+      "name": "02 Park Globe | MOVE FIXTURE",
+      "type": "EMPTY",
+      "parent": null,
+      "collections": [
+        "02 Park Globe"
+      ],
+      "position": [
+        -10.5,
+        -5.0,
+        0.0
+      ]
+    },
+    {
+      "name": "02 Park Globe | Snow",
+      "type": "MESH",
+      "parent": "02 Park Globe | MOVE FIXTURE",
+      "collections": [
+        "02 Park Globe"
+      ],
+      "position": [
+        -10.5,
+        -5.0,
+        0.0
+      ],
+      "vertices": 20,
+      "triangles": 36,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          -10.6616792678833,
+          -5.170000076293945,
+          3.444999933242798
+        ],
+        [
+          -10.3383207321167,
+          -4.829999923706055,
+          3.515000104904175
+        ]
+      ]
+    },
+    {
+      "name": "03 Compact Village Lantern | Detail camera",
+      "type": "CAMERA",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        1.5,
+        -14.0,
+        4.0
+      ]
+    },
+    {
+      "name": "03 Compact Village Lantern | Fixture",
+      "type": "MESH",
+      "parent": "03 Compact Village Lantern | MOVE FIXTURE",
+      "collections": [
+        "03 Compact Village Lantern"
+      ],
+      "position": [
+        -3.5,
+        -5.0,
+        0.0
+      ],
+      "vertices": 358,
+      "triangles": 620,
+      "materials": [
+        "Alpine iron | blue charcoal",
+        "Collars | graphite steel",
+        "Warm lantern glazing",
+        "Heritage trim | aged brass"
+      ],
+      "bounds": [
+        [
+          -3.7720000743865967,
+          -5.271999835968018,
+          0.0
+        ],
+        [
+          -3.2279999256134033,
+          -4.728000164031982,
+          3.4620001316070557
+        ]
+      ]
+    },
+    {
+      "name": "03 Compact Village Lantern | MOVE FIXTURE",
+      "type": "EMPTY",
+      "parent": null,
+      "collections": [
+        "03 Compact Village Lantern"
+      ],
+      "position": [
+        -3.5,
+        -5.0,
+        0.0
+      ]
+    },
+    {
+      "name": "03 Compact Village Lantern | Snow",
+      "type": "MESH",
+      "parent": "03 Compact Village Lantern | MOVE FIXTURE",
+      "collections": [
+        "03 Compact Village Lantern"
+      ],
+      "position": [
+        -3.5,
+        -5.0,
+        0.0
+      ],
+      "vertices": 8,
+      "triangles": 10,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          -3.7720000743865967,
+          -5.271999835968018,
+          3.175600051879883
+        ],
+        [
+          -3.2279999256134033,
+          -4.728000164031982,
+          3.343600034713745
+        ]
+      ]
+    },
+    {
+      "name": "04 Heritage Single | Detail camera",
+      "type": "CAMERA",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        8.5,
+        -14.0,
+        4.0
+      ]
+    },
+    {
+      "name": "04 Heritage Single | Fixture",
+      "type": "MESH",
+      "parent": "04 Heritage Single | MOVE FIXTURE",
+      "collections": [
+        "04 Heritage Single"
+      ],
+      "position": [
+        3.5,
+        -5.0,
+        0.0
+      ],
+      "vertices": 358,
+      "triangles": 620,
+      "materials": [
+        "Alpine iron | blue charcoal",
+        "Collars | graphite steel",
+        "Warm lantern glazing",
+        "Heritage trim | aged brass"
+      ],
+      "bounds": [
+        [
+          3.194000005722046,
+          -5.305999755859375,
+          0.0
+        ],
+        [
+          3.805999994277954,
+          -4.694000244140625,
+          4.7885003089904785
+        ]
+      ]
+    },
+    {
+      "name": "04 Heritage Single | MOVE FIXTURE",
+      "type": "EMPTY",
+      "parent": null,
+      "collections": [
+        "04 Heritage Single"
+      ],
+      "position": [
+        3.5,
+        -5.0,
+        0.0
+      ]
+    },
+    {
+      "name": "04 Heritage Single | Snow",
+      "type": "MESH",
+      "parent": "04 Heritage Single | MOVE FIXTURE",
+      "collections": [
+        "04 Heritage Single"
+      ],
+      "position": [
+        3.5,
+        -5.0,
+        0.0
+      ],
+      "vertices": 8,
+      "triangles": 10,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          3.194000005722046,
+          -5.305999755859375,
+          4.466300010681152
+        ],
+        [
+          3.805999994277954,
+          -4.694000244140625,
+          4.655300140380859
+        ]
+      ]
+    },
+    {
+      "name": "05 Heritage Twin | Detail camera",
+      "type": "CAMERA",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        15.5,
+        -14.0,
+        4.0
+      ]
+    },
+    {
+      "name": "05 Heritage Twin | Fixture",
+      "type": "MESH",
+      "parent": "05 Heritage Twin | MOVE FIXTURE",
+      "collections": [
+        "05 Heritage Twin"
+      ],
+      "position": [
+        10.5,
+        -5.0,
+        0.0
+      ],
+      "vertices": 612,
+      "triangles": 1064,
+      "materials": [
+        "Alpine iron | blue charcoal",
+        "Collars | graphite steel",
+        "Warm lantern glazing",
+        "Heritage trim | aged brass"
+      ],
+      "bounds": [
+        [
+          9.514800071716309,
+          -5.265200138092041,
+          0.0
+        ],
+        [
+          11.485199928283691,
+          -4.734799861907959,
+          4.866700172424316
+        ]
+      ]
+    },
+    {
+      "name": "05 Heritage Twin | MOVE FIXTURE",
+      "type": "EMPTY",
+      "parent": null,
+      "collections": [
+        "05 Heritage Twin"
+      ],
+      "position": [
+        10.5,
+        -5.0,
+        0.0
+      ]
+    },
+    {
+      "name": "05 Heritage Twin | Snow",
+      "type": "MESH",
+      "parent": "05 Heritage Twin | MOVE FIXTURE",
+      "collections": [
+        "05 Heritage Twin"
+      ],
+      "position": [
+        10.5,
+        -5.0,
+        0.0
+      ],
+      "vertices": 16,
+      "triangles": 20,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          9.514800071716309,
+          -5.265200138092041,
+          4.587460041046143
+        ],
+        [
+          11.485199928283691,
+          -4.734799861907959,
+          4.751259803771973
+        ]
+      ]
+    },
+    {
+      "name": "06 Wall Lantern | Detail camera",
+      "type": "CAMERA",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        22.5,
+        -14.0,
+        4.0
+      ]
+    },
+    {
+      "name": "06 Wall Lantern | Fixture",
+      "type": "MESH",
+      "parent": "06 Wall Lantern | MOVE FIXTURE",
+      "collections": [
+        "06 Wall Lantern"
+      ],
+      "position": [
+        17.5,
+        -5.0,
+        0.0
+      ],
+      "vertices": 234,
+      "triangles": 404,
+      "materials": [
+        "Alpine iron | blue charcoal",
+        "Heritage trim | aged brass",
+        "Warm lantern glazing"
+      ],
+      "bounds": [
+        [
+          17.27560043334961,
+          -5.824399948120117,
+          1.7899998426437378
+        ],
+        [
+          17.72439956665039,
+          -4.855000019073486,
+          3.164900064468384
+        ]
+      ]
+    },
+    {
+      "name": "06 Wall Lantern | MOVE FIXTURE",
+      "type": "EMPTY",
+      "parent": null,
+      "collections": [
+        "06 Wall Lantern"
+      ],
+      "position": [
+        17.5,
+        -5.0,
+        0.0
+      ]
+    },
+    {
+      "name": "06 Wall Lantern | Snow",
+      "type": "MESH",
+      "parent": "06 Wall Lantern | MOVE FIXTURE",
+      "collections": [
+        "06 Wall Lantern"
+      ],
+      "position": [
+        17.5,
+        -5.0,
+        0.0
+      ],
+      "vertices": 8,
+      "triangles": 10,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          17.27560043334961,
+          -5.824399948120117,
+          2.9286201000213623
+        ],
+        [
+          17.72439956665039,
+          -5.3755998611450195,
+          3.0672199726104736
+        ]
+      ]
+    },
+    {
+      "name": "07 Alpine Hanging Lantern | Detail camera",
+      "type": "CAMERA",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -12.5,
+        -4.0,
+        4.045717239379883
+      ]
+    },
+    {
+      "name": "07 Alpine Hanging Lantern | Fixture",
+      "type": "MESH",
+      "parent": "07 Alpine Hanging Lantern | MOVE FIXTURE",
+      "collections": [
+        "07 Alpine Hanging Lantern"
+      ],
+      "position": [
+        -17.5,
+        5.0,
+        0.0
+      ],
+      "vertices": 350,
+      "triangles": 640,
+      "materials": [
+        "Alpine iron | blue charcoal",
+        "Collars | graphite steel",
+        "Warm lantern glazing"
+      ],
+      "bounds": [
+        [
+          -17.709232330322266,
+          4.610000133514404,
+          0.0
+        ],
+        [
+          -16.110000610351562,
+          5.389999866485596,
+          5.0571465492248535
+        ]
+      ]
+    },
+    {
+      "name": "07 Alpine Hanging Lantern | MOVE FIXTURE",
+      "type": "EMPTY",
+      "parent": null,
+      "collections": [
+        "07 Alpine Hanging Lantern"
+      ],
+      "position": [
+        -17.5,
+        5.0,
+        0.0
+      ]
+    },
+    {
+      "name": "07 Alpine Hanging Lantern | Snow",
+      "type": "MESH",
+      "parent": "07 Alpine Hanging Lantern | MOVE FIXTURE",
+      "collections": [
+        "07 Alpine Hanging Lantern"
+      ],
+      "position": [
+        -17.5,
+        5.0,
+        0.0
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          -16.860000610351562,
+          4.639999866485596,
+          4.315000057220459
+        ],
+        [
+          -16.139999389648438,
+          5.360000133514404,
+          4.544999599456787
+        ]
+      ]
+    },
+    {
+      "name": "08 Heritage Triple | Detail camera",
+      "type": "CAMERA",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -5.5,
+        -4.0,
+        4.350319862365723
+      ]
+    },
+    {
+      "name": "08 Heritage Triple | Fixture",
+      "type": "MESH",
+      "parent": "08 Heritage Triple | MOVE FIXTURE",
+      "collections": [
+        "08 Heritage Triple"
+      ],
+      "position": [
+        -10.5,
+        5.0,
+        0.0
+      ],
+      "vertices": 730,
+      "triangles": 1260,
+      "materials": [
+        "Alpine iron | blue charcoal",
+        "Collars | graphite steel",
+        "Warm lantern glazing",
+        "Heritage trim | aged brass"
+      ],
+      "bounds": [
+        [
+          -11.611599922180176,
+          4.707600116729736,
+          0.0
+        ],
+        [
+          -9.388400077819824,
+          5.292399883270264,
+          5.437900066375732
+        ]
+      ]
+    },
+    {
+      "name": "08 Heritage Triple | MOVE FIXTURE",
+      "type": "EMPTY",
+      "parent": null,
+      "collections": [
+        "08 Heritage Triple"
+      ],
+      "position": [
+        -10.5,
+        5.0,
+        0.0
+      ]
+    },
+    {
+      "name": "08 Heritage Triple | Snow",
+      "type": "MESH",
+      "parent": "08 Heritage Triple | MOVE FIXTURE",
+      "collections": [
+        "08 Heritage Triple"
+      ],
+      "position": [
+        -10.5,
+        5.0,
+        0.0
+      ],
+      "vertices": 24,
+      "triangles": 30,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          -11.611599922180176,
+          4.707600116729736,
+          4.9511799812316895
+        ],
+        [
+          -9.388400077819824,
+          5.292399883270264,
+          5.310619831085205
+        ]
+      ]
+    },
+    {
+      "name": "09 Residential Curved LED | Detail camera",
+      "type": "CAMERA",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        1.5,
+        -4.0,
+        4.580960273742676
+      ]
+    },
+    {
+      "name": "09 Residential Curved LED | Fixture",
+      "type": "MESH",
+      "parent": "09 Residential Curved LED | MOVE FIXTURE",
+      "collections": [
+        "09 Residential Curved LED"
+      ],
+      "position": [
+        -3.5,
+        5.0,
+        0.0
+      ],
+      "vertices": 254,
+      "triangles": 448,
+      "materials": [
+        "Alpine iron | blue charcoal",
+        "Collars | graphite steel",
+        "Road LED diffuser"
+      ],
+      "bounds": [
+        [
+          -3.6997218132019043,
+          4.775000095367432,
+          0.0
+        ],
+        [
+          -1.1549999713897705,
+          5.224999904632568,
+          5.726200103759766
+        ]
+      ]
+    },
+    {
+      "name": "09 Residential Curved LED | MOVE FIXTURE",
+      "type": "EMPTY",
+      "parent": null,
+      "collections": [
+        "09 Residential Curved LED"
+      ],
+      "position": [
+        -3.5,
+        5.0,
+        0.0
+      ]
+    },
+    {
+      "name": "09 Residential Curved LED | Snow",
+      "type": "MESH",
+      "parent": "09 Residential Curved LED | MOVE FIXTURE",
+      "collections": [
+        "09 Residential Curved LED"
+      ],
+      "position": [
+        -3.5,
+        5.0,
+        0.0
+      ],
+      "vertices": 8,
+      "triangles": 6,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          -2.051759958267212,
+          4.795249938964844,
+          5.736400127410889
+        ],
+        [
+          -1.189650058746338,
+          5.204750061035156,
+          5.736400127410889
+        ]
+      ]
+    },
+    {
+      "name": "10 Main Road Outreach | Detail camera",
+      "type": "CAMERA",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        8.5,
+        -4.0,
+        6.269491672515869
+      ]
+    },
+    {
+      "name": "10 Main Road Outreach | Fixture",
+      "type": "MESH",
+      "parent": "10 Main Road Outreach | MOVE FIXTURE",
+      "collections": [
+        "10 Main Road Outreach"
+      ],
+      "position": [
+        3.5,
+        5.0,
+        0.0
+      ],
+      "vertices": 254,
+      "triangles": 448,
+      "materials": [
+        "Alpine iron | blue charcoal",
+        "Collars | graphite steel",
+        "Road LED diffuser"
+      ],
+      "bounds": [
+        [
+          3.3002781867980957,
+          4.724999904632568,
+          0.0
+        ],
+        [
+          6.755000114440918,
+          5.275000095367432,
+          7.836864471435547
+        ]
+      ]
+    },
+    {
+      "name": "10 Main Road Outreach | MOVE FIXTURE",
+      "type": "EMPTY",
+      "parent": null,
+      "collections": [
+        "10 Main Road Outreach"
+      ],
+      "position": [
+        3.5,
+        5.0,
+        0.0
+      ]
+    },
+    {
+      "name": "10 Main Road Outreach | Snow",
+      "type": "MESH",
+      "parent": "10 Main Road Outreach | MOVE FIXTURE",
+      "collections": [
+        "10 Main Road Outreach"
+      ],
+      "position": [
+        3.5,
+        5.0,
+        0.0
+      ],
+      "vertices": 8,
+      "triangles": 6,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          5.658960342407227,
+          4.749750137329102,
+          7.855599880218506
+        ],
+        [
+          6.712650299072266,
+          5.250249862670898,
+          7.855599880218506
+        ]
+      ]
+    },
+    {
+      "name": "11 Dual Median LED | Detail camera",
+      "type": "CAMERA",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        15.5,
+        -4.0,
+        6.665283203125
+      ]
+    },
+    {
+      "name": "11 Dual Median LED | Fixture",
+      "type": "MESH",
+      "parent": "11 Dual Median LED | MOVE FIXTURE",
+      "collections": [
+        "11 Dual Median LED"
+      ],
+      "position": [
+        10.5,
+        5.0,
+        0.0
+      ],
+      "vertices": 352,
+      "triangles": 624,
+      "materials": [
+        "Alpine iron | blue charcoal",
+        "Collars | graphite steel",
+        "Road LED diffuser"
+      ],
+      "bounds": [
+        [
+          7.599999904632568,
+          4.75,
+          0.0
+        ],
+        [
+          13.399999618530273,
+          5.25,
+          8.33160400390625
+        ]
+      ]
+    },
+    {
+      "name": "11 Dual Median LED | MOVE FIXTURE",
+      "type": "EMPTY",
+      "parent": null,
+      "collections": [
+        "11 Dual Median LED"
+      ],
+      "position": [
+        10.5,
+        5.0,
+        0.0
+      ]
+    },
+    {
+      "name": "11 Dual Median LED | Snow",
+      "type": "MESH",
+      "parent": "11 Dual Median LED | MOVE FIXTURE",
+      "collections": [
+        "11 Dual Median LED"
+      ],
+      "position": [
+        10.5,
+        5.0,
+        0.0
+      ],
+      "vertices": 16,
+      "triangles": 12,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          7.638500213623047,
+          4.772500038146973,
+          8.345999717712402
+        ],
+        [
+          13.361499786376953,
+          5.227499961853027,
+          8.345999717712402
+        ]
+      ]
+    },
+    {
+      "name": "12 Four Way Area Light | Detail camera",
+      "type": "CAMERA",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        22.5,
+        -4.0,
+        5.737706184387207
+      ]
+    },
+    {
+      "name": "12 Four Way Area Light | Fixture",
+      "type": "MESH",
+      "parent": "12 Four Way Area Light | MOVE FIXTURE",
+      "collections": [
+        "12 Four Way Area Light"
+      ],
+      "position": [
+        17.5,
+        5.0,
+        0.0
+      ],
+      "vertices": 548,
+      "triangles": 976,
+      "materials": [
+        "Alpine iron | blue charcoal",
+        "Collars | graphite steel",
+        "Road LED diffuser"
+      ],
+      "bounds": [
+        [
+          15.643500328063965,
+          3.1434998512268066,
+          0.0
+        ],
+        [
+          19.35650062561035,
+          6.856500148773193,
+          7.17213249206543
+        ]
+      ]
+    },
+    {
+      "name": "12 Four Way Area Light | MOVE FIXTURE",
+      "type": "EMPTY",
+      "parent": null,
+      "collections": [
+        "12 Four Way Area Light"
+      ],
+      "position": [
+        17.5,
+        5.0,
+        0.0
+      ]
+    },
+    {
+      "name": "12 Four Way Area Light | Snow",
+      "type": "MESH",
+      "parent": "12 Four Way Area Light | MOVE FIXTURE",
+      "collections": [
+        "12 Four Way Area Light"
+      ],
+      "position": [
+        17.5,
+        5.0,
+        0.0
+      ],
+      "vertices": 32,
+      "triangles": 24,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          15.675455093383789,
+          3.175455093383789,
+          7.179679870605469
+        ],
+        [
+          19.32454490661621,
+          6.824544906616211,
+          7.179679870605469
+        ]
+      ]
+    },
+    {
+      "name": "All variants overview",
+      "type": "CAMERA",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        21.0,
+        -36.0,
+        27.0
+      ]
+    },
+    {
+      "name": "Bollard warm light",
+      "type": "LIGHT",
+      "parent": "01 Path Bollard | MOVE FIXTURE",
+      "collections": [
+        "01 Path Bollard"
+      ],
+      "position": [
+        -17.5,
+        -5.0,
+        0.8799999952316284
+      ],
+      "lightType": "POINT",
+      "energy": 8.0,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Demo timber seam",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        -4.925000190734863,
+        0.4000000059604645
+      ],
+      "vertices": 8,
+      "triangles": 12,
+      "materials": [
+        "Alpine iron | blue charcoal"
+      ],
+      "bounds": [
+        [
+          17.084999084472656,
+          -4.933000087738037,
+          0.3930000066757202
+        ],
+        [
+          17.915000915527344,
+          -4.9170002937316895,
+          0.40700000524520874
+        ]
+      ]
+    },
+    {
+      "name": "Demo timber seam.001",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        -4.925000190734863,
+        0.800000011920929
+      ],
+      "vertices": 8,
+      "triangles": 12,
+      "materials": [
+        "Alpine iron | blue charcoal"
+      ],
+      "bounds": [
+        [
+          17.084999084472656,
+          -4.933000087738037,
+          0.7929999828338623
+        ],
+        [
+          17.915000915527344,
+          -4.9170002937316895,
+          0.8070000410079956
+        ]
+      ]
+    },
+    {
+      "name": "Demo timber seam.002",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        -4.925000190734863,
+        1.2000000476837158
+      ],
+      "vertices": 8,
+      "triangles": 12,
+      "materials": [
+        "Alpine iron | blue charcoal"
+      ],
+      "bounds": [
+        [
+          17.084999084472656,
+          -4.933000087738037,
+          1.193000078201294
+        ],
+        [
+          17.915000915527344,
+          -4.9170002937316895,
+          1.2070000171661377
+        ]
+      ]
+    },
+    {
+      "name": "Demo timber seam.003",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        -4.925000190734863,
+        1.600000023841858
+      ],
+      "vertices": 8,
+      "triangles": 12,
+      "materials": [
+        "Alpine iron | blue charcoal"
+      ],
+      "bounds": [
+        [
+          17.084999084472656,
+          -4.933000087738037,
+          1.593000054359436
+        ],
+        [
+          17.915000915527344,
+          -4.9170002937316895,
+          1.6069999933242798
+        ]
+      ]
+    },
+    {
+      "name": "Demo timber seam.004",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        -4.925000190734863,
+        2.0
+      ],
+      "vertices": 8,
+      "triangles": 12,
+      "materials": [
+        "Alpine iron | blue charcoal"
+      ],
+      "bounds": [
+        [
+          17.084999084472656,
+          -4.933000087738037,
+          1.9930000305175781
+        ],
+        [
+          17.915000915527344,
+          -4.9170002937316895,
+          2.006999969482422
+        ]
+      ]
+    },
+    {
+      "name": "Demo timber seam.005",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        -4.925000190734863,
+        2.4000000953674316
+      ],
+      "vertices": 8,
+      "triangles": 12,
+      "materials": [
+        "Alpine iron | blue charcoal"
+      ],
+      "bounds": [
+        [
+          17.084999084472656,
+          -4.933000087738037,
+          2.3930001258850098
+        ],
+        [
+          17.915000915527344,
+          -4.9170002937316895,
+          2.4070000648498535
+        ]
+      ]
+    },
+    {
+      "name": "Demo timber seam.006",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        -4.925000190734863,
+        2.799999952316284
+      ],
+      "vertices": 8,
+      "triangles": 12,
+      "materials": [
+        "Alpine iron | blue charcoal"
+      ],
+      "bounds": [
+        [
+          17.084999084472656,
+          -4.933000087738037,
+          2.7929999828338623
+        ],
+        [
+          17.915000915527344,
+          -4.9170002937316895,
+          2.806999921798706
+        ]
+      ]
+    },
+    {
+      "name": "Demo wall snow",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        -4.800000190734863,
+        3.2300000190734863
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          17.020000457763672,
+          -4.970000267028809,
+          3.190000057220459
+        ],
+        [
+          17.979999542236328,
+          -4.630000114440918,
+          3.2699999809265137
+        ]
+      ]
+    },
+    {
+      "name": "Display plinth",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -17.5,
+        -5.0,
+        -0.07500000298023224
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Presentation stone"
+      ],
+      "bounds": [
+        [
+          -20.649999618530273,
+          -8.149999618530273,
+          -0.15000000596046448
+        ],
+        [
+          -14.350000381469727,
+          -1.8499999046325684,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "Display plinth.001",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -10.5,
+        -5.0,
+        -0.07500000298023224
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Presentation stone"
+      ],
+      "bounds": [
+        [
+          -13.649999618530273,
+          -8.149999618530273,
+          -0.15000000596046448
+        ],
+        [
+          -7.349999904632568,
+          -1.8499999046325684,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "Display plinth.002",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -3.5,
+        -5.0,
+        -0.07500000298023224
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Presentation stone"
+      ],
+      "bounds": [
+        [
+          -6.650000095367432,
+          -8.149999618530273,
+          -0.15000000596046448
+        ],
+        [
+          -0.34999990463256836,
+          -1.8499999046325684,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "Display plinth.003",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        3.5,
+        -5.0,
+        -0.07500000298023224
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Presentation stone"
+      ],
+      "bounds": [
+        [
+          0.34999990463256836,
+          -8.149999618530273,
+          -0.15000000596046448
+        ],
+        [
+          6.650000095367432,
+          -1.8499999046325684,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "Display plinth.004",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        10.5,
+        -5.0,
+        -0.07500000298023224
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Presentation stone"
+      ],
+      "bounds": [
+        [
+          7.349999904632568,
+          -8.149999618530273,
+          -0.15000000596046448
+        ],
+        [
+          13.649999618530273,
+          -1.8499999046325684,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "Display plinth.005",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        -5.0,
+        -0.07500000298023224
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Presentation stone"
+      ],
+      "bounds": [
+        [
+          14.350000381469727,
+          -8.149999618530273,
+          -0.15000000596046448
+        ],
+        [
+          20.649999618530273,
+          -1.8499999046325684,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "Display plinth.006",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -17.5,
+        5.0,
+        -0.07500000298023224
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Presentation stone"
+      ],
+      "bounds": [
+        [
+          -20.649999618530273,
+          1.8499999046325684,
+          -0.15000000596046448
+        ],
+        [
+          -14.350000381469727,
+          8.149999618530273,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "Display plinth.007",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -10.5,
+        5.0,
+        -0.07500000298023224
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Presentation stone"
+      ],
+      "bounds": [
+        [
+          -13.649999618530273,
+          1.8499999046325684,
+          -0.15000000596046448
+        ],
+        [
+          -7.349999904632568,
+          8.149999618530273,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "Display plinth.008",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -3.5,
+        5.0,
+        -0.07500000298023224
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Presentation stone"
+      ],
+      "bounds": [
+        [
+          -6.650000095367432,
+          1.8499999046325684,
+          -0.15000000596046448
+        ],
+        [
+          -0.34999990463256836,
+          8.149999618530273,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "Display plinth.009",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        3.5,
+        5.0,
+        -0.07500000298023224
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Presentation stone"
+      ],
+      "bounds": [
+        [
+          0.34999990463256836,
+          1.8499999046325684,
+          -0.15000000596046448
+        ],
+        [
+          6.650000095367432,
+          8.149999618530273,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "Display plinth.010",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        10.5,
+        5.0,
+        -0.07500000298023224
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Presentation stone"
+      ],
+      "bounds": [
+        [
+          7.349999904632568,
+          1.8499999046325684,
+          -0.15000000596046448
+        ],
+        [
+          13.649999618530273,
+          8.149999618530273,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "Display plinth.011",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        5.0,
+        -0.07500000298023224
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Presentation stone"
+      ],
+      "bounds": [
+        [
+          14.350000381469727,
+          1.8499999046325684,
+          -0.15000000596046448
+        ],
+        [
+          20.649999618530273,
+          8.149999618530273,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "Display snow top",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -17.5,
+        -5.0,
+        0.004999999888241291
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          -20.630001068115234,
+          -8.130000114440918,
+          -0.012500000186264515
+        ],
+        [
+          -14.369999885559082,
+          -1.869999885559082,
+          0.02250000089406967
+        ]
+      ]
+    },
+    {
+      "name": "Display snow top.001",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -10.5,
+        -5.0,
+        0.004999999888241291
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          -13.630000114440918,
+          -8.130000114440918,
+          -0.012500000186264515
+        ],
+        [
+          -7.369999885559082,
+          -1.869999885559082,
+          0.02250000089406967
+        ]
+      ]
+    },
+    {
+      "name": "Display snow top.002",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -3.5,
+        -5.0,
+        0.004999999888241291
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          -6.630000114440918,
+          -8.130000114440918,
+          -0.012500000186264515
+        ],
+        [
+          -0.36999988555908203,
+          -1.869999885559082,
+          0.02250000089406967
+        ]
+      ]
+    },
+    {
+      "name": "Display snow top.003",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        3.5,
+        -5.0,
+        0.004999999888241291
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          0.36999988555908203,
+          -8.130000114440918,
+          -0.012500000186264515
+        ],
+        [
+          6.630000114440918,
+          -1.869999885559082,
+          0.02250000089406967
+        ]
+      ]
+    },
+    {
+      "name": "Display snow top.004",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        10.5,
+        -5.0,
+        0.004999999888241291
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          7.369999885559082,
+          -8.130000114440918,
+          -0.012500000186264515
+        ],
+        [
+          13.630000114440918,
+          -1.869999885559082,
+          0.02250000089406967
+        ]
+      ]
+    },
+    {
+      "name": "Display snow top.005",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        -5.0,
+        0.004999999888241291
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          14.369999885559082,
+          -8.130000114440918,
+          -0.012500000186264515
+        ],
+        [
+          20.630001068115234,
+          -1.869999885559082,
+          0.02250000089406967
+        ]
+      ]
+    },
+    {
+      "name": "Display snow top.006",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -17.5,
+        5.0,
+        0.004999999888241291
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          -20.630001068115234,
+          1.869999885559082,
+          -0.012500000186264515
+        ],
+        [
+          -14.369999885559082,
+          8.130000114440918,
+          0.02250000089406967
+        ]
+      ]
+    },
+    {
+      "name": "Display snow top.007",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -10.5,
+        5.0,
+        0.004999999888241291
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          -13.630000114440918,
+          1.869999885559082,
+          -0.012500000186264515
+        ],
+        [
+          -7.369999885559082,
+          8.130000114440918,
+          0.02250000089406967
+        ]
+      ]
+    },
+    {
+      "name": "Display snow top.008",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -3.5,
+        5.0,
+        0.004999999888241291
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          -6.630000114440918,
+          1.869999885559082,
+          -0.012500000186264515
+        ],
+        [
+          -0.36999988555908203,
+          8.130000114440918,
+          0.02250000089406967
+        ]
+      ]
+    },
+    {
+      "name": "Display snow top.009",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        3.5,
+        5.0,
+        0.004999999888241291
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          0.36999988555908203,
+          1.869999885559082,
+          -0.012500000186264515
+        ],
+        [
+          6.630000114440918,
+          8.130000114440918,
+          0.02250000089406967
+        ]
+      ]
+    },
+    {
+      "name": "Display snow top.010",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        10.5,
+        5.0,
+        0.004999999888241291
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          7.369999885559082,
+          1.869999885559082,
+          -0.012500000186264515
+        ],
+        [
+          13.630000114440918,
+          8.130000114440918,
+          0.02250000089406967
+        ]
+      ]
+    },
+    {
+      "name": "Display snow top.011",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        5.0,
+        0.004999999888241291
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Snow caps | ice ivory"
+      ],
+      "bounds": [
+        [
+          14.369999885559082,
+          1.869999885559082,
+          -0.012500000186264515
+        ],
+        [
+          20.630001068115234,
+          8.130000114440918,
+          0.02250000089406967
+        ]
+      ]
+    },
+    {
+      "name": "Globe light",
+      "type": "LIGHT",
+      "parent": "02 Park Globe | MOVE FIXTURE",
+      "collections": [
+        "02 Park Globe"
+      ],
+      "position": [
+        -10.5,
+        -5.0,
+        3.1500000953674316
+      ],
+      "lightType": "POINT",
+      "energy": 20.0,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Hanging lantern light",
+      "type": "LIGHT",
+      "parent": "07 Alpine Hanging Lantern | MOVE FIXTURE",
+      "collections": [
+        "07 Alpine Hanging Lantern"
+      ],
+      "position": [
+        -16.5,
+        5.0,
+        4.199999809265137
+      ],
+      "lightType": "POINT",
+      "energy": 24.0,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Height label",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -17.5,
+        -7.960000038146973,
+        0.03999999910593033
+      ],
+      "vertices": 747,
+      "triangles": 725,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          -18.0731201171875,
+          -7.961619853973389,
+          0.03999999910593033
+        ],
+        [
+          -16.897720336914062,
+          -7.835619926452637,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Height label.001",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -10.5,
+        -7.960000038146973,
+        0.03999999910593033
+      ],
+      "vertices": 897,
+      "triangles": 875,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          -11.097960472106934,
+          -7.961619853973389,
+          0.03999999910593033
+        ],
+        [
+          -9.897720336914062,
+          -7.835619926452637,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Height label.002",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -3.5,
+        -7.960000038146973,
+        0.03999999910593033
+      ],
+      "vertices": 989,
+      "triangles": 967,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          -4.097959995269775,
+          -7.961619853973389,
+          0.03999999910593033
+        ],
+        [
+          -2.8977198600769043,
+          -7.835619926452637,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Height label.003",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        3.5,
+        -7.960000038146973,
+        0.03999999910593033
+      ],
+      "vertices": 971,
+      "triangles": 955,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          2.8924999237060547,
+          -7.961619853973389,
+          0.03999999910593033
+        ],
+        [
+          4.102280139923096,
+          -7.835619926452637,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Height label.004",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        10.5,
+        -7.960000038146973,
+        0.03999999910593033
+      ],
+      "vertices": 842,
+      "triangles": 824,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          9.84749984741211,
+          -7.961619853973389,
+          0.03999999910593033
+        ],
+        [
+          11.147279739379883,
+          -7.835619926452637,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Height label.005",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        -7.960000038146973,
+        0.03999999910593033
+      ],
+      "vertices": 820,
+      "triangles": 800,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          16.902040481567383,
+          -7.961619853973389,
+          0.03999999910593033
+        ],
+        [
+          18.102279663085938,
+          -7.835619926452637,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Height label.006",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -17.5,
+        2.0399999618530273,
+        0.03999999910593033
+      ],
+      "vertices": 772,
+      "triangles": 752,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          -18.100479125976562,
+          2.0383799076080322,
+          0.03999999910593033
+        ],
+        [
+          -16.897720336914062,
+          2.1643800735473633,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Height label.007",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -10.5,
+        2.0399999618530273,
+        0.03999999910593033
+      ],
+      "vertices": 861,
+      "triangles": 839,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          -11.145480155944824,
+          2.0383799076080322,
+          0.03999999910593033
+        ],
+        [
+          -9.852720260620117,
+          2.1643800735473633,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Height label.008",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -3.5,
+        2.0399999618530273,
+        0.03999999910593033
+      ],
+      "vertices": 764,
+      "triangles": 746,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          -4.100480079650879,
+          2.0383799076080322,
+          0.03999999910593033
+        ],
+        [
+          -2.8977198600769043,
+          2.1643800735473633,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Height label.009",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        3.5,
+        2.0399999618530273,
+        0.03999999910593033
+      ],
+      "vertices": 878,
+      "triangles": 864,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          2.8993399143218994,
+          2.0383799076080322,
+          0.03999999910593033
+        ],
+        [
+          4.102280139923096,
+          2.1643800735473633,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Height label.010",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        10.5,
+        2.0399999618530273,
+        0.03999999910593033
+      ],
+      "vertices": 1022,
+      "triangles": 1004,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          9.896280288696289,
+          2.0383799076080322,
+          0.03999999910593033
+        ],
+        [
+          11.102279663085938,
+          2.1643800735473633,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Height label.011",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        2.0399999618530273,
+        0.03999999910593033
+      ],
+      "vertices": 813,
+      "triangles": 791,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          16.89933967590332,
+          2.0383799076080322,
+          0.03999999910593033
+        ],
+        [
+          18.102279663085938,
+          2.1643800735473633,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Label 01 Path Bollard",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -17.5,
+        -7.630000114440918,
+        0.03999999910593033
+      ],
+      "vertices": 560,
+      "triangles": 552,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          -18.423229217529297,
+          -7.631979942321777,
+          0.03999999910593033
+        ],
+        [
+          -16.580289840698242,
+          -7.477980136871338,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Label 02 Park Globe",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -10.5,
+        -7.630000114440918,
+        0.03999999910593033
+      ],
+      "vertices": 679,
+      "triangles": 671,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          -11.275389671325684,
+          -7.631979942321777,
+          0.03999999910593033
+        ],
+        [
+          -9.724390029907227,
+          -7.477980136871338,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Label 03 Compact Village Lantern",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -3.5,
+        -7.630000114440918,
+        0.03999999910593033
+      ],
+      "vertices": 924,
+      "triangles": 892,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          -5.121729850769043,
+          -7.631979942321777,
+          0.03999999910593033
+        ],
+        [
+          -1.8881701231002808,
+          -7.477980136871338,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Label 04 Heritage Single",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        3.5,
+        -7.630000114440918,
+        0.03999999910593033
+      ],
+      "vertices": 622,
+      "triangles": 598,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          2.4760100841522217,
+          -7.631979942321777,
+          0.03999999910593033
+        ],
+        [
+          4.524209976196289,
+          -7.477980136871338,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Label 05 Heritage Twin",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        10.5,
+        -7.630000114440918,
+        0.03999999910593033
+      ],
+      "vertices": 464,
+      "triangles": 442,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          9.535630226135254,
+          -7.631979942321777,
+          0.03999999910593033
+        ],
+        [
+          11.454469680786133,
+          -7.477980136871338,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Label 06 Wall Lantern",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        -7.630000114440918,
+        0.03999999910593033
+      ],
+      "vertices": 404,
+      "triangles": 388,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          16.55267906188965,
+          -7.631979942321777,
+          0.03999999910593033
+        ],
+        [
+          18.437419891357422,
+          -7.477980136871338,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Label 07 Alpine Hanging Lantern",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -17.5,
+        2.369999885559082,
+        0.03999999910593033
+      ],
+      "vertices": 603,
+      "triangles": 571,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          -19.049570083618164,
+          2.3680198192596436,
+          0.03999999910593033
+        ],
+        [
+          -15.96033000946045,
+          2.522019863128662,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Label 08 Heritage Triple",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -10.5,
+        2.369999885559082,
+        0.03999999910593033
+      ],
+      "vertices": 723,
+      "triangles": 705,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          -11.495280265808105,
+          2.3680198192596436,
+          0.03999999910593033
+        ],
+        [
+          -9.504500389099121,
+          2.522019863128662,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Label 09 Residential Curved LED",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -3.5,
+        2.369999885559082,
+        0.03999999910593033
+      ],
+      "vertices": 981,
+      "triangles": 953,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          -4.956620216369629,
+          2.3680198192596436,
+          0.03999999910593033
+        ],
+        [
+          -2.0469000339508057,
+          2.522019863128662,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Label 10 Main Road Outreach",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        3.5,
+        2.369999885559082,
+        0.03999999910593033
+      ],
+      "vertices": 804,
+      "triangles": 786,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          2.1694400310516357,
+          2.3680198192596436,
+          0.03999999910593033
+        ],
+        [
+          4.858280181884766,
+          2.522019863128662,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Label 11 Dual Median LED",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        10.5,
+        2.369999885559082,
+        0.03999999910593033
+      ],
+      "vertices": 335,
+      "triangles": 315,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          9.453459739685059,
+          2.3680198192596436,
+          0.03999999910593033
+        ],
+        [
+          11.580860137939453,
+          2.5209197998046875,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Label 12 Four Way Area Light",
+      "type": "FONT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        2.369999885559082,
+        0.03999999910593033
+      ],
+      "vertices": 664,
+      "triangles": 640,
+      "materials": [
+        "Presentation ink"
+      ],
+      "bounds": [
+        [
+          16.193639755249023,
+          2.3680198192596436,
+          0.03999999910593033
+        ],
+        [
+          18.84705924987793,
+          2.522019863128662,
+          0.03999999910593033
+        ]
+      ]
+    },
+    {
+      "name": "Large winter key",
+      "type": "LIGHT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        -15.0,
+        -18.0,
+        26.0
+      ],
+      "lightType": "AREA",
+      "energy": 2800.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "radius": 0.0
+    },
+    {
+      "name": "Road illumination",
+      "type": "LIGHT",
+      "parent": "09 Residential Curved LED | MOVE FIXTURE",
+      "collections": [
+        "09 Residential Curved LED"
+      ],
+      "position": [
+        -1.649999976158142,
+        5.0,
+        5.46999979019165
+      ],
+      "lightType": "POINT",
+      "energy": 31.5,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Road illumination.001",
+      "type": "LIGHT",
+      "parent": "10 Main Road Outreach | MOVE FIXTURE",
+      "collections": [
+        "10 Main Road Outreach"
+      ],
+      "position": [
+        6.150000095367432,
+        5.0,
+        7.570000171661377
+      ],
+      "lightType": "POINT",
+      "energy": 38.5,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Road illumination.002",
+      "type": "LIGHT",
+      "parent": "11 Dual Median LED | MOVE FIXTURE",
+      "collections": [
+        "11 Dual Median LED"
+      ],
+      "position": [
+        12.850000381469727,
+        5.0,
+        8.069999694824219
+      ],
+      "lightType": "POINT",
+      "energy": 35.0,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Road illumination.003",
+      "type": "LIGHT",
+      "parent": "11 Dual Median LED | MOVE FIXTURE",
+      "collections": [
+        "11 Dual Median LED"
+      ],
+      "position": [
+        8.149999618530273,
+        5.0,
+        8.069999694824219
+      ],
+      "lightType": "POINT",
+      "energy": 35.0,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Road illumination.004",
+      "type": "LIGHT",
+      "parent": "12 Four Way Area Light | MOVE FIXTURE",
+      "collections": [
+        "12 Four Way Area Light"
+      ],
+      "position": [
+        18.899999618530273,
+        5.0,
+        6.920000076293945
+      ],
+      "lightType": "POINT",
+      "energy": 29.049999237060547,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Road illumination.005",
+      "type": "LIGHT",
+      "parent": "12 Four Way Area Light | MOVE FIXTURE",
+      "collections": [
+        "12 Four Way Area Light"
+      ],
+      "position": [
+        17.5,
+        6.400000095367432,
+        6.920000076293945
+      ],
+      "lightType": "POINT",
+      "energy": 29.049999237060547,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Road illumination.006",
+      "type": "LIGHT",
+      "parent": "12 Four Way Area Light | MOVE FIXTURE",
+      "collections": [
+        "12 Four Way Area Light"
+      ],
+      "position": [
+        16.100000381469727,
+        5.0,
+        6.920000076293945
+      ],
+      "lightType": "POINT",
+      "energy": 29.049999237060547,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Road illumination.007",
+      "type": "LIGHT",
+      "parent": "12 Four Way Area Light | MOVE FIXTURE",
+      "collections": [
+        "12 Four Way Area Light"
+      ],
+      "position": [
+        17.5,
+        3.5999999046325684,
+        6.920000076293945
+      ],
+      "lightType": "POINT",
+      "energy": 29.049999237060547,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Soft sky fill",
+      "type": "LIGHT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        18.0,
+        5.0,
+        20.0
+      ],
+      "lightType": "AREA",
+      "energy": 1800.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "radius": 0.0
+    },
+    {
+      "name": "Wall mount demo block",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        17.5,
+        -4.800000190734863,
+        1.600000023841858
+      ],
+      "vertices": 24,
+      "triangles": 44,
+      "materials": [
+        "Wall mount demonstration | timber"
+      ],
+      "bounds": [
+        [
+          17.075000762939453,
+          -4.910000324249268,
+          0.0
+        ],
+        [
+          17.924999237060547,
+          -4.690000057220459,
+          3.200000047683716
+        ]
+      ]
+    },
+    {
+      "name": "Warm lantern light",
+      "type": "LIGHT",
+      "parent": "03 Compact Village Lantern | MOVE FIXTURE",
+      "collections": [
+        "03 Compact Village Lantern"
+      ],
+      "position": [
+        -3.5,
+        -5.0,
+        2.865999937057495
+      ],
+      "lightType": "POINT",
+      "energy": 14.399999618530273,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Warm lantern light.001",
+      "type": "LIGHT",
+      "parent": "04 Heritage Single | MOVE FIXTURE",
+      "collections": [
+        "04 Heritage Single"
+      ],
+      "position": [
+        3.5,
+        -5.0,
+        4.118000030517578
+      ],
+      "lightType": "POINT",
+      "energy": 16.200000762939453,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Warm lantern light.002",
+      "type": "LIGHT",
+      "parent": "05 Heritage Twin | MOVE FIXTURE",
+      "collections": [
+        "05 Heritage Twin"
+      ],
+      "position": [
+        9.779999732971191,
+        -5.0,
+        4.285600185394287
+      ],
+      "lightType": "POINT",
+      "energy": 14.039999961853027,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Warm lantern light.003",
+      "type": "LIGHT",
+      "parent": "05 Heritage Twin | MOVE FIXTURE",
+      "collections": [
+        "05 Heritage Twin"
+      ],
+      "position": [
+        11.220000267028809,
+        -5.0,
+        4.285600185394287
+      ],
+      "lightType": "POINT",
+      "energy": 14.039999961853027,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Warm lantern light.004",
+      "type": "LIGHT",
+      "parent": "06 Wall Lantern | MOVE FIXTURE",
+      "collections": [
+        "06 Wall Lantern"
+      ],
+      "position": [
+        17.5,
+        -5.599999904632568,
+        2.6731998920440674
+      ],
+      "lightType": "POINT",
+      "energy": 11.880000114440918,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Warm lantern light.005",
+      "type": "LIGHT",
+      "parent": "08 Heritage Triple | MOVE FIXTURE",
+      "collections": [
+        "08 Heritage Triple"
+      ],
+      "position": [
+        -10.5,
+        5.0,
+        4.7972002029418945
+      ],
+      "lightType": "POINT",
+      "energy": 15.479999542236328,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Warm lantern light.006",
+      "type": "LIGHT",
+      "parent": "08 Heritage Triple | MOVE FIXTURE",
+      "collections": [
+        "08 Heritage Triple"
+      ],
+      "position": [
+        -11.359999656677246,
+        5.0,
+        4.66480016708374
+      ],
+      "lightType": "POINT",
+      "energy": 13.319999694824219,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Warm lantern light.007",
+      "type": "LIGHT",
+      "parent": "08 Heritage Triple | MOVE FIXTURE",
+      "collections": [
+        "08 Heritage Triple"
+      ],
+      "position": [
+        -9.640000343322754,
+        5.0,
+        4.66480016708374
+      ],
+      "lightType": "POINT",
+      "energy": 13.319999694824219,
+      "color": [
+        1.0,
+        0.6899999976158142,
+        0.3499999940395355
+      ],
+      "radius": 0.25
+    },
+    {
+      "name": "Winter ground",
+      "type": "MESH",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        0.0,
+        0.0,
+        -0.23999999463558197
+      ],
+      "vertices": 8,
+      "triangles": 12,
+      "materials": [
+        "Winter studio"
+      ],
+      "bounds": [
+        [
+          -90.0,
+          -90.0,
+          -0.3499999940395355
+        ],
+        [
+          90.0,
+          90.0,
+          -0.12999999523162842
+        ]
+      ]
+    },
+    {
+      "name": "Winter sun",
+      "type": "LIGHT",
+      "parent": null,
+      "collections": [
+        "00 Presentation | hide for export"
+      ],
+      "position": [
+        0.0,
+        0.0,
+        20.0
+      ],
+      "lightType": "SUN",
+      "energy": 1.7999999523162842,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "radius": 0.0
+    }
+  ],
+  "texts": [
+    "START HERE | Alpine Street Lights"
+  ],
+  "materials": [
+    {
+      "name": "Alpine iron | blue charcoal",
+      "color": [
+        0.10000000149011612,
+        0.14499999582767487,
+        0.17000000178813934,
+        1.0
+      ]
+    },
+    {
+      "name": "Collars | graphite steel",
+      "color": [
+        0.20000000298023224,
+        0.25999999046325684,
+        0.2800000011920929,
+        1.0
+      ]
+    },
+    {
+      "name": "Dots Stroke",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ]
+    },
+    {
+      "name": "Heritage trim | aged brass",
+      "color": [
+        0.4300000071525574,
+        0.3199999928474426,
+        0.1599999964237213,
+        1.0
+      ]
+    },
+    {
+      "name": "Presentation ink",
+      "color": [
+        0.15000000596046448,
+        0.25999999046325684,
+        0.33000001311302185,
+        1.0
+      ]
+    },
+    {
+      "name": "Presentation stone",
+      "color": [
+        0.4000000059604645,
+        0.5199999809265137,
+        0.5799999833106995,
+        1.0
+      ]
+    },
+    {
+      "name": "Road LED diffuser",
+      "color": [
+        0.8799999952316284,
+        0.949999988079071,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Snow caps | ice ivory",
+      "color": [
+        0.9200000166893005,
+        0.9700000286102295,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Wall mount demonstration | timber",
+      "color": [
+        0.4000000059604645,
+        0.23000000417232513,
+        0.11999999731779099,
+        1.0
+      ]
+    },
+    {
+      "name": "Warm lantern glazing",
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.4300000071525574,
+        1.0
+      ]
+    },
+    {
+      "name": "Winter studio",
+      "color": [
+        0.6499999761581421,
+        0.7699999809265137,
+        0.8600000143051147,
+        1.0
+      ]
+    }
+  ]
+}

@@ -45,3 +45,11 @@ Vehicles declare mount identity, hydraulics, permitted equipment mass and workin
 6. Introduce platform services/real purchasing behind tested transaction boundaries.
 
 The primitive presentation can be replaced throughout this sequence. Preserve metre scale, Y-up/Z-forward axes, wheel pivots, attachment mounts, working-edge anchors and collision clearances.
+
+
+Street-light intake preserves original mounting origins, separate decorative snow
+and opaque luminous mesh groups. Optional shadowless point lights are saved under
+inactive prefab groups and enabled deliberately in the Editor. StreetLightsIntake
+places catalog prefabs before Play, refreshing only a scene-specific snow obstacle
+mask while preserving volumes and original seeds. TownBlockAuthoring extends a
+newer scene-specific seed rather than reverting another intake's obstacle mask.

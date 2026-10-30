@@ -1,0 +1,351 @@
+{
+  "collections": {
+    "01 Path Bollard": {
+      "geometry": [
+        "01 Path Bollard | Fixture",
+        "01 Path Bollard | Snow"
+      ],
+      "optionalLights": [
+        "Bollard warm light"
+      ],
+      "excluded": [
+        "01 Path Bollard | MOVE FIXTURE"
+      ],
+      "rootOrigin": [
+        -17.5,
+        -5.0,
+        0.0
+      ],
+      "groups": [
+        "Frame",
+        "Luminous",
+        "SnowCap"
+      ]
+    },
+    "02 Park Globe": {
+      "geometry": [
+        "02 Park Globe | Fixture",
+        "02 Park Globe | Snow"
+      ],
+      "optionalLights": [
+        "Globe light"
+      ],
+      "excluded": [
+        "02 Park Globe | MOVE FIXTURE"
+      ],
+      "rootOrigin": [
+        -10.5,
+        -5.0,
+        0.0
+      ],
+      "groups": [
+        "Frame",
+        "Luminous",
+        "SnowCap"
+      ]
+    },
+    "03 Compact Village Lantern": {
+      "geometry": [
+        "03 Compact Village Lantern | Fixture",
+        "03 Compact Village Lantern | Snow"
+      ],
+      "optionalLights": [
+        "Warm lantern light"
+      ],
+      "excluded": [
+        "03 Compact Village Lantern | MOVE FIXTURE"
+      ],
+      "rootOrigin": [
+        -3.5,
+        -5.0,
+        0.0
+      ],
+      "groups": [
+        "Frame",
+        "Luminous",
+        "SnowCap"
+      ]
+    },
+    "04 Heritage Single": {
+      "geometry": [
+        "04 Heritage Single | Fixture",
+        "04 Heritage Single | Snow"
+      ],
+      "optionalLights": [
+        "Warm lantern light.001"
+      ],
+      "excluded": [
+        "04 Heritage Single | MOVE FIXTURE"
+      ],
+      "rootOrigin": [
+        3.5,
+        -5.0,
+        0.0
+      ],
+      "groups": [
+        "Frame",
+        "Luminous",
+        "SnowCap"
+      ]
+    },
+    "05 Heritage Twin": {
+      "geometry": [
+        "05 Heritage Twin | Fixture",
+        "05 Heritage Twin | Snow"
+      ],
+      "optionalLights": [
+        "Warm lantern light.002",
+        "Warm lantern light.003"
+      ],
+      "excluded": [
+        "05 Heritage Twin | MOVE FIXTURE"
+      ],
+      "rootOrigin": [
+        10.5,
+        -5.0,
+        0.0
+      ],
+      "groups": [
+        "Frame",
+        "Luminous",
+        "SnowCap"
+      ]
+    },
+    "06 Wall Lantern": {
+      "geometry": [
+        "06 Wall Lantern | Fixture",
+        "06 Wall Lantern | Snow"
+      ],
+      "optionalLights": [
+        "Warm lantern light.004"
+      ],
+      "excluded": [
+        "06 Wall Lantern | MOVE FIXTURE"
+      ],
+      "rootOrigin": [
+        17.5,
+        -5.0,
+        0.0
+      ],
+      "groups": [
+        "Frame",
+        "Luminous",
+        "SnowCap"
+      ]
+    },
+    "07 Alpine Hanging Lantern": {
+      "geometry": [
+        "07 Alpine Hanging Lantern | Fixture",
+        "07 Alpine Hanging Lantern | Snow"
+      ],
+      "optionalLights": [
+        "Hanging lantern light"
+      ],
+      "excluded": [
+        "07 Alpine Hanging Lantern | MOVE FIXTURE"
+      ],
+      "rootOrigin": [
+        -17.5,
+        5.0,
+        0.0
+      ],
+      "groups": [
+        "Frame",
+        "Luminous",
+        "SnowCap"
+      ]
+    },
+    "08 Heritage Triple": {
+      "geometry": [
+        "08 Heritage Triple | Fixture",
+        "08 Heritage Triple | Snow"
+      ],
+      "optionalLights": [
+        "Warm lantern light.005",
+        "Warm lantern light.006",
+        "Warm lantern light.007"
+      ],
+      "excluded": [
+        "08 Heritage Triple | MOVE FIXTURE"
+      ],
+      "rootOrigin": [
+        -10.5,
+        5.0,
+        0.0
+      ],
+      "groups": [
+        "Frame",
+        "Luminous",
+        "SnowCap"
+      ]
+    },
+    "09 Residential Curved LED": {
+      "geometry": [
+        "09 Residential Curved LED | Fixture",
+        "09 Residential Curved LED | Snow"
+      ],
+      "optionalLights": [
+        "Road illumination"
+      ],
+      "excluded": [
+        "09 Residential Curved LED | MOVE FIXTURE"
+      ],
+      "rootOrigin": [
+        -3.5,
+        5.0,
+        0.0
+      ],
+      "groups": [
+        "Frame",
+        "Luminous",
+        "SnowCap"
+      ]
+    },
+    "10 Main Road Outreach": {
+      "geometry": [
+        "10 Main Road Outreach | Fixture",
+        "10 Main Road Outreach | Snow"
+      ],
+      "optionalLights": [
+        "Road illumination.001"
+      ],
+      "excluded": [
+        "10 Main Road Outreach | MOVE FIXTURE"
+      ],
+      "rootOrigin": [
+        3.5,
+        5.0,
+        0.0
+      ],
+      "groups": [
+        "Frame",
+        "Luminous",
+        "SnowCap"
+      ]
+    },
+    "11 Dual Median LED": {
+      "geometry": [
+        "11 Dual Median LED | Fixture",
+        "11 Dual Median LED | Snow"
+      ],
+      "optionalLights": [
+        "Road illumination.002",
+        "Road illumination.003"
+      ],
+      "excluded": [
+        "11 Dual Median LED | MOVE FIXTURE"
+      ],
+      "rootOrigin": [
+        10.5,
+        5.0,
+        0.0
+      ],
+      "groups": [
+        "Frame",
+        "Luminous",
+        "SnowCap"
+      ]
+    },
+    "12 Four Way Area Light": {
+      "geometry": [
+        "12 Four Way Area Light | Fixture",
+        "12 Four Way Area Light | Snow"
+      ],
+      "optionalLights": [
+        "Road illumination.004",
+        "Road illumination.005",
+        "Road illumination.006",
+        "Road illumination.007"
+      ],
+      "excluded": [
+        "12 Four Way Area Light | MOVE FIXTURE"
+      ],
+      "rootOrigin": [
+        17.5,
+        5.0,
+        0.0
+      ],
+      "groups": [
+        "Frame",
+        "Luminous",
+        "SnowCap"
+      ]
+    }
+  },
+  "excludedPresentation": [
+    "Winter ground",
+    "Display plinth",
+    "Display snow top",
+    "Label 01 Path Bollard",
+    "Height label",
+    "Display plinth.001",
+    "Display snow top.001",
+    "Label 02 Park Globe",
+    "Height label.001",
+    "Display plinth.002",
+    "Display snow top.002",
+    "Label 03 Compact Village Lantern",
+    "Height label.002",
+    "Display plinth.003",
+    "Display snow top.003",
+    "Label 04 Heritage Single",
+    "Height label.003",
+    "Display plinth.004",
+    "Display snow top.004",
+    "Label 05 Heritage Twin",
+    "Height label.004",
+    "Display plinth.005",
+    "Display snow top.005",
+    "Label 06 Wall Lantern",
+    "Height label.005",
+    "Display plinth.006",
+    "Display snow top.006",
+    "Label 07 Alpine Hanging Lantern",
+    "Height label.006",
+    "Display plinth.007",
+    "Display snow top.007",
+    "Label 08 Heritage Triple",
+    "Height label.007",
+    "Display plinth.008",
+    "Display snow top.008",
+    "Label 09 Residential Curved LED",
+    "Height label.008",
+    "Display plinth.009",
+    "Display snow top.009",
+    "Label 10 Main Road Outreach",
+    "Height label.009",
+    "Display plinth.010",
+    "Display snow top.010",
+    "Label 11 Dual Median LED",
+    "Height label.010",
+    "Display plinth.011",
+    "Display snow top.011",
+    "Label 12 Four Way Area Light",
+    "Height label.011",
+    "Wall mount demo block",
+    "Demo wall snow",
+    "Demo timber seam",
+    "Demo timber seam.001",
+    "Demo timber seam.002",
+    "Demo timber seam.003",
+    "Demo timber seam.004",
+    "Demo timber seam.005",
+    "Demo timber seam.006",
+    "Large winter key",
+    "Soft sky fill",
+    "Winter sun",
+    "All variants overview",
+    "01 Path Bollard | Detail camera",
+    "02 Park Globe | Detail camera",
+    "03 Compact Village Lantern | Detail camera",
+    "04 Heritage Single | Detail camera",
+    "05 Heritage Twin | Detail camera",
+    "06 Wall Lantern | Detail camera",
+    "07 Alpine Hanging Lantern | Detail camera",
+    "08 Heritage Triple | Detail camera",
+    "09 Residential Curved LED | Detail camera",
+    "10 Main Road Outreach | Detail camera",
+    "11 Dual Median LED | Detail camera",
+    "12 Four Way Area Light | Detail camera"
+  ]
+}

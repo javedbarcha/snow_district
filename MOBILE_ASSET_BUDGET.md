@@ -79,3 +79,29 @@ and 160 house renderers, before foundations/fences/shadow passes. Original
 16 homes remain; ten blocks contain 2, 4 or 6 homes each. Native Editor count and
 clearance checks passed; profile the denser layout again on A07 before judging
 mobile frame times. No new per-house materials, textures or real-time lights.
+
+The twelve alpine street-light prefabs use three shared opaque materials and
+three renderer groups each. Native imported geometry (including removable snow):
+
+| Fixture | Triangles | Unity vertices |
+| --- | ---: | ---: |
+| Path Bollard | 228 | 396 |
+| Park Globe | 600 | 1,092 |
+| Compact Village Lantern | 630 | 1,128 |
+| Heritage Single | 630 | 1,128 |
+| Heritage Twin | 1,084 | 1,980 |
+| Wall Lantern | 414 | 796 |
+| Alpine Hanging Lantern | 684 | 1,244 |
+| Heritage Triple | 1,290 | 2,384 |
+| Residential Curved LED | 438 | 780 |
+| Main Road Outreach | 438 | 780 |
+| Dual Median LED | 604 | 1,092 |
+| Four Way Area Light | 936 | 1,724 |
+
+Fourteen scene fixtures total 8,804 triangles / 42 renderer-material slots, before
+shadow passes. Twin/Triple heritage lamps slightly exceed the small-prop 1,000
+triangle working target because they have multiple heads; no decimation was needed.
+All 21 placed optional point lights are inactive by default and shadowless when
+enabled; use their small proposed ranges deliberately and profile night scenes.
+Opaque unlit luminous surfaces avoid transparent glazing. Native save/reopen and
+structural checks do not establish A07 frame times or a safe active-light count.

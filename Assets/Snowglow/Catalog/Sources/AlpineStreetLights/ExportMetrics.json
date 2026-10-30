@@ -1,0 +1,928 @@
+{
+  "fixtures": [
+    {
+      "index": "01",
+      "name": "Path Bollard",
+      "model": "PathBollard",
+      "size": [
+        0.3423803746700287,
+        1.100000023841858,
+        0.36000001430511475
+      ],
+      "groups": {
+        "Frame": {
+          "vertices": 100,
+          "triangles": 172,
+          "degenerateTriangles": 0
+        },
+        "Luminous": {
+          "vertices": 16,
+          "triangles": 28,
+          "degenerateTriangles": 0
+        },
+        "SnowCap": {
+          "vertices": 16,
+          "triangles": 28,
+          "degenerateTriangles": 0
+        }
+      },
+      "triangles": 228,
+      "lights": [
+        {
+          "name": "Bollard warm light",
+          "position": [
+            0.0,
+            0.0,
+            0.8799999952316284
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 8.0
+        }
+      ],
+      "proxyCenter": [
+        0.0,
+        0.0,
+        0.550000011920929
+      ],
+      "proxySize": [
+        0.3423803746700287,
+        0.36000001430511475,
+        1.100000023841858
+      ]
+    },
+    {
+      "index": "02",
+      "name": "Park Globe",
+      "model": "ParkGlobe",
+      "size": [
+        0.6000000238418579,
+        3.5300002098083496,
+        0.6000000238418579
+      ],
+      "groups": {
+        "Frame": {
+          "vertices": 224,
+          "triangles": 396,
+          "degenerateTriangles": 0
+        },
+        "Luminous": {
+          "vertices": 86,
+          "triangles": 168,
+          "degenerateTriangles": 0
+        },
+        "SnowCap": {
+          "vertices": 20,
+          "triangles": 36,
+          "degenerateTriangles": 0
+        }
+      },
+      "triangles": 600,
+      "lights": [
+        {
+          "name": "Globe light",
+          "position": [
+            0.0,
+            0.0,
+            3.1500000953674316
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 20.0
+        }
+      ],
+      "proxyCenter": [
+        0.0,
+        0.0,
+        1.7650001049041748
+      ],
+      "proxySize": [
+        0.41846486926078796,
+        0.4399999976158142,
+        3.5300002098083496
+      ]
+    },
+    {
+      "index": "03",
+      "name": "Compact Village Lantern",
+      "model": "CompactVillageLantern",
+      "size": [
+        0.5440000295639038,
+        3.4620001316070557,
+        0.5440000295639038
+      ],
+      "groups": {
+        "Frame": {
+          "vertices": 350,
+          "triangles": 608,
+          "degenerateTriangles": 0
+        },
+        "Luminous": {
+          "vertices": 8,
+          "triangles": 12,
+          "degenerateTriangles": 0
+        },
+        "SnowCap": {
+          "vertices": 8,
+          "triangles": 10,
+          "degenerateTriangles": 0
+        }
+      },
+      "triangles": 630,
+      "lights": [
+        {
+          "name": "Warm lantern light",
+          "position": [
+            0.0,
+            0.0,
+            2.865999937057495
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 14.399999618530273
+        }
+      ],
+      "proxyCenter": [
+        0.0,
+        0.0,
+        1.7310000658035278
+      ],
+      "proxySize": [
+        0.41846486926078796,
+        0.4399999976158142,
+        3.4620001316070557
+      ]
+    },
+    {
+      "index": "04",
+      "name": "Heritage Single",
+      "model": "HeritageSingle",
+      "size": [
+        0.6119999885559082,
+        4.7885003089904785,
+        0.6119999885559082
+      ],
+      "groups": {
+        "Frame": {
+          "vertices": 350,
+          "triangles": 608,
+          "degenerateTriangles": 0
+        },
+        "Luminous": {
+          "vertices": 8,
+          "triangles": 12,
+          "degenerateTriangles": 0
+        },
+        "SnowCap": {
+          "vertices": 8,
+          "triangles": 10,
+          "degenerateTriangles": 0
+        }
+      },
+      "triangles": 630,
+      "lights": [
+        {
+          "name": "Warm lantern light.001",
+          "position": [
+            0.0,
+            0.0,
+            4.118000030517578
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 16.200000762939453
+        }
+      ],
+      "proxyCenter": [
+        0.0,
+        0.0,
+        2.3942501544952393
+      ],
+      "proxySize": [
+        0.41846486926078796,
+        0.4399999976158142,
+        4.7885003089904785
+      ]
+    },
+    {
+      "index": "05",
+      "name": "Heritage Twin",
+      "model": "HeritageTwin",
+      "size": [
+        1.9703999757766724,
+        4.866700172424316,
+        0.5303999781608582
+      ],
+      "groups": {
+        "Frame": {
+          "vertices": 596,
+          "triangles": 1040,
+          "degenerateTriangles": 0
+        },
+        "Luminous": {
+          "vertices": 16,
+          "triangles": 24,
+          "degenerateTriangles": 0
+        },
+        "SnowCap": {
+          "vertices": 16,
+          "triangles": 20,
+          "degenerateTriangles": 0
+        }
+      },
+      "triangles": 1084,
+      "lights": [
+        {
+          "name": "Warm lantern light.002",
+          "position": [
+            -0.7200002670288086,
+            0.0,
+            4.285600185394287
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 14.039999961853027
+        },
+        {
+          "name": "Warm lantern light.003",
+          "position": [
+            0.7200002670288086,
+            0.0,
+            4.285600185394287
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 14.039999961853027
+        }
+      ],
+      "proxyCenter": [
+        0.0,
+        0.0,
+        2.433350086212158
+      ],
+      "proxySize": [
+        0.41846486926078796,
+        0.4399999976158142,
+        4.866700172424316
+      ]
+    },
+    {
+      "index": "06",
+      "name": "Wall Lantern",
+      "model": "WallLantern",
+      "size": [
+        0.4487999975681305,
+        1.374900221824646,
+        0.9693999141454697
+      ],
+      "groups": {
+        "Frame": {
+          "vertices": 226,
+          "triangles": 392,
+          "degenerateTriangles": 0
+        },
+        "Luminous": {
+          "vertices": 8,
+          "triangles": 12,
+          "degenerateTriangles": 0
+        },
+        "SnowCap": {
+          "vertices": 8,
+          "triangles": 10,
+          "degenerateTriangles": 0
+        }
+      },
+      "triangles": 414,
+      "lights": [
+        {
+          "name": "Warm lantern light.004",
+          "position": [
+            0.0,
+            -0.5999999046325684,
+            2.6731998920440674
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 11.880000114440918
+        }
+      ],
+      "proxyCenter": [
+        0.0,
+        -0.33970005065202713,
+        2.477449953556061
+      ],
+      "proxySize": [
+        0.4487999975681305,
+        0.9693999141454697,
+        1.374900221824646
+      ]
+    },
+    {
+      "index": "07",
+      "name": "Alpine Hanging Lantern",
+      "model": "AlpineHangingLantern",
+      "size": [
+        1.5992324203252792,
+        5.0571465492248535,
+        0.7799999713897705
+      ],
+      "groups": {
+        "Frame": {
+          "vertices": 276,
+          "triangles": 496,
+          "degenerateTriangles": 0
+        },
+        "Luminous": {
+          "vertices": 74,
+          "triangles": 144,
+          "degenerateTriangles": 0
+        },
+        "SnowCap": {
+          "vertices": 24,
+          "triangles": 44,
+          "degenerateTriangles": 0
+        }
+      },
+      "triangles": 684,
+      "lights": [
+        {
+          "name": "Hanging lantern light",
+          "position": [
+            1.0,
+            0.0,
+            4.199999809265137
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 24.0
+        }
+      ],
+      "proxyCenter": [
+        0.0,
+        0.0,
+        2.5285732746124268
+      ],
+      "proxySize": [
+        0.41846486926078796,
+        0.4399999976158142,
+        5.0571465492248535
+      ]
+    },
+    {
+      "index": "08",
+      "name": "Heritage Triple",
+      "model": "HeritageTriple",
+      "size": [
+        2.2232000827789307,
+        5.437900066375732,
+        0.5848000049591064
+      ],
+      "groups": {
+        "Frame": {
+          "vertices": 706,
+          "triangles": 1224,
+          "degenerateTriangles": 0
+        },
+        "Luminous": {
+          "vertices": 24,
+          "triangles": 36,
+          "degenerateTriangles": 0
+        },
+        "SnowCap": {
+          "vertices": 24,
+          "triangles": 30,
+          "degenerateTriangles": 0
+        }
+      },
+      "triangles": 1290,
+      "lights": [
+        {
+          "name": "Warm lantern light.005",
+          "position": [
+            0.0,
+            0.0,
+            4.7972002029418945
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 15.479999542236328
+        },
+        {
+          "name": "Warm lantern light.006",
+          "position": [
+            -0.8599996566772461,
+            0.0,
+            4.66480016708374
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 13.319999694824219
+        },
+        {
+          "name": "Warm lantern light.007",
+          "position": [
+            0.8599996566772461,
+            0.0,
+            4.66480016708374
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 13.319999694824219
+        }
+      ],
+      "proxyCenter": [
+        0.0,
+        0.0,
+        2.718950033187866
+      ],
+      "proxySize": [
+        0.41846486926078796,
+        0.4399999976158142,
+        5.437900066375732
+      ]
+    },
+    {
+      "index": "09",
+      "name": "Residential Curved LED",
+      "model": "ResidentialCurvedLED",
+      "size": [
+        2.5447219014167786,
+        5.736400127410889,
+        0.44999998807907104
+      ],
+      "groups": {
+        "Frame": {
+          "vertices": 230,
+          "triangles": 404,
+          "degenerateTriangles": 0
+        },
+        "Luminous": {
+          "vertices": 24,
+          "triangles": 44,
+          "degenerateTriangles": 16
+        },
+        "SnowCap": {
+          "vertices": 8,
+          "triangles": 6,
+          "degenerateTriangles": 0
+        }
+      },
+      "triangles": 438,
+      "lights": [
+        {
+          "name": "Road illumination",
+          "position": [
+            1.850000023841858,
+            0.0,
+            5.46999979019165
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 31.5
+        }
+      ],
+      "proxyCenter": [
+        0.0,
+        0.0,
+        2.8682000637054443
+      ],
+      "proxySize": [
+        0.39944374561309814,
+        0.41999998688697815,
+        5.736400127410889
+      ]
+    },
+    {
+      "index": "10",
+      "name": "Main Road Outreach",
+      "model": "MainRoadOutreach",
+      "size": [
+        3.454721987247467,
+        7.855599880218506,
+        0.550000011920929
+      ],
+      "groups": {
+        "Frame": {
+          "vertices": 230,
+          "triangles": 404,
+          "degenerateTriangles": 0
+        },
+        "Luminous": {
+          "vertices": 24,
+          "triangles": 44,
+          "degenerateTriangles": 16
+        },
+        "SnowCap": {
+          "vertices": 8,
+          "triangles": 6,
+          "degenerateTriangles": 0
+        }
+      },
+      "triangles": 438,
+      "lights": [
+        {
+          "name": "Road illumination.001",
+          "position": [
+            2.6500000953674316,
+            0.0,
+            7.570000171661377
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 38.5
+        }
+      ],
+      "proxyCenter": [
+        0.0,
+        0.0,
+        3.927799940109253
+      ],
+      "proxySize": [
+        0.39944374561309814,
+        0.41999998688697815,
+        7.855599880218506
+      ]
+    },
+    {
+      "index": "11",
+      "name": "Dual Median LED",
+      "model": "DualMedianLED",
+      "size": [
+        5.800000190734863,
+        8.345999717712402,
+        0.5
+      ],
+      "groups": {
+        "Frame": {
+          "vertices": 304,
+          "triangles": 536,
+          "degenerateTriangles": 0
+        },
+        "Luminous": {
+          "vertices": 48,
+          "triangles": 88,
+          "degenerateTriangles": 32
+        },
+        "SnowCap": {
+          "vertices": 16,
+          "triangles": 12,
+          "degenerateTriangles": 0
+        }
+      },
+      "triangles": 604,
+      "lights": [
+        {
+          "name": "Road illumination.002",
+          "position": [
+            2.3500003814697266,
+            0.0,
+            8.069999694824219
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 35.0
+        },
+        {
+          "name": "Road illumination.003",
+          "position": [
+            -2.3500003814697266,
+            0.0,
+            8.069999694824219
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 35.0
+        }
+      ],
+      "proxyCenter": [
+        0.0,
+        0.0,
+        4.172999858856201
+      ],
+      "proxySize": [
+        0.39944374561309814,
+        0.41999998688697815,
+        8.345999717712402
+      ]
+    },
+    {
+      "index": "12",
+      "name": "Four Way Area Light",
+      "model": "FourWayAreaLight",
+      "size": [
+        3.7130000591278076,
+        7.179679870605469,
+        3.7130000591278076
+      ],
+      "groups": {
+        "Frame": {
+          "vertices": 452,
+          "triangles": 800,
+          "degenerateTriangles": 0
+        },
+        "Luminous": {
+          "vertices": 96,
+          "triangles": 176,
+          "degenerateTriangles": 64
+        },
+        "SnowCap": {
+          "vertices": 32,
+          "triangles": 24,
+          "degenerateTriangles": 0
+        }
+      },
+      "triangles": 936,
+      "lights": [
+        {
+          "name": "Road illumination.004",
+          "position": [
+            1.3999996185302734,
+            0.0,
+            6.920000076293945
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 29.049999237060547
+        },
+        {
+          "name": "Road illumination.005",
+          "position": [
+            0.0,
+            1.4000000953674316,
+            6.920000076293945
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 29.049999237060547
+        },
+        {
+          "name": "Road illumination.006",
+          "position": [
+            -1.3999996185302734,
+            0.0,
+            6.920000076293945
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 29.049999237060547
+        },
+        {
+          "name": "Road illumination.007",
+          "position": [
+            0.0,
+            -1.4000000953674316,
+            6.920000076293945
+          ],
+          "color": [
+            1.0,
+            0.6899999976158142,
+            0.3499999940395355
+          ],
+          "sourceWatts": 29.049999237060547
+        }
+      ],
+      "proxyCenter": [
+        0.0,
+        0.0,
+        3.5898399353027344
+      ],
+      "proxySize": [
+        0.39944374561309814,
+        0.41999998688697815,
+        7.179679870605469
+      ]
+    }
+  ],
+  "normalChecks": [
+    {
+      "object": "01 Path Bollard | Fixture",
+      "closedSolids": 8,
+      "flippedFaces": 0
+    },
+    {
+      "object": "01 Path Bollard | Snow",
+      "closedSolids": 1,
+      "flippedFaces": 0
+    },
+    {
+      "object": "02 Park Globe | Fixture",
+      "closedSolids": 14,
+      "flippedFaces": 0
+    },
+    {
+      "object": "02 Park Globe | Snow",
+      "closedSolids": 1,
+      "flippedFaces": 0
+    },
+    {
+      "object": "03 Compact Village Lantern | Fixture",
+      "closedSolids": 24,
+      "flippedFaces": 0
+    },
+    {
+      "object": "03 Compact Village Lantern | Snow",
+      "closedSolids": 0,
+      "flippedFaces": 0
+    },
+    {
+      "object": "04 Heritage Single | Fixture",
+      "closedSolids": 24,
+      "flippedFaces": 0
+    },
+    {
+      "object": "04 Heritage Single | Snow",
+      "closedSolids": 0,
+      "flippedFaces": 0
+    },
+    {
+      "object": "05 Heritage Twin | Fixture",
+      "closedSolids": 40,
+      "flippedFaces": 0
+    },
+    {
+      "object": "05 Heritage Twin | Snow",
+      "closedSolids": 0,
+      "flippedFaces": 0
+    },
+    {
+      "object": "06 Wall Lantern | Fixture",
+      "closedSolids": 16,
+      "flippedFaces": 0
+    },
+    {
+      "object": "06 Wall Lantern | Snow",
+      "closedSolids": 0,
+      "flippedFaces": 0
+    },
+    {
+      "object": "07 Alpine Hanging Lantern | Fixture",
+      "closedSolids": 15,
+      "flippedFaces": 0
+    },
+    {
+      "object": "07 Alpine Hanging Lantern | Snow",
+      "closedSolids": 1,
+      "flippedFaces": 0
+    },
+    {
+      "object": "08 Heritage Triple | Fixture",
+      "closedSolids": 50,
+      "flippedFaces": 0
+    },
+    {
+      "object": "08 Heritage Triple | Snow",
+      "closedSolids": 0,
+      "flippedFaces": 0
+    },
+    {
+      "object": "09 Residential Curved LED | Fixture",
+      "closedSolids": 15,
+      "flippedFaces": 0
+    },
+    {
+      "object": "09 Residential Curved LED | Snow",
+      "closedSolids": 0,
+      "flippedFaces": 0
+    },
+    {
+      "object": "10 Main Road Outreach | Fixture",
+      "closedSolids": 15,
+      "flippedFaces": 0
+    },
+    {
+      "object": "10 Main Road Outreach | Snow",
+      "closedSolids": 0,
+      "flippedFaces": 0
+    },
+    {
+      "object": "11 Dual Median LED | Fixture",
+      "closedSolids": 20,
+      "flippedFaces": 0
+    },
+    {
+      "object": "11 Dual Median LED | Snow",
+      "closedSolids": 0,
+      "flippedFaces": 0
+    },
+    {
+      "object": "12 Four Way Area Light | Fixture",
+      "closedSolids": 30,
+      "flippedFaces": 0
+    },
+    {
+      "object": "12 Four Way Area Light | Snow",
+      "closedSolids": 0,
+      "flippedFaces": 0
+    }
+  ],
+  "palette": [
+    {
+      "name": "Alpine iron | blue charcoal",
+      "color": [
+        0.10000000149011612,
+        0.14499999582767487,
+        0.17000000178813934,
+        1.0
+      ]
+    },
+    {
+      "name": "Collars | graphite steel",
+      "color": [
+        0.20000000298023224,
+        0.25999999046325684,
+        0.2800000011920929,
+        1.0
+      ]
+    },
+    {
+      "name": "Heritage trim | aged brass",
+      "color": [
+        0.4300000071525574,
+        0.3199999928474426,
+        0.1599999964237213,
+        1.0
+      ]
+    },
+    {
+      "name": "Road LED diffuser",
+      "color": [
+        0.8799999952316284,
+        0.949999988079071,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Snow caps | ice ivory",
+      "color": [
+        0.9200000166893005,
+        0.9700000286102295,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Warm lantern glazing",
+      "color": [
+        1.0,
+        0.7900000214576721,
+        0.4300000071525574,
+        1.0
+      ]
+    }
+  ]
+}

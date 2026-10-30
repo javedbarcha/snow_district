@@ -77,3 +77,11 @@ source preservation, wheel differences and the required articulation work before
 gameplay approval.
 
 Run **Snowglow > Run asset workshop checks** in Edit mode. Results go to `Logs/AssetWorkshopChecks.txt`. Checks exercise actual Unity prefab preparation, source preservation, approval invalidation, fitting, wheel upgrades and scene serialization using disposable fixtures. They restore Pinefall and remove their fixtures. Rendering, imported production model quality, touch handling and Galaxy A07 performance require separate testing.
+
+
+The twelve imported alpine street-light entries are reusable Needs Review scenery
+prefabs. Their Frame, Luminous and SnowCap groups remain independently editable;
+remove/disable the cap in the Editor for a snow-free variant. Optional point lights
+are inactive by default under the clearly named group. Wall Lantern requires a
+facade mount; the other eleven variants retain their original ground/pole origin.
+See SourceAssets/AlpineStreetLights/README.md for provenance, counts and controls.

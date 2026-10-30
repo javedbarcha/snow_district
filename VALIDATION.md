@@ -224,3 +224,64 @@ fences and shadow passes. This expansion needs new phone profiling; counts do no
 prove frame times. Full vehicle/yard clearance walkthrough, Android appearance/
 packaging and sustained Galaxy A07 performance remain untested. See native report
 `Logs/TownBlocks/Validation.txt` and backup `Logs/TownBlocks/Pinefall-before.unity`.
+
+
+## Twelve alpine street lights - 30 October 2026
+
+Prepared all twelve collections from the user's ChatGPT-generated
+`Alpine_Street_Lights_12_Variants.blend`. Preserved source/copy SHA256
+`50F565BAE9ECF8CEA58338E271A939C914EAB6C6FD2FBCD6567F6356286EC88D`.
+The embedded START HERE text was treated as data and not executed. Inspected all
+source renders, exported copies with Blender autoexecution disabled and retained
+complete part/light/presentation maps under `Catalog/Sources/AlpineStreetLights`.
+
+Stable catalog IDs `alpine-street-light-01` through `12` are Needs Review. Each
+prefab has separate Frame, opaque unlit Luminous and removable SnowCap meshes,
+sharing three materials and one point-filtered palette across the set. Original
+pole/base mounting origins and a facade connection anchor for Wall Lantern are
+preserved. Narrow pole/base boxes avoid invisible full-width barriers below arms;
+these are proposed proxies, not exact collision meshes. All 274 closed mesh
+components passed winding checks without flips. Visible Unity geometry matches
+export metrics after stripping recorded zero-area LED triangles.
+
+Replaced all nine prototype poles at their original horizontal positions with
+nine pole variants. Added two depot bollards, two neighborhood globes and a wall
+lantern seated on the workshop facade. All twelve styles are used across fourteen
+saved prefab instances (`pinefall-light-01` to `14`). Optional light counts/positions/
+colors and Blender watts are recorded; 21 shadowless point-light components exist
+under inactive `Optional lights | enable in Editor (mobile default off)` groups.
+Opaque luminous meshes remain visible without real-time local lights. Intensity/
+range values are URP proposals, not numerical conversions from Blender watts.
+
+Unity 6000.3.8f1 / Android compiled, prepared all twelve prefabs, saved/reopened
+Pinefall and passed scene validation plus all 19 snow-ledger checks. All twelve
+native prefab previews were rendered and inspected; one placed pole was inspected
+in Scene view. Repeated native intake preserves all fourteen IDs/transforms and
+changes zero obstacle cells. Clearance checks synchronize physics transforms before
+checking pole proxies against roads and house colliders; the wall anchor is checked
+against the facade. Reopening the scene unloads unused catalog ScriptableObjects,
+so intake reacquires catalog handles before final checks/previews.
+
+The active snow seed is now `Catalog/SceneData/StreetLightsSnowSeed.asset` (5.23 MB),
+a separate copy of the town seed. Refreshing static obstacle flags added 16,341
+and removed 1,161 obsolete cells (17,502 changed); this incorporates current house
+foundations and the replacement poles. Every depth/credit/accounting field remains
+identical. Original seed assets/GUIDs, saved snow meshes, Terrain and player saves
+were preserved. All 40 home and 12 mountain prefab-instance records are independently
+byte-identical to the pre-intake scene. Fleet bindings/poses and all existing
+placement poses are preserved by native snapshots. Town-block authoring now extends
+a newer scene-specific mask instead of reverting it to the earlier town-only seed;
+that inter-tool repeat was verified natively with zero changes.
+
+Menu: **Snowglow > Asset intake > Import twelve alpine street lights**. Future full
+baking uses the prepared placement helper; no district/snow geometry rebake or
+runtime fixture construction was performed. Native report and previews are under
+`Logs/AlpineStreetLights`; pre-intake backup is `Pinefall-before.unity`. Source intake
+notes and controls are in `SourceAssets/AlpineStreetLights/README.md`.
+
+Fourteen fixtures total **8,804 triangles / 42 renderers and material slots**, with
+three shared materials. Per-variant geometry is 228-1,290 triangles; Twin/Triple
+heritage fixtures exceed the small-prop 1,000-triangle working target slightly,
+with multiple lantern heads. No decimation was needed for this intake. Counts do
+not establish frame times. Full driving/collision walkthrough, optional night-light
+appearance, Android packaging/rendering and Galaxy A07 performance remain untested.
