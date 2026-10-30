@@ -425,3 +425,35 @@ Terrain, mountains, fleet and player saves were preserved. No district rebake.
 Menu: Snowglow > Environment > Redistribute homes evenly. Native report:
 Logs/TownBlocks/Validation.txt. Live driving, rendered appearance and phone
 performance were not tested for this adjustment.
+
+
+## Vehicle tyre impressions - 31 October 2026
+
+Added an Editor-authored SnowTyreTracks renderer to Pinefall, bound to both
+machines and all eight WheelColliders, with widths fitted from the wheel visuals.
+Grounded moving wheels stamp pale cyan herringbone bars onto interactive snow;
+steering and reverse travel retain wheel direction. Bare ground, blocked cells,
+lost contact, stationary tyres and recovery discontinuities do not draw continuous
+tracks. Marks are cosmetic shading, not physical ruts: no compaction, snow-volume
+transfer, tyre-grip change, clearing credit or reward change.
+
+A shared transparent unlit/fog-aware material and mutable mesh draw a bounded
+2048-stamp ring (4096 quads / 8192 triangles maximum), refreshed at most 10 times
+per active-play second. Marks fade over 100 active-play seconds, freeze with
+pause and clear on worksite/grid reset; they are not persisted in player saves.
+Cleared/reshaped snow invalidates marks, avoiding floating trails. Runtime creates
+only the mutable mesh/data; renderer, component, material and bindings exist before
+Play. PrototypeAuthoring includes the same Editor placement helper for future
+full bakes; this task did not rebake the district or snow geometry.
+
+Unity 6000.3.8f1 / Android compiled, saved/reopened Pinefall and passed scene
+validation, 11 track fixtures and all 19 snow-ledger checks. Fixtures cover
+stationary/moving tyres, unchanged accounting, teleports, contact gaps, reverse,
+steered marks, capacity, cleared/blocked snow and expiry. The native daylight
+synthetic-contact preview was rendered and inspected at Logs/TyreTracks/Preview.png.
+Existing catalog placement IDs/poses and seed dependency hash remain unchanged.
+Menu: Snowglow > Install snow tyre impressions and validate. Native report and
+pre-edit scene backup are under Logs/TyreTracks. Continuous physical driving,
+live contact/turn appearance, Android rendering and A07 frame times remain untested.
+
+Repeated native tyre-track installation passed with one renderer and no duplicate bindings. Independent scene-record comparison confirms all pre-existing object and prefab records unchanged; only five new track records and the root list were added.

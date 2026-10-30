@@ -53,6 +53,7 @@ namespace Snowglow.Editor {
     session.Audio.ambience=session.gameObject.AddComponent<AudioSource>();session.Audio.ambience.playOnAwake=false;
     session.Audio.notes=new AudioClip[8];for(int i=0;i<8;i++)session.Audio.notes[i]=AssetDatabase.LoadAssetAtPath<AudioClip>("Assets/Snowglow/Audio/note"+i+".wav");session.Audio.chime=AssetDatabase.LoadAssetAtPath<AudioClip>("Assets/Snowglow/Audio/chime.wav");
     session.HUD=HUDFactory.Build();
+    TyreTracksAuthoring.Place(session);
     // Transparent primitive objective marker: editable, non-colliding, and separate from snow.
     var marker=PrimitiveKit.Group("07 Contract reference markers",null,Vector3.zero);
     var targets=new[]{new Vector3(-65,5.2f,-88.5f),new Vector3(92.5f,5.2f,21),new Vector3(0,5.2f,0)};
