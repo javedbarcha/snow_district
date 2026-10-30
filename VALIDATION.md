@@ -190,3 +190,37 @@ These checks do not establish Unity compilation or runtime correctness.
 - Loader boom/bucket are kinematic articulated visuals coupled to load/volume mechanics, not simulated hydraulic joints. Only the two supplied equipment fits are authored.
 - Low/standard quality controls affect rendering. Galaxy A07 performance has not been established.
 - Three contract footprints, one district, two cameras, basic XP/levels, tyre/engine upgrades and local saving are implemented in source. Regional unlock maps, alternative attachment purchasing, tracked locomotion, advanced challenge rules, monetization SDKs and cloud services remain future work.
+
+## Residential block expansion - 30 October 2026
+
+Expanded Pinefall from 16 to **40 houses** in ten saved Editor-authored groups:
+four central blocks of six, two northern blocks of four and four outer groups of
+two. All seven imported variants are used (Red 6, Green 7, Garage 6, White 5,
+Storybook 5, Twin A Frame 6, Brick Barn 5). Existing 16 home prefab-instance
+records remain byte-identical; their IDs, variants, enlarged scales and poses are
+preserved. Added 24 connected prefab lots with matching foundations and fences.
+
+`Editor/TownBlockAuthoring.cs` exposes **Snowglow > Environment > Expand town into
+2, 4 and 6 house blocks**. Repeating it retains 40 homes without duplicate IDs or
+cumulative scaling. Future full authoring invokes the same Editor placement helper;
+no full district bake was performed for this change and no runtime factory added.
+
+Unity 6000.3.8f1 / Android compiled, saved/reopened the scene and passed native
+scene checks and all 19 snow-ledger checks. Repeating the actual menu command also
+passed, adding zero new obstacle cells. World-space footprint checks verify at
+least 1 m between houses and neighboring houses/roads. An initial checker bug mixed
+local house bounds with world road bounds; corrected before the scene was saved.
+The expanded layout was inspected from above in Scene view.
+
+The scene references `Catalog/SceneData/TownBlocksSnowSeed.asset`, a 5.23 MB copy
+of the original seed with 6,188 additional conservative house-proxy obstacle cells.
+All depth, credit and volume-accounting values remain identical. The original
+seed/GUID, saved snow meshes, Terrain, mountains, fleet and player saves are
+preserved. No snow geometry was rebuilt. Saved original house prefab-instance
+records were independently compared with the pre-edit scene and are identical.
+
+House meshes total **72,552 triangles and 160 renderers**, before foundations,
+fences and shadow passes. This expansion needs new phone profiling; counts do not
+prove frame times. Full vehicle/yard clearance walkthrough, Android appearance/
+packaging and sustained Galaxy A07 performance remain untested. See native report
+`Logs/TownBlocks/Validation.txt` and backup `Logs/TownBlocks/Pinefall-before.unity`.

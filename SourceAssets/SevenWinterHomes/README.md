@@ -74,3 +74,9 @@ open facade panels unchanged. All 958 closed solids and exported FBX shells pass
 see Catalog/Sources/SevenWinterHomes/NormalValidation.json under Assets/Snowglow.
 The original Blender file and all geometry counts remain unchanged. Unity reimport,
 scene save/reopen, structural validation and 19 snow-ledger checks passed again.
+
+Pinefall expansion (30 October): the saved scene now has 40 houses in ten groups
+of 2, 4 or 6. The original 16 prefab instances remain unchanged, with 24 additional
+Editor-authored catalog instances. All seven variants are retained. The separate
+town-block command preserves this layout on repetition; see VALIDATION.md and
+`Logs/TownBlocks/Validation.txt` for native save/reopen and clearance evidence.

@@ -43,7 +43,7 @@ The most important continuing requirements are:
   highlights**, following the user's image. Do not restore transparent glass.
 - Current snow art direction is **pure-white tops with pale cyan side shading**, following the user's snowy mountain reference. This supersedes the initial off-white palette.
   See `SNOW_MATERIAL.md`. All seven collections from `Seven_Winter_Homes.blend`
-  are now prepared and saved across all 16 Pinefall house lots through Editor
+  are now prepared and saved across 40 Pinefall house lots in groups of 2, 4 or 6 through Editor
   authoring. Preserve separable decorative snow and opaque warm windows.
 
 Initial planning messages explicitly asked not to build yet. The user later
@@ -64,7 +64,7 @@ to seek permission again for already authorized work.
 | Main scene | `Assets/Scenes/Pinefall.unity`, saved and included in build scenes |
 | World | 1,000 x 1,000 m Terrain; compact test district near its centre |
 | Interactive snow | 256 x 256 m field, 512 x 512 cells at 0.5 m |
-| Housing | All 16 lots use a shuffled mix of seven imported variants at 1.5x former lot-fitted scale; other scenery remains mostly primitive |
+| Housing | 40 lots in ten blocks of 2, 4 or 6 use seven imported variants at the enlarged fitting scale; original 16 home identities and poses preserved |
 | Fleet[0] | Imported Golden tractor, free and always owned initially |
 | Fleet[1] | Imported Golden snow loader, 1,400 coins, initially unowned |
 | Fresh wallet | 1,800 prototype coins |
@@ -163,7 +163,7 @@ not completed device-test results.
 ### 4.1 Scene and environment
 
 Pinefall contains saved Terrain, roads, parking, service depot/fuel facilities,
-16 imported homes/fences, trees, 12 imported alpine mountains, poles/signs, parked primitive cars, curbs, slope
+40 imported homes/fences, trees, 12 imported alpine mountains, poles/signs, parked primitive cars, curbs, slope
 and ice test lanes, a disposal area, contract markers, UI, camera and audio sources.
 Most scenery remains primitive art. Both active machinery vehicles are now imported
 models. Older primitive machinery prefabs and catalog examples remain available;
@@ -936,3 +936,37 @@ Inspected Git history includes:
 These are historical anchors, not a request to reset, amend, merge or push anything.
 Check the current working tree and branch before using them. The latest window/
 material work and this handoff may not yet be committed.
+
+## Residential block expansion - 30 October 2026
+
+Expanded Pinefall from 16 to **40 houses** in ten saved Editor-authored groups:
+four central blocks of six, two northern blocks of four and four outer groups of
+two. All seven imported variants are used (Red 6, Green 7, Garage 6, White 5,
+Storybook 5, Twin A Frame 6, Brick Barn 5). Existing 16 home prefab-instance
+records remain byte-identical; their IDs, variants, enlarged scales and poses are
+preserved. Added 24 connected prefab lots with matching foundations and fences.
+
+`Editor/TownBlockAuthoring.cs` exposes **Snowglow > Environment > Expand town into
+2, 4 and 6 house blocks**. Repeating it retains 40 homes without duplicate IDs or
+cumulative scaling. Future full authoring invokes the same Editor placement helper;
+no full district bake was performed for this change and no runtime factory added.
+
+Unity 6000.3.8f1 / Android compiled, saved/reopened the scene and passed native
+scene checks and all 19 snow-ledger checks. Repeating the actual menu command also
+passed, adding zero new obstacle cells. World-space footprint checks verify at
+least 1 m between houses and neighboring houses/roads. An initial checker bug mixed
+local house bounds with world road bounds; corrected before the scene was saved.
+The expanded layout was inspected from above in Scene view.
+
+The scene references `Catalog/SceneData/TownBlocksSnowSeed.asset`, a 5.23 MB copy
+of the original seed with 6,188 additional conservative house-proxy obstacle cells.
+All depth, credit and volume-accounting values remain identical. The original
+seed/GUID, saved snow meshes, Terrain, mountains, fleet and player saves are
+preserved. No snow geometry was rebuilt. Saved original house prefab-instance
+records were independently compared with the pre-edit scene and are identical.
+
+House meshes total **72,552 triangles and 160 renderers**, before foundations,
+fences and shadow passes. This expansion needs new phone profiling; counts do not
+prove frame times. Full vehicle/yard clearance walkthrough, Android appearance/
+packaging and sustained Galaxy A07 performance remain untested. See native report
+`Logs/TownBlocks/Validation.txt` and backup `Logs/TownBlocks/Pinefall-before.unity`.

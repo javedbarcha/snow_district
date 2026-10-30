@@ -73,3 +73,9 @@ optimization; author prepared meshes and proxies in the Editor.
 
 Primary guidance: [Android geometry optimization](https://developer.android.com/games/optimize/geometry),
 [Unity mobile graphics/art optimization](https://unity.com/how-to/mobile-game-optimization-tips-part-2).
+
+The 30 October residential expansion has 40 homes: 72,552 house mesh triangles
+and 160 house renderers, before foundations/fences/shadow passes. Original
+16 homes remain; ten blocks contain 2, 4 or 6 homes each. Native Editor count and
+clearance checks passed; profile the denser layout again on A07 before judging
+mobile frame times. No new per-house materials, textures or real-time lights.
