@@ -145,3 +145,10 @@ shadow passes, and do not establish active-frame costs or A07 performance. The
 Larch / Snowy Larch are heaviest (1,966 / 2,633 triangles, placed 2 / 8 times);
 review these in device profiling before increasing forest density. No transparent
 foliage cards, per-tree material copies, wind animation or per-instance mesh copies.
+
+Orbit/Scenic camera modes (30 October) use the same single gameplay Camera and add
+no environment geometry or enabled lights. Camera safety uses bounded, nonallocating
+sphere sweeps and Terrain samples. Wider/rotating viewpoints can reveal more assets
+and shadows than the original camera, so the existing geometry counts do not predict
+A07 timings. Editor input/terrain checks and three native renders passed; profile
+all four views during actual driving and snow work on the phone.

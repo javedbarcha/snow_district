@@ -45,9 +45,9 @@ namespace Snowglow.Editor {
     EditorUtility.SetDirty(seed);
     var session=new GameObject("06 Game systems | no runtime scene generation").AddComponent<PrototypeSession>();
     session.Fleet=new[]{first,second};session.Snow=snow;session.Input=session.gameObject.AddComponent<PrototypeInput>();
-    var cam=new GameObject("Camera | isometric and follow").AddComponent<Camera>();cam.gameObject.AddComponent<AudioListener>();cam.gameObject.AddComponent<UniversalAdditionalCameraData>();
+    var cam=new GameObject("Camera | isometric follow orbit and scenic").AddComponent<Camera>();cam.gameObject.AddComponent<AudioListener>();cam.gameObject.AddComponent<UniversalAdditionalCameraData>();
     cam.backgroundColor=new Color(.66f,.76f,.83f);cam.clearFlags=CameraClearFlags.SolidColor;cam.orthographic=true;cam.orthographicSize=22;cam.nearClipPlane=.2f;cam.farClipPlane=1000;cam.transform.position=new Vector3(-123,35,-111);cam.transform.rotation=Quaternion.Euler(41,45,0);
-    var cameraRig=cam.gameObject.AddComponent<CameraRig>();cameraRig.view=cam;session.CameraRig=cameraRig;
+    var cameraRig=cam.gameObject.AddComponent<CameraRig>();cameraRig.view=cam;cameraRig.terrain=UnityEngine.Object.FindFirstObjectByType<Terrain>();session.CameraRig=cameraRig;
     session.Audio=session.gameObject.AddComponent<SynthAudio>();session.Audio.effects=session.gameObject.AddComponent<AudioSource>();session.Audio.effects.playOnAwake=false;
     session.Audio.motor=session.gameObject.AddComponent<AudioSource>();session.Audio.motor.clip=AssetDatabase.LoadAssetAtPath<AudioClip>("Assets/Snowglow/Audio/motor.wav");session.Audio.motor.loop=true;session.Audio.motor.volume=0;session.Audio.motor.playOnAwake=true;
     session.Audio.ambience=session.gameObject.AddComponent<AudioSource>();session.Audio.ambience.playOnAwake=false;

@@ -10,7 +10,7 @@ namespace Snowglow {
     case "switch":g.Switch(int.Parse(arg));break;case "buy":g.BuyMachine(int.Parse(arg));break;
     case "tyres":g.Upgrade(true);break;case "engine":g.Upgrade(false);break;
     case "fuel":g.Service(true);break;case "repair":g.Service(false);break;
-    case "camera":g.CameraRig.Toggle();break;case "reverse":g.Input.Reverse=!g.Input.Reverse;break;
+    case "camera":if(arg=="reset")g.CameraRig.ResetView();else if(arg=="in")g.CameraRig.Zoom(1);else if(arg=="out")g.CameraRig.Zoom(-1);else g.CameraRig.Toggle();break;case "reverse":g.Input.Reverse=!g.Input.Reverse;break;
     case "work":g.Active.Tool.ToggleWork();break;case "angle":g.Active.Tool.CycleAngle();break;
     case "auto":g.Active.Tool.ToggleAuto();break;case "dump":g.Active.Tool.RequestDump();break;case "recover":g.Recover();break;
     case "dummy":g.Dummy(arg);break;

@@ -4,6 +4,7 @@ namespace Snowglow {
  public sealed class PrototypeHUD : MonoBehaviour {
   public RectTransform safeArea,layout;public GameObject menuRoot;public GameObject driving;public Text status,objective,notice,debugText,menuInfo;
   public GameObject[] panels;public string[] names;
+  public Text cameraModeText,cameraHelp;public GameObject cameraTools;
   float next;
   public void RefreshMenu(){var g=PrototypeSession.Instance;if(g==null)return;for(int i=0;i<panels.Length;i++)panels[i].SetActive(names[i]==g.Panel);driving.SetActive(g.Panel=="");menuRoot.SetActive(g.Panel!="");}
   void Update(){
@@ -12,6 +13,9 @@ namespace Snowglow {
    float available=((RectTransform)safeArea).rect.width;float height=((RectTransform)safeArea).rect.height;float fit=Mathf.Min(available/1280f,height/720f);layout.localScale=Vector3.one*fit;
    if(Time.unscaledTime<next)return;next=Time.unscaledTime+.15f;
    var m=g.Active;var p=g.Profile;var a=m.Tool;
+   if(cameraModeText)cameraModeText.text="CAM: "+g.CameraRig.ModeName;
+   if(cameraTools)cameraTools.SetActive(g.CameraRig.Interactive);
+   if(cameraHelp){cameraHelp.gameObject.SetActive(g.CameraRig.Interactive);cameraHelp.text=g.CameraRig.ModeName+(g.CameraRig.mode==CameraMode.Scenic?" | slow panorama; drag to pause rotation":" | full 360-degree vehicle view")+"\n"+(Application.isMobilePlatform?"Drag empty view to rotate | pinch or +/- to zoom | RESET recentres":"Right-drag or J/L + I/K to orbit | scroll or +/- zoom | Home resets");}
    status.text="SNOWGLOW  |  "+m.definition.displayName+"\n"+Mathf.RoundToInt(m.Speed*3.6f)+" km/h   "+(g.Input.Reverse?"REVERSE":"FORWARD")+"   FUEL "+(m.FuelRatio*100).ToString("F0")+"%   CONDITION "+m.Condition.ToString("F0")+"%";
    objective.text=(p.freeWork?"FREE WORK":("CONTRACT "+(p.job+1)))+"   "+(g.Snow.Progress*100).ToString("F0")+"% cleared\n"+g.Multiplier+"x combo   "+(p.remaining<0?"LATE ":"TIME ")+Mathf.Abs(p.remaining/60).ToString("F0")+" min   "+p.coins+" coins";
    notice.text=g.Notice+"\n"+(a.Auto?"AUTO":"MANUAL")+"  "+(m.definition.loader?"Bucket "+a.Load.ToString("F2")+" / "+m.equipment.capacity+" m³":"Blade "+(a.Working?"DOWN":"UP")+" | angle "+a.Angle.ToString("F0"));

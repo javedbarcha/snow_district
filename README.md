@@ -85,11 +85,16 @@ Piles spread as they grow. Deposits prefer lower nearby cells within a mound-sha
 | Lift/lower | LIFT +/− | R/F |
 | Tilt/curl | TILT +/− | T/G |
 | Dump bucket | DUMP | B |
-| Camera | CAMERA | C |
+| Cycle four camera modes | CAM | C |
+| Orbit / tilt (Orbit or Scenic) | Drag empty view | Right-drag or J/L and I/K |
+| Camera zoom (Orbit or Scenic) | Pinch or ZOOM +/- | Wheel or +/- |
+| Reset camera view | VIEW RESET | Home |
 | Recover | RECOVER | H |
 | Pause | PAUSE | Escape |
 
 The steering panel commands vehicle steering, not screen-direction movement. Camera changes do not remap steering.
+
+Camera order is **Isometric ? Follow ? Orbit ? Scenic**. Orbit provides full 360-degree vehicle inspection; Scenic gives a wider, slowly revolving panorama with manual control. Terrain/near-plane clearance and obstruction sweeps keep the camera above ground. See [camera controls and limits](CAMERA_MODES.md). The camera tools are saved in the scene; no district rebake is required.
 
 ## Physics and machinery
 

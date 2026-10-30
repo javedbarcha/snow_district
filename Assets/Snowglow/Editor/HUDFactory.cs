@@ -33,7 +33,10 @@ namespace Snowglow.Editor {
    var top=Rect("Top HUD",driving,18,16,1244,88);Image(top,paper);
    hud.status=Text(top,"SNOWGLOW",16,10,675,70,19);hud.objective=Text(top,"CONTRACT",760,10,470,70,19);
    var msg=Rect("Equipment status",driving,350,113,580,77);Image(msg,paper);hud.notice=Text(msg,"Ready",12,8,555,65,16);
-   Button(driving,"PAUSE","pause",1100,119,160,48);Button(driving,"CAMERA","camera",18,119,150,48);Button(driving,"DEPOT MENU","open:garage",18,175,150,48);
+   Button(driving,"PAUSE","pause",1100,119,160,48);hud.cameraModeText=Button(driving,"CAMERA","camera",18,119,150,48).GetComponentInChildren<Text>();Button(driving,"DEPOT MENU","open:garage",18,175,150,48);
+   var cameraTools=Full("Camera tools",driving);hud.cameraTools=cameraTools.gameObject;
+   Button(cameraTools,"VIEW RESET","camera:reset",18,235,150,42);Button(cameraTools,"ZOOM +","camera:in",18,285,72,42);Button(cameraTools,"ZOOM -","camera:out",96,285,72,42);
+   hud.cameraHelp=Text(driving,"ORBIT / SCENIC | drag empty view, pinch or scroll to zoom",350,202,580,54,14);cameraTools.gameObject.SetActive(false);hud.cameraHelp.gameObject.SetActive(false);
    Hold(driving,"STEER  <       >","steer",1,20,564,270,118);
    Hold(driving,"BRAKE","brake",1,1014,580,110,104);Hold(driving,"DRIVE","throttle",1,1142,564,118,120);
    Button(driving,"F / R","reverse",1142,503,118,48);
@@ -53,7 +56,7 @@ namespace Snowglow.Editor {
       Text(panel,"A one-kilometre winter world, with a compact working district.\nDrive from the depot to the marked job. Plow snow sideways, then use the loader to move piles.\nBoth machinery and environment are editable primitive assemblies.",24,75,1140,100);
       Button(panel,"CONTINUE JOB","continue",24,210);Button(panel,"CONTRACT BOARD","open:contracts",250,210);Button(panel,"GARAGE","open:garage",476,210);Button(panel,"SHOPS","open:shop",702,210);Button(panel,"SETTINGS","open:settings",928,210);
       Button(panel,"FREE WORK","free",24,282);Button(panel,"FRESH SNOWFALL","fresh",250,282);Button(panel,"DUMMY STORE","open:store",476,282);
-      Text(panel,"DESKTOP: W/S drive/reverse | A/D steer | Space brake | E work/carry | Q blade angle\nV Auto/Manual | R/F lift | T/G tilt | B dump | C camera | H recover | Esc pause",24,371,1140,70,17);break;
+      Text(panel,"DESKTOP: W/S drive/reverse | A/D steer | Space brake | E work/carry | Q blade angle\nV Auto/Manual | R/F lift | T/G tilt | B dump | C cycles 4 cameras | H recover | Esc pause\nOrbit/Scenic: right-drag or J/L + I/K | scroll or +/- zoom | Home resets",24,371,1140,70,17);break;
      case "contracts":
       Text(panel,"Clear 90% of the marked area. Late completion reduces pay.\nSnow placed back in the work area obstructs it again. Use the storage yard at X94 / Z-85.",24,76,1140,74);
       Button(panel,"DEPOT ACCESS\nX -65, Z -90","job:0",24,192,350,90);Button(panel,"PARKING LOT\nX 94, Z 21","job:1",426,192,350,90);Button(panel,"MAIN STREET\nX 0, Z 0","job:2",828,192,350,90);

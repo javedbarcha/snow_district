@@ -62,3 +62,13 @@ preserve shared meshes. Decorative caps remain separate from the snow ledger. Sn
 obstacle flags are considered only near new trunk proxies; no-change intake retains
 the current seed reference rather than creating another asset. No tree factories
 or new runtime rendering behavior are added.
+
+
+CameraRig now cycles Isometric, Follow, Orbit and Scenic on the same authored Camera.
+It owns mouse/touch orbit input, UI exclusion, session-only angle/zoom and terrain/
+near-plane constraints. Sphere sweeps use world/pile layers and exclude the active
+vehicle; clearance is enforced after smoothing too. Scenic auto yaw pauses under
+manual input or gameplay menus. CameraModesAuthoring adds persistent zoom/reset/help
+UI to existing Pinefall; no runtime camera/UI construction or player-save change.
+CameraModesChecks uses disposable Editor fixtures, synthetic player-style Input
+System updates and a rendered UI fixture; its temporary package hook is restored.

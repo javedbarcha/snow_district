@@ -347,3 +347,61 @@ that full bake was not run. Reports/previews and the pre-edit scene copy are und
 `Pinefall-before.unity`). Source details: `SourceAssets/AlpineTrees/README.md`.
 Full forest/collision walkthrough, runtime culling behavior, Android rendering/
 packaging and sustained Galaxy A07 profiling remain untested in this task.
+
+
+## Orbit and Scenic camera modes - 30 October 2026
+
+Added two views alongside the existing Isometric and Follow modes. **C / CAM** now
+cycles Isometric -> Follow -> Orbit -> Scenic. Orbit provides full 360-degree
+inspection and front/rear access; Scenic provides a wider diagonal panorama with
+slow automatic revolution. Native scenic-preview review led to a lower 18-degree,
+45-degree-diagonal default and 65-degree FOV so town/mountains appear behind the
+vehicle instead of the depot roof dominating the image. Orbit starts at 15 m / 25
+degrees; Scenic at 40 m. Both allow 5-75 degree tilt, free yaw, and bounded zoom
+(Orbit 7-42 m, Scenic 22-65 m). Obstructions may shorten actual camera distance.
+
+PC: right-drag or J/L + I/K; wheel or +/- zoom; Home resets. Phone: drag an empty
+view, pinch two world-view fingers, or use saved zoom/reset buttons. Fingers that
+start on HUD/driving controls are excluded even after leaving the control. Existing
+W/S/arrows/steering remain vehicle-relative. Scenic turns at four degrees/second;
+manual input holds automatic movement for six seconds, and menus/pause freeze it.
+Machinery switching recentres the active view; camera preferences are session-only,
+with no save-schema or player-save writes.
+
+CameraRig still moves the one authored gameplay Camera. Terrain height and all four
+near-plane corners are constrained, including after smoothing; nonallocating sphere
+sweeps against world/pile colliders pull the camera inward, ignoring the active
+vehicle. No new runtime camera, UI, environment or machinery construction. Input
+System 1.18's normalized wheel range is respected, including Windows platform-range
+fallback. Legacy serialized Follow settings migrate through FormerlySerializedAs.
+
+CameraModesAuthoring saves the terrain binding, mode label, help and reset/zoom
+buttons into existing Pinefall. Future full district/HUD authoring includes these
+bindings; no district/snow rebake was run. Menu: **Snowglow > Install orbit and scenic
+cameras and validate**. CameraModesChecks uses disposable native fixtures, synthetic
+keyboard/mouse/touch input, a rendered UI fixture and an actual obstruction. Its
+Input System player-update test hook and manually simulated Editor UI lifecycles
+are restored/cleaned up; no project Input Settings or real input devices are changed.
+Initial Editor-only edge-event/UI-registration fixture issues were corrected rather
+than altering gameplay UI exclusion to accommodate an uninitialized fixture.
+
+Unity 6000.3.8f1 / Android compiled, saved/reopened the Camera/HUD and passed
+**10,827 assertions including 2,160 terrain/near-plane poses**. Cases cover all four
+modes, flat/sloping terrain, 4:3 and 20:9 aspect ratios, 5/45/75-degree poses, multiple
+yaw angles and every intermediate smoothing step sampled; keyboard C/W/S/A, mouse
+orbit/wheel, touch drag/pinch and HUD exclusions, zoom/pitch clamps, Scenic auto/
+pause/manual-hold/reset, obstruction pull-in and front-of-vehicle reachability.
+Scene validation and all 19 snow-ledger checks passed. Native Orbit front/rear and
+Scenic-wide scene renders were inspected under `Logs/CameraModes`. The scenic
+render visibly includes vehicle, housing, trees and mountain backdrop.
+
+All existing environment catalog IDs/poses and Terrain/snow assets were protected
+by native snapshots. An independent saved-scene record comparison confirms all 163
+home/mountain/light/tree prefab instances unchanged. Only the Camera/HUD authoring
+and runtime camera/input presentation were changed; vehicle/snow physics and player
+saves were untouched. A pre-edit scene backup is `Logs/CameraModes/Pinefall-before.unity`.
+Controls/limits are documented in CAMERA_MODES.md; report is
+`Logs/CameraModes/Validation.txt`. These are Editor fixture/render results, not a
+continuous physical Game-view or Android playtest. Live steering/touch ergonomics,
+every possible obstacle/pile arrangement, Android packaging and Galaxy A07 frame
+times remain untested. Wide views can increase visible geometry/shadow work.
