@@ -126,3 +126,5 @@ Bake and test in Editor first. In Build Profiles select Android and include `Ass
 ## Verification
 
 Read `VALIDATION.md` for current evidence, known limits and the required Unity/device acceptance checklist. Unity editor compilation and the Edit-mode bake have now run. Physics tuning, rendered scene inspection, touch behavior and phone performance still require testing. No APK has been built.
+
+Residential spacing update (31 October): the same 40 complete lots are now spread across the western gaps and wider central rows. House identities, variants and sizes remain; their former positions are superseded. Use **Snowglow > Environment > Redistribute homes evenly**. Unity save/reopen, 1 m house/road and house/house footprint checks and all 19 snow checks passed. See VALIDATION.md.

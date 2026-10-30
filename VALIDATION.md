@@ -405,3 +405,23 @@ Controls/limits are documented in CAMERA_MODES.md; report is
 continuous physical Game-view or Android playtest. Live steering/touch ergonomics,
 every possible obstacle/pile arrangement, Android packaging and Galaxy A07 frame
 times remain untested. Wide views can increase visible geometry/shadow work.
+
+
+## Even residential spacing - 31 October 2026
+
+Redistributed the existing 40 complete house lots to fill the western gaps shown
+in the user's marked screenshot. Central pairs now span X -46/-22 and 22/46;
+western lots form pairs at X -102/-82 across Z -44, -20, 20 and 44.
+Northern pairs sit at Z 82/102. House IDs, variants, scales, foundations and fences
+are retained; this explicitly supersedes the previous requirement to keep the
+original 16 house positions. No homes were added.
+
+Unity 6000.3.8f1 / Android compiled, saved/reopened Pinefall and passed house/road
+and house/house footprint checks with a 1 m margin, scene validation and all 19
+snow-ledger checks. EvenTownSnowSeed.asset is a separate scene-specific seed:
+30,706 obstacle flags changed, including cleared former footprints; depth,
+credit and volume accounting were unchanged. Existing seeds, snow meshes,
+Terrain, mountains, fleet and player saves were preserved. No district rebake.
+Menu: Snowglow > Environment > Redistribute homes evenly. Native report:
+Logs/TownBlocks/Validation.txt. Live driving, rendered appearance and phone
+performance were not tested for this adjustment.
