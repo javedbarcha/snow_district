@@ -19,8 +19,10 @@ The most important continuing requirements are:
 
 - Build a cozy **full-3D, mid low-poly snow-clearing game in Unity**, Android first,
   offline, using URP. The reference phone is **Samsung Galaxy A07**.
-- Prioritize driving, plowing, displaced snow/piles and loader operation over
-  adding menus, decorative content or speculative systems.
+- Prioritize a production-ready first release: reliable driving/plowing/loading,
+  the complete game loop, usable UI, purchasing/economy and Android validation.
+  Necessary release UI is in scope; decorative expansion and speculative systems
+  follow the ordered roadmap below.
 - Vehicle motion must come from Rigidbody/WheelCollider physics. Stability
   assistance is intentional; it must not teleport vehicles or guarantee traction.
 - Snow volume has one authoritative owner. Transfers must conserve volume except
@@ -33,15 +35,16 @@ The most important continuing requirements are:
 - Preserve source models, stable asset/save IDs, GUIDs, `.meta` files, saved snow
   data and manually authored scene work. Do not rebake the whole district merely
   to replace one model or change snow resolution.
-- The active next phase is **weather, day/night and lighting**, superseding asset
-  importing/furnishing as the immediate priority. Imported assets remain supported;
-  preserve completed preparation and scene work. Further replacements are deferred
-  unless requested or needed for these milestones.
+- The active next phase is **first-release essentials**, superseding the earlier
+  weather/lighting priority. Work one task at a time, finish and verify it before
+  advancing. Preserve imported assets and scene work; further furnishing/model
+  replacement and weather/lighting are future updates unless needed for release.
 - **Snowfall effects are deferred to a future phase; omit them from current work.**
   When added later, falling snow must be visual only, localized around/in front of
   the active camera, with no increase to ground snow, piles, bucket loads or volume.
-- Home windows, **including door windows**, must glow with bloom in daylight as
-  well as at night. Night lighting must not disable their daytime glow.
+- For the deferred lighting update, home windows, **including door windows**,
+  must glow with bloom in daylight as well as at night. This remains a future
+  requirement, not a blocker for the first release.
 - Report what actually compiled, saved, reopened, rendered or ran. Do not equate
   a structural check, sampled pose check or low triangle count with a successful
   driving test, Android build or measured phone performance.
@@ -57,12 +60,76 @@ authorized implementation, the asset-management phase and the individual model
 replacements. Those old planning pauses are historical, not a standing requirement
 to seek permission again for already authorized work.
 
-## Upcoming milestones: weather and lighting (31 October 2026)
+## Ordered roadmap: first release, then future updates (31 October 2026)
 
-The user has shifted the next development goal from importing, furnishing and
-replacing prototype assets to weather and lighting. The milestones below record
-**upcoming work**, not implemented or validated features. This request updates
-the handoff; it does not itself implement these systems.
+The latest user decision is to pursue a production-level first release, with UI,
+purchasing and the overall game loop as essentials. This supersedes the previous
+plan to implement weather/lighting next. All items below are planned work unless
+the current implementation and validation records explicitly establish otherwise.
+This request updates documentation only; it does not implement these features.
+
+Proceed **one concrete task at a time** in the following preference order. Verify
+the result and report remaining limits before moving on. Resolve blockers in an
+earlier milestone before investing in later polish; do not expand the release
+scope simply because a future feature is listed.
+
+### First-release milestones, in preference order
+
+1. **Android baseline and device smoke test.** Build a development APK from this
+   root project and install/test on the Galaxy A07. Confirm launch, rendering,
+   touch input, basic driving and background/resume. This is the starting task;
+   actual device testing requires access to the phone. Record build/device
+   evidence and failures rather than treating an Editor pass as phone acceptance.
+2. **Complete and stabilize the core game loop.** Validate contract selection,
+   machine selection, driving, plowing, loading, transporting, dumping, completion,
+   rewards and return to the garage/next job. Include Free Work, depot switching,
+   service costs, progression and useful upgrades. Make objectives, success and
+   recovery understandable; tune existing content before adding more. Preserve
+   snow conservation, original-work-only rewards and stable machine/save IDs.
+3. **Production UI, onboarding and touch usability.** Polish the existing
+   dashboard, contracts, garage, shop/parts, service, settings, pause and results
+   around that loop. Establish consistent layout, typography, navigation,
+   feedback and safe-area/scaling behavior. Make driving/equipment controls,
+   objectives, prices, ownership and errors clear. Add concise first-time guidance
+   and verify the full flow on the phone, including all camera modes.
+4. **Purchasing and economy readiness.** Finish reliable in-game coin purchases,
+   ownership/equipping, upgrades and service transactions. Check affordability,
+   cancellation, failure, repeated taps, duplicate delivery and save/resume.
+   Separately decide whether the first release needs real-money purchases;
+   the current dummy store is not real billing. Real-money product types, pricing
+   and provider integration remain undecided. If included, implement and validate
+   the chosen store integration, entitlement persistence and relevant recovery/
+   pending/refund cases before release. If omitted, remove or hide player-facing
+   simulated purchase/debug reward flows in the release. Keep normal gameplay
+   offline; any optional billing network requirements must be explicit. Do not
+   charge, publish products or make commercial commitments from this roadmap.
+5. **Persistence, lifecycle and failure recovery.** Verify fresh install, existing
+   save migration, autosave, backup recovery, interrupted writes, suspension,
+   process termination and resume. Restore contracts, piles, carried loads,
+   wallet, ownership and upgrades consistently. Pause must not silently advance
+   contract deadlines. Remove release-blocking exceptions and soft locks.
+6. **Performance and final presentation.** Profile sustained representative play
+   on the A07 toward 30 FPS / 33.3 ms, including snow work, busy views, UI and saving.
+   Address memory, heat, loading and save hitches. Finish essential audio/visual
+   feedback and readability using the current daytime setting and assets.
+   Weather, extra decorative imports and lighting upgrades are not prerequisites.
+7. **Release candidate and publishing preparation.** Run complete physical-device
+   playthroughs and regression checks, validate release build/install/update,
+   finalize identity/versioning, icons, store screenshots/description, support and
+   applicable privacy/store disclosures. Check current platform requirements
+   when doing that work. Remove prototype labels/debug entry points as appropriate
+   and test the chosen purchase strategy. Prepare a concrete reviewable release
+   before requesting any publishing action; this document does not authorize
+   public submission or real transactions. No release-ready claim without evidence.
+
+Initial release scope stays focused on **Pinefall, the two current machines,
+Career contracts and Free Work**. Existing broader ambitions remain in the
+backlog rather than becoming automatic launch requirements.
+
+### Future-update milestones, in preference order
+
+After first-release acceptance, the retained weather/lighting backlog is ordered
+as follows. Do not begin it as a substitute for unresolved release essentials.
 
 1. **Day/night foundation.** Establish a coordinated time-of-day system with
    smooth daylight, dusk, night and dawn transitions. Coordinate directional
@@ -70,11 +137,7 @@ the handoff; it does not itself implement these systems.
    remain readable in the cozy toon style. Cycle duration, starting time,
    player controls and time persistence are still design choices, not settled
    requirements. Define pause/lifecycle behavior consistently with the session.
-2. **Wind.** Establish visual wind direction/strength and gentle variation as
-   appropriate for the existing environment. Wind must not move authoritative snow
-   or apply vehicle forces without a separate explicit decision. Snowfall effects
-   are excluded from this milestone and deferred to future work.
-3. **Home window emission and bloom.** Give every home window, including glazing
+2. **Home window emission and bloom.** Give every home window, including glazing
    in doors, visible glow with URP bloom **during daylight too**, retained through
    dusk and night. Preserve opaque warm home glazing and the established opaque
    cyan toon vehicle glazing; emission must not introduce transparent glass.
@@ -82,18 +145,21 @@ the handoff; it does not itself implement these systems.
    surface alone is not evidence of bloom. Keep highlights controlled so the
    white snow retains detail. Per-window real-time lights are not required to
    achieve emissive glow.
-4. **Street lighting at night.** Coordinate street-lamp luminous meshes and
+3. **Street lighting at night.** Coordinate street-lamp luminous meshes and
    useful ground illumination with dusk/dawn, using smooth transitions. Reuse
    the prepared fixtures and their optional authored lights where appropriate.
    Budget real-time light range, overlap and shadows deliberately rather than
    enabling every optional light indiscriminately. Distinguish visible lamp
    glow/bloom from actual illumination of roads and snow.
-5. **Vehicle lighting.** Prepare and bind headlights, rear/brake/reverse lights,
+4. **Vehicle lighting.** Prepare and bind headlights, rear/brake/reverse lights,
    work lights and existing beacons as applicable to each machine. Coordinate
    night visibility and driving-state cues with the existing controllers;
    exact controls and automatic switching remain to be decided. Preserve rigs,
    attachment motion, save IDs and opaque toon glazing.
-6. **Integration and acceptance.** Save all controllers, effect objects, lights,
+5. **Wind.** Establish visual wind direction/strength and gentle variation as
+   appropriate for the environment. Wind must not move authoritative snow or
+   apply vehicle forces without a separate explicit decision.
+6. **Weather/lighting integration and acceptance.** Save all controllers, effect objects, lights,
    materials and URP volume/camera bindings in the Editor before Play. Runtime
    may update those authored bindings and lighting values;
    do not introduce runtime scene factories. Verify scene save/reopen, all four
@@ -103,13 +169,23 @@ the handoff; it does not itself implement these systems.
    Report rendered inspection, playtesting and Galaxy A07 profiling separately;
    light counts and Editor checks do not prove sustained 30 FPS.
 
-**Deferred: visual snowfall.** Do not implement falling-snow effects in the current
-phase. When requested in future, use camera-local particles around/in front of the
+7. **Visual snowfall, deferred until requested.** Omit from the first release and
+   initial weather/lighting work. When requested, use camera-local particles around/in front of the
 active camera, supporting all four camera modes with bounded mobile overdraw.
 Snowfall must remain purely atmospheric: no accumulation, ground-depth changes,
 pile growth, work credit, disposal changes or bucket filling.
 
-Additional weather types or systems implied by ?etc.? remain open scope; do not
+8. **Further content and systems, lower priority.** Resume imported furnishing/
+   prototype replacements and consider additional machinery, compatible parts,
+   contracts and districts only after the release and the above updates are stable.
+   Retain the historical backlog of regional/globe progression, additional modes,
+   tracked machines, snowblowers, adapters/chains/transmission/ballast/hydraulics
+   and cosmetics. These are ideas requiring separate scope and implementation,
+   not promised features or an instruction to build all of them. Broader services,
+   general inventory/loadouts or cloud integrations should be justified by actual
+   content needs and preserve existing stable IDs and saves.
+
+Additional weather types or systems implied by "etc." remain open scope; do not
 assume rain, storms, seasonal changes, melting, accumulation or a weather service
 has been requested. Preserve the current house distribution, source assets,
 GUIDs, snow seed/mesh assets and player saves. Apply this phase to the existing
@@ -128,7 +204,7 @@ Pinefall scene without a whole-district rebake.
 | Main scene | `Assets/Scenes/Pinefall.unity`, saved and included in build scenes |
 | World | 1,000 x 1,000 m Terrain; compact test district near its centre |
 | Interactive snow | 256 x 256 m field, 512 x 512 cells at 0.5 m |
-| Housing | 40 lots in ten blocks of 2, 4 or 6 use seven imported variants at the enlarged fitting scale; original 16 home identities and poses preserved |
+| Housing | 40 lots in ten blocks of 2, 4 or 6 use seven imported variants at the enlarged fitting scale; home identities preserved; lots redistributed evenly on 31 October |
 | Fleet[0] | Imported Golden tractor, free and always owned initially |
 | Fleet[1] | Imported Golden snow loader, 1,400 coins, initially unowned |
 | Fresh wallet | 1,800 prototype coins |
