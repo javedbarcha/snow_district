@@ -1378,3 +1378,5 @@ from Drive by a 50-unit vertical gap. Recover is explicitly bound to the same
 Recover-to-depot action as service recovery and relabelled RECOVER TO DEPOT.
 UI and loader checks/results are recorded in Logs/DrivingButtons/Validation.txt
 and Logs/DrivingControls.txt. Physical-phone ergonomics remain to be tested.
+
+Orbit UI simplification (1 November): remove on-screen Zoom In/Out buttons and retain only VIEW RESET, anchored to the left controls group at the 5% safe-area inset. Mouse wheel, keyboard +/- and two-finger pinch remain supported. Future HUD/camera authoring follows this layout.

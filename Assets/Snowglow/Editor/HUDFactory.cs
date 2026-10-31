@@ -35,7 +35,7 @@ namespace Snowglow.Editor {
    hud.objective=Text(driving,"CONTRACT",862,12,400,76,14);
    Button(driving,"PAUSE","pause",1100,119,160,48);hud.cameraModeText=Button(driving,"CAMERA","camera",18,119,150,48).GetComponentInChildren<Text>();Button(driving,"DEPOT MENU","open:garage",18,175,150,48);
    var cameraTools=Full("Camera tools",driving);hud.cameraTools=cameraTools.gameObject;
-   Button(cameraTools,"VIEW RESET","camera:reset",18,235,150,42);Button(cameraTools,"ZOOM +","camera:in",18,285,72,42);Button(cameraTools,"ZOOM -","camera:out",96,285,72,42);
+   Button(cameraTools,"VIEW RESET","camera:reset",18,235,150,42);
    hud.cameraHelp=Text(driving,"ORBIT | drag empty view, pinch or scroll to zoom",350,202,580,54,14);cameraTools.gameObject.SetActive(false);hud.cameraHelp.gameObject.SetActive(false);
    Hold(driving,"STEER  <       >","steer",1,20,564,270,118);
    Hold(driving,"BRAKE","brake",1,1014,580,110,104);Hold(driving,"DRIVE","throttle",1,1142,564,118,120);

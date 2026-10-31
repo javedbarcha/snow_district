@@ -15,7 +15,7 @@ namespace Snowglow {
    var m=g.Active;var p=g.Profile;var a=m.Tool;
    if(cameraModeText)cameraModeText.text="CAM: "+g.CameraRig.ModeName;
    if(cameraTools)cameraTools.SetActive(g.CameraRig.Interactive);
-   if(cameraHelp){cameraHelp.gameObject.SetActive(g.CameraRig.Interactive);cameraHelp.text=g.CameraRig.ModeName+" | full 360-degree vehicle view"+"\n"+(Application.isMobilePlatform?"Drag empty view to rotate | pinch or +/- to zoom | RESET recentres":"Right-drag or J/L + I/K to orbit | scroll or +/- zoom | Home resets");}
+   if(cameraHelp){cameraHelp.gameObject.SetActive(g.CameraRig.Interactive);cameraHelp.text=g.CameraRig.ModeName+" | full 360-degree vehicle view"+"\n"+(Application.isMobilePlatform?"Drag empty view to rotate | pinch to zoom | RESET recentres":"Right-drag or J/L + I/K to orbit | scroll or +/- zoom | Home resets");}
    status.text="SNOWGLOW  |  "+m.definition.displayName+"\n"+Mathf.RoundToInt(m.Speed*3.6f)+" km/h   "+(g.Input.Reverse?"REVERSE":"FORWARD")+"   FUEL "+(m.FuelRatio*100).ToString("F0")+"%   CONDITION "+m.Condition.ToString("F0")+"%";
    objective.text=(p.freeWork?"FREE WORK":("CONTRACT "+(p.job+1)))+"   "+(g.Snow.Progress*100).ToString("F0")+"% cleared\n"+g.Multiplier+"x combo   "+(p.remaining<0?"LATE ":"TIME ")+Mathf.Abs(p.remaining/60).ToString("F0")+" min   "+p.coins+" coins";
    notice.text=g.Notice+"\n"+(m.definition.loader?"Bucket "+a.Load.ToString("F2")+" / "+m.equipment.capacity+" m³":"Blade "+(a.Working?"DOWN":"UP")+" | angle "+a.Angle.ToString("F0"));

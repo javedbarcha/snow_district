@@ -28,7 +28,7 @@ In Orbit:
 | Action | PC | Phone |
 | --- | --- | --- |
 | Rotate / tilt | Right-drag, or J/L and I/K | Drag an empty part of the view |
-| Zoom | Wheel or +/- | Pinch world-view fingers, or ZOOM + / ZOOM - |
+| Zoom | Wheel or +/- | Pinch with two world-view fingers |
 | Reset | Home | VIEW RESET |
 
 Orbit starts at 15 m / 25 degrees, with 7-42 m distance, 5-75 degree pitch and full
@@ -41,3 +41,5 @@ exclusion and Terrain/near-plane safety after smoothing. Obstructions can reduce
 the requested distance. Menu: **Snowglow > Install gameplay cameras and validate**.
 Actual verification and remaining limitations belong in VALIDATION.md and
 Logs/CameraModes/Validation.txt.
+
+Orbit has only a left-anchored VIEW RESET button (at the 5% safe-area inset). On-screen zoom buttons are removed; pinch, wheel and keyboard +/- zoom remain.

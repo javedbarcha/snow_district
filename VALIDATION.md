@@ -526,3 +526,7 @@ were written by fixtures. Continuous Game-view touch/driving/recovery interactio
 physical-phone ergonomics and A07 performance remain untested.
 
 Driving button spacing adjustment (1 November): increased LEFT/RIGHT separation from 16 to 36 design units; reduced F/R width from 150 to 118 to match Drive, retaining 64 height. Updated saved scene and Editor authoring values. Structural values checked; no new Unity render or phone test for this layout-only adjustment.
+
+Orbit UI simplification (1 November): remove on-screen Zoom In/Out buttons and retain only VIEW RESET, anchored to the left controls group at the 5% safe-area inset. Mouse wheel, keyboard +/- and two-finger pinch remain supported. Future HUD/camera authoring follows this layout.
+
+Orbit reset-only follow-up: saved scene structurally checked with zero camera:in/out commands and one camera:reset command, left-aligned within the 5% inset group. Code compiled; Unity assembly reload was still in progress at the saved-data check. Native refresh/visual verification remains pending. Backup: Logs/OrbitReset/Pinefall-before.unity.

@@ -32,13 +32,14 @@ namespace Snowglow.Editor {
    var rig=session.CameraRig;rig.terrain=All<Terrain>(scene).Single();rig.SetMode(CameraMode.Isometric);rig.name="Camera | isometric follow and orbit";rig.groundClearance=1;rig.collisionRadius=.4f;rig.orbitPitch=25;rig.orbitDistance=15;rig.scenicPitch=18;rig.scenicDistance=40;rig.scenicSpeed=4;
    var hud=session.HUD;var camera=hud.driving.GetComponentsInChildren<UICommand>(true).Single(c=>c.command=="camera");hud.cameraModeText=camera.GetComponentInChildren<Text>(true);hud.cameraModeText.text="CAM: ISOMETRIC";
    if(!hud.cameraTools){var group=Rect("Camera tools",hud.driving.transform,0,0,0,0);group.anchorMin=Vector2.zero;group.anchorMax=Vector2.one;group.offsetMin=group.offsetMax=Vector2.zero;hud.cameraTools=group.gameObject;}
-   Button(hud.cameraTools.transform,"VIEW RESET","camera:reset",18,235,150);Button(hud.cameraTools.transform,"ZOOM +","camera:in",18,285,72);Button(hud.cameraTools.transform,"ZOOM -","camera:out",96,285,72);hud.cameraTools.SetActive(false);
+   Button(hud.cameraTools.transform,"VIEW RESET","camera:reset",18,235,150);hud.cameraTools.SetActive(false);
    if(!hud.cameraHelp)hud.cameraHelp=Label(hud.driving.transform,"Camera view help","ORBIT | drag empty view, pinch or scroll to zoom",350,202,580,54,14);hud.cameraHelp.gameObject.SetActive(false);
    foreach(var text in hud.GetComponentsInChildren<Text>(true).Where(t=>t.text.StartsWith("DESKTOP: W/S",StringComparison.Ordinal)))text.text="DESKTOP: W/S drive/reverse | A/D steer | Space brake | E work/carry | Q blade angle\nV Auto/Manual | R/F lift | T/G tilt | B dump | C cycles 3 cameras | H recover | Esc pause\nOrbit: right-drag or J/L + I/K | scroll or +/- zoom | Home resets";
+   DrivingButtonsAuthoring.Apply(hud);
    EditorUtility.SetDirty(rig);EditorUtility.SetDirty(hud);SceneValidation.Validate(scene);EditorSceneManager.MarkSceneDirty(scene);if(!EditorSceneManager.SaveScene(scene))throw new InvalidOperationException("Camera scene save failed.");
    scene=EditorSceneManager.OpenScene(SceneValidation.ScenePath);SceneValidation.Validate(scene);session=All<PrototypeSession>(scene).Single();
    if(!session.CameraRig.terrain||!session.HUD.cameraHelp||!session.HUD.cameraModeText||!session.HUD.cameraTools)throw new InvalidOperationException("Saved camera/HUD bindings missing.");
-   foreach(string command in new[]{"camera:reset","camera:in","camera:out"})if(session.HUD.cameraTools.GetComponentsInChildren<UICommand>(true).Count(c=>c.command==command)!=1)throw new InvalidOperationException("Camera UI command missing/duplicated: "+command);
+   foreach(string command in new[]{"camera:reset"})if(session.HUD.cameraTools.GetComponentsInChildren<UICommand>(true).Count(c=>c.command==command)!=1)throw new InvalidOperationException("Camera UI command missing/duplicated: "+command);
    var current=All<CatalogPlacement>(scene).Where(p=>!string.IsNullOrEmpty(p.placementId)).ToDictionary(p=>p.placementId,p=>p.assetId+"|"+p.transform.localToWorldMatrix.ToString("R"));foreach(var p in placements)if(!current.TryGetValue(p.Key,out var value)||value!=p.Value)throw new InvalidOperationException("Environment placement changed: "+p.Key);foreach(var p in paths)if(p.Value!=AssetDatabase.GetAssetDependencyHash(p.Key).ToString())throw new InvalidOperationException("Terrain/snow asset changed: "+p.Key);
    CameraModesChecks.Run();
   }
