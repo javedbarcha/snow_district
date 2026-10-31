@@ -1,53 +1,43 @@
 # Camera controls
 
-Press **C** or tap **CAM** to cycle **Isometric ? Follow ? Orbit ? Scenic**.
-Isometric remains the starting view. Steering stays vehicle-relative in every mode;
-W/Up drives forward and S/Down drives in reverse.
+Press **C** or tap **CAM** to cycle **Isometric -> Follow -> Orbit**.
+Scenic is removed from gameplay. Its composition is reserved for a future static
+main-menu background preview; that menu feature is not implemented here.
+Existing serialized Scenic values migrate to Isometric.
 
 | Mode | View |
 | --- | --- |
-| Isometric | Original raised orthographic work view |
-| Follow | Perspective chase view behind the machine |
+| Isometric | Closer orthographic view at rest; smoothly widens with vehicle speed |
+| Follow | Rear chase view forward; smoothly arcs to the front for reversing |
 | Orbit | Manual full 360-degree inspection around the active machine |
-| Scenic | Wider diagonal panorama, slowly revolving around the active machine |
 
-In Orbit and Scenic:
+Isometric uses a 12 m orthographic half-height at rest and 19.2 m at 8 m/s,
+with a 1.1 s exponential response. Reverse speed widens it too. Narrower aspect
+ratios widen the vertical framing to retain vehicle/work-area coverage.
+These are initial tuning values, editable on the saved CameraRig.
+
+Follow uses actual Rigidbody velocity along the vehicle's forward axis. It changes
+direction beyond +/-0.35 m/s and retains its last direction while stopped, avoiding
+jitter near zero or an early swing while braking. The camera moves around an arc
+rather than passing through the cab; direction changes use a 0.9 s smoothing
+parameter, followed by the existing position/rotation smoothing. Follow defaults
+to 13 m horizontal distance and 6 m height. Camera direction never remaps steering.
+
+In Orbit:
 
 | Action | PC | Phone |
 | --- | --- | --- |
-| Rotate / tilt | Hold right mouse button and drag, or J/L and I/K | Drag an empty part of the view |
-| Zoom | Mouse wheel or +/- (the + shares the = key) | Pinch with two world-view fingers, or ZOOM + / ZOOM - |
+| Rotate / tilt | Right-drag, or J/L and I/K | Drag an empty part of the view |
+| Zoom | Wheel or +/- | Pinch world-view fingers, or ZOOM + / ZOOM - |
 | Reset | Home | VIEW RESET |
 
-Orbit starts 15 m from the vehicle at a 25-degree downward angle. Scenic starts
-40 m away at an 18-degree angle and a diagonal heading, leaving more room for the
-town and mountain backdrop. Scenic turns at 4 degrees per second; manual rotation
-or zoom holds automatic movement for six seconds. Menus/pause freeze revolution.
-Reset returns each mode to its starting vehicle-relative view. Switching machinery
-recentres the view on the newly active machine. Mode/zoom are session-only settings;
-this change does not extend player-save data.
+Orbit starts at 15 m / 25 degrees, with 7-42 m distance, 5-75 degree pitch and full
+yaw. HUD-origin touches are excluded from camera gestures. Switching machinery
+recentres the camera. Pause freezes speed zoom and direction changes. Camera
+preferences remain session-only, with no player-save schema change.
 
-Yaw wraps freely through 360 degrees. Tilt is limited to 5-75 degrees; zoom ranges
-are 7-42 m in Orbit and 22-65 m in Scenic. Obstructions can shorten the actual camera
-distance. Touches that begin on steering, driving or other HUD controls are excluded
-from camera gestures, even if dragged off the control later. A separate finger can
-orbit while another operates a driving control. No cursor locking is required.
-
-The existing saved CameraRig moves the one authored gameplay camera. It samples
-the saved Terrain and protects camera height plus all four near-plane corners.
-Sphere sweeps against world/pile colliders pull the camera inward at obstructions;
-vehicle colliders are excluded. The ground constraint also runs after smoothing,
-so intermediate motion cannot dip below the sampled terrain. It is not a guarantee
-of visibility through every tree, roof, mountain proxy or possible pile arrangement.
-
-Camera buttons/help are authored into Pinefall in Edit mode. No camera, Canvas,
-vehicle or scenery is assembled during gameplay. **Snowglow > Install orbit and
-scenic cameras and validate** updates the saved bindings without a district rebake.
-The same bindings/buttons are included in future full authoring. **Snowglow > Run
-camera orbit input and terrain checks** exercises the saved configuration with
-throwaway native fixtures. See `Logs/CameraModes/Validation.txt` and VALIDATION.md.
-Mouse-wheel handling follows the installed Input System's normalized-scroll setting.
-
-The wider views can expose more scene geometry and shadows. Galaxy A07 frame times,
-physical touch ergonomics, live driving and all obstacle situations still need
-separate testing. Keep the original work views available for close plowing.
+The single authored CameraRig retains world/pile obstruction sweeps, vehicle
+exclusion and Terrain/near-plane safety after smoothing. Obstructions can reduce
+the requested distance. Menu: **Snowglow > Install gameplay cameras and validate**.
+Actual verification and remaining limitations belong in VALIDATION.md and
+Logs/CameraModes/Validation.txt.

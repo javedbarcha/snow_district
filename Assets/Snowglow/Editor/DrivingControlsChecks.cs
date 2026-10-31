@@ -34,7 +34,7 @@ namespace Snowglow.Editor {
     probe=UnityEngine.Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(LoaderModelIntake.PrefabPath));probe.hideFlags=HideFlags.HideAndDontSave;
     var loader=probe.GetComponent<MachineController>();loader.Initialize();session.Fleet=new[]{loader};session.Profile.active=0;
     session.Snow=fixture.AddComponent<SnowField>();
-    var events=fixture.AddComponent<EventSystem>();EventSystem.current=events;
+    var events=fixture.AddComponent<EventSystem>();events.SendMessage("OnEnable");EventSystem.current=events;
     keyboard=InputSystem.AddDevice<Keyboard>();
     void Keys(params Key[] keys){InputSystem.QueueStateEvent(keyboard,new KeyboardState(keys));InputSystem.Update();session.Input.SendMessage("Update");}
     Keys(Key.W);Check(session.Input.Throttle==1&&!session.Input.Reverse,"W forward");
@@ -50,16 +50,15 @@ namespace Snowglow.Editor {
     Check(!tool.Working&&tool.Lift>=.6f&&tool.mouth.position.y>low+.3f,"stationary/restored full bucket auto-carry physically raises mouth");
     float load=tool.Load;tool.Lift=.9f;tool.Simulate(.02f,0);Check(tool.Lift>=.9f&&tool.Load==load,"auto carry never lowers a higher boom or changes load");
     tool.Load=loader.equipment.capacity*.5f;tool.Lift=0;tool.Tilt=0;tool.Working=true;tool.Simulate(.02f,0);Check(tool.Lift==0&&tool.Working,"partial bucket stays at work height");
-    tool.Load=loader.equipment.capacity;tool.Auto=true;tool.Lift=.3f;Keys(Key.R);tool.Simulate(.5f,0);Check(!tool.Auto&&tool.Lift>.3f,"R takes manual control and lifts a full bucket");
-    Keys(Key.F);tool.Simulate(1,0);Check(tool.Lift<.18f&&tool.Working,"F lowers and re-enables loading");
-    Keys(Key.T);tool.Simulate(.1f,0);Check(session.Input.Tilt==1&&tool.Tilt>0,"T tilts");Keys(Key.G);Check(session.Input.Tilt==-1,"G curls");
+    tool.Load=loader.equipment.capacity;tool.Auto=false;tool.Lift=.3f;Keys(Key.R);tool.Simulate(.5f,0);Check(tool.Auto&&tool.Lift>=.6f,"legacy Manual state returns to automatic full-bucket carry");
+    foreach(var key in new[]{Key.R,Key.F,Key.T,Key.G}){Keys(key);Check(session.Input.Lift==0&&session.Input.Tilt==0,"removed manual key ignored: "+key);}
     Keys();tool.RequestDump();tool.Simulate(.02f,0);Check(tool.Tilt==1&&tool.Lift>=tool.dumpMinimumLift,"dump retains tip pose with full bucket");
     MechanicsChecks.Run();
-    File.WriteAllText("Logs/DrivingControls.txt","PASS: Unity "+Application.unityVersion+" / "+EditorUserBuildSettings.activeBuildTarget+". Injected Input System keyboard events exercised W/S/arrows/steering/brake/opposed keys/R/F/T/G; gameplay UI navigation disabled and menu navigation restored. Actual imported loader fixture passed stationary full-load auto carry, mouth elevation, partial-load work, higher-boom preservation, manual takeover/lower and dump pose checks. Scene structure and 19 snow ledger checks passed. No player saves or authored scene assets changed. Physical keyboard/Game view focus, continuous driving/loading, Android build and device behavior remain untested.");
+    File.WriteAllText("Logs/DrivingControls.txt","PASS: Unity "+Application.unityVersion+" / "+EditorUserBuildSettings.activeBuildTarget+". Injected Input System keyboard events exercised W/S/arrows/steering/brake/opposed keys/R/F/T/G; gameplay UI navigation disabled and menu navigation restored. Actual imported loader fixture passed stationary full-load auto carry, mouth elevation, partial-load work, higher-boom preservation, legacy Manual normalization and removed manual-key and dump pose checks. Scene structure and 19 snow ledger checks passed. No player saves or authored scene assets changed. Physical keyboard/Game view focus, continuous driving/loading, Android build and device behavior remain untested.");
     Debug.Log(File.ReadAllText("Logs/DrivingControls.txt"));
    }finally{
     instance.SetValue(null,previous);if(keyboard!=null)InputSystem.RemoveDevice(keyboard);if(oldKeyboard!=null)oldKeyboard.MakeCurrent();
-    if(probe)UnityEngine.Object.DestroyImmediate(probe);if(fixture)UnityEngine.Object.DestroyImmediate(fixture);EventSystem.current=oldEvents;Time.timeScale=oldTime;
+    if(probe)UnityEngine.Object.DestroyImmediate(probe);if(fixture){fixture.GetComponent<EventSystem>().SendMessage("OnDisable");UnityEngine.Object.DestroyImmediate(fixture);}EventSystem.current=oldEvents;Time.timeScale=oldTime;
    }
   }
  }

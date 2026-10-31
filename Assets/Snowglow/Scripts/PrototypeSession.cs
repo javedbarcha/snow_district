@@ -18,7 +18,7 @@ namespace Snowglow {
     var m=Fleet[i];m.Initialize();m.Owned=i==0;m.Fuel=m.definition.fuelCapacity;
     if(Profile.machines!=null)foreach(var save in Profile.machines)if(save.id==m.definition.id){
      m.Owned=save.owned;m.Fuel=Mathf.Clamp(save.fuel,0,m.definition.fuelCapacity);m.Condition=Mathf.Clamp(save.condition,0,100);m.Tyres=Mathf.Clamp(save.tyres,0,3);m.Engine=Mathf.Clamp(save.engine,0,3);
-     m.Tool.Load=Mathf.Clamp(save.load,0,m.equipment.capacity);m.Tool.Lift=save.lift;m.Tool.Tilt=save.tilt;m.Tool.Angle=save.angle;m.Tool.Auto=save.auto;m.Tool.Working=save.working;
+     m.Tool.Load=Mathf.Clamp(save.load,0,m.equipment.capacity);m.Tool.Lift=save.lift;m.Tool.Tilt=save.tilt;m.Tool.Angle=save.angle;m.Tool.Auto=true;m.Tool.Working=save.working;
      if(Profile.inJob&&save.position.y>0&&Mathf.Abs(save.position.x)<480&&Mathf.Abs(save.position.z)<480)m.transform.SetPositionAndRotation(save.position,save.rotation);
     }
    }

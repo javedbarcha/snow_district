@@ -81,11 +81,8 @@ Piles spread as they grow. Deposits prefer lower nearby cells within a mound-sha
 | Forward/reverse | F/R | X |
 | Work / raise / carry | WORK/CARRY | E |
 | Blade angle | ANGLE L/C/R | Q |
-| Auto/manual | AUTO/MANUAL | V |
-| Lift/lower | LIFT +/− | R/F |
-| Tilt/curl | TILT +/− | T/G |
 | Dump bucket | DUMP | B |
-| Cycle four camera modes | CAM | C |
+| Cycle three camera modes | CAM | C |
 | Orbit / tilt (Orbit or Scenic) | Drag empty view | Right-drag or J/L and I/K |
 | Camera zoom (Orbit or Scenic) | Pinch or ZOOM +/- | Wheel or +/- |
 | Reset camera view | VIEW RESET | Home |
@@ -130,3 +127,27 @@ Read `VALIDATION.md` for current evidence, known limits and the required Unity/d
 Residential spacing update (31 October): the same 40 complete lots are now spread across the western gaps and wider central rows. House identities, variants and sizes remain; their former positions are superseded. Use **Snowglow > Environment > Redistribute homes evenly**. Unity save/reopen, 1 m house/road and house/house footprint checks and all 19 snow checks passed. See VALIDATION.md.
 
 Both vehicles now leave cosmetic cyan tyre-tread impressions on interactive snow while their wheels are grounded and moving. Marks follow steering/reverse, fade during active play and disappear when snow is cleared or reshaped; they do not alter snow volume, grip or rewards and are not saved. Editor installer: **Snowglow > Install snow tyre impressions and validate**. Native preview/fixture results are under Logs/TyreTracks; continuous driving and phone performance remain untested.
+
+
+Camera revision (31 October): C/CAM now cycles Isometric -> Follow -> Orbit.
+Isometric is closer at rest and widens smoothly with speed. Follow smoothly moves
+to the front during actual reversing and returns behind for forward travel.
+Scenic is deferred to a future static main-menu background preview. See
+CAMERA_MODES.md for tuning and controls.
+
+
+## Simplified driving buttons - 1 November 2026
+
+Current controls supersede earlier manual equipment instructions: Lift/Tilt buttons
+and R/F/T/G manual operation are removed, as is Auto/Manual and the V shortcut.
+Loader buckets automatically lift/curl to carry at 92% capacity, including legacy
+saved Manual states; WORK/CARRY and DUMP remain. Separate held LEFT/RIGHT buttons
+replace drag steering; opposite simultaneous buttons cancel and releases do not
+cancel the other held button. Keyboard A/D/arrows remain.
+
+Driving side groups are anchored at 5% and 95% of the safe-area width, independently
+of the centred menu canvas. F/R is enlarged to 150x64 design units and separated
+from Drive by a 50-unit vertical gap. Recover is explicitly bound to the same
+Recover-to-depot action as service recovery and relabelled RECOVER TO DEPOT.
+UI and loader checks/results are recorded in Logs/DrivingButtons/Validation.txt
+and Logs/DrivingControls.txt. Physical-phone ergonomics remain to be tested.

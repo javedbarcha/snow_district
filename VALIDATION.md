@@ -457,3 +457,72 @@ pre-edit scene backup are under Logs/TyreTracks. Continuous physical driving,
 live contact/turn appearance, Android rendering and A07 frame times remain untested.
 
 Repeated native tyre-track installation passed with one renderer and no duplicate bindings. Independent scene-record comparison confirms all pre-existing object and prefab records unchanged; only five new track records and the root list were added.
+
+
+## Compact driving information - 31 October 2026
+
+At the user's request, the three driving readouts are now text only across the
+top: vehicle status on the left, notice/equipment in the centre, contract/wallet
+on the right. Removed the Top HUD and Equipment status background Images;
+readouts use 14 px design-space text, with best-fit down to 12 px and a small
+white glyph outline for contrast. They do not intercept input. Driving buttons
+and menu layouts are retained. This is a temporary readability/scenery change
+before the later production UI redesign.
+
+CompactHUDAuthoring applies the same layout to the existing saved scene and
+future HUDFactory builds. Unity 6000.3.8f1 compiled, saved/reopened Pinefall and
+passed scene validation. The 1280x720 native UI preview was rendered and inspected;
+report, preview and scene backup are under Logs/CompactHUD. No continuous
+Game-view playtest or physical-phone readability test was performed.
+
+## Gameplay camera revision - 31 October 2026
+
+Scenic is removed from C/CAM cycling and reserved for a future static main-menu preview. Isometric now closes at low speed and widens smoothly across 0-8 m/s (11-18 m orthographic half-height). Follow smoothly arcs to the front for actual reversing, returns behind for forward travel and holds direction inside a +/-0.35 m/s dead band. Pause freezes speed framing and directional state. Orbit controls and steering semantics remain.
+
+Unity 6000.3.8f1 / Android compiled, saved/reopened Pinefall and passed 11,132 assertions including 2,220 terrain/near-plane poses, plus all 19 snow-ledger checks. New cases cover three-mode cycling, legacy Scenic migration, speed zoom in both directions, slowing, pause, smooth reverse onset, front view, stop retention and return behind. Existing input, UI exclusion and obstruction checks passed. The native Isometric-close preview was inspected; Orbit front/rear renders were saved under Logs/CameraModes.
+
+Authoring verified unchanged catalog IDs/poses and terrain/snow dependency hashes. Unrelated Android build/settings changes were retained. These are Editor fixture/render results; continuous physical driving, reverse-transition comfort, Android appearance and A07 performance remain untested. See CAMERA_MODES.md.
+
+
+Isometric framing adjustment (31 October 2026): user requested about 2x closer. Halved the saved scene and default orthographic size range from 11-18 m to 5.5-9 m; speed zoom timing/range in speed units is unchanged. Updated the existing speed-zoom assertion threshold for the smaller range. Source/serialized-value inspection only for this tuning edit; no new Unity render or phone playtest.
+
+
+Isometric framing adjustment (31 October): reduced the current 5.5/9 m near/far orthographic half-heights to 4.4/7.2 m (20% tighter framing, approximately 25% larger vehicle). Updated both saved Pinefall values and CameraRig defaults. Speed thresholds and smoothing are unchanged. Source/scene values checked; no Unity render or device test was run for this tuning-only change.
+
+Isometric follow-up tuning (31 October): the user found 4.4/7.2 m too close. Increased saved scene and default orthographic half-heights to 5/8.2 m, between the last two settings. Speed response remains unchanged. Source/scene values checked; Unity rendering and device verification remain pending.
+
+Isometric wider-framing revision (31 October): increased near/far orthographic half-heights from 5/8.2 m to 6.5/10.5 m after the user still found the view too close. Saved Pinefall values, defaults and camera documentation agree. Speed response unchanged. Unity visual/device verification remains pending.
+
+Isometric further widening (31 October): user requested another step outward; near/far half-heights are now 8/13 m in the saved scene and defaults. Speed response unchanged; visual/device verification pending.
+
+Isometric further widening (31 October): near/far half-heights increased to 10/16 m at user request. Saved scene, defaults and camera documentation updated; speed response unchanged. Visual/device verification pending.
+
+Isometric additional outward step (31 October): near/far half-heights increased from 10/16 m to 12/19.2 m (20% wider framing) at user request. Saved scene, defaults and camera documentation agree; speed response unchanged. Visual/device verification pending.
+
+
+## Simplified driving buttons - 1 November 2026
+
+Saved/reopened Pinefall with separate LEFT/RIGHT hold buttons; removed Lift/Tilt
+and Auto/Manual buttons and manual keyboard operation. Full loader buckets now
+always auto-carry, including old saved Manual state. F/R is 150x64 with 50 design
+units of clearance above Drive. RECOVER TO DEPOT has an explicit persistent
+UICommand.Click binding to the existing recovery action. Its underlying method
+was exercised on a disposable Rigidbody fixture, retaining the bucket load.
+
+Driving HUD now stretches inside safeArea rather than the centred menu design
+canvas. Left/right groups anchor at 5%/95%, with uniform size fitting for narrower
+screens; equipment actions remain centred. No runtime UI construction was added.
+Unity 6000.3.8f1 / Android compiled, saved/reopened the layout, passed scene checks,
+steering hold/release/full-bucket/recovery fixtures and all 19 snow-ledger checks.
+Native UI preview was rendered and inspected (Logs/DrivingButtons/Preview.png).
+
+The updated DrivingControlsChecks also passed with the actual imported loader:
+stationary full-load mouth elevation, partial work, higher-boom preservation,
+legacy Manual normalization, ignored R/F/T/G keys, dump pose and normal driving/
+UI keyboard routing. Its Editor EventSystem fixture needed explicit OnEnable/
+OnDisable registration; the initial failure was a fixture setup issue. Reports:
+Logs/DrivingButtons/Validation.txt and Logs/DrivingControls.txt. No player saves
+were written by fixtures. Continuous Game-view touch/driving/recovery interaction,
+physical-phone ergonomics and A07 performance remain untested.
+
+Driving button spacing adjustment (1 November): increased LEFT/RIGHT separation from 16 to 36 design units; reduced F/R width from 150 to 118 to match Drive, retaining 64 height. Updated saved scene and Editor authoring values. Structural values checked; no new Unity render or phone test for this layout-only adjustment.

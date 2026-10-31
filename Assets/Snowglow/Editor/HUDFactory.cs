@@ -30,20 +30,18 @@ namespace Snowglow.Editor {
    var safe=Full("Safe area",canvas.transform);var design=Rect("1280 design canvas",safe,0,0,1280,720);design.anchorMin=design.anchorMax=new Vector2(.5f,.5f);design.pivot=new Vector2(.5f,.5f);design.anchoredPosition=Vector2.zero;
    var hud=canvas.gameObject.AddComponent<PrototypeHUD>();hud.safeArea=safe;hud.layout=design;
    var driving=Full("Driving HUD",design);hud.driving=driving.gameObject;
-   var top=Rect("Top HUD",driving,18,16,1244,88);Image(top,paper);
-   hud.status=Text(top,"SNOWGLOW",16,10,675,70,19);hud.objective=Text(top,"CONTRACT",760,10,470,70,19);
-   var msg=Rect("Equipment status",driving,350,113,580,77);Image(msg,paper);hud.notice=Text(msg,"Ready",12,8,555,65,16);
+   hud.status=Text(driving,"SNOWGLOW",18,12,400,76,14);
+   hud.notice=Text(driving,"Ready",440,12,400,76,14);
+   hud.objective=Text(driving,"CONTRACT",862,12,400,76,14);
    Button(driving,"PAUSE","pause",1100,119,160,48);hud.cameraModeText=Button(driving,"CAMERA","camera",18,119,150,48).GetComponentInChildren<Text>();Button(driving,"DEPOT MENU","open:garage",18,175,150,48);
    var cameraTools=Full("Camera tools",driving);hud.cameraTools=cameraTools.gameObject;
    Button(cameraTools,"VIEW RESET","camera:reset",18,235,150,42);Button(cameraTools,"ZOOM +","camera:in",18,285,72,42);Button(cameraTools,"ZOOM -","camera:out",96,285,72,42);
-   hud.cameraHelp=Text(driving,"ORBIT / SCENIC | drag empty view, pinch or scroll to zoom",350,202,580,54,14);cameraTools.gameObject.SetActive(false);hud.cameraHelp.gameObject.SetActive(false);
+   hud.cameraHelp=Text(driving,"ORBIT | drag empty view, pinch or scroll to zoom",350,202,580,54,14);cameraTools.gameObject.SetActive(false);hud.cameraHelp.gameObject.SetActive(false);
    Hold(driving,"STEER  <       >","steer",1,20,564,270,118);
    Hold(driving,"BRAKE","brake",1,1014,580,110,104);Hold(driving,"DRIVE","throttle",1,1142,564,118,120);
    Button(driving,"F / R","reverse",1142,503,118,48);
-   Button(driving,"WORK / CARRY","work",358,582,173,50);Button(driving,"AUTO / MANUAL","auto",542,582,185,50);Button(driving,"ANGLE L/C/R","angle",738,582,176,50);
+   Button(driving,"WORK / CARRY","work",358,582,173,50);Button(driving,"ANGLE L/C/R","angle",738,582,176,50);
    Button(driving,"DUMP","dump",358,642,173,42);Button(driving,"RECOVER","recover",738,642,176,42);
-   Hold(driving,"LIFT +","lift",1,18,422,115,54);Hold(driving,"LIFT -","lift",-1,144,422,115,54);
-   Hold(driving,"TILT +","tilt",1,18,486,115,54);Hold(driving,"TILT -","tilt",-1,144,486,115,54);
    hud.debugText=Text(driving,"PHYSICS",940,230,320,240,15);
    var menu=Full("Menu layer",design);var background=menu.gameObject.AddComponent<Image>();background.color=new Color(.09f,.17f,.23f,.85f);
    var info=Rect("Career summary",menu,35,30,1210,157);Image(info,paper);hud.menuInfo=Text(info,"SNOWGLOW",18,12,1170,140,18);
@@ -56,7 +54,7 @@ namespace Snowglow.Editor {
       Text(panel,"A one-kilometre winter world, with a compact working district.\nDrive from the depot to the marked job. Plow snow sideways, then use the loader to move piles.\nBoth machinery and environment are editable primitive assemblies.",24,75,1140,100);
       Button(panel,"CONTINUE JOB","continue",24,210);Button(panel,"CONTRACT BOARD","open:contracts",250,210);Button(panel,"GARAGE","open:garage",476,210);Button(panel,"SHOPS","open:shop",702,210);Button(panel,"SETTINGS","open:settings",928,210);
       Button(panel,"FREE WORK","free",24,282);Button(panel,"FRESH SNOWFALL","fresh",250,282);Button(panel,"DUMMY STORE","open:store",476,282);
-      Text(panel,"DESKTOP: W/S drive/reverse | A/D steer | Space brake | E work/carry | Q blade angle\nV Auto/Manual | R/F lift | T/G tilt | B dump | C cycles 4 cameras | H recover | Esc pause\nOrbit/Scenic: right-drag or J/L + I/K | scroll or +/- zoom | Home resets",24,371,1140,70,17);break;
+      Text(panel,"DESKTOP: W/S drive/reverse | A/D steer | Space brake | E work/carry | Q blade angle\nV Auto/Manual | R/F lift | T/G tilt | B dump | C cycles 3 cameras | H recover | Esc pause\nOrbit: right-drag or J/L + I/K | scroll or +/- zoom | Home resets",24,371,1140,70,17);break;
      case "contracts":
       Text(panel,"Clear 90% of the marked area. Late completion reduces pay.\nSnow placed back in the work area obstructs it again. Use the storage yard at X94 / Z-85.",24,76,1140,74);
       Button(panel,"DEPOT ACCESS\nX -65, Z -90","job:0",24,192,350,90);Button(panel,"PARKING LOT\nX 94, Z 21","job:1",426,192,350,90);Button(panel,"MAIN STREET\nX 0, Z 0","job:2",828,192,350,90);
@@ -92,7 +90,7 @@ namespace Snowglow.Editor {
    }
    hud.panels=panels.ToArray();hud.names=names;hud.menuRoot=menu.gameObject;
    var events=new GameObject("EventSystem | Input System UI");events.AddComponent<EventSystem>();var module=events.AddComponent<InputSystemUIInputModule>();module.AssignDefaultActions();
-   return hud;
+   CompactHUDAuthoring.Apply(hud);DrivingButtonsAuthoring.Apply(hud);return hud;
   }
  }
 }

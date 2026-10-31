@@ -7,9 +7,9 @@ namespace Snowglow {
   [Range(0,1)] public float dumpMinimumLift=.55f;
   Vector3 mountRest;Quaternion mountRotation,boomRotation,bucketRotation;
   MachineController machine;Vector3 last;bool haveLast,dumping;float lastVolume;
-  public void Initialize(MachineController owner){machine=owner;mountRest=mount.localPosition;mountRotation=mount.localRotation;if(boom)boomRotation=boom.localRotation;if(bucket)bucketRotation=bucket.localRotation;ResetSweep();}
+  public void Initialize(MachineController owner){machine=owner;Auto=true;mountRest=mount.localPosition;mountRotation=mount.localRotation;if(boom)boomRotation=boom.localRotation;if(bucket)bucketRotation=bucket.localRotation;ResetSweep();}
   public void ResetSweep(){haveLast=false;}
-  public void ToggleAuto(){Auto=!Auto;}
+  public void ToggleAuto(){Auto=true;}
   public void CycleAngle(){Angle=Angle<-.1f?0:Angle<.1f?1:-1;}
   public void ToggleWork(){
    if(machine.definition.loader){Working=!Working;Lift=Working?0:.6f;Tilt=Working?0:-.6f;}
@@ -18,10 +18,7 @@ namespace Snowglow {
   public void RequestDump(){if(!machine.definition.loader)return;dumping=true;Working=false;Lift=Mathf.Max(dumpMinimumLift,Lift);Tilt=1;}
   public float Simulate(float dt,float forwardSpeed){
    var game=PrototypeSession.Instance;var input=game.Input;
-   // Explicit lift/tilt commands take over immediately, including from Auto.
-   if(Mathf.Abs(input.Lift)>.01f||Mathf.Abs(input.Tilt)>.01f){Auto=false;dumping=false;}
-   if(!Auto){Lift=Mathf.Clamp01(Lift+input.Lift*dt*.6f);Tilt=Mathf.Clamp(Tilt+input.Tilt*dt,-1,1);}
-   if(!Auto)Working=machine.definition.loader?Lift<.18f&&Tilt<.35f:Lift<.3f;
+   Auto=true; // Work/carry, full-bucket carry and dumping own the rig pose.
    UpdateAutoCarry();
    float force=0;Vector3 center=mouth.position;
    if(dumping&&Load>.0001f){

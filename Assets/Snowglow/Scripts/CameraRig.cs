@@ -5,14 +5,19 @@ using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
 namespace Snowglow {
+ // Value 3 is retained only to migrate existing serialized scenes.
  public enum CameraMode { Isometric, Follow, Orbit, Scenic }
  public sealed class CameraRig : MonoBehaviour {
   public Camera view;public Terrain terrain;public CameraMode mode;
   [FormerlySerializedAs("Follow"),SerializeField]bool legacyFollow;
   public float groundClearance=1,collisionRadius=.4f;
-  public float orbitDistance=15,orbitPitch=25,scenicDistance=40,scenicPitch=18,scenicSpeed=4;
+  public float orbitDistance=15,orbitPitch=25;
+  [HideInInspector]public float scenicDistance=40,scenicPitch=18,scenicSpeed=4;
+  public float isometricNearSize=12f,isometricFarSize=19.2f,isometricFullZoomSpeed=8,isometricZoomResponse=1.1f;
+  public float followDistance=13,followHeight=6,followTurnTime=.9f;
+  float isometricSize,followAngle,followAngleVelocity;bool reversing;
   public float Yaw {get;private set;}public float Pitch {get;private set;}public float Distance {get;private set;}
-  public bool Interactive=>mode==CameraMode.Orbit||mode==CameraMode.Scenic;
+  public bool Interactive=>mode==CameraMode.Orbit;
   public string ModeName=>mode.ToString().ToUpperInvariant();
   public bool Follow {get=>mode==CameraMode.Follow;set=>SetMode(value?CameraMode.Follow:CameraMode.Isometric);}
   Vector3 velocity;Transform lastTarget;bool initialized,resetRequested=true,mouseCaptured;
@@ -21,12 +26,12 @@ namespace Snowglow {
   readonly List<int> released=new List<int>();readonly List<RaycastResult> uiHits=new List<RaycastResult>();
   readonly RaycastHit[] obstacles=new RaycastHit[32];PointerEventData pointer;EventSystem pointerEvents;
   const int WorldMask=(1<<0)|(1<<9);
-  public void Toggle()=>SetMode((CameraMode)(((int)mode+1)%4));
-  public void SetMode(CameraMode value){mode=value;legacyFollow=mode==CameraMode.Follow;resetRequested=true;velocity=Vector3.zero;ClearGesture();}
+  public void Toggle()=>SetMode((CameraMode)(((int)mode+1)%3));
+  public void SetMode(CameraMode value){mode=value==CameraMode.Scenic?CameraMode.Isometric:value;legacyFollow=mode==CameraMode.Follow;resetRequested=true;velocity=Vector3.zero;ClearGesture();}
   public void ResetView(){resetRequested=true;manualHold=0;ClearGesture();}
-  public void Zoom(float steps){if(!Interactive||steps==0)return;Distance=Mathf.Clamp(Distance*Mathf.Exp(-steps*.12f),mode==CameraMode.Orbit?7:22,mode==CameraMode.Orbit?42:65);manualHold=6;}
+  public void Zoom(float steps){if(!Interactive||steps==0)return;Distance=Mathf.Clamp(Distance*Mathf.Exp(-steps*.12f),7,42);manualHold=6;}
   public void Rotate(Vector2 degrees){if(!Interactive||degrees.sqrMagnitude==0)return;Yaw=Mathf.Repeat(Yaw+degrees.x,360);Pitch=Mathf.Clamp(Pitch+degrees.y,5,75);manualHold=6;}
-  void Awake(){if(legacyFollow&&mode==CameraMode.Isometric)mode=CameraMode.Follow;}
+  void Awake(){if(mode==CameraMode.Scenic)mode=CameraMode.Isometric;if(legacyFollow&&mode==CameraMode.Isometric)mode=CameraMode.Follow;}
   void OnDisable()=>ClearGesture();
   void OnApplicationFocus(bool focused){if(!focused)ClearGesture();}
   void ClearGesture(){mouseCaptured=false;fingers.Clear();pinchDistance=0;pinchA=pinchB=-1;}
@@ -88,13 +93,27 @@ namespace Snowglow {
    if(lift>0)position.y+=lift;return position;
   }
   void LateUpdate(){var g=PrototypeSession.Instance;if(g==null||g.Active==null||!view)return;UpdateForTarget(g.Active.transform,Time.unscaledDeltaTime,g.IsRunning);}
-  public void UpdateForTarget(Transform target,float dt,bool controls){
-   if(!view||!target)return;dt=Mathf.Clamp(dt,.0001f,.1f);bool switched=lastTarget!=target;lastTarget=target;
-   if(resetRequested||switched){Yaw=Mathf.Repeat(target.eulerAngles.y+(mode==CameraMode.Scenic?45:0),360);Pitch=Mathf.Clamp(mode==CameraMode.Scenic?scenicPitch:orbitPitch,5,75);Distance=Mathf.Clamp(mode==CameraMode.Scenic?scenicDistance:orbitDistance,mode==CameraMode.Scenic?22:7,mode==CameraMode.Scenic?65:42);manualHold=0;resetRequested=false;ClearGesture();}
-   if(Interactive&&controls){ReadInput(dt);if(!resetRequested&&mode==CameraMode.Scenic&&manualHold<=0)Yaw=Mathf.Repeat(Yaw+scenicSpeed*dt,360);manualHold=Mathf.Max(0,manualHold-dt);}else ClearGesture();
-   view.orthographic=mode==CameraMode.Isometric;view.orthographicSize=Mathf.Max(17,22/Mathf.Max(.6f,view.aspect));view.fieldOfView=mode==CameraMode.Orbit?52:mode==CameraMode.Scenic?58:60;
+  public void UpdateForTarget(Transform target,float dt,bool controls,float? signedSpeedOverride=null){
+   if(!view||!target)return;
+   if(mode==CameraMode.Scenic)SetMode(CameraMode.Isometric);
+   var body=target.GetComponent<Rigidbody>();
+   float signedSpeed=signedSpeedOverride??(body?Vector3.Dot(body.linearVelocity,target.forward):0);
+   dt=Mathf.Clamp(dt,.0001f,.1f);bool switched=lastTarget!=target;lastTarget=target;
+   if(resetRequested||switched){Yaw=Mathf.Repeat(target.eulerAngles.y,360);Pitch=Mathf.Clamp(orbitPitch,5,75);Distance=Mathf.Clamp(orbitDistance,7,42);manualHold=0;resetRequested=false;ClearGesture();if(isometricSize<=0)isometricSize=isometricNearSize;if(switched){followAngle=0;followAngleVelocity=0;reversing=false;}}
+   if(Interactive&&controls){ReadInput(dt);manualHold=Mathf.Max(0,manualHold-dt);}else ClearGesture();
+   if(controls){
+    float desiredSize=Mathf.Lerp(isometricNearSize,isometricFarSize,Mathf.Clamp01(Mathf.Abs(signedSpeed)/Mathf.Max(1,isometricFullZoomSpeed)));
+    isometricSize=Mathf.Lerp(isometricSize,desiredSize,1-Mathf.Exp(-dt/Mathf.Max(.1f,isometricZoomResponse)));
+    // Use actual motion, with a dead band to avoid flipping while braking or
+    // creeping around zero speed. Hold the last direction while stopped.
+    if(signedSpeed<-.35f)reversing=true;else if(signedSpeed>.35f)reversing=false;
+    followAngle=Mathf.SmoothDampAngle(followAngle,reversing?180:0,ref followAngleVelocity,Mathf.Max(.2f,followTurnTime),240,dt);
+   }
+   view.orthographic=mode==CameraMode.Isometric;
+   view.orthographicSize=isometricSize*Mathf.Max(1,(16f/9)/Mathf.Max(.6f,view.aspect));
+   view.fieldOfView=mode==CameraMode.Orbit?52:60;
    Vector3 focus=target.position+Vector3.up*1.6f;
-   Vector3 wanted=mode==CameraMode.Isometric?target.position+new Vector3(-24,30,-24):mode==CameraMode.Follow?target.position-target.forward*13+Vector3.up*6:focus+Quaternion.Euler(Pitch,Yaw,0)*Vector3.back*Distance;
+   Vector3 wanted=mode==CameraMode.Isometric?target.position+new Vector3(-15,19,-15):mode==CameraMode.Follow?target.position-Quaternion.AngleAxis(followAngle,Vector3.up)*target.forward*followDistance+Vector3.up*followHeight:focus+Quaternion.Euler(Pitch,Yaw,0)*Vector3.back*Distance;
    wanted=AvoidObstacles(target,focus,wanted);Quaternion looking=mode==CameraMode.Isometric?Quaternion.Euler(41,45,0):Quaternion.LookRotation(focus-wanted);
    wanted=AboveGround(wanted,looking);
    Vector3 position=(!initialized||switched||(transform.position-wanted).sqrMagnitude>160*160)?wanted:Vector3.SmoothDamp(transform.position,wanted,ref velocity,.18f,1000,dt);

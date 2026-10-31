@@ -209,7 +209,7 @@ Pinefall scene without a whole-district rebake.
 | Fleet[1] | Imported Golden snow loader, 1,400 coins, initially unowned |
 | Fresh wallet | 1,800 prototype coins |
 | Modes | Career contracts and Free Work |
-| Cameras | Isometric default; Follow, full 360-degree Orbit and wide revolving Scenic |
+| Cameras | Isometric with speed zoom, direction-aware Follow, full 360-degree Orbit; Scenic reserved for a future static main-menu preview |
 | Save | Version-2 local JSON plus backup, `snowglow-v2.json` |
 | Store | Clearly simulated purchases only; no real billing integration |
 
@@ -384,12 +384,9 @@ switching does not reset the active contract or piles.
 | Toggle touch-selected F/R gear | X, when direction keys are not held |
 | Work/raise/carry | E |
 | Blade angle cycle | Q |
-| Auto/Manual | V |
-| Lift/lower | R/F |
-| Tilt/curl | T/G |
 | Dump | B |
-| Cycle Isometric / Follow / Orbit / Scenic | C |
-| Orbit/tilt in Orbit or Scenic | Right-drag or J/L and I/K |
+| Cycle Isometric / Follow / Orbit | C |
+| Orbit/tilt in Orbit | Right-drag or J/L and I/K |
 | Zoom / reset camera | Wheel or +/- / Home |
 | Recover | H |
 | Pause | Escape |
@@ -1325,3 +1322,59 @@ pre-edit scene backup are under Logs/TyreTracks. Continuous physical driving,
 live contact/turn appearance, Android rendering and A07 frame times remain untested.
 
 Repeated native tyre-track installation passed with one renderer and no duplicate bindings. Independent scene-record comparison confirms all pre-existing object and prefab records unchanged; only five new track records and the root list were added.
+
+
+## Compact driving information - 31 October 2026
+
+At the user's request, the three driving readouts are now text only across the
+top: vehicle status on the left, notice/equipment in the centre, contract/wallet
+on the right. Removed the Top HUD and Equipment status background Images;
+readouts use 14 px design-space text, with best-fit down to 12 px and a small
+white glyph outline for contrast. They do not intercept input. Driving buttons
+and menu layouts are retained. This is a temporary readability/scenery change
+before the later production UI redesign.
+
+CompactHUDAuthoring applies the same layout to the existing saved scene and
+future HUDFactory builds. Unity 6000.3.8f1 compiled, saved/reopened Pinefall and
+passed scene validation. The 1280x720 native UI preview was rendered and inspected;
+report, preview and scene backup are under Logs/CompactHUD. No continuous
+Game-view playtest or physical-phone readability test was performed.
+
+
+## Gameplay camera revision - 31 October 2026
+
+Latest user direction supersedes earlier four-mode/scenic descriptions:
+gameplay cycles Isometric -> Follow -> Orbit only. Scenic is reserved for a
+future static scene preview behind the main menu, not a revolving gameplay mode;
+that future menu feature is not implemented by this change. Legacy serialized
+Scenic mode values migrate to Isometric without renumbering saved enum values.
+
+Isometric starts closer (11 m orthographic half-height) and smoothly widens to
+18 m at 8 m/s in either driving direction, then closes as speed falls. Follow
+smoothly arcs from behind to in front of the machine when actual Rigidbody
+forward-axis velocity passes -0.35 m/s; forward travel above +0.35 m/s returns
+it behind. Near-zero velocity retains direction, avoiding braking/stop jitter.
+Speed framing and directional state freeze while paused. Keep steering semantics,
+obstruction checks, terrain/near-plane clearance and saved Editor bindings.
+These are initial camera tuning values; phone comfort still needs evaluation.
+See CAMERA_MODES.md and the latest native Logs/CameraModes/Validation.txt.
+
+
+Isometric framing adjustment (31 October 2026): user requested about 2x closer. Halved the saved scene and default orthographic size range from 11-18 m to 5.5-9 m; speed zoom timing/range in speed units is unchanged. Updated the existing speed-zoom assertion threshold for the smaller range. Source/serialized-value inspection only for this tuning edit; no new Unity render or phone playtest.
+
+
+## Simplified driving buttons - 1 November 2026
+
+Current controls supersede earlier manual equipment instructions: Lift/Tilt buttons
+and R/F/T/G manual operation are removed, as is Auto/Manual and the V shortcut.
+Loader buckets automatically lift/curl to carry at 92% capacity, including legacy
+saved Manual states; WORK/CARRY and DUMP remain. Separate held LEFT/RIGHT buttons
+replace drag steering; opposite simultaneous buttons cancel and releases do not
+cancel the other held button. Keyboard A/D/arrows remain.
+
+Driving side groups are anchored at 5% and 95% of the safe-area width, independently
+of the centred menu canvas. F/R is enlarged to 150x64 design units and separated
+from Drive by a 50-unit vertical gap. Recover is explicitly bound to the same
+Recover-to-depot action as service recovery and relabelled RECOVER TO DEPOT.
+UI and loader checks/results are recorded in Logs/DrivingButtons/Validation.txt
+and Logs/DrivingControls.txt. Physical-phone ergonomics remain to be tested.
