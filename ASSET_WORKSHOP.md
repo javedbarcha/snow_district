@@ -92,3 +92,21 @@ TreeWood assembly plus independently removable SnowCap only where supplied. Tags
 distinguish evergreen, deadwood and forest-floor variants. Existing 230 m distance
 visibility is saved on prepared prefabs; trunk capsules and log/stump boxes require
 collision review. See SourceAssets/AlpineTrees/README.md for provenance and metrics.
+
+
+## Photoshop UI kits
+
+UI is a separate catalogue category with canvas-pixel bounds and persistent sprite
+references. Use **Snowglow > Asset intake > Import Photoshop UI button kit** for the
+preserved Snow District kit. Source layers, hashes and export mapping live under
+SourceAssets/SnowDistrictUI and Catalog/Sources/SnowDistrictUI. Thirty-two UI button
+prefabs remain Needs Review; the extra three Play states are sprite variants on
+Play. The generic model-preparation path redirects UI intake rather than proposing
+world colliders. UI entries cannot be placed through the 3D district scene planner.
+Do not publish entries Ready solely because they were integrated into Pinefall.
+
+PSDUIIntake reapplies the skin through Editor authoring; runtime only switches the
+already-bound Work icon for plow/loader. Existing button actions and touch targets
+remain. Artwork for future or removed controls is inventory, not authorization to
+reintroduce those controls. See SourceAssets/SnowDistrictUI/README.md for provenance,
+re-export commands and the mobile atlas budget.

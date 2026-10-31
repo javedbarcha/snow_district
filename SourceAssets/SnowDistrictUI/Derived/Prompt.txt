@@ -1,0 +1,6 @@
+Mode: built-in image_gen edit, transparent_background=true.
+Reference: Assets/Snowglow/Catalog/Sources/SnowDistrictUI/25-career.png
+Final prompt:
+Edit target: the attached Snowglow game UI button. Preserve the exact petrol teal rounded rectangular button plate, ivory clipboard, beveled cozy 3D illustration style, snow cap at top left, cyan edge rim, lighting, composition and transparent outer background. Change ONLY the checkmark on the ivory clipboard into a bold amber orange X (cancel/abandon job symbol). Keep the X entirely on the clipboard paper, not covering the rim. No letters, no labels, no extra icons or decorations. Output one clean isolated transparent-background button, same width-to-height aspect ratio 196:166. Intended for the game's Abandon Job menu button. Do not change the existing source image; create a derived icon.
+
+Original generated output: AbandonJob-generated.png; Unity copy: Assets/Snowglow/Catalog/Sources/SnowDistrictUI/AbandonJob.png (import maximum 256px).

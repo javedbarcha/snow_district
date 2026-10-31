@@ -1,11 +1,12 @@
 using UnityEngine;
 namespace Snowglow {
- public enum CatalogKind { Vehicle, Attachment, WheelSet, Accessory, BuildingAssembly, RoadAssembly, Landscape, GameplayAssembly }
+ public enum CatalogKind { Vehicle, Attachment, WheelSet, Accessory, BuildingAssembly, RoadAssembly, Landscape, GameplayAssembly, UI }
  public enum PreparationStatus { Draft, NeedsReview, Ready }
- public enum AssetSource { ImportedModel, BlenderScript, ReferenceImage, Prompt, ExistingPrototype }
+ public enum AssetSource { ImportedModel, BlenderScript, ReferenceImage, Prompt, ExistingPrototype, PhotoshopDocument }
  [CreateAssetMenu(menuName="Snowglow/Catalog asset")]
  public sealed class CatalogAsset : ScriptableObject {
   public string id,displayName; public CatalogKind kind; public PreparationStatus status;
+  public Sprite[] uiSprites=new Sprite[0]; // UI-only prepared artwork; dimensions use canvas pixels.
   public GameObject prefab; public string[] tags=new string[0];
   public AssetSource sourceType; public string sourceGuid,sourcePath,creationSourcePath,reviewedPrefabHash;
   [TextArea(3,8)]public string provenance,assumptions,reviewNotes;

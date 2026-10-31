@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca395da9c16194d8575fece1ac0cf8, type: 3}
+  m_Name: snow-district-ui-33
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.CatalogAsset
+  id: snow-district-ui-33
+  displayName: Abandon Job | derived winter UI
+  kind: 8
+  status: 1
+  uiSprites:
+  - {fileID: 21300000, guid: 1d961018edd76b44a812b8b4dff21b7d, type: 3}
+  prefab: {fileID: 1818961665751971956, guid: dffd12de9f788564ba51f6a47eec5e4d, type: 3}
+  tags:
+  - ui
+  - snow-district-buttons
+  - derived
+  - abandon-job
+  sourceType: 3
+  sourceGuid: 1d961018edd76b44a812b8b4dff21b7d
+  sourcePath: Assets/Snowglow/Catalog/Sources/SnowDistrictUI/AbandonJob.png
+  creationSourcePath: SourceAssets/SnowDistrictUI/Derived/AbandonJob-generated.png
+  reviewedPrefabHash: 
+  provenance: 'Built-in imagegen edit of supplied PSD Career artwork: preserved snowy
+    teal/ivory clipboard; replaced checkmark with amber X. Original PSD and 32 buttons
+    unchanged. Exact prompt retained under SourceAssets/SnowDistrictUI/Derived.'
+  assumptions: Canvas pixels. Imported at max 256px; transparent alpha. Menu Abandon
+    action retains its text label and existing behavior. Needs visual/device review.
+  reviewNotes: 
+  visualReviewed: 0
+  localBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 98, y: 83, z: 0}
+  triangles: 0
+  renderers: 0
+  materialSlots: 0
+  price: 0
+  vehicle: {fileID: 0}
+  attachment: {fileID: 0}
+  interfaceId: 
+  addedMass: 0
+  torqueMultiplier: 1
+  gripMultiplier: 1
+  wheelRadius: 0.5
+  wheelWidth: 0.3
+  wheelMass: 45
+  mirrorRightWheels: 1
+  minimumScale: 0.25
+  maximumScale: 2
+  blocksSnow: 0

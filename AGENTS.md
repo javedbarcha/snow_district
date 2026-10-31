@@ -1380,3 +1380,65 @@ UI and loader checks/results are recorded in Logs/DrivingButtons/Validation.txt
 and Logs/DrivingControls.txt. Physical-phone ergonomics remain to be tested.
 
 Orbit UI simplification (1 November): remove on-screen Zoom In/Out buttons and retain only VIEW RESET, anchored to the left controls group at the 5% safe-area inset. Mouse wheel, keyboard +/- and two-finger pinch remain supported. Future HUD/camera authoring follows this layout.
+
+
+## Photoshop UI kit intake - 1 November 2026
+
+Imported the user-supplied Snow_District_UI_Buttons.psd through a scoped extension
+of Asset Workshop: appended UI category and PhotoshopDocument provenance without
+renumbering existing enum values. Original 22,701,282-byte PSD is preserved under
+SourceAssets/SnowDistrictUI with SHA256
+8e38b85f54187061130352c043f55401da74be31ba58157c4940282f14a9e9b9,
+verified equal to the supplied file. Layer text/names/references were treated as
+data; no embedded instructions/scripts/actions were executed.
+
+Exported 32 independent button layers plus three Play state layers with alpha,
+excluding header/background/labels/hidden references from runtime sprites.
+Catalog/Sources/SnowDistrictUI holds transparent PNGs, a shared 2048x1024 atlas and
+complete export manifest. Stable IDs snow-district-ui-01 through -32 have reusable
+UI prefabs and sprite references; all remain Needs Review. UI bounds use canvas
+pixels; validation checks persistent sprites/graphics and excludes world physics.
+Ready world-layout manifests omit UI entries, and world scene plans reject them.
+Existing 3D approval fingerprint format remains unchanged.
+
+Skinned 65 matching existing buttons across driving and menus, retaining hit areas,
+actions, side anchors, steering gap and F/R size. Labels stay separate. Source Play
+Normal/Pressed/Disabled artwork is retained on the reusable prefab and mapped Play
+actions; other controls use color feedback. Work artwork follows plow versus loader
+selection via saved sprite bindings; no manual lift/tilt controls are restored.
+View Reset uses Camera art with its explicit label. No zoom, Auto/Manual, Districts
+or Challenge features were enabled by importing their reusable artwork.
+
+Unity 6000.3.8f1 compiled, prepared/validated 32 entries and prefabs, saved/reopened
+35 sprites and 65 UI bindings, and passed catalogue/scene checks. Native driving
+preview rendered and inspected under Logs/SnowDistrictUI. Repeat intake retained
+32 stable entries and 65 mapped buttons. World catalog IDs/poses and snow seed hash
+were checked unchanged. No district/snow rebake or player-save writes. Source PSD
+is outside Assets; runtime atlas raw RGBA8 size is 8 MiB before platform compression.
+Physical touch/state interaction, phone legibility and sustained A07 performance
+remain untested. Menu: Snowglow > Asset intake > Import Photoshop UI button kit.
+Source notes: SourceAssets/SnowDistrictUI/README.md. Reports/backups/previews:
+Logs/SnowDistrictUI.
+
+
+## Abandon icon and icon-only driving controls - 1 November 2026
+
+Added derived UI catalogue entry snow-district-ui-33 (Needs Review) and reusable
+prefab for Abandon Job. Built-in imagegen edited the supplied Career clipboard:
+checkmark replaced by an amber X, retaining the snowy petrol-teal/ivory style.
+Original generated PNG and exact prompt are preserved under
+SourceAssets/SnowDistrictUI/Derived; runtime import is capped at 256px.
+The original PSD and its 32 source button assets remain unchanged.
+
+Driving-button labels are hidden, not deleted; non-button information readouts
+and menu labels remain. Abandon Job stays labelled in the pause menu. Driving
+artwork is centred with a common 196:166 RectTransform aspect and preserveAspect,
+without changing touch rectangles, spacing, actions or 5% anchors. Runtime camera
+label text may still update its inactive Text component; it remains invisible.
+
+Unity 6000.3.8f1 compiled, validated 33 UI entries, saved/reopened 66 matched button
+bindings, checked hidden driving labels/common aspect ratio and visible Abandon
+menu label/artwork. Scene/catalogue validation passed; world IDs/poses and snow
+seed hash unchanged. Native icon-only driving preview rendered and inspected at
+Logs/SnowDistrictUI/Driving-preview.png. No live touch, continuous gameplay or phone
+performance claim. Existing menu/drive actions and snow mechanics unchanged.

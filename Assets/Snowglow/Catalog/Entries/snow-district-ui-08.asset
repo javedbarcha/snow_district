@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca395da9c16194d8575fece1ac0cf8, type: 3}
+  m_Name: snow-district-ui-08
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.CatalogAsset
+  id: snow-district-ui-08
+  displayName: 08 | Pause | Photoshop UI
+  kind: 8
+  status: 1
+  uiSprites:
+  - {fileID: 7000601235978735621, guid: 4c1ac9d3ccdbc184b96a97fe7ada6fa8, type: 3}
+  prefab: {fileID: 8797771901962130587, guid: 68d3654c6230ee14098cd0f3a7b7add4, type: 3}
+  tags:
+  - ui
+  - photoshop
+  - snow-district-buttons
+  sourceType: 5
+  sourceGuid: 4c1ac9d3ccdbc184b96a97fe7ada6fa8
+  sourcePath: Assets/Snowglow/Catalog/Sources/SnowDistrictUI/ButtonsAtlas.png
+  creationSourcePath: SourceAssets/SnowDistrictUI/Snow_District_UI_Buttons.psd
+  reviewedPrefabHash: 
+  provenance: User-supplied layered Photoshop kit; SHA256 8e38b85f54187061130352c043f55401da74be31ba58157c4940282f14a9e9b9.
+    Original retained unchanged. Raster layer names treated as data, not instructions.
+  assumptions: Canvas pixel dimensions, not world metres. Transparent raster artwork;
+    labels remain separate. Only Play has source-provided Pressed/Disabled art; other
+    states use Unity color feedback. Entries remain Needs Review; unavailable gameplay
+    actions are not enabled.
+  reviewNotes: 
+  visualReviewed: 0
+  localBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 98, y: 83, z: 0}
+  triangles: 0
+  renderers: 0
+  materialSlots: 0
+  price: 0
+  vehicle: {fileID: 0}
+  attachment: {fileID: 0}
+  interfaceId: 
+  addedMass: 0
+  torqueMultiplier: 1
+  gripMultiplier: 1
+  wheelRadius: 0.5
+  wheelWidth: 0.3
+  wheelMass: 45
+  mirrorRightWheels: 1
+  minimumScale: 0.25
+  maximumScale: 2
+  blocksSnow: 0

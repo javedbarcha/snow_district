@@ -16,7 +16,7 @@ namespace Snowglow.Editor {
   public static string Fingerprint(CatalogAsset a){
    if(!a||!a.prefab)return "";
    string policy=JsonUtility.ToJson(a.localBounds)+"|"+a.interfaceId+"|"+a.kind+"|"+a.blocksSnow+"|"+a.minimumScale.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+"|"+a.maximumScale.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+"|"+a.addedMass.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+"|"+a.wheelRadius.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+"|"+a.wheelWidth.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+"|"+a.wheelMass.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+"|"+a.torqueMultiplier.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+"|"+a.gripMultiplier.ToString("R",System.Globalization.CultureInfo.InvariantCulture);
-   return Hash128.Compute(AssetDatabase.GetAssetDependencyHash(AssetDatabase.GetAssetPath(a.prefab))+"|"+(a.vehicle?JsonUtility.ToJson(a.vehicle):"")+"|"+(a.attachment?JsonUtility.ToJson(a.attachment):"")+"|"+policy+"|"+a.mirrorRightWheels).ToString();
+   return Hash128.Compute(AssetDatabase.GetAssetDependencyHash(AssetDatabase.GetAssetPath(a.prefab))+"|"+(a.vehicle?JsonUtility.ToJson(a.vehicle):"")+"|"+(a.attachment?JsonUtility.ToJson(a.attachment):"")+"|"+policy+"|"+a.mirrorRightWheels+(a.kind==CatalogKind.UI?"|ui:"+string.Join("|",(a.uiSprites??new Sprite[0]).Where(s=>s).Select(s=>AssetDatabase.GetAssetDependencyHash(AssetDatabase.GetAssetPath(s)).ToString())):"")).ToString();
   }
   public static bool Finite(float f)=>!float.IsNaN(f)&&!float.IsInfinity(f);
   public static bool Finite(Vector3 v)=>Finite(v.x)&&Finite(v.y)&&Finite(v.z);
@@ -28,7 +28,14 @@ namespace Snowglow.Editor {
      var p=root.transform.InverseTransformPoint(r.transform.TransformPoint(b.center+Vector3.Scale(b.extents,new Vector3((n&1)==0?-1:1,(n&2)==0?-1:1,(n&4)==0?-1:1))));
      if(!found){result=new Bounds(p,Vector3.zero);found=true;}else result.Encapsulate(p);
     }
-   }return result;
+   }
+   if(!found&&root.transform is RectTransform){
+    foreach(var graphic in root.GetComponentsInChildren<UnityEngine.UI.Graphic>(true)){
+     var corners=new Vector3[4];graphic.rectTransform.GetWorldCorners(corners);
+     foreach(var corner in corners){var point=root.transform.InverseTransformPoint(corner);if(!found){result=new Bounds(point,Vector3.zero);found=true;}else result.Encapsulate(point);}
+    }
+   }
+   return result;
   }
   public static CatalogReport Check(CatalogAsset a,bool requireReady=false){
    var r=new CatalogReport();if(!a){r.errors.Add("Missing catalog entry.");return r;}
@@ -49,6 +56,11 @@ namespace Snowglow.Editor {
    var sockets=a.prefab.GetComponentsInChildren<AssetSocket>(true);
    if(sockets.Any(x=>string.IsNullOrWhiteSpace(x.id))||sockets.GroupBy(x=>x.id).Any(g=>g.Count()>1))r.errors.Add("Socket IDs must be nonempty and unique.");
    foreach(var s in sockets)if(string.IsNullOrWhiteSpace(s.interfaceId)||s.maximumMass<0||s.maximumWidth<=0||!Finite(s.minimumAngles)||!Finite(s.maximumAngles)||s.minimumAngles.x>s.maximumAngles.x||s.minimumAngles.y>s.maximumAngles.y||s.minimumAngles.z>s.maximumAngles.z)r.errors.Add("Invalid socket limits on "+s.id);
+   if(a.kind==CatalogKind.UI){
+    if(!(a.prefab.transform is RectTransform)||a.uiSprites==null||a.uiSprites.Length==0||a.uiSprites.Any(s=>!s||!AssetDatabase.Contains(s)))r.errors.Add("UI assets require RectTransform and persistent prepared sprites.");
+    if(a.blocksSnow||a.prefab.GetComponentsInChildren<Collider>(true).Length>0||a.prefab.GetComponentsInChildren<Rigidbody>(true).Length>0)r.errors.Add("UI assets cannot block snow or contain world physics.");
+    foreach(var image in a.prefab.GetComponentsInChildren<UnityEngine.UI.Image>(true))if(!image.sprite)r.errors.Add("UI Image has no sprite.");
+   }
    if(a.blocksSnow&&!a.prefab.GetComponentsInChildren<Collider>(true).Any(c=>c.enabled&&!c.isTrigger))r.errors.Add("Snow-blocking asset needs a non-trigger collision proxy.");
    if(a.kind==CatalogKind.Vehicle){
     if(!a.vehicle||a.vehicle.mass<=0||a.vehicle.wheelRadius<=0)r.errors.Add("Valid vehicle physics definition is required.");

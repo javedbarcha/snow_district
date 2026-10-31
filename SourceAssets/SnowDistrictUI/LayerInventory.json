@@ -1,0 +1,1179 @@
+[
+  {
+    "name": "</Layer group>",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Winter paper",
+    "bounds": [
+      0,
+      0,
+      2048,
+      1536
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "00 | BACKGROUND - hide for transparency",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "</Layer group>",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Original generated reference sheet",
+    "bounds": [
+      0,
+      0,
+      1536,
+      1024
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Generated steering pair - full resolution",
+    "bounds": [
+      0,
+      0,
+      2172,
+      724
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "99 | SOURCE REFERENCES - hidden",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": false,
+    "blend": "norm"
+  },
+  {
+    "name": "</Layer group>",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | DRIVING AND CAMERAS",
+    "bounds": [
+      54,
+      172,
+      314,
+      192
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | STEER",
+    "bounds": [
+      138,
+      386,
+      201,
+      404
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | STEER LEFT",
+    "bounds": [
+      358,
+      386,
+      469,
+      404
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | STEER RIGHT",
+    "bounds": [
+      596,
+      386,
+      720,
+      404
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | ACCELERATE",
+    "bounds": [
+      842,
+      386,
+      961,
+      404
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | BRAKE",
+    "bounds": [
+      1113,
+      386,
+      1179,
+      404
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | FORWARD / REVERSE",
+    "bounds": [
+      1292,
+      386,
+      1488,
+      405
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | CAMERA",
+    "bounds": [
+      1593,
+      386,
+      1675,
+      404
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | PAUSE",
+    "bounds": [
+      1846,
+      386,
+      1910,
+      404
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | MACHINERY CONTROLS",
+    "bounds": [
+      54,
+      420,
+      309,
+      440
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | BLADE UP / DOWN",
+    "bounds": [
+      85,
+      634,
+      255,
+      653
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | BLADE ANGLE",
+    "bounds": [
+      348,
+      634,
+      479,
+      652
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | BUCKET LIFT",
+    "bounds": [
+      597,
+      634,
+      718,
+      652
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | BUCKET TILT",
+    "bounds": [
+      843,
+      634,
+      961,
+      652
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | DUMP SNOW",
+    "bounds": [
+      1085,
+      634,
+      1207,
+      652
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | AUTO / MANUAL",
+    "bounds": [
+      1315,
+      634,
+      1464,
+      653
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | RECOVER",
+    "bounds": [
+      1589,
+      634,
+      1679,
+      652
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | SOUND",
+    "bounds": [
+      1842,
+      634,
+      1913,
+      652
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | GARAGE AND SHOP",
+    "bounds": [
+      54,
+      668,
+      268,
+      688
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | GARAGE",
+    "bounds": [
+      130,
+      882,
+      210,
+      900
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | MACHINERY SHOP",
+    "bounds": [
+      329,
+      882,
+      498,
+      900
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | PARTS",
+    "bounds": [
+      626,
+      882,
+      689,
+      900
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | UPGRADES",
+    "bounds": [
+      850,
+      882,
+      954,
+      900
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | REPAIRS",
+    "bounds": [
+      1105,
+      882,
+      1187,
+      900
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | REFUEL",
+    "bounds": [
+      1353,
+      882,
+      1427,
+      900
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | SETTINGS",
+    "bounds": [
+      1586,
+      882,
+      1681,
+      900
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | HOME",
+    "bounds": [
+      1848,
+      882,
+      1908,
+      900
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | CAREER AND NAVIGATION",
+    "bounds": [
+      54,
+      916,
+      335,
+      936
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | CAREER",
+    "bounds": [
+      131,
+      1130,
+      208,
+      1148
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | DISTRICTS",
+    "bounds": [
+      364,
+      1130,
+      464,
+      1148
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | FREE PLOW",
+    "bounds": [
+      603,
+      1130,
+      713,
+      1148
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | CHALLENGE",
+    "bounds": [
+      846,
+      1130,
+      958,
+      1148
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | XP / LEVEL",
+    "bounds": [
+      1095,
+      1130,
+      1197,
+      1149
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | COMBO",
+    "bounds": [
+      1353,
+      1130,
+      1426,
+      1148
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | PLAY",
+    "bounds": [
+      1608,
+      1130,
+      1659,
+      1148
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | BACK",
+    "bounds": [
+      1850,
+      1130,
+      1905,
+      1148
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | BUTTON STATES",
+    "bounds": [
+      54,
+      1213,
+      233,
+      1233
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | NORMAL",
+    "bounds": [
+      128,
+      1391,
+      212,
+      1409
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | PRESSED",
+    "bounds": [
+      370,
+      1391,
+      458,
+      1409
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | DISABLED",
+    "bounds": [
+      610,
+      1391,
+      706,
+      1409
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | PETROL",
+    "bounds": [
+      990,
+      1391,
+      1057,
+      1407
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | IVORY",
+    "bounds": [
+      1136,
+      1391,
+      1191,
+      1407
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | AMBER",
+    "bounds": [
+      1273,
+      1391,
+      1335,
+      1407
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | ICE",
+    "bounds": [
+      1428,
+      1391,
+      1459,
+      1407
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "06 | LABELS AND CATEGORY TITLES - raster",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "</Layer group>",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "01 | Steer",
+    "bounds": [
+      72,
+      210,
+      268,
+      376
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "02 | Steer Left",
+    "bounds": [
+      316,
+      210,
+      512,
+      376
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "03 | Steer Right",
+    "bounds": [
+      560,
+      210,
+      756,
+      376
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "04 | Accelerate",
+    "bounds": [
+      804,
+      210,
+      1000,
+      376
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "05 | Brake",
+    "bounds": [
+      1048,
+      210,
+      1244,
+      376
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "06 | Forward Reverse",
+    "bounds": [
+      1292,
+      210,
+      1488,
+      376
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "07 | Camera",
+    "bounds": [
+      1536,
+      210,
+      1732,
+      376
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "08 | Pause",
+    "bounds": [
+      1780,
+      210,
+      1976,
+      376
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "01 | DRIVING AND CAMERAS",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "</Layer group>",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "09 | Blade Up Down",
+    "bounds": [
+      72,
+      458,
+      268,
+      624
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "10 | Blade Angle",
+    "bounds": [
+      316,
+      458,
+      512,
+      624
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "11 | Bucket Lift",
+    "bounds": [
+      560,
+      458,
+      756,
+      624
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "12 | Bucket Tilt",
+    "bounds": [
+      804,
+      458,
+      1000,
+      624
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "13 | Dump Snow",
+    "bounds": [
+      1048,
+      458,
+      1244,
+      624
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "14 | Auto Manual",
+    "bounds": [
+      1292,
+      458,
+      1488,
+      624
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "15 | Recover",
+    "bounds": [
+      1536,
+      458,
+      1732,
+      624
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "16 | Sound",
+    "bounds": [
+      1780,
+      458,
+      1976,
+      624
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "02 | MACHINERY CONTROLS",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "</Layer group>",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "17 | Garage",
+    "bounds": [
+      72,
+      706,
+      268,
+      872
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "18 | Machinery Shop",
+    "bounds": [
+      316,
+      706,
+      512,
+      872
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "19 | Parts",
+    "bounds": [
+      560,
+      706,
+      756,
+      872
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "20 | Upgrades",
+    "bounds": [
+      804,
+      706,
+      1000,
+      872
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "21 | Repairs",
+    "bounds": [
+      1048,
+      706,
+      1244,
+      872
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "22 | Refuel",
+    "bounds": [
+      1292,
+      706,
+      1488,
+      872
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "23 | Settings",
+    "bounds": [
+      1536,
+      706,
+      1732,
+      872
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "24 | Home",
+    "bounds": [
+      1780,
+      706,
+      1976,
+      872
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "03 | GARAGE AND SHOP",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "</Layer group>",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "25 | Career",
+    "bounds": [
+      72,
+      954,
+      268,
+      1120
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "26 | Districts",
+    "bounds": [
+      316,
+      954,
+      512,
+      1120
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "27 | Free Plow",
+    "bounds": [
+      560,
+      954,
+      756,
+      1120
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "28 | Challenge",
+    "bounds": [
+      804,
+      954,
+      1000,
+      1120
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "29 | XP Level",
+    "bounds": [
+      1048,
+      954,
+      1244,
+      1120
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "30 | Combo",
+    "bounds": [
+      1292,
+      954,
+      1488,
+      1120
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "31 | Play",
+    "bounds": [
+      1536,
+      954,
+      1732,
+      1120
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "32 | Back",
+    "bounds": [
+      1780,
+      954,
+      1976,
+      1120
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "04 | CAREER AND NAVIGATION",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "</Layer group>",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Play | Normal",
+    "bounds": [
+      100,
+      1257,
+      240,
+      1375
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Play | Pressed",
+    "bounds": [
+      344,
+      1257,
+      484,
+      1375
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Play | Disabled",
+    "bounds": [
+      588,
+      1257,
+      728,
+      1375
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "05 | PLAY BUTTON STATES",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "</Layer group>",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Snow District winter header",
+    "bounds": [
+      0,
+      0,
+      2048,
+      144
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | 32 BUTTONS  /  INDIVIDUAL RASTER LAYERS",
+    "bounds": [
+      950,
+      1213,
+      1426,
+      1235
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Palette | PETROL",
+    "bounds": [
+      968,
+      1270,
+      1080,
+      1364
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Palette | IVORY",
+    "bounds": [
+      1108,
+      1270,
+      1220,
+      1364
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Palette | AMBER",
+    "bounds": [
+      1248,
+      1270,
+      1360,
+      1364
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Palette | ICE",
+    "bounds": [
+      1388,
+      1270,
+      1500,
+      1364
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "Label | BUTTON ARTWORK AND LABELS ARE SEPARATE  |  HIDE BACKGROUND TO EXPORT TRANSPARENT ICONS",
+    "bounds": [
+      54,
+      1474,
+      1054,
+      1497
+    ],
+    "visible": true,
+    "blend": "norm"
+  },
+  {
+    "name": "07 | HEADER AND PALETTE",
+    "bounds": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible": true,
+    "blend": "norm"
+  }
+]

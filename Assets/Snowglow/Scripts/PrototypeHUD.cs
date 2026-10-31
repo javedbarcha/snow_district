@@ -5,6 +5,7 @@ namespace Snowglow {
   public RectTransform safeArea,layout;public GameObject menuRoot;public GameObject driving;public Text status,objective,notice,debugText,menuInfo;
   public GameObject[] panels;public string[] names;
   public Text cameraModeText,cameraHelp;public GameObject cameraTools;public RectTransform leftControls,rightControls,centreControls;
+  public Image workSkinImage;public Sprite plowWorkSprite,loaderWorkSprite;
   float next;
   public void RefreshMenu(){var g=PrototypeSession.Instance;if(g==null)return;for(int i=0;i<panels.Length;i++)panels[i].SetActive(names[i]==g.Panel);driving.SetActive(g.Panel=="");menuRoot.SetActive(g.Panel!="");}
   void Update(){
@@ -13,6 +14,7 @@ namespace Snowglow {
    float available=((RectTransform)safeArea).rect.width;float height=((RectTransform)safeArea).rect.height;float fit=Mathf.Min(available/1280f,height/720f);layout.localScale=Vector3.one*fit;if(leftControls)leftControls.localScale=Vector3.one*fit;if(rightControls)rightControls.localScale=Vector3.one*fit;if(centreControls)centreControls.localScale=Vector3.one*fit;
    if(Time.unscaledTime<next)return;next=Time.unscaledTime+.15f;
    var m=g.Active;var p=g.Profile;var a=m.Tool;
+   if(workSkinImage)workSkinImage.sprite=m.definition.loader?loaderWorkSprite:plowWorkSprite;
    if(cameraModeText)cameraModeText.text="CAM: "+g.CameraRig.ModeName;
    if(cameraTools)cameraTools.SetActive(g.CameraRig.Interactive);
    if(cameraHelp){cameraHelp.gameObject.SetActive(g.CameraRig.Interactive);cameraHelp.text=g.CameraRig.ModeName+" | full 360-degree vehicle view"+"\n"+(Application.isMobilePlatform?"Drag empty view to rotate | pinch to zoom | RESET recentres":"Right-drag or J/L + I/K to orbit | scroll or +/- zoom | Home resets");}

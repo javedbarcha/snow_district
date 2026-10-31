@@ -9,6 +9,7 @@ namespace Snowglow.Editor {
   public static void EnsureFolders(){Directory.CreateDirectory(Root+"/Entries");Directory.CreateDirectory(Root+"/Prefabs");Directory.CreateDirectory(Root+"/Recipes");Directory.CreateDirectory(Root+"/Sources");AssetDatabase.Refresh();}
   public static AssetCatalog Library(){var c=AssetDatabase.LoadAssetAtPath<AssetCatalog>(LibraryPath);if(c)return c;EnsureFolders();c=ScriptableObject.CreateInstance<AssetCatalog>();AssetDatabase.CreateAsset(c,LibraryPath);return c;}
   public static CatalogAsset Prepare(GameObject source,CatalogKind kind,string title,float scale,Vector3 rotation,AssetSource sourceType,string notes,CatalogAsset draft=null){
+   if(kind==CatalogKind.UI)throw new InvalidOperationException("Use the Photoshop UI intake for sprite-based Canvas assets.");
    if(EditorApplication.isPlayingOrWillChangePlaymode)throw new InvalidOperationException("Asset preparation is Editor-only. Stop Play first.");
    if(!source||!CatalogValidation.Finite(scale)||scale<=0||!CatalogValidation.Finite(rotation))throw new ArgumentException("Provide a model and a positive finite uniform scale.");
    EnsureFolders();if(draft&&(draft.status!=PreparationStatus.Draft||draft.prefab))throw new InvalidOperationException("Only an unprepared Draft entry can be completed in place.");var a=draft?draft:ScriptableObject.CreateInstance<CatalogAsset>();if(!draft)a.id="asset-"+Guid.NewGuid().ToString("N");a.name=a.displayName=string.IsNullOrWhiteSpace(title)?source.name:title;a.kind=kind;a.status=PreparationStatus.NeedsReview;

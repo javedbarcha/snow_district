@@ -16,7 +16,7 @@ namespace Snowglow.Editor {
  public static class CatalogScenePlans {
   public static string Manifest(AssetCatalog catalog){
    if(!catalog)throw new ArgumentException("Select a catalog.");ValidateIds(catalog);
-   var entries=catalog.entries.Where(a=>a&&a.status==PreparationStatus.Ready).ToArray();
+   var entries=catalog.entries.Where(a=>a&&a.status==PreparationStatus.Ready&&a.kind!=CatalogKind.UI).ToArray();
    if(entries.Length==0)throw new InvalidOperationException("Publish at least one reviewed catalog entry before exporting a Ready manifest.");
    foreach(var a in entries){var report=CatalogValidation.Check(a,true);if(!report.Ok)throw new InvalidOperationException(a.displayName+"\n"+report);}
    var manifest=new CatalogManifest{assets=entries.Select(a=>new ManifestAsset{
@@ -39,6 +39,7 @@ namespace Snowglow.Editor {
     foreach(var pair in pending.ToArray()){
      var p=pair.Value;if(!string.IsNullOrEmpty(p.connectTo)&&!done.ContainsKey(p.connectTo))continue;
      var a=catalog.Find(p.assetId);var report=CatalogValidation.Check(a,true);if(!report.Ok)throw new InvalidOperationException(p.id+": "+report);
+     if(a.kind==CatalogKind.UI)throw new InvalidOperationException("UI assets require Canvas authoring, not world scene placements.");
      if(p.scale<a.minimumScale||p.scale>a.maximumScale)throw new InvalidOperationException("Scale outside approved range for "+p.id);
      if(a.kind==CatalogKind.Vehicle&&!a.prefab.GetComponent<MachineController>())throw new InvalidOperationException("Use an assembled vehicle, not an unfinished body: "+p.id);
      var item=new ResolvedPlacement{asset=a,plan=p,position=p.position,rotation=Quaternion.Euler(p.rotation)};
