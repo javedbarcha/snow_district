@@ -146,7 +146,7 @@ namespace Snowglow.Editor {
    var protectedAssets=All<Terrain>(scene).Select(t=>AssetDatabase.GetAssetPath(t.terrainData)).Concat(session.Snow.GetComponentsInChildren<MeshFilter>().Select(m=>AssetDatabase.GetAssetPath(m.sharedMesh))).Concat(new[]{AssetDatabase.GetAssetPath(session.Snow.seed)}).Where(p=>!string.IsNullOrEmpty(p)&&!p.StartsWith(CatalogPreparation.Root+"/SceneData/",StringComparison.Ordinal)).Distinct().ToDictionary(p=>p,p=>AssetDatabase.GetAssetDependencyHash(p).ToString());
    var mountains=All<CatalogPlacement>(scene).Where(p=>(p.placementId??"").StartsWith("pinefall-mountain-",StringComparison.Ordinal)).ToDictionary(p=>p.placementId,p=>Pose(p.transform));
    var fleet=session.Fleet.Select(m=>m.GetInstanceID()).ToArray();
-   PlacePreparedBlocks(scene);int blocked=RefreshMovedObstacles(session.Snow);
+   PlacePreparedBlocks(scene);HomeColliderAuthoring.ConfigureScene(scene);int blocked=RefreshMovedObstacles(session.Snow);
    Require(fleet.SequenceEqual(session.Fleet.Select(m=>m.GetInstanceID())),"fleet changed");
    SceneValidation.Validate(scene);EditorSceneManager.MarkSceneDirty(scene);AssetDatabase.SaveAssets();Require(EditorSceneManager.SaveScene(scene),"scene save failed");
    scene=EditorSceneManager.OpenScene(SceneValidation.ScenePath);ValidateLayout(scene);SceneValidation.Validate(scene);MechanicsChecks.Run();

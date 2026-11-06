@@ -1,5 +1,18 @@
 # Verification record
 
+## One solid home box per lot - 6 November 2026
+
+Unity 6000.3.8f1 / StandaloneWindows64 compiled, saved/reopened and passed 3,403
+checks plus scene validation/19 snow checks. All 40 homes have a single full-height
+foundation BoxCollider, covering foundation and house/roof/decorative snow bounds.
+Native top raycasts and saved duplicate/enclosure checks passed. Home/foundation
+colliders reduced from 230 to 40; garden fence collision unchanged. Seven prepared
+prefabs now use one box each; scene instances remove that duplicate. Visuals,
+catalog/fleet transforms and original snow/Terrain hashes preserved. Separate seed
+changes 334 obstacle flags only; quantities unchanged. No district rebake or player
+save writes. Backup/report: Logs/HomeColliders. Actual driving/clearance, Android
+packaging and Galaxy A07 performance remain untested.
+
 Latest ramp size: 65% original length / 85% original width (6 November).
 Height/pose retained; saved/reopened and passed collision, scene and 19 snow checks.
 Report: Logs/TractionTestRamp/Resize-0.65-0.85.txt. Driving/A07 remain untested.

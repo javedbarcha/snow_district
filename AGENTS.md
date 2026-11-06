@@ -1,5 +1,29 @@
 # Snowglow: project instructions, design history and development handoff
 
+## One enclosing collider per home - 6 November 2026
+
+User requested a single box enclosing each whole home, preferably extending its
+foundation collider. All 40 placed homes now use their existing foundation box
+extended through the full roof height and encompassing the foundation/house visual
+bounds. House compound proxies and the duplicate inherited prefab box are removed
+from placed instances: home/foundation collider count 230 -> 40. Garden fences keep
+their separate colliders. Renderers, meshes, materials, foundation visuals and all
+catalog/fleet poses remain unchanged. Porches/interiors within the box are solid.
+
+Seven reusable winter-home prefabs each now have one enclosing BoxCollider for
+standalone placement, retaining asset IDs/GUIDs and Needs Review status. Current
+lot instances override that box because the full-height foundation supplies it.
+WinterHomesIntake, town expansion and explicit district authoring reuse this policy.
+HomeColliderAuthoring is Editor-only; menu Snowglow > Environment > Use one enclosing
+box per home. No runtime collision generation, source-model replacement or rebake.
+
+Unity 6000.3.8f1 / StandaloneWindows64 compiled, saved/reopened Pinefall and passed
+3,403 checks, native box top raycasts, enclosure/duplicate checks, catalog checks,
+scene validation and 19 snow checks. A separate seed reconciles 334 obstacle flags;
+all snow quantities, original seed/meshes/Terrain and existing poses preserved.
+No player-save writes. Backups of scene/seven prefabs and report: Logs/HomeColliders.
+Actual vehicle clearance/driving, Android packaging and A07 performance untested.
+
 ## Ramp 65% length and 85% width - 6 November 2026
 
 Latest user sizing supersedes earlier dimensions: 65% original length and 85%

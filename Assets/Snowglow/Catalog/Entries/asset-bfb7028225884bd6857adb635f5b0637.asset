@@ -16,6 +16,7 @@ MonoBehaviour:
   displayName: Twin A Frame
   kind: 4
   status: 1
+  uiSprites: []
   prefab: {fileID: 26381392660184808, guid: c111b90d8d2411946be1714d8429bae2, type: 3}
   tags:
   - winter-home
@@ -23,6 +24,7 @@ MonoBehaviour:
   - removable-snow
   - warm-windows
   - opaque-palette
+  - single-home-box
   sourceType: 0
   sourceGuid: 5b482645e8cabc4488c8a572e2bf29bc
   sourcePath: Assets/Snowglow/Catalog/Sources/SevenWinterHomes/TwinAFrame.fbx
@@ -36,7 +38,9 @@ MonoBehaviour:
     Square display tile, text, cameras and lights excluded. Ground drifts clipped
     to the architectural ground plane on prepared copies. Compound wall/deck/step
     boxes are collision proposals, not enterable interiors. Decorative snow does
-    not enter the plowing volume ledger.
+    not enter the plowing volume ledger. Collision revised to one solid enclosing
+    box; placed lots use a full-height foundation box instead of duplicate home collision.
+    Interiors/porches inside the footprint are not driveable.
   reviewNotes: Authorized prototype placement. Needs visual/clearance and Galaxy
     A07 review before Ready publication.
   visualReviewed: 0

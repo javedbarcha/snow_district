@@ -1,5 +1,11 @@
 # Snowglow mobile art budget
 
+Home collision simplification (6 November): 40 placed home/foundation assemblies
+now use 40 solid full-height boxes instead of 230 colliders. Separate fence shapes
+remain. Seven catalog prefabs each use one box, removed as a scene override when
+the foundation supplies collision. Geometry/render costs unchanged; physics savings
+are unmeasured on Galaxy A07. Roofs/porches inside each box are intentionally solid.
+
 Traction-test ramp replacement (6 November): 2,668 visible triangles, two renderers
 and two shared materials (one small opaque palette plus existing toon snow).
 Two supplied static collision meshes total 24 triangles. No lights, transparency

@@ -34,7 +34,7 @@ namespace Snowglow.Editor {
    m.enableInstancing=true;EditorUtility.SetDirty(m);return m;
   }
   static CatalogAsset Prepare(Home home,Material snow){
-   string id="winter-home-"+home.index;var a=CatalogPreparation.Library().Find(id);if(a&&a.tags.Contains("winter-home")){a.maximumScale=1.5f;EditorUtility.SetDirty(a);CatalogPreparation.RecordMetrics(a);Require(a.triangles==home.triangles-home.degenerateTriangles,"prepared geometry count differs: "+home.name);Require(CatalogValidation.Check(a).Ok,"catalog checks: "+a.id);return a;}
+   string id="winter-home-"+home.index;var a=CatalogPreparation.Library().Find(id);if(a&&a.tags.Contains("winter-home")){a.maximumScale=1.5f;HomeColliderAuthoring.PreparePrefab(a);EditorUtility.SetDirty(a);CatalogPreparation.RecordMetrics(a);Require(a.triangles==home.triangles-home.degenerateTriangles,"prepared geometry count differs: "+home.name);Require(CatalogValidation.Check(a).Ok,"catalog checks: "+a.id);return a;}
    string path=Source+home.model+".fbx";
    var importer=(ModelImporter)AssetImporter.GetAtPath(path);Require(importer!=null,"model not imported: "+path);
    importer.importCameras=false;importer.importLights=false;importer.importAnimation=false;importer.globalScale=1;importer.isReadable=false;
@@ -66,15 +66,15 @@ namespace Snowglow.Editor {
     Require(Mathf.Abs(bx.x)>.99f&&Mathf.Abs(by.z)>.99f&&Mathf.Abs(bz.y)>.99f,"FBX basis mismatch");
     // JSON coordinates are (Blender X, Z, -Y); include actual import handedness.
     Vector3 Position(float[] xyz)=>bx*xyz[0]+bz*xyz[1]-by*xyz[2];
-    foreach(var p in home.colliders){var go=new GameObject("Collision | "+p.name);go.transform.SetParent(raw,false);var box=go.AddComponent<BoxCollider>();box.center=Position(p.center);box.size=V(p.size);}
+    // One enclosing box is authored after visual preparation below.
     var entry=CatalogPreparation.Anchor(raw,"entrance",AnchorRole.Entrance,Position(home.entrance));entry.interfaceId="house-entrance";entry.transform.localRotation=Quaternion.LookRotation(-by,bz);
     foreach(var frame in frames.Where(t=>t.name.StartsWith("Basis",StringComparison.Ordinal)))UnityEngine.Object.DestroyImmediate(frame.gameObject);
     root.name=home.name;PrefabUtility.SaveAsPrefabAsset(root,AssetDatabase.GetAssetPath(a.prefab));
    }finally{PrefabUtility.UnloadPrefabContents(root);}
    a.tags=new[]{"winter-home",home.model.ToLowerInvariant(),"removable-snow","warm-windows","opaque-palette"};a.minimumScale=.75f;a.maximumScale=1.5f;
-   a.assumptions="Metres, Y-up, entrance +Z. Combined rigid architecture and opaque unlit warm windows; roof and ground snow remain separately removable under SnowCover. Square display tile, text, cameras and lights excluded. Ground drifts clipped to the architectural ground plane on prepared copies. Compound wall/deck/step boxes are collision proposals, not enterable interiors. Decorative snow does not enter the plowing volume ledger.";
+   a.assumptions="Metres, Y-up, entrance +Z. Combined rigid architecture and opaque unlit warm windows; roof and ground snow remain separately removable under SnowCover. Square display tile, text, cameras and lights excluded. Ground drifts clipped to the architectural ground plane on prepared copies. One enclosing box provides solid home collision; interiors are not enterable. Decorative snow does not enter the plowing volume ledger.";
    a.reviewNotes="Authorized prototype placement. Needs visual/clearance and Galaxy A07 review before Ready publication.";a.visualReviewed=false;a.status=PreparationStatus.NeedsReview;
-   CatalogPreparation.RecordMetrics(a);Require(a.triangles==home.triangles-home.degenerateTriangles,"export/import triangle count: "+home.name+" "+a.triangles+" vs "+home.triangles);Require(CatalogValidation.Check(a).Ok,"catalog checks: "+a.id);EditorUtility.SetDirty(a);return a;
+   HomeColliderAuthoring.PreparePrefab(a);CatalogPreparation.RecordMetrics(a);Require(a.triangles==home.triangles-home.degenerateTriangles,"export/import triangle count: "+home.name+" "+a.triangles+" vs "+home.triangles);Require(CatalogValidation.Check(a).Ok,"catalog checks: "+a.id);EditorUtility.SetDirty(a);return a;
   }
   static void Preview(CatalogAsset a,string index){
    var p=new PreviewRenderUtility();try{
@@ -128,7 +128,7 @@ namespace Snowglow.Editor {
    if(!File.Exists(Source+"ExportMetrics.json"))return;
    var homes=JsonUtility.FromJson<Export>(File.ReadAllText(Source+"ExportMetrics.json")).homes;
    var library=CatalogPreparation.Library();var entries=homes.Select(h=>library.Find("winter-home-"+h.index)).ToArray();
-   if(entries.Length==7&&entries.All(a=>a&&a.prefab))Place(scene,homes,entries);
+   if(entries.Length==7&&entries.All(a=>a&&a.prefab)){Place(scene,homes,entries);HomeColliderAuthoring.ConfigureScene(scene);}
   }
   [MenuItem("Snowglow/Asset intake/Import seven winter homes")]
   public static void Install(){
@@ -139,7 +139,7 @@ namespace Snowglow.Editor {
    var data=JsonUtility.FromJson<Export>(File.ReadAllText(Source+"ExportMetrics.json"));Require(data.homes.Length==7,"seven collections required");
    var normals=JsonUtility.FromJson<NormalAudit>(File.ReadAllText(Source+"NormalValidation.json"));Require(normals.closedSolidsChecked>0,"closed-solid normal audit missing");
    var entries=data.homes.Select(h=>Prepare(h,session.Snow.palette.snow)).ToArray();AssetDatabase.SaveAssets();
-   Place(scene,data.homes,entries);
+   Place(scene,data.homes,entries);HomeColliderAuthoring.ConfigureScene(scene);
    Require(fleet.SequenceEqual(session.Fleet.Select(m=>m.GetInstanceID())),"fleet altered");Require(seedHash==AssetDatabase.GetAssetDependencyHash(seedPath).ToString(),"snow seed changed");
    SceneValidation.Validate(scene);EditorSceneManager.MarkSceneDirty(scene);Require(EditorSceneManager.SaveScene(scene),"scene save failed");AssetDatabase.SaveAssets();
    scene=EditorSceneManager.OpenScene(SceneValidation.ScenePath);SceneValidation.Validate(scene);MechanicsChecks.Run();
@@ -150,7 +150,7 @@ namespace Snowglow.Editor {
     var a=entries[i];Require(a.prefab.GetComponentsInChildren<Light>(true).Length==0&&a.prefab.GetComponentsInChildren<Camera>(true).Length==0,"presentation objects leaked");
     Require(a.renderers==4&&a.materialSlots==4,"expected four merged renderer/material groups");
     Require(a.prefab.GetComponentsInChildren<Transform>(true).Any(t=>t.name.StartsWith("SnowCover",StringComparison.Ordinal)),"removable snow missing");
-    var vertices=a.prefab.GetComponentsInChildren<MeshFilter>(true).Sum(m=>m.sharedMesh.vertexCount);report.AppendLine(a.displayName+": "+a.triangles+" triangles / "+vertices+" imported vertices / "+a.renderers+" renderers / "+a.materialSlots+" slots; "+placements.Count(p=>p.assetId==a.id)+" placements; "+a.prefab.GetComponentsInChildren<Collider>().Length+" compound proxies; Needs Review.");
+    var vertices=a.prefab.GetComponentsInChildren<MeshFilter>(true).Sum(m=>m.sharedMesh.vertexCount);report.AppendLine(a.displayName+": "+a.triangles+" triangles / "+vertices+" imported vertices / "+a.renderers+" renderers / "+a.materialSlots+" slots; "+placements.Count(p=>p.assetId==a.id)+" placements; "+a.prefab.GetComponentsInChildren<Collider>().Length+" enclosing box; Needs Review.");
     Preview(a,data.homes[i].index);
    }
    Require(seedHash==AssetDatabase.GetAssetDependencyHash(seedPath).ToString(),"seed changed after reopen");report.AppendLine("Existing fences retained; foundation footprints enlarged 1.5x horizontally, keeping their height. All homes are 1.5x their previous lot-fitted size; preflight checks found no house/house or house/road footprint overlap. Re-running preserves the saved shuffled layout and does not enlarge it again. Snow seed/geometry, roads, terrain, fleet and player saves unchanged. Decorative house snow is independently removable in the Editor; no runtime assembly or roof-plowing mechanic added. Scene structural and 19 ledger checks passed. Seven Unity previews rendered for visual review. Live clearance/driving, Android packaging and Galaxy A07 frame timings remain untested.");

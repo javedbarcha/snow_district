@@ -49,6 +49,13 @@ Placement does not grant player ownership or automatically add a machine to `Pro
 
 ## Reusable environment assemblies
 
+Current home policy (6 November): use one solid enclosing box per home. Prepared
+winter-home prefabs have one box; Pinefall lots extend their foundation box to
+roof height and remove duplicate home colliders. Garden fences remain separate.
+`Snowglow > Environment > Use one enclosing box per home` reapplies this policy
+without moving scenery. Homes are solid scenery, including porch/interior spaces
+inside their enclosing boxes.
+
 Prepare a complete house lot, tree group, depot or road as one catalog entry. Review the footprint of automatically generated aggregate box colliders: entrances and driveways often need smaller compound proxies rather than a single blocking box. The supplied prototype assemblies retain their existing authored colliders.
 
 Roads need at least two **RoadConnection** anchors with matching interface IDs. Other anchor roles identify entrances, service/disposal zones and parking points for future scene/gameplay authoring. These markers describe intent; they do not automatically implement contract logic or service actions.

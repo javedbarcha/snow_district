@@ -1,5 +1,12 @@
 # Prototype structure and extension boundaries
 
+`Editor/HomeColliderAuthoring` implements the user's solid-home collision policy.
+Reusable winter-home prefabs each have one enclosing box. Placed home lots instead
+extend the foundation box to enclose the full visual height/footprint and remove
+duplicate house colliders; separate garden fences remain independent. All changes
+are saved before Play. Import/town/bake authoring reuses the policy; obstacle flags
+are reconciled separately without changing snow quantities or source meshes.
+
 `Editor/SelectedMountainRefit` is a selection-only authoring command separate
 from whole-set mountain intake. It precomputes source-derived meshes, preserves
 horizontal transforms, fits the lower skirt and creates persistent mesh revisions

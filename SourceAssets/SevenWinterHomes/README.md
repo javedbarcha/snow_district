@@ -80,3 +80,7 @@ of 2, 4 or 6. The original 16 prefab instances remain unchanged, with 24 additio
 Editor-authored catalog instances. All seven variants are retained. The separate
 town-block command preserves this layout on repetition; see VALIDATION.md and
 `Logs/TownBlocks/Validation.txt` for native save/reopen and clearance evidence.
+
+## Solid home collision - 6 November 2026
+
+Latest user policy supersedes compound wall/deck/step proxies. Each prepared home prefab uses one enclosing BoxCollider. All 40 placed Pinefall homes instead extend their foundation box to cover the full house/roof footprint and height, removing duplicate house collision. Garden fences retain separate shapes. Home/foundation colliders: 230 to 40; visual geometry, placements and source models unchanged. Intakes/town/bake authoring reuse HomeColliderAuthoring. Native save/reopen, enclosure/raycast/catalog/scene and 19 snow checks passed. Separate seed updates 334 obstacle flags with quantities unchanged. Backups/report: Logs/HomeColliders. Driving clearance, Android and A07 acceptance remain untested.

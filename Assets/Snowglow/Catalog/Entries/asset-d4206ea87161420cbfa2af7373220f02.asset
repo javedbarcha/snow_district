@@ -16,6 +16,7 @@ MonoBehaviour:
   displayName: Red Cottage
   kind: 4
   status: 1
+  uiSprites: []
   prefab: {fileID: 3036723728714850505, guid: b5fcdb76a871f264094af06721fa9e72, type: 3}
   tags:
   - winter-home
@@ -23,6 +24,7 @@ MonoBehaviour:
   - removable-snow
   - warm-windows
   - opaque-palette
+  - single-home-box
   sourceType: 0
   sourceGuid: 438f9b6a50f892c439d8e0dc6ed71e21
   sourcePath: Assets/Snowglow/Catalog/Sources/SevenWinterHomes/RedCottage.fbx
@@ -36,7 +38,9 @@ MonoBehaviour:
     Square display tile, text, cameras and lights excluded. Ground drifts clipped
     to the architectural ground plane on prepared copies. Compound wall/deck/step
     boxes are collision proposals, not enterable interiors. Decorative snow does
-    not enter the plowing volume ledger.
+    not enter the plowing volume ledger. Collision revised to one solid enclosing
+    box; placed lots use a full-height foundation box instead of duplicate home collision.
+    Interiors/porches inside the footprint are not driveable.
   reviewNotes: Authorized prototype placement. Needs visual/clearance and Galaxy
     A07 review before Ready publication.
   visualReviewed: 0
