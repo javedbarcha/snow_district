@@ -2480,6 +2480,21 @@ The wider layout passed a repeat native run with zero further relocations and
 zero snow-mask changes. A fog-free native overhead render was visually inspected
 against the supplied reference; temporary preview fog changes were restored.
 
+## Forest radius reduced to 365 m - 6 November 2026
+
+The forest authoring cap is now 365 m for both tree roots and full placement bounds,
+superseding the 470 m boundary above. Pinefall retains 146 LOD3 instances and
+62,496 triangles; 38 existing placements moved, with 73 roots beyond 340 m and
+the farthest root at 364.6 m. Mountain exclusion, terrain seating and slope
+alignment remain enforced. The snow mask and all snow quantities were unchanged.
+
+Unity 6000.3.8f1 compiled, saved/reopened Pinefall and passed scene validation plus
+all 19 snow-ledger checks. The saved layout and forest source remain Editor-authored;
+no district rebake or player-save writes occurred. Native renders were generated.
+Continuous driving, Android packaging and Galaxy A07 performance remain untested.
+Report and placement audit: `Logs/ForestSeating/Validation.txt` and
+`Logs/ForestSeating/Placements.csv`.
+
 Latest lamp color correction (4 November 2026): front lamp housings are yellow, superseding orange, on both machines; rear housings stay white. FrontOrangeHousing.mat retains its historical filename/GUID with yellow color to preserve references. Future authoring and existing color checks use yellow.
 
 Latest beacon color decision (4 November 2026): retain original amber/orange roof color while operating, superseding red. Shared Beacon and BeaconHalo colors plus future authoring are amber/orange. Rotation/glow and independence from the lamps toggle remain.
