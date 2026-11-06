@@ -32,7 +32,7 @@ Transform:
   - {fileID: 3615483624156681575}
   m_Father: {fileID: 6018418516294032422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2743789719052996314
+--- !u!1 &975340451489227561
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,22 +40,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3015842999766947587}
-  - component: {fileID: 8245662166345419140}
+  - component: {fileID: 3723555199119852463}
+  - component: {fileID: 8359412802027872485}
   m_Layer: 0
-  m_Name: Collision | trunk only
+  m_Name: Collision | one enclosing tree box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3015842999766947587
+--- !u!4 &3723555199119852463
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2743789719052996314}
+  m_GameObject: {fileID: 975340451489227561}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -64,13 +64,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6018418516294032422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &8245662166345419140
-CapsuleCollider:
+--- !u!65 &8359412802027872485
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2743789719052996314}
+  m_GameObject: {fileID: 975340451489227561}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -82,11 +82,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.31825075
-  m_Height: 5.6698937
-  m_Direction: 1
-  m_Center: {x: 0, y: 2.8349469, z: 0}
+  serializedVersion: 3
+  m_Size: {x: 3.8719025, y: 8.71854, z: 3.4310932}
+  m_Center: {x: -3.2772083, y: 4.368684, z: 11.042988}
 --- !u!1 &5511582697339902526
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +239,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2232298801377636039}
-  - {fileID: 3015842999766947587}
+  - {fileID: 3723555199119852463}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7387549812848437948

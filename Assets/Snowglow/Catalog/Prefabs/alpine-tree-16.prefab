@@ -65,7 +65,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1558101237903583157}
-  - {fileID: 5432153170583620552}
+  - {fileID: 3135467135814854384}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1058251460265184280
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowglow.DistanceVisibility
   distance: 230
---- !u!1 &4984786838529851233
+--- !u!1 &4766961557981644730
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,22 +103,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5432153170583620552}
-  - component: {fileID: 831845355138256598}
+  - component: {fileID: 3135467135814854384}
+  - component: {fileID: 2075421990114797817}
   m_Layer: 0
-  m_Name: Collision | trunk only
+  m_Name: Collision | one enclosing tree box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5432153170583620552
+--- !u!4 &3135467135814854384
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4984786838529851233}
+  m_GameObject: {fileID: 4766961557981644730}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -127,13 +127,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4860798491762716390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &831845355138256598
-CapsuleCollider:
+--- !u!65 &2075421990114797817
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4984786838529851233}
+  m_GameObject: {fileID: 4766961557981644730}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -145,11 +145,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.35
-  m_Height: 1.85315
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.926575, z: 0}
+  serializedVersion: 3
+  m_Size: {x: 1.5078506, y: 2.8517416, z: 1.4974055}
+  m_Center: {x: 22.347498, y: 1.4258708, z: -0.0080548525}
 --- !u!1 &5730989044047017314
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,6 +26,7 @@ MonoBehaviour:
   - lod3-only
   - lowest-detail
   - single-detail
+  - single-tree-box
   sourceType: 0
   sourceGuid: 0ff48e5d4f24861458a707bd354ed1ca
   sourcePath: Assets/Snowglow/Catalog/Sources/AlpineTreesLowestLOD/09_LOD3.fbx
@@ -38,6 +39,9 @@ MonoBehaviour:
   assumptions: Lowest supplied LOD3 only at every distance, no LODGroup or higher-detail
     renderers. Original mounting basis, materials, removable snow, colliders and
     DistanceVisibility retained. Original higher-detail sources preserved for reversibility.
+    Collision revised to one solid box enclosing the whole visible tree/wood and
+    removable snow; former trunk capsules/other proxies removed. Distance culling
+    affects renderers only.
   reviewNotes: Authorized lowest-detail replacement; Needs Review for final visual
     and A07 acceptance.
   visualReviewed: 0

@@ -127,6 +127,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1344259726}
     m_Modifications:
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6541243
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.y
+      value: 10.971622
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.z
+      value: 2.5934663
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.x
+      value: -9.704609
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.z
+      value: -0.009703755
+      objectReference: {fileID: 0}
     - target: {fileID: 1442242778230834024, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3688198
@@ -454,6 +474,26 @@ PrefabInstance:
     - target: {fileID: 6136916005317457451, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4787636
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.8091886
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4974098
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.x
+      value: 22.362051
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.y
+      value: 1.4059149
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -990,6 +1030,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1344259726}
     m_Modifications:
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7478027
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Size.y
+      value: 9.767635
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Size.z
+      value: 3.6019106
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Center.x
+      value: -22.521175
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Center.y
+      value: 4.886975
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Center.z
+      value: -0.06487262
+      objectReference: {fileID: 0}
     - target: {fileID: 4877682152503330552, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
       propertyPath: m_Name
       value: alpine-tree-09
@@ -2004,6 +2068,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: alpine-tree-13
       objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.x
+      value: 3.77802
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.z
+      value: 3.371188
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.x
+      value: 2.8413048
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.y
+      value: 3.9868357
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.z
+      value: 0.107661486
+      objectReference: {fileID: 0}
     - target: {fileID: 5190718043953685689, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
       propertyPath: placementId
       value: pinefall-tree-extra-037
@@ -2470,6 +2554,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.x
+      value: 4.288603
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.y
+      value: 8.768019
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.z
+      value: 4.2852917
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.x
+      value: -3.0721135
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.y
+      value: 4.3871646
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.z
+      value: -0.06337738
+      objectReference: {fileID: 0}
     - target: {fileID: 8052390102689739881, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: placementId
       value: pinefall-tree-096
@@ -2878,6 +2986,30 @@ PrefabInstance:
     - target: {fileID: 5558675444832391994, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: placementId
       value: pinefall-tree-061
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.x
+      value: 4.1511955
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.y
+      value: 8.967703
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.z
+      value: 4.085097
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.x
+      value: 9.625245
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.y
+      value: 4.48385
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.z
+      value: 0.023139238
       objectReference: {fileID: 0}
     - target: {fileID: 5879363949120307704, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: m_LocalScale.x
@@ -4550,6 +4682,30 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-extra-031
       objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.x
+      value: 2.2947922
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.y
+      value: 4.6101236
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.z
+      value: 2.2285042
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Center.x
+      value: 15.9125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Center.y
+      value: 2.3059075
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Center.z
+      value: 10.985016
+      objectReference: {fileID: 0}
     - target: {fileID: 6214178938304461881, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
       propertyPath: m_Name
       value: alpine-tree-07
@@ -5260,6 +5416,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: alpine-tree-01
       objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Size.x
+      value: 3.675129
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Size.z
+      value: 3.6150799
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Center.x
+      value: -22.525301
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Center.z
+      value: 10.895694
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5337,6 +5509,30 @@ PrefabInstance:
     - target: {fileID: 6853757616851168818, guid: d43fcfb9e8e941b40b043f572519441d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966882085259046874, guid: d43fcfb9e8e941b40b043f572519441d, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8883429
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966882085259046874, guid: d43fcfb9e8e941b40b043f572519441d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6230525
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966882085259046874, guid: d43fcfb9e8e941b40b043f572519441d, type: 3}
+      propertyPath: m_Size.z
+      value: 1.8015289
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966882085259046874, guid: d43fcfb9e8e941b40b043f572519441d, type: 3}
+      propertyPath: m_Center.x
+      value: -2.6051633
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966882085259046874, guid: d43fcfb9e8e941b40b043f572519441d, type: 3}
+      propertyPath: m_Center.y
+      value: 0.31474566
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966882085259046874, guid: d43fcfb9e8e941b40b043f572519441d, type: 3}
+      propertyPath: m_Center.z
+      value: -11.088732
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6281,6 +6477,30 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-023
       objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Size.x
+      value: 3.8719082
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Size.y
+      value: 8.718544
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Size.z
+      value: 3.4311142
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Center.x
+      value: -3.2772098
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Center.y
+      value: 4.368685
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Center.z
+      value: 11.04299
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6302,6 +6522,30 @@ PrefabInstance:
     - target: {fileID: 1339669461074601448, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
       propertyPath: placementId
       value: pinefall-tree-097
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.x
+      value: 4.6186256
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.y
+      value: 8.118465
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.z
+      value: 4.2940483
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Center.x
+      value: -16.146772
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Center.y
+      value: 4.0686436
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Center.z
+      value: 10.978823
       objectReference: {fileID: 0}
     - target: {fileID: 7235029902641563008, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
       propertyPath: m_LocalScale.x
@@ -6380,6 +6624,30 @@ PrefabInstance:
     - target: {fileID: 1058251460265184280, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
       propertyPath: placementId
       value: pinefall-tree-extra-013
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5078583
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.y
+      value: 2.8517442
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4974086
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.x
+      value: 22.3475
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.y
+      value: 1.4258705
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.z
+      value: -0.008054316
       objectReference: {fileID: 0}
     - target: {fileID: 4104628658329229138, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
       propertyPath: m_Name
@@ -10034,6 +10302,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1344259726}
     m_Modifications:
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6541214
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.z
+      value: 2.59347
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.x
+      value: -9.704615
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.z
+      value: -0.009703875
+      objectReference: {fileID: 0}
     - target: {fileID: 1442242778230834024, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2167614
@@ -11504,6 +11788,26 @@ PrefabInstance:
     - target: {fileID: 7387549812848437948, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
       propertyPath: placementId
       value: pinefall-tree-068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Size.x
+      value: 3.871912
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Size.y
+      value: 8.718545
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Size.z
+      value: 3.4311028
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Center.y
+      value: 4.3686843
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Center.z
+      value: 11.04299
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13040,6 +13344,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: alpine-tree-18
       objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8270874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Size.y
+      value: 8.700422
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Size.z
+      value: 1.6759167
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Center.x
+      value: -18.256031
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Center.z
+      value: -11.000112
+      objectReference: {fileID: 0}
     - target: {fileID: 7264727412424633822, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1896547
@@ -13110,6 +13434,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.x
+      value: 2.8923798
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.y
+      value: 10.008787
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.z
+      value: 2.658699
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.x
+      value: -23.490356
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.y
+      value: 5.0106134
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.z
+      value: -11.000069
+      objectReference: {fileID: 0}
     - target: {fileID: 684159118803522862, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
       propertyPath: m_Name
       value: alpine-tree-17
@@ -13780,6 +14128,26 @@ PrefabInstance:
     - target: {fileID: 5925975604370948781, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
       propertyPath: m_Name
       value: alpine-tree-01
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Size.x
+      value: 3.6751308
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Size.z
+      value: 3.6150894
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Center.x
+      value: -22.525303
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Center.y
+      value: 4.8688054
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Center.z
+      value: 10.895699
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16321,6 +16689,26 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-extra-025
       objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.x
+      value: 3.702711
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.y
+      value: 7.918976
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.z
+      value: 3.304699
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.x
+      value: 2.8411736
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.z
+      value: 11.10923
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17330,6 +17718,22 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-092
       objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.x
+      value: 4.744652
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.z
+      value: 4.4086123
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.y
+      value: 4.087107
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.z
+      value: -0.026590347
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17483,6 +17887,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6541252
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.y
+      value: 10.971621
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.z
+      value: 2.5934649
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.y
+      value: 5.4889665
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.z
+      value: -0.009703279
+      objectReference: {fileID: 0}
     - target: {fileID: 1442242778230834024, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4142123
@@ -17766,6 +18190,30 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-001
       objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.x
+      value: 2.2948112
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.y
+      value: 4.610125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.z
+      value: 2.2285023
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Center.x
+      value: 15.912495
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Center.y
+      value: 2.305906
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Center.z
+      value: 10.985011
+      objectReference: {fileID: 0}
     - target: {fileID: 6214178938304461881, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
       propertyPath: m_Name
       value: alpine-tree-07
@@ -17791,6 +18239,30 @@ PrefabInstance:
     - target: {fileID: 2422446776771900571, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
       propertyPath: m_Name
       value: alpine-tree-13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.x
+      value: 3.778019
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.y
+      value: 7.9673576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.z
+      value: 3.3712034
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.x
+      value: 2.841299
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.y
+      value: 3.9868345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.z
+      value: 0.10766137
       objectReference: {fileID: 0}
     - target: {fileID: 5190718043953685689, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
       propertyPath: placementId
@@ -18174,6 +18646,26 @@ PrefabInstance:
     - target: {fileID: 6136916005317457451, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4787598
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4974146
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.x
+      value: 22.362057
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.y
+      value: 1.4059157
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.z
+      value: 10.991943
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18770,6 +19262,22 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-extra-007
       objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.y
+      value: 8.167904
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.z
+      value: 4.408613
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.y
+      value: 4.087109
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.z
+      value: -0.026593447
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19332,6 +19840,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Size.x
+      value: 3.747797
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Size.y
+      value: 9.767635
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Size.z
+      value: 3.6019015
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Center.x
+      value: -22.521168
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Center.z
+      value: -0.06487191
+      objectReference: {fileID: 0}
     - target: {fileID: 4877682152503330552, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
       propertyPath: m_Name
       value: alpine-tree-09
@@ -19855,6 +20383,30 @@ PrefabInstance:
     - target: {fileID: 5558675444832391994, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: placementId
       value: pinefall-tree-extra-027
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.x
+      value: 4.1511803
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.y
+      value: 8.967697
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.z
+      value: 4.085076
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.x
+      value: 9.625242
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.y
+      value: 4.483848
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.z
+      value: 0.02314043
       objectReference: {fileID: 0}
     - target: {fileID: 5879363949120307704, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: m_LocalScale.x
@@ -20695,6 +21247,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3384871306562345723, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5446329
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384871306562345723, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
+      propertyPath: m_Size.y
+      value: 3.3009508
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384871306562345723, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4706879
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384871306562345723, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
+      propertyPath: m_Center.x
+      value: -7.8869014
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384871306562345723, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
+      propertyPath: m_Center.z
+      value: -11.000113
+      objectReference: {fileID: 0}
     - target: {fileID: 4538678054403110871, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
       propertyPath: m_Name
       value: alpine-tree-20
@@ -21157,6 +21729,30 @@ PrefabInstance:
     - target: {fileID: 408171836722857297, guid: 02927513e6c1cf34a96af1582c10e3d3, type: 3}
       propertyPath: m_Name
       value: alpine-tree-26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755667120062539439, guid: 02927513e6c1cf34a96af1582c10e3d3, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7129745
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755667120062539439, guid: 02927513e6c1cf34a96af1582c10e3d3, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7375574
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755667120062539439, guid: 02927513e6c1cf34a96af1582c10e3d3, type: 3}
+      propertyPath: m_Size.z
+      value: 1.1426
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755667120062539439, guid: 02927513e6c1cf34a96af1582c10e3d3, type: 3}
+      propertyPath: m_Center.x
+      value: 23.16676
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755667120062539439, guid: 02927513e6c1cf34a96af1582c10e3d3, type: 3}
+      propertyPath: m_Center.y
+      value: 0.36877802
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755667120062539439, guid: 02927513e6c1cf34a96af1582c10e3d3, type: 3}
+      propertyPath: m_Center.z
+      value: -11.00223
       objectReference: {fileID: 0}
     - target: {fileID: 8679090838163355108, guid: 02927513e6c1cf34a96af1582c10e3d3, type: 3}
       propertyPath: m_LocalScale.x
@@ -21834,6 +22430,26 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-066
       objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.x
+      value: 4.744649
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.z
+      value: 4.408617
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.x
+      value: -16.14733
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.y
+      value: 4.0871077
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.z
+      value: -0.026593208
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21911,6 +22527,30 @@ PrefabInstance:
     - target: {fileID: 3691402056352758597, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
       propertyPath: placementId
       value: pinefall-tree-055
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.x
+      value: 3.702716
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.y
+      value: 7.9189806
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.z
+      value: 3.3047047
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.x
+      value: 2.841175
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.y
+      value: 3.9689028
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.z
+      value: 11.109233
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22895,6 +23535,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4123009874188381106, guid: b478d988bc726de47b8cb73e2025d1b9, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7825708
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123009874188381106, guid: b478d988bc726de47b8cb73e2025d1b9, type: 3}
+      propertyPath: m_Size.y
+      value: 1.108432
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123009874188381106, guid: b478d988bc726de47b8cb73e2025d1b9, type: 3}
+      propertyPath: m_Size.z
+      value: 1.6836319
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123009874188381106, guid: b478d988bc726de47b8cb73e2025d1b9, type: 3}
+      propertyPath: m_Center.x
+      value: 2.5970569
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123009874188381106, guid: b478d988bc726de47b8cb73e2025d1b9, type: 3}
+      propertyPath: m_Center.y
+      value: 0.5579962
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123009874188381106, guid: b478d988bc726de47b8cb73e2025d1b9, type: 3}
+      propertyPath: m_Center.z
+      value: -11.079649
+      objectReference: {fileID: 0}
     - target: {fileID: 6203489366034762822, guid: b478d988bc726de47b8cb73e2025d1b9, type: 3}
       propertyPath: m_Name
       value: alpine-tree-22
@@ -23042,6 +23706,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.x
+      value: 4.2886095
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.y
+      value: 8.768015
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.z
+      value: 4.285307
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.y
+      value: 4.3871646
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.z
+      value: -0.06337786
+      objectReference: {fileID: 0}
     - target: {fileID: 8052390102689739881, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: placementId
       value: pinefall-tree-extra-020
@@ -23067,6 +23751,26 @@ PrefabInstance:
     - target: {fileID: 2422446776771900571, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
       propertyPath: m_Name
       value: alpine-tree-13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7780237
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.y
+      value: 7.9673567
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.z
+      value: 3.3712077
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.x
+      value: 2.8413053
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.z
+      value: 0.10766268
       objectReference: {fileID: 0}
     - target: {fileID: 5190718043953685689, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
       propertyPath: placementId
@@ -24397,6 +25101,30 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-extra-040
       objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.x
+      value: 4.744648
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.y
+      value: 8.167901
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.z
+      value: 4.408615
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.x
+      value: -16.14733
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.y
+      value: 4.087108
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.z
+      value: -0.026589394
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24615,6 +25343,30 @@ PrefabInstance:
     - target: {fileID: 3691402056352758597, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
       propertyPath: placementId
       value: pinefall-tree-extra-043
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7027073
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.y
+      value: 7.918977
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.z
+      value: 3.304699
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.x
+      value: 2.8411703
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.y
+      value: 3.968902
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.z
+      value: 11.109228
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25951,6 +26703,22 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-extra-019
       objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.x
+      value: 4.744648
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.z
+      value: 4.4086094
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.x
+      value: -16.14733
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.z
+      value: -0.026591063
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26168,6 +26936,22 @@ PrefabInstance:
     - target: {fileID: 2337518367515407742, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384871306562345723, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5446076
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384871306562345723, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
+      propertyPath: m_Size.y
+      value: 3.30095
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384871306562345723, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4706917
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384871306562345723, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
+      propertyPath: m_Center.z
+      value: -11.000113
       objectReference: {fileID: 0}
     - target: {fileID: 4538678054403110871, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
       propertyPath: m_Name
@@ -29320,6 +30104,26 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-extra-048
       objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.x
+      value: 2.2948017
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.y
+      value: 4.6101255
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.z
+      value: 2.2285004
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Center.x
+      value: 15.912492
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Center.y
+      value: 2.3059075
+      objectReference: {fileID: 0}
     - target: {fileID: 6214178938304461881, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
       propertyPath: m_Name
       value: alpine-tree-07
@@ -29667,6 +30471,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: alpine-tree-01
       objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Size.x
+      value: 3.6751328
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Size.y
+      value: 9.718783
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Size.z
+      value: 3.6150818
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Center.y
+      value: 4.8688045
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Center.z
+      value: 10.895695
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29914,6 +30738,26 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-extra-011
       objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.x
+      value: 4.618616
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.y
+      value: 8.118467
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.z
+      value: 4.2940445
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Center.x
+      value: -16.146786
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Center.z
+      value: 10.978821
+      objectReference: {fileID: 0}
     - target: {fileID: 7235029902641563008, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0726267
@@ -30048,6 +30892,26 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-extra-017
       objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.x
+      value: 3.702714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.y
+      value: 7.918976
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.z
+      value: 3.304699
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.x
+      value: 2.8411703
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.y
+      value: 3.9689023
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30179,6 +31043,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.y
+      value: 10.971624
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.z
+      value: 2.5934787
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.z
+      value: -0.009705424
+      objectReference: {fileID: 0}
     - target: {fileID: 1442242778230834024, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.96381336
@@ -31422,6 +32298,26 @@ PrefabInstance:
     - target: {fileID: 7940463318796155029, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163608497195832878, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
+      propertyPath: m_Size.x
+      value: 2.387312
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163608497195832878, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
+      propertyPath: m_Size.z
+      value: 2.295364
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163608497195832878, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
+      propertyPath: m_Center.x
+      value: 15.9208975
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163608497195832878, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
+      propertyPath: m_Center.y
+      value: 2.325874
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163608497195832878, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
+      propertyPath: m_Center.z
+      value: -0.010259151
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33589,6 +34485,30 @@ PrefabInstance:
     - target: {fileID: 1058251460265184280, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
       propertyPath: placementId
       value: pinefall-tree-011
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5078773
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.y
+      value: 2.8517437
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4974117
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.x
+      value: 22.347502
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.y
+      value: 1.425871
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.z
+      value: -0.008055925
       objectReference: {fileID: 0}
     - target: {fileID: 4104628658329229138, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
       propertyPath: m_Name
@@ -36678,6 +37598,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6541252
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.y
+      value: 10.971621
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.z
+      value: 2.5934615
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.z
+      value: -0.009705663
+      objectReference: {fileID: 0}
     - target: {fileID: 1442242778230834024, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0394833
@@ -36990,6 +37926,30 @@ PrefabInstance:
     - target: {fileID: 1058251460265184280, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
       propertyPath: placementId
       value: pinefall-tree-054
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5078659
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.y
+      value: 2.8517437
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4974172
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.x
+      value: 22.347504
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.y
+      value: 1.42587
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.z
+      value: -0.008053601
       objectReference: {fileID: 0}
     - target: {fileID: 4104628658329229138, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
       propertyPath: m_Name
@@ -37321,6 +38281,30 @@ PrefabInstance:
     - target: {fileID: 2422446776771900571, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
       propertyPath: m_Name
       value: alpine-tree-13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7780175
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.y
+      value: 7.967363
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.z
+      value: 3.3711982
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.x
+      value: 2.8413043
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.y
+      value: 3.9868348
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.z
+      value: 0.107663274
       objectReference: {fileID: 0}
     - target: {fileID: 5190718043953685689, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
       propertyPath: placementId
@@ -38283,6 +39267,26 @@ PrefabInstance:
     - target: {fileID: 7387549812848437948, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
       propertyPath: placementId
       value: pinefall-tree-034
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Size.x
+      value: 3.8719134
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Size.y
+      value: 8.718542
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Size.z
+      value: 3.431099
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Center.x
+      value: -3.2772076
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Center.y
+      value: 4.3686843
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39517,6 +40521,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: alpine-tree-13
       objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.x
+      value: 3.778016
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.y
+      value: 7.9673595
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.z
+      value: 3.3711858
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.x
+      value: 2.841299
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.y
+      value: 3.9868357
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.z
+      value: 0.10766077
+      objectReference: {fileID: 0}
     - target: {fileID: 5190718043953685689, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
       propertyPath: placementId
       value: pinefall-tree-045
@@ -40116,6 +41144,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: alpine-tree-13
       objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7780318
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.y
+      value: 7.967365
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.z
+      value: 3.3711925
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.x
+      value: 2.841305
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.y
+      value: 3.9868371
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.z
+      value: 0.107662916
+      objectReference: {fileID: 0}
     - target: {fileID: 5190718043953685689, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
       propertyPath: placementId
       value: pinefall-tree-extra-006
@@ -40245,6 +41297,26 @@ PrefabInstance:
     - target: {fileID: 2667309415918078725, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
       propertyPath: m_Name
       value: alpine-tree-03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736532541369626654, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6121178
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736532541369626654, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
+      propertyPath: m_Size.y
+      value: 10.920442
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736532541369626654, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
+      propertyPath: m_Size.z
+      value: 2.490425
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736532541369626654, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
+      propertyPath: m_Center.y
+      value: 5.4696326
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736532541369626654, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
+      propertyPath: m_Center.z
+      value: 11.010793
       objectReference: {fileID: 0}
     - target: {fileID: 9033743056925221887, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
       propertyPath: placementId
@@ -41205,6 +42277,22 @@ PrefabInstance:
     - target: {fileID: 1339669461074601448, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
       propertyPath: placementId
       value: pinefall-tree-062
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.x
+      value: 4.618623
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.z
+      value: 4.2940407
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Center.x
+      value: -16.146778
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Center.z
+      value: 10.978809
       objectReference: {fileID: 0}
     - target: {fileID: 7235029902641563008, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
       propertyPath: m_LocalScale.x
@@ -42889,6 +43977,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.478775
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.8091927
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4974222
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.y
+      value: 1.4059154
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.z
+      value: 10.991943
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -43075,6 +44183,26 @@ PrefabInstance:
     - target: {fileID: 4876938993589406292, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
       propertyPath: placementId
       value: pinefall-tree-004
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.x
+      value: 2.294798
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.y
+      value: 4.6101246
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.z
+      value: 2.2285004
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Center.x
+      value: 15.912492
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Center.z
+      value: 10.985008
       objectReference: {fileID: 0}
     - target: {fileID: 6214178938304461881, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
       propertyPath: m_Name
@@ -44204,6 +45332,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.478775
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.8091915
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4974098
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.y
+      value: 1.405917
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.z
+      value: 10.991947
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -44394,6 +45542,30 @@ PrefabInstance:
     - target: {fileID: 3691402056352758597, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
       propertyPath: placementId
       value: pinefall-tree-069
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7027264
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.y
+      value: 7.9189816
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.z
+      value: 3.304699
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.x
+      value: 2.8411722
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.y
+      value: 3.9689035
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.z
+      value: 11.109236
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -45745,6 +46917,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6541214
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.y
+      value: 10.971621
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.z
+      value: 2.59347
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.x
+      value: -9.704617
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.y
+      value: 5.4889684
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.z
+      value: -0.009699464
+      objectReference: {fileID: 0}
     - target: {fileID: 1442242778230834024, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2935048
@@ -45878,6 +47074,26 @@ PrefabInstance:
     - target: {fileID: 5582389672947771749, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.x
+      value: 4.288611
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.y
+      value: 8.768015
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.z
+      value: 4.2853026
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.x
+      value: -3.0721152
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.z
+      value: -0.06337905
       objectReference: {fileID: 0}
     - target: {fileID: 8052390102689739881, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: placementId
@@ -46617,6 +47833,26 @@ PrefabInstance:
     - target: {fileID: 1339669461074601448, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
       propertyPath: placementId
       value: pinefall-tree-extra-030
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.x
+      value: 4.618637
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.y
+      value: 8.118467
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.z
+      value: 4.2940397
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Center.x
+      value: -16.146784
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Center.z
+      value: 10.978817
       objectReference: {fileID: 0}
     - target: {fileID: 7235029902641563008, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
       propertyPath: m_LocalScale.x
@@ -48000,6 +49236,22 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-090
       objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Size.x
+      value: 3.8719049
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Size.z
+      value: 3.431098
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Center.x
+      value: -3.2772071
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Center.z
+      value: 11.042992
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -48900,6 +50152,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6541214
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.y
+      value: 10.971624
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.z
+      value: 2.5934775
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.y
+      value: 5.488967
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.z
+      value: -0.009703994
+      objectReference: {fileID: 0}
     - target: {fileID: 1442242778230834024, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8220558
@@ -50103,6 +51375,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5534887
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Size.y
+      value: 4.8541965
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Size.z
+      value: 2.445282
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Center.y
+      value: 2.430054
+      objectReference: {fileID: 0}
     - target: {fileID: 7637476594105112169, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
       propertyPath: placementId
       value: pinefall-tree-extra-009
@@ -50125,6 +51413,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.z
+      value: 2.6586971
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.x
+      value: -23.490349
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.z
+      value: -11.00007
+      objectReference: {fileID: 0}
     - target: {fileID: 684159118803522862, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
       propertyPath: m_Name
       value: alpine-tree-17
@@ -52580,6 +53880,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: alpine-tree-13
       objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.x
+      value: 3.778038
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.y
+      value: 7.9673595
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.z
+      value: 3.3711991
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.x
+      value: 2.8413038
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.y
+      value: 3.9868355
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.z
+      value: 0.10766566
+      objectReference: {fileID: 0}
     - target: {fileID: 5190718043953685689, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
       propertyPath: placementId
       value: pinefall-tree-extra-002
@@ -54747,6 +56071,26 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-044
       objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.y
+      value: 8.167904
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.z
+      value: 4.408616
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.x
+      value: -16.147327
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.y
+      value: 4.087109
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.z
+      value: -0.02659154
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -54820,6 +56164,22 @@ PrefabInstance:
     - target: {fileID: 5582389672947771749, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.x
+      value: 4.2886124
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.y
+      value: 8.768015
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.z
+      value: 4.285296
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.x
+      value: -3.0721154
       objectReference: {fileID: 0}
     - target: {fileID: 8052390102689739881, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: placementId
@@ -56751,6 +58111,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1344259726}
     m_Modifications:
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7477798
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Size.y
+      value: 9.767635
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Size.z
+      value: 3.6018972
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Center.x
+      value: -22.52118
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Center.y
+      value: 4.886976
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Center.z
+      value: -0.064870834
+      objectReference: {fileID: 0}
     - target: {fileID: 4877682152503330552, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
       propertyPath: m_Name
       value: alpine-tree-09
@@ -57923,6 +59307,22 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-078
       objectReference: {fileID: 0}
+    - target: {fileID: 4514211050820759834, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
+      propertyPath: m_Size.x
+      value: 4.1483173
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514211050820759834, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
+      propertyPath: m_Size.y
+      value: 8.917812
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514211050820759834, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
+      propertyPath: m_Size.z
+      value: 4.075714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514211050820759834, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
+      propertyPath: m_Center.x
+      value: 9.623812
+      objectReference: {fileID: 0}
     - target: {fileID: 7150633804158766336, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0984979
@@ -58508,6 +59908,30 @@ PrefabInstance:
     - target: {fileID: 6136916005317457451, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4787598
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.809188
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4974127
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.x
+      value: 22.362053
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.y
+      value: 1.4059142
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.z
+      value: 10.991947
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -59354,6 +60778,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: alpine-tree-03
       objectReference: {fileID: 0}
+    - target: {fileID: 6736532541369626654, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6121101
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736532541369626654, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
+      propertyPath: m_Size.y
+      value: 10.92044
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736532541369626654, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
+      propertyPath: m_Size.z
+      value: 2.490429
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736532541369626654, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
+      propertyPath: m_Center.y
+      value: 5.4696307
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736532541369626654, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
+      propertyPath: m_Center.z
+      value: 11.010788
+      objectReference: {fileID: 0}
     - target: {fileID: 9033743056925221887, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
       propertyPath: placementId
       value: pinefall-tree-005
@@ -59431,6 +60875,30 @@ PrefabInstance:
     - target: {fileID: 5582389672947771749, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.x
+      value: 4.288605
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.y
+      value: 8.768018
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.z
+      value: 4.2852874
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.x
+      value: -3.0721152
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.y
+      value: 4.3871646
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.z
+      value: -0.06337762
       objectReference: {fileID: 0}
     - target: {fileID: 8052390102689739881, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: placementId
@@ -59968,6 +61436,26 @@ PrefabInstance:
     - target: {fileID: 1058251460265184280, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
       propertyPath: placementId
       value: pinefall-tree-024
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.y
+      value: 2.8517427
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4974177
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.x
+      value: 22.3475
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.y
+      value: 1.4258705
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.z
+      value: -0.008057892
       objectReference: {fileID: 0}
     - target: {fileID: 4104628658329229138, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
       propertyPath: m_Name
@@ -60631,6 +62119,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4787712
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.8091888
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4974174
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.x
+      value: 22.362043
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.y
+      value: 1.4059165
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -61245,6 +62753,30 @@ PrefabInstance:
     - target: {fileID: 6136916005317457451, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4787674
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.8091884
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4974117
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.x
+      value: 22.362057
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.y
+      value: 1.4059136
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.z
+      value: 10.991948
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -62196,6 +63728,30 @@ PrefabInstance:
     - target: {fileID: 5558675444832391994, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: placementId
       value: pinefall-tree-extra-046
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.x
+      value: 4.15119
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.y
+      value: 8.9677
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.z
+      value: 4.085083
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.x
+      value: 9.625247
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.y
+      value: 4.483848
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.z
+      value: 0.023138762
       objectReference: {fileID: 0}
     - target: {fileID: 5879363949120307704, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: m_LocalScale.x
@@ -64116,6 +65672,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.x
+      value: 2.8923683
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.y
+      value: 10.00878
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.z
+      value: 2.6586952
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.x
+      value: -23.49035
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.y
+      value: 5.010611
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.z
+      value: -11.0000725
+      objectReference: {fileID: 0}
     - target: {fileID: 684159118803522862, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
       propertyPath: m_Name
       value: alpine-tree-17
@@ -64883,6 +66463,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.x
+      value: 4.288613
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.y
+      value: 8.768021
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.z
+      value: 4.285308
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.x
+      value: -3.0721152
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.y
+      value: 4.3871655
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.z
+      value: -0.06337786
+      objectReference: {fileID: 0}
     - target: {fileID: 8052390102689739881, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: placementId
       value: pinefall-tree-extra-008
@@ -65245,6 +66849,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.x
+      value: 2.892374
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.y
+      value: 10.008784
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.z
+      value: 2.6586962
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.x
+      value: -23.490356
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.y
+      value: 5.010611
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.z
+      value: -11.000078
+      objectReference: {fileID: 0}
     - target: {fileID: 684159118803522862, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
       propertyPath: m_Name
       value: alpine-tree-17
@@ -67859,6 +69487,26 @@ PrefabInstance:
     - target: {fileID: 5558675444832391994, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: placementId
       value: pinefall-tree-030
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.x
+      value: 4.15119
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.y
+      value: 8.967699
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.z
+      value: 4.0850763
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.x
+      value: 9.625243
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.z
+      value: 0.023140192
       objectReference: {fileID: 0}
     - target: {fileID: 5879363949120307704, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: m_LocalScale.x
@@ -201781,6 +203429,26 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-070
       objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.x
+      value: 2.2948017
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.y
+      value: 4.6101246
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.z
+      value: 2.228508
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Center.x
+      value: 15.912496
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Center.y
+      value: 2.3059065
+      objectReference: {fileID: 0}
     - target: {fileID: 6214178938304461881, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
       propertyPath: m_Name
       value: alpine-tree-07
@@ -203690,6 +205358,26 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-081
       objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.x
+      value: 3.702714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.y
+      value: 7.918976
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.z
+      value: 3.3047066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.x
+      value: 2.8411741
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.y
+      value: 3.9689023
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -205091,6 +206779,30 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-020
       objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.x
+      value: 4.151186
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.y
+      value: 8.967701
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.z
+      value: 4.085088
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.x
+      value: 9.625245
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.y
+      value: 4.4838495
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.z
+      value: 0.023139238
+      objectReference: {fileID: 0}
     - target: {fileID: 5879363949120307704, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8980832
@@ -206352,6 +208064,30 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-003
       objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.x
+      value: 4.15119
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.y
+      value: 8.967705
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.z
+      value: 4.0850954
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.x
+      value: 9.625245
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.y
+      value: 4.483848
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.z
+      value: 0.023144245
+      objectReference: {fileID: 0}
     - target: {fileID: 5879363949120307704, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8199224
@@ -206842,6 +208578,30 @@ PrefabInstance:
     - target: {fileID: 2422446776771900571, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
       propertyPath: m_Name
       value: alpine-tree-13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7780223
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.y
+      value: 7.9673615
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.z
+      value: 3.3712063
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.x
+      value: 2.8413045
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.y
+      value: 3.9868338
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.z
+      value: 0.10766256
       objectReference: {fileID: 0}
     - target: {fileID: 5190718043953685689, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
       propertyPath: placementId
@@ -208454,6 +210214,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.x
+      value: 4.2886176
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.y
+      value: 8.768019
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.z
+      value: 4.2852993
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.x
+      value: -3.0721128
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.z
+      value: -0.06338549
+      objectReference: {fileID: 0}
     - target: {fileID: 8052390102689739881, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: placementId
       value: pinefall-tree-095
@@ -208704,6 +210484,22 @@ PrefabInstance:
     - target: {fileID: 5558675444832391994, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: placementId
       value: pinefall-tree-extra-029
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.x
+      value: 4.151188
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.z
+      value: 4.085082
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.x
+      value: 9.625246
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.z
+      value: 0.023139954
       objectReference: {fileID: 0}
     - target: {fileID: 5879363949120307704, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: m_LocalScale.x
@@ -209813,6 +211609,30 @@ PrefabInstance:
     - target: {fileID: 6136916005317457451, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.478756
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.8091888
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4974136
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.x
+      value: 22.362055
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.y
+      value: 1.4059145
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429759077102262592, guid: b047e42fc142eef4e8b2d0e0c6cb7a4a, type: 3}
+      propertyPath: m_Center.z
+      value: 10.991947
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -211447,6 +213267,30 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-077
       objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.x
+      value: 4.1511955
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.y
+      value: 8.967699
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.z
+      value: 4.0850887
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.x
+      value: 9.625248
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.y
+      value: 4.4838495
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.z
+      value: 0.023139954
+      objectReference: {fileID: 0}
     - target: {fileID: 5879363949120307704, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.96383286
@@ -212637,6 +214481,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.x
+      value: 2.892376
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.y
+      value: 10.008786
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.z
+      value: 2.6586914
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.x
+      value: -23.490358
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.y
+      value: 5.010615
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.z
+      value: -11.000078
+      objectReference: {fileID: 0}
     - target: {fileID: 684159118803522862, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
       propertyPath: m_Name
       value: alpine-tree-17
@@ -212882,6 +214750,26 @@ PrefabInstance:
     - target: {fileID: 3467872511069625149, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5534859
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Size.y
+      value: 4.8541965
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Size.z
+      value: 2.445282
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Center.x
+      value: -13.140686
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Center.y
+      value: 2.430054
       objectReference: {fileID: 0}
     - target: {fileID: 7637476594105112169, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
       propertyPath: placementId
@@ -213248,6 +215136,26 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-extra-016
       objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.x
+      value: 4.1512012
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.y
+      value: 8.967699
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.z
+      value: 4.085083
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.x
+      value: 9.625245
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.z
+      value: 0.02313757
+      objectReference: {fileID: 0}
     - target: {fileID: 5879363949120307704, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2267295
@@ -213582,6 +215490,26 @@ PrefabInstance:
     - target: {fileID: 6056339058135382322, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
       propertyPath: placementId
       value: pinefall-tree-032
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.x
+      value: 4.7446413
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.y
+      value: 8.167904
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.z
+      value: 4.408614
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.x
+      value: -16.147322
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.y
+      value: 4.087109
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -214242,6 +216170,18 @@ PrefabInstance:
     - target: {fileID: 4876938993589406292, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
       propertyPath: placementId
       value: pinefall-tree-extra-021
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.x
+      value: 2.294796
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.z
+      value: 2.2284985
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Center.x
+      value: 15.912493
       objectReference: {fileID: 0}
     - target: {fileID: 6214178938304461881, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
       propertyPath: m_Name
@@ -216101,6 +218041,26 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-022
       objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.x
+      value: 2.2947922
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.y
+      value: 4.610124
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.z
+      value: 2.228506
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Center.x
+      value: 15.912493
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Center.z
+      value: 10.985011
+      objectReference: {fileID: 0}
     - target: {fileID: 6214178938304461881, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
       propertyPath: m_Name
       value: alpine-tree-07
@@ -216774,6 +218734,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: alpine-tree-01
       objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Size.x
+      value: 3.6751366
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Size.y
+      value: 9.718783
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Size.z
+      value: 3.6150818
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Center.x
+      value: -22.525301
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Center.y
+      value: 4.8688045
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Center.z
+      value: 10.895695
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -217241,6 +219225,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3384871306562345723, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
+      propertyPath: m_Size.y
+      value: 3.3009515
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384871306562345723, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.470684
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384871306562345723, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
+      propertyPath: m_Center.x
+      value: -7.886899
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384871306562345723, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
+      propertyPath: m_Center.z
+      value: -11.00012
+      objectReference: {fileID: 0}
     - target: {fileID: 4538678054403110871, guid: 3d1b3262cf689f34e821ba0c2554409a, type: 3}
       propertyPath: m_Name
       value: alpine-tree-20
@@ -217677,6 +219677,30 @@ PrefabInstance:
     - target: {fileID: 7940463318796155029, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163608497195832878, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
+      propertyPath: m_Size.x
+      value: 2.3873043
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163608497195832878, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
+      propertyPath: m_Size.y
+      value: 4.651751
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163608497195832878, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
+      propertyPath: m_Size.z
+      value: 2.2953546
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163608497195832878, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
+      propertyPath: m_Center.x
+      value: 15.920899
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163608497195832878, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
+      propertyPath: m_Center.y
+      value: 2.325874
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163608497195832878, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
+      propertyPath: m_Center.z
+      value: -0.0102523565
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -219207,7 +221231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowglow.SnowField
   palette: {fileID: 11400000, guid: 15eb6c24c4a609f43ba465c701d784cc, type: 2}
-  seed: {fileID: 11400000, guid: aecfeec098e0a73429fb321011cc93a8, type: 2}
+  seed: {fileID: 11400000, guid: d6815239463fc7b4f8a32e7bd9b80ef6, type: 2}
 --- !u!33 &1483895110
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -219554,6 +221578,22 @@ PrefabInstance:
     - target: {fileID: 6056339058135382322, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
       propertyPath: placementId
       value: pinefall-tree-025
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.x
+      value: 4.74467
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.z
+      value: 4.408616
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.x
+      value: -16.147326
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.y
+      value: 4.0871077
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -220125,6 +222165,26 @@ PrefabInstance:
     - target: {fileID: 5925975604370948781, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
       propertyPath: m_Name
       value: alpine-tree-01
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Size.y
+      value: 9.718779
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Size.z
+      value: 3.615076
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Center.x
+      value: -22.525295
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Center.y
+      value: 4.868803
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Center.z
+      value: 10.89569
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -224101,6 +226161,30 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-080
       objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5078583
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.y
+      value: 2.8517437
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4974165
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.x
+      value: 22.3475
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.y
+      value: 1.4258707
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.z
+      value: -0.008055866
+      objectReference: {fileID: 0}
     - target: {fileID: 4104628658329229138, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
       propertyPath: m_Name
       value: alpine-tree-16
@@ -224328,6 +226412,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7477798
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Size.y
+      value: 9.767637
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Size.z
+      value: 3.6018953
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Center.x
+      value: -22.521156
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Center.y
+      value: 4.886975
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Center.z
+      value: -0.064866066
+      objectReference: {fileID: 0}
     - target: {fileID: 4877682152503330552, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
       propertyPath: m_Name
       value: alpine-tree-09
@@ -224667,6 +226775,22 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-extra-035
       objectReference: {fileID: 0}
+    - target: {fileID: 4514211050820759834, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
+      propertyPath: m_Size.x
+      value: 4.1483135
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514211050820759834, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
+      propertyPath: m_Size.z
+      value: 4.075714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514211050820759834, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
+      propertyPath: m_Center.x
+      value: 9.623808
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514211050820759834, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
+      propertyPath: m_Center.y
+      value: 4.4683185
+      objectReference: {fileID: 0}
     - target: {fileID: 7150633804158766336, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3136032
@@ -224893,6 +227017,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: alpine-tree-18
       objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8270874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Size.y
+      value: 8.700424
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Size.z
+      value: 1.6759224
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Center.x
+      value: -18.256027
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Center.y
+      value: 4.3505383
+      objectReference: {fileID: 0}
     - target: {fileID: 7264727412424633822, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4176745
@@ -225065,6 +227209,26 @@ PrefabInstance:
     - target: {fileID: 4471025138453530138, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
       propertyPath: placementId
       value: pinefall-tree-056
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514211050820759834, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
+      propertyPath: m_Size.x
+      value: 4.1483088
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514211050820759834, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
+      propertyPath: m_Size.z
+      value: 4.0757065
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514211050820759834, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
+      propertyPath: m_Center.x
+      value: 9.623808
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514211050820759834, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
+      propertyPath: m_Center.y
+      value: 4.4683185
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514211050820759834, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
+      propertyPath: m_Center.z
+      value: 11.024483
       objectReference: {fileID: 0}
     - target: {fileID: 7150633804158766336, guid: 452a978dc33eb624e95aeb818e1c482f, type: 3}
       propertyPath: m_LocalScale.x
@@ -226827,6 +228991,26 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-extra-003
       objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Size.x
+      value: 3.8719153
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Size.z
+      value: 3.431097
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Center.x
+      value: -3.2772114
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Center.y
+      value: 4.3686833
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Center.z
+      value: 11.042991
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -226848,6 +229032,30 @@ PrefabInstance:
     - target: {fileID: 1339669461074601448, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
       propertyPath: placementId
       value: pinefall-tree-083
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.x
+      value: 4.6186295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.y
+      value: 8.118468
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.z
+      value: 4.2940397
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Center.x
+      value: -16.146788
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Center.y
+      value: 4.068647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Center.z
+      value: 10.978821
       objectReference: {fileID: 0}
     - target: {fileID: 7235029902641563008, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
       propertyPath: m_LocalScale.x
@@ -227120,6 +229328,30 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-extra-024
       objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Size.x
+      value: 3.8719263
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Size.y
+      value: 8.718541
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Size.z
+      value: 3.431099
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Center.x
+      value: -3.277203
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Center.y
+      value: 4.3686843
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359412802027872485, guid: a89b4f37208c0a946892c6123e275e26, type: 3}
+      propertyPath: m_Center.z
+      value: 11.04299
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -227253,6 +229485,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6541271
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.y
+      value: 10.971621
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.z
+      value: 2.593473
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.x
+      value: -9.704616
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.z
+      value: -0.009703636
+      objectReference: {fileID: 0}
     - target: {fileID: 1442242778230834024, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.208461
@@ -227791,6 +230043,26 @@ PrefabInstance:
     - target: {fileID: 5582389672947771749, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.x
+      value: 4.288616
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.z
+      value: 4.285291
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.x
+      value: -3.072113
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.y
+      value: 4.387163
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.z
+      value: -0.063375235
       objectReference: {fileID: 0}
     - target: {fileID: 8052390102689739881, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: placementId
@@ -228633,6 +230905,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: alpine-tree-13
       objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7780266
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.y
+      value: 7.967357
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.z
+      value: 3.3711905
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.x
+      value: 2.8413038
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.y
+      value: 3.9868362
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.z
+      value: 0.107662916
+      objectReference: {fileID: 0}
     - target: {fileID: 5190718043953685689, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
       propertyPath: placementId
       value: pinefall-tree-075
@@ -228953,6 +231249,22 @@ PrefabInstance:
     - target: {fileID: 5582389672947771749, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.x
+      value: 4.2886095
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.y
+      value: 8.768015
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.z
+      value: 4.285303
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.z
+      value: -0.06337738
       objectReference: {fileID: 0}
     - target: {fileID: 8052390102689739881, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: placementId
@@ -229914,6 +232226,26 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-057
       objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.x
+      value: 4.151197
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.y
+      value: 8.9677
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.z
+      value: 4.0850816
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.x
+      value: 9.625243
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.z
+      value: 0.023135424
+      objectReference: {fileID: 0}
     - target: {fileID: 5879363949120307704, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0271311
@@ -230842,6 +233174,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5534859
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Size.y
+      value: 4.854198
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Size.z
+      value: 2.4452858
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Center.y
+      value: 2.430054
+      objectReference: {fileID: 0}
     - target: {fileID: 7637476594105112169, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
       propertyPath: placementId
       value: pinefall-tree-018
@@ -231245,6 +233593,30 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-038
       objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.x
+      value: 4.1511908
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.y
+      value: 8.967697
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.z
+      value: 4.085077
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.x
+      value: 9.62524
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.y
+      value: 4.4838486
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.z
+      value: 0.023141146
+      objectReference: {fileID: 0}
     - target: {fileID: 5879363949120307704, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.42537
@@ -231491,6 +233863,30 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-040
       objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7027168
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.y
+      value: 7.918976
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.z
+      value: 3.3046951
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.x
+      value: 2.8411746
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.y
+      value: 3.968902
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.z
+      value: 11.109236
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -231664,6 +234060,22 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-extra-026
       objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.y
+      value: 8.167906
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.z
+      value: 4.408617
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.y
+      value: 4.0871096
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.z
+      value: -0.026592255
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -231741,6 +234153,26 @@ PrefabInstance:
     - target: {fileID: 3691402056352758597, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
       propertyPath: placementId
       value: pinefall-tree-016
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.y
+      value: 7.918978
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.z
+      value: 3.304699
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.x
+      value: 2.8411727
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.y
+      value: 3.9689023
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.z
+      value: 11.10923
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -232313,6 +234745,22 @@ PrefabInstance:
     - target: {fileID: 1769554464685784505, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
       propertyPath: m_Name
       value: alpine-tree-18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8270874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Size.z
+      value: 1.6759281
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Center.x
+      value: -18.256027
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Center.z
+      value: -11.000104
       objectReference: {fileID: 0}
     - target: {fileID: 7264727412424633822, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
       propertyPath: m_LocalScale.x
@@ -233305,6 +235753,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1344259726}
     m_Modifications:
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.x
+      value: 2.8923683
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.z
+      value: 2.6586952
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.x
+      value: -23.490358
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.z
+      value: -11.000074
+      objectReference: {fileID: 0}
     - target: {fileID: 684159118803522862, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
       propertyPath: m_Name
       value: alpine-tree-17
@@ -233699,6 +236163,30 @@ PrefabInstance:
     - target: {fileID: 3691402056352758597, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
       propertyPath: placementId
       value: pinefall-tree-029
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7027245
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.y
+      value: 7.9189787
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Size.z
+      value: 3.304699
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.x
+      value: 2.8411784
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.y
+      value: 3.968902
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307203542442812387, guid: 550fdfc2e19ad8149b8ac17d6c1f20fc, type: 3}
+      propertyPath: m_Center.z
+      value: 11.109234
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -235045,6 +237533,30 @@ PrefabInstance:
       propertyPath: placementId
       value: pinefall-tree-026
       objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.x
+      value: 4.744648
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.y
+      value: 8.167903
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.z
+      value: 4.4086056
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.x
+      value: -16.147326
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.y
+      value: 4.087109
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.z
+      value: -0.026590347
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -235271,6 +237783,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9163608497195832878, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
+      propertyPath: m_Size.x
+      value: 2.38731
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163608497195832878, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
+      propertyPath: m_Size.y
+      value: 4.6517496
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163608497195832878, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
+      propertyPath: m_Size.z
+      value: 2.2953572
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163608497195832878, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
+      propertyPath: m_Center.x
+      value: 15.920895
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163608497195832878, guid: 233e5e2bfa991e44982ab2045a8977e7, type: 3}
+      propertyPath: m_Center.z
+      value: -0.010258079
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -235361,6 +237893,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6541252
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.y
+      value: 10.971625
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.z
+      value: 2.593483
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.x
+      value: -9.704615
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.y
+      value: 5.4889684
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.z
+      value: -0.009705305
+      objectReference: {fileID: 0}
     - target: {fileID: 1442242778230834024, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0728444
@@ -235730,6 +238286,26 @@ PrefabInstance:
     - target: {fileID: 6056339058135382322, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
       propertyPath: placementId
       value: pinefall-tree-021
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.x
+      value: 4.744651
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.y
+      value: 8.167904
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Size.z
+      value: 4.408615
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.y
+      value: 4.08711
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775894302097347936, guid: 720309ddf28e6c14bb4b536b9c2919a0, type: 3}
+      propertyPath: m_Center.z
+      value: -0.026591063
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -237526,6 +240102,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: alpine-tree-01
       objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Size.x
+      value: 3.6751328
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Size.y
+      value: 9.71878
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Size.z
+      value: 3.615078
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Center.y
+      value: 4.8688035
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096060879720158939, guid: 27cc3ee77ef783e498d5aa5030852cd2, type: 3}
+      propertyPath: m_Center.z
+      value: 10.895691
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -238167,6 +240763,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.x
+      value: 4.2886047
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.y
+      value: 8.768017
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.z
+      value: 4.285305
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.x
+      value: -3.0721135
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.y
+      value: 4.3871646
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.z
+      value: -0.063376665
+      objectReference: {fileID: 0}
     - target: {fileID: 8052390102689739881, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: placementId
       value: pinefall-tree-065
@@ -238309,6 +240929,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: alpine-tree-18
       objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8270836
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Size.y
+      value: 8.700428
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Size.z
+      value: 1.6759224
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Center.x
+      value: -18.256021
+      objectReference: {fileID: 0}
     - target: {fileID: 7264727412424633822, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1564597
@@ -238382,6 +241018,30 @@ PrefabInstance:
     - target: {fileID: 1058251460265184280, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
       propertyPath: placementId
       value: pinefall-tree-extra-022
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5078545
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.y
+      value: 2.8517413
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4974083
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.x
+      value: 22.347494
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.y
+      value: 1.4258713
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075421990114797817, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
+      propertyPath: m_Center.z
+      value: -0.008054912
       objectReference: {fileID: 0}
     - target: {fileID: 4104628658329229138, guid: cf0c7be2fa8745542916fd0fc36f9db3, type: 3}
       propertyPath: m_Name
@@ -239040,6 +241700,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: alpine-tree-03
       objectReference: {fileID: 0}
+    - target: {fileID: 6736532541369626654, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
+      propertyPath: m_Size.x
+      value: 2.612113
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736532541369626654, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
+      propertyPath: m_Size.y
+      value: 10.92044
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736532541369626654, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
+      propertyPath: m_Size.z
+      value: 2.4904327
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736532541369626654, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
+      propertyPath: m_Center.x
+      value: -9.696333
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736532541369626654, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
+      propertyPath: m_Center.y
+      value: 5.4696336
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736532541369626654, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
+      propertyPath: m_Center.z
+      value: 11.010794
+      objectReference: {fileID: 0}
     - target: {fileID: 9033743056925221887, guid: 8d77f01fd82c52e4989c0f83393055b7, type: 3}
       propertyPath: placementId
       value: pinefall-tree-extra-032
@@ -239367,6 +242051,22 @@ PrefabInstance:
     - target: {fileID: 5558675444832391994, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: placementId
       value: pinefall-tree-015
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.x
+      value: 4.1511955
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.y
+      value: 8.967704
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Size.z
+      value: 4.085082
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781514498159076889, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
+      propertyPath: m_Center.z
+      value: 0.023137331
       objectReference: {fileID: 0}
     - target: {fileID: 5879363949120307704, guid: 344a484a55d905a48a9a74e4538ce941, type: 3}
       propertyPath: m_LocalScale.x
@@ -239758,6 +242458,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 3391632685331489295, guid: e069991a7095bff4aaf486b3a67c0289, type: 3}
+      propertyPath: m_Size.x
+      value: 2.1457863
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391632685331489295, guid: e069991a7095bff4aaf486b3a67c0289, type: 3}
+      propertyPath: m_Size.y
+      value: 0.741597
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391632685331489295, guid: e069991a7095bff4aaf486b3a67c0289, type: 3}
+      propertyPath: m_Size.z
+      value: 2.0636654
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391632685331489295, guid: e069991a7095bff4aaf486b3a67c0289, type: 3}
+      propertyPath: m_Center.x
+      value: 12.9957905
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391632685331489295, guid: e069991a7095bff4aaf486b3a67c0289, type: 3}
+      propertyPath: m_Center.y
+      value: 0.37336007
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391632685331489295, guid: e069991a7095bff4aaf486b3a67c0289, type: 3}
+      propertyPath: m_Center.z
+      value: -11.081521
+      objectReference: {fileID: 0}
     - target: {fileID: 4118326903277921101, guid: e069991a7095bff4aaf486b3a67c0289, type: 3}
       propertyPath: placementId
       value: pinefall-tree-014
@@ -241002,6 +243726,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1344259726}
     m_Modifications:
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.x
+      value: 2.8923721
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.y
+      value: 10.008781
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.z
+      value: 2.6586876
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.x
+      value: -23.490349
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.z
+      value: -11.000069
+      objectReference: {fileID: 0}
     - target: {fileID: 684159118803522862, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
       propertyPath: m_Name
       value: alpine-tree-17
@@ -241097,6 +243841,30 @@ PrefabInstance:
     - target: {fileID: 2422446776771900571, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
       propertyPath: m_Name
       value: alpine-tree-13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7780352
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.y
+      value: 7.9673586
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.z
+      value: 3.3711846
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.x
+      value: 2.8413043
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.y
+      value: 3.9868357
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.z
+      value: 0.10766435
       objectReference: {fileID: 0}
     - target: {fileID: 5190718043953685689, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
       propertyPath: placementId
@@ -243693,6 +246461,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7478027
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Size.y
+      value: 9.767638
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Size.z
+      value: 3.6019
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Center.y
+      value: 4.886975
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352834606581446874, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
+      propertyPath: m_Center.z
+      value: -0.064870715
+      objectReference: {fileID: 0}
     - target: {fileID: 4877682152503330552, guid: 9dda73c06a116384c925307337f6c3dd, type: 3}
       propertyPath: m_Name
       value: alpine-tree-09
@@ -244606,6 +247394,26 @@ PrefabInstance:
     - target: {fileID: 1339669461074601448, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
       propertyPath: placementId
       value: pinefall-tree-033
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.x
+      value: 4.618621
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.y
+      value: 8.118471
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Size.z
+      value: 4.294052
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Center.x
+      value: -16.146786
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153646430458721549, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
+      propertyPath: m_Center.z
+      value: 10.978821
       objectReference: {fileID: 0}
     - target: {fileID: 7235029902641563008, guid: 501f4f53f9faa5843a0384262800a296, type: 3}
       propertyPath: m_LocalScale.x
@@ -246742,6 +249550,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: alpine-tree-18
       objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8270874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Size.y
+      value: 8.700424
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Size.z
+      value: 1.6759157
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Center.y
+      value: 4.350538
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177178359676760272, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
+      propertyPath: m_Center.z
+      value: -11.000107
+      objectReference: {fileID: 0}
     - target: {fileID: 7264727412424633822, guid: eb8ec402aab24554f9968f90d9a0725d, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3561792
@@ -246812,6 +249640,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1344259726}
     m_Modifications:
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6541214
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.y
+      value: 10.971621
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.z
+      value: 2.5934622
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.x
+      value: -9.704613
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.y
+      value: 5.488968
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.z
+      value: -0.009706259
+      objectReference: {fileID: 0}
     - target: {fileID: 1442242778230834024, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3585958
@@ -246945,6 +249797,30 @@ PrefabInstance:
     - target: {fileID: 5582389672947771749, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.x
+      value: 4.2886167
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.y
+      value: 8.768017
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Size.z
+      value: 4.285287
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.x
+      value: -3.0721166
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.y
+      value: 4.3871627
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855484042522460481, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
+      propertyPath: m_Center.z
+      value: -0.06337929
       objectReference: {fileID: 0}
     - target: {fileID: 8052390102689739881, guid: 56dadc9ad9fccd64481683febc1a1520, type: 3}
       propertyPath: placementId
@@ -248188,6 +251064,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1344259726}
     m_Modifications:
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.x
+      value: 2.892376
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.y
+      value: 10.008781
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Size.z
+      value: 2.658699
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.x
+      value: -23.490355
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.y
+      value: 5.0106125
+      objectReference: {fileID: 0}
+    - target: {fileID: 67927464598933813, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
+      propertyPath: m_Center.z
+      value: -11.0000725
+      objectReference: {fileID: 0}
     - target: {fileID: 684159118803522862, guid: 54794802c8b30624ca59a4d524aa1f20, type: 3}
       propertyPath: m_Name
       value: alpine-tree-17
@@ -251932,6 +254832,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: alpine-tree-13
       objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.x
+      value: 3.778017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Size.z
+      value: 3.371189
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.x
+      value: 2.8413033
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.y
+      value: 3.9868352
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843657606579530714, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
+      propertyPath: m_Center.z
+      value: 0.10766411
+      objectReference: {fileID: 0}
     - target: {fileID: 5190718043953685689, guid: 9ce52bffeaf15e240b8568f3cca9c970, type: 3}
       propertyPath: placementId
       value: pinefall-tree-002
@@ -253010,6 +255930,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5221680099643031758, guid: 79628eff6208b1d47827c918d189e87a, type: 3}
+      propertyPath: m_Size.x
+      value: 3.8262863
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221680099643031758, guid: 79628eff6208b1d47827c918d189e87a, type: 3}
+      propertyPath: m_Size.y
+      value: 0.69568086
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221680099643031758, guid: 79628eff6208b1d47827c918d189e87a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.1269093
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221680099643031758, guid: 79628eff6208b1d47827c918d189e87a, type: 3}
+      propertyPath: m_Center.x
+      value: 18.204142
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221680099643031758, guid: 79628eff6208b1d47827c918d189e87a, type: 3}
+      propertyPath: m_Center.y
+      value: 0.34783995
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221680099643031758, guid: 79628eff6208b1d47827c918d189e87a, type: 3}
+      propertyPath: m_Center.z
+      value: -11.007215
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -253106,6 +256050,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113751123}
     m_Modifications:
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6541252
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.y
+      value: 10.971624
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.z
+      value: 2.593474
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.x
+      value: -9.704613
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.y
+      value: 5.4889665
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.z
+      value: -0.009705067
+      objectReference: {fileID: 0}
     - target: {fileID: 1442242778230834024, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4768062
@@ -254712,6 +257680,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5534935
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Size.y
+      value: 4.8541975
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Size.z
+      value: 2.4452858
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Center.x
+      value: -13.140686
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Center.y
+      value: 2.430053
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442322038017657361, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
+      propertyPath: m_Center.z
+      value: -11.000048
+      objectReference: {fileID: 0}
     - target: {fileID: 7637476594105112169, guid: 0497aeec81b30144088d24854ca9e5d3, type: 3}
       propertyPath: placementId
       value: pinefall-tree-082
@@ -255671,6 +258663,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1344259726}
     m_Modifications:
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6541252
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.y
+      value: 10.971624
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Size.z
+      value: 2.5934706
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.x
+      value: -9.704613
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.y
+      value: 5.4889684
+      objectReference: {fileID: 0}
+    - target: {fileID: 130219806973093776, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
+      propertyPath: m_Center.z
+      value: -0.009700179
+      objectReference: {fileID: 0}
     - target: {fileID: 1442242778230834024, guid: ab2307013fbbebc43824ecf0863c4409, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2974178
@@ -256105,6 +259121,22 @@ PrefabInstance:
     - target: {fileID: 4876938993589406292, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
       propertyPath: placementId
       value: pinefall-tree-013
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.x
+      value: 2.2947998
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.y
+      value: 4.6101246
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Size.z
+      value: 2.2285042
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033121924477211263, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
+      propertyPath: m_Center.x
+      value: 15.912489
       objectReference: {fileID: 0}
     - target: {fileID: 6214178938304461881, guid: 539168ccdfcb8b148890b0b755357994, type: 3}
       propertyPath: m_Name
@@ -257007,6 +260039,26 @@ PrefabInstance:
     - target: {fileID: 2433558993452879892, guid: a5c88055fefb8564596ac11eeac096aa, type: 3}
       propertyPath: m_Name
       value: alpine-tree-23
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571963593416641215, guid: a5c88055fefb8564596ac11eeac096aa, type: 3}
+      propertyPath: m_Size.x
+      value: 2.1666727
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571963593416641215, guid: a5c88055fefb8564596ac11eeac096aa, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0136713
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571963593416641215, guid: a5c88055fefb8564596ac11eeac096aa, type: 3}
+      propertyPath: m_Size.z
+      value: 2.0960836
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571963593416641215, guid: a5c88055fefb8564596ac11eeac096aa, type: 3}
+      propertyPath: m_Center.x
+      value: 7.8108315
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571963593416641215, guid: a5c88055fefb8564596ac11eeac096aa, type: 3}
+      propertyPath: m_Center.y
+      value: 0.51053506
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
