@@ -66,8 +66,8 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _FoliageGain: {r: 2.0843372, g: 1.8345323, b: 1.9318181, a: 1}
-    - _SnowGain: {r: 1.1348838, g: 1.1461188, b: 1.1266968, a: 1}
-    - _WoodGain: {r: 1.952, g: 1.9310344, b: 1.8870968, a: 1}
+    - _FoliageGain: {r: 1.54216860, g: 1.41726615, b: 1.46590905, a: 1}
+    - _SnowGain: {r: 1.06744190, g: 1.07305940, b: 1.06334840, a: 1}
+    - _WoodGain: {r: 1.47600000, g: 1.46551720, b: 1.44354840, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

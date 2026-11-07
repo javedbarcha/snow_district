@@ -2855,3 +2855,15 @@ Terrain/original seed hashes, snow quantities, nonforest poses and fleet retaine
 Four scene-camera headings passed; native bright-card overview inspected.
 Evidence: Logs/Forest638/Validation.txt, Placements.csv and
 Logs/ForestAlphaCards/SceneReview.txt. Live traversal and phone costs untested.
+
+
+## Moderate forest card brightness
+
+User chose a fixed middle colour as a compromise between sunlight and shade.
+The shared card material now uses a 50% blend between the original atlas gains
+(1,1,1) and the earlier bright calibrated foliage/snow/wood gains. This supersedes
+the full-bright palette above. The existing simple fogged cutout shader remains;
+no shadow-aware system is installed. Atlas, near-tree materials, geometry, poses,
+collision and 200 m / 2 km visibility settings are unchanged. Only three gain
+vectors were edited and checked; native sun/shade appearance and phone acceptance
+remain unverified for this adjustment. Values/backup: Logs/ForestCardMidtone.
