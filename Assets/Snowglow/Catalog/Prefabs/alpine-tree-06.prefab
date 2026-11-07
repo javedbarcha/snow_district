@@ -62,12 +62,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3af644db58b252f2af76c8518cc490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowglow.DistanceVisibility
-  distance: 230
+  distance: 200
   nearParts:
   - {fileID: 9007346374088057306}
   distantParts:
   - {fileID: 2692134321381995154}
-  distantDistance: 650
+  distantDistance: 2000
   switchBuffer: 12
 --- !u!1 &4998715355445343239
 GameObject:
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 8019223384647244644}
   - component: {fileID: 2633992420318003453}
   - component: {fileID: 2692134321381995154}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Distant forest | crossed alpha cards
   m_TagString: Untagged
   m_Icon: {fileID: 0}

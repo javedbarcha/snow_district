@@ -1799,3 +1799,12 @@ source atlas, near-tree material, mesh and snow dependency hashes matched, and
 scene validation passed. Saved scene bytes preserved; no Play entry/profile
 writes. Evidence: Logs/ForestCardColors/Validation.txt and paired previews.
 Four full-scene camera headings also passed with existing fog/post-processing; the bright-card scene preview was visually inspected. Renderer states, saved scene bytes and dirty state were preserved. Phone performance and live transition acceptance remain untested. Full-scene evidence: Logs/ForestAlphaCards/SceneReview.txt and Logs/ForestCardColors/Scene-bright-cards.png.
+Forest 330 m / +200 completion: Unity 6000.3.8f1 / Android saved/reopened 638
+placements (620 trees/snags, 18 wood), including 200 additions: 76 hills and
+124 slopes, none on flat outskirts. All roots and full physical bounds fit the
+330 m envelope. Full seating, mountain clearance, LOD3, collision, 188/212 m
+hysteresis, 2 km far cutoff and saved camera layer policy passed. Scene validation
+and 19 snow checks passed; protected source hashes, snow quantities, fleet and
+nonforest poses retained. Four full-scene card-on/off views passed (strongest
+9,013 changed pixels); one native scene view inspected. Logs/Forest638 and
+Logs/ForestAlphaCards/SceneReview.txt. Phone performance/live driving untested.

@@ -11,7 +11,7 @@ namespace Snowglow.Editor {
   public override string ToString(){return string.Join("\n",errors.Select(e=>"ERROR: "+e).Concat(warnings.Select(w=>"REVIEW: "+w)).DefaultIfEmpty("Structural checks passed. Visual/handling/device review is separate."));}
  }
  public static class CatalogValidation {
-  public static bool PrimaryForestGeometry(Component component){var visibility=component.GetComponentInParent<DistanceVisibility>();return !visibility||visibility.distantParts==null||!visibility.distantParts.Contains(component.GetComponent<Renderer>());}
+  public static bool PrimaryForestGeometry(Component component){for(var t=component.transform;t;t=t.parent)if(t.name=="Distant forest | crossed alpha cards")return false;var visibility=component.GetComponentInParent<DistanceVisibility>(true);return !visibility||visibility.distantParts==null||!visibility.distantParts.Contains(component.GetComponent<Renderer>());}
   static string VectorKey(Vector3 v)=>v.x.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+","+v.y.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+","+v.z.ToString("R",System.Globalization.CultureInfo.InvariantCulture);
   public static string FitFingerprint(FittingProfile f)=>Hash128.Compute((f.vehicle?f.vehicle.id:"")+"|"+(f.part?f.part.id:"")+"|"+f.socketId+"|"+VectorKey(f.positionOffset)+"|"+VectorKey(f.rotationOffset)).ToString();
   public static string Fingerprint(CatalogAsset a){

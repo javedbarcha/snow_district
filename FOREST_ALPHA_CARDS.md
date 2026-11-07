@@ -70,3 +70,10 @@ Run **Snowglow > Environment > Match forest card colours to 3D trees** after
 changing sun/exposure or project colour space. This is a saved lighting match,
 not dynamic day/night lighting. Flat card silhouettes and missing geometry
 shadows remain different from the 3D trees. Reports/previews: Logs/ForestCardColors.
+Latest forest tuning: 330 m full-bound placement radius, target 638 placements,
+including 200 added trees on hills/slopes only. Geometry/card distance
+is now 200 m with 12 m hysteresis (212 m out, 188 m in); far card cutoff is 2 km.
+Dedicated ForestCards layer 11 extends only card rendering past the previous
+world-layer limit. Existing world fog remains, so this is a culling limit, not
+a fog-free visibility guarantee. See Logs/Forest638/Validation.txt for native
+save/reopen and seating validation status; phone performance remains untested.

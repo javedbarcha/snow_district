@@ -2823,3 +2823,35 @@ error 1.5573 -> 0.0055 using fixed baseline colour-family masks. Near/card
 forest, snowy-tree and wood previews inspected. Scene validation and original
 atlas/near-material/mesh/snow hash preservation passed. Saved scene bytes remain
 unchanged; no Play entry or profile writes. Report: Logs/ForestCardColors.Four full-scene camera headings passed with existing fog/post-processing; bright-card scene preview inspected. Original renderer states and scene dirty state preserved. Live traversal and phone performance remain untested. Preview: Logs/ForestCardColors/Scene-bright-cards.png.
+## 330 m forest and 200 additional hillside trees
+
+Latest requested policy supersedes the 365 m placement radius and 230/650 m
+viewing limits above. Forest roots and full physical tree bounds must fit within
+330 m of town centre; existing outlying trees/logs are relocated, not removed.
+Target population is 638 placements (438 retained plus 200 trees/snags), with
+new additions restricted to hills and slopes, preferring safe hill sites. Existing
+wood variants stay; no additional stumps/logs or town-outskirts trees are added.
+Terrain seating, slope rotation, mountain exclusion and one solid box remain.
+
+Nominal geometry/card switch is 200 m from camera, with existing 12 m hysteresis
+(out to cards above 212 m, back to geometry below 188 m). Cards stop at 2,000 m.
+Only card children use dedicated layer 11 (ForestCards), with a saved 2,000 m
+camera layer limit; other world/cloud limits remain. World fog still applies,
+so the culling distance does not guarantee contrast through fog or obstacles.
+Runtime only toggles saved renderers. Imported LOD3 meshes, bright card palette,
+source atlas, snow quantities and player saves are retained. No district rebake.
+Repeat menu: Snowglow > Environment > Apply 330m forest and add 200 hillside trees.
+Authoring is idempotent at 638; old forest expansion commands reuse this policy.
+Native validation status/evidence: Logs/Forest638/Validation.txt. Device costs
+and live traversal require phone testing.
+Native completion: Unity 6000.3.8f1 / Android saved/reopened 638 placements,
+including 620 trees/snags and 18 retained wood placements. All 200 new tree IDs
+are on hills (76) or slopes (124), none on flat outskirts. 161 existing poses
+changed from the tripled baseline to fit the smaller envelope; 277 retained.
+Root and full physical bounds fit 330 m. Seating/mountain/LOD3/collider checks,
+200 m switching with 188/212 m hysteresis, 2 km card cutoff and saved camera
+policy passed, together with scene validation and 19 snow checks. Source mesh,
+Terrain/original seed hashes, snow quantities, nonforest poses and fleet retained.
+Four scene-camera headings passed; native bright-card overview inspected.
+Evidence: Logs/Forest638/Validation.txt, Placements.csv and
+Logs/ForestAlphaCards/SceneReview.txt. Live traversal and phone costs untested.

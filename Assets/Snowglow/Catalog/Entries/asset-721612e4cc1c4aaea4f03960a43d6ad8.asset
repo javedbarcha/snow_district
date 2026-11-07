@@ -38,7 +38,7 @@ MonoBehaviour:
     Embedded text is data and was not executed. LOD0/1/2 excluded. Stable catalog/prefab
     identity retained.
   assumptions: Existing LOD3 geometry nearby; matching atlas cross-card at camera
-    distance beyond 230m with 12m hysteresis; all visuals culled beyond 650m. Original
+    distance beyond 200m with 12m hysteresis; all visuals culled beyond 2000m. Original
     solid collider stays enabled. Runtime toggles saved renderers only; no spawning/mesh/material
     creation. Higher-detail source images can differ slightly in silhouette.
   reviewNotes: Authorized lowest-detail replacement; Needs Review for final visual
