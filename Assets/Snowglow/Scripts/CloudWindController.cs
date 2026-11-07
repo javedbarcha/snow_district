@@ -20,12 +20,17 @@ namespace Snowglow {
   public Transform initialCloud;public GameObject prefab;public string placementId;
   public Vector3 baselineScale;public Bounds sourceBounds;
   [NonSerialized]public Transform current;
+  [NonSerialized]public Renderer[] currentRenderers;
+  [NonSerialized]public float opacity=1;
  }
  public struct CloudWindPose {public Vector3 position,scale;public Quaternion rotation;}
  [DisallowMultipleComponent]
  public sealed class CloudWindController:MonoBehaviour {
   public Vector3 centre=new Vector3(0,5,0);
   public float radius=1500;
+  public float fadeSeconds=12;
+  MaterialPropertyBlock fadeProperties;
+  static readonly int OpacityProperty=Shader.PropertyToID("_CloudOpacity");
   public int minPopulation=10,maxPopulation=15,distributionVersion;
   float arrivalRemaining,targetRemaining;int targetPopulation;
   public int ActiveCount {get {int n=0;foreach(var s in slots)if(s.current&&s.current.gameObject.activeSelf)n++;return n;}}
@@ -38,7 +43,7 @@ namespace Snowglow {
   public void Initialize(int seed){
    random=new System.Random(seed);Wind=new CloudWindMotion(random,minSpeed,maxSpeed,minChangeSeconds,maxChangeSeconds,turnSeconds);RespawnCount=0;
    targetPopulation=random.Next(minPopulation,maxPopulation+1);arrivalRemaining=Range(5,20);targetRemaining=Range(30,90);
-   foreach(var slot in slots){slot.current=null;if(slot.initialCloud){slot.initialCloud.gameObject.SetActive(false);Place(slot.initialCloud,RandomPoseAt(slot,centre));}}
+   foreach(var slot in slots){slot.current=null;slot.currentRenderers=null;slot.opacity=1;if(slot.initialCloud){slot.initialCloud.gameObject.SetActive(false);Place(slot.initialCloud,RandomPoseAt(slot,centre));}}
    // Stratified area sampling guarantees central coverage without retaining the old ring.
    int[] order=new int[slots.Length];for(int i=0;i<order.Length;i++)order[i]=i;
    for(int i=order.Length-1;i>0;i--){int j=random.Next(i+1);int t=order[i];order[i]=order[j];order[j]=t;}
@@ -49,7 +54,7 @@ namespace Snowglow {
     if(i==0)r=Range(0,150);
     float angle=(phase+i*137.50776f+Range(-25,25))*Mathf.Deg2Rad;
     var pose=RandomPoseAt(slot,centre+new Vector3(Mathf.Cos(angle)*r,0,Mathf.Sin(angle)*r));
-    slot.current=slot.initialCloud;Place(slot.current,pose);slot.current.gameObject.SetActive(true);
+    slot.current=slot.initialCloud;Place(slot.current,pose);slot.current.gameObject.SetActive(true);SetOpacity(slot,OpacityAt(slot.current.position,Wind.Direction*Wind.Speed));
    }
   }
   static void Place(Transform t,CloudWindPose pose){t.SetPositionAndRotation(pose.position,pose.rotation);t.localScale=pose.scale;}
@@ -67,6 +72,20 @@ namespace Snowglow {
    return RandomPoseAt(slot,centre-forward*Mathf.Sqrt(inside*inside-side*side)+right*side);
   }
   // Radius applies to cloud roots; mesh edges may extend across this distant boundary.
+  // Time to the circular downwind exit avoids fading newly arrived upwind clouds.
+  public float OpacityAt(Vector3 position,Vector3 velocity){
+   var p=position-centre;p.y=0;velocity.y=0;float distance=p.sqrMagnitude;
+   if(distance>=radius*radius)return 0;
+   float speed=velocity.sqrMagnitude;if(speed<.00001f||fadeSeconds<=0)return 1;
+   float dot=Vector3.Dot(p,velocity);float time=(-dot+Mathf.Sqrt(Mathf.Max(0,dot*dot+speed*(radius*radius-distance))))/speed;
+   return Mathf.SmoothStep(0,1,Mathf.Clamp01(time/fadeSeconds));
+  }
+  void SetOpacity(CloudWindSlot slot,float opacity){
+   slot.opacity=Mathf.Clamp01(opacity);if(!slot.current)return;
+   if(slot.currentRenderers==null)slot.currentRenderers=slot.current.GetComponentsInChildren<Renderer>(true);
+   if(fadeProperties==null)fadeProperties=new MaterialPropertyBlock();
+   foreach(var renderer in slot.currentRenderers){if(!renderer)continue;renderer.GetPropertyBlock(fadeProperties);fadeProperties.SetFloat(OpacityProperty,slot.opacity);renderer.SetPropertyBlock(fadeProperties);}
+  }
   public bool NeedsReplacement(Vector3 position){var p=position-centre;p.y=0;return p.sqrMagnitude>radius*radius;}
   public void Simulate(float seconds,bool running){
    if(!running||seconds<=0||float.IsNaN(seconds)||float.IsInfinity(seconds))return;
@@ -77,9 +96,9 @@ namespace Snowglow {
    // Substeps handle a hitch without skipping wind transitions or boundary cleanup.
    while(seconds>0){float dt=Mathf.Min(seconds,.25f);seconds-=dt;var old=Wind.Direction*Wind.Speed;Wind.Advance(dt);var offset=(old+Wind.Direction*Wind.Speed)*(.5f*dt);
     foreach(var slot in slots){if(!slot.current)continue;slot.current.position+=offset;if(NeedsReplacement(slot.current.position)){
-      var expired=slot.current.gameObject;slot.current=null;expired.SetActive(false);
+      SetOpacity(slot,0);var expired=slot.current.gameObject;slot.current=null;slot.currentRenderers=null;expired.SetActive(false);
       if(Application.isPlaying)Destroy(expired);else DestroyImmediate(expired);
-    }}
+    }else SetOpacity(slot,OpacityAt(slot.current.position,offset/dt));}
     targetRemaining-=dt;arrivalRemaining-=dt;
     if(targetRemaining<=0){targetPopulation=random.Next(minPopulation,maxPopulation+1);targetRemaining=Range(30,90);}
     while(ActiveCount<minPopulation)if(!SpawnAvailable())break;
@@ -94,7 +113,7 @@ namespace Snowglow {
     var go=slot.initialCloud?slot.initialCloud.gameObject:Instantiate(slot.prefab,transform);
     go.name=slot.placementId+" | wind cloud";Place(go.transform,pose);go.SetActive(true);
     var placement=go.GetComponent<CatalogPlacement>();if(placement)placement.placementId=slot.placementId;
-    slot.current=go.transform;RespawnCount++;return true;
+    slot.current=go.transform;slot.currentRenderers=null;SetOpacity(slot,1);RespawnCount++;return true;
    }return false;
   }
   void Update(){var game=PrototypeSession.Instance;Simulate(Time.deltaTime,!game||game.IsRunning);}

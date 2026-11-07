@@ -2879,3 +2879,69 @@ front/rear lights off; the saved HUD and null-machine fallback use the off icon.
 Existing toggle binding and independent beacon behaviour remain unchanged.
 Serialized/source checks passed; live touch and rendered appearance have not
 been checked for this small adjustment.
+
+## Forest gap redistribution
+
+Latest user request prioritizes filling visible empty forest ground, including
+slopes, by borrowing trees from dense outskirts and less noticeable outer areas.
+Redistributed 40 existing trees: 36 to slopes and 4 to other eligible ground
+outside town. No additions or removals: 638 tree/wood placements, same variants
+and local scales; stumps/logs stayed in place. Donors came from outskirts or the
+outer ring with nearby neighbours; destinations fill visual-centre gaps while
+retaining spacing, the protected town area and physical seating constraints.
+Existing 330 m root/full-bound envelope, mountain exclusion, slope rotation,
+single-box collision and 200 m / 12 m hysteresis / 2 km card policy remain.
+
+Unity 6000.3.8f1 / Android saved/reopened and passed full forest seating checks,
+scene validation and all 19 snow checks. Read-only comparison with the saved
+backup verified exact variant/local-scale retention, no wood/nonforest/fleet
+movement and unchanged snow quantities. Across 2,391 eligible 10 m grid samples,
+mean horizontal distance to the nearest visual tree centre improved from
+17.20 m to 13.26 m (coverage metric, not performance). Before/after overheads
+visually inspected; four gameplay-camera headings also passed card rendering
+review. Initial strict lossy-scale string comparison was replaced by an
+unchanged-local-scale check because rotation causes tiny lossy-scale rounding.
+No runtime spawning, source mesh/material/Terrain edits, district rebake or
+player-save writes. Increased nearby visibility may affect frame cost; live
+traversal and phone performance remain untested. Evidence/backups/previews:
+Logs/ForestGaps. Repeat authoring: Snowglow > Environment > Redistribute forest
+into visible gaps. Read-only saved-layout validation compares with the retained
+before-scene backup and does not redistribute additional trees.
+
+## 500 forest objects, 200 m wood radius and cloud fade
+
+User clarified that 500 means all forest objects combined. Pinefall now has
+405 leafy/sapling trees and 95 dead trunks/snags/stumps/logs (500 total), retaining
+all 26 variants. Removed 138 leafy/sapling instances from denser patches, with
+recent gap-fill IDs protected from deletion. The 200 m restriction includes
+variants 17-19 (dead snags/broken trunk) and 21-26 (stumps/fallen logs); variant
+20 remains a sapling tree. All 95 wood/trunk roots and full horizontal bounds fit
+200 m; 80 were relocated. Other trees retain the 330 m envelope. No source
+models, scales, standing-tree poses, card palette or 200 m / 12 m hysteresis /
+2 km card limits changed. Earlier triple/638 authoring commands detect 500 and
+reuse the current policy instead of expanding it again.
+
+CloudWindController now predicts time to the circular downwind exit and applies
+a 12-second SmoothStep opacity fade. Upwind arrivals remain fully visible;
+clouds reach effectively zero opacity before radial destruction. Wind turns
+update the prediction, and existing gameplay pause holds both motion and fade.
+Existing random arrival/population rules remain: 10-15 active cloud roots, 1.5 km
+radius, 250-450 m full-mesh altitude, original scales, 3-8 m/s wind and timings.
+CloudSky now uses standard alpha blending, backface culling, depth test and no
+depth writes in the transparent queue, retaining the fog-free palette. Per-slot
+cached renderers receive an instanced opacity property through a reused property
+block; no material copies or runtime meshes are created. Transparent overdraw
+and batching costs require phone profiling; this is not a measured speedup.
+
+Unity 6000.3.8f1 / Android saved/reopened and passed full forest seating, mountain/
+town clearance, wood-radius, variant/scale, collision and card-policy checks,
+scene validation and 19 snow checks. Original source/Terrain/snow and retained
+nonforest/cloud/fleet poses preserved; obstacle flag changes zero. Native cloud
+checks cover 3/8 m/s fade monotonicity, full upwind entry opacity, pause, actual
+disposable-fixture destruction/replenishment and 1,000 simulated seconds of
+bounded population. Native opacity 1/.5/0 brightness sums were
+15,809,385 / 7,896,624 / 0. Forest and opaque/half-opacity previews inspected;
+four gameplay headings also rendered. Live driving, phone visuals/performance
+and Android packaging remain untested. Evidence/backups/removed IDs/wood poses:
+Logs/Forest500CloudFade. Repeat menu: Snowglow > Environment > Use 500 forest
+objects, 200m wood and fading clouds. No district rebake or player-save writes.

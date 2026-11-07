@@ -89,3 +89,9 @@ no shadow-aware system is installed. Atlas, near-tree materials, geometry, poses
 collision and 200 m / 2 km visibility settings are unchanged. Only three gain
 vectors were edited and checked; native sun/shade appearance and phone acceptance
 remain unverified for this adjustment. Values/backup: Logs/ForestCardMidtone.
+
+Latest population is 500 total forest objects: 405 leafy/sapling trees plus
+95 dead trunks/snags/stumps/logs. Only the latter group (variants 17-19, 21-26)
+is limited to 200 m root/full-bound radius. Other trees retain 330 m. Geometry/
+card switching remains 200 m with 12 m hysteresis and a 2 km cutoff. The moderate
+fixed card palette is retained. Logs/Forest500CloudFade records validation.

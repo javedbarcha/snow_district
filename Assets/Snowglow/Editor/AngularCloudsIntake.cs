@@ -27,7 +27,7 @@ namespace Snowglow.Editor {
    AssetDatabase.ImportAsset(Source+"Palette.png",ImportAssetOptions.ForceSynchronousImport);
    var importer=(TextureImporter)AssetImporter.GetAtPath(Source+"Palette.png");importer.textureType=TextureImporterType.Default;importer.sRGBTexture=true;importer.mipmapEnabled=false;importer.filterMode=FilterMode.Point;importer.wrapMode=TextureWrapMode.Clamp;importer.textureCompression=TextureImporterCompression.Uncompressed;importer.npotScale=TextureImporterNPOTScale.None;importer.SaveAndReimport();
    var m=AssetDatabase.LoadAssetAtPath<Material>(Source+"CloudPalette.mat");if(!m){m=new Material(Shader.Find("Universal Render Pipeline/Unlit"));AssetDatabase.CreateAsset(m,Source+"CloudPalette.mat");}
-   m.shader=CloudFogAuthoring.ShaderAsset();m.name="Angular clouds | opaque white ice and underside palette";m.SetTexture("_BaseMap",AssetDatabase.LoadAssetAtPath<Texture2D>(Source+"Palette.png"));m.SetColor("_BaseColor",Color.white);m.renderQueue=2000;m.enableInstancing=true;EditorUtility.SetDirty(m);return m;
+   m.shader=CloudFogAuthoring.ShaderAsset();m.name="Angular clouds | fading white ice and underside palette";m.SetTexture("_BaseMap",AssetDatabase.LoadAssetAtPath<Texture2D>(Source+"Palette.png"));m.SetColor("_BaseColor",Color.white);m.renderQueue=3000;m.enableInstancing=true;EditorUtility.SetDirty(m);return m;
   }
   static CatalogAsset Prepare(Cloud c,Material material){
    string path=Source+c.model+".fbx",id="angular-cloud-"+c.index;

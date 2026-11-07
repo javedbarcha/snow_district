@@ -110,3 +110,14 @@ would be a separate optimization if phone measurements justify changing it.
 Native validation: Unity 6000.3.8f1 / Android, 23,376 checks and scene/19 snow checks passed. Saved/reopened bindings and two sky previews inspected. Actual Play/deferred destruction, Android packaging and phone performance remain untested.
 
 Native circular-cloud validation: Unity 6000.3.8f1 / Android passed 115,991 assertions, including 100 startup seeds and two simulated hours. Saved/reopened Pinefall, scene validation and 19 snow checks passed; protected assets and non-cloud/fleet poses matched. Native overhead and horizon previews inspected. Actual Play, Android packaging and phone performance remain untested. Evidence: Logs/CloudWind/PopulationRadius/Validation.txt.
+
+Cloud retirement now fades over the last ~12 seconds of predicted travel to
+the 1,500 m circular boundary (SmoothStep opacity). Upwind entries stay opaque;
+opacity reaches zero at the downwind boundary before normal destruction.
+Pause freezes fade/movement. Wind changes smoothly update the prediction.
+One shared fog-free transparent material uses alpha blending, depth testing,
+no depth writes and backface culling. Cached slot renderers/property blocks
+supply per-instance opacity; no material copies. Population/lifecycle/altitudes/
+sizes/wind and cloud-only spawning permission are retained. Native fade, pause,
+destruction, 1,000 s population and opacity renders passed; phone sorting/overdraw
+and live appearance remain untested. Evidence: Logs/Forest500CloudFade.

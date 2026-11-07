@@ -20,6 +20,7 @@ namespace Snowglow.Editor {
   static string FullPose(CatalogPlacement p)=>p.assetId+"|"+p.transform.localToWorldMatrix.ToString("R");
   [MenuItem("Snowglow/Environment/Triple forest with hills first")]
   public static void TripleForest(){
+   if(All<CatalogPlacement>(SceneManager.GetActiveScene()).Count(Tree)==500){Apply500();return;}
    if(All<CatalogPlacement>(SceneManager.GetActiveScene()).Count(Tree)==638){Apply638();return;}
    tripleChecks=0;cache.Clear();outerIds.Clear();slopeIds.Clear();Directory.CreateDirectory(TripleLogs);
    var scene=SceneManager.GetActiveScene();TripleCheck(scene.path==SceneValidation.ScenePath&&!EditorApplication.isPlayingOrWillChangePlaymode,"open Pinefall with Play stopped");

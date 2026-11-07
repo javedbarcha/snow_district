@@ -1808,3 +1808,26 @@ and 19 snow checks passed; protected source hashes, snow quantities, fleet and
 nonforest poses retained. Four full-scene card-on/off views passed (strongest
 9,013 changed pixels); one native scene view inspected. Logs/Forest638 and
 Logs/ForestAlphaCards/SceneReview.txt. Phone performance/live driving untested.
+
+Forest gap redistribution: Unity 6000.3.8f1 / Android saved/reopened 638 placements
+with 40 existing trees relocated from dense outskirts/outer ring: 36 slope
+placements, 4 on other eligible ground outside town. Terrain support, bounded
+visual burial, mountain clearance, 330 m radius, LOD3, solid collision and card
+policy passed. Exact local scales/variants, wood/nonforest/fleet poses and snow
+quantities matched the before-scene preview. Scene validation and 19 snow checks
+passed. Mean nearest-tree visual-centre gap on 2,391 eligible ground samples:
+17.20 -> 13.26 m. Before/after overheads inspected; four native gameplay headings
+passed. Logs/ForestGaps/Validation.txt and Relocations.csv retain evidence.
+No actual phone/live-driving acceptance or performance improvement claimed.
+
+500-object forest / fading clouds: Unity 6000.3.8f1 / Android saved/reopened 500
+forest placements (405 trees, 95 trunks/logs/stumps), removing 138 and relocating
+80 wood objects inside a 200 m full-bound/root envelope. All 26 variants retained.
+Full seating/mountain/town/LOD3/collision/card checks, scene validation and 19 snow
+checks passed. Source hashes, snow quantities, retained scales and nonforest/
+cloud/fleet poses preserved; zero obstacle-mask changes. Cloud 12 s SmoothStep
+fade passed monotonicity at 3/8 m/s, upwind entry, pause, actual destruction/
+replenishment and 1,000 s bounded-population checks. Native alpha 1/.5/0 brightness
+sums: 15809385/7896624/0. Forest/full/half-opacity renders inspected; four native
+gameplay headings rendered. Logs/Forest500CloudFade/Validation.txt. Phone visuals,
+transparent overdraw/sorting, live traversal and Android packaging untested.

@@ -18,6 +18,7 @@ namespace Snowglow.Editor {
   }
   [MenuItem("Snowglow/Environment/Apply 330m forest and add 200 hillside trees")]
   public static void Apply638(){
+   if(All<CatalogPlacement>(SceneManager.GetActiveScene()).Count(Tree)==500){Apply500();return;}
    var scene=SceneManager.GetActiveScene();Require(scene.path==SceneValidation.ScenePath&&!EditorApplication.isPlayingOrWillChangePlaymode,"open Pinefall stopped");Directory.CreateDirectory(DensityLogs);if(!File.Exists(DensityLogs+"/Pinefall-before.unity"))Require(EditorSceneManager.SaveScene(scene,DensityLogs+"/Pinefall-before.unity",true),"backup");if(scene.isDirty)EditorSceneManager.SaveScene(scene,DensityLogs+"/Pinefall-unsaved-before.unity",true);cache.Clear();outerIds.Clear();slopeIds.Clear();
    var forest=All<CatalogPlacement>(scene).Where(Tree).OrderBy(p=>p.placementId).ToArray();Require(forest.Length==438||forest.Length==638,"expected 438 or completed 638 placements");var terrain=All<Terrain>(scene).Single();var session=All<PrototypeSession>(scene).Single();string snow=SnowData(session.Snow.seed);
    var protectedPaths=All<MeshFilter>(scene).Where(f=>f.sharedMesh).Select(f=>AssetDatabase.GetAssetPath(f.sharedMesh)).Concat(new[]{AssetDatabase.GetAssetPath(terrain.terrainData),AssetDatabase.GetAssetPath(session.Snow.seed)}).Where(p=>p.StartsWith("Assets/")).Distinct().ToDictionary(p=>p,p=>AssetDatabase.GetAssetDependencyHash(p));
