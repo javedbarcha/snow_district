@@ -5593,7 +5593,7 @@ MonoBehaviour:
   - {fileID: 6016835537243873006}
   - {fileID: 7834884831804822361}
   - {fileID: 4519640179460771313}
-  lightsOn: 1
+  lightsOn: 0
   beaconRotor: {fileID: 1185970820501646842}
   beaconDegreesPerSecond: 180
 --- !u!1 &2494049915031149685

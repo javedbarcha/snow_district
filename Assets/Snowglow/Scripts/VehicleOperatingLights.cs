@@ -8,7 +8,7 @@ namespace Snowglow {
   public Renderer[] lamps=new Renderer[0];
   public Renderer rearLamp,beaconLamp,beaconHalo;
   public Renderer[] lampHalos=new Renderer[0];
-  public bool lightsOn=true;
+  public bool lightsOn=false;
   public Transform beaconRotor;
   public float beaconDegreesPerSecond=180;
   float phase;

@@ -2867,3 +2867,15 @@ no shadow-aware system is installed. Atlas, near-tree materials, geometry, poses
 collision and 200 m / 2 km visibility settings are unchanged. Only three gain
 vectors were edited and checked; native sun/shade appearance and phone acceptance
 remain unverified for this adjustment. Values/backup: Logs/ForestCardMidtone.
+
+## Vehicle light button orientation and initial state
+
+The vehicle-light control is horizontally mirrored for both on/off icons. Its
+48 x 48 size, right-side anchoring and screen-space bounds are preserved using
+a centred pivot, -24 px horizontal anchor offset and -1 X scale. Future
+VehicleLightsAuthoring.ConfigureButton repeats the same layout. Both saved
+machinery prefabs and the component default now start their switch-controlled
+front/rear lights off; the saved HUD and null-machine fallback use the off icon.
+Existing toggle binding and independent beacon behaviour remain unchanged.
+Serialized/source checks passed; live touch and rendered appearance have not
+been checked for this small adjustment.
