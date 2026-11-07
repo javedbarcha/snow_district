@@ -1,5 +1,67 @@
 # Verification record
 
+## Cloud fog contrast correction - 7 November 2026
+
+Unity 6000.3.8f1 / Android compiled the cloud-only fog-free palette shader and
+passed scene validation. Original URP material at 1,200 m produced 0 contrast
+pixels against fog sky; new material produced 2,630, and 1,682 at 1,500 m.
+Full-scene gameplay-camera rendering with fog/post-processing passed a cloud-on
+versus cloud-off pixel comparison; gameplay and before/after images inspected.
+Global fog settings, cloud transforms/active states, shared palette texture and
+material GUID remained unchanged. No Play entry or player-save writes. Actual
+live gameplay and Android phone acceptance remain separate. Evidence:
+Logs/CloudFog/Validation.txt and Gameplay-clouds.png.
+
+## Circular cloud population - 7 November 2026
+
+Latest policy: random initial disk scatter including centre, 1,500 m root radius,
+10–15 active clouds and staggered upwind arrivals. Current native results are in
+Logs/CloudWind/PopulationRadius/Validation.txt. Earlier fixed-40/plane checks below
+describe the superseded implementation. Live Play and phone acceptance remain
+untested.
+
+## Wind-driven cloud lifecycle - 7 November 2026
+
+The user's explicit cloud request now supersedes static-cloud behavior and the
+general no-runtime-spawning restriction for cloud roots only. Existing 40 cloud
+slots (five per imported variant) retain prepared prefab references and original
+baseline scales. Editor randomization applies uniform 0.5-3x baseline size,
+random yaw and full-mesh altitude within 250-450 m above town. Initial X/Z sky
+coverage remains prefilled; later clouds spawn at the upwind plane. Repeated
+authoring preserves baselines and does not compound scales.
+
+CloudWindController uses a private RNG, 3-8 m/s horizontal wind, new random
+heading/speed targets every 300-900 gameplay seconds, and a smooth 20-second turn.
+Entry/exit planes sit 1,500 m upwind/downwind of centre (0,5,0), perpendicular to
+current wind. Entries sample +/-900 m across the vertical plane and fit the full
+scaled mesh inside the altitude band. Roots crossing the exit are disabled and
+destroyed, then replaced from the saved same-variant prefab at a fresh entry.
+Forty active clouds remain; Unity may defer retired inactive destruction to the
+end of the frame. Off-course roots beyond ~2.1 km radius are also cleaned up when
+wind turns would otherwise leave them drifting outside the flow volume. Runtime
+creates no meshes/materials, colliders, lights, shadows or snow. This is visual
+cloud wind only; vehicles, trees, smoke and the snow ledger are unaffected.
+Gameplay pause/menu stops both movement and wind timers. State is session-only.
+
+CloudWindAuthoring saves all settings/slots before Play and future explicit
+AngularCloudsIntake reuses it. Native scene clouds remain connected prefab
+instances; imported source meshes/materials/prefabs and the panorama are retained.
+40 active clouds still total 13,280 triangles / 40 renderers / one shared opaque
+material; larger screen coverage, movement and lifecycle costs are unmeasured.
+Guide: CLOUD_WIND.md. Menu: Snowglow > Environment > Install wind-driven cloud
+lifecycle. Evidence/backup/four horizon previews: Logs/CloudWind.
+
+Unity 6000.3.8f1 / Android compiled, saved/reopened and passed 23,376 checks:
+1,000 wind changes, thousands of entry-plane/height/size samples, pause gates,
+movement, actual disposable-Editor-fixture destroy/replacement, fixed active count,
+shared materials and repeat authoring. Two of four native sky previews visually
+inspected. Scene validation and 19 snow checks passed. Protected mesh/Terrain/snow
+hashes and all non-cloud/forest/fleet poses preserved; no player-save writes or
+district rebake. Live Play/deferred lifecycle timing, Android packaging and phone
+performance remain untested. Other deferred weather/night/snowfall work is not
+implemented by this cloud-only change.
+
+
 ## Vehicle-relative Orbit angle - 7 November 2026
 
 Orbit now carries its player-selected yaw with the active vehicle's heading.
@@ -1704,3 +1766,7 @@ static replacements and passed scene/19 snow checks; all eight source variant
 previews and parking row inspected. 13,344 placed triangles; 80 obstacle flags
 updated, quantities/poses/fleet retained. Logs/SnowTownVehicles/Validation.txt.
 Driving, Android packaging and A07 costs untested.
+
+Native circular-cloud validation: Unity 6000.3.8f1 / Android passed 115,991 assertions, including 100 startup seeds and two simulated hours. Saved/reopened Pinefall, scene validation and 19 snow checks passed; protected assets and non-cloud/fleet poses matched. Native overhead and horizon previews inspected. Actual Play, Android packaging and phone performance remain untested. Evidence: Logs/CloudWind/PopulationRadius/Validation.txt.
+
+Cloud visibility native validation (7 November 2026): Unity 6000.3.8f1 / Android compiled, saved/reopened Pinefall and passed scene validation. Native render probes verified a cloud at 1,500 m is visible while the same mesh on the world layer remains culled; both images inspected. Other effective layer limits and DistanceVisibility components preserved. Eight prepared prefabs retain their GUIDs, meshes and materials. Cloud population, wind, snow and forest unchanged. Evidence: Logs/CloudVisibility/Validation.txt. Live Play and phone acceptance remain untested.

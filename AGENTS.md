@@ -1,5 +1,97 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Cloud palette visibility through world fog - 7 November 2026
+
+The 4 km camera limit alone did not keep clouds visible: linear world fog reaches
+full sky colour at 650 m. CloudPalette now uses CloudSky.shader, an opaque,
+palette-textured URP unlit shader without world fog. Other materials and global
+fog retain existing settings. Material GUID, palette texture, backface culling,
+depth testing/writes, shared meshes, cloud layers/population/poses/wind and forest
+culling remain unchanged. AngularCloudsIntake reuses the shader on reimport.
+Validation compares old/new cloud contrast against the fog-coloured sky at
+1,200/1,500 m, plus full-scene gameplay-camera rendering with fog/post-processing.
+The earlier black-background distance probe proved clipping only and missed this
+contrast failure. Evidence: Logs/CloudFog/Validation.txt and Gameplay-clouds.png.
+Repeat menu: Snowglow > Environment > Keep cloud palette visible through world fog.
+Unity 6000.3.8f1 / Android compiled without shader errors and passed scene
+validation. Fog-sky comparison at 1,200 m: old shader 0 contrast pixels, new
+shader 2,630; at 1,500 m new shader 1,682. Full-scene gameplay-camera render
+with fog/post-processing passed cloud-on/off image comparison and was visually
+inspected. Global fog, cloud matrices/active states, palette texture and material
+GUID retained. No Play entry/player-save writes; actual live/phone acceptance
+remains separate.
+
+## Clouds exempt from distance culling - 7 November 2026
+
+Clouds use dedicated layer 10 (Clouds), no DistanceVisibility component or
+per-layer distance cutoff, and no dynamic occlusion. The gameplay camera envelope
+extends to 4 km while every other layer retains its previous effective limit
+(normally 1 km); tree DistanceVisibility stays 230 m. CloudCameraVisibility stores
+and reapplies authored layer distances on enable because native camera layer
+distances are transient. Prepared prefabs and saved instances share the cloud
+layer, including future wind spawns. Population, radial lifecycle, cloud poses,
+meshes, materials, forest and snow remain unchanged. This does not bypass normal
+frustum clipping or put overhead clouds inside a downward-facing view. Repeat menu:
+Snowglow > Environment > Disable distance culling for clouds only. Evidence:
+Logs/CloudVisibility/Validation.txt. Live Play and phone acceptance remain separate.
+
+## Circular sky and 10–15 clouds - 7 November 2026
+
+Supersedes the fixed-40 population and entry/exit planes below. Startup scatters
+10–15 clouds through a 1,500 m horizontal disk, with radial strata and one root
+within 150 m of centre. Clouds expire outside that root radius; later arrivals
+sample the upwind circular arc. Random 5–20 s arrival opportunities and 30–90 s
+population targets stagger replenishment. Only the minimum of 10 is repaired
+immediately. Saved 40 slots retain original size baselines/prefabs and inactive
+source roots, while only 10–15 render (3,320–4,980 triangles). No compounding scale.
+Existing 0.5–3x size, full-mesh 250–450 m altitude, 3–8 m/s wind, 300–900 s targets,
+20 s transitions and gameplay pause remain. This cloud-only runtime lifecycle
+exception does not authorize other runtime factories. Guide: CLOUD_WIND.md.
+Evidence and native-check status: Logs/CloudWind/PopulationRadius/Validation.txt.
+Actual Play, Android packaging and phone costs remain separate acceptance.
+
+## Wind-driven cloud lifecycle - 7 November 2026
+
+The user's explicit cloud request now supersedes static-cloud behavior and the
+general no-runtime-spawning restriction for cloud roots only. Existing 40 cloud
+slots (five per imported variant) retain prepared prefab references and original
+baseline scales. Editor randomization applies uniform 0.5-3x baseline size,
+random yaw and full-mesh altitude within 250-450 m above town. Initial X/Z sky
+coverage remains prefilled; later clouds spawn at the upwind plane. Repeated
+authoring preserves baselines and does not compound scales.
+
+CloudWindController uses a private RNG, 3-8 m/s horizontal wind, new random
+heading/speed targets every 300-900 gameplay seconds, and a smooth 20-second turn.
+Entry/exit planes sit 1,500 m upwind/downwind of centre (0,5,0), perpendicular to
+current wind. Entries sample +/-900 m across the vertical plane and fit the full
+scaled mesh inside the altitude band. Roots crossing the exit are disabled and
+destroyed, then replaced from the saved same-variant prefab at a fresh entry.
+Forty active clouds remain; Unity may defer retired inactive destruction to the
+end of the frame. Off-course roots beyond ~2.1 km radius are also cleaned up when
+wind turns would otherwise leave them drifting outside the flow volume. Runtime
+creates no meshes/materials, colliders, lights, shadows or snow. This is visual
+cloud wind only; vehicles, trees, smoke and the snow ledger are unaffected.
+Gameplay pause/menu stops both movement and wind timers. State is session-only.
+
+CloudWindAuthoring saves all settings/slots before Play and future explicit
+AngularCloudsIntake reuses it. Native scene clouds remain connected prefab
+instances; imported source meshes/materials/prefabs and the panorama are retained.
+40 active clouds still total 13,280 triangles / 40 renderers / one shared opaque
+material; larger screen coverage, movement and lifecycle costs are unmeasured.
+Guide: CLOUD_WIND.md. Menu: Snowglow > Environment > Install wind-driven cloud
+lifecycle. Evidence/backup/four horizon previews: Logs/CloudWind.
+
+Unity 6000.3.8f1 / Android compiled, saved/reopened and passed 23,376 checks:
+1,000 wind changes, thousands of entry-plane/height/size samples, pause gates,
+movement, actual disposable-Editor-fixture destroy/replacement, fixed active count,
+shared materials and repeat authoring. Two of four native sky previews visually
+inspected. Scene validation and 19 snow checks passed. Protected mesh/Terrain/snow
+hashes and all non-cloud/forest/fleet poses preserved; no player-save writes or
+district rebake. Live Play/deferred lifecycle timing, Android packaging and phone
+performance remain untested. Other deferred weather/night/snowfall work is not
+implemented by this cloud-only change.
+
+
 ## Vehicle-relative Orbit angle - 7 November 2026
 
 Orbit now carries its player-selected yaw with the active vehicle's heading.
@@ -2670,3 +2762,7 @@ Report/renders: Logs/AlpineSignBoards/Normals/Validation.txt; source audit:
 SourceAssets/AlpineSignBoards/NormalsAudit-before.json; corrected audit:
 Assets/Snowglow/Catalog/Sources/AlpineSignBoards/NormalsAudit.json. Previous FBX
 bytes remain under ignored Logs/AlpineSignBoards/Normals-before.
+
+Native circular-cloud validation: Unity 6000.3.8f1 / Android passed 115,991 assertions, including 100 startup seeds and two simulated hours. Saved/reopened Pinefall, scene validation and 19 snow checks passed; protected assets and non-cloud/fleet poses matched. Native overhead and horizon previews inspected. Actual Play, Android packaging and phone performance remain untested. Evidence: Logs/CloudWind/PopulationRadius/Validation.txt.
+
+Cloud visibility native validation (7 November 2026): Unity 6000.3.8f1 / Android compiled, saved/reopened Pinefall and passed scene validation. Native render probes verified a cloud at 1,500 m is visible while the same mesh on the world layer remains culled; both images inspected. Other effective layer limits and DistanceVisibility components preserved. Eight prepared prefabs retain their GUIDs, meshes and materials. Cloud population, wind, snow and forest unchanged. Evidence: Logs/CloudVisibility/Validation.txt. Live Play and phone acceptance remain untested.

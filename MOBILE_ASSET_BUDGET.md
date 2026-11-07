@@ -1,5 +1,54 @@
 # Snowglow mobile art budget
 
+Current cloud policy (7 November): 10–15 active clouds, 3,320–4,980 triangles and
+10–15 renderers before culling; one shared opaque material. Forty authored slots
+retain inactive roots and scale baselines, so inactive-inclusive inventory still
+differs from active geometry. Distribution spans a 1,500 m radius with staggered
+upwind arrivals and radial cleanup. Earlier fixed-40 numbers below are historical.
+Phone profiling remains required; see CLOUD_WIND.md.
+
+## Wind-driven cloud lifecycle - 7 November 2026
+
+The user's explicit cloud request now supersedes static-cloud behavior and the
+general no-runtime-spawning restriction for cloud roots only. Existing 40 cloud
+slots (five per imported variant) retain prepared prefab references and original
+baseline scales. Editor randomization applies uniform 0.5-3x baseline size,
+random yaw and full-mesh altitude within 250-450 m above town. Initial X/Z sky
+coverage remains prefilled; later clouds spawn at the upwind plane. Repeated
+authoring preserves baselines and does not compound scales.
+
+CloudWindController uses a private RNG, 3-8 m/s horizontal wind, new random
+heading/speed targets every 300-900 gameplay seconds, and a smooth 20-second turn.
+Entry/exit planes sit 1,500 m upwind/downwind of centre (0,5,0), perpendicular to
+current wind. Entries sample +/-900 m across the vertical plane and fit the full
+scaled mesh inside the altitude band. Roots crossing the exit are disabled and
+destroyed, then replaced from the saved same-variant prefab at a fresh entry.
+Forty active clouds remain; Unity may defer retired inactive destruction to the
+end of the frame. Off-course roots beyond ~2.1 km radius are also cleaned up when
+wind turns would otherwise leave them drifting outside the flow volume. Runtime
+creates no meshes/materials, colliders, lights, shadows or snow. This is visual
+cloud wind only; vehicles, trees, smoke and the snow ledger are unaffected.
+Gameplay pause/menu stops both movement and wind timers. State is session-only.
+
+CloudWindAuthoring saves all settings/slots before Play and future explicit
+AngularCloudsIntake reuses it. Native scene clouds remain connected prefab
+instances; imported source meshes/materials/prefabs and the panorama are retained.
+40 active clouds still total 13,280 triangles / 40 renderers / one shared opaque
+material; larger screen coverage, movement and lifecycle costs are unmeasured.
+Guide: CLOUD_WIND.md. Menu: Snowglow > Environment > Install wind-driven cloud
+lifecycle. Evidence/backup/four horizon previews: Logs/CloudWind.
+
+Unity 6000.3.8f1 / Android compiled, saved/reopened and passed 23,376 checks:
+1,000 wind changes, thousands of entry-plane/height/size samples, pause gates,
+movement, actual disposable-Editor-fixture destroy/replacement, fixed active count,
+shared materials and repeat authoring. Two of four native sky previews visually
+inspected. Scene validation and 19 snow checks passed. Protected mesh/Terrain/snow
+hashes and all non-cloud/forest/fleet poses preserved; no player-save writes or
+district rebake. Live Play/deferred lifecycle timing, Android packaging and phone
+performance remain untested. Other deferred weather/night/snowfall work is not
+implemented by this cloud-only change.
+
+
 ## Tripled hill-weighted forest - 6 November 2026
 
 User requested 3x the current population before testing Android phones, with

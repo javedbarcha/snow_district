@@ -1,5 +1,8 @@
 # Snowglow — editable primitive district prototype
 
+Clouds now drift with changing wind, with 0.5-3x size variation and bounded
+upwind spawn/downwind cleanup. See [cloud wind and lifecycle](CLOUD_WIND.md).
+
 Mobile testing: tap **STATS** near the upper-right to toggle FPS/frame time,
 memory and supported rendering counters. See [mobile performance stats](MOBILE_PERFORMANCE_STATS.md).
 
@@ -209,7 +212,8 @@ UI and loader checks/results are recorded in Logs/DrivingButtons/Validation.txt
 and Logs/DrivingControls.txt. Physical-phone ergonomics remain to be tested.
 
 All eight angular cloud variants are prepared in the catalog and scattered as
-40 saved sky objects in Pinefall, using one shared opaque palette with no cloud
+40 authored slots in Pinefall, with 10–15 active clouds scattered through a
+1,500 m radius including town centre, using one shared opaque palette with no cloud
 colliders or shadows. See SourceAssets/AngularClouds/README.md for source details,
 counts and the repeat-safe Editor command. Native save/reopen and scene validation
 passed; Android performance remains untested.

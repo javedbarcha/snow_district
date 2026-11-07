@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6411831621770014171}
   - component: {fileID: 4893303069423512353}
   - component: {fileID: 4368102785028715819}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 02_Wide_Cumulus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5746717683134831580}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: VisualRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5037044955847090005}
   - component: {fileID: 8300419717366320699}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: angular-cloud-02
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,5 +1,18 @@
 # Prototype structure and extension boundaries
 
+`CloudWindController` owns 40 authored slots with 10–15 active visual clouds. A private
+`CloudWindMotion` state advances horizontal wind; saved prefab/source-bound/
+baseline-scale bindings drive entry/exit replacement without creating meshes or
+materials. Runtime root instantiation/destruction is a narrow exception explicitly
+requested for clouds; it does not expand runtime factories to other content.
+Editor `CloudWindAuthoring` authors and validates bindings; cloud reimport reuses
+it. Gameplay pause stops wind/movement; cloud state is never written to profiles.
+Startup stratifies a random scatter through a 1,500 m disk, including its centre.
+Radial exits destroy roots; random upwind-arc arrivals follow independent population
+and arrival timers, with immediate minimum-only replenishment. Inactive saved roots
+form a bounded reservoir and preserve baseline scales. See CLOUD_WIND.md.
+
+
 `MobilePerformanceStats` observes wall-clock frame intervals and optional
 `ProfilerRecorder` counters while its saved overlay is visible. Counter lifetime
 is scoped to visibility/foreground state; no game-state or save writes. Fixed
