@@ -1,5 +1,36 @@
 # Snowglow mobile art budget
 
+## Tripled hill-weighted forest - 6 November 2026
+
+User requested 3x the current population before testing Android phones, with
+hills > hilly slopes > outskirts. Pinefall now has 438 LOD3 tree/wood placements
+(420 trees/snags, 18 stumps/logs), adding 292 to the audited 146. Every variant's
+population is exactly tripled. All 146 prior poses/IDs/variants remain unchanged.
+Distribution: 241 hills, 132 hilly slopes, 65 outskirts (about 55/30/15%). Hills
+are Terrain >=15 m above town with slope <12 degrees; otherwise >=5 degrees is
+hillside, with remaining outer terrain classified as outskirts. These are Terrain
+hills, not placements inside the imported mountain meshes. Existing 365 m
+root/full-bounds radius, 3 m mountain exclusion and near-side visibility rules,
+terrain support/visual burial limits, slope-aware rotation, one solid box per
+instance and 230 m render-distance culling remain. No higher LODs or new materials.
+
+Forest geometry: 479,481 imported vertices / 187,488 triangles / 657 renderers.
+Scene mesh inventory: 2,107,459 vertices / 1,000,184 triangles / 1,749 renderers,
+before camera culling and excluding Terrain/particles/UI. These are not draw
+calls, visible-frame counts or performance timings. The prior 146-instance audit
+is preserved at Reports/GeometryAuditBaseline_146; Reports/GeometryAudit is current.
+
+Unity 6000.3.8f1 / Android compiled, saved/reopened Pinefall and passed 2,851 checks
+plus full terrain seating validation, scene validation and all 19 snow checks.
+Native fog-free overview inspected. Snow mask changes: zero; no new seed needed.
+Original sources/meshes/Terrain/snow quantities and all prior catalog/fleet poses
+preserved. No district rebake, player-save writes or runtime spawning. Actual
+driving, Android packaging and phone performance remain untested. Menu:
+Snowglow > Environment > Triple forest with hills first. The former half-expansion
+menu forwards to this density policy when triple placements exist, avoiding
+further multiplication. Evidence/backup/placement CSV/overview: Logs/ForestTriple.
+
+
 Home collision simplification (6 November): 40 placed home/foundation assemblies
 now use 40 solid full-height boxes instead of 230 colliders. Separate fence shapes
 remain. Seven catalog prefabs each use one box, removed as a scene override when

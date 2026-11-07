@@ -1,0 +1,1 @@
+PASS: read-only native Unity mesh inventory; saved scene hash and active scene/dirty state preserved. No asset saves, runtime entry, geometry changes or player-save writes.

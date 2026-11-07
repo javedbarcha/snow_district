@@ -1,0 +1,16 @@
+﻿category,vertices,triangles,renderers,materialSlots,uniqueMaterials,shadowRenderers,activeEnabledTriangles
+Interactive snow,1265280,632640,256,256,1,256,632640
+Homes,149096,72552,160,160,3,120,72552
+Trees and wood (LOD3),159827,62496,219,219,2,219,62496
+Sign boards,26022,18050,102,102,2,97,17482
+Street lights,30316,16744,75,75,3,50,16744
+Playable machinery,29247,16018,43,67,19,15,15050
+Parked vehicles,26756,13344,15,15,3,15,13344
+Clouds,37350,13280,40,40,1,0,13280
+Mountains,22711,10088,24,24,2,24,10088
+Facilities,15420,7844,16,16,4,16,7844
+Lot foundations and fences,7680,3840,320,320,2,320,3840
+Snowmen,7264,3000,6,6,2,6,3000
+Traction ramp,5580,2668,2,2,2,2,2668
+"Roads, curbs and markings",5064,2532,25,25,5,24,2532
+Other authored scenery,192,96,8,8,1,8,96

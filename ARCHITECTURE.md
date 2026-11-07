@@ -1,5 +1,14 @@
 # Prototype structure and extension boundaries
 
+`MobilePerformanceStats` observes wall-clock frame intervals and optional
+`ProfilerRecorder` counters while its saved overlay is visible. Counter lifetime
+is scoped to visibility/foreground state; no game-state or save writes. Fixed
+sample/sort storage and twice-per-second text updates limit instrumentation cost.
+`MobileStatsAuthoring` saves the UI and persistent click listener before Play,
+and driving-HUD authoring includes it. See MOBILE_PERFORMANCE_STATS.md for metric
+meaning, unsupported counters and device-validation limits.
+
+
 `Editor/HomeColliderAuthoring` implements the user's solid-home collision policy.
 Reusable winter-home prefabs each have one enclosing box. Placed home lots instead
 extend the foundation box to enclose the full visual height/footprint and remove

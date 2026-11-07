@@ -22,7 +22,7 @@ namespace Snowglow {
   public string ModeName=>mode.ToString().ToUpperInvariant();
   public bool Follow {get=>mode==CameraMode.Follow;set=>SetMode(value?CameraMode.Follow:CameraMode.Isometric);}
   Vector3 velocity;Transform lastTarget;bool initialized,resetRequested=true,mouseCaptured;
-  float manualHold,pinchDistance;int pinchA=-1,pinchB=-1;
+  float manualHold,pinchDistance,orbitHeading;int pinchA=-1,pinchB=-1;
   readonly Dictionary<int,Vector2> fingers=new Dictionary<int,Vector2>();
   readonly List<int> released=new List<int>();readonly List<RaycastResult> uiHits=new List<RaycastResult>();
   readonly RaycastHit[] obstacles=new RaycastHit[32];PointerEventData pointer;EventSystem pointerEvents;
@@ -100,8 +100,10 @@ namespace Snowglow {
    var body=target.GetComponent<Rigidbody>();
    float signedSpeed=signedSpeedOverride??(body?Vector3.Dot(body.linearVelocity,target.forward):0);
    dt=Mathf.Clamp(dt,.0001f,.1f);bool recenter=resetRequested;bool switched=lastTarget!=target;lastTarget=target;
-   if(resetRequested||switched){Yaw=Mathf.Repeat(target.eulerAngles.y,360);Pitch=Mathf.Clamp(orbitPitch,5,75);Distance=Mathf.Clamp(orbitDistance,7,42);manualHold=0;resetRequested=false;ClearGesture();if(isometricSize<=0)isometricSize=isometricNearSize;followPose=0;followPoseVelocity=0;}
-   if(Interactive&&controls){ReadInput(dt);manualHold=Mathf.Max(0,manualHold-dt);}else ClearGesture();
+   if(resetRequested||switched){Yaw=Mathf.Repeat(target.eulerAngles.y,360);orbitHeading=target.eulerAngles.y;Pitch=Mathf.Clamp(orbitPitch,5,75);Distance=Mathf.Clamp(orbitDistance,7,42);manualHold=0;resetRequested=false;ClearGesture();if(isometricSize<=0)isometricSize=isometricNearSize;followPose=0;followPoseVelocity=0;}
+   // Keep the selected orbit azimuth relative to vehicle heading, including wraparound.
+   // Manual Rotate changes Yaw directly; subsequent turns carry that new angle along.
+   if(Interactive&&controls){Yaw=Mathf.Repeat(Yaw+Mathf.DeltaAngle(orbitHeading,target.eulerAngles.y),360);orbitHeading=target.eulerAngles.y;ReadInput(dt);manualHold=Mathf.Max(0,manualHold-dt);}else ClearGesture();
    if(controls){
     float desiredSize=Mathf.Lerp(isometricNearSize,isometricFarSize,Mathf.Clamp01(Mathf.Abs(signedSpeed)/Mathf.Max(1,isometricFullZoomSpeed)));
     isometricSize=Mathf.Lerp(isometricSize,desiredSize,1-Mathf.Exp(-dt/Mathf.Max(.1f,isometricZoomResponse)));

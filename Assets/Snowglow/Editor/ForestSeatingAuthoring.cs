@@ -9,7 +9,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 namespace Snowglow.Editor {
- public static class ForestSeatingAuthoring {
+ public static partial class ForestSeatingAuthoring {
   const string Request="Logs/ExpandAndSeatForest.request",Logs="Logs/ForestSeating",Extra="pinefall-tree-extra-";
   static T[] All<T>(Scene s)where T:Component=>s.GetRootGameObjects().SelectMany(g=>g.GetComponentsInChildren<T>(true)).ToArray();
   static bool Tree(CatalogPlacement p)=>p&&(p.assetId??"").StartsWith("alpine-tree-",StringComparison.Ordinal);
@@ -87,6 +87,7 @@ namespace Snowglow.Editor {
   }
   [MenuItem("Snowglow/Environment/Expand forest by half and repair all terrain seating")]
   public static void Install(){
+   if(All<CatalogPlacement>(SceneManager.GetActiveScene()).Any(p=>Tree(p)&&(p.placementId??"").StartsWith(TriplePrefix,StringComparison.Ordinal))){TripleForest();return;}
    var scene=SceneManager.GetActiveScene();Require(scene.path==SceneValidation.ScenePath&&!EditorApplication.isPlayingOrWillChangePlaymode,"open Pinefall with Play stopped");Directory.CreateDirectory(Logs);if(!File.Exists(Logs+"/Pinefall-before.unity"))File.Copy(scene.path,Logs+"/Pinefall-before.unity");if(scene.isDirty)Require(EditorSceneManager.SaveScene(scene,Logs+"/Pinefall-unsaved-before.unity",true),"backup unsaved work failed");cache.Clear();
    var forest=All<CatalogPlacement>(scene).Where(Tree).OrderBy(p=>p.placementId).ToArray();int original=forest.Count(p=>!(p.placementId??"").StartsWith(Extra,StringComparison.Ordinal)),targetExtra=Mathf.CeilToInt(original*.5f);Require(original>0,"forest is empty");
    var extra=forest.Where(p=>(p.placementId??"").StartsWith(Extra,StringComparison.Ordinal)).ToArray();Require(extra.Length==0||extra.Length==targetExtra,"partial earlier expansion requires inspection");

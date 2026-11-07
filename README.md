@@ -1,5 +1,8 @@
 # Snowglow — editable primitive district prototype
 
+Mobile testing: tap **STATS** near the upper-right to toggle FPS/frame time,
+memory and supported rendering counters. See [mobile performance stats](MOBILE_PERFORMANCE_STATS.md).
+
 Unity 6.3 LTS / URP / Android / offline. Reference device: Samsung Galaxy A07. Target: 30 FPS; device performance is not yet measured.
 
 Latest [isometric-facing scene arrangement](ISOMETRIC_LAYOUT.md): home entrances
@@ -27,20 +30,22 @@ All 12 former primitive mountains now use a shuffled mix of the [five imported a
 
 All [12 alpine street-light variants](SourceAssets/AlpineStreetLights/README.md) are prepared as reusable catalog prefabs and used across 28 Pinefall fixtures, replacing the nine primitive poles and adding depot bollards, neighborhood globes and a workshop wall lantern. Frame, opaque luminous surfaces and removable snow caps are separate. Optional shadowless point lights are saved under an inactive **Optional lights | enable in Editor (mobile default off)** group. Use **Snowglow > Asset intake > Import twelve alpine street lights** for repeat-safe installation. Unity save/reopen, scene checks and 19 snow checks passed; night lighting and device performance remain untested.
 
-The forest now contains **146 tree/wood instances** (97 + 49), using only the
-lowest supplied **LOD3** from the [four-LOD alpine pack](SourceAssets/AlpineTreesLowestLOD/README.md).
-All 26 variants remain represented. Terrain seating uses a slight tree-trunk tilt (up to 12 degrees) and fully
-slope-aligned wood. All forest bounds stay within 470 m of town, on the near side
-of mountain envelopes with 3 m clearance. Following the marked overhead reference,
-73 pieces extend into the outer band beyond 340 m; the farthest root is 467.9 m away.
-111 trees and all six wood pieces occupy slopes of 5 degrees or more.
-Forest geometry is **62,496 triangles / 219 renderers**. Removable snow,
-collision proxies and 230 m distance culling remain; no LODGroup switching.
-**Snowglow > Environment > Expand forest by half and repair all terrain seating**
-repeats the repair without adding duplicates. Unity compilation, save/reopen,
-support and visible-vertex checks, scene validation and 19 snow checks passed.
-Three native forest views were inspected; phone performance remains untested.
-Original sources, Terrain, snow depth/credit/volume and player saves are preserved.
+The forest now contains **438 LOD3 tree/wood placements**: 420 trees/snags and
+18 stumps/logs, tripling the audited 146 while retaining every existing pose and
+all 26 [lowest-LOD variants](SourceAssets/AlpineTreesLowestLOD/README.md).
+Distribution favours **hills (241), hilly slopes (132), then outskirts (65)**.
+All roots/full bounds stay within 365 m, clear imported mountain envelopes by
+3 m, and remain on their district-facing side. Terrain-grounded trees tilt up to
+12 degrees; wood aligns to slopes. Single-box collision, detachable snow and
+230 m distance culling remain. Forest geometry is **479,481 imported vertices /
+187,488 triangles / 657 renderers**. No LODGroups or runtime spawning.
+**Snowglow > Environment > Triple forest with hills first** retains this target
+on repeat. Unity saved/reopened, passed terrain/scene checks and 19 snow checks;
+the native overview was inspected. Sources, Terrain, snow and existing poses are
+preserved. Android build/phone performance are untested. See the
+[current geometry audit](Reports/GeometryAudit/AssetGeometryAudit.md); the
+[146-instance baseline](Reports/GeometryAuditBaseline_146/AssetGeometryAudit.md)
+is retained for comparison.
 
 The [alpine sign-board kit](SourceAssets/AlpineSignBoards/README.md) keeps all 12
 catalog variants. Pinefall uses the user's curated **31-sign** layout: seven

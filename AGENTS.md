@@ -1,5 +1,112 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Vehicle-relative Orbit angle - 7 November 2026
+
+Orbit now carries its player-selected yaw with the active vehicle's heading.
+Each running update adds the shortest vehicle-heading delta before reading new
+orbit input; a new drag/key orbit establishes the retained angle. Heading wrap
+is handled without a full-circle jump. Pitch and requested zoom remain selected,
+with existing smoothing, terrain/obstacle safety and level horizon retained.
+Pause holds the heading anchor; resume applies any intervening heading change.
+Reset, vehicle switching and mode reentry retain their existing rear recentering.
+Follow and Isometric behavior, gestures, controls and saved camera tuning remain.
+No save schema, scene/prefab authoring, physics or runtime object creation changes.
+
+Unity 6000.3.8f1 / Android compiled and passed 2,660 checks, including 1,320 sampled
+turning frames with forward/reverse speeds, a second manual angle held beyond
+six seconds, settled camera transform, yaw wrap, pause/resume, pitch/zoom retention,
+vehicle tilt/roll, reset/switch/reentry and unchanged Isometric orientation.
+Scene validation and all 19 snow checks passed. Saved scene bytes and active
+scene dirty state were preserved; no source/layout/snow/player-save writes.
+Actual live driving/touch gestures, Android packaging and phone performance remain
+untested. Evidence: Logs/OrbitHeading/Validation.txt. Repeat menu:
+Snowglow > Validate vehicle-relative Orbit angle. See CAMERA_MODES.md.
+
+
+## Mobile performance stats toggle - 6 November 2026
+
+Added a saved STATS button near the upper-right, with an optional compact
+safe-area readout. Default hidden; available while driving and in menus. Readout
+images/text do not intercept touch or orbit gestures. Teal diagnostic styling
+keeps existing vehicle-control art and event bindings intact.
+
+MobilePerformanceStats shows rolling wall-clock FPS, average/p99 frame time
+(last ~5 s, bounded to 2,048 samples), optional CPU main/GPU timings, Unity used/
+reserved memory, managed heap/last-frame allocations, draw calls/batches/SetPass,
+triangles/vertices, resolution, graphics API, build type and device model. Timing
+uses realtime rather than scaled gameplay delta. Rendering/memory counters are
+last completed samples, not rolling averages; CPU can include waits. Unsupported
+or unsampled counters show n/a, not misleading zero GPU time. Unity memory is not
+Android process PSS. No global frame-timing/deep-profiler settings changed.
+
+Counters exist only while visible/foregrounded and are disposed on hide,
+background, disable and destroy. Focus/pause transitions clear the timing window.
+Text refreshes twice per second with reused sample/sort buffers; the diagnostic
+still has measurement overhead. All UI/fonts/listeners are authored in Editor;
+runtime creates no UI objects, meshes or materials. No profile/schema changes.
+Future driving HUD authoring reuses MobileStatsAuthoring.Apply. Guide:
+MOBILE_PERFORMANCE_STATS.md. Menu: Snowglow > UI > Install mobile performance
+stats toggle. Evidence/backup/native HUD preview: Logs/MobileStats.
+
+Unity 6000.3.8f1 / Android compiled, saved/reopened Pinefall and passed 637 checks:
+persistent toggle binding/open/close, default hidden, non-blocking readout,
+constant/variable frame-rate and p99 calculations, rolling-window eviction,
+bounded storage, invalid samples, n/a-versus-zero and hide/background cleanup.
+Native HUD preview inspected. Scene validation and 19 snow checks passed; snow
+seed hash and all forest/catalog/fleet poses unchanged. No player-save writes.
+Actual phone taps/counter availability, live Play timing accuracy, Android
+packaging and device performance remain untested.
+
+
+## Tripled hill-weighted forest - 6 November 2026
+
+User requested 3x the current population before testing Android phones, with
+hills > hilly slopes > outskirts. Pinefall now has 438 LOD3 tree/wood placements
+(420 trees/snags, 18 stumps/logs), adding 292 to the audited 146. Every variant's
+population is exactly tripled. All 146 prior poses/IDs/variants remain unchanged.
+Distribution: 241 hills, 132 hilly slopes, 65 outskirts (about 55/30/15%). Hills
+are Terrain >=15 m above town with slope <12 degrees; otherwise >=5 degrees is
+hillside, with remaining outer terrain classified as outskirts. These are Terrain
+hills, not placements inside the imported mountain meshes. Existing 365 m
+root/full-bounds radius, 3 m mountain exclusion and near-side visibility rules,
+terrain support/visual burial limits, slope-aware rotation, one solid box per
+instance and 230 m render-distance culling remain. No higher LODs or new materials.
+
+Forest geometry: 479,481 imported vertices / 187,488 triangles / 657 renderers.
+Scene mesh inventory: 2,107,459 vertices / 1,000,184 triangles / 1,749 renderers,
+before camera culling and excluding Terrain/particles/UI. These are not draw
+calls, visible-frame counts or performance timings. The prior 146-instance audit
+is preserved at Reports/GeometryAuditBaseline_146; Reports/GeometryAudit is current.
+
+Unity 6000.3.8f1 / Android compiled, saved/reopened Pinefall and passed 2,851 checks
+plus full terrain seating validation, scene validation and all 19 snow checks.
+Native fog-free overview inspected. Snow mask changes: zero; no new seed needed.
+Original sources/meshes/Terrain/snow quantities and all prior catalog/fleet poses
+preserved. No district rebake, player-save writes or runtime spawning. Actual
+driving, Android packaging and phone performance remain untested. Menu:
+Snowglow > Environment > Triple forest with hills first. The former half-expansion
+menu forwards to this density policy when triple placements exist, avoiding
+further multiplication. Evidence/backup/placement CSV/overview: Logs/ForestTriple.
+
+
+## Read-only asset geometry audit - 6 November 2026
+
+Reports/GeometryAudit/AssetGeometryAudit.md contains native saved-scene counts,
+all 26 LOD3 tree/wood variants, all 146 forest placements and 132 catalog rows.
+Forest: 159,827 imported vertices / 62,496 triangles / 219 mesh renderers.
+Whole scene mesh inventory: 1,787,805 vertices / 875,192 triangles / 1,311 renderers;
+Terrain, particles and generated lettering/UI are separate. Snow contributes
+632,640 mesh triangles; foundations/fences have 320 renderers for 3,840 triangles.
+Per-type recommendations prioritize target-device profiling, snow updates and
+small spatial batching experiments over blanket tree/mountain decimation.
+These are authored inventory totals, not visible-frame geometry, draw calls, FPS
+or timing measurements. Unity 6000.3.8f1 / Android audit used a preview scene and
+preserved saved scene hash and active scene/dirty state. No scene/assets saved,
+geometry changes, Play entry, player-save writes or Android/device test.
+Repeat Editor menu: Snowglow > Audit > Saved scene geometry inventory (read only),
+then python Tools/AssetIntake/report_geometry_audit.py. CSVs and native JSON retained.
+
+
 ## One enclosing collider per home - 6 November 2026
 
 User requested a single box enclosing each whole home, preferably extending its

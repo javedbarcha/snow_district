@@ -9,7 +9,7 @@ Existing serialized Scenic values migrate to Isometric.
 | --- | --- |
 | Isometric | Closer orthographic view at rest; smoothly widens with vehicle speed |
 | Follow | Fixed rear offset; gentle pitch only: stopped 35 degrees, reverse 45, forward 15 |
-| Orbit | Manual full 360-degree inspection around the active machine |
+| Orbit | Player-selected angle relative to the vehicle, following its heading through turns |
 
 Isometric uses a 12 m orthographic half-height at rest and 19.2 m at 8 m/s,
 with a 1.1 s exponential response. Reverse speed widens it too. Narrower aspect
@@ -37,7 +37,12 @@ In Orbit:
 | Reset | Home | VIEW RESET |
 
 Orbit starts at 15 m / 25 degrees, with 7-42 m distance, 5-75 degree pitch and full
-yaw. HUD-origin touches are excluded from camera gestures. Switching machinery
+yaw. Your chosen yaw stays relative to the vehicle: turning the machine carries
+the camera around with it, and another orbit gesture establishes the new retained
+angle. Pitch and requested zoom stay as selected. There is no timed return to
+the rear view. Pause holds the heading anchor; reset restores the default rear
+angle, and switching machines/modes keeps the existing recentering behavior.
+The horizon remains level rather than inheriting chassis roll. HUD-origin touches are excluded from camera gestures. Switching machinery
 recentres the camera. Pause freezes speed zoom and direction changes. Camera
 preferences remain session-only, with no player-save schema change.
 
@@ -59,3 +64,5 @@ The isometric roof correction passed native sampled tracking, canopy-obstruction
 zoom, aspect-ratio and depot near-plane checks with inspected renders. Evidence:
 `Logs/IsometricRoof/Validation.txt`. Live driving and phone profiling remain
 separate acceptance tasks.
+
+Vehicle-relative Orbit tracking passed 2,660 native checks on Unity 6000.3.8f1 / Android, including 1,320 sampled turning frames and a changed player angle retained through later turns. Evidence: `Logs/OrbitHeading/Validation.txt`. This is sampled camera/input-independent validation, not a live phone-driving test.
