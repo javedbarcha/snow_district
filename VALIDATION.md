@@ -1787,3 +1787,15 @@ Driving, Android packaging and A07 costs untested.
 Native circular-cloud validation: Unity 6000.3.8f1 / Android passed 115,991 assertions, including 100 startup seeds and two simulated hours. Saved/reopened Pinefall, scene validation and 19 snow checks passed; protected assets and non-cloud/fleet poses matched. Native overhead and horizon previews inspected. Actual Play, Android packaging and phone performance remain untested. Evidence: Logs/CloudWind/PopulationRadius/Validation.txt.
 
 Cloud visibility native validation (7 November 2026): Unity 6000.3.8f1 / Android compiled, saved/reopened Pinefall and passed scene validation. Native render probes verified a cloud at 1,500 m is visible while the same mesh on the world layer remains culled; both images inspected. Other effective layer limits and DistanceVisibility components preserved. Eight prepared prefabs retain their GUIDs, meshes and materials. Cloud population, wind, snow and forest unchanged. Evidence: Logs/CloudVisibility/Validation.txt. Live Play and phone acceptance remain untested.
+
+## Forest card brightness and palette matching
+
+Unity 6000.3.8f1 / Android passed same-lighting, sun-facing native 3D/card
+comparisons in the project's Gamma colour space. Aggregate palette-family error
+was reduced from 1.5573 to 0.0055; after-samples retain the baseline pixel-family
+masks so clipped white foliage cannot be counted as snow. Evergreen, snowy-tree
+and stump comparisons visually inspected. Shared card material/shader only;
+source atlas, near-tree material, mesh and snow dependency hashes matched, and
+scene validation passed. Saved scene bytes preserved; no Play entry/profile
+writes. Evidence: Logs/ForestCardColors/Validation.txt and paired previews.
+Four full-scene camera headings also passed with existing fog/post-processing; the bright-card scene preview was visually inspected. Renderer states, saved scene bytes and dirty state were preserved. Phone performance and live transition acceptance remain untested. Full-scene evidence: Logs/ForestAlphaCards/SceneReview.txt and Logs/ForestCardColors/Scene-bright-cards.png.

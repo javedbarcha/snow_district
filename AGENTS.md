@@ -2801,3 +2801,25 @@ bytes remain under ignored Logs/AlpineSignBoards/Normals-before.
 Native circular-cloud validation: Unity 6000.3.8f1 / Android passed 115,991 assertions, including 100 startup seeds and two simulated hours. Saved/reopened Pinefall, scene validation and 19 snow checks passed; protected assets and non-cloud/fleet poses matched. Native overhead and horizon previews inspected. Actual Play, Android packaging and phone performance remain untested. Evidence: Logs/CloudWind/PopulationRadius/Validation.txt.
 
 Cloud visibility native validation (7 November 2026): Unity 6000.3.8f1 / Android compiled, saved/reopened Pinefall and passed scene validation. Native render probes verified a cloud at 1,500 m is visible while the same mesh on the world layer remains culled; both images inspected. Other effective layer limits and DistanceVisibility components preserved. Eight prepared prefabs retain their GUIDs, meshes and materials. Cloud population, wind, snow and forest unchanged. Evidence: Logs/CloudVisibility/Validation.txt. Live Play and phone acceptance remain untested.
+
+## Bright forest-card palette matching
+
+Forest cards now use ForestCardPalette.shader with separate foliage, snow and
+wood gains calibrated from sun-facing 3D renders under the saved scene lighting.
+Calibration respects the project's Gamma colour space; Linear space is supported
+by the shader and calibration tool. Baseline pixel-family masks remain fixed in
+comparison images so overexposure cannot masquerade as a better colour match.
+Only the shared card material changes; original atlas, near-tree materials,
+meshes, switching thresholds, poses, colliders, fog and snow remain unchanged.
+The custom cutout shader keeps double-sided depth-tested cards, instancing and
+world fog, with no additional texture or runtime capture. ForestAlphaCardsIntake
+preserves the shader/gains on reimport. Recalibrate if sun/exposure changes:
+Snowglow > Environment > Match forest card colours to 3D trees.
+Native comparison evidence: Logs/ForestCardColors/Validation.txt and paired
+3D/before/after images. Sunlit palette matching reduces the colour jump; it does
+not eliminate flat silhouettes or view-dependent lighting differences.
+Native colour comparison passed in Unity 6000.3.8f1 / Android (Gamma): palette
+error 1.5573 -> 0.0055 using fixed baseline colour-family masks. Near/card
+forest, snowy-tree and wood previews inspected. Scene validation and original
+atlas/near-material/mesh/snow hash preservation passed. Saved scene bytes remain
+unchanged; no Play entry or profile writes. Report: Logs/ForestCardColors.Four full-scene camera headings passed with existing fog/post-processing; bright-card scene preview inspected. Original renderer states and scene dirty state preserved. Live traversal and phone performance remain untested. Preview: Logs/ForestCardColors/Scene-bright-cards.png.

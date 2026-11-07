@@ -53,3 +53,20 @@ Pinefall, scene validation and 19 snow checks. Six near/card variant pairs were
 rendered; evergreen, snowy-tree and log pairs inspected. A four-heading full-scene
 review with fog/post-processing confirmed visible distant cards (up to 6,255
 contrast pixels) while preserving scene bytes, renderer states and dirty state.
+
+## Bright colours matching the nearby trees
+
+The card atlas contains baked lighting and originally appeared much darker than
+sunlit 3D foliage. ForestCardPalette.shader now applies separate RGB gains to
+foliage, snow and wood before normal world fog. Current gains are approximately
+(2.084, 1.835, 1.932), (1.135, 1.146, 1.127) and (1.952, 1.931, 1.887), calibrated
+in this Gamma-space project. No texture, alpha, near geometry or material is
+modified. The shader still uses one atlas sample and one shared material.
+
+Calibration compares sun-facing 3D trees with cards under identical scene lights,
+camera and post-processing. It targets the upper-middle sunlit reference colours;
+fixed baseline masks keep pixel families stable during the after comparison.
+Run **Snowglow > Environment > Match forest card colours to 3D trees** after
+changing sun/exposure or project colour space. This is a saved lighting match,
+not dynamic day/night lighting. Flat card silhouettes and missing geometry
+shadows remain different from the 3D trees. Reports/previews: Logs/ForestCardColors.
