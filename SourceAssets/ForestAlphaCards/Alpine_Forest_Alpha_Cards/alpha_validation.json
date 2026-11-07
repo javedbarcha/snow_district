@@ -1,0 +1,470 @@
+[
+  {
+    "file": "01_Tower_Spruce_Front.png",
+    "alpha_bounds_pixels": [
+      337,
+      62,
+      687,
+      967
+    ]
+  },
+  {
+    "file": "01_Tower_Spruce_Side.png",
+    "alpha_bounds_pixels": [
+      340,
+      60,
+      684,
+      966
+    ]
+  },
+  {
+    "file": "02_Broad_Fir_Front.png",
+    "alpha_bounds_pixels": [
+      252,
+      69,
+      772,
+      959
+    ]
+  },
+  {
+    "file": "02_Broad_Fir_Side.png",
+    "alpha_bounds_pixels": [
+      271,
+      67,
+      754,
+      959
+    ]
+  },
+  {
+    "file": "03_Slender_Spruce_Front.png",
+    "alpha_bounds_pixels": [
+      401,
+      55,
+      623,
+      971
+    ]
+  },
+  {
+    "file": "03_Slender_Spruce_Side.png",
+    "alpha_bounds_pixels": [
+      405,
+      55,
+      619,
+      971
+    ]
+  },
+  {
+    "file": "04_Irregular_Drooping_Fir_Front.png",
+    "alpha_bounds_pixels": [
+      313,
+      63,
+      711,
+      964
+    ]
+  },
+  {
+    "file": "04_Irregular_Drooping_Fir_Side.png",
+    "alpha_bounds_pixels": [
+      334,
+      63,
+      691,
+      965
+    ]
+  },
+  {
+    "file": "05_Wind_Bent_Pine_Front.png",
+    "alpha_bounds_pixels": [
+      298,
+      63,
+      726,
+      962
+    ]
+  },
+  {
+    "file": "05_Wind_Bent_Pine_Side.png",
+    "alpha_bounds_pixels": [
+      322,
+      67,
+      703,
+      961
+    ]
+  },
+  {
+    "file": "06_Open_Alpine_Larch_Front.png",
+    "alpha_bounds_pixels": [
+      303,
+      64,
+      721,
+      963
+    ]
+  },
+  {
+    "file": "06_Open_Alpine_Larch_Side.png",
+    "alpha_bounds_pixels": [
+      306,
+      64,
+      718,
+      964
+    ]
+  },
+  {
+    "file": "07_Young_Fir_Front.png",
+    "alpha_bounds_pixels": [
+      282,
+      66,
+      741,
+      962
+    ]
+  },
+  {
+    "file": "07_Young_Fir_Side.png",
+    "alpha_bounds_pixels": [
+      288,
+      64,
+      736,
+      961
+    ]
+  },
+  {
+    "file": "08_Spruce_Sapling_Front.png",
+    "alpha_bounds_pixels": [
+      269,
+      67,
+      754,
+      963
+    ]
+  },
+  {
+    "file": "08_Spruce_Sapling_Side.png",
+    "alpha_bounds_pixels": [
+      269,
+      65,
+      755,
+      963
+    ]
+  },
+  {
+    "file": "09_Snowy_Tower_Spruce_Front.png",
+    "alpha_bounds_pixels": [
+      338,
+      61,
+      685,
+      967
+    ]
+  },
+  {
+    "file": "09_Snowy_Tower_Spruce_Side.png",
+    "alpha_bounds_pixels": [
+      345,
+      60,
+      679,
+      966
+    ]
+  },
+  {
+    "file": "10_Snowy_Broad_Fir_Front.png",
+    "alpha_bounds_pixels": [
+      254,
+      69,
+      770,
+      960
+    ]
+  },
+  {
+    "file": "10_Snowy_Broad_Fir_Side.png",
+    "alpha_bounds_pixels": [
+      272,
+      67,
+      752,
+      959
+    ]
+  },
+  {
+    "file": "11_Snowy_Slender_Spruce_Front.png",
+    "alpha_bounds_pixels": [
+      401,
+      56,
+      623,
+      971
+    ]
+  },
+  {
+    "file": "11_Snowy_Slender_Spruce_Side.png",
+    "alpha_bounds_pixels": [
+      404,
+      55,
+      620,
+      971
+    ]
+  },
+  {
+    "file": "12_Snowy_Irregular_Drooping_Fir_Front.png",
+    "alpha_bounds_pixels": [
+      293,
+      65,
+      731,
+      963
+    ]
+  },
+  {
+    "file": "12_Snowy_Irregular_Drooping_Fir_Side.png",
+    "alpha_bounds_pixels": [
+      293,
+      67,
+      731,
+      965
+    ]
+  },
+  {
+    "file": "13_Snowy_Wind_Bent_Pine_Front.png",
+    "alpha_bounds_pixels": [
+      299,
+      63,
+      725,
+      962
+    ]
+  },
+  {
+    "file": "13_Snowy_Wind_Bent_Pine_Side.png",
+    "alpha_bounds_pixels": [
+      322,
+      67,
+      702,
+      961
+    ]
+  },
+  {
+    "file": "14_Snowy_Open_Alpine_Larch_Front.png",
+    "alpha_bounds_pixels": [
+      304,
+      64,
+      720,
+      963
+    ]
+  },
+  {
+    "file": "14_Snowy_Open_Alpine_Larch_Side.png",
+    "alpha_bounds_pixels": [
+      307,
+      64,
+      718,
+      964
+    ]
+  },
+  {
+    "file": "15_Snowy_Young_Fir_Front.png",
+    "alpha_bounds_pixels": [
+      280,
+      66,
+      744,
+      962
+    ]
+  },
+  {
+    "file": "15_Snowy_Young_Fir_Side.png",
+    "alpha_bounds_pixels": [
+      291,
+      65,
+      733,
+      961
+    ]
+  },
+  {
+    "file": "16_Snowy_Spruce_Sapling_Front.png",
+    "alpha_bounds_pixels": [
+      273,
+      67,
+      751,
+      963
+    ]
+  },
+  {
+    "file": "16_Snowy_Spruce_Sapling_Side.png",
+    "alpha_bounds_pixels": [
+      272,
+      65,
+      752,
+      963
+    ]
+  },
+  {
+    "file": "17_Tall_Dead_Snag_Front.png",
+    "alpha_bounds_pixels": [
+      380,
+      57,
+      644,
+      969
+    ]
+  },
+  {
+    "file": "17_Tall_Dead_Snag_Side.png",
+    "alpha_bounds_pixels": [
+      390,
+      58,
+      634,
+      970
+    ]
+  },
+  {
+    "file": "18_Thin_Bare_Snag_Front.png",
+    "alpha_bounds_pixels": [
+      415,
+      54,
+      609,
+      971
+    ]
+  },
+  {
+    "file": "18_Thin_Bare_Snag_Side.png",
+    "alpha_bounds_pixels": [
+      423,
+      55,
+      601,
+      971
+    ]
+  },
+  {
+    "file": "19_Broken_Alpine_Trunk_Front.png",
+    "alpha_bounds_pixels": [
+      277,
+      67,
+      747,
+      964
+    ]
+  },
+  {
+    "file": "19_Broken_Alpine_Trunk_Side.png",
+    "alpha_bounds_pixels": [
+      286,
+      66,
+      738,
+      963
+    ]
+  },
+  {
+    "file": "20_Bare_Young_Sapling_Front.png",
+    "alpha_bounds_pixels": [
+      301,
+      64,
+      723,
+      963
+    ]
+  },
+  {
+    "file": "20_Bare_Young_Sapling_Side.png",
+    "alpha_bounds_pixels": [
+      311,
+      65,
+      713,
+      961
+    ]
+  },
+  {
+    "file": "21_Low_Cut_Stump_Front.png",
+    "alpha_bounds_pixels": [
+      176,
+      368,
+      848,
+      728
+    ]
+  },
+  {
+    "file": "21_Low_Cut_Stump_Side.png",
+    "alpha_bounds_pixels": [
+      189,
+      352,
+      835,
+      734
+    ]
+  },
+  {
+    "file": "22_Tall_Cut_Stump_Front.png",
+    "alpha_bounds_pixels": [
+      176,
+      280,
+      848,
+      814
+    ]
+  },
+  {
+    "file": "22_Tall_Cut_Stump_Side.png",
+    "alpha_bounds_pixels": [
+      189,
+      265,
+      835,
+      818
+    ]
+  },
+  {
+    "file": "23_Split_Cut_Stump_Front.png",
+    "alpha_bounds_pixels": [
+      176,
+      376,
+      848,
+      769
+    ]
+  },
+  {
+    "file": "23_Split_Cut_Stump_Side.png",
+    "alpha_bounds_pixels": [
+      189,
+      357,
+      835,
+      774
+    ]
+  },
+  {
+    "file": "24_Snow_Capped_Stump_Front.png",
+    "alpha_bounds_pixels": [
+      176,
+      362,
+      848,
+      732
+    ]
+  },
+  {
+    "file": "24_Snow_Capped_Stump_Side.png",
+    "alpha_bounds_pixels": [
+      189,
+      354,
+      835,
+      738
+    ]
+  },
+  {
+    "file": "25_Fallen_Cut_Log_Front.png",
+    "alpha_bounds_pixels": [
+      65,
+      391,
+      958,
+      594
+    ]
+  },
+  {
+    "file": "25_Fallen_Cut_Log_Side.png",
+    "alpha_bounds_pixels": [
+      379,
+      292,
+      645,
+      745
+    ]
+  },
+  {
+    "file": "26_Snowy_Broken_Log_Front.png",
+    "alpha_bounds_pixels": [
+      66,
+      384,
+      958,
+      601
+    ]
+  },
+  {
+    "file": "26_Snowy_Broken_Log_Side.png",
+    "alpha_bounds_pixels": [
+      375,
+      278,
+      649,
+      727
+    ]
+  }
+]

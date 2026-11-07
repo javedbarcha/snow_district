@@ -8,14 +8,15 @@ namespace Snowglow.Editor {
   public const string Root="Assets/Snowglow/Catalog",LibraryPath=Root+"/SnowglowCatalog.asset";
   public static void EnsureFolders(){Directory.CreateDirectory(Root+"/Entries");Directory.CreateDirectory(Root+"/Prefabs");Directory.CreateDirectory(Root+"/Recipes");Directory.CreateDirectory(Root+"/Sources");AssetDatabase.Refresh();}
   public static AssetCatalog Library(){var c=AssetDatabase.LoadAssetAtPath<AssetCatalog>(LibraryPath);if(c)return c;EnsureFolders();c=ScriptableObject.CreateInstance<AssetCatalog>();AssetDatabase.CreateAsset(c,LibraryPath);return c;}
-  public static CatalogAsset Prepare(GameObject source,CatalogKind kind,string title,float scale,Vector3 rotation,AssetSource sourceType,string notes,CatalogAsset draft=null){
+  public static CatalogAsset Prepare(GameObject source,CatalogKind kind,string title,float scale,Vector3 rotation,AssetSource sourceType,string notes,CatalogAsset draft=null,bool visualOnly=false){
+   if(visualOnly&&kind!=CatalogKind.Landscape)throw new ArgumentException("Visual-only preparation is restricted to landscape cards.");
    if(kind==CatalogKind.UI)throw new InvalidOperationException("Use the Photoshop UI intake for sprite-based Canvas assets.");
    if(EditorApplication.isPlayingOrWillChangePlaymode)throw new InvalidOperationException("Asset preparation is Editor-only. Stop Play first.");
    if(!source||!CatalogValidation.Finite(scale)||scale<=0||!CatalogValidation.Finite(rotation))throw new ArgumentException("Provide a model and a positive finite uniform scale.");
    EnsureFolders();if(draft&&(draft.status!=PreparationStatus.Draft||draft.prefab))throw new InvalidOperationException("Only an unprepared Draft entry can be completed in place.");var a=draft?draft:ScriptableObject.CreateInstance<CatalogAsset>();if(!draft)a.id="asset-"+Guid.NewGuid().ToString("N");a.name=a.displayName=string.IsNullOrWhiteSpace(title)?source.name:title;a.kind=kind;a.status=PreparationStatus.NeedsReview;
    a.sourceType=sourceType;a.sourcePath=AssetDatabase.GetAssetPath(source);a.sourceGuid=AssetDatabase.AssetPathToGUID(a.sourcePath);a.provenance=notes;
    a.assumptions="Metres, Y-up, Z-forward. Scale/orientation and generated collision/rig are proposals; review before publishing. Original source is unchanged.";
-   a.blocksSnow=kind>=CatalogKind.BuildingAssembly;
+   a.blocksSnow=!visualOnly&&kind>=CatalogKind.BuildingAssembly;
    var root=new GameObject(a.displayName);root.AddComponent<CatalogPlacement>().assetId=a.id;try{
     var visual=new GameObject("VisualRoot").transform;visual.SetParent(root.transform,false);
     var model=UnityEngine.Object.Instantiate(source,visual);model.name=source.name;model.transform.localPosition=Vector3.zero;model.transform.localRotation=Quaternion.Euler(rotation);model.transform.localScale=source.transform.localScale*scale;

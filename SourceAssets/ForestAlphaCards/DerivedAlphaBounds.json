@@ -1,0 +1,470 @@
+[
+    {
+        "file":  "01_Tower_Spruce_Front.png",
+        "alpha_uv_bounds":  [
+                                0.32421875,
+                                0.05078125,
+                                0.67578125,
+                                0.9433594
+                            ]
+    },
+    {
+        "file":  "01_Tower_Spruce_Side.png",
+        "alpha_uv_bounds":  [
+                                0.328125,
+                                0.052734375,
+                                0.671875,
+                                0.9453125
+                            ]
+    },
+    {
+        "file":  "02_Broad_Fir_Front.png",
+        "alpha_uv_bounds":  [
+                                0.2421875,
+                                0.05859375,
+                                0.7578125,
+                                0.9375
+                            ]
+    },
+    {
+        "file":  "02_Broad_Fir_Side.png",
+        "alpha_uv_bounds":  [
+                                0.259765625,
+                                0.05859375,
+                                0.7402344,
+                                0.9394531
+                            ]
+    },
+    {
+        "file":  "03_Slender_Spruce_Front.png",
+        "alpha_uv_bounds":  [
+                                0.38671875,
+                                0.046875,
+                                0.61328125,
+                                0.9511719
+                            ]
+    },
+    {
+        "file":  "03_Slender_Spruce_Side.png",
+        "alpha_uv_bounds":  [
+                                0.390625,
+                                0.046875,
+                                0.609375,
+                                0.9511719
+                            ]
+    },
+    {
+        "file":  "04_Irregular_Drooping_Fir_Front.png",
+        "alpha_uv_bounds":  [
+                                0.30078125,
+                                0.0546875,
+                                0.69921875,
+                                0.9433594
+                            ]
+    },
+    {
+        "file":  "04_Irregular_Drooping_Fir_Side.png",
+        "alpha_uv_bounds":  [
+                                0.322265625,
+                                0.052734375,
+                                0.6796875,
+                                0.9433594
+                            ]
+    },
+    {
+        "file":  "05_Wind_Bent_Pine_Front.png",
+        "alpha_uv_bounds":  [
+                                0.287109375,
+                                0.056640625,
+                                0.7128906,
+                                0.9433594
+                            ]
+    },
+    {
+        "file":  "05_Wind_Bent_Pine_Side.png",
+        "alpha_uv_bounds":  [
+                                0.310546875,
+                                0.056640625,
+                                0.69140625,
+                                0.9394531
+                            ]
+    },
+    {
+        "file":  "06_Open_Alpine_Larch_Front.png",
+        "alpha_uv_bounds":  [
+                                0.291015625,
+                                0.0546875,
+                                0.7089844,
+                                0.94140625
+                            ]
+    },
+    {
+        "file":  "06_Open_Alpine_Larch_Side.png",
+        "alpha_uv_bounds":  [
+                                0.294921875,
+                                0.0546875,
+                                0.7050781,
+                                0.94140625
+                            ]
+    },
+    {
+        "file":  "07_Young_Fir_Front.png",
+        "alpha_uv_bounds":  [
+                                0.271484375,
+                                0.056640625,
+                                0.7285156,
+                                0.9394531
+                            ]
+    },
+    {
+        "file":  "07_Young_Fir_Side.png",
+        "alpha_uv_bounds":  [
+                                0.27734375,
+                                0.056640625,
+                                0.72265625,
+                                0.94140625
+                            ]
+    },
+    {
+        "file":  "08_Spruce_Sapling_Front.png",
+        "alpha_uv_bounds":  [
+                                0.2578125,
+                                0.0546875,
+                                0.7402344,
+                                0.9394531
+                            ]
+    },
+    {
+        "file":  "08_Spruce_Sapling_Side.png",
+        "alpha_uv_bounds":  [
+                                0.2578125,
+                                0.0546875,
+                                0.7421875,
+                                0.94140625
+                            ]
+    },
+    {
+        "file":  "09_Snowy_Tower_Spruce_Front.png",
+        "alpha_uv_bounds":  [
+                                0.326171875,
+                                0.05078125,
+                                0.6738281,
+                                0.9453125
+                            ]
+    },
+    {
+        "file":  "09_Snowy_Tower_Spruce_Side.png",
+        "alpha_uv_bounds":  [
+                                0.33203125,
+                                0.052734375,
+                                0.66796875,
+                                0.9453125
+                            ]
+    },
+    {
+        "file":  "10_Snowy_Broad_Fir_Front.png",
+        "alpha_uv_bounds":  [
+                                0.244140625,
+                                0.05859375,
+                                0.7558594,
+                                0.9375
+                            ]
+    },
+    {
+        "file":  "10_Snowy_Broad_Fir_Side.png",
+        "alpha_uv_bounds":  [
+                                0.26171875,
+                                0.05859375,
+                                0.73828125,
+                                0.9394531
+                            ]
+    },
+    {
+        "file":  "11_Snowy_Slender_Spruce_Front.png",
+        "alpha_uv_bounds":  [
+                                0.38671875,
+                                0.046875,
+                                0.61328125,
+                                0.94921875
+                            ]
+    },
+    {
+        "file":  "11_Snowy_Slender_Spruce_Side.png",
+        "alpha_uv_bounds":  [
+                                0.390625,
+                                0.046875,
+                                0.609375,
+                                0.9511719
+                            ]
+    },
+    {
+        "file":  "12_Snowy_Irregular_Drooping_Fir_Front.png",
+        "alpha_uv_bounds":  [
+                                0.28125,
+                                0.0546875,
+                                0.71875,
+                                0.94140625
+                            ]
+    },
+    {
+        "file":  "12_Snowy_Irregular_Drooping_Fir_Side.png",
+        "alpha_uv_bounds":  [
+                                0.28125,
+                                0.052734375,
+                                0.71875,
+                                0.9394531
+                            ]
+    },
+    {
+        "file":  "13_Snowy_Wind_Bent_Pine_Front.png",
+        "alpha_uv_bounds":  [
+                                0.287109375,
+                                0.056640625,
+                                0.7128906,
+                                0.9433594
+                            ]
+    },
+    {
+        "file":  "13_Snowy_Wind_Bent_Pine_Side.png",
+        "alpha_uv_bounds":  [
+                                0.310546875,
+                                0.056640625,
+                                0.6894531,
+                                0.9394531
+                            ]
+    },
+    {
+        "file":  "14_Snowy_Open_Alpine_Larch_Front.png",
+        "alpha_uv_bounds":  [
+                                0.29296875,
+                                0.0546875,
+                                0.70703125,
+                                0.94140625
+                            ]
+    },
+    {
+        "file":  "14_Snowy_Open_Alpine_Larch_Side.png",
+        "alpha_uv_bounds":  [
+                                0.294921875,
+                                0.0546875,
+                                0.7050781,
+                                0.94140625
+                            ]
+    },
+    {
+        "file":  "15_Snowy_Young_Fir_Front.png",
+        "alpha_uv_bounds":  [
+                                0.26953125,
+                                0.056640625,
+                                0.73046875,
+                                0.9394531
+                            ]
+    },
+    {
+        "file":  "15_Snowy_Young_Fir_Side.png",
+        "alpha_uv_bounds":  [
+                                0.279296875,
+                                0.056640625,
+                                0.7207031,
+                                0.94140625
+                            ]
+    },
+    {
+        "file":  "16_Snowy_Spruce_Sapling_Front.png",
+        "alpha_uv_bounds":  [
+                                0.26171875,
+                                0.0546875,
+                                0.73828125,
+                                0.9394531
+                            ]
+    },
+    {
+        "file":  "16_Snowy_Spruce_Sapling_Side.png",
+        "alpha_uv_bounds":  [
+                                0.26171875,
+                                0.0546875,
+                                0.73828125,
+                                0.94140625
+                            ]
+    },
+    {
+        "file":  "17_Tall_Dead_Snag_Front.png",
+        "alpha_uv_bounds":  [
+                                0.3671875,
+                                0.048828125,
+                                0.6328125,
+                                0.94921875
+                            ]
+    },
+    {
+        "file":  "17_Tall_Dead_Snag_Side.png",
+        "alpha_uv_bounds":  [
+                                0.376953125,
+                                0.048828125,
+                                0.6230469,
+                                0.9472656
+                            ]
+    },
+    {
+        "file":  "18_Thin_Bare_Snag_Front.png",
+        "alpha_uv_bounds":  [
+                                0.400390625,
+                                0.046875,
+                                0.5996094,
+                                0.9511719
+                            ]
+    },
+    {
+        "file":  "18_Thin_Bare_Snag_Side.png",
+        "alpha_uv_bounds":  [
+                                0.408203125,
+                                0.046875,
+                                0.5917969,
+                                0.9511719
+                            ]
+    },
+    {
+        "file":  "19_Broken_Alpine_Trunk_Front.png",
+        "alpha_uv_bounds":  [
+                                0.265625,
+                                0.0546875,
+                                0.734375,
+                                0.9394531
+                            ]
+    },
+    {
+        "file":  "19_Broken_Alpine_Trunk_Side.png",
+        "alpha_uv_bounds":  [
+                                0.275390625,
+                                0.0546875,
+                                0.7246094,
+                                0.9394531
+                            ]
+    },
+    {
+        "file":  "20_Bare_Young_Sapling_Front.png",
+        "alpha_uv_bounds":  [
+                                0.2890625,
+                                0.0546875,
+                                0.7109375,
+                                0.94140625
+                            ]
+    },
+    {
+        "file":  "20_Bare_Young_Sapling_Side.png",
+        "alpha_uv_bounds":  [
+                                0.298828125,
+                                0.056640625,
+                                0.7011719,
+                                0.94140625
+                            ]
+    },
+    {
+        "file":  "21_Low_Cut_Stump_Front.png",
+        "alpha_uv_bounds":  [
+                                0.16796875,
+                                0.28515625,
+                                0.83203125,
+                                0.64453125
+                            ]
+    },
+    {
+        "file":  "21_Low_Cut_Stump_Side.png",
+        "alpha_uv_bounds":  [
+                                0.1796875,
+                                0.279296875,
+                                0.8203125,
+                                0.66015625
+                            ]
+    },
+    {
+        "file":  "22_Tall_Cut_Stump_Front.png",
+        "alpha_uv_bounds":  [
+                                0.16796875,
+                                0.201171875,
+                                0.83203125,
+                                0.73046875
+                            ]
+    },
+    {
+        "file":  "22_Tall_Cut_Stump_Side.png",
+        "alpha_uv_bounds":  [
+                                0.1796875,
+                                0.197265625,
+                                0.8203125,
+                                0.74609375
+                            ]
+    },
+    {
+        "file":  "23_Split_Cut_Stump_Front.png",
+        "alpha_uv_bounds":  [
+                                0.16796875,
+                                0.244140625,
+                                0.83203125,
+                                0.63671875
+                            ]
+    },
+    {
+        "file":  "23_Split_Cut_Stump_Side.png",
+        "alpha_uv_bounds":  [
+                                0.1796875,
+                                0.240234375,
+                                0.8203125,
+                                0.65625
+                            ]
+    },
+    {
+        "file":  "24_Snow_Capped_Stump_Front.png",
+        "alpha_uv_bounds":  [
+                                0.16796875,
+                                0.279296875,
+                                0.83203125,
+                                0.6503906
+                            ]
+    },
+    {
+        "file":  "24_Snow_Capped_Stump_Side.png",
+        "alpha_uv_bounds":  [
+                                0.1796875,
+                                0.275390625,
+                                0.8203125,
+                                0.6582031
+                            ]
+    },
+    {
+        "file":  "25_Fallen_Cut_Log_Front.png",
+        "alpha_uv_bounds":  [
+                                0.05859375,
+                                0.416015625,
+                                0.9394531,
+                                0.6230469
+                            ]
+    },
+    {
+        "file":  "25_Fallen_Cut_Log_Side.png",
+        "alpha_uv_bounds":  [
+                                0.365234375,
+                                0.267578125,
+                                0.6347656,
+                                0.71875
+                            ]
+    },
+    {
+        "file":  "26_Snowy_Broken_Log_Front.png",
+        "alpha_uv_bounds":  [
+                                0.060546875,
+                                0.408203125,
+                                0.9394531,
+                                0.62890625
+                            ]
+    },
+    {
+        "file":  "26_Snowy_Broken_Log_Side.png",
+        "alpha_uv_bounds":  [
+                                0.361328125,
+                                0.28515625,
+                                0.6386719,
+                                0.7324219
+                            ]
+    }
+]

@@ -1,5 +1,40 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Distant forest alpha cards - 7 November 2026
+
+User authorized implementing the inspected Alpine_Forest_Alpha_Cards.zip. Original
+ZIP and 110 files are preserved outside Assets at SourceAssets/ForestAlphaCards;
+no bundled code is executed. A shared 4096 atlas and derived metadata support 26
+Needs Review standalone card entries and crossed-card children on the existing
+26 tree/wood prefabs. All 438 scene placements retain poses and solid colliders.
+Near visuals stay supplied LOD3; no higher LOD or runtime spawning is introduced.
+
+DistanceVisibility uses camera distance for card-equipped trees: nominal 230 m,
+12 m hysteresis (out >242, in <218), cards culled at 650 m. Original non-card
+behavior remains vehicle-relative. Runtime toggles saved renderers only; colliders
+stay enabled. Cards use four triangles, double-sided opaque alpha clipping, no
+shadows, one shared atlas; mipmaps preserve alpha coverage and Android uses ASTC
+6x6. Actual alpha bounds trim UVs; each view fits the matching LOD3 dimensions,
+including low logs. Source capture silhouettes can still differ at transition.
+
+Catalogue/forest/collider/lowest-LOD tools exclude alternative card padding from
+physical bounds and mesh selection. Optional visual-only Landscape preparation
+avoids creating card colliders without deleting existing collision. All-far forest
+geometry is 1,752 triangles / 438 renderers before culling; near inventory remains
+187,488 triangles. Switching adds a resident renderer per placement and texture
+cost; phone profiling remains required. Guide: FOREST_ALPHA_CARDS.md. Evidence:
+Logs/ForestAlphaCards/Validation.txt and near/card previews. Repeat menu: Snowglow >
+Asset intake > Import distant forest alpha cards. No district rebake or player-save writes.
+Unity 6000.3.8f1 / Android passed 9,801 checks and saved/reopened Pinefall; scene
+validation and all 19 snow checks passed. Original mesh/Terrain/snow hashes and
+placement/collider snapshots matched. Corrected near/card tree, snowy-tree and
+log previews visually inspected. Scene rendering review is recorded separately
+at Logs/ForestAlphaCards/SceneReview.txt; live driving/device acceptance remains open.
+Four full-scene gameplay-camera headings passed with existing fog/post-processing;
+card-on/off comparison found up to 6,255 changed pixels and 357 selected distant
+card roots. Two native scene views inspected. Scene bytes, renderer states and
+dirty state preserved during this final review.
+
 ## Cloud palette visibility through world fog - 7 November 2026
 
 The 4 km camera limit alone did not keep clouds visible: linear world fog reaches

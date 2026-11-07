@@ -1,5 +1,12 @@
 # Snowglow mobile art budget
 
+Forest alpha cards: 438 all-far placements total 1,752 triangles / 438 renderers,
+before culling, instead of the 187,488-triangle near forest. The 26 shared card
+meshes and one cutout atlas remain resident alongside existing LOD3 geometry.
+The 4096 atlas uses Android ASTC 6x6, alpha-coverage mipmaps and cropped UV bounds.
+Two-sided alpha clipping still costs fill; renderer counts are not draw-call counts,
+and geometry reductions do not establish phone speed. See FOREST_ALPHA_CARDS.md.
+
 Current cloud policy (7 November): 10–15 active clouds, 3,320–4,980 triangles and
 10–15 renderers before culling; one shared opaque material. Forty authored slots
 retain inactive roots and scale baselines, so inactive-inclusive inventory still

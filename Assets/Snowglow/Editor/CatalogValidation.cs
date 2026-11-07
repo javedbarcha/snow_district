@@ -11,6 +11,7 @@ namespace Snowglow.Editor {
   public override string ToString(){return string.Join("\n",errors.Select(e=>"ERROR: "+e).Concat(warnings.Select(w=>"REVIEW: "+w)).DefaultIfEmpty("Structural checks passed. Visual/handling/device review is separate."));}
  }
  public static class CatalogValidation {
+  public static bool PrimaryForestGeometry(Component component){var visibility=component.GetComponentInParent<DistanceVisibility>();return !visibility||visibility.distantParts==null||!visibility.distantParts.Contains(component.GetComponent<Renderer>());}
   static string VectorKey(Vector3 v)=>v.x.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+","+v.y.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+","+v.z.ToString("R",System.Globalization.CultureInfo.InvariantCulture);
   public static string FitFingerprint(FittingProfile f)=>Hash128.Compute((f.vehicle?f.vehicle.id:"")+"|"+(f.part?f.part.id:"")+"|"+f.socketId+"|"+VectorKey(f.positionOffset)+"|"+VectorKey(f.rotationOffset)).ToString();
   public static string Fingerprint(CatalogAsset a){
@@ -22,7 +23,10 @@ namespace Snowglow.Editor {
   public static bool Finite(Vector3 v)=>Finite(v.x)&&Finite(v.y)&&Finite(v.z);
   public static Bounds BoundsOf(GameObject root){
    bool found=false;var result=new Bounds(Vector3.zero,Vector3.zero);
+   var visibility=root.GetComponent<DistanceVisibility>();
    foreach(var r in root.GetComponentsInChildren<Renderer>(true)){
+    // Ignore padding on alternative distant visuals when measuring a tree's footprint.
+    if(visibility&&visibility.distantParts!=null&&visibility.distantParts.Contains(r))continue;
     if(r is ParticleSystemRenderer)continue;
     var b=r.localBounds;for(int n=0;n<8;n++){
      var p=root.transform.InverseTransformPoint(r.transform.TransformPoint(b.center+Vector3.Scale(b.extents,new Vector3((n&1)==0?-1:1,(n&2)==0?-1:1,(n&4)==0?-1:1))));

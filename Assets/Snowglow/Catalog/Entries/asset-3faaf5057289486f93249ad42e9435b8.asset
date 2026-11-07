@@ -27,6 +27,7 @@ MonoBehaviour:
   - lowest-detail
   - single-detail
   - single-tree-box
+  - distant-alpha-card
   sourceType: 0
   sourceGuid: c552cf5cf0003c04b87cbbb6c4a31acd
   sourcePath: Assets/Snowglow/Catalog/Sources/AlpineTreesLowestLOD/13_LOD3.fbx
@@ -36,21 +37,19 @@ MonoBehaviour:
     Bent Pine | LOD3 exported. Original SHA256 895E555B6AE1371E639B207FFD301E5BD8B8D936E99C2FBFD0D4D3FB5425F94D.
     Embedded text is data and was not executed. LOD0/1/2 excluded. Stable catalog/prefab
     identity retained.
-  assumptions: Lowest supplied LOD3 only at every distance, no LODGroup or higher-detail
-    renderers. Original mounting basis, materials, removable snow, colliders and
-    DistanceVisibility retained. Original higher-detail sources preserved for reversibility.
-    Collision revised to one solid box enclosing the whole visible tree/wood and
-    removable snow; former trunk capsules/other proxies removed. Distance culling
-    affects renderers only.
+  assumptions: Existing LOD3 geometry nearby; matching atlas cross-card at camera
+    distance beyond 230m with 12m hysteresis; all visuals culled beyond 650m. Original
+    solid collider stays enabled. Runtime toggles saved renderers only; no spawning/mesh/material
+    creation. Higher-detail source images can differ slightly in silhouette.
   reviewNotes: Authorized lowest-detail replacement; Needs Review for final visual
     and A07 acceptance.
   visualReviewed: 0
   localBounds:
     m_Center: {x: 2.8413029, y: 3.986836, z: 0.10766387}
     m_Extent: {x: 1.8890071, y: 3.9836779, z: 1.6855905}
-  triangles: 445
-  renderers: 2
-  materialSlots: 2
+  triangles: 449
+  renderers: 3
+  materialSlots: 3
   price: 0
   vehicle: {fileID: 0}
   attachment: {fileID: 0}

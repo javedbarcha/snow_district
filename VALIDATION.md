@@ -1,5 +1,22 @@
 # Verification record
 
+## Imported forest cards and renderer switching - 7 November 2026
+
+Unity 6000.3.8f1 / Android compiled, saved/reopened Pinefall and passed 9,801
+assertions plus scene validation and 19 snow checks. All 26 variants have catalog
+cards and existing near geometry; 438 placements have saved bindings. Native
+checks cover outward/inward switching, hysteresis, far culling, no simultaneous
+representations and unchanged active colliders. Source meshes/Terrain/snow hashes
+and existing placement/collider snapshots matched. Cropped cards fit original
+geometry dimensions; tree/snowy-tree/log previews inspected. Card preview shader
+compilation is made synchronous only during the check and the setting restored.
+No player-save writes or district rebake. Live driving, packaging and phone
+performance remain untested. Evidence: Logs/ForestAlphaCards/Validation.txt.
+Final read-only scene review passed four camera headings with fog/post-processing;
+strongest distant-card contribution was 6,255 pixels, with up to 357 card roots
+selected. Two full-scene renders inspected. Saved scene bytes, original renderer
+states and scene dirty state were preserved. Report: Logs/ForestAlphaCards/SceneReview.txt.
+
 ## Cloud fog contrast correction - 7 November 2026
 
 Unity 6000.3.8f1 / Android compiled the cloud-only fog-free palette shader and

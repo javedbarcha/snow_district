@@ -1,5 +1,14 @@
 # Prototype structure and extension boundaries
 
+Forest `DistanceVisibility` can bind saved near renderers and an atlas cross-card
+renderer. Card-equipped trees use the gameplay camera, 230 m nominal switching
+with 12 m hysteresis and 650 m far culling; collider state never follows visibility.
+Non-card objects retain vehicle-relative culling. ForestAlphaCardsIntake stages
+the shared atlas, prepares 26 reusable catalog cards and augments existing tree
+prefabs in Editor. There are no runtime factories or new higher-detail tree LODs.
+Physical bounds/source-mesh queries exclude alternative card renderers. See
+FOREST_ALPHA_CARDS.md for source preservation, ranges and native evidence.
+
 `CloudWindController` owns 40 authored slots with 10–15 active visual clouds. A private
 `CloudWindMotion` state advances horizontal wind; saved prefab/source-bound/
 baseline-scale bindings drive entry/exit replacement without creating meshes or

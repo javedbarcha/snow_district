@@ -33,7 +33,7 @@ namespace Snowglow.Editor {
    var root=PrefabUtility.LoadPrefabContents(prefabPath);
    try{
     Require(root.GetComponentsInChildren<LODGroup>(true).Length==0,"unexpected existing LODGroup "+id);
-    var filters=root.GetComponentsInChildren<MeshFilter>(true);Require(filters.Length==meshes.Count,"mesh groups differ "+id);
+    var filters=root.GetComponentsInChildren<MeshFilter>(true).Where(CatalogValidation.PrimaryForestGeometry).ToArray();Require(filters.Length==meshes.Count,"mesh groups differ "+id);
     foreach(var filter in filters){string key=filter.name.StartsWith("SnowCap",StringComparison.Ordinal)?"SnowCap":"TreeWood";Require(meshes.ContainsKey(key),"missing matching mesh "+id);filter.sharedMesh=meshes[key];filter.GetComponent<Renderer>().sharedMaterial=key=="SnowCap"?snow:bark;}
     Require((CatalogValidation.BoundsOf(root).size-new Vector3(tree.size[0],tree.size[1],tree.size[2])).magnitude<.04f,"mesh frame differs from existing prefab "+id);
     PrefabUtility.SaveAsPrefabAsset(root,prefabPath);
@@ -41,7 +41,7 @@ namespace Snowglow.Editor {
    a.sourcePath=path;a.sourceGuid=AssetDatabase.AssetPathToGUID(path);a.creationSourcePath=SourceBlend;a.sourceType=AssetSource.ImportedModel;a.tags=a.tags.Concat(new[]{"lod3-only","lowest-detail","single-detail"}).Distinct().ToArray();a.status=PreparationStatus.NeedsReview;a.visualReviewed=false;a.reviewedPrefabHash="";
    a.provenance="User supplied four-LOD Blender pack; only collection "+tree.sourceCollection+" exported. Original SHA256 895E555B6AE1371E639B207FFD301E5BD8B8D936E99C2FBFD0D4D3FB5425F94D. Embedded text is data and was not executed. LOD0/1/2 excluded. Stable catalog/prefab identity retained.";
    a.assumptions="Lowest supplied LOD3 only at every distance, no LODGroup or higher-detail renderers. Original mounting basis, materials, removable snow, colliders and DistanceVisibility retained. Original higher-detail sources preserved for reversibility.";
-   a.reviewNotes="Authorized lowest-detail replacement; Needs Review for final visual and A07 acceptance.";CatalogPreparation.RecordMetrics(a);Require(a.triangles==tree.triangles,"native triangle count differs "+id+": "+a.triangles+" vs "+tree.triangles);Require(CatalogValidation.Check(a).Ok,"catalog validation "+id);EditorUtility.SetDirty(a);
+   a.reviewNotes="Authorized lowest-detail replacement; Needs Review for final visual and A07 acceptance.";CatalogPreparation.RecordMetrics(a);Require(a.triangles==tree.triangles+(a.tags.Contains("distant-alpha-card")?4:0),"native triangle count differs "+id+": "+a.triangles+" vs "+tree.triangles);Require(CatalogValidation.Check(a).Ok,"catalog validation "+id);EditorUtility.SetDirty(a);
   }
   [MenuItem("Snowglow/Asset intake/Use lowest LOD3 for all alpine trees and wood")]
   public static void Install(){
@@ -52,17 +52,17 @@ namespace Snowglow.Editor {
    // Prefab edits propagate to existing instances; replace any explicit old-mesh overrides too.
    foreach(var p in All<CatalogPlacement>(scene).Where(IsTree)){
     var row=data.trees.Single(t=>p.assetId=="alpine-tree-"+t.index);var model=AssetDatabase.LoadAssetAtPath<GameObject>(Source+row.model+".fbx");var meshes=model.GetComponentsInChildren<MeshFilter>(true).ToDictionary(m=>m.name,m=>m.sharedMesh);
-    foreach(var filter in p.GetComponentsInChildren<MeshFilter>(true)){var mesh=meshes[filter.name.StartsWith("SnowCap",StringComparison.Ordinal)?"SnowCap":"TreeWood"];if(filter.sharedMesh!=mesh){filter.sharedMesh=mesh;PrefabUtility.RecordPrefabInstancePropertyModifications(filter);}}
+    foreach(var filter in p.GetComponentsInChildren<MeshFilter>(true).Where(CatalogValidation.PrimaryForestGeometry)){var mesh=meshes[filter.name.StartsWith("SnowCap",StringComparison.Ordinal)?"SnowCap":"TreeWood"];if(filter.sharedMesh!=mesh){filter.sharedMesh=mesh;PrefabUtility.RecordPrefabInstancePropertyModifications(filter);}}
    }
    AssetDatabase.SaveAssets();SceneValidation.Validate(scene);EditorSceneManager.MarkSceneDirty(scene);Require(EditorSceneManager.SaveScene(scene),"scene save failed");scene=EditorSceneManager.OpenScene(SceneValidation.ScenePath);SceneValidation.Validate(scene);
    Require(All<CatalogPlacement>(scene).Count(IsTree)==count,"forest count changed");foreach(var p in All<CatalogPlacement>(scene).Where(p=>!string.IsNullOrEmpty(p.placementId)))Require(snapshots[p.placementId]==PhysicalState(p),"placement/collision/culling changed "+p.placementId);
    foreach(var pair in protectedAssets)Require(AssetDatabase.GetAssetDependencyHash(pair.Key)==pair.Value,"Terrain/snow asset changed "+pair.Key);
    foreach(var p in All<CatalogPlacement>(scene).Where(IsTree)){
-    Require(PrefabUtility.IsPartOfPrefabInstance(p),"disconnected tree instance");Require(p.GetComponentsInChildren<LODGroup>(true).Length==0,"LOD switching was added");foreach(var mesh in p.GetComponentsInChildren<MeshFilter>(true))Require(AssetDatabase.GetAssetPath(mesh.sharedMesh).StartsWith(Source,StringComparison.Ordinal),"higher-detail scene mesh remains");
+    Require(PrefabUtility.IsPartOfPrefabInstance(p),"disconnected tree instance");Require(p.GetComponentsInChildren<LODGroup>(true).Length==0,"LOD switching was added");foreach(var mesh in p.GetComponentsInChildren<MeshFilter>(true).Where(CatalogValidation.PrimaryForestGeometry))Require(AssetDatabase.GetAssetPath(mesh.sharedMesh).StartsWith(Source,StringComparison.Ordinal),"higher-detail scene mesh remains");
    }
    Require(!All<MeshFilter>(scene).Any(m=>m.sharedMesh&&AssetDatabase.GetAssetPath(m.sharedMesh).StartsWith("Assets/Snowglow/Catalog/Sources/AlpineTrees/",StringComparison.Ordinal)),"old forest mesh remains elsewhere in scene");
    var report=new StringBuilder("PASS: Unity "+Application.unityVersion+". All "+count+" existing tree/wood instances now reference supplied lowest LOD3 only. Forest triangles "+before+" -> "+ForestTriangles(scene)+"; "+All<CatalogPlacement>(scene).Where(IsTree).Sum(p=>p.GetComponentsInChildren<Renderer>(true).Length)+" renderers. No LODGroups, higher-detail scene meshes or LOD0/1/2 imports.\n");
-   foreach(var row in data.trees){var a=CatalogPreparation.Library().Find("alpine-tree-"+row.index);Require(a&&a.triangles==row.triangles,"saved catalog metrics differ");report.AppendLine(a.id+" | "+a.displayName+" | "+a.triangles+" triangles | "+All<CatalogPlacement>(scene).Count(p=>p.assetId==a.id)+" placements | Needs Review");}
+   foreach(var row in data.trees){var a=CatalogPreparation.Library().Find("alpine-tree-"+row.index);Require(a&&a.triangles==row.triangles+(a.tags.Contains("distant-alpha-card")?4:0),"saved catalog metrics differ");report.AppendLine(a.id+" | "+a.displayName+" | "+a.triangles+" triangles | "+All<CatalogPlacement>(scene).Count(p=>p.assetId==a.id)+" placements | Needs Review");}
    report.AppendLine("Existing catalog IDs, prefab GUIDs, scene placement identities/transforms, collision proxy shapes and culling distances retained. Materials and detachable snow groups retained. Existing Terrain/snow seed/mesh hashes unchanged. Scene validation passed. Source Blender and original geometry preserved, no source execution, district rebake, snow-mask mutation or player-save writes. Native prefab/forest previews rendered. Live traversal and Android/device timing untested.");
    Preview(scene);EditorSceneManager.OpenScene(SceneValidation.ScenePath);File.WriteAllText(Logs+"/Validation.txt",report.ToString());Debug.Log(report.ToString());
   }
