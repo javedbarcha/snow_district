@@ -1,0 +1,21 @@
+{
+  "source": "Snow District control icon sheet.png",
+  "sha256": "a30db25f713f99c56d644536b198b1d84415d9d61008adac181a9211956c6e8f",
+  "processing": "Rectangular crop, trim alpha>32 with 4px padding; discard residual alpha<=16. No resampling, recoloring or generation.",
+  "icons": [
+    "camera",
+    "garage",
+    "pause",
+    "lights-off",
+    "lights-on",
+    "steer-left",
+    "steer-right",
+    "blade-left",
+    "blade-straight",
+    "blade-right",
+    "dump",
+    "lift-toggle",
+    "forward",
+    "reverse"
+  ]
+}

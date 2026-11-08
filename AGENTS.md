@@ -2962,3 +2962,124 @@ spin, both active/parked states, 120 post-reset steps each and reactivation.
 Scene validation and 19 snow checks passed. Evidence: Logs/RecoveryPhysics/Validation.txt.
 Live recovery clicks and Android device acceptance remain untested.
 No scene, prefab, save-schema or player-save edits.
+
+
+## Two directional mobile pedals - 8 November 2026
+
+User selected Forward/Reverse hold pedals in place of Drive, Brake and F/R.
+DrivingButtonsAuthoring migrates the existing throttle/brake buttons, removes
+the gear toggle, preserves 5% right anchoring, and gives both pedals equal
+118x120 touch areas with a 22px gap. Existing winter-kit left/right arrows
+rotate into up/down pedal icons; labels remain hidden. Future HUD/PSD authoring
+retains the mapping. Steering and attachment behavior remain unchanged.
+Touch directions select gear and throttle; holding both brakes with no throttle.
+Releasing mobile pedals applies 35% service braking, with existing low-speed
+hold. MachineController retains its existing opposing-motion braking before
+applying drive torque (0.5 m/s changeover threshold); no velocity reversal or
+physics tuning changes. Desktop W/S and Space remain supported. Clear, pointer
+release and disabled controls clear their touch channels. Editor installer and
+input/layout checks: Snowglow > UI > Install two directional pedals.
+Unity 6000.3.8f1 compiled and saved/reopened Pinefall. All 32 mixed
+touch/keyboard combinations, independent pointer release, wrong-pointer
+protection, disable cleanup, Clear and release braking passed; scene validation
+and 19 snow checks passed. Native HUD preview visually inspected. Evidence:
+Logs/DirectionalPedals/Validation.txt and Preview.png. Android touch/driving
+acceptance remains separate. No attachment automation, district rebake or player-save changes.
+
+
+## Control sheet and responsive driving HUD - 9 November 2026
+
+User supplied a sketch and transparent icon sheet, authorizing extraction/import
+and the HUD replacement. Original and SHA256 retained in SourceAssets/ControlIconSheet;
+14 pixel crops preserve colour and aspect, remove only alpha<=16 background
+residue and use four-pixel trim padding. ControlSheetAuthoring imports reusable
+Needs Review UI catalogue entries/prefabs with Android ASTC 6x6 sprites.
+Camera/Garage upper left; Pause/Lights upper right; blade direction above
+steering; Forward above Reverse at right, Lift beside Reverse. Existing two-
+directional-pedal mechanics are retained despite Gas/Brake labels in the sketch.
+Tractor has direct -1/0/+1 angle commands; loader instead shows Dump at the left
+angle slot with all angle selectors hidden. Lift retains Work/Carry semantics.
+Recover/Orbit reset remain small left utility controls. Safe-area 5% side anchors
+and uniform responsive fitting remain. Existing stats/text readouts retained.
+Both driving-HUD and PSD authoring reapply this prepared policy. No runtime
+UI factories, physics, snow or player-save changes. Guide: CONTROL_SHEET_HUD.md.
+Unity 6000.3.8f1 imported all 14 entries, saved/reopened Pinefall, passed
+catalogue/binding/aspect/mode-visibility checks, scene validation and all 19 snow
+checks. Tractor/loader native HUD previews visually inspected. No mesh renderer,
+mesh filter or Terrain component YAML changed. Report/previews:
+Logs/ControlSheet/Validation.txt, Tractor.png and Loader.png. Actual phone
+touch, safe-area devices and driving acceptance remain separate.
+
+
+## Coast on pedal release and stopped direction-change buffer - 9 November 2026
+
+User superseded release braking: no automatic pedal-release brake or low-speed
+hold while actively driving. Normal Rigidbody damping, surface/snow resistance
+and parked-machine braking remain. Both pedals together still brake.
+DirectionalDriveState gates both directions: opposite input applies full service
+braking with zero drive torque until horizontal speed is <=0.05 m/s, then holds
+a 0.3-second stopped buffer before opposite torque. Tiny residual horizontal
+velocity/wheel spin is zeroed during the buffer; vertical motion is retained.
+The buffer does not elapse while moving, resets on renewed motion or cancelled
+input, and releasing during a switch coasts. Returning to the original travel
+direction cancels the pending switch. Recovery and machine activation reset
+transient direction state. No saved schema, HUD layout or asset changes.
+Unity 6000.3.8f1 compiled and passed 1,771 input/interlock assertions across
+both directions and 10/20/33 ms steps, 984 existing recovery physics assertions,
+scene validation and all 19 snow checks. Saved scene hash and dirty state
+preserved. Evidence: Logs/DirectionBuffer/Validation.txt.
+Actual WheelCollider stopping distance, slopes and Android feel remain separate.
+
+
+## Percentage HUD spacing and 0.2 s direction buffer - 9 November 2026
+
+Supersedes the earlier fixed offsets and 0.3 s wait. DirectionalDriveState now
+waits 0.2 s at standstill; pedal release still coasts. ResponsiveDrivingHUD uses
+saved references and LateUpdate positioning, with no runtime UI factories.
+Forward is 25% larger in width and height than Reverse, preserving icon aspect.
+Safe-area width margins are 5% left/right; top 10% reserves the readouts/Stats
+(toggle compacted within that band), and bottom margin is 5% height. Pedal
+vertical gap and steering-to-angle/Dump gap are 5% height. Brake/Lift horizontal
+gap and left/right steering gap are 10% width, measured edge to edge. Other
+button sizes scale uniformly from 1280x720 while gaps track screen dimensions.
+Tractor/loader mode behavior, bindings, coasting and manual scenery are retained.
+ControlSheetAuthoring reuses the saved policy on future HUD builds. Native
+Unity 6000.3.8f1 saved/reopened Pinefall and passed 86 spacing/binding checks
+at 1280x720, 1600x720, 1920x1080, 1024x768 and 2340x1080. Coasting/0.2 s
+interlock, recovery physics, scene validation and all 19 snow checks passed.
+Tractor and loader native HUD previews visually inspected. Evidence:
+Logs/HUDSpacing/Validation.txt, Tractor.png and Loader.png.
+Guide: CONTROL_SHEET_HUD.md. Phone safe-area/touch acceptance remains separate.
+
+
+## Revised three HUD gaps - 9 November 2026
+
+Latest request changes steering left/right and brake/Lift gaps to 7% of usable
+safe-area width, and steering-to-angle/Dump gap to 7% of safe-area height.
+The 5% pedal gap, side/bottom margins, 10% top band, button sizes and 0.2 s
+direction-change buffer remain. Unity saved/reopened and passed all 86 spacing/binding checks at five
+landscape sizes, direction-buffer/recovery checks, scene validation and 19 snow
+checks. Updated native preview inspected. Evidence: Logs/HUDSpacing/Validation.txt.
+
+
+## Latest four HUD gaps - 9 November 2026
+
+Supersedes previous gaps: steering left/right and Brake/Lift are 5% of safe-area
+width; steering-to-tilt/Dump is 8% of height; adjacent tilt/angle buttons are 2%
+of width, all edge to edge. Other margins, sizes and driving behavior retain
+their prior settings. Unity saved/reopened Pinefall and passed 96 spacing/binding checks across
+five landscape sizes, direction-buffer/recovery regression checks, scene
+validation and all 19 snow checks. Updated native preview inspected; phone
+acceptance remains separate. Evidence: Logs/HUDSpacing/Validation.txt.
+
+
+## 1.5% tilt gaps and garage-only recovery - 9 November 2026
+
+Adjacent tilt/angle buttons now use 1.5% safe-area width gaps. Removed Recover
+from the driving HUD and its authoring/factory path; Garage > Fuel / Repairs
+retains its Recover to Depot action and binding. Keyboard H and automatic
+recovery remain. Other spacing and driving behavior are unchanged. Unity saved/reopened Pinefall and passed 99 spacing/binding checks at
+five landscape sizes, including absence of driving recovery, Garage service
+route and retained persistent recovery binding. Recovery/interlock regressions,
+scene validation and 19 snow checks passed. Updated HUD preview inspected;
+phone acceptance remains separate. Evidence: Logs/HUDSpacing/Validation.txt.

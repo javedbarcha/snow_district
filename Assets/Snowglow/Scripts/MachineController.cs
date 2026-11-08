@@ -8,6 +8,7 @@ namespace Snowglow
         public AttachmentController Tool; public Rigidbody Body { get; private set; }
         public float Fuel = 70, Condition = 100; public int Tyres, Engine; public bool Owned;
         public bool Assistance = true, ActiveMachine; public float Slip, Speed, LastSnowForce;
+        DirectionalDriveState driveState;
         float steering, nextHit; Vector3 parkingPosition; Quaternion parkingRotation;
         public float FuelRatio => Fuel / definition.fuelCapacity;
         public bool AtDepot => Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(-95, -90)) < 25;
@@ -19,7 +20,7 @@ namespace Snowglow
             foreach (var w in wheels) w.ConfigureVehicleSubsteps(5, 5, 8);
             SetActiveMachine(false);
         }
-        public void SetActiveMachine(bool active) { ActiveMachine = active; if (Body == null) Body = GetComponent<Rigidbody>(); Body.isKinematic = !active; foreach (var w in wheels) { w.motorTorque = 0; w.brakeTorque = active ? 0 : definition.brakeTorque; } if (active) Body.WakeUp(); }
+        public void SetActiveMachine(bool active) { ActiveMachine = active; if (Body == null) Body = GetComponent<Rigidbody>(); Body.isKinematic = !active; driveState=default; foreach (var w in wheels) { w.motorTorque = 0; w.brakeTorque = active ? 0 : definition.brakeTorque; } if (active) Body.WakeUp(); }
         void FixedUpdate()
         {
             var game = PrototypeSession.Instance; if (!ActiveMachine || game == null || !game.IsRunning) return;
@@ -28,6 +29,8 @@ namespace Snowglow
             steering = Mathf.MoveTowards(steering, targetSteering, 100 * Time.fixedDeltaTime);
             float mass = definition.mass + equipment.mass + Tool.Load * 250;
             Body.mass = mass; Body.centerOfMass = (definition.dryCenterOfMass * definition.mass + transform.InverseTransformPoint(Tool.mount.position) * equipment.mass + transform.InverseTransformPoint(Tool.mouth.position) * (Tool.Load * 250)) / mass;
+            float driveThrottle=driveState.Resolve(direction,input.Throttle,input.Brake,forward,Vector3.ProjectOnPlane(Body.linearVelocity,Vector3.up).magnitude,Time.fixedDeltaTime,out float serviceBrake,out bool holdStopped);
+            if(holdStopped){Body.linearVelocity=Vector3.Project(Body.linearVelocity,Vector3.up);foreach(var wheel in wheels)wheel.rotationSpeed=0;}
             int grounded = 0; Slip = 0;
             for (int i = 0; i < wheels.Length; i++)
             {
@@ -39,10 +42,8 @@ namespace Snowglow
                 }
                 var f = w.forwardFriction; f.stiffness = grip; w.forwardFriction = f; var s = w.sidewaysFriction; s.stiffness = grip * (Assistance ? 1.2f : 1); w.sidewaysFriction = s;
                 float traction = Assistance && w.GetGroundHit(out WheelHit wh) && Mathf.Abs(wh.forwardSlip) > .65f ? .55f : 1;
-                bool opposite = forward * direction < -.5f;
-                w.motorTorque = Fuel > 0 && Condition > 0 && Speed < definition.maxSpeed && !opposite ? input.Throttle * direction * definition.torque * (1 + Engine * .18f) * traction * Mathf.Lerp(.5f, 1, Condition / 100) : 0;
-                w.brakeTorque = (input.Brake + (opposite ? input.Throttle : 0)) * definition.brakeTorque;
-                if (input.Throttle < .02f && Speed < .25f) w.brakeTorque = Mathf.Max(w.brakeTorque, 800);
+                w.motorTorque = Fuel > 0 && Condition > 0 && Speed < definition.maxSpeed ? driveThrottle * direction * definition.torque * (1 + Engine * .18f) * traction * Mathf.Lerp(.5f, 1, Condition / 100) : 0;
+                w.brakeTorque = serviceBrake * definition.brakeTorque;
             }
             if (grounded > 0)
             {
@@ -81,6 +82,7 @@ namespace Snowglow
             Body.linearVelocity = Vector3.zero; Body.angularVelocity = Vector3.zero;
             Body.isKinematic = !ActiveMachine;
             Body.interpolation = interpolation;
+            driveState=default;
             steering = Speed = Slip = LastSnowForce = 0;
             if (wheels != null) foreach (var wheel in wheels) { wheel.motorTorque = 0; wheel.brakeTorque = definition.brakeTorque; wheel.steerAngle = 0; wheel.rotationSpeed = 0; }
             if (ActiveMachine) Body.WakeUp();

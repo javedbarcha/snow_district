@@ -41,7 +41,7 @@ namespace Snowglow.Editor {
    Hold(driving,"BRAKE","brake",1,1014,580,110,104);Hold(driving,"DRIVE","throttle",1,1142,564,118,120);
    Button(driving,"F / R","reverse",1142,503,118,48);
    Button(driving,"WORK / CARRY","work",358,582,173,50);Button(driving,"ANGLE L/C/R","angle",738,582,176,50);
-   Button(driving,"DUMP","dump",358,642,173,42);Button(driving,"RECOVER","recover",738,642,176,42);
+   Button(driving,"DUMP","dump",358,642,173,42);
    hud.debugText=Text(driving,"PHYSICS",940,230,320,240,15);
    var menu=Full("Menu layer",design);var background=menu.gameObject.AddComponent<Image>();background.color=new Color(.09f,.17f,.23f,.85f);
    var info=Rect("Career summary",menu,35,30,1210,157);Image(info,paper);hud.menuInfo=Text(info,"SNOWGLOW",18,12,1170,140,18);

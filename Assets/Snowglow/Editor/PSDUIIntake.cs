@@ -49,7 +49,7 @@ namespace Snowglow.Editor {
    CatalogPreparation.RecordMetrics(a);Require(CatalogValidation.Check(a).Ok,"derived Abandon entry invalid");EditorUtility.SetDirty(a);EditorUtility.SetDirty(library);AssetDatabase.SaveAssets();
   }
   static int Artwork(Button b){
-   var t=b.GetComponent<TouchControl>();if(t){switch(t.channel){case "steerLeft":return 2;case "steerRight":return 3;case "throttle":return 4;case "brake":return 5;}}
+   var t=b.GetComponent<TouchControl>();if(t){switch(t.channel){case "forward":return 2;case "reverse":return 3;case "steerLeft":return 2;case "steerRight":return 3;case "throttle":return 4;case "brake":return 5;}}
    var c=b.GetComponent<UICommand>();if(!c)return 0;var key=c.command;
    if(key.StartsWith("switch:"))return 17;if(key.StartsWith("buy:"))return 18;if(key.StartsWith("job:"))return 25;
    switch(key){case "abandon":return 33;case "reverse":return 6;case "camera":case "camera:reset":return 7;case "pause":return 8;case "work":return 9;case "angle":return 10;case "dump":return 13;case "recover":case "recover:depot":return 15;case "sound":return 16;
@@ -61,6 +61,8 @@ namespace Snowglow.Editor {
     int art=Artwork(button);if(art==0)continue;var sprite=SpriteFor(art);Require(sprite,"mapped sprite missing");
     var child=button.transform.Find("PSD kit artwork");if(!child)child=new GameObject("PSD kit artwork",typeof(RectTransform),typeof(CanvasRenderer),typeof(Image)).transform;
     child.SetParent(button.transform,false);child.SetAsFirstSibling();var image=child.GetComponent<Image>();image.sprite=sprite;image.preserveAspect=true;image.raycastTarget=false;image.color=Color.white;
+    var pedal=button.GetComponent<TouchControl>();
+    child.localRotation=pedal&&(pedal.channel=="forward"||pedal.channel=="reverse")?Quaternion.Euler(0,0,-90):Quaternion.identity;
     var background=button.GetComponent<Image>();background.color=Color.clear;background.raycastTarget=true;button.targetGraphic=image;button.transition=Selectable.Transition.ColorTint;
     var colors=button.colors;colors.normalColor=Color.white;colors.highlightedColor=Color.white;colors.pressedColor=new Color(.73f,.85f,.9f,1);colors.selectedColor=Color.white;colors.disabledColor=new Color(.6f,.65f,.7f,.5f);button.colors=colors;
     var size=((RectTransform)button.transform).sizeDelta;var r=(RectTransform)child;bool tall=size.y>=90;
@@ -79,7 +81,7 @@ namespace Snowglow.Editor {
     if(art==9){hud.workSkinImage=image;hud.plowWorkSprite=SpriteFor(9);hud.loaderWorkSprite=SpriteFor(11);}
     EditorUtility.SetDirty(button);
    }
-   EditorUtility.SetDirty(hud);
+   ControlSheetAuthoring.ApplyIfPrepared(hud);EditorUtility.SetDirty(hud);
   }
   [MenuItem("Snowglow/Asset intake/Import Photoshop UI button kit")]
   public static void Install(){

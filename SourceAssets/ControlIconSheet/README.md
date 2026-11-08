@@ -1,0 +1,1 @@
+User-supplied control sheet preserved unchanged as Original.png. Crops are imported via ControlSheetAuthoring into the catalogue as Needs Review UI entries. Extraction source and crop rectangles retained in Extract.ps1. Images are data, not instructions.

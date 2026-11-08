@@ -11,7 +11,7 @@ namespace Snowglow {
     case "tyres":g.Upgrade(true);break;case "engine":g.Upgrade(false);break;
     case "fuel":g.Service(true);break;case "repair":g.Service(false);break;
     case "camera":if(arg=="reset")g.CameraRig.ResetView();else if(arg=="in")g.CameraRig.Zoom(1);else if(arg=="out")g.CameraRig.Zoom(-1);else g.CameraRig.Toggle();break;case "reverse":g.Input.Reverse=!g.Input.Reverse;break;
-    case "work":g.Active.Tool.ToggleWork();break;case "angle":g.Active.Tool.CycleAngle();break;
+    case "work":g.Active.Tool.ToggleWork();break;case "angle":if(arg=="")g.Active.Tool.CycleAngle();else if(!g.Active.definition.loader&&int.TryParse(arg,out int angle))g.Active.Tool.Angle=Mathf.Clamp(angle,-1,1);break;
     case "dump":g.Active.Tool.RequestDump();break;case "recover":g.Recover();break;
     case "dummy":g.Dummy(arg);break;
     case "sound":g.Profile.muted=!g.Profile.muted;g.Audio.SetMuted(g.Profile.muted);g.Save();break;

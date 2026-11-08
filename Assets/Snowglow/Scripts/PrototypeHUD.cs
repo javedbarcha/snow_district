@@ -6,6 +6,11 @@ namespace Snowglow {
   public GameObject[] panels;public string[] names;
   public Text cameraModeText,cameraHelp;public GameObject cameraTools;public RectTransform leftControls,rightControls,centreControls;
   public Image workSkinImage;public Sprite plowWorkSprite,loaderWorkSprite;
+  public GameObject[] bladeAngleButtons=new GameObject[0];public GameObject loaderDumpButton;
+  public void RefreshEquipmentControls(bool loader){
+   foreach(var button in bladeAngleButtons)if(button&&button.activeSelf==loader)button.SetActive(!loader);
+   if(loaderDumpButton&&loaderDumpButton.activeSelf!=loader)loaderDumpButton.SetActive(loader);
+  }
   float next;
   public void RefreshMenu(){var g=PrototypeSession.Instance;if(g==null)return;for(int i=0;i<panels.Length;i++)panels[i].SetActive(names[i]==g.Panel);driving.SetActive(g.Panel=="");menuRoot.SetActive(g.Panel!="");}
   void Update(){
@@ -14,6 +19,7 @@ namespace Snowglow {
    float available=((RectTransform)safeArea).rect.width;float height=((RectTransform)safeArea).rect.height;float fit=Mathf.Min(available/1280f,height/720f);layout.localScale=Vector3.one*fit;if(leftControls)leftControls.localScale=Vector3.one*fit;if(rightControls)rightControls.localScale=Vector3.one*fit;if(centreControls)centreControls.localScale=Vector3.one*fit;
    if(Time.unscaledTime<next)return;next=Time.unscaledTime+.15f;
    var m=g.Active;var p=g.Profile;var a=m.Tool;
+   RefreshEquipmentControls(m.definition.loader);
    if(workSkinImage)workSkinImage.sprite=m.definition.loader?loaderWorkSprite:plowWorkSprite;
    if(cameraModeText)cameraModeText.text="CAM: "+g.CameraRig.ModeName;
    if(cameraTools)cameraTools.SetActive(g.CameraRig.Interactive);

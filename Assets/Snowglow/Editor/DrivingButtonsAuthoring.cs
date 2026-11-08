@@ -35,6 +35,12 @@ namespace Snowglow.Editor {
    var root=(RectTransform)hud.driving.transform;root.SetParent(hud.safeArea,false);root.anchorMin=Vector2.zero;root.anchorMax=Vector2.one;root.offsetMin=root.offsetMax=Vector2.zero;root.localScale=Vector3.one;
    foreach(var touch in root.GetComponentsInChildren<TouchControl>(true).Where(t=>t.channel=="lift"||t.channel=="tilt").ToArray())UnityEngine.Object.DestroyImmediate(touch.gameObject);
    foreach(var command in root.GetComponentsInChildren<UICommand>(true).Where(c=>c.command=="auto").ToArray())UnityEngine.Object.DestroyImmediate(command.gameObject);
+   foreach(var command in root.GetComponentsInChildren<UICommand>(true).Where(c=>c.command=="reverse").ToArray())UnityEngine.Object.DestroyImmediate(command.gameObject);
+   foreach(var touch in root.GetComponentsInChildren<TouchControl>(true)){
+    if(touch.channel=="throttle")touch.channel="forward";
+    if(touch.channel=="brake")touch.channel="reverse";
+   }
+   foreach(var recover in root.GetComponentsInChildren<UICommand>(true).Where(c=>c.command=="recover"||c.command=="recover:depot").ToArray())UnityEngine.Object.DestroyImmediate(recover.gameObject);
    hud.leftControls=Group(root,"Left controls | 5 percent inset",.05f);hud.rightControls=Group(root,"Right controls | 5 percent inset",.95f);hud.centreControls=Group(root,"Equipment controls",.5f);
    var steer=root.GetComponentsInChildren<TouchControl>(true).FirstOrDefault(t=>t.channel=="steer"||t.channel=="steerLeft");Require(steer,"steering template missing");
    var right=root.GetComponentsInChildren<TouchControl>(true).FirstOrDefault(t=>t.channel=="steerRight");
@@ -55,14 +61,15 @@ namespace Snowglow.Editor {
     }
    }
    foreach(var touch in root.GetComponentsInChildren<TouchControl>(true)){
-    if(touch.channel=="throttle")Position((RectTransform)touch.transform,hud.rightControls,0,36,118,120,false,true);
-    if(touch.channel=="brake")Position((RectTransform)touch.transform,hud.rightControls,-138,36,110,104,false,true);
+    if(touch.channel=="forward"){touch.name="Forward pedal";Label(touch.gameObject,"FORWARD");}else if(touch.channel=="reverse"){touch.name="Reverse pedal";Label(touch.gameObject,"REVERSE");}
+    if(touch.channel=="forward")Position((RectTransform)touch.transform,hud.rightControls,0,36,118,120,false,true);
+    if(touch.channel=="reverse")Position((RectTransform)touch.transform,hud.rightControls,-140,36,118,120,false,true);
    }
    if(hud.cameraTools){var tools=(RectTransform)hud.cameraTools.transform;tools.SetParent(hud.leftControls,false);tools.anchorMin=Vector2.zero;tools.anchorMax=Vector2.one;tools.offsetMin=tools.offsetMax=Vector2.zero;}
    foreach(var text in hud.GetComponentsInChildren<Text>(true).Where(t=>t.text.StartsWith("DESKTOP: W/S",StringComparison.Ordinal)))text.text="DESKTOP: W/S drive/reverse | A/D steer | Space brake | E work/carry | Q blade angle\nB dump | C cycles 3 cameras | H recover to depot | Esc pause\nOrbit: right-drag or J/L + I/K | scroll or +/- zoom | Home resets";
    foreach(var zoom in hud.driving.GetComponentsInChildren<UICommand>(true).Where(c=>c.command=="camera:in"||c.command=="camera:out").ToArray())UnityEngine.Object.DestroyImmediate(zoom.gameObject);
    if(hud.cameraTools){var reset=hud.cameraTools.GetComponentsInChildren<UICommand>(true).Single(c=>c.command=="camera:reset");Position((RectTransform)reset.transform,hud.cameraTools.transform,0,230,150,42,true);}
-   VehicleLightsAuthoring.ConfigureButton(hud);PSDUIIntake.ApplyPrepared(hud);MobileStatsAuthoring.Apply(hud);EditorUtility.SetDirty(hud);
+   VehicleLightsAuthoring.ConfigureButton(hud);PSDUIIntake.ApplyPrepared(hud);MobileStatsAuthoring.Apply(hud);ControlSheetAuthoring.ApplyIfPrepared(hud);EditorUtility.SetDirty(hud);
   }
   [MenuItem("Snowglow/UI/Install simplified driving buttons")]
   public static void Install(){
@@ -73,7 +80,7 @@ namespace Snowglow.Editor {
    Require(hud.leftControls.anchorMin.x==.05f&&hud.rightControls.anchorMin.x==.95f,"side anchors not saved");
    Require(!hud.driving.GetComponentsInChildren<TouchControl>(true).Any(t=>t.channel=="lift"||t.channel=="tilt"||t.channel=="steer"),"obsolete touch controls remain");
    Require(!hud.driving.GetComponentsInChildren<UICommand>(true).Any(c=>c.command=="auto"),"manual toggle remains");
-   var recover=hud.driving.GetComponentsInChildren<UICommand>(true).Single(c=>c.command=="recover:depot");Require(recover.GetComponent<Button>().onClick.GetPersistentEventCount()==1,"recover listener missing");
+   Require(!hud.driving.GetComponentsInChildren<UICommand>(true).Any(c=>c.command=="recover"||c.command=="recover:depot"),"driving recover button remains");
    Checks();MechanicsChecks.Run();
    typeof(CompactHUDAuthoring).GetMethod("Preview",BindingFlags.Static|BindingFlags.NonPublic).Invoke(null,new object[]{hud});
    File.Copy("Logs/CompactHUD/Preview.png","Logs/DrivingButtons/Preview.png",true);EditorSceneManager.OpenScene(SceneValidation.ScenePath);
