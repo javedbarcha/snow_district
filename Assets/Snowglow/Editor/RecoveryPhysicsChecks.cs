@@ -23,16 +23,21 @@ namespace Snowglow.Editor {
      var depot=machine.transform.position+Vector3.up*.3f;float load=machine.definition.loader ? .8f : 0;machine.Tool.Load=load;
      foreach(bool active in new[]{true,false}){
       machine.SetActiveMachine(true);machine.Body.position=depot+new Vector3(35,2,20);machine.Body.rotation=Quaternion.Euler(0,120,0);machine.Body.linearVelocity=new Vector3(5,0,3);machine.Body.angularVelocity=Vector3.up;physics.Simulate(.02f);
+      // Exercise stored wheel spin and force/torque queued immediately before recovery.
+      foreach(var wheel in machine.wheels){wheel.rotationSpeed=720;wheel.motorTorque=1000;}
+      machine.Body.AddForce(new Vector3(20000,0,12000));machine.Body.AddTorque(Vector3.up*15000);
       machine.SetActiveMachine(active);machine.RecoverToDepot();
+      Require(machine.Body.linearVelocity==Vector3.zero&&machine.Body.angularVelocity==Vector3.zero,"recovery velocity not zero");assertions++;
+      Require(machine.wheels.All(w=>Mathf.Abs(w.rotationSpeed)<.001f&&w.motorTorque==0),"wheel momentum not cleared");assertions++;
       Require(Vector3.Distance(machine.Body.position,depot)<.001f,source.name+" physics pose did not teleport");assertions++;
       Require(machine.Body.isKinematic==!active&&machine.Body.interpolation==RigidbodyInterpolation.Interpolate,"activity/interpolation changed");assertions++;
       Require(machine.Tool.Load==load,"bucket load changed");assertions++;
-      for(int i=0;i<120;i++){physics.Simulate(.02f);Require(Vector3.Distance(machine.Body.position,depot)<.02f,"snapped back after physics tick "+i);assertions++;}
+      for(int i=0;i<120;i++){physics.Simulate(.02f);Require(Vector3.Distance(machine.Body.position,depot)<.02f,"snapped back after physics tick "+i);assertions++;Require(machine.Body.linearVelocity.sqrMagnitude<.000001f&&machine.Body.angularVelocity.sqrMagnitude<.000001f,"momentum returned on physics tick "+i);assertions++;}
       machine.SetActiveMachine(true);physics.Simulate(.02f);Require(machine.Body.linearVelocity.sqrMagnitude<.001f&&Vector3.Distance(machine.Body.position,depot)<.02f,"stale momentum after activation");assertions++;
      }
      UnityEngine.Object.DestroyImmediate(clone);
     }
-    SceneValidation.Validate(main);MechanicsChecks.Run();File.WriteAllText("Logs/RecoveryPhysics/Validation.txt","PASS: Unity "+Application.unityVersion+"; "+assertions+" assertions on actual tractor/loader clones in isolated 3D physics. Active/inactive recovery, interpolated Rigidbody, autoSyncTransforms=false, loaded bucket retained, 120 post-recovery steps per case and reactivation without stale momentum. Main scene validation and 19 snow ledger checks passed. No scene assets or player saves written. Full live driving/recovery click and device validation remain untested.");Debug.Log(File.ReadAllText("Logs/RecoveryPhysics/Validation.txt"));
+    SceneValidation.Validate(main);MechanicsChecks.Run();File.WriteAllText("Logs/RecoveryPhysics/Validation.txt","PASS: Unity "+Application.unityVersion+"; "+assertions+" assertions on actual tractor/loader clones in isolated 3D physics. Zero linear/angular velocity and wheel rotation, queued force/torque cancellation, active/inactive recovery, interpolated Rigidbody, autoSyncTransforms=false, loaded bucket retained, 120 post-recovery steps per case and reactivation without stale momentum. Main scene validation and 19 snow ledger checks passed. No scene assets or player saves written. Full live driving/recovery click and device validation remain untested.");Debug.Log(File.ReadAllText("Logs/RecoveryPhysics/Validation.txt"));
    }finally{Physics.autoSyncTransforms=sync;EditorSceneManager.ClosePreviewScene(fixture);SceneManager.SetActiveScene(main);}
   }
  }

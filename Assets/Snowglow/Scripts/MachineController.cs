@@ -71,16 +71,18 @@ namespace Snowglow
             // Rigidbody pose on the next physics tick (autoSyncTransforms is off).
             var interpolation = Body.interpolation;
             Body.interpolation = RigidbodyInterpolation.None;
+            // Drop forces queued earlier in the physics step before restoring a dynamic body.
+            Body.isKinematic = true;
             Body.isKinematic = false;
-            Body.linearVelocity = Vector3.zero; Body.angularVelocity = Vector3.zero;
             var destination = parkingPosition + Vector3.up * .3f;
             Body.position = destination; Body.rotation = parkingRotation;
             transform.SetPositionAndRotation(destination, parkingRotation);
             Physics.SyncTransforms();
+            Body.linearVelocity = Vector3.zero; Body.angularVelocity = Vector3.zero;
             Body.isKinematic = !ActiveMachine;
             Body.interpolation = interpolation;
             steering = Speed = Slip = LastSnowForce = 0;
-            if (wheels != null) foreach (var wheel in wheels) { wheel.motorTorque = 0; wheel.brakeTorque = definition.brakeTorque; wheel.steerAngle = 0; }
+            if (wheels != null) foreach (var wheel in wheels) { wheel.motorTorque = 0; wheel.brakeTorque = definition.brakeTorque; wheel.steerAngle = 0; wheel.rotationSpeed = 0; }
             if (ActiveMachine) Body.WakeUp();
             Tool.ResetSweep();
         }

@@ -2945,3 +2945,20 @@ four gameplay headings also rendered. Live driving, phone visuals/performance
 and Android packaging remain untested. Evidence/backups/removed IDs/wood poses:
 Logs/Forest500CloudFade. Repeat menu: Snowglow > Environment > Use 500 forest
 objects, 200m wood and fading clouds. No district rebake or player-save writes.
+
+## Clear all motion on vehicle recovery
+
+RecoverToDepot now clears linear/angular velocity after syncing the depot pose,
+toggles through a kinematic state to discard queued physics forces, and zeros
+each WheelCollider.rotationSpeed alongside motor torque and steering. Cached
+speed/slip/snow force reset and existing braking remain. Active/parked state,
+interpolation, depot destination and carried snow are retained. The shared path
+covers the recovery button, out-of-bounds recovery and job/district reset.
+RecoveryPhysicsChecks now injects wheel spin and queued force/torque, checks zero
+motion immediately and across 120 physics steps for both vehicles in active/
+inactive states. Unity 6000.3.8f1 compiled and passed 984 native assertions on tractor/loader
+clones in isolated physics, including queued force/torque cancellation, wheel
+spin, both active/parked states, 120 post-reset steps each and reactivation.
+Scene validation and 19 snow checks passed. Evidence: Logs/RecoveryPhysics/Validation.txt.
+Live recovery clicks and Android device acceptance remain untested.
+No scene, prefab, save-schema or player-save edits.
