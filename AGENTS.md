@@ -3215,3 +3215,25 @@ Driving/control-sheet/camera authoring no longer recreate the legacy button.
 Unity saved/reopened Pinefall and verified no legacy reset button and
 exactly one new camera switch with its persistent binding. Scene validation
 passed. Evidence: Logs/RemoveLegacyCamera/Validation.txt.
+
+
+## Production UI redesign ? preview before implementation
+
+User requests all 11 proposed screens and artwork, with a preview before game
+implementation. Planned screens: Main Menu, Career Regions, Region Towns, Job
+Selection, Machinery Selection, Garage, Shop, Settings, Gameplay HUD, Pause,
+Results; confirmations are dialogs, service/upgrades are Garage tabs. Career
+uses region cards > town cards (Alpine > Pinefall), superseding world-map plans.
+Main-menu Quick Job/Career/Garage artwork must use actual in-game captures.
+Garage/Shop share a workshop background. Future main-menu scenery is a frozen
+scene with a slowly orbiting camera; gameplay stays paused.
+
+Preview: work/ui-preview/snow-district-ui-preview.html; notes REVIEW.md and
+browser-validation.json. Native art captures under Logs/UIProductionPreview;
+UIProductionPreviewCapture is an Editor-only, unsaved staging tool. Workshop
+preview uses actual vehicles in a temporary stage, not a new saved building.
+Navy/snow-white/ivory/yellow styling, consistent reusable UI; labels separate
+from art. Prototype wallet/progression and future locked names are samples.
+All 11 preview screens and six flows checked across four widths. No playable
+UI, economy, profile, scene or gameplay changes implemented by this preview.
+Review the preview with the user before applying the design to Unity.

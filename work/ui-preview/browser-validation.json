@@ -1,0 +1,410 @@
+{
+  "screenLayouts": 44,
+  "flows": [
+    "Career region-town-job-machine-gameplay",
+    "Pause recovery resumes",
+    "Garage repair updates",
+    "Shop purchase and select loader",
+    "Abandon returns home",
+    "Quick Job route"
+  ],
+  "errors": [],
+  "layouts": [
+    {
+      "screen": "home",
+      "width": 1100,
+      "documentWidth": 1100,
+      "viewport": 1100,
+      "boxWidth": 1084,
+      "boxHeight": 671.9375,
+      "imageFailures": 0
+    },
+    {
+      "screen": "regions",
+      "width": 1100,
+      "documentWidth": 1100,
+      "viewport": 1100,
+      "boxWidth": 1084,
+      "boxHeight": 707.8125,
+      "imageFailures": 0
+    },
+    {
+      "screen": "towns",
+      "width": 1100,
+      "documentWidth": 1100,
+      "viewport": 1100,
+      "boxWidth": 1084,
+      "boxHeight": 671.9375,
+      "imageFailures": 0
+    },
+    {
+      "screen": "jobs",
+      "width": 1100,
+      "documentWidth": 1100,
+      "viewport": 1100,
+      "boxWidth": 1084,
+      "boxHeight": 725.546875,
+      "imageFailures": 0
+    },
+    {
+      "screen": "machines",
+      "width": 1100,
+      "documentWidth": 1100,
+      "viewport": 1100,
+      "boxWidth": 1084,
+      "boxHeight": 737.8125,
+      "imageFailures": 0
+    },
+    {
+      "screen": "garage",
+      "width": 1100,
+      "documentWidth": 1100,
+      "viewport": 1100,
+      "boxWidth": 1084,
+      "boxHeight": 815.125,
+      "imageFailures": 0
+    },
+    {
+      "screen": "shop",
+      "width": 1100,
+      "documentWidth": 1100,
+      "viewport": 1100,
+      "boxWidth": 1084,
+      "boxHeight": 733.828125,
+      "imageFailures": 0
+    },
+    {
+      "screen": "settings",
+      "width": 1100,
+      "documentWidth": 1100,
+      "viewport": 1100,
+      "boxWidth": 1084,
+      "boxHeight": 694.984375,
+      "imageFailures": 0
+    },
+    {
+      "screen": "gameplay",
+      "width": 1100,
+      "documentWidth": 1100,
+      "viewport": 1100,
+      "boxWidth": 1084,
+      "boxHeight": 671.9375,
+      "imageFailures": 0
+    },
+    {
+      "screen": "pause",
+      "width": 1100,
+      "documentWidth": 1100,
+      "viewport": 1100,
+      "boxWidth": 1084,
+      "boxHeight": 671.9375,
+      "imageFailures": 0
+    },
+    {
+      "screen": "results",
+      "width": 1100,
+      "documentWidth": 1100,
+      "viewport": 1100,
+      "boxWidth": 1084,
+      "boxHeight": 671.9375,
+      "imageFailures": 0
+    },
+    {
+      "screen": "home",
+      "width": 736,
+      "documentWidth": 736,
+      "viewport": 736,
+      "boxWidth": 720,
+      "boxHeight": 671.9375,
+      "imageFailures": 0
+    },
+    {
+      "screen": "regions",
+      "width": 736,
+      "documentWidth": 736,
+      "viewport": 736,
+      "boxWidth": 720,
+      "boxHeight": 698.75,
+      "imageFailures": 0
+    },
+    {
+      "screen": "towns",
+      "width": 736,
+      "documentWidth": 736,
+      "viewport": 736,
+      "boxWidth": 720,
+      "boxHeight": 671.9375,
+      "imageFailures": 0
+    },
+    {
+      "screen": "jobs",
+      "width": 736,
+      "documentWidth": 736,
+      "viewport": 736,
+      "boxWidth": 720,
+      "boxHeight": 716.484375,
+      "imageFailures": 0
+    },
+    {
+      "screen": "machines",
+      "width": 736,
+      "documentWidth": 736,
+      "viewport": 736,
+      "boxWidth": 720,
+      "boxHeight": 728.75,
+      "imageFailures": 0
+    },
+    {
+      "screen": "garage",
+      "width": 736,
+      "documentWidth": 736,
+      "viewport": 736,
+      "boxWidth": 720,
+      "boxHeight": 851.125,
+      "imageFailures": 0
+    },
+    {
+      "screen": "shop",
+      "width": 736,
+      "documentWidth": 736,
+      "viewport": 736,
+      "boxWidth": 720,
+      "boxHeight": 750,
+      "imageFailures": 0
+    },
+    {
+      "screen": "settings",
+      "width": 736,
+      "documentWidth": 736,
+      "viewport": 736,
+      "boxWidth": 720,
+      "boxHeight": 685.921875,
+      "imageFailures": 0
+    },
+    {
+      "screen": "gameplay",
+      "width": 736,
+      "documentWidth": 736,
+      "viewport": 736,
+      "boxWidth": 720,
+      "boxHeight": 671.9375,
+      "imageFailures": 0
+    },
+    {
+      "screen": "pause",
+      "width": 736,
+      "documentWidth": 736,
+      "viewport": 736,
+      "boxWidth": 720,
+      "boxHeight": 671.9375,
+      "imageFailures": 0
+    },
+    {
+      "screen": "results",
+      "width": 736,
+      "documentWidth": 736,
+      "viewport": 736,
+      "boxWidth": 720,
+      "boxHeight": 671.9375,
+      "imageFailures": 0
+    },
+    {
+      "screen": "home",
+      "width": 375,
+      "documentWidth": 360,
+      "viewport": 375,
+      "boxWidth": 344,
+      "boxHeight": 982.078125,
+      "imageFailures": 0
+    },
+    {
+      "screen": "regions",
+      "width": 375,
+      "documentWidth": 375,
+      "viewport": 375,
+      "boxWidth": 359,
+      "boxHeight": 925.234375,
+      "imageFailures": 0
+    },
+    {
+      "screen": "towns",
+      "width": 375,
+      "documentWidth": 360,
+      "viewport": 375,
+      "boxWidth": 344,
+      "boxHeight": 1089.875,
+      "imageFailures": 0
+    },
+    {
+      "screen": "jobs",
+      "width": 375,
+      "documentWidth": 360,
+      "viewport": 375,
+      "boxWidth": 344,
+      "boxHeight": 1007.171875,
+      "imageFailures": 0
+    },
+    {
+      "screen": "machines",
+      "width": 375,
+      "documentWidth": 360,
+      "viewport": 375,
+      "boxWidth": 344,
+      "boxHeight": 1078.765625,
+      "imageFailures": 0
+    },
+    {
+      "screen": "garage",
+      "width": 375,
+      "documentWidth": 360,
+      "viewport": 375,
+      "boxWidth": 344,
+      "boxHeight": 1160.859375,
+      "imageFailures": 0
+    },
+    {
+      "screen": "shop",
+      "width": 375,
+      "documentWidth": 360,
+      "viewport": 375,
+      "boxWidth": 344,
+      "boxHeight": 1066.34375,
+      "imageFailures": 0
+    },
+    {
+      "screen": "settings",
+      "width": 375,
+      "documentWidth": 375,
+      "viewport": 375,
+      "boxWidth": 359,
+      "boxHeight": 769.25,
+      "imageFailures": 0
+    },
+    {
+      "screen": "gameplay",
+      "width": 375,
+      "documentWidth": 375,
+      "viewport": 375,
+      "boxWidth": 359,
+      "boxHeight": 709.265625,
+      "imageFailures": 0
+    },
+    {
+      "screen": "pause",
+      "width": 375,
+      "documentWidth": 375,
+      "viewport": 375,
+      "boxWidth": 359,
+      "boxHeight": 709.265625,
+      "imageFailures": 0
+    },
+    {
+      "screen": "results",
+      "width": 375,
+      "documentWidth": 375,
+      "viewport": 375,
+      "boxWidth": 359,
+      "boxHeight": 824.265625,
+      "imageFailures": 0
+    },
+    {
+      "screen": "home",
+      "width": 320,
+      "documentWidth": 305,
+      "viewport": 320,
+      "boxWidth": 289,
+      "boxHeight": 1027.984375,
+      "imageFailures": 0
+    },
+    {
+      "screen": "regions",
+      "width": 320,
+      "documentWidth": 305,
+      "viewport": 320,
+      "boxWidth": 289,
+      "boxHeight": 997.15625,
+      "imageFailures": 0
+    },
+    {
+      "screen": "towns",
+      "width": 320,
+      "documentWidth": 305,
+      "viewport": 320,
+      "boxWidth": 289,
+      "boxHeight": 1107.265625,
+      "imageFailures": 0
+    },
+    {
+      "screen": "jobs",
+      "width": 320,
+      "documentWidth": 305,
+      "viewport": 320,
+      "boxWidth": 289,
+      "boxHeight": 1024.5625,
+      "imageFailures": 0
+    },
+    {
+      "screen": "machines",
+      "width": 320,
+      "documentWidth": 305,
+      "viewport": 320,
+      "boxWidth": 289,
+      "boxHeight": 1140.671875,
+      "imageFailures": 0
+    },
+    {
+      "screen": "garage",
+      "width": 320,
+      "documentWidth": 305,
+      "viewport": 320,
+      "boxWidth": 289,
+      "boxHeight": 1226.453125,
+      "imageFailures": 0
+    },
+    {
+      "screen": "shop",
+      "width": 320,
+      "documentWidth": 305,
+      "viewport": 320,
+      "boxWidth": 289,
+      "boxHeight": 1152.21875,
+      "imageFailures": 0
+    },
+    {
+      "screen": "settings",
+      "width": 320,
+      "documentWidth": 320,
+      "viewport": 320,
+      "boxWidth": 304,
+      "boxHeight": 847.5625,
+      "imageFailures": 0
+    },
+    {
+      "screen": "gameplay",
+      "width": 320,
+      "documentWidth": 320,
+      "viewport": 320,
+      "boxWidth": 304,
+      "boxHeight": 725.203125,
+      "imageFailures": 0
+    },
+    {
+      "screen": "pause",
+      "width": 320,
+      "documentWidth": 320,
+      "viewport": 320,
+      "boxWidth": 304,
+      "boxHeight": 725.203125,
+      "imageFailures": 0
+    },
+    {
+      "screen": "results",
+      "width": 320,
+      "documentWidth": 320,
+      "viewport": 320,
+      "boxWidth": 304,
+      "boxHeight": 840.203125,
+      "imageFailures": 0
+    }
+  ]
+}
