@@ -3237,3 +3237,5 @@ from art. Prototype wallet/progression and future locked names are samples.
 All 11 preview screens and six flows checked across four widths. No playable
 UI, economy, profile, scene or gameplay changes implemented by this preview.
 Review the preview with the user before applying the design to Unity.
+
+Preview region lineup now uses the user's five supplied categories: City & Urban; Highway & Open Country; Mountain & Alpine; Suburban & Commercial; Industrial & Extreme Weather. All 15 supplied destinations are grouped within them and marked planned. Pinefall remains the only playable preview location, under Mountain & Alpine. Category cards are browseable; placeholder artwork uses Pinefall captures and does not depict those real-world destinations. No Unity implementation in this revision.

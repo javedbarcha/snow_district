@@ -35,7 +35,7 @@ for(const width of [1100,736,375,320]){
 }
 await send('Emulation.setDeviceMetricsOverride',{width:1100,height:880,deviceScaleFactor:1,mobile:false});
 await evaluate(`(()=>{const p=document.querySelector('#sd-screen-picker');p.value='home';p.dispatchEvent(new Event('change'));})()`);
-await click('[data-go="regions"]');await click('[data-go="towns"]');await click('[data-go="jobs"]');await click('[data-job="1"]');await click('[data-go="machines"]');await click('[data-action="start"]');await new Promise(r=>setTimeout(r,800));
+await click('[data-go="regions"]');await click('[data-region="alpine"]');await click('[data-go="jobs"]');await click('[data-job="1"]');await click('[data-go="machines"]');await click('[data-action="start"]');await new Promise(r=>setTimeout(r,800));
 if(!await evaluate('Boolean(document.querySelector(".sd-driving"))'))throw new Error('Career flow did not reach driving');
 await click('[data-action="pause"]');await click('[data-dialog="recover"]');await click('[data-confirm="recover"]');
 if(!await evaluate('Boolean(document.querySelector(".sd-driving"))'))throw new Error('Recovery did not return to gameplay');
@@ -47,6 +47,17 @@ await click('[data-action="pause"]');await click('[data-dialog="abandon"]');awai
 if(!await evaluate('Boolean(document.querySelector(".sd-mode-grid"))'))throw new Error('Abandon did not return home');
 await click('[data-action="quick"]');
 if(!await evaluate('document.querySelector("#sd-page").textContent.includes("QUICK JOB")'))throw new Error('Quick Job route incorrect');
+for(const width of [1100,375,320]){
+ await send('Emulation.setDeviceMetricsOverride',{width,height:950,deviceScaleFactor:1,mobile:false});
+ for(const region of ['alpine','urban','highway','suburban','industrial']){
+  await evaluate(`(()=>{const p=document.querySelector('#sd-screen-picker');p.value='regions';p.dispatchEvent(new Event('change'));})()`);
+  await click('[data-region="'+region+'"]');
+  const count=await evaluate('document.querySelectorAll(".sd-town-grid .sd-region").length');
+  if(count!==(region==='alpine'?4:3))throw new Error('Region location count '+region);
+  if(await evaluate('document.documentElement.scrollWidth>innerWidth+1'))throw new Error('Region overflow '+region+' '+width);
+  if(width===1100){const shot=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true});fs.writeFileSync(path.join(folder,'region-'+region+'.png'),Buffer.from(shot.data,'base64'));}
+ }
+}
 if(errors.length)throw new Error('Browser JS errors: '+JSON.stringify(errors));
 fs.writeFileSync(path.join(folder,'browser-validation.json'),JSON.stringify({screenLayouts:report.length,flows:['Career region-town-job-machine-gameplay','Pause recovery resumes','Garage repair updates','Shop purchase and select loader','Abandon returns home','Quick Job route'],errors,layouts:report},null,2));
 console.log(`PASS: ${report.length} layouts, 6 interaction flows, ${errors.length} runtime errors`);

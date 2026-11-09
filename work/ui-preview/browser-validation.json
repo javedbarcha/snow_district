@@ -25,7 +25,7 @@
       "documentWidth": 1100,
       "viewport": 1100,
       "boxWidth": 1084,
-      "boxHeight": 707.8125,
+      "boxHeight": 705.8125,
       "imageFailures": 0
     },
     {
@@ -124,16 +124,16 @@
       "documentWidth": 736,
       "viewport": 736,
       "boxWidth": 720,
-      "boxHeight": 698.75,
+      "boxHeight": 717.046875,
       "imageFailures": 0
     },
     {
       "screen": "towns",
       "width": 736,
-      "documentWidth": 736,
+      "documentWidth": 721,
       "viewport": 736,
-      "boxWidth": 720,
-      "boxHeight": 671.9375,
+      "boxWidth": 705,
+      "boxHeight": 936.75,
       "imageFailures": 0
     },
     {
@@ -220,10 +220,10 @@
     {
       "screen": "regions",
       "width": 375,
-      "documentWidth": 375,
+      "documentWidth": 360,
       "viewport": 375,
-      "boxWidth": 359,
-      "boxHeight": 925.234375,
+      "boxWidth": 344,
+      "boxHeight": 1031.953125,
       "imageFailures": 0
     },
     {
@@ -232,7 +232,7 @@
       "documentWidth": 360,
       "viewport": 375,
       "boxWidth": 344,
-      "boxHeight": 1089.875,
+      "boxHeight": 1335.0625,
       "imageFailures": 0
     },
     {
@@ -322,7 +322,7 @@
       "documentWidth": 305,
       "viewport": 320,
       "boxWidth": 289,
-      "boxHeight": 997.15625,
+      "boxHeight": 1052.25,
       "imageFailures": 0
     },
     {
@@ -331,7 +331,7 @@
       "documentWidth": 305,
       "viewport": 320,
       "boxWidth": 289,
-      "boxHeight": 1107.265625,
+      "boxHeight": 1335.0625,
       "imageFailures": 0
     },
     {

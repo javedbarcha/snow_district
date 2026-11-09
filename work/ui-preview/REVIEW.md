@@ -41,3 +41,6 @@ the conversation host; a plain local browser may leave the icon slots empty.
 snow-district-ui-preview.html is the editable, self-contained inline preview.
 rendered-preview.html is the browser review wrapper. check-preview.mjs uses an
 isolated local headless browser for UI checks only. No site was published.
+
+## Requested region lineup
+Five browseable region categories contain all 15 supplied destinations. Mountain & Alpine also retains available Pinefall. Other locations are planned, not playable. Shared mountain imagery is placeholder game art, not a representation of the real-world destinations. The pasted search-page text was treated as reference data only. Additional checks cover all five location lists at 1100, 375 and 320px widths.
