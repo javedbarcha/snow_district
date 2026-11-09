@@ -121,6 +121,17 @@ namespace Snowglow {
     float taken=Grid.Take(i,accepted,out float fresh);Mark(i);credited+=fresh;moved+=taken;capacity-=taken;
    }return moved;
   }
+  // Recovery unloads before teleporting, preserving the volume ledger even near
+  // blocked cells or the playable snow boundary. Prefer the nearest discharge.
+  public float DropRecoveryLoad(Vector3 position,float amount){
+   float min=SnowVolumeGrid.Origin+5,max=SnowVolumeGrid.Origin+SnowVolumeGrid.Size*SnowVolumeGrid.Cell-5;
+   position.x=Mathf.Clamp(position.x,min,max);position.z=Mathf.Clamp(position.z,min,max);
+   float left=amount;left-=Dump(position,left);
+   for(float radius=2;left>.000001f&&radius<32;radius+=2)for(int side=0;side<8&&left>.000001f;side++){
+    float angle=side*Mathf.PI*.25f;left-=Dump(position+new Vector3(Mathf.Cos(angle)*radius,0,Mathf.Sin(angle)*radius),left);
+   }
+   return amount-left;
+  }
   public float Dump(Vector3 position,float amount) {return Grid.Deposit(position.x,position.z,amount,Mark);}
   void Update() {
    var game=PrototypeSession.Instance;

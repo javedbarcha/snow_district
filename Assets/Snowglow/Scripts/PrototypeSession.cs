@@ -22,6 +22,7 @@ namespace Snowglow {
      if(Profile.inJob&&save.position.y>0&&Mathf.Abs(save.position.x)<480&&Mathf.Abs(save.position.z)<480)m.transform.SetPositionAndRotation(save.position,save.rotation);
     }
    }
+   foreach(var m in Fleet)if(m.definition.loader)m.Tool.ResetLowered();
    // The starter is always free, including profiles that stored owned=false.
    Fleet[0].Owned=true;
    if(!Active.Owned)Profile.active=0;
@@ -35,7 +36,7 @@ namespace Snowglow {
   public void StartJob(int kind,bool free=false){
    if(Profile.inJob){Notice="Finish or abandon the active job before starting another.";Open("dashboard");return;}
    Profile.job=kind;Profile.freeWork=free;Profile.inJob=true;Profile.remaining=kind==0?720:900;Profile.earned=Profile.chain=Profile.chainTime=0;
-   Profile.transaction=Guid.NewGuid().ToString("N");Snow.ResetToSeed();foreach(var vehicle in Fleet){vehicle.Tool.Load=0;vehicle.RecoverToDepot();}RecreditTarget();Open("");Save();
+   Profile.transaction=Guid.NewGuid().ToString("N");Snow.ResetToSeed();foreach(var vehicle in Fleet){vehicle.Tool.Load=0;vehicle.RecoverToDepot();if(vehicle.definition.loader)vehicle.Tool.ResetLowered();}RecreditTarget();Open("");Save();
   }
   void RecreditTarget(){
    // Every accepted contract uses current snow. Abandon/restart reloads a fresh worksite.
@@ -71,7 +72,7 @@ namespace Snowglow {
    if(!Active.AtDepot){Notice="Return to the depot to switch machinery.";return;}
    if(!Fleet[index].Owned){Notice="Purchase this machine in the machinery shop.";return;}
    if(Active.Speed>1){Notice="Stop before switching machinery.";return;}
-   Active.SetActiveMachine(false);Profile.active=index;Active.SetActiveMachine(true);Active.Tool.ResetSweep();Input.Clear();Notice=Active.definition.displayName+" selected.";Save();HUD.RefreshMenu();
+   Active.SetActiveMachine(false);Profile.active=index;Active.SetActiveMachine(true);Active.Tool.ResetSweep();Input.Clear();Notice=Active.definition.displayName+" selected.";Save();Open("");
   }
   public void BuyMachine(int i){if(Fleet[i].Owned){Notice="Already owned.";return;}if(!Pay(Fleet[i].definition.price))return;Fleet[i].Owned=true;Notice="Machine purchased and waiting at the depot.";Save();HUD.RefreshMenu();}
   bool Pay(int cost){if(Profile.coins<cost){Notice="Not enough coins. Use the dummy store for prototype testing.";return false;}Profile.coins-=cost;return true;}
@@ -85,7 +86,11 @@ namespace Snowglow {
    int cost=Mathf.CeilToInt(fuel?(Active.definition.fuelCapacity-Active.Fuel)*2:(100-Active.Condition)*3);
    if(!Pay(cost))return;if(fuel)Active.Fuel=Active.definition.fuelCapacity;else Active.Condition=100;Notice="Service complete. Cost: "+cost;Save();HUD.RefreshMenu();
   }
-  public void Recover(){Active.RecoverToDepot();Notice="Recovered to the depot. Snow and load are retained.";Input.Clear();Save();}
+  public void Recover(){
+   var machine=Active;
+   if(machine.definition.loader&&machine.Tool.Load>0){float dropped=Snow.DropRecoveryLoad(machine.Tool.mouth.position,machine.Tool.Load);machine.Tool.Load=Mathf.Max(0,machine.Tool.Load-dropped);}
+   machine.Tool.ResetRaised();machine.RecoverToDepot();Notice="Recovered to the depot. Attachment raised; fuel and condition unchanged.";Input.Clear();Save();Open("");
+  }
   public void Dummy(string outcome){
    if(outcome=="new"){pendingDummy=Guid.NewGuid().ToString("N");Notice="SIMULATED purchase ready. No money is charged.";return;}
    if(outcome=="cancel"||outcome=="fail"){pendingDummy="";Notice="SIMULATED purchase "+outcome+". No currency granted.";return;}

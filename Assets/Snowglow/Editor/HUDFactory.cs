@@ -70,7 +70,7 @@ namespace Snowglow.Editor {
       Text(panel,"PARTS FOR SELECTED MACHINE\nTyres: +12% grip per level. Engine: +18% available torque per level.\nThree levels, costing 200 / 400 / 600 coins. Fitting requires the depot.\nBlade and bucket swaps are limited to the supplied compatible equipment in this build.",24,75,1140,145);
       Button(panel,"UPGRADE TYRES","tyres",24,264,310,60);Button(panel,"UPGRADE ENGINE","engine",365,264,310,60);break;
      case "service":
-      Text(panel,"DEPOT SERVICE\nRefuel: 2 coins per litre. Repair: 3 coins per condition point.\nReturn to the depot to service your machine.\nFree recovery preserves the bucket contents and the district snow.",24,75,1140,145);
+      Text(panel,"DEPOT SERVICE\nRefuel: 2 coins per litre. Repair: 3 coins per condition point.\nReturn to the depot to service your machine.\nRecovery leaves bucket snow at the pickup location. Fuel and condition are unchanged.",24,75,1140,145);
       Button(panel,"REFUEL","fuel",24,264);Button(panel,"REPAIR","repair",250,264);Button(panel,"RECOVER TO DEPOT","recover",476,264,300);break;
      case "store":
       Text(panel,"SIMULATED PURCHASES ONLY - NO REAL MONEY\nCreate a test transaction, then choose success, cancel or failure.\nSuccess grants 2,000 prototype coins. Delivering the same transaction twice grants nothing.",24,75,1140,110);

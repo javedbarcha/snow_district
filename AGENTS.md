@@ -3083,3 +3083,125 @@ five landscape sizes, including absence of driving recovery, Garage service
 route and retained persistent recovery binding. Recovery/interlock regressions,
 scene validation and 19 snow checks passed. Updated HUD preview inspected;
 phone acceptance remains separate. Evidence: Logs/HUDSpacing/Validation.txt.
+
+
+## Pedal rotation, immediate resume and recovery unloading - 9 November 2026
+
+Latest request sets stopped direction buffer to 0.1 s, steering gap to 4% width,
+and rotates the right controls: Gas bottom right, Brake bottom left, Lift above
+Gas. Gas remains 25% larger; safe-area margins and other gaps retain prior
+policy (horizontal gap is between the relocated bottom Gas/Brake pair).
+Successful machinery selection and recovery close menus and resume gameplay;
+rejected selections retain the menu. Session recovery deposits loader contents
+near the pre-teleport mouth, preferring nearby supported unblocked snow cells;
+boundary positions clamp to the snow field and constrained discharge searches
+nearby alternatives. Only accepted volume leaves the bucket, preserving the
+ledger if no valid capacity exists. Both attachments reset raised/non-working,
+straight angle, with stale dumping cancelled. Fuel and condition stay unchanged.
+Low-level physics RecoverToDepot still only teleports/clears motion; session
+Recover supplies unloading/attachment/menu semantics. Garage recovery caption
+updated. Unity 6000.3.8f1 saved/reopened and passed 99 responsive layout/binding
+checks at five landscape sizes, 22 actual-session fixture checks for recovery,
+all fleet selection/resume, unchanged fuel/condition and pickup snow conservation.
+Direction-buffer, 984 recovery-physics, scene validation and 19 snow checks
+passed. Updated native HUD preview inspected. No player-save writes by tests.
+Evidence: Logs/MenuRecovery and Logs/HUDSpacing. Live phone driving acceptance
+remains separate.
+
+
+## Gas/Brake gap - 9 November 2026
+
+Latest Gas-to-Brake edge gap is 4% of safe-area width. Other HUD settings and
+driving behavior retain their previous policy. Unity saved/reopened Pinefall;
+all 99 spacing/binding checks across five landscape sizes and existing
+menu/recovery/snow regression checks passed. Evidence: Logs/HUDSpacing/Validation.txt.
+
+
+## Phone cutout and HUD side margins - 9 November 2026
+
+Phone screenshot exposed additive padding: safe inset plus 5% of safe width
+pushed left controls inward relative to the editor. PrototypeHUD now converts
+max(5% of full screen width, side safe inset) into safe-area-local group anchors
+each frame. Cutout protection remains, and landscape rotation is supported.
+Only driving side-group margins change; existing button sizes, interior gaps,
+menus and readouts retain their settings. Runtime-only; no scene save required.
+Unity 6000.3.8f1 compiled and passed 72 margin/anchor assertions across
+four widths and six cutout configurations, including mirrored landscape and
+cutouts larger than 5%. Evidence: Logs/PhoneMargin/Validation.txt. Phone verification
+requires an updated Android build.
+
+
+## Loader collecting/dumping exclusivity - 9 November 2026
+
+Fixed stale dumping state that could drain/refill the bucket simultaneously and
+block auto carry at 1.48/1.6 or full capacity. Empty Dump does nothing; Work/Carry
+cancels dumping, and Simulate clears empty/conflicting dump state before auto
+carry. Collection is explicitly excluded during dumping. Completed unloads clear
+the flag without discarding small positive snow remainders. Existing 92% auto
+carry, rig poses, collection rates, coasting physics and volume ledger remain.
+Unity 6000.3.8f1 compiled and passed 1,114 actual imported-loader assertions:
+three continuous-snow cycles with zero throttle, monotonic fill, physical
+auto-lift, stable carry, empty/complete/interrupted dumps, stale state at 1.48
+and full capacity, and snow conservation. Scene validation and 19 snow checks
+passed; saved scene/dirty state preserved; no player-save writes. Evidence:
+Logs/LoaderCycle/Validation.txt. Actual driving physics and updated Android
+build/phone appearance remain separate.
+
+
+## Loader action-specific unload finish - 9 November 2026
+
+Latest request supersedes Work-cancels-dump: Lift toggle on a raised loaded
+bucket unloads completely then sets Down/collecting; Dump unloads completely
+then stays Up/carrying. Empty Dump sets Up without arming dumping. Commands
+choose an explicit finish pose while dumping; collection stays disabled until
+unloading finishes, including its final physics tick. Snow transfers through
+the existing volume ledger/rate; blocked unloads wait instead of losing volume.
+Unity 6000.3.8f1 compiled and passed 1,120 actual-loader assertions, including
+three zero-throttle fill cycles, Lift unload-to-Down, Dump unload-to-Up, empty
+Dump Up, refilling after lowering, physical auto-lift and snow conservation.
+Scene validation and 19 snow checks passed; saved scene/dirty state retained
+and no player-save writes. Evidence: Logs/LoaderCycle/Validation.txt. Updated
+Android build and phone acceptance remain separate.
+
+
+## Loader starts lowered - 9 November 2026
+
+Session startup applies ResetLowered to loaders after profile restore; fresh
+contract/free-work start also lowers the emptied loader. This clears transient
+unloading and selects collection pose without changing saved load, fuel or
+condition. A restored near-full bucket still follows the existing auto-carry
+rule when simulation runs. Recovery remains raised; explicit Lift/Dump finish
+poses remain unchanged. Unity compiled and passed 1,123 actual-loader startup/cycle assertions,
+scene validation and 19 snow checks. Saved scene/dirty state retained; no
+player-save writes. Evidence: Logs/LoaderCycle/Validation.txt. Updated Android
+build and phone confirmation remain separate.
+
+
+## Loader bucket rear clearance and reduced lift - 9 November 2026
+
+User reported boom-end pins protruding into the bucket. Prepared assembly adds
+an idempotent 0.25 m forward mounting group under the bucket tilt pivot, moving
+bucket visual/edge/load anchors together; original source meshes remain intact.
+Loader lift travel reduced 25%: 40 to 30 degrees, compensation 15 to 11.25.
+Lowered articulation retains its original angles. Paired external mounting
+lugs bridge pins to the rear wall with one shared 24-triangle mesh and one
+renderer per loader, reusing the bucket palette/material; no new colliders.
+Unity 6000.3.8f1 saved/reopened prefab and Pinefall and passed loader cycle,
+984 recovery physics assertions, scene validation and 19 snow checks. Native
+Down/Carry/Dump views inspected; bucket interior remains clear. Backups/report
+and renders: Logs/LoaderConnectors. Original source unchanged. Live driving,
+Android appearance and phone acceptance remain separate.
+
+
+## Dump-only height and lower rear attachment - 9 November 2026
+
+User accepts Up/Down poses. Dump-only positive tilt now adds 8 degrees of
+boom lift (38 vs 30), matching compensation and raises bucket geometry 0.18 m
+relative to the rear pins. Existing external lugs extend upward to bridge the
+connection; pins thus connect lower on the bucket. Zero/negative tilt restores
+all original mount/lug transforms, preserving Down/Carry. Runtime adjusts
+saved transforms only; no meshes/materials/objects are created. Unity native pose assertions and loader/recovery/scene/19 snow checks passed.
+Revised dump preview visually inspected; Down and Carry PNG files are byte-
+identical to their previous versions. Saved/reopened prefab and Pinefall.
+Evidence/previews: Logs/LoaderConnectors and DumpRevision. Live phone acceptance
+remains separate.

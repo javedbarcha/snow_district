@@ -2,7 +2,7 @@ using UnityEngine;
 namespace Snowglow {
  // Session-only direction interlock. No torque crosses a stopped direction change.
  public struct DirectionalDriveState {
-  public const float StopSpeed=.05f,StopBuffer=.2f;
+  public const float StopSpeed=.05f,StopBuffer=.1f;
   float engaged,stoppedTime;
   public float Resolve(float requested,float throttle,float explicitBrake,float forwardSpeed,float horizontalSpeed,float dt,out float brake,out bool holdStopped){
    brake=explicitBrake;holdStopped=false;

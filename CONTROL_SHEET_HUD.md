@@ -23,7 +23,7 @@ retain 5% horizontal margins and uniform fit to a 1280x720 reference area:
 
 The sketch's Gas/Brake positions retain the previously selected two-directional
 pedal mechanics: Forward drives forward; Reverse brakes opposing travel then
-drives backward. Switching direction brakes to a standstill and holds a 0.2 s
+drives backward. Switching direction brakes to a standstill and holds a 0.1 s
 stopped buffer before opposite drive torque. Releasing both pedals coasts with
 normal rolling/snow resistance; holding both brakes.
 Tractor selectors set -1/0/+1 directly, replacing angle cycling on the HUD.
@@ -50,3 +50,13 @@ Repeat: Snowglow > UI > Apply percentage driving HUD spacing.
 Checks/previews: Logs/HUDSpacing.
 
 Adjacent tilt/angle buttons have a 1.5% safe-area width edge-to-edge gap.
+
+Latest layout: Gas bottom right, Brake bottom left, Lift above Gas; steering gap
+is 4% width. Successful recovery/vehicle selection resumes gameplay. Recovery
+unloads loader snow near pickup, raises attachments and preserves fuel/condition.
+
+Latest Gas-to-Brake edge gap: 4% of safe-area width.
+
+Phone side-margin correction: use max(5% of full screen width, each safe-area
+inset), converted into safe-area-local anchors. The safe inset is not added to
+the percentage. Interior gaps still use the usable safe-area dimensions.

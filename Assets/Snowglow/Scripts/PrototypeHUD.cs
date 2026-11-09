@@ -11,11 +11,23 @@ namespace Snowglow {
    foreach(var button in bladeAngleButtons)if(button&&button.activeSelf==loader)button.SetActive(!loader);
    if(loaderDumpButton&&loaderDumpButton.activeSelf!=loader)loaderDumpButton.SetActive(loader);
   }
+  // Screen-relative margins use the safe inset as a minimum, not extra padding.
+  public static Vector2 SideMarginAnchors(float screenWidth,Rect safe){
+   if(screenWidth<=0||safe.width<=0)return new Vector2(.05f,.95f);
+   float left=Mathf.Max(screenWidth*.05f,safe.xMin),right=Mathf.Min(screenWidth*.95f,safe.xMax);
+   return new Vector2(Mathf.Clamp01((left-safe.xMin)/safe.width),Mathf.Clamp01((right-safe.xMin)/safe.width));
+  }
+  public void ApplySideMargins(float screenWidth,Rect safe){
+   var anchors=SideMarginAnchors(screenWidth,safe);
+   if(leftControls){var min=leftControls.anchorMin;var max=leftControls.anchorMax;min.x=max.x=anchors.x;leftControls.anchorMin=min;leftControls.anchorMax=max;}
+   if(rightControls){var min=rightControls.anchorMin;var max=rightControls.anchorMax;min.x=max.x=anchors.y;rightControls.anchorMin=min;rightControls.anchorMax=max;}
+  }
   float next;
   public void RefreshMenu(){var g=PrototypeSession.Instance;if(g==null)return;for(int i=0;i<panels.Length;i++)panels[i].SetActive(names[i]==g.Panel);driving.SetActive(g.Panel=="");menuRoot.SetActive(g.Panel!="");}
   void Update(){
    var g=PrototypeSession.Instance;if(g==null||g.Profile==null)return;
    Rect safe=Screen.safeArea;safeArea.anchorMin=new Vector2(safe.x/Screen.width,safe.y/Screen.height);safeArea.anchorMax=new Vector2(safe.xMax/Screen.width,safe.yMax/Screen.height);
+   ApplySideMargins(Screen.width,safe);
    float available=((RectTransform)safeArea).rect.width;float height=((RectTransform)safeArea).rect.height;float fit=Mathf.Min(available/1280f,height/720f);layout.localScale=Vector3.one*fit;if(leftControls)leftControls.localScale=Vector3.one*fit;if(rightControls)rightControls.localScale=Vector3.one*fit;if(centreControls)centreControls.localScale=Vector3.one*fit;
    if(Time.unscaledTime<next)return;next=Time.unscaledTime+.15f;
    var m=g.Active;var p=g.Profile;var a=m.Tool;

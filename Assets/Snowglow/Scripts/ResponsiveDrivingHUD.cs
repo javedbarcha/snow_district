@@ -7,12 +7,12 @@ namespace Snowglow {
   static void Put(RectTransform r,float x,float y,float w,float h,bool top=false,bool right=false){if(!r)return;r.localScale=Vector3.one;r.anchorMin=r.anchorMax=new Vector2(right?1:0,top?1:0);r.pivot=new Vector2(right?1:0,top?1:0);r.anchoredPosition=new Vector2(x,top?-y:y);r.sizeDelta=new Vector2(w,h);}
   public void Reflow(float width,float height){
    if(!hud||width<=0||height<=0)return;
-   float fit=Mathf.Min(width/1280f,height/720f),bottom=height*.05f,top=height*.1f,gapY=height*.05f,gapX=width*.05f;
+   float fit=Mathf.Min(width/1280f,height/720f),bottom=height*.05f,top=height*.1f,gapY=height*.05f,gapX=width*.04f;
    if(hud.leftControls)hud.leftControls.localScale=Vector3.one;if(hud.rightControls)hud.rightControls.localScale=Vector3.one;if(hud.centreControls)hud.centreControls.localScale=Vector3.one;
-   Put(reverse,0,bottom,110*fit,110*fit,false,true);
-   Put(forward,0,bottom+110*fit+gapY,137.5f*fit,137.5f*fit,false,true);
-   Put(lift,-110*fit-gapX,bottom,90*fit,90*fit,false,true);
-   Put(steerLeft,0,bottom,112*fit,112*fit);Put(steerRight,112*fit+gapX,bottom,112*fit,112*fit);
+   Put(reverse,-137.5f*fit-gapX,bottom,110*fit,110*fit,false,true);
+   Put(forward,0,bottom,137.5f*fit,137.5f*fit,false,true);
+   Put(lift,0,bottom+137.5f*fit+gapY,90*fit,90*fit,false,true);
+   Put(steerLeft,0,bottom,112*fit,112*fit);Put(steerRight,112*fit+width*.04f,bottom,112*fit,112*fit);
    float angleY=bottom+112*fit+height*.08f;
    for(int i=0;i<hud.bladeAngleButtons.Length;i++)if(hud.bladeAngleButtons[i])Put((RectTransform)hud.bladeAngleButtons[i].transform,(84*fit+width*.015f)*i,angleY,84*fit,84*fit);
    if(hud.loaderDumpButton)Put((RectTransform)hud.loaderDumpButton.transform,0,angleY,84*fit,84*fit);

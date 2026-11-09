@@ -86,6 +86,7 @@ namespace Snowglow.Editor {
     assembled.GetComponent<CatalogPlacement>().assetId=recipe.id;
     VehicleLightsAuthoring.Configure(assembled,"Loader");
     ExhaustSmokeAuthoring.Configure(assembled,true);
+    LoaderMountAuthoring.Apply(assembled);
     recipe.bakedPrefab=PrefabUtility.SaveAsPrefabAsset(assembled,PrefabPath);EditorUtility.SetDirty(recipe);AssetDatabase.SaveAssets();return recipe.bakedPrefab;
    }finally{UnityEngine.Object.DestroyImmediate(assembled);}
   }
