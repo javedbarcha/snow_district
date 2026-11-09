@@ -39,12 +39,12 @@ namespace Snowglow.Editor {
    foreach(var pair in new[]{new[]{"camera","camera"},new[]{"open:garage","garage"},new[]{"pause","pause"}}){var c=Command(hud,pair[0]);bool right=pair[0]=="pause";Place((RectTransform)c.transform,right?hud.rightControls:hud.leftControls,0,pair[0]=="open:garage"?202:112,72,72,true,right);Skin(c.GetComponent<Button>(),pair[1]);}
    var lights=root.GetComponentsInChildren<VehicleLightsButton>(true).Single();Place((RectTransform)lights.transform,hud.rightControls,0,260,64,64,true,true);lights.onIcon=Icon("lights-on");lights.offIcon=Icon("lights-off");lights.Refresh(null);
    foreach(var recover in root.GetComponentsInChildren<UICommand>(true).Where(c=>c.command=="recover:depot"||c.command=="recover").ToArray())UnityEngine.Object.DestroyImmediate(recover.gameObject);
-   if(hud.cameraTools){var reset=hud.cameraTools.GetComponentsInChildren<UICommand>(true).Single(c=>c.command=="camera:reset");Place((RectTransform)reset.transform,hud.cameraTools.transform,100,112,60,60,true);}
+   foreach(var reset in root.GetComponentsInChildren<UICommand>(true).Where(c=>c.command=="camera:reset").ToArray())UnityEngine.Object.DestroyImmediate(reset.gameObject);
    var responsive=hud.GetComponent<ResponsiveDrivingHUD>();if(!responsive)responsive=hud.gameObject.AddComponent<ResponsiveDrivingHUD>();responsive.hud=hud;
    responsive.forward=(RectTransform)root.GetComponentsInChildren<TouchControl>(true).Single(t=>t.channel=="forward").transform;responsive.reverse=(RectTransform)root.GetComponentsInChildren<TouchControl>(true).Single(t=>t.channel=="reverse").transform;
    responsive.steerLeft=(RectTransform)root.GetComponentsInChildren<TouchControl>(true).Single(t=>t.channel=="steerLeft").transform;responsive.steerRight=(RectTransform)root.GetComponentsInChildren<TouchControl>(true).Single(t=>t.channel=="steerRight").transform;responsive.lift=(RectTransform)work.transform;
    responsive.cameraButton=(RectTransform)Command(hud,"camera").transform;responsive.garage=(RectTransform)Command(hud,"open:garage").transform;responsive.pause=(RectTransform)Command(hud,"pause").transform;responsive.lights=(RectTransform)lights.transform;
-   if(hud.cameraTools)responsive.reset=(RectTransform)hud.cameraTools.GetComponentsInChildren<UICommand>(true).Single(c=>c.command=="camera:reset").transform;
+   responsive.reset=null;
    var stats=hud.safeArea.GetComponentInChildren<MobilePerformanceStats>(true);if(stats)responsive.stats=(RectTransform)stats.toggleButton.transform;
    responsive.Reflow(hud.safeArea.rect.width,hud.safeArea.rect.height);EditorUtility.SetDirty(responsive);
    hud.RefreshEquipmentControls(false);EditorUtility.SetDirty(hud);

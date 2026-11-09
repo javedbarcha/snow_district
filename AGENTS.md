@@ -3205,3 +3205,13 @@ Revised dump preview visually inspected; Down and Carry PNG files are byte-
 identical to their previous versions. Saved/reopened prefab and Pinefall.
 Evidence/previews: Logs/LoaderConnectors and DumpRevision. Live phone acceptance
 remains separate.
+
+
+## Remove old camera icon - 9 November 2026
+
+Removed the old-style Orbit View Reset button beside the new camera-switch
+icon. Exactly one new camera switch remains; keyboard Home reset still works.
+Driving/control-sheet/camera authoring no longer recreate the legacy button.
+Unity saved/reopened Pinefall and verified no legacy reset button and
+exactly one new camera switch with its persistent binding. Scene validation
+passed. Evidence: Logs/RemoveLegacyCamera/Validation.txt.
