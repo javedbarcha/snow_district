@@ -1,5 +1,44 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Reviewed production UI integrated - 10 November 2026
+
+User authorized implementing the HTML production preview in Unity, including
+single-machine swipe browsing and one Garage / Shop screen with separate tabs.
+ProductionMenuAuthoring saves native uGUI under the existing Canvas, retaining
+the legacy menu inactive and existing driving HUD/control artwork. HUDFactory
+reuses prepared authoring on explicit future bakes. No district rebake occurred.
+Six actual game-capture sprites use Android ASTC 6x6; there are no runtime UI,
+model or material factories. Preview Screen picker is excluded from the game.
+
+Career exposes five categories and the supplied 15 planned destinations; only
+Alpine / Pinefall is playable. Jobs open the single preview before starting.
+Purchases, servicing, upgrades, recovery, pause and results bind existing live
+session methods, prices and reward accounting. Sample HTML economy is not used.
+TrySelectMachine preserves ownership/depot/stop rules while allowing selection
+before job startup without resuming first. No save-schema or physics change.
+Dialogs isolate underlying controls; Escape cancellation is handled once by
+PrototypeInput. Garage service/upgrade and Settings sub-tabs have active colors.
+
+Unity 6000.3.8f1 / StandaloneWindows64 saved/reopened and passed 529 authored /
+actual-session fixture checks, scene validation and 19 snow checks. Actual loader
+purchase, job startup, service pricing, insufficient funds, duplicate acceptance,
+horizontal/vertical gestures and pause/resume exercised without profile writes
+(fixture ready=false). Native screens rendered; home, machinery, garage, shop
+and Settings inspected. 4,380 existing world components match the first backup,
+including poses/prefab overrides, terrain, meshes and colliders. Android-defined
+runtime/Editor compilation using Unity's C# compiler passed (not an APK build).
+
+Final visual review found Settings overlapping STATS and left-aligned capture
+images. Authoring now reserves the STATS space, centers images and backs the
+ownership label with paper. Final native install/save/reopen completed and all
+529 checks, scene validation and 19 snow checks passed again. Updated home,
+machinery and Garage screenshots were visually inspected. The Windows control
+pipe was unavailable; the existing Editor imported the queued authoring.
+All live Play traversal, Android packaging, phone safe areas/touch and Galaxy A07
+performance remain untested. Guide: PRODUCTION_UI.md. Evidence/backups/native
+screens/compiler output/world comparison: Logs/ProductionUI. Repeat menu:
+Snowglow > UI > Install reviewed production menus. No player-save writes by tests.
+
 ## Distant forest alpha cards - 7 November 2026
 
 User authorized implementing the inspected Alpine_Forest_Alpha_Cards.zip. Original

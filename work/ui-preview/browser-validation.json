@@ -52,7 +52,7 @@
       "documentWidth": 1100,
       "viewport": 1100,
       "boxWidth": 1084,
-      "boxHeight": 737.8125,
+      "boxHeight": 897.296875,
       "imageFailures": 0
     },
     {
@@ -61,7 +61,7 @@
       "documentWidth": 1100,
       "viewport": 1100,
       "boxWidth": 1084,
-      "boxHeight": 815.125,
+      "boxHeight": 876.125,
       "imageFailures": 0
     },
     {
@@ -70,7 +70,7 @@
       "documentWidth": 1100,
       "viewport": 1100,
       "boxWidth": 1084,
-      "boxHeight": 733.828125,
+      "boxHeight": 794.828125,
       "imageFailures": 0
     },
     {
@@ -151,7 +151,7 @@
       "documentWidth": 736,
       "viewport": 736,
       "boxWidth": 720,
-      "boxHeight": 728.75,
+      "boxHeight": 888.234375,
       "imageFailures": 0
     },
     {
@@ -160,7 +160,7 @@
       "documentWidth": 736,
       "viewport": 736,
       "boxWidth": 720,
-      "boxHeight": 851.125,
+      "boxHeight": 912.125,
       "imageFailures": 0
     },
     {
@@ -169,7 +169,7 @@
       "documentWidth": 736,
       "viewport": 736,
       "boxWidth": 720,
-      "boxHeight": 750,
+      "boxHeight": 811,
       "imageFailures": 0
     },
     {
@@ -247,10 +247,10 @@
     {
       "screen": "machines",
       "width": 375,
-      "documentWidth": 360,
+      "documentWidth": 375,
       "viewport": 375,
-      "boxWidth": 344,
-      "boxHeight": 1078.765625,
+      "boxWidth": 359,
+      "boxHeight": 885.015625,
       "imageFailures": 0
     },
     {
@@ -259,7 +259,7 @@
       "documentWidth": 360,
       "viewport": 375,
       "boxWidth": 344,
-      "boxHeight": 1160.859375,
+      "boxHeight": 1221.859375,
       "imageFailures": 0
     },
     {
@@ -268,7 +268,7 @@
       "documentWidth": 360,
       "viewport": 375,
       "boxWidth": 344,
-      "boxHeight": 1066.34375,
+      "boxHeight": 1127.34375,
       "imageFailures": 0
     },
     {
@@ -349,7 +349,7 @@
       "documentWidth": 305,
       "viewport": 320,
       "boxWidth": 289,
-      "boxHeight": 1140.671875,
+      "boxHeight": 937.453125,
       "imageFailures": 0
     },
     {
@@ -358,7 +358,7 @@
       "documentWidth": 305,
       "viewport": 320,
       "boxWidth": 289,
-      "boxHeight": 1226.453125,
+      "boxHeight": 1287.453125,
       "imageFailures": 0
     },
     {
@@ -367,7 +367,7 @@
       "documentWidth": 305,
       "viewport": 320,
       "boxWidth": 289,
-      "boxHeight": 1152.21875,
+      "boxHeight": 1172.328125,
       "imageFailures": 0
     },
     {

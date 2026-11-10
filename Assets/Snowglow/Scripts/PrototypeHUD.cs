@@ -4,6 +4,7 @@ namespace Snowglow {
  public sealed class PrototypeHUD : MonoBehaviour {
   public RectTransform safeArea,layout;public GameObject menuRoot;public GameObject driving;public Text status,objective,notice,debugText,menuInfo;
   public GameObject[] panels;public string[] names;
+  public ProductionMenu productionMenu;
   public Text cameraModeText,cameraHelp;public GameObject cameraTools;public RectTransform leftControls,rightControls,centreControls;
   public Image workSkinImage;public Sprite plowWorkSprite,loaderWorkSprite;
   public GameObject[] bladeAngleButtons=new GameObject[0];public GameObject loaderDumpButton;
@@ -23,7 +24,7 @@ namespace Snowglow {
    if(rightControls){var min=rightControls.anchorMin;var max=rightControls.anchorMax;min.x=max.x=anchors.y;rightControls.anchorMin=min;rightControls.anchorMax=max;}
   }
   float next;
-  public void RefreshMenu(){var g=PrototypeSession.Instance;if(g==null)return;for(int i=0;i<panels.Length;i++)panels[i].SetActive(names[i]==g.Panel);driving.SetActive(g.Panel=="");menuRoot.SetActive(g.Panel!="");}
+  public void RefreshMenu(){var g=PrototypeSession.Instance;if(g==null)return;for(int i=0;i<panels.Length;i++)panels[i].SetActive(!productionMenu&&names[i]==g.Panel);driving.SetActive(g.Panel=="");menuRoot.SetActive(g.Panel!="");if(productionMenu)productionMenu.Show(g.Panel);}
   void Update(){
    var g=PrototypeSession.Instance;if(g==null||g.Profile==null)return;
    Rect safe=Screen.safeArea;safeArea.anchorMin=new Vector2(safe.x/Screen.width,safe.y/Screen.height);safeArea.anchorMax=new Vector2(safe.xMax/Screen.width,safe.yMax/Screen.height);

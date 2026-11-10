@@ -1,5 +1,16 @@
 # Prototype structure and extension boundaries
 
+`ProductionMenuAuthoring` saves the reviewed menu hierarchy, capture sprites,
+buttons and persistent listeners before Play. `ProductionMenu` owns transient
+screen/tab/browsing state and binds actual session values; `ProductionMenuAction`
+dispatches saved UI actions, while `MachinerySwipe` changes the single authored
+preview. No runtime UI/model factories are introduced. `PrototypeHUD` delegates
+menu visibility when the new binding exists, retaining the inactive legacy menu
+as fallback. Garage and Shop share one screen. Planned regions/towns remain
+locked. `PrototypeSession.TrySelectMachine` retains depot/ownership/stop checks
+and supports selection before starting a job without briefly resuming gameplay.
+Actual economy/service/save methods remain authoritative. See PRODUCTION_UI.md.
+
 Forest `DistanceVisibility` can bind saved near renderers and an atlas cross-card
 renderer. Card-equipped trees use the gameplay camera, 230 m nominal switching
 with 12 m hysteresis and 650 m far culling; collider state never follows visibility.

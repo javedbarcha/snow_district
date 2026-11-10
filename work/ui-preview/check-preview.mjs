@@ -19,10 +19,31 @@ for(let n=0;n<40;n++){if(await evaluate('Boolean(document.querySelector("#sd-pag
 await evaluate('document.fonts.ready');await settle();
 const cases=['home','regions','towns','jobs','machines','garage','shop','settings','gameplay','pause','results'];
 const report=[];
+await evaluate(`(()=>{const p=document.querySelector('#sd-screen-picker');p.value='machines';p.dispatchEvent(new Event('change'));})()`);
+await click('[data-machine-step="1"]');
+if(!await evaluate('document.querySelector("[data-action=start]").disabled && document.querySelector(".sd-machine-caption").textContent.includes("Golden Snow Loader")'))throw new Error('Locked loader carousel state');
+await evaluate(`document.querySelector('[data-machine-step="-1"]').dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowLeft',bubbles:true}))`);
+if(!await evaluate('!document.querySelector("[data-action=start]").disabled && document.querySelector(".sd-machine-caption").textContent.includes("Golden Snow Tractor")'))throw new Error('Carousel keyboard selection');
+await send('Emulation.setTouchEmulationEnabled',{enabled:true});
+async function swipe(dx,dy=0){
+ const point=await evaluate(`(()=>{const b=document.querySelector('.sd-machine-picture').getBoundingClientRect();return {x:b.x+b.width/2,y:b.y+b.height/2};})()`);
+ await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...point,id:0}]});
+ await send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:point.x+dx,y:point.y+dy,id:0}]});
+ await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await settle();
+}
+await swipe(-120);
+if(!await evaluate('document.querySelector("[data-action=start]").disabled'))throw new Error('Touch swipe left did not browse loader');
+await swipe(120);
+if(!await evaluate('document.querySelector(".sd-machine-caption").textContent.includes("Golden Snow Tractor")'))throw new Error('Touch swipe right did not browse tractor');
+await swipe(5,100);
+if(!await evaluate('document.querySelector(".sd-machine-caption").textContent.includes("Golden Snow Tractor")'))throw new Error('Vertical scroll changed machinery');
+await send('Emulation.setTouchEmulationEnabled',{enabled:false});
+if(await evaluate('document.querySelectorAll(".sd-machine-picture").length!==1 || Boolean(document.querySelector(".sd-machine-choice"))'))throw new Error('Carousel contains separate cards');
 for(const width of [1100,736,375,320]){
  await send('Emulation.setDeviceMetricsOverride',{width,height:950,deviceScaleFactor:1,mobile:false});
  for(const screen of cases){
-  await evaluate(`(()=>{const p=document.querySelector('#sd-screen-picker');p.value=${JSON.stringify(screen)};p.dispatchEvent(new Event('change'));})()`);await settle();
+  await evaluate(`(()=>{const p=document.querySelector('#sd-screen-picker');p.value=${JSON.stringify(screen==='shop'?'garage':screen)};p.dispatchEvent(new Event('change'));})()`);await settle();
+  if(screen==='shop')await click('[data-workshop-tab="shop"]');
   const size=await evaluate(`(()=>{const r=document.querySelector('#snow-district-preview');const box=r.getBoundingClientRect();return {screen:${JSON.stringify(screen)},width:${width},documentWidth:document.documentElement.scrollWidth,viewport:innerWidth,boxWidth:box.width,boxHeight:box.height,imageFailures:[...r.querySelectorAll('img')].filter(i=>!i.complete||!i.naturalWidth).length};})()`);
   if(size.documentWidth>width+1)throw new Error('Horizontal overflow '+JSON.stringify(size));
   if(size.imageFailures)throw new Error('Image failed '+JSON.stringify(size));
@@ -60,5 +81,5 @@ for(const width of [1100,375,320]){
 }
 if(errors.length)throw new Error('Browser JS errors: '+JSON.stringify(errors));
 fs.writeFileSync(path.join(folder,'browser-validation.json'),JSON.stringify({screenLayouts:report.length,flows:['Career region-town-job-machine-gameplay','Pause recovery resumes','Garage repair updates','Shop purchase and select loader','Abandon returns home','Quick Job route'],errors,layouts:report},null,2));
-console.log(`PASS: ${report.length} layouts, 6 interaction flows, ${errors.length} runtime errors`);
+console.log(`PASS: ${report.length} layouts, 6 interaction flows, carousel arrows/keyboard/touch/ownership, ${errors.length} runtime errors`);
 socket.close();

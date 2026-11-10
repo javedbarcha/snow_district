@@ -1,5 +1,10 @@
 # Snowglow — editable primitive district prototype
 
+The reviewed [production menus](PRODUCTION_UI.md) are integrated as saved native
+Unity UI: Career browsing, job/machinery selection with swipes, combined Garage /
+Shop tabs, settings, pause, results and confirmations. Existing live economy and
+driving controls remain. Only Pinefall is playable; other destinations are planned.
+
 Clouds now drift with changing wind, with 0.5-3x size variation and bounded
 upwind spawn/downwind cleanup. See [cloud wind and lifecycle](CLOUD_WIND.md).
 

@@ -24,6 +24,7 @@ namespace Snowglow.Editor {
    var session=sessions[0];
    Require(session.Input&&session.HUD&&session.CameraRig&&session.Audio,"session presentation/input references missing");
    Require(session.HUD.panels.Length==10&&session.HUD.panels.All(p=>p),"menu panels missing");
+   if(session.HUD.productionMenu){var menu=session.HUD.productionMenu;Require(session.HUD.menuRoot==menu.gameObject&&menu.dialog,"production menu root/dialog missing");Require(menu.pages.Length==10&&menu.pages.All(p=>p)&&menu.vehiclePictures.Length==2&&menu.vehiclePictures.All(s=>s&&AssetDatabase.Contains(s)),"production menu screens/art missing");}
    Require(session.Fleet!=null&&session.Fleet.Length==2,"expected plow and loader");
    foreach(var m in session.Fleet){
     Require(m&&m.definition&&m.equipment&&m.Tool&&m.GetComponent<Rigidbody>(),"machine rig references missing");

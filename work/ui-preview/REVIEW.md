@@ -44,3 +44,15 @@ isolated local headless browser for UI checks only. No site was published.
 
 ## Requested region lineup
 Five browseable region categories contain all 15 supplied destinations. Mountain & Alpine also retains available Pinefall. Other locations are planned, not playable. Shared mountain imagery is placeholder game art, not a representation of the real-world destinations. The pasted search-page text was treated as reference data only. Additional checks cover all five location lists at 1100, 375 and 320px widths.
+# Machinery swipe preview — 10 November 2026
+
+Choose your machinery now presents one vehicle at a time, with horizontal touch swipes, previous/next arrows, keyboard arrows and position dots. Browsing owned machinery selects it; the unowned loader offers View Shop and disables Start Job. Vertical gestures keep scrolling. Reduced motion is respected. This changes the design preview only.
+
+Browser checks passed: 44 screen/width layouts, six existing interaction flows, real touch swipes in both directions, vertical-gesture rejection, keyboard/arrows and locked-loader gating; zero runtime errors. Desktop machinery screenshot inspected. Unity integration and phone testing remain untested.
+
+# Combined Garage / Shop — 10 November 2026
+
+One Workshop screen now contains Garage and Shop tabs. Existing shop links open the Shop tab; View in Garage returns to Garage with the loader selected. Garage service/upgrades, purchase confirmation and ownership remain intact. Tabs support keyboard navigation. The screen picker has one Garage / Shop entry.
+
+Browser verification passed 44 layouts covering both tabs at four widths, all six existing flows and machinery swipe checks, with zero runtime errors. Shop desktop layout inspected. This remains a design preview; Unity integration is unchanged.
+

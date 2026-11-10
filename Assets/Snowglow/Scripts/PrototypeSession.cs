@@ -69,10 +69,14 @@ namespace Snowglow {
   public void FreshDistrict(){if(Profile.inJob){Notice="Finish or abandon the active job first.";return;}Profile.snow=null;foreach(var m in Fleet){m.Tool.Load=0;m.RecoverToDepot();}Save();ReloadDistrict();}
   void ReloadDistrict(){Time.timeScale=1;SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);}
   public void Switch(int index){
-   if(!Active.AtDepot){Notice="Return to the depot to switch machinery.";return;}
-   if(!Fleet[index].Owned){Notice="Purchase this machine in the machinery shop.";return;}
-   if(Active.Speed>1){Notice="Stop before switching machinery.";return;}
-   Active.SetActiveMachine(false);Profile.active=index;Active.SetActiveMachine(true);Active.Tool.ResetSweep();Input.Clear();Notice=Active.definition.displayName+" selected.";Save();Open("");
+   TrySelectMachine(index,true);
+  }
+  public bool TrySelectMachine(int index,bool resume){
+   if(index<0||index>=Fleet.Length){Notice="Machine unavailable.";return false;}
+   if(!Active.AtDepot){Notice="Return to the depot to switch machinery.";return false;}
+   if(!Fleet[index].Owned){Notice="Purchase this machine in the machinery shop.";return false;}
+   if(Active.Speed>1){Notice="Stop before switching machinery.";return false;}
+   Active.SetActiveMachine(false);Profile.active=index;Active.SetActiveMachine(true);Active.Tool.ResetSweep();Input.Clear();Notice=Active.definition.displayName+" selected.";Save();if(resume)Open("");return true;
   }
   public void BuyMachine(int i){if(Fleet[i].Owned){Notice="Already owned.";return;}if(!Pay(Fleet[i].definition.price))return;Fleet[i].Owned=true;Notice="Machine purchased and waiting at the depot.";Save();HUD.RefreshMenu();}
   bool Pay(int cost){if(Profile.coins<cost){Notice="Not enough coins. Use the dummy store for prototype testing.";return false;}Profile.coins-=cost;return true;}

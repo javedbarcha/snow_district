@@ -1,5 +1,23 @@
 # Verification record
 
+## Production menu integration - 10 November 2026
+
+Unity 6000.3.8f1 / StandaloneWindows64 saved/reopened Pinefall and passed 529
+native authored/session fixture checks, scene validation and 19 snow checks.
+Routes, planned-location gates, single-preview swipes/wrap/vertical rejection,
+ownership, actual loader purchase/startup, live service/upgrade pricing,
+confirmation cancellation/duplicate acceptance, insufficient funds and pause /
+resume passed. Fixtures do not write profiles. Native menu screenshots were
+rendered; home, machinery, garage, shop and Settings inspected. 4,380 protected
+world components matched the pre-integration scene. Android-defined runtime and
+Editor compilation passed through Unity's C# compiler; no APK was produced.
+
+Final Settings/STATS spacing, image centering and ownership-label contrast fixes
+were saved/reopened and passed the native checks again. Updated home, machinery
+and Garage captures were visually inspected. Full live Play traversal, Android packaging and Galaxy A07 touch /
+safe-area/performance acceptance remain untested. Evidence: Logs/ProductionUI;
+guide: PRODUCTION_UI.md.
+
 ## Imported forest cards and renderer switching - 7 November 2026
 
 Unity 6000.3.8f1 / Android compiled, saved/reopened Pinefall and passed 9,801
