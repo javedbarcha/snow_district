@@ -1,5 +1,27 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Loader Down preserves partial loads - 10 November 2026
+
+User requested that Blade Down only automatically unload a full bucket. A raised
+partial bucket now lowers to collection pose while keeping its snow. Full means
+the existing 92% auto-carry threshold; explicit Dump still permits partial-load
+unloading, and Down during an intentional dump continues until empty then lowers.
+AttachmentController shares one float-tolerant full-bucket predicate between
+Down and auto carry, correcting an exact-92% floating-point boundary found by
+native checks. No scene, prefab, source mesh or player-save changes are needed.
+LoaderCycleChecks covers empty/1%/50%/91.99% retention, 92%/100% unload gates and
+explicit partial Dump alongside three existing collect/carry/unload cycles.
+Evidence: Logs/LoaderCycle/Validation.txt. Android-defined compilation passed;
+live driving/phone acceptance remains separate.
+Unity 6000.3.8f1 passed 1,134 native loader assertions, scene validation and all
+19 snow checks. Saved scene bytes/dirty state preserved; no player-save writes.
+
+Git check during this request found no stale repository lock; the preceding UI
+work was already committed as 67b829e. Elevated `git add --dry-run --all` passed
+for the subsequent loader changes. Initial index.lock permission denial was the
+agent's sandbox restriction, not evidence of a corrupt/stale user Git lock.
+No reset, clean, deletion, commit or index staging was performed by the agent.
+
 ## Reviewed production UI integrated - 10 November 2026
 
 User authorized implementing the HTML production preview in Unity, including

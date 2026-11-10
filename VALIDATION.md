@@ -1,5 +1,15 @@
 # Verification record
 
+## Partial loader bucket lowering - 10 November 2026
+
+Unity 6000.3.8f1 passed 1,134 actual-loader fixture assertions, scene validation
+and 19 snow checks. Down retains empty/1%/50%/91.99% loads, unloads 92%/100% loads,
+and explicit partial Dump remains available. Exact-threshold float rounding is
+handled consistently with auto carry. Three collect/carry/unload cycles conserve
+snow volume. Scene bytes and dirty state preserved; no profile writes.
+Android-defined compilation passed. Actual driving, Android packaging and phone
+appearance remain untested. Evidence: Logs/LoaderCycle/Validation.txt.
+
 ## Production menu integration - 10 November 2026
 
 Unity 6000.3.8f1 / StandaloneWindows64 saved/reopened Pinefall and passed 529

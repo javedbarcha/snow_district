@@ -8,6 +8,8 @@ namespace Snowglow {
   Vector3 mountRest;Quaternion mountRotation,boomRotation,bucketRotation;
   Transform rearMount,rearLugs;Vector3 rearMountRest,lugRest,lugScale;
   MachineController machine;Vector3 last;bool haveLast,dumping,lowerAfterDump;float lastVolume;
+  // Treat float-roundoff at the existing auto-carry threshold consistently.
+  bool BucketFull=>Load>=machine.equipment.capacity*.92f||Mathf.Approximately(Load,machine.equipment.capacity*.92f);
   public void Initialize(MachineController owner){machine=owner;Auto=true;mountRest=mount.localPosition;mountRotation=mount.localRotation;if(boom)boomRotation=boom.localRotation;if(bucket){bucketRotation=bucket.localRotation;rearMount=bucket.Find("Bucket rear mount | outside wall");rearLugs=bucket.Find("Rear mounting lugs");if(rearMount)rearMountRest=rearMount.localPosition;if(rearLugs){lugRest=rearLugs.localPosition;lugScale=rearLugs.localScale;}}ResetSweep();}
   public void ResetSweep(){haveLast=false;}
   public void ResetLowered(){Auto=true;Working=true;Lift=Tilt=0;dumping=lowerAfterDump=false;lastVolume=0;ResetSweep();}
@@ -15,7 +17,9 @@ namespace Snowglow {
   public void ToggleAuto(){Auto=true;}
   public void CycleAngle(){Angle=Angle<-.1f?0:Angle<.1f?1:-1;}
   public void ToggleWork(){
-   if(machine.definition.loader&&!Working&&Load>0){BeginDump(true);return;}
+   // Down retains partial loads. Full carry buckets unload before lowering;
+   // a deliberately started dump still runs to completion when Down is pressed.
+   if(machine.definition.loader&&!Working&&(dumping||BucketFull)){BeginDump(true);return;}
    dumping=false;
    if(machine.definition.loader){Working=!Working;Lift=Working?0:.6f;Tilt=Working?0:-.6f;}
    else {Working=!Working;Lift=Working?0:1;}
@@ -55,7 +59,7 @@ namespace Snowglow {
   }
   void UpdateAutoCarry(){
    // Also recover a stationary/restored full bucket. Never interrupt dumping.
-   if(Auto&&machine.definition.loader&&!dumping&&Load>=machine.equipment.capacity*.92f){Working=false;Lift=Mathf.Max(Lift,.6f);Tilt=-.6f;}
+   if(Auto&&machine.definition.loader&&!dumping&&BucketFull){Working=false;Lift=Mathf.Max(Lift,.6f);Tilt=-.6f;}
   }
   void Update(){
    if(machine==null)return;

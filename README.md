@@ -118,7 +118,7 @@ Piles spread as they grow. Deposits prefer lower nearby cells within a mound-sha
 - Clear 90% of the selected contract area. Pushing snow back into it blocks progress again. Only original work in that contract area builds the combo/reward.
 - Parking Lot is at **X94 / Z21**; Main Street is centered at **X0 / Z0**. Coordinates appear in the optional debug overlay.
 - Buy the loader in the machinery shop (1,400 coins; the prototype starts with 1,800). Stop at the depot and select it in Garage.
-- Loader WORK lowers the bucket; CARRY lifts it. In Auto mode a nearly full bucket lifts automatically, including after restoring a full bucket. DUMP lifts/tips and deposits from the bucket mouth. Lift/tilt keys or buttons immediately take manual control; R/F raises/lowers even when previously in Auto.
+- Loader WORK lowers the bucket; CARRY lifts it. Lowering a partial bucket retains its snow. At the existing 92% full threshold, Down unloads before lowering; the separate DUMP action can deliberately unload a partial bucket. A nearly full bucket lifts automatically, including after restore. DUMP lifts/tips and deposits from the bucket mouth.
 - The storage yard is at **X94 / Z−85**. Deposited snow remains visible up to a retained depth; excess is processed in bounded batches and recorded as disposed volume.
 - Contract deadlines reduce pay by 30% when late, rather than fail the job. Fuel and collision damage are functional. Refuel/repair at the depot. Free recovery preserves the worksite and bucket contents.
 - A fresh contract resets the snow to the authored initial state and returns both machines to the depot with empty buckets. Machine switching within one contract preserves the snow and loads.
