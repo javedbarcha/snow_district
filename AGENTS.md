@@ -1,5 +1,29 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Garage / Shop sketches and direct job startup — 10 November 2026
+
+User's supplied Garage_UI.png and Shop_UI.png now supersede the earlier split
+workshop layout. Garage contains the Shop tab: stats left, one swiping / arrow
+3D display centre, upgrades or compatible part details right. Vehicle purchase,
+selection, refuel, repair and recovery retain live session rules. Shop browses
+existing tyre / engine upgrade levels with actual prices and effects; no new
+blade upgrade, inventory or save schema. Tyres display actual wheel meshes;
+engine display is an illustrative low-poly part. Workshop camera, mesh copies,
+materials, RenderTexture and backdrop are authored in Edit mode, without physics
+or runtime factories, outside Canvas scaling on isolated layer 12. They disable
+outside Garage/Shop. Career > Region > Town > Job and Quick Job > Job start
+immediately using the saved active vehicle; no machinery-selection step.
+Evidence and current validation status: Logs/ProductionUI. Phone testing remains
+separate. PRODUCTION_UI.md records authoring and the revised navigation.
+
+Unity 6000.3.8f1 saved/reopened the revised menus and passed 544 native UI/session
+checks plus scene validation and all 19 snow checks. Android-defined runtime
+and Editor compilation passed (not an APK build). Native Garage, tyre Shop and
+engine Shop renders were inspected. All 673 preexisting prefab-instance records,
+560 collider records and the Terrain record match HEAD. Evidence:
+Logs/ProductionUI/Checks.txt, Validation.txt and WorldPreservation.json. No
+player-save writes by fixtures; phone touch/performance acceptance remains open.
+
 ## Loader Down preserves partial loads - 10 November 2026
 
 User requested that Blade Down only automatically unload a full bucket. A raised

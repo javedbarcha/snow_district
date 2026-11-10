@@ -17,14 +17,23 @@ The earlier menu hierarchy remains inactive as a fallback.
 - Career: five region categories and the supplied 15 planned destinations.
   Alpine / Pinefall is the sole playable district. Other destinations are locked.
 - Jobs: existing Depot Access, Parking Lot and Main Street contracts. Selection
-  opens machinery preparation; starting requires an owned machine. Existing
+  starts the scene immediately with the saved active vehicle. Career and Quick Job
+  use this same route; there is no intervening machinery selector. Existing
   active-shift protection and actual deadlines/reward accounting are retained.
 - Machinery: one preview, horizontal swipes, previous/next buttons and keyboard
   arrows. Browsing does not purchase equipment or change the active machine.
   Confirming Start Job selects the owned machine through the depot rules.
-- Garage / Shop: one screen with Garage and Shop tabs. Garage has Overview,
-  Repair / Fuel and Upgrades sub-tabs. Purchases include the supplied bucket;
-  selecting, servicing and upgrading use existing depot and ownership checks.
+- Garage / Shop: Garage contains the Shop tab. Both use the supplied three-column
+  layout: stats on the left, a single 3D display with previous/next and swipe
+  browsing in the middle, upgrades or part descriptions on the right.
+  Garage browses owned and unowned vehicles; Buy Vehicle purchases and Select &
+  Drive changes the saved selection and returns to gameplay. Existing stopped /
+  depot and ownership rules remain. Refuel, repair and recovery stay accessible.
+  Shop browses traction tyres and engine upgrades for the vehicle last browsed
+  in Garage. Buy & Fit uses existing 200 / 400 / 600 pricing, compatible vehicle
+  selection, ownership, depot and maximum-level gates. No new inventory schema
+  or blade-capacity upgrade is introduced. Tyres use the actual wheel geometry;
+  the engine has a generic low-poly illustrative display, not a source-model edit.
 - Settings: existing audio, graphics, assists and debug settings.
 - Pause and Results: existing resume, recovery, abandonment and reward behavior.
   Recovery, abandonment, service, upgrades and purchases have confirmations.
@@ -65,3 +74,22 @@ machinery and Garage captures were inspected after correcting STATS spacing,
 image centering and ownership-label contrast. All 4,380 protected preexisting
 world components matched the first backup. Runtime and Editor compilation with
 Android defines also passed using Unity's compiler (not Android packaging).
+
+## Workshop layout revision — 10 November 2026
+
+The Garage and Shop center is now a saved 768×512 RenderTexture from an authored
+3D workshop, shared vehicle meshes and visual-only part displays. The separate
+stage is outside Canvas scaling on isolated layer 12 (WorkshopPreview), at
+(10000,100,10000), with no colliders, machinery controllers or runtime factories.
+The camera/stage are disabled outside Garage/Shop, including entry into driving.
+This replaces the captured machinery still on Garage/Shop; main-menu capture
+artwork remains. Native screen captures, fixture transactions and direct job
+startup are checked by ProductionMenuChecks. Phone acceptance remains separate.
+
+Unity 6000.3.8f1 saved/reopened the revised menus and passed 544 native UI/session
+checks plus scene validation and all 19 snow checks. Android-defined runtime
+and Editor compilation passed (not an APK build). Native Garage, tyre Shop and
+engine Shop renders were inspected. All 673 preexisting prefab-instance records,
+560 collider records and the Terrain record match HEAD. Evidence:
+Logs/ProductionUI/Checks.txt, Validation.txt and WorldPreservation.json. No
+player-save writes by fixtures; phone touch/performance acceptance remains open.

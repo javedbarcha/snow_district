@@ -27,13 +27,13 @@ namespace Snowglow.Editor {
   public static void ApplyIfPrepared(PrototypeHUD hud){if(AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/tractor.jpg"))Apply(hud);}
   public static void Apply(PrototypeHUD hud){
    font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");labels=new List<MenuTextBinding>();buttons=new List<MenuButtonBinding>();
-   var previous=hud.layout.Find("Production menus | saved before Play");if(previous)UnityEngine.Object.DestroyImmediate(previous.gameObject);
+   var previous=hud.layout.Find("Production menus | saved before Play");if(previous){var priorMenu=previous.GetComponent<ProductionMenu>();if(priorMenu&&priorMenu.workshopPreview)UnityEngine.Object.DestroyImmediate(priorMenu.workshopPreview.gameObject);UnityEngine.Object.DestroyImmediate(previous.gameObject);}
    var old=hud.layout.Find("Menu layer");if(old)old.gameObject.SetActive(false);
    var root=Rect("Production menus | saved before Play",hud.layout,0,0,1280,720);Fill(root,Paper);ui=root.gameObject.AddComponent<ProductionMenu>();hud.productionMenu=ui;hud.menuRoot=root.gameObject;
    var content=Rect("Screen content",root,0,0,1280,720);ui.contentGroup=content.gameObject.AddComponent<CanvasGroup>();
    var header=Rect("Navy header",content,0,0,1280,78);Fill(header,Navy);var logo=Text(header,"SNOW DISTRICT",44,14,470,36,30,Color.white);logo.fontStyle=FontStyle.Bold;Text(header,"WINTER OPERATIONS",46,51,440,20,12,new Color(.78f,.87f,.93f));Text(header,"1,800 coins",780,27,210,35,21,Yellow,"wallet");Button(header,"Settings","nav:settings",1000,16,112,46);
    var names=new[]{"dashboard","regions","towns","contracts","machinery","garage","settings","pause","results","store"};var pages=new List<GameObject>();
-   foreach(var name in names){var page=Rect(name,content,0,78,1280,564);pages.Add(page.gameObject);if(name!="dashboard")Button(page,"‹  Main Menu","nav:dashboard",44,12,175,42);
+   foreach(var name in names){var page=Rect(name,content,0,78,1280,564);pages.Add(page.gameObject);if(name!="dashboard")Button(page,"< Main Menu","nav:dashboard",44,12,175,42);
     switch(name){
      case "dashboard":
       Title(page,"YOUR NEXT SHIFT STARTS HERE","A whole town. A fresh snowfall.");Button(page,"Continue Job","continue",1000,116,232,48);
@@ -49,7 +49,7 @@ namespace Snowglow.Editor {
       for(int i=0;i<4;i++)Button(page,"Town","town:"+i,44+(i%2)*608,275+(i/2)*115,584,92,i==0,"town-"+i);
       Button(page,"‹  Regions","nav:regions",1000,12,232,42);break;
      case "contracts":
-      Title(page,"PINEFALL","Choose your job","Clear 90% of the marked area. Late completion reduces pay. Existing snow and reward rules apply.");Text(page,"CAREER / ALPINE / PINEFALL",44,220,1150,25,15,Muted,"job-mode");
+      Title(page,"PINEFALL","Choose your job","Choose a job to start with your selected vehicle. Change machinery and fit parts in Garage.");Text(page,"CAREER / ALPINE / PINEFALL",44,220,1150,25,15,Muted,"job-mode");
       var jn=new[]{"Depot Access","Parking Lot","Main Street"};var jd=new[]{"X −65 / Z −90\n12 minute deadline","X 94 / Z 21\n15 minute deadline","X 0 / Z 0\n15 minute deadline"};for(int i=0;i<3;i++){float x=44+i*405;Art(page,i==0?"quick":"pinefall",x,260,382,150);Button(page,jn[i]+"\n"+jd[i],"job:"+i,x,416,382,97,true);}
       Button(page,"Free Work","free",1000,12,232,42);break;
      case "machinery":
@@ -58,17 +58,28 @@ namespace Snowglow.Editor {
       Button(page,"‹","browse:-1",140,310,68,68);Button(page,"›","browse:1",1072,310,68,68);Fill(Rect("Ownership badge",page,240,210,345,32),Paper);Text(page,"OWNED",254,214,320,30,17,Ink,"machine-owned");Text(page,"Golden Snow Tractor",240,410,800,36,28,Ink,"machine-name");Text(page,"Front plow",240,452,730,28,18,Muted,"machine-kind");
       Text(page,"1 / 2 · Swipe to browse",510,489,390,25,17,Muted,"machine-position");Button(page,"View Shop","nav:shop",1040,438,192,45,false,"machine-shop");break;
      case "garage":
-      Title(page,"PINEFALL WORKSHOP","Garage & Shop");
-      Button(page,"Prototype coins","nav:store",1000,12,232,42);
-      var garageTab=Button(page,"Garage","workshop:garage",44,202,594,46,true);var shopTab=Button(page,"Shop","workshop:shop",642,202,594,46);ui.tabImages=new[]{garageTab.GetComponent<Image>(),shopTab.GetComponent<Image>()};ui.selectedColor=Yellow;ui.tabColor=Line;
-      ui.workshopPicture=Art(page,"tractor",44,262,660,210);Text(page,"Golden Snow Tractor",60,475,620,32,24,Ink,"garage-name");Text(page,"OWNED",728,262,480,28,17,Muted,"garage-owned");
-      var g=Group(page,"Garage tab",718,296,514,260);ui.garageContent=g;
-      ui.garageTabImages=new[]{Button(g.transform,"Overview","garage-tab:overview",0,0,156,42).GetComponent<Image>(),Button(g.transform,"Repair / Fuel","garage-tab:service",166,0,176,42).GetComponent<Image>(),Button(g.transform,"Upgrades","garage-tab:upgrades",352,0,162,42).GetComponent<Image>()};
-      ui.overviewContent=Group(g.transform,"Overview",0,50,514,210);Text(ui.overviewContent.transform,"Fuel / Condition",0,0,514,110,20,Ink,"garage-status");Button(ui.overviewContent.transform,"Select & Drive","drive",0,143,514,48,true,"drive");
-      ui.serviceContent=Group(g.transform,"Service",0,50,514,210);Button(ui.serviceContent.transform,"Refuel","confirm:fuel",0,0,247,48,false,"fuel");Button(ui.serviceContent.transform,"Repair","confirm:repair",257,0,257,48,false,"repair");Button(ui.serviceContent.transform,"Recover to Depot","confirm:recover",0,65,514,48);Text(ui.serviceContent.transform,"Service requires a stopped machine at the depot.\nRecovery leaves carried snow at the pickup location.",0,126,514,65,18,Muted);
-      ui.upgradesContent=Group(g.transform,"Upgrades",0,50,514,210);Button(ui.upgradesContent.transform,"Upgrade tyres","confirm:tyres",0,0,514,48,false,"tyres");Button(ui.upgradesContent.transform,"Upgrade engine","confirm:engine",0,65,514,48,false,"engine");Text(ui.upgradesContent.transform,"Three levels per machine. +12% grip / +18% torque per level. Depot fitting required.",0,126,514,65,18,Muted);
-      var shop=Group(page,"Shop tab",718,296,514,260);ui.shopContent=shop;Text(shop.transform,"Golden Snow Loader",0,0,514,38,26);Text(shop.transform,"Move piles and transport snow to the disposal yard.\nIncludes the compatible 1.6 m³ bucket.",0,48,514,76,20,Muted);Text(shop.transform,"1,400 coins",0,130,514,40,28,Ink,"shop-price");Button(shop.transform,"Purchase Loader","confirm:buy",0,188,250,48,true,"buy");Button(shop.transform,"View in Garage","owned",260,188,254,48,false,"owned");
-      Button(page,"Tractor","garage:0",44,516,320,42);Button(page,"Loader","garage:1",384,516,320,42);break;
+      Text(page,"PINEFALL WORKSHOP",44,143,1160,36,28);
+      var garageTab=Button(page,"Garage","workshop:garage",44,68,230,46,true);var shopTab=Button(page,"Shop","workshop:shop",286,68,230,46);ui.tabImages=new[]{garageTab.GetComponent<Image>(),shopTab.GetComponent<Image>()};ui.selectedColor=Yellow;ui.tabColor=Line;
+      // Three columns follow the supplied sketches: stats / preview / upgrades or description.
+      Text(page,"VEHICLE STATS",44,229,245,220,19,Ink,"garage-status");
+      Text(page,"Golden Snow Tractor",326,208,628,36,25,Ink,"garage-name").alignment=TextAnchor.MiddleCenter;
+      ui.workshopPreview=WorkshopPreviewAuthoring.Build(root,UnityEngine.Object.FindFirstObjectByType<PrototypeSession>().Fleet);
+      var previewRect=Rect("3D vehicle and part view",page,356,250,568,212);var raw=previewRect.gameObject.AddComponent<RawImage>();raw.texture=ui.workshopPreview.previewCamera.targetTexture;var workshopSwipe=previewRect.gameObject.AddComponent<MachinerySwipe>();workshopSwipe.menu=ui;
+      Button(page,"<","browse:-1",278,320,64,64);Button(page,">","browse:1",938,320,64,64);
+      Text(page,"OWNED",356,465,568,25,16,Muted,"garage-owned").alignment=TextAnchor.MiddleCenter;Text(page,"1 / 2",356,493,568,23,15,Muted,"workshop-position").alignment=TextAnchor.MiddleCenter;
+      Text(page,"AT DEPOT",44,187,1190,24,16,Muted,"workshop-location");
+      ui.garageContent=Group(page,"Garage tab",0,0,1280,564);
+      ui.overviewContent=Group(ui.garageContent.transform,"Legacy overview",0,0,1,1);
+      ui.serviceContent=Group(ui.garageContent.transform,"Service",44,419,220,105);
+      Button(ui.serviceContent.transform,"Refuel","confirm:fuel",0,0,220,32,false,"fuel");Button(ui.serviceContent.transform,"Repair","confirm:repair",0,35,220,32,false,"repair");Button(ui.serviceContent.transform,"Recover to Depot","confirm:recover",0,70,220,32);
+      ui.upgradesContent=Group(ui.garageContent.transform,"Upgrades",1022,229,210,260);
+      Text(ui.upgradesContent.transform,"UPGRADES",0,0,210,30,20);
+      Button(ui.upgradesContent.transform,"Tyres","confirm:tyres",0,42,210,57,false,"tyres");Text(ui.upgradesContent.transform,"+12% grip per level",0,105,210,28,16,Muted);
+      Button(ui.upgradesContent.transform,"Engine","confirm:engine",0,143,210,57,false,"engine");Text(ui.upgradesContent.transform,"+18% torque per level",0,206,210,28,16,Muted);
+      Button(ui.garageContent.transform,"Select & Drive","drive",356,518,278,42,true,"drive");Button(ui.garageContent.transform,"Buy Vehicle","buy-vehicle",646,518,278,42,false,"vehicle-buy");
+      ui.shopContent=Group(page,"Shop tab",0,0,1280,564);Text(ui.shopContent.transform,"Part details",1022,229,210,270,17,Ink,"part-description");Button(ui.shopContent.transform,"Buy & Fit","buy-part",356,518,568,42,true,"part-buy");
+      ui.upgradeSegments=new Image[6];for(int i=0;i<6;i++)ui.upgradeSegments[i]=Fill(Rect("Upgrade level "+i,ui.upgradesContent.transform,(i%3)*70,i<3?133:234,64,8),Line);
+      ui.garageTabImages=new Image[0];break;
      case "settings":
       Title(page,"PREFERENCES","Make yourself comfortable.");
       ui.settingsTabImages=new Image[3];for(int i=0;i<3;i++)ui.settingsTabImages[i]=Button(page,new[]{"Audio","Graphics","Controls"}[i],"settings-tab:"+i,44,222+i*64,250,48,i==0).GetComponent<Image>();
