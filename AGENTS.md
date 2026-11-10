@@ -1,5 +1,33 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Shop test transactions - 11 November 2026
+
+Shop now exposes Test Transactions in its upper-right corner, opening the
+existing clearly labeled simulated store. Back to Shop returns to that tab.
+No real billing or transaction rules changed: success grants 2,000 test coins
+once; redelivery, cancellation and failure do not grant extra coins. Native
+fixture checks cover the Shop route and all four outcomes without profile writes.
+Unity saved/reopened on the Android target and passed 571 native UI/session
+checks, scene validation and all 19 snow checks. The Shop capture was visually
+inspected. Evidence: Logs/ProductionUI; phone acceptance remains separate.
+
+## Active job replacement confirmation — 10 November 2026
+
+Starting any contract or Free Work while a job is active now opens a blocking
+confirmation instead of returning silently to Main Menu. Continue Current Job
+resumes the pending job unchanged; Abandon & Start New Job resets the snow and
+starts the requested contract / Free Work with the saved selected vehicle, with
+no old reward granted. The top-right close icon and Escape only dismiss the
+dialog, retaining the current job and paused job list. Same-contract restarts
+also require consent. Acceptance is tied to the original job transaction and
+consumed once. Existing standalone Abandon still uses its original reload flow;
+replacement uses the existing StartJob reset without a scene reload. Tests and
+native dialog preview are under Logs/ProductionUI. No save-schema change.
+Unity saved/reopened and passed 559 UI/session assertions, scene validation and
+19 snow checks. The native job-conflict dialog capture was visually inspected.
+Android-defined runtime/Editor compilation passed; no player-save writes by
+fixtures. Live phone touch and Android packaging remain separate.
+
 ## Garage / Shop sketches and direct job startup — 10 November 2026
 
 User's supplied Garage_UI.png and Shop_UI.png now supersede the earlier split

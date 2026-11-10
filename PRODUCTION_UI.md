@@ -93,3 +93,23 @@ engine Shop renders were inspected. All 673 preexisting prefab-instance records,
 560 collider records and the Terrain record match HEAD. Evidence:
 Logs/ProductionUI/Checks.txt, Validation.txt and WorldPreservation.json. No
 player-save writes by fixtures; phone touch/performance acceptance remains open.
+
+## Starting another job
+
+If a contract or Free Work is pending, choosing another job opens a confirmation:
+Continue Current Job resumes the existing job; Abandon & Start New Job discards
+its progress and unpaid rewards and immediately starts the requested job. The
+close icon / Escape dismisses the dialog and leaves the current job untouched.
+Fuel, condition, ownership, upgrades and the selected vehicle are retained.
+The new job receives a fresh snow worksite, empty carried loads and a new reward
+transaction. Repeated acceptance cannot restart it twice. The same confirmation
+also protects restarting the same contract. No automatic completion payout.
+
+Job-conflict revision completed: Unity saved/reopened and passed 559 native UI/session checks, scene validation and all 19 snow checks. The job-conflict.png capture was visually inspected. Continue, close, same-contract consent, contract/Free Work replacement, retained funds/vehicle state and duplicate acceptance passed. Android-defined compilation passed; live phone acceptance remains separate.
+
+## Shop test transactions
+
+Garage > Shop > Test Transactions opens the existing simulated transaction page.
+Back to Shop returns to the Shop tab. This is test currency only, with no real
+money charged. New transaction followed by Success grants 2,000 coins once;
+redelivery is duplicate-safe, and Cancel / Fail grant nothing.

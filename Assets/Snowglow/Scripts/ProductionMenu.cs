@@ -21,7 +21,7 @@ namespace Snowglow {
   public int SettingsTab {get;private set;}
   public bool QuickJob {get;private set;}
   public string PendingConfirmation {get;private set;}="";
-  string lastPanel;float nextRefresh;int garageIndex;
+  string lastPanel;float nextRefresh;int garageIndex,pendingJob;bool pendingFree;string pendingJobTransaction;
   static readonly string[] JobNames={"Depot Access","Parking Lot","Main Street"};
   public static readonly string[] RegionNames={"Mountain & Alpine","City & Urban","Highway & Open Country","Suburban & Commercial","Industrial & Extreme Weather"};
   public static readonly string[][] Destinations={new[]{"Pinefall","The Alps · Switzerland / Austria","Svalbard · Norway","The Andes · Chile / Argentina"},new[]{"Aomori City · Japan","Sapporo (Hokkaido) · Japan","Harbin · China"},new[]{"Rogers Pass · British Columbia, Canada","Coquihalla Highway · Canada","Tromsø · Norway"},new[]{"Buffalo · New York, USA","Anchorage · Alaska, USA","Minneapolis–St. Paul · Minnesota, USA"},new[]{"Norilsk · Siberia, Russia","Yakutsk · Russia","McMurdo Station · Antarctica"}};
@@ -63,6 +63,7 @@ namespace Snowglow {
     case "owned":garageIndex=1;ShopTab=false;GarageTab="overview";break;
     case "confirm":Confirm(arg);return;
     case "cancel":PendingConfirmation="";dialog.SetActive(false);contentGroup.interactable=true;break;
+    case "dialog-secondary":bool resume=PendingConfirmation=="replace-job";Execute("cancel");if(resume)g.Continue();return;
     case "accept":Accept();return;
     case "quality":g.Profile.quality=1-g.Profile.quality;g.ApplyQuality();g.Save();break;
     case "sound":g.Profile.muted=!g.Profile.muted;g.Audio.SetMuted(g.Profile.muted);g.Save();break;
@@ -75,14 +76,25 @@ namespace Snowglow {
   }
   public int Quote(string action){var g=Game;var m=g.Fleet[Mathf.Clamp(garageIndex,0,g.Fleet.Length-1)];switch(action){case "vehicle":return m.definition.price;case "buy":return g.Fleet[1].definition.price;case "fuel":return Mathf.CeilToInt((m.definition.fuelCapacity-m.Fuel)*2);case "repair":return Mathf.CeilToInt((100-m.Condition)*3);case "tyres":return m.Tyres>=3?0:200+m.Tyres*200;case "engine":return m.Engine>=3?0:200+m.Engine*200;default:return 0;}}
   public void Confirm(string action){
+   SetLabel("cancel","Cancel");SetLabel("accept","Confirm");Label("dialog-price").gameObject.SetActive(true);
    PendingConfirmation=action;int cost=Quote(action);string title=(action=="buy"||action=="vehicle")?"Purchase "+Game.Fleet[action=="buy"?1:garageIndex].definition.displayName+"?":action=="recover"?"Recover to the depot?":action=="abandon"?"Abandon this shift?":action=="finish"?"Finish free work?":"Confirm "+action+"?";
    SetLabel("dialog-title",title);SetLabel("dialog-body",action=="recover"?"Attachment raised. Bucket snow stays at the pickup location. Fuel and condition stay unchanged.":action=="abandon"?"Current job progress resets. Your purchased machinery stays in your fleet.":(action=="buy"||action=="vehicle")?"Includes its compatible snow attachment. Available at the depot.":"Depot service and upgrades use your selected machine. Existing compatibility and location rules apply.");
    SetLabel("dialog-price",cost>0?cost.ToString("N0")+" coins  ·  Balance after: "+(Game.Profile.coins-cost).ToString("N0"):"No charge");
    Enable("accept",cost<=Game.Profile.coins);contentGroup.interactable=false;dialog.SetActive(true);Button("cancel").Select();
   }
+  public void ShowJobConflict(int kind,bool free){
+   pendingJob=kind;pendingFree=free;pendingJobTransaction=Game.Profile.transaction;PendingConfirmation="replace-job";
+   string current=Game.Profile.freeWork?"Free Work":JobNames[Mathf.Clamp(Game.Profile.job,0,2)];
+   string next=free?"Free Work":JobNames[Mathf.Clamp(kind,0,2)];
+   SetLabel("dialog-title","A job is already in progress");
+   SetLabel("dialog-body","Current: "+current+"\nRequested: "+next+"\nContinue and finish your current job, or abandon it to start the new one. Abandoning forfeits progress and unpaid rewards.");
+   Label("dialog-price").gameObject.SetActive(false);SetLabel("cancel","Continue Current Job");SetLabel("accept","Abandon & Start New Job");
+   Enable("accept",true);contentGroup.interactable=false;dialog.SetActive(true);Button("cancel").Select();
+  }
   public void Accept(){
    string action=PendingConfirmation;PendingConfirmation="";dialog.SetActive(false);contentGroup.interactable=true;if(action=="")return;
    var g=Game;
+   if(action=="replace-job"){if(g.Profile.inJob&&g.Profile.transaction==pendingJobTransaction)g.AbandonAndStartJob(pendingJob,pendingFree);Refresh();return;}
    if(action=="buy"||action=="vehicle")g.BuyMachine(action=="buy"?1:garageIndex);
    else if(action=="recover")g.Recover();else if(action=="abandon")g.Abandon();else if(action=="finish")g.Finish();
    else if(garageIndex==g.Profile.active||g.TrySelectMachine(garageIndex,false)){

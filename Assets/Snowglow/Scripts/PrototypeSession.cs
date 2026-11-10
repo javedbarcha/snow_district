@@ -34,9 +34,14 @@ namespace Snowglow {
   public void Open(string panel){Panel=panel;if(panel!=""){Audio.Reverse(false);Audio.StopMachinery();}Input.Clear();Time.timeScale=panel==""?1:0;HUD.RefreshMenu();if(panel!="")Save();}
   public void TogglePause(){if(Panel=="")Open("pause");else if(Panel=="pause")Open("");}
   public void StartJob(int kind,bool free=false){
-   if(Profile.inJob){Notice="Finish or abandon the active job before starting another.";Open("dashboard");return;}
+   if(Profile.inJob){Notice="Finish or abandon the active job before starting another.";Open("contracts");if(HUD.productionMenu)HUD.productionMenu.ShowJobConflict(kind,free);return;}
    Profile.job=kind;Profile.freeWork=free;Profile.inJob=true;Profile.remaining=kind==0?720:900;Profile.earned=Profile.chain=Profile.chainTime=0;
    Profile.transaction=Guid.NewGuid().ToString("N");Snow.ResetToSeed();foreach(var vehicle in Fleet){vehicle.Tool.Load=0;vehicle.RecoverToDepot();if(vehicle.definition.loader)vehicle.Tool.ResetLowered();}RecreditTarget();Open("");Save();
+  }
+  public bool AbandonAndStartJob(int kind,bool free=false){
+   if(!Profile.inJob||kind<0||kind>2)return false;
+   // StartJob resets the worksite and carried loads. Do not reload the scene or grant the old reward.
+   Profile.inJob=false;Profile.snow=null;StartJob(kind,free);return true;
   }
   void RecreditTarget(){
    // Every accepted contract uses current snow. Abandon/restart reloads a fresh worksite.
