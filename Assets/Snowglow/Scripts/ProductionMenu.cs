@@ -147,7 +147,7 @@ namespace Snowglow {
     if(exists)SetLabel("job-"+slot,CareerProgression.JobNames[job.Value.kind]+"\n"+(QuickJob?"Pinefall · ":"")+(unlocked?(CareerProgression.Completed(p,job.Value.town,job.Value.kind)?"COMPLETED / REPLAY":"AVAILABLE"):"LOCKED · Complete previous job"));
    }
    SetLabel("resume-footer",p.inJob?"Resume Job":"Choose a Job");
-   SetLabel("back-garage",garageReturn==""&&p.inJob?"Resume Job":garageReturn=="pause"?"Back to Pause":"Back");
+   SetLabel("back-garage","Main Menu");
    SetLabel("back-settings",Workshop(settingsReturn)?"Back to Garage":"Back");
    var next=Button("next-job");if(next)next.gameObject.SetActive(!p.quickPlay&&!p.freeWork&&p.job+1<CareerProgression.JobNames.Length&&CareerProgression.JobUnlocked(p,ProfileTown(p),p.job+1));
    var settings=Button("global-settings");if(settings)settings.gameObject.SetActive(ScreenName!="settings"&&ScreenName!="pause");

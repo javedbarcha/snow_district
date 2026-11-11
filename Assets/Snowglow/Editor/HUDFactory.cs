@@ -90,7 +90,7 @@ namespace Snowglow.Editor {
    }
    hud.panels=panels.ToArray();hud.names=names;hud.menuRoot=menu.gameObject;
    var events=new GameObject("EventSystem | Input System UI");events.AddComponent<EventSystem>();var module=events.AddComponent<InputSystemUIInputModule>();module.AssignDefaultActions();
-   CompactHUDAuthoring.Apply(hud);DrivingButtonsAuthoring.Apply(hud);ProductionMenuAuthoring.ApplyIfPrepared(hud);return hud;
+   CompactHUDAuthoring.Apply(hud);DrivingButtonsAuthoring.Apply(hud);ProductionMenuAuthoring.ApplyIfPrepared(hud);VehicleRepairWarningAuthoring.Apply(hud);return hud;
   }
  }
 }

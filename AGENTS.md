@@ -1,5 +1,36 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Garage top-left Main Menu - 11 November 2026
+
+User requested replacing the duplicate top-left Resume Job in Garage with Main
+Menu. The top-left action now opens dashboard and preserves the pending shift;
+footer Resume continues it. Garage selection and Escape retain their existing
+origin-return behavior; Shop shares the same Main Menu action. Authoring and
+runtime labels agree. Unity saved/reopened on Android; 187 flow checks, UI/scene
+validation and 19 snow checks passed. The native Garage render was inspected.
+Tests confirm Main Menu preserves the active transaction and footer Resume
+returns to it. No profile writes by fixtures. Evidence: Logs/ProductionUI and
+Logs/GameFlow. Phone acceptance remains separate.
+
+## Zero-condition repair warning - 11 November 2026
+
+User requested a fly-up/fade repair cue above the vehicle on each accelerator
+press at zero condition. VehicleRepairWarning reuses one saved orange outlined,
+non-interactive text element under Driving HUD, anchored above the current
+vehicle's authored roof-height bounds through the gameplay camera. It rises
+36 design units over 1.25 unscaled seconds while fading. A held pedal does not
+repeat; release/repress restarts the cue, including reverse acceleration. Menus,
+repair and disable hide it. No physics, fuel, condition or save-state changes;
+no runtime UI/material factories. HUDFactory reuses the Editor authoring on
+future explicit builds. Import/save/check request: Logs/RepairWarning.request;
+evidence: Logs/RepairWarning and production UI/flow checks. Unity saved/reopened
+and passed 184 flow/progression checks (including nine warning checks), 601 UI
+checks, scene validation and all 19 snow checks. Both vehicles' trigger gates,
+non-repeating hold/repress, repair/menu hiding, fade expiry and actual roof-point
+screen projection passed. Native text/HUD capture inspected. Android-defined
+compilation passed; no player-save writes by tests. Full live appearance and
+phone acceptance remain separate.
+
 ## Inspected screen cleanup and resume reset - 11 November 2026
 
 For upcoming changes, user requests explanation of each addition/removal's

@@ -33,7 +33,7 @@ namespace Snowglow.Editor {
    var content=Rect("Screen content",root,0,0,1280,720);ui.contentGroup=content.gameObject.AddComponent<CanvasGroup>();
    var header=Rect("Navy header",content,0,0,1280,78);Fill(header,Navy);var logo=Text(header,"SNOW DISTRICT",44,14,470,36,30,Color.white);logo.fontStyle=FontStyle.Bold;Text(header,"WINTER OPERATIONS",46,51,440,20,12,new Color(.78f,.87f,.93f));Text(header,"1,800 coins",780,27,210,35,21,Yellow,"wallet");Button(content,"Settings","nav:settings",1100,90,132,42,false,"global-settings");
    var names=new[]{"dashboard","regions","towns","contracts","machinery","garage","settings","pause","results","store"};var pages=new List<GameObject>();
-   foreach(var name in names){var page=Rect(name,content,0,78,1280,564);pages.Add(page.gameObject);if(name!="dashboard"&&name!="results")Button(page,name=="store"?"< Back to Shop":name=="pause"||name=="results"?"< Main Menu":"< Back",name=="store"?"nav:shop":name=="pause"||name=="results"?"nav:dashboard":"back",44,12,175,42,false,name=="store"?"store-back":"back-"+name);
+   foreach(var name in names){var page=Rect(name,content,0,78,1280,564);pages.Add(page.gameObject);if(name!="dashboard"&&name!="results")Button(page,name=="store"?"< Back to Shop":name=="garage"||name=="pause"||name=="results"?"< Main Menu":"< Back",name=="store"?"nav:shop":name=="garage"||name=="pause"||name=="results"?"nav:dashboard":"back",44,12,175,42,false,name=="store"?"store-back":"back-"+name);
     switch(name){
      case "dashboard":
       Title(page,"YOUR NEXT SHIFT STARTS HERE","A whole town. A fresh snowfall.");
