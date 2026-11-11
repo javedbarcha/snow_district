@@ -94,7 +94,8 @@ namespace Snowglow {
   public bool IsTarget(float x,float z) {
    if(ContractKind==1)return x>77&&x<108&&z>9&&z<33;
    if(ContractKind==2)return x>-35&&x<35&&Mathf.Abs(z)<4.5f;
-   return x>-69.5f&&x<-60.5f&&z>-104&&z<-73;
+   // The former depot lane is authored clear. Work the snowy road just beyond its exit.
+   return x>-59&&x<-29&&Mathf.Abs(z+65)<4.5f;
   }
   public void Recount() {
    TargetArea=TargetCleared=0;

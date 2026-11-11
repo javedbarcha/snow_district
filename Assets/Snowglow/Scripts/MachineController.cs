@@ -64,29 +64,18 @@ namespace Snowglow
             if (ga) Body.AddForceAtPosition(a.transform.up * -force, a.transform.position); if (gb) Body.AddForceAtPosition(b.transform.up * force, b.transform.position);
         }
         void LateUpdate() { if (wheels == null) return; for (int i = 0; i < wheels.Length; i++) { wheels[i].GetWorldPose(out Vector3 p, out Quaternion q); wheelVisuals[i].SetPositionAndRotation(p, q); } }
-        public void RecoverToDepot()
-        {
-            if (Body == null) Body = GetComponent<Rigidbody>();
-            // Recovery is an explicit teleport: update the physics pose itself.
-            // A Transform-only move can be overwritten by the old interpolated
-            // Rigidbody pose on the next physics tick (autoSyncTransforms is off).
-            var interpolation = Body.interpolation;
-            Body.interpolation = RigidbodyInterpolation.None;
-            // Drop forces queued earlier in the physics step before restoring a dynamic body.
-            Body.isKinematic = true;
-            Body.isKinematic = false;
-            var destination = parkingPosition + Vector3.up * .3f;
-            Body.position = destination; Body.rotation = parkingRotation;
-            transform.SetPositionAndRotation(destination, parkingRotation);
-            Physics.SyncTransforms();
-            Body.linearVelocity = Vector3.zero; Body.angularVelocity = Vector3.zero;
-            Body.isKinematic = !ActiveMachine;
-            Body.interpolation = interpolation;
-            driveState=default;
-            steering = Speed = Slip = LastSnowForce = 0;
-            if (wheels != null) foreach (var wheel in wheels) { wheel.motorTorque = 0; wheel.brakeTorque = definition.brakeTorque; wheel.steerAngle = 0; wheel.rotationSpeed = 0; }
-            if (ActiveMachine) Body.WakeUp();
-            Tool.ResetSweep();
+        public void RecoverToDepot(){ResetPhysicsPose(parkingPosition+Vector3.up*.3f,parkingRotation,true);}
+        public void ResetMotion(){if(Body==null)Body=GetComponent<Rigidbody>();ResetPhysicsPose(Body.position,Body.rotation,false);}
+        void ResetPhysicsPose(Vector3 position,Quaternion rotation,bool holdBrakes){
+            if(Body==null)Body=GetComponent<Rigidbody>();
+            var interpolation=Body.interpolation;Body.interpolation=RigidbodyInterpolation.None;
+            // Toggling kinematic state also discards forces queued before the menu opened.
+            Body.isKinematic=true;Body.isKinematic=false;Body.position=position;Body.rotation=rotation;
+            transform.SetPositionAndRotation(position,rotation);Physics.SyncTransforms();
+            Body.linearVelocity=Body.angularVelocity=Vector3.zero;Body.isKinematic=!ActiveMachine;Body.interpolation=interpolation;
+            driveState=default;steering=Speed=Slip=LastSnowForce=0;
+            if(wheels!=null)foreach(var wheel in wheels){wheel.motorTorque=0;wheel.brakeTorque=holdBrakes||!ActiveMachine?definition.brakeTorque:0;wheel.steerAngle=0;wheel.rotationSpeed=0;}
+            if(ActiveMachine)Body.WakeUp();Tool.ResetSweep();
         }
         void OnCollisionEnter(Collision c)
         {

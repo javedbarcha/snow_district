@@ -6,6 +6,7 @@ namespace Snowglow {
   public static PrototypeSession Instance {get;private set;}
   public MachineController[] Fleet;public SnowField Snow;public PrototypeInput Input;public CameraRig CameraRig;public PrototypeHUD HUD;public SynthAudio Audio;
   public ProfileSave Profile;public MachineController Active=>Fleet[Mathf.Clamp(Profile.active,0,Fleet.Length-1)];
+  public string ResultSummary {get;private set;}="";
   public string Panel="dashboard",Notice="Welcome to Pinefall. Start at the depot.";
   public bool IsRunning=>Panel=="";public int Level=>1+Profile.xp/300;
   public int Multiplier=>Mathf.Clamp(1+(int)(Profile.chain/4),1,8);
@@ -31,7 +32,7 @@ namespace Snowglow {
    foreach(var m in Fleet)m.SetActiveMachine(m==Active);
    Audio.SetMuted(Profile.muted);ready=true;ApplyQuality();HUD.RefreshMenu();
   }
-  public void Open(string panel){if(panel=="machinery")panel="garage";if(panel==""&&!Profile.inJob)panel="contracts";Panel=panel;if(panel!=""){Audio.Reverse(false);Audio.StopMachinery();}Input.Clear();Time.timeScale=panel==""?1:0;HUD.RefreshMenu();if(panel!="")Save();}
+  public void Open(string panel){if(panel=="machinery")panel="garage";if(panel==""&&!Profile.inJob)panel="contracts";if(panel==""&&Panel!=""){Input.Reverse=false;foreach(var vehicle in Fleet)vehicle.ResetMotion();}Panel=panel;if(panel!=""){Audio.Reverse(false);Audio.StopMachinery();}Input.Clear();Time.timeScale=panel==""?1:0;HUD.RefreshMenu();if(panel!="")Save();}
   public void TogglePause(){if(Panel=="")Open("pause");else if(Panel=="pause")Open("");}
   public bool CanStartJob(int kind,bool free=false,string town=CareerProgression.Pinefall){
    if(kind<0||kind>2||!CareerProgression.Available(town)){Notice="This town or job is not available yet.";return false;}
@@ -74,6 +75,7 @@ namespace Snowglow {
    int basePay=Profile.freeWork?0:350;float late=Profile.remaining<0?.7f:1;
    int reward=Mathf.RoundToInt((basePay+Profile.earned)*late);Profile.coins+=reward;Profile.xp+=Profile.freeWork?0:180;
    if(!Profile.freeWork&&!Profile.quickPlay)CareerProgression.Complete(Profile,Profile.jobTownId,Profile.job);
+   ResultSummary=(Profile.freeWork?"Free Work":CareerProgression.JobNames[Profile.job]+" - "+(Profile.quickPlay?"Quick Play":"Career"))+"\n"+Mathf.RoundToInt(Snow.Progress*100)+"% cleared\nEarned: "+reward+" coins / "+(Profile.freeWork?0:180)+" XP\n"+(late<1?"Late completion: reduced pay.":"Shift completed.");
    Profile.lastReward=Profile.transaction;Profile.inJob=false;Notice="Shift complete: +"+reward+" coins. "+(late<1?"Late completion: reduced pay.":"Pinefall thanks you.");
    Audio.Chime();Open("results");Save();
   }

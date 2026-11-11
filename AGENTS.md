@@ -1,5 +1,41 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Inspected screen cleanup and resume reset - 11 November 2026
+
+For upcoming changes, user requests explanation of each addition/removal's
+consequences before editing. This was provided for this screen revision. User
+also explicitly chose a single main Pause action set: shared Resume and Settings
+are hidden on Pause. Main Menu retains only footer Resume. Settings moves below
+the header at upper right, is hidden on its own screen, and adjacent Free Work /
+Shop transaction actions move left to avoid overlap. Town selection keeps Back
+and removes its duplicate Regions action. Results contains stats, Replay, Main
+Menu and Next Job only when a next Career contract exists in the current town;
+Quick/Free results have no Shuffle/Next, and final Career results have no Next.
+Next Job starts that contract directly. Garage remains available from other menus.
+
+Replay investigation found Depot Access's former target entirely inside authored
+clear access roads. Its contract-only bounds now cover the adjacent snowy east
+road segment, x (-59,-29), z within 4.5 m of -65. Authored geometry, seed depths
+and snow volumes remain unchanged; existing Depot Access progress is evaluated
+against the corrected target too. Replays must have uncleared work and cannot
+pay out automatically. Completion rewards remain unchanged for actual clearance.
+
+Every menu-to-gameplay transition clears input/direction and all vehicle motion:
+body velocity, angular velocity, queued forces, wheel torque/spin/steer and drive
+state. Position, rotation, attachments/load, fuel, condition and ownership remain.
+New-job/recovery retain their explicit depot positioning. Shared ResetPhysicsPose
+supports both recovery and pose-preserving resume. Native validation and rendered
+screens are recorded under Logs/ProductionUI and Logs/RecoveryPhysics.
+Unity 6000.3.8f1 / Android saved/reopened and passed 600 UI assertions, 175
+flow/progression checks, scene validation, 1,108 isolated recovery/resume physics
+assertions and all 19 snow checks. Actual fresh/replay progress is below 90%; an
+immediate Finish cannot grant coins/XP. Native Main Menu, Pause, Settings, towns,
+Career/Quick/final Results screens were visually inspected. Completed Results
+uses a retained session report with actual cleared percentage, coins and XP,
+independent of general notices. All 673 original prefab-instance records, 560
+collider records and Terrain match HEAD. Source seed assets remain unchanged.
+No test profile writes, district rebake or phone acceptance claimed.
+
 ## Complete UI loop, Career unlocks and Quick Play - 11 November 2026
 
 User approved the audited diagram with machinery selection exclusively in

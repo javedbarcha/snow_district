@@ -161,3 +161,29 @@ Garage > Shop > Test Transactions opens the existing simulated transaction page.
 Back to Shop returns to the Shop tab. This is test currency only, with no real
 money charged. New transaction followed by Success grants 2,000 coins once;
 redelivery is duplicate-safe, and Cancel / Fail grant nothing.
+
+## Inspected screen cleanup (11 November 2026)
+
+Main Menu uses only footer Resume. Global Settings is below the header at upper
+right and hidden on Settings and Pause. Pause keeps its main Resume / Settings
+buttons, with shared footer Resume hidden. Town selection uses Back only.
+Results keeps stats, Replay and Main Menu; Next Job directly starts the following
+Career contract only if one exists. No results Garage or Shuffle action remains.
+Quick Play shuffling stays on the Quick job-selection screen.
+
+Depot Access's former work area was already snow-free at seed startup, causing
+instant replay rewards. Its target is now the snowy adjacent road at x -59..-29,
+z -69.5..-60.5. Only target/credit selection changes, not seed snow or geometry.
+This also changes the progress calculation for an already active Depot Access.
+
+Returning to gameplay stops momentum, queued forces, wheel spin/steer/torque,
+drive-direction buffering and held input. It retains the current pose and load,
+fuel and condition. New-job/recovery still perform their intended depot move.
+
+Completed native validation: 600 UI checks, 175 flow/progression checks, 1,108
+isolated recovery/resume physics assertions, scene validation and 19 snow checks
+passed on Unity 6000.3.8f1 / Android. Completed-shift reports retain the actual
+clearance, earned coins and XP independently of other menu notices. Native
+Career / Quick / final Results and the cleaned screens were visually inspected.
+Android-defined compilation passed; packaging and phone touch/driving remain
+untested. World preservation: Logs/ScreenCleanup/WorldPreservation.json.

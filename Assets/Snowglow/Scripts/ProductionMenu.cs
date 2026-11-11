@@ -87,7 +87,7 @@ namespace Snowglow {
     case "settings-tab":SettingsTab=int.Parse(arg);break;
     case "drive":if(g.Fleet[garageIndex].Owned&&(garageIndex==g.Profile.active||g.TrySelectMachine(garageIndex,false)))Back();return;
     case "replay":QuickJob=g.Profile.quickPlay;g.StartJob(g.Profile.job,g.Profile.freeWork,g.Profile.quickPlay,g.Profile.jobTownId);break;
-    case "next-job":QuickJob=g.Profile.quickPlay;if(QuickJob){ShuffleQuick();Navigate("contracts");}else{RegionIndex=TownIndex=0;Navigate(CareerProgression.TownComplete(g.Profile,SelectedTown)?"towns":"contracts");}break;
+    case "next-job":if(!g.Profile.quickPlay&&!g.Profile.freeWork&&g.Profile.job+1<CareerProgression.JobNames.Length){QuickJob=false;g.StartJob(g.Profile.job+1,false,false,ProfileTown(g.Profile));}break;
     case "buy-vehicle":Confirm("vehicle");return;
     case "buy-part":Confirm(PartIndex==0?"tyres":"engine");return;
     case "owned":garageIndex=1;ShopTab=false;GarageTab="overview";break;
@@ -146,10 +146,12 @@ namespace Snowglow {
     b.gameObject.SetActive(exists);if(slot<jobCards.Length&&jobCards[slot])jobCards[slot].SetActive(exists);bool unlocked=exists&&CareerProgression.JobUnlocked(p,job.Value.town,job.Value.kind);b.interactable=unlocked;
     if(exists)SetLabel("job-"+slot,CareerProgression.JobNames[job.Value.kind]+"\n"+(QuickJob?"Pinefall · ":"")+(unlocked?(CareerProgression.Completed(p,job.Value.town,job.Value.kind)?"COMPLETED / REPLAY":"AVAILABLE"):"LOCKED · Complete previous job"));
    }
-   Enable("continue-job",p.inJob);SetLabel("resume-footer",p.inJob?"Resume Job":"Choose a Job");
+   SetLabel("resume-footer",p.inJob?"Resume Job":"Choose a Job");
    SetLabel("back-garage",garageReturn==""&&p.inJob?"Resume Job":garageReturn=="pause"?"Back to Pause":"Back");
    SetLabel("back-settings",Workshop(settingsReturn)?"Back to Garage":"Back");
-   SetLabel("next-job",p.quickPlay?"Shuffle Again":CareerProgression.TownComplete(p,ProfileTown(p))?"Next Town":"Next Job");
+   var next=Button("next-job");if(next)next.gameObject.SetActive(!p.quickPlay&&!p.freeWork&&p.job+1<CareerProgression.JobNames.Length&&CareerProgression.JobUnlocked(p,ProfileTown(p),p.job+1));
+   var settings=Button("global-settings");if(settings)settings.gameObject.SetActive(ScreenName!="settings"&&ScreenName!="pause");
+   var resumeButton=Button("resume-footer");if(resumeButton)resumeButton.gameObject.SetActive(ScreenName!="results"&&ScreenName!="pause");
    SetLabel("machine-name",selected.definition.displayName);SetLabel("machine-kind",selected.definition.loader?"1.6 m³ bucket · Best for piles":"Front plow · Best for road clearing");SetLabel("machine-owned",selected.Owned?"OWNED / SELECTED":selected.definition.price.ToString("N0")+" COINS · LOCKED");SetLabel("machine-position",(PreviewIndex+1)+" / "+g.Fleet.Length+"  ·  Swipe to browse");
    SetLabel("machine-job",JobNames[Mathf.Clamp(JobIndex,0,2)]+" · "+selected.definition.displayName);Enable("start",selected.Owned&&!p.inJob);Enable("machine-shop",!selected.Owned);
    if(machinePicture)machinePicture.sprite=vehiclePictures[PreviewIndex];if(workshopPicture)workshopPicture.sprite=vehiclePictures[garageIndex];
@@ -174,7 +176,7 @@ namespace Snowglow {
    SetLabel("settings-sound",p.muted?"Sound: OFF":"Sound: ON");SetLabel("settings-quality",p.quality==0?"Graphics: LOW":"Graphics: STANDARD");SetLabel("settings-assist",p.assists?"Driving assists: ON":"Driving assists: OFF");SetLabel("settings-debug",p.debug?"Physics overlay: ON":"Physics overlay: OFF");for(int i=0;i<settingPages.Length;i++)settingPages[i].SetActive(i==SettingsTab);
    for(int i=0;i<RegionNames.Length;i++)SetLabel("region-"+i,RegionNames[i]+"\n"+(CareerProgression.RegionUnlocked(p,i)?"UNLOCKED":"LOCKED · Complete previous region"));
    SetLabel("town-title",RegionNames[Mathf.Clamp(RegionIndex,0,4)]);for(int i=0;i<4;i++){var b=Button("town-"+i);bool exists=i<Destinations[RegionIndex].Length;b.gameObject.SetActive(exists);if(exists){bool unlocked=CareerProgression.TownUnlocked(p,RegionIndex,i),available=CareerProgression.Available(CareerProgression.TownIds[RegionIndex][i]);SetLabel("town-"+i,Destinations[RegionIndex][i]+"\n"+(unlocked?(available?(CareerProgression.TownComplete(p,CareerProgression.TownIds[RegionIndex][i])?"COMPLETED / REPLAY":"AVAILABLE"):"UNLOCKED / COMING SOON"):"LOCKED"));b.interactable=unlocked&&available;}}
-   SetLabel("pause-job",p.freeWork?"PINEFALL / FREE WORK":"PINEFALL / "+JobNames[Mathf.Clamp(p.job,0,2)]);Enable("finish",p.inJob&&p.freeWork);SetLabel("results",g.Notice+"\n\nWallet: "+p.coins.ToString("N0")+" coins\nLevel "+g.Level+" · "+p.xp+" XP\nRewards are committed once to your save.");
+   SetLabel("pause-job",p.freeWork?"PINEFALL / FREE WORK":"PINEFALL / "+JobNames[Mathf.Clamp(p.job,0,2)]);Enable("finish",p.inJob&&p.freeWork);SetLabel("results",(string.IsNullOrEmpty(g.ResultSummary)?"Complete a shift to see your results.":g.ResultSummary)+"\n\nWallet: "+p.coins.ToString("N0")+" coins\nLevel "+g.Level+" · "+p.xp+" XP");
   }
   static string ProfileTown(ProfileSave p)=>string.IsNullOrEmpty(p.jobTownId)?CareerProgression.Pinefall:p.jobTownId;
   void OnDisable(){if(workshopPreview){workshopPreview.previewCamera.enabled=false;workshopPreview.gameObject.SetActive(false);}}
