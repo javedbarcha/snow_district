@@ -30,7 +30,7 @@ namespace Snowglow.Editor
         {
             machine = owner; folder = destination; trial = index; scenarioName = scenario; isolation = comparison; targetSpeed = speed; height = h; width = w; target = obstacle; start = position; startLoad = owner.Tool.Load;
             trace = new StreamWriter(folder + "/Trace-" + index.ToString("D2") + ".csv");
-            trace.WriteLine("time,speed,y,tilt,up,spin,grounded,comX,comY,comZ,mass,load,snowResistance,antiRollPeak,travelMin,travelMax,wheelContacts");
+            trace.WriteLine("time,speed,y,tilt,up,spin,grounded,comX,comY,comZ,mass,load,snowResistance,antiRollPeak,travelMin,travelMax,wheelContacts,throttle,brake,steer");
             contactsFile = new StreamWriter(folder + "/Contacts-" + index.ToString("D2") + ".csv");
             contactsFile.WriteLine("time,path,layer,speed,impulseY,normalMinY,normalMaxY,phase");
         }
@@ -61,7 +61,7 @@ namespace Snowglow.Editor
             minGrounded = Mathf.Min(minGrounded, grounded);
             if (grounded == 0) { airborne += Time.fixedDeltaTime; airRun += Time.fixedDeltaTime; maxAirRun = Mathf.Max(maxAirRun, airRun); } else airRun = 0;
             trace.WriteLine(string.Join(",", F(duration), F(body.linearVelocity.magnitude), F(body.position.y), F(tilt), F(body.linearVelocity.y), F(body.angularVelocity.magnitude), grounded,
-                F(com.x), F(com.y), F(com.z), F(body.mass), F(machine.Tool.Load), F(machine.LastSnowForce), F(machine.DiagnosticPeakAntiRoll), F(machine.DiagnosticMinTravel), F(machine.DiagnosticMaxTravel), Q(string.Join(" | ", wheelContacts))));
+                F(com.x), F(com.y), F(com.z), F(body.mass), F(machine.Tool.Load), F(machine.LastSnowForce), F(machine.DiagnosticPeakAntiRoll), F(machine.DiagnosticMinTravel), F(machine.DiagnosticMaxTravel), Q(string.Join(" | ", wheelContacts)), F(PrototypeSession.Instance.Input.Throttle), F(PrototypeSession.Instance.Input.Brake), F(PrototypeSession.Instance.Input.Steer)));
             if (!captured && (maxRise > .6f || tilt > 35)) { Capture?.Invoke(folder + "/Trial-" + trial + "-abnormal.png"); captured = true; }
         }
         void Contact(Collision collision, string phase)

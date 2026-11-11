@@ -1,5 +1,34 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Production handling fix - 12 November 2026
+
+User authorized the production fix after the repeated collision audit; consequences
+were explained before editing. Snow physics now uses a filtered, compacted 1 m
+height surface instead of stepped per-cell cubes. Visual columns and the volume /
+credit ledger retain their existing logic. Initial support is prepared before
+driving; subsequent height growth/descent is rate limited and meshes are reused.
+Anti-roll travel and force are bounded, both tyres must have usable contact, and
+wall-like wheel hits supply no traction. Per-body separation/angular limits,
+suspension expansion protection, lower tyre-force application and assisted
+pitch/roll damping reduce impact spin. Chassis colliders, dynamic mass/COM,
+unbraked coasting, attachments and economy remain. Guide: PRODUCTION_HANDLING.md.
+
+Android-defined compilation and native import passed. Native support checks (29),
+scene validation, 19 snow checks, 1,108 recovery assertions and 1,134 loader-cycle
+assertions passed, alongside 1,627 direction-buffer checks. Saved scene and
+dirty state were preserved. All 73 production Play cases completed: 48 moving
+snow cases stayed below .33 m rise / 10.1 degrees tilt / .04 s continuous airborne;
+all 12 foundation impacts contacted the target and stayed grounded. Both vehicles
+coasted and steered; six ramp runs climbed. Loader tipped to 111.9 degrees after
+leaving the roughly 5 m ramp end at a 4 m/s target: steep drops can still tip it.
+Two ramp landings exceeded Unity's configured pre-solver angular limit (4.26 rad/s
+peak); do not describe that limit as an absolute post-impact cap. Scene/profile/
+backup hashes matched after Play. Consolidated evidence/validation is under
+Logs/ProductionHandling (raw run: Logs/CollisionAudit). Prior
+corrected proxy tests are preserved under Logs/CollisionAuditProxyCorrected.
+No district rebake or player-save writes; Android packaging and phone acceptance
+remain separate.
+
 ## Snow / wheel / proxy stability audit - 11 November 2026
 
 User requested broader Play testing before fixes. 120 actual Pinefall Play-mode

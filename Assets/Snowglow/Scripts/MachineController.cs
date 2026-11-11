@@ -19,10 +19,11 @@ namespace Snowglow
         public bool AtDepot => Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(-95, -90)) < 25;
         public void Initialize()
         {
-            Body = GetComponent<Rigidbody>(); Body.linearDamping = .05f; Body.angularDamping = .5f; Body.interpolation = RigidbodyInterpolation.Interpolate; Body.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+            Body = GetComponent<Rigidbody>(); Body.linearDamping = .05f; Body.angularDamping = .8f; Body.interpolation = RigidbodyInterpolation.Interpolate; Body.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+            Body.maxDepenetrationVelocity = 2; Body.maxAngularVelocity = 3.5f; Body.solverIterations = 10; Body.solverVelocityIterations = 4;
             string error = equipment.Validate(definition); if (error != null) { Debug.LogError(error, this); enabled = false; return; }
             parkingPosition = transform.position; parkingRotation = transform.rotation; Tool.Initialize(this);
-            foreach (var w in wheels) w.ConfigureVehicleSubsteps(5, 5, 8);
+            foreach (var w in wheels) { w.ConfigureVehicleSubsteps(5, 5, 8); w.suspensionExpansionLimited = true; }
             SetActiveMachine(false);
         }
         public void SetActiveMachine(bool active) { ActiveMachine = active; if (Body == null) Body = GetComponent<Rigidbody>(); Body.isKinematic = !active; driveState=default; foreach (var w in wheels) { w.motorTorque = 0; w.brakeTorque = active ? 0 : definition.brakeTorque; } if (active) Body.WakeUp(); }
@@ -43,16 +44,26 @@ namespace Snowglow
             int grounded = 0; Slip = 0;
             for (int i = 0; i < wheels.Length; i++)
             {
-                var w = wheels[i]; w.steerAngle = i < 2 ? steering : 0; float grip = 1;
+                var w = wheels[i]; w.steerAngle = i < 2 ? steering : 0; float grip = 1; bool wallContact = false;
+                var wheelCenter = transform.InverseTransformPoint(w.transform.TransformPoint(w.center));
+                w.forceAppPointDistance = Mathf.Max(0, Body.centerOfMass.y - wheelCenter.y + w.radius - .25f);
                 if (w.GetGroundHit(out WheelHit hit))
                 {
-                    grounded++; Slip += Mathf.Abs(hit.forwardSlip) + Mathf.Abs(hit.sidewaysSlip);
+                    wallContact = hit.normal.y < .5f;
+                    if (!wallContact) grounded++; Slip += Mathf.Abs(hit.forwardSlip) + Mathf.Abs(hit.sidewaysSlip);
                     float depth = game.Snow.Depth(hit.point); grip = Mathf.Lerp(SurfaceZone.Sample(hit.point), .67f, Mathf.Clamp01(depth / .25f)); grip *= definition.baseGrip * (1 + Tyres * .12f);
                 }
+                if (wallContact) grip = 0; // A wall is not a drivable support surface.
                 var f = w.forwardFriction; f.stiffness = grip; w.forwardFriction = f; var s = w.sidewaysFriction; s.stiffness = grip * (Assistance ? 1.2f : 1); w.sidewaysFriction = s;
                 float traction = Assistance && w.GetGroundHit(out WheelHit wh) && Mathf.Abs(wh.forwardSlip) > .65f ? .55f : 1;
-                w.motorTorque = Fuel > 0 && Condition > 0 && Speed < definition.maxSpeed ? driveThrottle * direction * definition.torque * (1 + Engine * .18f) * traction * Mathf.Lerp(.5f, 1, Condition / 100) : 0;
+                w.motorTorque = !wallContact && Fuel > 0 && Condition > 0 && Speed < definition.maxSpeed ? driveThrottle * direction * definition.torque * (1 + Engine * .18f) * traction * Mathf.Lerp(.5f, 1, Condition / 100) : 0;
                 w.brakeTorque = serviceBrake * definition.brakeTorque;
+            }
+            if (Assistance)
+            {
+                // Dampen pitch/roll without braking translation or damping steering yaw.
+                Vector3 tiltSpin = Body.angularVelocity - Vector3.Project(Body.angularVelocity, Vector3.up);
+                Body.AddTorque(-Vector3.ClampMagnitude(tiltSpin, 3.5f) * (grounded == 0 ? 4 : 1.5f), ForceMode.Acceleration);
             }
             if (grounded > 0)
             {
@@ -68,8 +79,10 @@ namespace Snowglow
         void AntiRoll(int left, int right)
         {
             var a = wheels[left]; var b = wheels[right]; bool ga = a.GetGroundHit(out WheelHit ha), gb = b.GetGroundHit(out WheelHit hb);
-            float ta = ga ? (-a.transform.InverseTransformPoint(ha.point).y - a.radius) / a.suspensionDistance : 1;
-            float tb = gb ? (-b.transform.InverseTransformPoint(hb.point).y - b.radius) / b.suspensionDistance : 1; float force = (ta - tb) * 9000;
+            float ta = ga ? Mathf.Clamp01((a.center.y - a.transform.InverseTransformPoint(ha.point).y - a.radius) / a.suspensionDistance) : 1;
+            float tb = gb ? Mathf.Clamp01((b.center.y - b.transform.InverseTransformPoint(hb.point).y - b.radius) / b.suspensionDistance) : 1;
+            float limit = Body.mass * Physics.gravity.magnitude * .1f;
+            float force = ga && gb && ha.normal.y >= .5f && hb.normal.y >= .5f ? Mathf.Clamp((ta - tb) * 9000, -limit, limit) : 0;
 #if UNITY_EDITOR
             DiagnosticMinTravel = Mathf.Min(DiagnosticMinTravel, Mathf.Min(ta, tb));
             DiagnosticMaxTravel = Mathf.Max(DiagnosticMaxTravel, Mathf.Max(ta, tb));

@@ -9,7 +9,9 @@ namespace Snowglow {
   readonly HashSet<int> dirty=new HashSet<int>();readonly Queue<int> queue=new Queue<int>();
   readonly List<CombineInstance> combine=new List<CombineInstance>(256);
   readonly List<int> indices=new List<int>();
-  int collisionTick;float disposalTimer;
+  float disposalTimer;
+  readonly Dictionary<int,SnowSupportSurface> supports=new Dictionary<int,SnowSupportSurface>();
+  readonly Queue<int> supportQueue=new Queue<int>();readonly HashSet<int> supportQueued=new HashSet<int>();
 #if UNITY_EDITOR
   [System.NonSerialized]public bool DiagnosticFreezeCollision;
 #endif
@@ -29,6 +31,7 @@ namespace Snowglow {
     mf.sharedMesh=Instantiate(mf.sharedMesh);var mc=child.GetComponent<MeshCollider>();if(mc.sharedMesh!=null)mc.sharedMesh=Instantiate(mc.sharedMesh);
     if(restored!=null)MarkChunk(id);
    }
+   foreach(int id in chunks.Keys)RebuildSupport(id,true);
    Grid.WakePiles();Recount();
   }
 #if UNITY_EDITOR
@@ -47,7 +50,7 @@ namespace Snowglow {
   }
   public void RebuildResolution(SnowSeed target){
    var upgraded=SnowVolumeGrid.Upgrade(seed.grid);if(upgraded==null)throw new System.InvalidOperationException("Unsupported snow seed dimensions.");
-   cube=GetComponent<MeshFilter>().sharedMesh;chunks.Clear();dirty.Clear();queue.Clear();
+   cube=GetComponent<MeshFilter>().sharedMesh;chunks.Clear();dirty.Clear();queue.Clear();supports.Clear();supportQueue.Clear();supportQueued.Clear();
    while(transform.childCount>0)DestroyImmediate(transform.GetChild(0).gameObject);
    Grid=upgraded;target.grid=upgraded;seed=target;
    for(int z=0;z<Across;z++)for(int x=0;x<Across;x++){
@@ -106,7 +109,12 @@ namespace Snowglow {
   }
   public float Progress=>TargetArea<=0?0:TargetCleared/TargetArea;
   public float Depth(Vector3 p){int i=Grid.Index(p.x,p.z);return i<0?0:Grid.depth[i];}
-  public void Mark(int index){MarkChunk((index/SnowVolumeGrid.Size/Chunk)*Across+(index%SnowVolumeGrid.Size/Chunk));}
+  public void Mark(int index){
+   int x=index%SnowVolumeGrid.Size,z=index/SnowVolumeGrid.Size;
+   // Shared border samples must be refreshed on both sides of a chunk seam.
+   for(int cz=Mathf.Max(0,z-3)/Chunk;cz<=Mathf.Min(SnowVolumeGrid.Size-1,z+3)/Chunk;cz++)
+    for(int cx=Mathf.Max(0,x-3)/Chunk;cx<=Mathf.Min(SnowVolumeGrid.Size-1,x+3)/Chunk;cx++)MarkChunk(cz*Across+cx);
+  }
   void MarkChunk(int id){if(dirty.Add(id))queue.Enqueue(id);}
   public float Work(Vector3 center,Vector3 forward,float width,float capacity,Vector3 destination,bool collect,out float credited) {
    credited=0;if(!collect&&!Grid.CanDeposit(destination.x,destination.z))return 0;
@@ -142,6 +150,7 @@ namespace Snowglow {
    if(game!=null&&game.IsRunning)Grid.Settle(Time.deltaTime,512,Mark);
    // Budget mesh work. Physics obstruction uses only substantial snow columns.
    for(int n=0;n<2&&queue.Count>0;n++){int id=queue.Dequeue();dirty.Remove(id);Rebuild(id);}
+   if(game!=null&&game.IsRunning)for(int n=0;n<2&&supportQueue.Count>0;n++){int id=supportQueue.Dequeue();supportQueued.Remove(id);RebuildSupport(id,false);}
    if(Time.frameCount%15==0)Recount();
    if(game!=null&&game.IsRunning){disposalTimer+=Time.deltaTime;if(disposalTimer>=1){ProcessDisposal();disposalTimer-=1;}}
   }
@@ -153,21 +162,39 @@ namespace Snowglow {
    }
   }
   void Rebuild(int id) {
-   int cx=id%Across,cz=id/Across;combine.Clear();var collision=new List<CombineInstance>();
+   int cx=id%Across,cz=id/Across;combine.Clear();
    for(int z=cz*Chunk;z<(cz+1)*Chunk;z++)for(int x=cx*Chunk;x<(cx+1)*Chunk;x++) {
     int i=z*SnowVolumeGrid.Size+x;float d=Grid.depth[i];if(d<.004f)continue;
     var c=new CombineInstance{mesh=cube,transform=Matrix4x4.TRS(new Vector3(Grid.X(i),Ground+d*.5f,Grid.Z(i)),Quaternion.identity,new Vector3(SnowVolumeGrid.Cell*.995f,d,SnowVolumeGrid.Cell*.995f))};combine.Add(c);
-    if(d>.55f)collision.Add(c);
    }
    var mf=chunks[id];mf.sharedMesh.Clear();if(combine.Count>0)mf.sharedMesh.CombineMeshes(combine.ToArray(),true,true);
 #if UNITY_EDITOR
    if(DiagnosticFreezeCollision)return;
 #endif
-   var mc=mf.GetComponent<MeshCollider>();var old=mc.sharedMesh;mc.sharedMesh=null;
-   mc.enabled=collision.Count>0;
-   if(collision.Count>0){var m=new Mesh{name="Pile collision "+collisionTick++};m.CombineMeshes(collision.ToArray(),true,true);mc.sharedMesh=m;}
-   if(old!=null){if(Application.isPlaying)Destroy(old);else DestroyImmediate(old);}
+   RebuildSupport(id,!Application.isPlaying);
   }
-  void OnDestroy(){if(!Application.isPlaying)return;foreach(var mf in chunks.Values)if(mf!=null){if(mf.sharedMesh!=null)Destroy(mf.sharedMesh);var c=mf.GetComponent<MeshCollider>();if(c.sharedMesh!=null)Destroy(c.sharedMesh);}}
+  void RebuildSupport(int id,bool immediate){
+#if UNITY_EDITOR
+   if(DiagnosticFreezeCollision)return;
+#endif
+   var collider=chunks[id].GetComponent<MeshCollider>();
+   if(!supports.TryGetValue(id,out var support)){
+    var old=collider.sharedMesh;collider.sharedMesh=null;collider.enabled=false;
+    if(old!=null){if(Application.isPlaying)Destroy(old);else if(!IsPersistentMesh(old))DestroyImmediate(old);}
+    support=new SnowSupportSurface();supports.Add(id,support);
+   }
+   if(support.Update(Grid,id%Across,id/Across,collider,immediate)&&supportQueued.Add(id))supportQueue.Enqueue(id);
+  }
+  static bool IsPersistentMesh(Object value){
+#if UNITY_EDITOR
+   return UnityEditor.EditorUtility.IsPersistent(value);
+#else
+   return false;
+#endif
+  }
+#if UNITY_EDITOR
+  public void RefreshSupportForValidation(){foreach(int id in chunks.Keys)RebuildSupport(id,true);}
+#endif
+  void OnDestroy(){if(!Application.isPlaying)return;var meshes=new HashSet<Mesh>();foreach(var mf in chunks.Values)if(mf!=null){if(mf.sharedMesh!=null)meshes.Add(mf.sharedMesh);var c=mf.GetComponent<MeshCollider>();if(c.sharedMesh!=null)meshes.Add(c.sharedMesh);}foreach(var support in supports.Values)if(support.mesh!=null)meshes.Add(support.mesh);foreach(var mesh in meshes)Destroy(mesh);}
  }
 }

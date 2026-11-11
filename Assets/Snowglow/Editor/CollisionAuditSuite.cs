@@ -16,8 +16,8 @@ namespace Snowglow.Editor
         {
             public int vehicle, shape;
             public string name, isolation = "normal";
-            public float speed, height, width;
-            public bool foundation, stationary, full, dump;
+            public float speed, height, width, offset, steer;
+            public bool foundation, stationary, full, dump, ramp, raised, coast;
         }
         static readonly List<Case> Cases = new List<Case>();
         static PrototypeSession game;
@@ -31,6 +31,8 @@ namespace Snowglow.Editor
         static bool originalIgnore;
         static Collider foundation;
         static bool dumped;
+        static bool production;
+        static Collider ramp;
         static StreamWriter summary;
         static Case Current => Cases[index];
         static Dictionary<Collider, bool> bodyStates;
@@ -42,6 +44,8 @@ namespace Snowglow.Editor
         public static void Start(PrototypeSession session, Action done)
         {
             game = session; complete = done; index = -1;
+            production = File.Exists(Folder + "/Production.request");
+            if (production) File.Delete(Folder + "/Production.request");
             Directory.CreateDirectory(Folder);
             originalIgnore = Physics.GetIgnoreLayerCollision(8, 9);
             bodyStates = game.Fleet.SelectMany(v => v.GetComponentsInChildren<Collider>(true)).Where(c => !(c is WheelCollider)).ToDictionary(c => c, c => c.enabled);
@@ -61,6 +65,7 @@ namespace Snowglow.Editor
             }
             foundation = colliders.Where(c => c is BoxCollider && !c.attachedRigidbody && ObjectPath(c.transform).ToLowerInvariant().Contains("foundation"))
                 .OrderBy(c => Vector3.Distance(c.bounds.center, new Vector3(-22, 9.39f, 16))).First();
+            ramp = colliders.FirstOrDefault(c => c.name == "CollisionWedge" && ObjectPath(c.transform).Contains("Traction"));
             using (var writer = new StreamWriter(Folder + "/Fleet.txt"))
                 foreach (var vehicle in game.Fleet)
                 {
@@ -116,9 +121,23 @@ namespace Snowglow.Editor
                         Cases.Add(new Case { vehicle = vehicle, name = "shallow-road-targeted", shape = 1, height = .3f, width = 8, isolation = isolation, speed = 2 });
                     }
             }
+            if (production)
+            {
+                Cases.RemoveAll(c => c.isolation != "normal" || c.foundation || c.name.Contains("isolation"));
+                // Retain the 48 size/speed passes and normal stationary loader checks.
+                for (int vehicle = 0; vehicle < game.Fleet.Length; vehicle++)
+                {
+                    foreach (float offset in new[] { -.08f, 0, .08f })
+                        foreach (bool raised in new[] { false, true })
+                            Cases.Add(new Case { vehicle = vehicle, name = "production-foundation-" + (raised ? "raised" : "down"), foundation = true, raised = raised, offset = offset, speed = 6.5f });
+                    foreach (float speed in new[] { 2f, 4f, 6.5f }) Cases.Add(new Case { vehicle = vehicle, name = "production-traction-ramp", ramp = true, raised = true, speed = speed });
+                    Cases.Add(new Case { vehicle = vehicle, name = "production-coast", speed = 4, coast = true });
+                    Cases.Add(new Case { vehicle = vehicle, name = "production-gentle-turn", speed = 4, steer = .12f });
+                }
+            }
             summary = new StreamWriter(Folder + "/Results.csv") { AutoFlush = true };
             summary.WriteLine(CollisionAuditProbe.Header);
-            File.WriteAllText(Folder + "/Plan.txt", Cases.Count + " actual Play-mode trials. Targets 2/4/6.5 m/s are regulated by ordinary pedals, not imposed velocity. Snow fields use real SnowField.Rebuild and existing chunk colliders. All test data are transient.\n");
+            File.WriteAllText(Folder + "/Plan.txt", Cases.Count + " actual Play-mode trials. Production acceptance=" + production + ". Targets 2/4/6.5 m/s use ordinary pedals, not imposed velocity. Snow uses real volume/visual rebuilds; production fixtures initialize the smooth support before approaching, then allow live updates. All test data are transient.\n");
             Next();
         }
         static void PrepareSnow(Case test)
@@ -135,6 +154,7 @@ namespace Snowglow.Editor
                 Vector3 relative = new Vector3(x, 0, z) - new Vector3(routeStart.x, 0, routeStart.z);
                 bool corridor = test.foundation && Mathf.Abs(Vector3.Dot(relative, sideways)) < 3 && Vector3.Dot(relative, forward) > -3 && Vector3.Dot(relative, forward) < 14;
                 if (corridor) value = 0;
+                if(test.ramp && Mathf.Abs(x-ramp.bounds.center.x)<6 && z>ramp.bounds.min.z-8 && z<ramp.bounds.max.z+5)value=0;
                 if (lane)
                 {
                     value = 0;
@@ -160,6 +180,7 @@ namespace Snowglow.Editor
             }
             grid.WakePiles();
             foreach (int chunk in chunks) Rebuild.Invoke(game.Snow, new object[] { chunk });
+            if (production) game.Snow.RefreshSupportForValidation();
             game.Snow.DiagnosticFreezeCollision = test.isolation == "frozen-snow-collision";
             Physics.SyncTransforms();
         }
@@ -203,12 +224,14 @@ namespace Snowglow.Editor
             if (test.foundation)
             {
                 position = FoundationApproach(out rotation);
+                position += rotation * Vector3.right * test.offset;
             }
+            if (test.ramp) position = new Vector3(ramp.bounds.center.x, 0, ramp.bounds.min.z - 5);
             if (!Physics.Raycast(position + Vector3.up * 40, Vector3.down, out var ground, 100, 1 << 0, QueryTriggerInteraction.Ignore)) throw new InvalidOperationException("Audit approach has no ground.");
             position.y = ground.point.y + .08f;
             machine.SetActiveMachine(true); machine.Body.position = position; machine.Body.rotation = rotation; machine.ResetMotion();
             machine.Tool.Load = test.full ? machine.equipment.capacity : 0;
-            if (test.stationary) machine.Tool.ResetRaised(); else machine.Tool.ResetLowered();
+            if (test.stationary || test.raised) machine.Tool.ResetRaised(); else machine.Tool.ResetLowered();
             game.Input.Clear(); game.Input.Brake = 1;
             Physics.SyncTransforms();
             probe = machine.gameObject.AddComponent<CollisionAuditProbe>();
@@ -222,13 +245,15 @@ namespace Snowglow.Editor
         {
             float elapsed = Time.time - started;
             var test = Current;
-            if (elapsed > (test.stationary ? 7 : test.shape == 3 ? 14 : 12) || (!test.foundation && !test.stationary && machine.Body.position.z > -14)) { Next(); return; }
+            if (elapsed > (test.stationary ? 7 : test.shape == 3 ? 14 : 12) || (!test.foundation && !test.ramp && !test.stationary && machine.Body.position.z > -14)) { Next(); return; }
             if (elapsed < 1.5f) { game.Input.Throttle = 0; game.Input.Brake = 1; return; }
             machine.DiagnosticFreezeCenterOfMass = test.isolation == "fixed-com";
             if (test.dump && elapsed > 2.5f && !dumped) { machine.Tool.RequestDump(); dumped = true; }
             float forward = Vector3.Dot(machine.Body.linearVelocity, machine.transform.forward);
             game.Input.Throttle = test.stationary ? 0 : Mathf.Clamp01((test.speed - forward) * .9f + .15f);
             game.Input.Brake = test.stationary ? 1 : Mathf.Clamp01((forward - test.speed - .3f) * .6f);
+            game.Input.Steer = test.steer;
+            if(test.coast && elapsed>5){game.Input.Throttle=0;game.Input.Brake=0;}
         }
         public static void Cleanup()
         {
