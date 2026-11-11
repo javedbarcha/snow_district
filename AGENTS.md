@@ -1,5 +1,40 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Background Editor automation - 11 November 2026
+
+User authorizes agents to refresh/compile the running Editor while it is behind
+other windows or minimized. BackgroundEditorAutomation is Editor-only, watches
+Assets/Packages/ProjectSettings with a two-second debounce, and requests refresh
+through public Unity APIs on the main thread. It defers during Play/import/compile;
+it never automatically saves scenes, enters Play, builds or writes player saves.
+Automatic refresh defaults on, with a per-PC/project menu toggle.
+
+Portable helper: `powershell -NoProfile -File
+Tools/EditorAutomation/Invoke-UnityEditor.ps1 -Action Compile` (one line).
+Use Status to inspect its heartbeat. Both explicit Refresh/Compile requests force
+compilation and acknowledge a domain reload through an ID-matched durable result.
+Await exit 0 BEFORE queuing existing authoring/check request markers, so old
+loaded assemblies cannot consume newly queued work. Then verify the authoring
+task's own completion evidence. No second Editor process against this project.
+
+On another PC, clone/copy these tracked files, open the version specified in
+ProjectVersion.txt, and import the bridge once (Assets > Refresh with Play stopped
+if necessary). All helper paths are project-relative; no user/install path edits.
+Guide: UNITY_EDITOR_AUTOMATION.md. State/results are ignored under
+Logs/EditorAutomation. This cannot recover a frozen Editor, bypass modal dialogs
+or OS suspension. On timeout inspect status/logs; do not claim success or silently
+delete pending requests. Android-defined offline compilation and isolated helper
+success/failure/timeout tests passed. The live Android-target Editor imported the
+bridge and completed an ID-matched forced compile/domain reload with a new domain
+token; its heartbeat resumed. This took about four minutes, exceeding the initial
+three-minute client timeout, so the helper now defaults to ten minutes. No scene
+or gameplay source changes. After the user confirmed Refresh, Play stopped and
+Unity minimized, a second external Compile completed successfully without further
+manual intervention (request d41088d994454d4cb8cc6011bd16218b, 15:11:59 UTC).
+The same Editor process returned a new domain token and resumed its idle
+heartbeat. This validates compilation/reload in the user-confirmed minimized
+state on this PC; other PCs still need their initial import and local check.
+
 ## Garage top-left Main Menu - 11 November 2026
 
 User requested replacing the duplicate top-left Resume Job in Garage with Main
