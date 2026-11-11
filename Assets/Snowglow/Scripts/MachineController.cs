@@ -9,6 +9,11 @@ namespace Snowglow
         public float Fuel = 70, Condition = 100; public int Tyres, Engine; public bool Owned;
         public bool Assistance = true, ActiveMachine; public float Slip, Speed, LastSnowForce;
         DirectionalDriveState driveState;
+#if UNITY_EDITOR
+        // Opt-in Play diagnostics only; never serialized or included in players.
+        [System.NonSerialized] public bool DiagnosticSkipAntiRoll, DiagnosticFreezeCenterOfMass;
+        [System.NonSerialized] public float DiagnosticPeakAntiRoll, DiagnosticMinTravel = float.PositiveInfinity, DiagnosticMaxTravel = float.NegativeInfinity;
+#endif
         float steering, nextHit; Vector3 parkingPosition; Quaternion parkingRotation;
         public float FuelRatio => Fuel / definition.fuelCapacity;
         public bool AtDepot => Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(-95, -90)) < 25;
@@ -28,7 +33,11 @@ namespace Snowglow
             float direction = input.Reverse ? -1 : 1; float targetSteering = input.Steer * definition.steering / (1 + Speed * .055f);
             steering = Mathf.MoveTowards(steering, targetSteering, 100 * Time.fixedDeltaTime);
             float mass = definition.mass + equipment.mass + Tool.Load * 250;
-            Body.mass = mass; Body.centerOfMass = (definition.dryCenterOfMass * definition.mass + transform.InverseTransformPoint(Tool.mount.position) * equipment.mass + transform.InverseTransformPoint(Tool.mouth.position) * (Tool.Load * 250)) / mass;
+            Body.mass = mass;
+#if UNITY_EDITOR
+            if (!DiagnosticFreezeCenterOfMass)
+#endif
+            Body.centerOfMass = (definition.dryCenterOfMass * definition.mass + transform.InverseTransformPoint(Tool.mount.position) * equipment.mass + transform.InverseTransformPoint(Tool.mouth.position) * (Tool.Load * 250)) / mass;
             float driveThrottle=driveState.Resolve(direction,input.Throttle,input.Brake,forward,Vector3.ProjectOnPlane(Body.linearVelocity,Vector3.up).magnitude,Time.fixedDeltaTime,out float serviceBrake,out bool holdStopped);
             if(holdStopped){Body.linearVelocity=Vector3.Project(Body.linearVelocity,Vector3.up);foreach(var wheel in wheels)wheel.rotationSpeed=0;}
             int grounded = 0; Slip = 0;
@@ -61,6 +70,12 @@ namespace Snowglow
             var a = wheels[left]; var b = wheels[right]; bool ga = a.GetGroundHit(out WheelHit ha), gb = b.GetGroundHit(out WheelHit hb);
             float ta = ga ? (-a.transform.InverseTransformPoint(ha.point).y - a.radius) / a.suspensionDistance : 1;
             float tb = gb ? (-b.transform.InverseTransformPoint(hb.point).y - b.radius) / b.suspensionDistance : 1; float force = (ta - tb) * 9000;
+#if UNITY_EDITOR
+            DiagnosticMinTravel = Mathf.Min(DiagnosticMinTravel, Mathf.Min(ta, tb));
+            DiagnosticMaxTravel = Mathf.Max(DiagnosticMaxTravel, Mathf.Max(ta, tb));
+            if (DiagnosticSkipAntiRoll) return;
+            DiagnosticPeakAntiRoll = Mathf.Max(DiagnosticPeakAntiRoll, Mathf.Abs(force));
+#endif
             if (ga) Body.AddForceAtPosition(a.transform.up * -force, a.transform.position); if (gb) Body.AddForceAtPosition(b.transform.up * force, b.transform.position);
         }
         void LateUpdate() { if (wheels == null) return; for (int i = 0; i < wheels.Length; i++) { wheels[i].GetWorldPose(out Vector3 p, out Quaternion q); wheelVisuals[i].SetPositionAndRotation(p, q); } }

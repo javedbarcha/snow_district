@@ -10,6 +10,9 @@ namespace Snowglow {
   readonly List<CombineInstance> combine=new List<CombineInstance>(256);
   readonly List<int> indices=new List<int>();
   int collisionTick;float disposalTimer;
+#if UNITY_EDITOR
+  [System.NonSerialized]public bool DiagnosticFreezeCollision;
+#endif
   public float TargetCleared {get;private set;}public float TargetArea {get;private set;}
   public int ContractKind {get;private set;}
 
@@ -157,6 +160,9 @@ namespace Snowglow {
     if(d>.55f)collision.Add(c);
    }
    var mf=chunks[id];mf.sharedMesh.Clear();if(combine.Count>0)mf.sharedMesh.CombineMeshes(combine.ToArray(),true,true);
+#if UNITY_EDITOR
+   if(DiagnosticFreezeCollision)return;
+#endif
    var mc=mf.GetComponent<MeshCollider>();var old=mc.sharedMesh;mc.sharedMesh=null;
    mc.enabled=collision.Count>0;
    if(collision.Count>0){var m=new Mesh{name="Pile collision "+collisionTick++};m.CombineMeshes(collision.ToArray(),true,true);mc.sharedMesh=m;}

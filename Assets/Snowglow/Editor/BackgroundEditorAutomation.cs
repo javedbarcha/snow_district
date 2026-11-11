@@ -106,6 +106,9 @@ namespace Snowglow.Editor
                     if (pending == null || string.IsNullOrEmpty(pending.id) ||
                         (pending.action != "refresh" && pending.action != "compile"))
                     { WriteStatus("failed", "Invalid request; allowed actions: refresh, compile."); pending = null; return; }
+                    // An automatic import may already be compiling. Preserve the request
+                    // before its domain reload, even when the busy gate below defers us.
+                    SessionState.SetString(StateKey, JsonUtility.ToJson(pending));
                 }
                 if (EditorApplication.isPlayingOrWillChangePlaymode)
                 { WriteStatus("waiting_for_play_mode_to_stop"); return; }

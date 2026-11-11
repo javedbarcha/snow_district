@@ -1,5 +1,66 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Snow / wheel / proxy stability audit - 11 November 2026
+
+User requested broader Play testing before fixes. 120 actual Pinefall Play-mode
+checks completed: 68 pile/continuous-road/speed/load cases, 40 focused isolations,
+12 corrected chassis-contact comparisons. Both vehicles, target speeds 2/4/6.5
+m/s, initial heights .3/.55/.65/1.2/2.4 m, widths 2/4/8 m, live snow settling,
+collection and auto-carry. Normal handling reproduced 3.97 m tractor launches and
+4.95 m loader launches; a loader pass reached an inverted orientation. Angles do
+not count full revolutions. Speed/height values are targets/initial fields, not
+guaranteed contact conditions. Complete report: SNOW_COLLISION_AUDIT.md.
+
+Leading evidence: stepped, changing snow collision support and wheel/suspension
+interaction. Excluding snow collisions suppressed uneven-road hops while keeping
+collection/load/COM behavior. Anti-roll-off and fixed-COM tests still launched;
+unclamped travel values and roughly 51 kN correction also contributed to observed
+foundation-edge instability. Stationary dump moved COM ~33 cm without a launch.
+Lower separation speed helped a wall case but did not solve tall-pile launches.
+
+Each machine has one chassis box plus four wheels, no physical attachment box.
+No exact duplicate static collider bounds or authored nonzero bounce found in the
+inventory. Removing the sole box caused artificial unit inertia; six focused
+cases are excluded. Corrected tests ignored chassis contacts while preserving its
+collider/inertia and still reproduced wheel-contact hops, so deleting the proxy
+is not a fix. Early blocked wall approaches are flagged; honor actual target-hit
+counts. Proposed order: stable/smoother snow collision, bounded anti-roll, vehicle
+separation/damping safeguards, optional COM smoothing. No production fix applied.
+
+Three suites exited Play and preserved scene/profile/backup bytes. Diagnostic
+flags on MachineController/SnowField and both probes are nonserialized/Editor-only;
+normal/player physics logic remains unchanged (preprocessor comparison checked).
+Compilation/reload and isolation checks passed. Tests disable saves/progression;
+synthetic volume injection is not ledger-conservation acceptance. No Android
+packaging, phone feel or performance claim. Evidence: Logs/CollisionAuditMatrix,
+Logs/CollisionAuditFocused, Logs/CollisionAudit; final Validation.json verifies
+counts, frozen COM, anti-roll/snow exclusions and corrected chassis-contact runs.
+Explicit rerun marker: Logs/CollisionAudit.request; optional targeted/proxy markers
+and limitations are documented in the report. Preserve prior evidence first.
+
+## Repeated collision reproduction in Play - 11 November 2026
+
+User requested actual repeated Play-mode impacts before handling changes.
+CollisionPlayReproduction and the UNITY_EDITOR-only CollisionPlayProbe ran two
+completed 12-approach sequences in live Pinefall (24 total), through existing
+controllers/WheelColliders. No injected launch forces, handling or saved world
+changes. Desktop driving was unavailable; these were automated Play approaches.
+Second sequence removed inactive machinery from the approach and all 12 passes
+contacted intended fence/foundation colliders. Tractor foundation launches reached
+1.81 m root rise / 67.9 degrees tilt / 0.72 s continuously airborne; loader reached
+1.87 m / 99.4 degrees / 0.88 s (1.50 s total airborne). Raised-attachment passes
+were calmer, but lateral alignment and collection differ; no isolated cause or
+complete 360-degree roll was established. No tuning fix has been implemented.
+
+Both completed sequences stopped Play and preserved scene/profile/backup bytes.
+The test session disables saving and progression; probe code is excluded from
+players. Explicit rerun marker: Logs/CollisionPlay.request, only after native
+compilation completion and with clean saved Pinefall open. It enters/exits Play
+for the authorized diagnostic only; background automation itself does not.
+Evidence/limitations/reproduction: COLLISION_REPRODUCTION.md and Logs/CollisionPlay.
+An Editor-only bridge race found during setup now persists accepted requests
+before a busy gate, preserving them across an already-running compilation reload.
+
 ## Background Editor automation - 11 November 2026
 
 User authorizes agents to refresh/compile the running Editor while it is behind
