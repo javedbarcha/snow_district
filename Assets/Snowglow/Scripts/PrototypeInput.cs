@@ -26,7 +26,7 @@ namespace Snowglow {
    ResolvePedals(forward,reverse,k!=null&&k.spaceKey.isPressed);
    Lift=Tilt=0; // Equipment lift/curl is automatic; manual controls removed.
    if(k==null||game==null)return;
-   if(k.escapeKey.wasPressedThisFrame){if(game.HUD.productionMenu&&game.HUD.productionMenu.PendingConfirmation!="")game.HUD.productionMenu.Execute("cancel");else game.TogglePause();}
+   if(k.escapeKey.wasPressedThisFrame){if(game.HUD.productionMenu&&!game.IsRunning)game.HUD.productionMenu.Back();else game.TogglePause();}
    if(!game.IsRunning)return;
    if(k.xKey.wasPressedThisFrame&&!forward&&!reverse)Reverse=!Reverse;
    if(k.cKey.wasPressedThisFrame)game.CameraRig.Toggle();

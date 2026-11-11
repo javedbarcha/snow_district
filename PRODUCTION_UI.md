@@ -20,14 +20,15 @@ The earlier menu hierarchy remains inactive as a fallback.
   starts the scene immediately with the saved active vehicle. Career and Quick Job
   use this same route; there is no intervening machinery selector. Existing
   active-shift protection and actual deadlines/reward accounting are retained.
-- Machinery: one preview, horizontal swipes, previous/next buttons and keyboard
-  arrows. Browsing does not purchase equipment or change the active machine.
-  Confirming Start Job selects the owned machine through the depot rules.
+- Machinery selection is exclusively in Garage: one 3D preview with swipes,
+  previous/next buttons and keyboard arrows. Browsing does not purchase equipment
+  or change the selected machine. The obsolete machinery-page route redirects
+  to Garage; job selection has no intervening vehicle screen.
 - Garage / Shop: Garage contains the Shop tab. Both use the supplied three-column
   layout: stats on the left, a single 3D display with previous/next and swipe
   browsing in the middle, upgrades or part descriptions on the right.
   Garage browses owned and unowned vehicles; Buy Vehicle purchases and Select &
-  Drive changes the saved selection and returns to gameplay. Existing stopped /
+  Back changes the saved selection and returns to the originating screen. Existing stopped /
   depot and ownership rules remain. Refuel, repair and recovery stay accessible.
   Shop browses traction tyres and engine upgrades for the vehicle last browsed
   in Garage. Buy & Fit uses existing 200 / 400 / 600 pricing, compatible vehicle
@@ -42,7 +43,54 @@ Preview sample prices, contract rewards and sample progress are not game data.
 The actual vehicle definitions and PrototypeSession determine all transactions.
 Upgrade prices remain 200 / 400 / 600; refuel is two coins per litre and repair
 three per condition point. Menus pause simulation, fuel use and deadlines.
-No new billing, networking or player-save schema is introduced.
+No new billing or networking is introduced. Profile schema 2 is retained with
+optional, versioned Career progression and active Quick Play mode fields.
+
+## Completed game-flow loop — 11 November 2026
+
+Career follows Main Menu > Region > Town > Job > gameplay. A new save starts
+with Depot Access; a successful Career completion unlocks the next Pinefall
+job. Completing all three unlocks the next Alpine town. Regions require all
+towns in the previous region completed. Content that has not been built remains
+unplayable even when its prerequisite is satisfied: The Alps can show UNLOCKED /
+COMING SOON, never a working button to a nonexistent scene. The unlock rules
+live separately in CareerProgression with stable town/job identities.
+
+Quick Play is a shuffled, duplicate-free pool of already-unlocked available
+town jobs. It uses the selected Garage machine and the existing coin / XP
+rewards, but it does not mark Career jobs complete or unlock locations. Shuffle
+and page controls act on that pool; empty slots hide the entire card. Ordering
+stays stable until the player explicitly shuffles. Only Pinefall currently has
+implemented jobs.
+
+Results offers Replay, Garage, Main Menu and Next Job; Quick Play labels the
+last action Shuffle Again. Completed Career towns return to the town list.
+Main Menu and Pause retain the unfinished shift; Continue resumes it. Starting
+a replacement job still requires explicit abandonment, preserves already-earned
+wallet/upgrades/vehicle condition, resets snow/carried loads and creates a fresh
+reward transaction. Abandoning without a replacement resets the transient
+worksite in place and returns to Main Menu without an unpaid reward.
+
+Garage remembers whether it was opened from gameplay, Pause, Main Menu, a job
+list or Results. Selecting machinery returns to that origin; no active job means
+it cannot enter gameplay. Returning from Settings or Test Transactions preserves
+the viewed vehicle, part and Garage/Shop tab. All existing depot, stopping,
+ownership, affordability and compatibility checks still apply. Rejected actions
+leave the Garage usable with Back/Resume available. Escape follows the same
+return rules and dismisses a confirmation before leaving a screen.
+
+Legacy schema-2 saves without careerVersion retain access to all three jobs
+previously offered, without inventing completion records. Wallet, XP, fuel,
+condition, carried snow, active contract and snow ledger are retained. New saves
+receive no legacy unlock grant. Progression and active Quick Play mode survive
+JSON roundtrips and normal autosaves; validation never writes the real profile.
+
+Native acceptance: Unity 6000.3.8f1 saved/reopened Pinefall and passed 149 flow /
+progression checks, 635 UI checks, scene validation and 19 snow checks. Android-
+defined compilation passed. New-career, Quick Play and next-town screenshots
+were inspected. 4,656 protected world records matched the pre-task snapshot.
+Reports: Logs/GameFlow and Logs/ProductionUI. Full live Play traversal, Android
+packaging and Galaxy A07 touch/performance remain separate acceptance tasks.
 
 ## Art and mobile layout
 

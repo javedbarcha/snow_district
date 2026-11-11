@@ -1,5 +1,54 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Complete UI loop, Career unlocks and Quick Play - 11 November 2026
+
+User approved the audited diagram with machinery selection exclusively in
+Garage (also entered from gameplay/Pause). Job clicks start directly with the
+selected owned machine. The legacy machinery screen route redirects to Garage.
+Career is Region > Town > Job; new profiles start with Depot Access, successful
+Career jobs unlock the next job, and finishing a town unlocks its next town.
+Regions require all previous-region towns complete. Only Pinefall has content;
+unlocked The Alps is COMING SOON and cannot be launched. CareerProgression keeps
+stable town/job identities and prerequisites separate from presentation/physics.
+
+Quick Play shuffles duplicate-free available jobs already unlocked by the player.
+It earns existing coins/XP but never marks Career completion or unlocks locations.
+Order changes only on explicit Shuffle; unused card roots are hidden. Results
+provides Replay, Garage, Main Menu and Next Job / Shuffle Again; a completed town
+returns to town selection. No reward-price/XP tuning or added playable locations.
+
+Garage records its origin (Main Menu, running job, Pause, Results or job list).
+Selection returns to that origin; no active job cannot enter gameplay. Settings
+and test-store returns retain Garage/Shop tab, vehicle and part. Rejected depot /
+ownership/service actions keep a usable Back route. Escape dismisses dialogs
+first, then follows menu return paths. Main Menu preserves an active shift;
+Continue resumes it. Confirmed Abandon resets transient snow/loads in place and
+returns to Main Menu. Replacement still requires consent, preserves earned funds
+and vehicle state, and uses a fresh reward transaction. No unpaid reward granted.
+
+Profile schema 2 gains careerVersion, completion identities, legacy access grant,
+jobTownId and quickPlay. SaveStore.Decode migrates old saves in memory: all three
+previously offered Pinefall jobs remain accessible, without invented completions;
+wallet, XP, active job, snow ledger and machinery fields retain their values.
+New saves receive no legacy access grant. Tests never write the real profile.
+
+Unity 6000.3.8f1 / StandaloneWindows64 saved/reopened Pinefall and passed 149 new
+flow/progression checks, 635 existing/expanded UI checks, scene validation and all
+19 snow checks. Tests cover 100 shuffle seeds, actual completion/reward/duplicate
+paths, Career and Quick replays, conflict cancellation/resume/replacement, mode /
+legacy / snow-data JSON roundtrips, Garage origins and depot rejection, unavailable
+content and no-job gameplay prevention. Completion fixtures clear transient target
+snow to exercise Finish; this is not physical driving acceptance. Android-defined
+runtime/Editor compilation passed (not packaging). Native new-career, Quick Play
+and next-town screenshots were inspected, including the empty-card correction.
+4,656 protected world objects/components match the pre-task snapshot; only UI and
+additive serialized session profile defaults are excluded from that comparison.
+No district rebake, scenery/physics change or player-save writes by tests.
+Reports: Logs/GameFlow/Validation.txt and WorldPreservation.json; UI report/screens:
+Logs/ProductionUI. Guide: PRODUCTION_UI.md. Repeat native menu authoring:
+Snowglow > UI > Install reviewed production menus. Live Play traversal, Android
+packaging, actual phone touch/safe areas and Galaxy A07 performance remain untested.
+
 ## Shop test transactions - 11 November 2026
 
 Shop now exposes Test Transactions in its upper-right corner, opening the

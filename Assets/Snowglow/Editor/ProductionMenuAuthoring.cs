@@ -33,25 +33,28 @@ namespace Snowglow.Editor {
    var content=Rect("Screen content",root,0,0,1280,720);ui.contentGroup=content.gameObject.AddComponent<CanvasGroup>();
    var header=Rect("Navy header",content,0,0,1280,78);Fill(header,Navy);var logo=Text(header,"SNOW DISTRICT",44,14,470,36,30,Color.white);logo.fontStyle=FontStyle.Bold;Text(header,"WINTER OPERATIONS",46,51,440,20,12,new Color(.78f,.87f,.93f));Text(header,"1,800 coins",780,27,210,35,21,Yellow,"wallet");Button(header,"Settings","nav:settings",1000,16,112,46);
    var names=new[]{"dashboard","regions","towns","contracts","machinery","garage","settings","pause","results","store"};var pages=new List<GameObject>();
-   foreach(var name in names){var page=Rect(name,content,0,78,1280,564);pages.Add(page.gameObject);if(name!="dashboard")Button(page,name=="store"?"< Back to Shop":"< Main Menu",name=="store"?"nav:shop":"nav:dashboard",44,12,175,42,false,name=="store"?"store-back":null);
+   foreach(var name in names){var page=Rect(name,content,0,78,1280,564);pages.Add(page.gameObject);if(name!="dashboard")Button(page,name=="store"?"< Back to Shop":name=="pause"||name=="results"?"< Main Menu":"< Back",name=="store"?"nav:shop":name=="pause"||name=="results"?"nav:dashboard":"back",44,12,175,42,false,name=="store"?"store-back":"back-"+name);
     switch(name){
      case "dashboard":
-      Title(page,"YOUR NEXT SHIFT STARTS HERE","A whole town. A fresh snowfall.");Button(page,"Continue Job","continue",1000,116,232,48);
+      Title(page,"YOUR NEXT SHIFT STARTS HERE","A whole town. A fresh snowfall.");Button(page,"Continue Job","continue",1000,116,232,48,false,"continue-job");
       string[] cardNames={"Quick Job","Career","Garage"},cardArt={"quick","pinefall","garage"},actions={"quick","career","nav:garage"},descs={"Get straight to the snow.","Build your winter operations.","Your machines. Ready for the next shift."};
       for(int i=0;i<3;i++){float x=44+i*405;var card=Rect(cardNames[i],page,x,209,382,316);Fill(card,Color.white);Art(card,cardArt[i],0,0,382,175);Text(card,cardNames[i],18,185,340,35,25);Text(card,descs[i],18,224,346,30,17,Muted);Button(card,i==0?"Start Plowing":i==1?"View Career":"Open Garage",actions[i],18,260,346,44,true);}
       break;
      case "regions":
       Title(page,"CAREER","Choose your region","Pinefall is available. Other destinations are planned.");
-      for(int i=0;i<5;i++){float x=44+(i%3)*405,y=235+(i/3)*142;Button(page,ProductionMenu.RegionNames[i]+"\n"+(i==0?"PINEFALL AVAILABLE":"PLANNED LOCATIONS"),"region:"+i,x,y,382,120,i==0);}
+      for(int i=0;i<5;i++){float x=44+(i%3)*405,y=235+(i/3)*142;Button(page,ProductionMenu.RegionNames[i]+"\n"+(i==0?"PINEFALL AVAILABLE":"PLANNED LOCATIONS"),"region:"+i,x,y,382,120,i==0,"region-"+i);}
       break;
      case "towns":
       Title(page,"CAREER / DESTINATIONS","Choose your town","Only Pinefall is playable. Destination names are plans, not new districts.");Text(page,"Mountain & Alpine",44,220,1150,34,24,Ink,"town-title");
       for(int i=0;i<4;i++)Button(page,"Town","town:"+i,44+(i%2)*608,275+(i/2)*115,584,92,i==0,"town-"+i);
       Button(page,"‹  Regions","nav:regions",1000,12,232,42);break;
      case "contracts":
-      Title(page,"PINEFALL","Choose your job","Choose a job to start with your selected vehicle. Change machinery and fit parts in Garage.");Text(page,"CAREER / ALPINE / PINEFALL",44,220,1150,25,15,Muted,"job-mode");
-      var jn=new[]{"Depot Access","Parking Lot","Main Street"};var jd=new[]{"X −65 / Z −90\n12 minute deadline","X 94 / Z 21\n15 minute deadline","X 0 / Z 0\n15 minute deadline"};for(int i=0;i<3;i++){float x=44+i*405;Art(page,i==0?"quick":"pinefall",x,260,382,150);Button(page,jn[i]+"\n"+jd[i],"job:"+i,x,416,382,97,true);}
-      Button(page,"Free Work","free",1000,12,232,42);break;
+      Title(page,"PINEFALL","Choose your job","Choose a job to start with your selected vehicle. Change machinery and fit parts in Garage.");Text(page,"CAREER / ALPINE / PINEFALL",44,220,640,25,15,Muted,"job-mode");
+      var jn=new[]{"Depot Access","Parking Lot","Main Street"};var jd=new[]{"X −65 / Z −90\n12 minute deadline","X 94 / Z 21\n15 minute deadline","X 0 / Z 0\n15 minute deadline"};ui.jobCards=new GameObject[3];for(int i=0;i<3;i++){float x=44+i*405;var card=Group(page,"Job slot "+i,x,260,382,253);ui.jobCards[i]=card;Art(card.transform,i==0?"quick":"pinefall",0,0,382,150);Button(card.transform,jn[i]+"\n"+jd[i],"job:"+i,0,156,382,97,true,"job-"+i);}
+      Button(page,"Free Work","free",1000,12,232,42);Button(page,"Garage","nav:garage",750,12,232,42);
+      ui.quickTools=Group(page,"Quick Play shuffle",700,216,532,40);
+      Button(ui.quickTools.transform,"Shuffle","shuffle",0,0,150,36);Button(ui.quickTools.transform,"<","quick-page:-1",164,0,50,36,false,"quick-prev");Text(ui.quickTools.transform,"1 / 1",226,6,80,28,17,Muted,"quick-page");Button(ui.quickTools.transform,">","quick-page:1",316,0,50,36,false,"quick-next");
+      break;
      case "machinery":
       Title(page,"PINEFALL / JOB PREPARATION","Choose your machinery","Swipe left or right to find your machine.");
       ui.machinePicture=Art(page,"tractor",240,210,800,190);ui.machinePicture.raycastTarget=true;var swipe=ui.machinePicture.gameObject.AddComponent<MachinerySwipe>();swipe.menu=ui;
@@ -91,14 +94,14 @@ namespace Snowglow.Editor {
       Title(page,"PINEFALL","Take a breather.","Your shift is paused. Your machine and snow will be waiting.");Text(page,"PINEFALL / JOB",44,240,660,40,23,Ink,"pause-job");
       string[] pl={"Resume Job","Garage / Shop","Settings","Recover to Depot","Abandon Job","Finish Free Work"},pa={"continue","nav:garage","nav:settings","confirm:recover","confirm:abandon","confirm:finish"};for(int i=0;i<6;i++)Button(page,pl[i],pa[i],800,105+i*71,432,54,i==0,i==5?"finish":null);break;
      case "results":
-      Title(page,"PINEFALL / SHIFT REPORT","A job well done.");Text(page,"Shift complete",80,225,1090,230,26,Ink,"results");Button(page,"Next Job","nav:contracts",800,470,432,54,true);Button(page,"Garage / Shop","nav:garage",320,470,432,54);break;
+      Title(page,"PINEFALL / SHIFT REPORT","A job well done.");Text(page,"Shift complete",80,225,1090,230,26,Ink,"results");Button(page,"Next Job","next-job",858,470,374,54,true,"next-job");Button(page,"Replay","replay",44,470,374,54);Button(page,"Garage / Shop","nav:garage",451,470,374,54);break;
      case "store":
       Title(page,"PROTOTYPE CURRENCY","Simulated store","No real money. Uses the existing duplicate-safe test transaction flow.");Button(page,"New transaction","dummy:new",44,270,360);Button(page,"Success / redeliver","dummy:success",454,270,360);Button(page,"Cancel","dummy:cancel",864,270,360);Button(page,"Fail","dummy:fail",44,350,360);break;
     }
     page.gameObject.SetActive(name=="dashboard");
    }
    // Shared bottom band. Job-specific footer appears only on the selector.
-   var footer=Rect("Footer",content,0,642,1280,78);Fill(footer,Line);Text(footer,"Welcome to Pinefall.",44,10,890,48,17,Muted,"notice");Text(footer,"LEVEL 1 · 0 XP",44,57,800,19,13,Muted,"level");Button(footer,"Back to Job","continue",1000,14,232,48);
+   var footer=Rect("Footer",content,0,642,1280,78);Fill(footer,Line);Text(footer,"Welcome to Pinefall.",44,10,890,48,17,Muted,"notice");Text(footer,"LEVEL 1 · 0 XP",44,57,800,19,13,Muted,"level");Button(footer,"Resume Job","continue",1000,14,232,48,false,"resume-footer");
    var selector=pages[names.ToList().IndexOf("machinery")];Text(selector.transform,"Depot Access",44,530,850,32,18,Ink,"machine-job");Button(selector.transform,"Start Job","start",1000,508,232,48,true,"start");
    var modal=Rect("Confirmation overlay",root,0,0,1280,720);Fill(modal,new Color(.03f,.09f,.14f,.88f));ui.dialog=modal.gameObject;var dialog=Rect("Dialog",modal,300,174,680,372);Fill(dialog,Paper);Text(dialog,"Confirm",30,28,530,65,28,Ink,"dialog-title");Text(dialog,"Details",30,107,620,135,20,Muted,"dialog-body");Text(dialog,"Cost",30,220,620,40,22,Ink,"dialog-price");Button(dialog,"Cancel","dialog-secondary",30,290,280,50,false,"cancel");Button(dialog,"Confirm","accept",330,290,320,50,true,"accept");Button(dialog,"\u00D7","cancel",596,16,52,44,false,"dialog-close");modal.gameObject.SetActive(false);
    ui.pages=pages.ToArray();ui.pageNames=names;ui.labels=labels.ToArray();ui.buttons=buttons.ToArray();ui.vehiclePictures=new[]{AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/tractor.jpg"),AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/loader.jpg")};EditorUtility.SetDirty(hud);EditorUtility.SetDirty(ui);

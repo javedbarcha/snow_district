@@ -11,6 +11,16 @@ locked. `PrototypeSession.TrySelectMachine` retains depot/ownership/stop checks
 and supports selection before starting a job without briefly resuming gameplay.
 Actual economy/service/save methods remain authoritative. See PRODUCTION_UI.md.
 
+`CareerProgression` owns stable town/job identities, sequential prerequisites,
+completion records and shuffled Quick Play eligibility. It creates data only,
+not scenes or UI. `SaveStore.Decode` migrates legacy job access in memory while
+retaining schema 2; `PrototypeSession` validates availability/unlocks before
+startup and records Career completion only once on non-Quick/non-Free rewards.
+`ProductionMenu` keeps Garage/Settings return context and Quick Play display
+ordering in session memory. Active job mode and completion identities persist
+in ProfileSave. The UI never makes planned content playable. Abandon/reset uses
+the existing authored snow seed without reloading or rebaking the district.
+
 Forest `DistanceVisibility` can bind saved near renderers and an atlas cross-card
 renderer. Card-equipped trees use the gameplay camera, 230 m nominal switching
 with 12 m hysteresis and 650 m far culling; collider state never follows visibility.

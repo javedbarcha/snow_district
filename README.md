@@ -3,7 +3,10 @@
 The reviewed [production menus](PRODUCTION_UI.md) are integrated as saved native
 Unity UI: Career browsing, job/machinery selection with swipes, combined Garage /
 Shop tabs, settings, pause, results and confirmations. Existing live economy and
-driving controls remain. Only Pinefall is playable; other destinations are planned.
+driving controls remain. Machinery selection is in Garage. Career completions
+unlock the next job/town; Quick Play shuffles already-unlocked jobs and earns
+rewards without advancing Career. Only Pinefall is playable; other destinations
+are planned. Existing saves retain access to their previously offered jobs.
 
 Clouds now drift with changing wind, with 0.5-3x size variation and bounded
 upwind spawn/downwind cleanup. See [cloud wind and lifecycle](CLOUD_WIND.md).

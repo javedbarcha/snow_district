@@ -1,5 +1,21 @@
 # Verification record
 
+## Complete UI loop and progression - 11 November 2026
+
+Unity 6000.3.8f1 / StandaloneWindows64 saved/reopened and passed 149 flow/progression
+assertions, 635 native UI assertions, scene validation and all 19 snow checks.
+Career sequential locks/town unlocks, Quick Play shuffled unlocked-only jobs,
+rewards without Career progress, both replay modes, results paths, job conflicts,
+legacy/current/snow-data JSON migration, active mode restoration, Garage return
+contexts, rejected depot actions, abandonment and reward idempotency passed.
+Completion fixtures clear temporary target snow; no live driving is implied.
+Native new-career, Quick Play and unlocked-coming-soon town views inspected;
+unused Quick Play cards hide their artwork too. 4,656 protected world records
+match the snapshot, excluding UI and additive session profile defaults.
+Android-defined C# runtime/Editor compilation passed. No player-save writes or
+district rebake. Reports: Logs/GameFlow and Logs/ProductionUI. Live Play traversal,
+APK packaging, phone ergonomics and Galaxy A07 performance remain untested.
+
 ## Partial loader bucket lowering - 10 November 2026
 
 Unity 6000.3.8f1 passed 1,134 actual-loader fixture assertions, scene validation
