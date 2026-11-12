@@ -23,7 +23,20 @@ namespace Snowglow.Editor {
   static Image Art(Transform parent,string name,float x,float y,float w,float h){var r=Rect("Game capture | "+name,parent,x,y,w,h);r.pivot=new Vector2(.5f,.5f);r.anchoredPosition=new Vector2(x+w*.5f,-y-h*.5f);var im=Fill(r,Color.white);im.sprite=AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/"+name+".jpg");im.preserveAspect=true;im.raycastTarget=false;return im;}
   static void Title(Transform parent,string eyebrow,string title,string subtitle=""){Text(parent,eyebrow,44,100,1160,24,15,Muted);var h=Text(parent,title,44,130,1160,48,34);h.fontStyle=FontStyle.Bold;if(subtitle!="")Text(parent,subtitle,44,184,1160,42,18,Muted);}
   static GameObject Group(Transform parent,string name,float x,float y,float w,float h)=>Rect(name,parent,x,y,w,h).gameObject;
-  static void PrepareArt(){Directory.CreateDirectory(ArtFolder);foreach(string name in new[]{"pinefall","quick","garage","tractor","loader","mountains"}){string to=ArtFolder+"/"+name+".jpg";if(!File.Exists(to))File.Copy("work/ui-preview/"+name+".jpg",to);AssetDatabase.ImportAsset(to,ImportAssetOptions.ForceSynchronousImport);var imp=(TextureImporter)AssetImporter.GetAtPath(to);imp.textureType=TextureImporterType.Sprite;imp.spriteImportMode=SpriteImportMode.Single;imp.mipmapEnabled=false;imp.npotScale=TextureImporterNPOTScale.None;imp.maxTextureSize=1024;imp.wrapMode=TextureWrapMode.Clamp;imp.alphaIsTransparency=false;var android=imp.GetPlatformTextureSettings("Android");android.name="Android";android.overridden=true;android.maxTextureSize=1024;android.format=TextureImporterFormat.ASTC_6x6;imp.SetPlatformTextureSettings(android);imp.SaveAndReimport();}}
+  internal static void PrepareArt(){Directory.CreateDirectory(ArtFolder);foreach(string name in new[]{"pinefall","quick","garage","tractor","loader","mountains"}){string to=ArtFolder+"/"+name+".jpg";if(!File.Exists(to))File.Copy("work/ui-preview/"+name+".jpg",to);AssetDatabase.ImportAsset(to,ImportAssetOptions.ForceSynchronousImport);var imp=(TextureImporter)AssetImporter.GetAtPath(to);imp.textureType=TextureImporterType.Sprite;imp.spriteImportMode=SpriteImportMode.Single;imp.mipmapEnabled=false;imp.npotScale=TextureImporterNPOTScale.None;imp.maxTextureSize=1024;imp.wrapMode=TextureWrapMode.Clamp;imp.alphaIsTransparency=false;var android=imp.GetPlatformTextureSettings("Android");android.name="Android";android.overridden=true;android.maxTextureSize=1024;android.format=TextureImporterFormat.ASTC_6x6;imp.SetPlatformTextureSettings(android);imp.SaveAndReimport();}}
+  internal static void FitDashboardCards(Transform dashboard){
+   const float imageHeight=382f*1440/2960;
+   foreach(string name in new[]{"Quick Job","Career","Garage"}){
+    var card=(RectTransform)dashboard.Find(name);
+    var art=card.GetComponentsInChildren<Image>(true).Single(i=>i.name.StartsWith("Game capture | "));
+    float delta=imageHeight-art.rectTransform.sizeDelta.y;
+    foreach(RectTransform child in card)if(child!=art.rectTransform)child.anchoredPosition-=new Vector2(0,delta);
+    card.sizeDelta=new Vector2(382,141+imageHeight);
+    art.rectTransform.sizeDelta=new Vector2(382,imageHeight);art.rectTransform.anchoredPosition=new Vector2(191,-imageHeight*.5f);
+    art.preserveAspect=true;
+    if(name=="Quick Job")art.sprite=AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/quick.jpg");
+   }
+  }
   public static void ApplyIfPrepared(PrototypeHUD hud){if(AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/tractor.jpg"))Apply(hud);}
   public static void Apply(PrototypeHUD hud){
    font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");labels=new List<MenuTextBinding>();buttons=new List<MenuButtonBinding>();
@@ -39,6 +52,7 @@ namespace Snowglow.Editor {
       Title(page,"YOUR NEXT SHIFT STARTS HERE","A whole town. A fresh snowfall.");
       string[] cardNames={"Quick Job","Career","Garage"},cardArt={"quick","pinefall","garage"},actions={"quick","career","nav:garage"},descs={"Get straight to the snow.","Build your winter operations.","Your machines. Ready for the next shift."};
       for(int i=0;i<3;i++){float x=44+i*405;var card=Rect(cardNames[i],page,x,209,382,316);Fill(card,Color.white);Art(card,cardArt[i],0,0,382,175);Text(card,cardNames[i],18,185,340,35,25);Text(card,descs[i],18,224,346,30,17,Muted);Button(card,i==0?"Start Plowing":i==1?"View Career":"Open Garage",actions[i],18,260,346,44,true);}
+      FitDashboardCards(page);
       break;
      case "regions":
       Title(page,"CAREER","Choose your region","Pinefall is available. Other destinations are planned.");

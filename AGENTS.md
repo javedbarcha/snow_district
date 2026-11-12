@@ -1,5 +1,24 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Full-frame Quick Job card capture - 13 November 2026
+
+User requested fitting the original 2960 x 1440 screenshot into the upper image
+region, increasing card height rather than cropping. Source PNG is retained at
+SourceAssets/QuickJobMenu; the existing quick.jpg GUID uses a quality-95 full-frame
+derivative through PrepareArt (1024 maximum, Android ASTC 6x6). Main-menu images
+are 382 x 185.83784 design units; all three cards grow to 382 x 326.83784, with
+text/buttons shifted down 10.83784 to retain alignment. FitDashboardCards is reused
+by full authoring and the targeted saved-scene update; repeated application is
+idempotent. No runtime UI creation. Native authoring/capture evidence and backup:
+Logs/QuickJobMenu. Explicit repeat marker: Logs/QuickJobMenu.request, after native
+compilation succeeds and with clean saved Pinefall open. Phone appearance needs
+device review.
+Android-defined compilation and native forced compile/reload passed. Unity saved
+and reopened the targeted changes; native binding/layout/scene checks passed and
+the 1280 x 720 menu capture was visually inspected. Scene diff contains only the
+15 card/image/text/button RectTransforms; existing actions retain their bindings.
+No Play entry or player-save writes.
+
 ## Editor and mobile focus behavior - 12 November 2026
 
 Editor Play enables Application.runInBackground and ignores focus/pause loss for
