@@ -78316,6 +78316,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoldenTractor-Starter
       objectReference: {fileID: 0}
+    - target: {fileID: 3718998455999900525, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.162981
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718998455999900525, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_Center.y
+      value: 1.6814904
+      objectReference: {fileID: 0}
+    - target: {fileID: 3940567367169514817, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_Size.x
+      value: 2.850006
+      objectReference: {fileID: 0}
+    - target: {fileID: 3940567367169514817, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.4200001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3940567367169514817, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3940567367169514817, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_Center.y
+      value: 0.28000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3940567367169514817, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
+      propertyPath: m_Center.z
+      value: 1.2304639
+      objectReference: {fileID: 0}
     - target: {fileID: 6785370195306750434, guid: 5251515c0e5f2af4d942ee70da6b5e3a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.41999817
@@ -304321,6 +304349,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1760885640308134777, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_Size.x
+      value: 2.8399963
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760885640308134777, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_Size.z
+      value: 1.3427353
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760885640308134777, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_Center.y
+      value: -0.43200022
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760885640308134777, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_Center.z
+      value: 0.84363127
+      objectReference: {fileID: 0}
     - target: {fileID: 1886260343562273734, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
       propertyPath: m_Name
       value: ImportedSnowLoader
@@ -304332,6 +304376,22 @@ PrefabInstance:
     - target: {fileID: 3362291024635113066, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.300003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690542506870179357, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_Size.z
+      value: 1.3427353
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690542506870179357, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_Center.x
+      value: 1.3699982
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690542506870179357, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_Center.y
+      value: 0.06399977
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690542506870179357, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_Center.z
+      value: 0.84363127
       objectReference: {fileID: 0}
     - target: {fileID: 7136146570248357240, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
       propertyPath: m_LocalPosition.x
@@ -304372,6 +304432,34 @@ PrefabInstance:
     - target: {fileID: 7136146570248357240, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006085838286908181, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_Size.z
+      value: 1.3427353
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006085838286908181, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_Center.x
+      value: -1.3699982
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006085838286908181, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_Center.y
+      value: 0.06399977
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006085838286908181, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_Center.z
+      value: 0.84363127
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418537760840563874, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_Size.x
+      value: 2.8399963
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418537760840563874, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_Center.y
+      value: 0.06399977
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418537760840563874, guid: 6ce6b06ec8d8ce84892158a7c7ed4e39, type: 3}
+      propertyPath: m_Center.z
+      value: 0.22226362
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

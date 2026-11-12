@@ -1,5 +1,15 @@
 # Verification record
 
+## Cabin/tool collider authoring — 12 November 2026
+
+Unity 6000.3.8f1 / Android compiled and saved/reopened Pinefall and both machinery
+prefabs with roof-height chassis and physical tool boxes. Tractor 2 / loader 5 solid
+boxes plus 4 WheelColliders each; non-trigger/attached-body ownership checks,
+scene validation and 19 snow checks passed. Fleet poses and seed quantities retained.
+No Play entry/player-save writes. Prior 77-case handling acceptance does not cover
+these colliders; impacts, plowing clearances, inertia/rollovers and A07 performance
+remain untested after this change. Evidence: Logs/VehicleCollision/Validation.txt.
+
 ## Full handling rerun — 12 November 2026
 
 77 actual Play cases (previous 73 plus four full-steering high-speed turns), native

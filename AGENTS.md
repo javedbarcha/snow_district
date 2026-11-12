@@ -1,5 +1,29 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Cabin-height chassis and physical attachments — 12 November 2026
+
+User requested extending both chassis boxes to cabin roofs and adding blade
+colliders. VehicleCollisionAuthoring saves the changes in GoldenTractor-Starter,
+ImportedSnowLoader and Pinefall; future starter/loader builds reuse Apply. Existing
+chassis footprint/bottom retained; highest broad body-mesh level identifies roof
+without narrow beacon/exhaust. Tractor box centre Y 1.6815 / height 2.163 (top 2.763),
+loader centre Y 1.9 / height 2.55 (top 3.175), in chassis local space. Tractor front blade
+assembly uses one box excluding the rear lift-frame extent. Loader bucket uses
+four 10 cm-thick boxes (floor/back/two cheeks), open front/top. These follow saved
+attachment pivots on vehicle layer 8, compound into existing root Rigidbody and
+add no Rigidbody/runtime factories. Existing wheel rig, snow seed and fleet poses
+preserved. Roof/tool impact and potential snagging/inertia changes explained before
+editing. Fast-turn tip risk remains intended; no anti-tip tuning added.
+
+Unity 6000.3.8f1 / Android compiled, saved/reopened both prefabs and Pinefall;
+collider count/non-trigger/body ownership, scene validation and 19 snow checks passed.
+Tractor has 2 solid boxes + 4 wheels; loader 5 boxes + 4 wheels. No Play run or player-save
+writes. Prior 77-case handling acceptance predates these new colliders: plowing,
+tool/terrain clearances, tipping/landing and device performance need renewed
+acceptance. Reports/backups: Logs/VehicleCollision/Validation.txt. Repeat menu:
+Snowglow > Vehicles > Extend cabins and add attachment collision.
+
+
 ## Full 77-case handling rerun and intended turn risk — 12 November 2026
 
 User requests all production tests and inspecting sudden jerky jumps/bounces.

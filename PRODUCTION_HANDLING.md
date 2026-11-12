@@ -1,5 +1,17 @@
 # Production vehicle handling
 
+## Physical cabin and tool coverage — 12 November 2026
+
+Both saved fleet chassis boxes now extend to cabin roof height with footprint
+and bottom unchanged. Tractor blade assembly has one front-face box; loader
+bucket has four boxes (floor/back/cheeks) keeping its front/top open. These are
+saved compound colliders on existing vehicle bodies and move with attachment
+pivots. This changes obstacle/snow contacts and inertia, including cabin contact
+when tipped; tool snagging and plowing clearance need visual/driving review.
+Compilation, native save/reopen collider validation, scene validation and 19 snow
+checks passed on Android target. No Play entry. All earlier Play results below
+predate this collider revision. Evidence/backups: Logs/VehicleCollision.
+
 ## Full production rerun — 12 November 2026
 
 77 actual Play trials completed: original 73 plus four high-speed full-steering
