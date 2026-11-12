@@ -23,9 +23,12 @@ namespace Snowglow
                 {
                     int sx = x + dx, sz = z + dz;
                     if (sx < 0 || sz < 0 || sx >= SnowVolumeGrid.Size || sz >= SnowVolumeGrid.Size) continue;
-                    sum += Mathf.Max(0, grid.depth[sz * SnowVolumeGrid.Size + sx] - SoftDepth) * Weights[dx + 3] * Weights[dz + 3];
+                    float depth = grid.depth[sz * SnowVolumeGrid.Size + sx];
+                    float compacted = Mathf.Max(0, depth - SoftDepth) * Compression;
+                    // Visual-review tuning: halve the gap to filtered visible snow.
+                    sum += Mathf.Lerp(compacted, depth, .5f) * Weights[dx + 3] * Weights[dz + 3];
                 }
-            return sum * (Compression / 324f);
+            return sum / 324f;
         }
 
         internal bool Update(SnowVolumeGrid grid, int chunkX, int chunkZ, MeshCollider collider, bool immediate)

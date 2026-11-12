@@ -9,6 +9,7 @@ namespace Snowglow
         public float Fuel = 70, Condition = 100; public int Tyres, Engine; public bool Owned;
         public bool Assistance = true, ActiveMachine; public float Slip, Speed, LastSnowForce;
         DirectionalDriveState driveState;
+        float[] normalForcePoints;
 #if UNITY_EDITOR
         // Opt-in Play diagnostics only; never serialized or included in players.
         [System.NonSerialized] public bool DiagnosticSkipAntiRoll, DiagnosticFreezeCenterOfMass;
@@ -23,7 +24,9 @@ namespace Snowglow
             Body.maxDepenetrationVelocity = 2; Body.maxAngularVelocity = 3.5f; Body.solverIterations = 10; Body.solverVelocityIterations = 4;
             string error = equipment.Validate(definition); if (error != null) { Debug.LogError(error, this); enabled = false; return; }
             parkingPosition = transform.position; parkingRotation = transform.rotation; Tool.Initialize(this);
-            foreach (var w in wheels) { w.ConfigureVehicleSubsteps(5, 5, 8); w.suspensionExpansionLimited = true; }
+            normalForcePoints = new float[wheels.Length];
+            for (int i = 0; i < wheels.Length; i++) { var w = wheels[i]; normalForcePoints[i] = w.forceAppPointDistance; w.ConfigureVehicleSubsteps(5, 5, 8); w.suspensionExpansionLimited = false; }
+            Body.angularDamping = .5f;
             SetActiveMachine(false);
         }
         public void SetActiveMachine(bool active) { ActiveMachine = active; if (Body == null) Body = GetComponent<Rigidbody>(); Body.isKinematic = !active; driveState=default; foreach (var w in wheels) { w.motorTorque = 0; w.brakeTorque = active ? 0 : definition.brakeTorque; } if (active) Body.WakeUp(); }
@@ -39,6 +42,8 @@ namespace Snowglow
             if (!DiagnosticFreezeCenterOfMass)
 #endif
             Body.centerOfMass = (definition.dryCenterOfMass * definition.mass + transform.InverseTransformPoint(Tool.mount.position) * equipment.mass + transform.InverseTransformPoint(Tool.mouth.position) * (Tool.Load * 250)) / mass;
+            bool snowWorking = IsWorkingAgainstSnow(game.Snow);
+            Body.angularDamping = snowWorking ? .8f : .5f;
             float driveThrottle=driveState.Resolve(direction,input.Throttle,input.Brake,forward,Vector3.ProjectOnPlane(Body.linearVelocity,Vector3.up).magnitude,Time.fixedDeltaTime,out float serviceBrake,out bool holdStopped);
             if(holdStopped){Body.linearVelocity=Vector3.Project(Body.linearVelocity,Vector3.up);foreach(var wheel in wheels)wheel.rotationSpeed=0;}
             int grounded = 0; Slip = 0;
@@ -46,7 +51,8 @@ namespace Snowglow
             {
                 var w = wheels[i]; w.steerAngle = i < 2 ? steering : 0; float grip = 1; bool wallContact = false;
                 var wheelCenter = transform.InverseTransformPoint(w.transform.TransformPoint(w.center));
-                w.forceAppPointDistance = Mathf.Max(0, Body.centerOfMass.y - wheelCenter.y + w.radius - .25f);
+                w.suspensionExpansionLimited = snowWorking;
+                w.forceAppPointDistance = snowWorking ? Mathf.Max(0, Body.centerOfMass.y - wheelCenter.y + w.radius - .25f) : normalForcePoints[i];
                 if (w.GetGroundHit(out WheelHit hit))
                 {
                     wallContact = hit.normal.y < .5f;
@@ -59,7 +65,7 @@ namespace Snowglow
                 w.motorTorque = !wallContact && Fuel > 0 && Condition > 0 && Speed < definition.maxSpeed ? driveThrottle * direction * definition.torque * (1 + Engine * .18f) * traction * Mathf.Lerp(.5f, 1, Condition / 100) : 0;
                 w.brakeTorque = serviceBrake * definition.brakeTorque;
             }
-            if (Assistance)
+            if (Assistance && snowWorking)
             {
                 // Dampen pitch/roll without braking translation or damping steering yaw.
                 Vector3 tiltSpin = Body.angularVelocity - Vector3.Project(Body.angularVelocity, Vector3.up);
@@ -67,14 +73,54 @@ namespace Snowglow
             }
             if (grounded > 0)
             {
-                float depth = game.Snow.Depth(transform.position); float drag = mass * (.025f + depth * .12f);
+                float depth = game.Snow.Depth(transform.position); float drag = mass * (.025f + depth * .25f);
                 if (Speed > .15f) Body.AddForce(-Body.linearVelocity.normalized * drag);
+                ApplyPileResistance(game.Snow);
                 if (Assistance) { AntiRoll(0, 1); AntiRoll(2, 3); Vector3 upright = Vector3.Cross(transform.up, Vector3.up); Body.AddTorque(upright * mass * 1.8f - Body.angularVelocity * mass * .12f); }
             }
             LastSnowForce = Tool.Simulate(Time.fixedDeltaTime, Mathf.Max(0, forward));
             if (LastSnowForce > 0 && forward > .1f) Body.AddForce(-transform.forward * LastSnowForce);
             if (input.Throttle > .02f) Fuel = Mathf.Max(0, Fuel - Time.fixedDeltaTime * (.003f + .014f * input.Throttle + LastSnowForce * .0000012f));
             if (transform.position.y < 0 || Mathf.Abs(transform.position.x) > 485 || Mathf.Abs(transform.position.z) > 485) game.Recover();
+        }
+        bool IsWorkingAgainstSnow(SnowField snow)
+        {
+            if (!Tool.Working || (definition.loader && (Tool.Lift >= .18f || Tool.Tilt >= .35f))) return false;
+            Vector3 centre = Tool.mouth.position;
+            Vector3 right = definition.loader ? transform.right : Tool.mount.right;
+            // Include both blade edges so a partial-width snow contact also stabilizes.
+            for (int i = -1; i <= 1; i++)
+            {
+                Vector3 point = centre + right * (i * equipment.width * .45f);
+                float depth = snow.Depth(point);
+                if (depth > .004f && centre.y < SnowField.Ground + depth + .7f) return true;
+            }
+            return false;
+        }
+        void ApplyPileResistance(SnowField snow)
+        {
+            var velocity = Vector3.ProjectOnPlane(Body.linearVelocity, Vector3.up);
+            float speed = velocity.magnitude;
+            if (speed < .001f) return;
+            var heading = Vector3.ProjectOnPlane(transform.forward, Vector3.up).normalized;
+            bool reversing = Vector3.Dot(velocity, heading) < 0;
+            // Front axle going forward; rear axle when backing into a pile.
+            int first = reversing ? 2 : 0;
+            Vector3 approach = reversing ? -heading : heading;
+            float acceleration = 0;
+            for (int i = first; i < first + 2; i++)
+            {
+                var wheel = wheels[i];
+                Vector3 centre = wheel.transform.TransformPoint(wheel.center);
+                float depth = snow.Depth(centre + approach * wheel.radius);
+                float excess = Mathf.Max(0, depth - .45f);
+                // Average each tyre's squared resistance: one buried tyre still matters.
+                acceleration += Mathf.Min(4f, excess * excess * 3f) * .5f;
+            }
+            // Resist horizontally at the body, without a lifting/pitch impulse or
+            // enough force to reverse the current motion in one physics step.
+            float force = Body.mass * Mathf.Min(acceleration, speed / Time.fixedDeltaTime);
+            Body.AddForce(-velocity / speed * force);
         }
         void AntiRoll(int left, int right)
         {

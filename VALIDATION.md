@@ -1,5 +1,38 @@
 # Verification record
 
+## Full handling rerun — 12 November 2026
+
+77 actual Play cases (previous 73 plus four full-steering high-speed turns), native
+compile/domain reload and 37 support/vehicle assertions plus scene/19 snow/recovery/
+direction/loader regressions completed. Scene/profile/backup hashes preserved.
+48 moving snow cases: max .635 m rise/16.64 deg tilt/.06 s without wheel contact;
+all recorded snow contacts. All 12 foundation approaches contacted target, retained
+wheel contact; max .533 m rise/26.03 deg tilt. Short impact corrections remain
+(max 7.48 cm upward position step), but no straight snow/foundation launch-like
+flight reproduced. Four fast ramp passes fell off raised deck and overturned;
+landing jolts remain. Fast loader turn leaned 64.71 deg; user explicitly accepts
+turning tip risk, so no anti-tip tuning. No guarantee of zero subjective jerk.
+Reports/traces/native checks and inspected motion plots: Logs/HandlingFullReview.
+No Android packaging, A07 performance, touch/manual feel or economy acceptance.
+
+## Recent snow resistance and freer suspension — 12 November 2026
+
+36 actual Pinefall Play cases completed with both vehicles, raised/down tools,
+target 2/4/6.5 m/s, flat .3 m snow, initial 2.4 m narrow piles and 1.5 m uneven snow.
+18 raised cases stayed grounded (peak tilt 20.70 degrees); down cases peaked at
+16.61 degrees and .06 s continuous airborne. No raised-tool launch/inversion
+reproduced, so conditional extra stabilization was not added. All cases recorded
+snow wheel contact; rise includes intended pile climbing. 37 native support/vehicle
+assertions and scene/19 snow/recovery/direction/loader regressions passed, as did
+native compile/domain reload. Evidence: Logs/SuspensionReview.
+
+The original run's preservation check failed for a machine-state profile rewrite;
+scene and backup were unchanged. Profile restored to exact pre-run backup bytes
+with hash guards. Editor-only diagnostic Save guard added before fixture setup;
+a separate one-case Play run preserved scene/profile/backup hashes. Original
+failure/restoration retained. No reverse/full-load matrix, phone visual feel,
+Android build or device performance acceptance.
+
 ## Complete UI loop and progression - 11 November 2026
 
 Unity 6000.3.8f1 / StandaloneWindows64 saved/reopened and passed 149 flow/progression

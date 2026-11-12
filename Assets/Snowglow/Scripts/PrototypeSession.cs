@@ -122,6 +122,11 @@ namespace Snowglow {
    foreach(var m in Fleet)m.Assistance=Profile.assists;
   }
   public void Save(){
+#if UNITY_EDITOR
+   // The diagnostic is accepted before Play entry; block startup/focus callbacks
+   // as well as the later fixture phase where ready is explicitly cleared.
+   if(UnityEditor.SessionState.GetBool("Snowglow.CollisionPlay.Active",false))return;
+#endif
    if(!ready)return;
    Profile.machines=new MachineSave[Fleet.Length];
    for(int i=0;i<Fleet.Length;i++){var m=Fleet[i];Profile.machines[i]=new MachineSave{id=m.definition.id,owned=m.Owned,fuel=m.Fuel,condition=m.Condition,tyres=m.Tyres,engine=m.Engine,position=m.transform.position,rotation=m.transform.rotation,load=m.Tool.Load,lift=m.Tool.Lift,tilt=m.Tool.Tilt,angle=m.Tool.Angle,auto=m.Tool.Auto,working=m.Tool.Working};}

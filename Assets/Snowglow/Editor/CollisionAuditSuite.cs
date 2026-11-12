@@ -133,7 +133,30 @@ namespace Snowglow.Editor
                     foreach (float speed in new[] { 2f, 4f, 6.5f }) Cases.Add(new Case { vehicle = vehicle, name = "production-traction-ramp", ramp = true, raised = true, speed = speed });
                     Cases.Add(new Case { vehicle = vehicle, name = "production-coast", speed = 4, coast = true });
                     Cases.Add(new Case { vehicle = vehicle, name = "production-gentle-turn", speed = 4, steer = .12f });
+                    foreach (float steer in new[] { -1f, 1f })
+                        Cases.Add(new Case { vehicle = vehicle, name = "production-fast-turn-intended-risk", speed = 6.5f, steer = steer, raised = true });
                 }
+            }
+            if (File.Exists(Folder + "/Suspension.request"))
+            {
+                File.Delete(Folder + "/Suspension.request");
+                production = true;
+                Cases.Clear();
+                for (int vehicle = 0; vehicle < game.Fleet.Length; vehicle++)
+                    foreach (float speed in new[] { 2f, 4f, 6.5f })
+                        foreach (bool raised in new[] { false, true })
+                        {
+                            string pose = raised ? "raised-" : "down-";
+                            Cases.Add(new Case { vehicle = vehicle, name = pose + "flat-snow", shape = 1, height = .3f, width = 8, speed = speed, raised = raised });
+                            Cases.Add(new Case { vehicle = vehicle, name = pose + "tall-pile", shape = 2, height = 2.4f, width = 4, speed = speed, raised = raised });
+                            Cases.Add(new Case { vehicle = vehicle, name = pose + "uneven-snow", shape = 3, height = 1.5f, width = 8, speed = speed, raised = raised });
+                        }
+            }
+            if (File.Exists(Folder + "/SaveGuard.request"))
+            {
+                File.Delete(Folder + "/SaveGuard.request");
+                production = true; Cases.Clear();
+                Cases.Add(new Case { vehicle = 0, name = "save-guard-raised-clear-road", raised = true, speed = 2 });
             }
             summary = new StreamWriter(Folder + "/Results.csv") { AutoFlush = true };
             summary.WriteLine(CollisionAuditProbe.Header);

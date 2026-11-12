@@ -1,5 +1,113 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Full 77-case handling rerun and intended turn risk — 12 November 2026
+
+User requests all production tests and inspecting sudden jerky jumps/bounces.
+High-speed turning tips are explicitly intended gameplay for damage/recovery/
+repair engagement; do not tune them away merely because tilt is high. Existing
+73 production cases plus four left/right full-steering 6.5 m/s target cases ran
+in actual Play (77 total). All completed and scene/profile/backup hashes matched.
+No handling tuning changed during this request. Compile/domain reload, 37 native
+support/vehicle assertions, scene/19 snow/recovery/direction/loader checks passed.
+
+48 moving snow cases: max .635 m root rise /16.64 deg tilt /.06 s without wheel
+contact. All had actual snow wheel contacts. All 12 foundation cases reached target,
+kept wheel contact, max .533 m rise/26.03 deg tilt. Small sharp contact corrections
+remain: largest root-height step .074763 m per recorded step (~.02 s); max upward
+velocity step outside ramp/fast-turn contexts .655 m/s. No launch-like flight was
+reproduced; this is not a claim of zero visual jolts. Four faster ramp passes fell
+off the elevated deck and overturned (178.6–180 deg); landing impulses/bounces
+remain, distinct from snow launches. No-wheel-contact intervals can include an
+overturned chassis on ground. Loader fast turn reached 64.71 deg; full turn rollover
+not reproduced, but the intended risk is retained. No economy acceptance implied.
+
+Evidence: Logs/HandlingFullReview/Review.md, Play (CSV/step/contact traces),
+MotionReview.png and NativeChecks.txt. Native ramp/turn images and trace plots
+inspected. Tools/EditorAutomation/summarize_handling_traces.py performs read-only
+triage; >1 m/s upward velocity gained per recorded step, >.2 s without wheel contact
+and >60 deg tilt are review flags, not universal failure criteria. Android packaging,
+A07 performance, manual/touch feel and exhaustive impacts remain untested.
+
+
+## Suspension visual tuning Play acceptance — 12 November 2026
+
+User authorized testing all recent handling adjustments and conditionally enabling
+extra stabilization for raised-tool pile driving only if undesired results occur.
+36 actual Pinefall Play cases completed: both machines, tool down/raised, target
+2/4/6.5 m/s, flat .3 m snow, initial 2.4 m narrow pile and 1.5 m uneven road.
+All 18 raised cases stayed grounded; peak tilt 20.70064 degrees, peak rise .6675 m
+(includes climbing). Down cases peaked at 16.61072 degrees/.63645 m rise/.06 s
+continuous airborne. Actual snow wheel contacts occurred in every case. No launch
+or inversion reproduced, so no extra raised-pile stabilization was added. Normal
+raised driving retains freer suspension. Targets are not guaranteed impact speeds;
+live settling changes initial piles. Reverse/full-load matrices, live visual feel,
+Android packaging and A07 performance remain untested.
+
+Unity compilation/domain reload passed. 37 native support/vehicle assertions,
+scene validation, 19 snow checks and recovery/direction-buffer/loader regressions
+passed. Checks now cover raised/clear-road/working-snow mode gates. Original
+support-step bound updated for intentional half-gap support; geometry/seams and
+bounded growth still checked. Evidence: Logs/SuspensionReview (Play traces,
+ResultsSummary.json, NativeChecks.txt, SaveGuard).
+
+Initial 36-case preservation check found a profile machine-state rewrite while
+scene/backup hashes stayed identical. Exact pre-test profile bytes were restored
+from the verified unchanged backup with current-file hash guards. Startup/focus
+Save now checks the already-accepted diagnostic SessionState flag under UNITY_EDITOR,
+closing the gap before fixture ready=false takes effect. A separate one-case
+Play verification preserved scene/profile/backup bytes. Original failed check and
+restoration evidence retained; do not describe the initial run as write-free.
+
+
+## Freer suspension outside snow work — 12 November 2026
+
+User requested pre-stabilization suspension motion in normal driving, including
+flat snow roads; exception only lowered attachment interacting with snow. Now
+suspension expansion limiting, lowered tyre-force application and extra assisted
+pitch/roll damping apply only when Working/low attachment overlaps nonempty snow
+at mouth/left/right blade samples, with the existing vertical work reach. Outside
+this condition angular damping is the historical 0.5 (working: 0.8), expansion is
+unlimited and force application uses cached authored wheel values. Spring/travel
+settings unchanged. Bounded anti-roll, wall traction and body collision limits
+retained deliberately; unsafe historical unbounded anti-roll is not restored.
+Consequences explained before editing. Collider/drag/pile resistance unchanged.
+No tests or Play runs under the user's visual-first restriction; appearance and
+stability of mode transitions remain unverified.
+
+
+## Nonlinear leading-tyre pile resistance — 12 November 2026
+
+User authorized added deep-pile resistance sampled near front wheels. It samples
+the leading edge of each front tyre, using rear tyres when actual motion reverses.
+Average per-tyre opposing acceleration is min(4, 3*max(0,depth-0.45)^2) m/s²,
+added to existing general drag/attachment resistance. Horizontal body force only,
+grounded/moving gate and speed/dt cap avoid introducing lift or reversing motion
+by resistance alone. Strong slowing/stalling depends on available traction/torque;
+no stationary holding brake added. Collider/anti-roll/grip unchanged. Consequences
+explained before editing; no tests or Play entry under user's visual-first rule.
+
+
+## Increased snow resistance for visual review — 12 November 2026
+
+User authorized increasing the general snow-depth resistance multiplier from 0.12
+to 0.25 in MachineController. Ordinary rolling resistance remains 0.025; the 50%
+support blend, collider spacing/update rates, tyre grip, attachment work resistance
+and anti-roll remain unchanged. This should slow travel through deeper snow but
+does not guarantee a pile stall. No front-wheel sampling or nonlinear resistance
+added. User's visual-first restriction remains: no tests or Play runs performed.
+
+
+## Half-gap snow support visual review — 12 November 2026
+
+User found tyre penetration excessive after the stability fix and requested about
+half the effect, with their visual review BEFORE any agent tests. SnowSupportSurface
+now filters a 50/50 blend of previous compacted support and raw depth, halving the
+settled gap to filtered visual height. Existing smoothing, mesh spacing, update
+rates and anti-roll safeguards remain. Higher support may restore some bumpiness;
+this consequence was explained before editing. No tests or Play entry performed.
+Prior production acceptance does not validate this tuning. Guide and explanatory
+diagram: PRODUCTION_HANDLING.md, Reports/SnowSupport/Snow-collision-explained.png.
+
 ## Production handling fix - 12 November 2026
 
 User authorized the production fix after the repeated collision audit; consequences

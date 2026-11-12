@@ -24,6 +24,11 @@ namespace Snowglow.Editor
         }
         public static void Run()
         {
+            string key = "Snowglow.CollisionPlay.Active";
+            string profilePath = SessionState.GetString(key + ".savePath", "");
+            string Hash(string path) { if (!File.Exists(path)) return "absent"; using (var sha = System.Security.Cryptography.SHA256.Create()) return Convert.ToBase64String(sha.ComputeHash(File.ReadAllBytes(path))); }
+            Directory.CreateDirectory("Logs/SuspensionReview");
+            File.WriteAllText("Logs/SuspensionReview/Preservation.txt", "Scene before=" + SessionState.GetString(key + ".scene", "missing") + " after=" + Hash(SceneValidation.ScenePath) + "\nProfile before=" + SessionState.GetString(key + ".save", "missing") + " after=" + Hash(profilePath) + "\nBackup before=" + SessionState.GetString(key + ".backup", "missing") + " after=" + Hash(profilePath + ".bak"));
             int count = 0;
             void Require(bool condition, string text) { count++; if (!condition) throw new InvalidOperationException(text); }
             var scene = SceneManager.GetActiveScene(); var sceneBytes = File.ReadAllBytes(scene.path); bool dirty = scene.isDirty;
@@ -62,7 +67,7 @@ namespace Snowglow.Editor
                 var step = Surface(grid, 6, true).sharedMesh.vertices;
                 float biggest = 0;
                 for (int z = 0; z < 17; z++) for (int x = 0; x < 16; x++) biggest = Mathf.Max(biggest, Mathf.Abs(step[z * 17 + x + 1].y - step[z * 17 + x].y));
-                Require(biggest > .1f && biggest < .8f, "A vertical volume step must become a graded support surface.");
+                Require(biggest > .1f && biggest < 1.2f, "A vertical volume step must become a graded support surface with raised half-gap support.");
 
                 Array.Clear(grid.depth, 0, grid.depth.Length);
                 var rising = Activator.CreateInstance(type, true); states.Add(rising);
@@ -79,7 +84,20 @@ namespace Snowglow.Editor
                     var clone = UnityEngine.Object.Instantiate(source.gameObject); SceneManager.MoveGameObjectToScene(clone, fixture);
                     var machine = clone.GetComponent<MachineController>(); machine.Initialize();
                     Require(machine.Body.maxDepenetrationVelocity == 2 && machine.Body.maxAngularVelocity == 3.5f, "Vehicle impact limits not initialized.");
-                    Require(machine.wheels.All(w => w.suspensionExpansionLimited), "Expansion velocity protection missing.");
+                    Require(machine.wheels.All(w => !w.suspensionExpansionLimited) && Mathf.Approximately(machine.Body.angularDamping, .5f), "Normal driving must retain freer suspension.");
+                    var contact = typeof(MachineController).GetMethod("IsWorkingAgainstSnow", BindingFlags.NonPublic | BindingFlags.Instance);
+                    var snowObject = new GameObject("Snow contact fixture"); SceneManager.MoveGameObjectToScene(snowObject, fixture);
+                    var snow = snowObject.AddComponent<SnowField>();
+                    machine.Tool.ResetRaised();
+                    Require(!(bool)contact.Invoke(machine, new object[] { snow }), "Raised tool must not enable work stabilization.");
+                    machine.Tool.ResetLowered();
+                    Require(!(bool)contact.Invoke(machine, new object[] { snow }), "Lowered tool on clear road must retain freer suspension.");
+                    machine.Tool.mouth.position = new Vector3(0, SnowField.Ground + .1f, 0);
+                    for (int i = 0; i < snow.Grid.depth.Length; i++) snow.Grid.depth[i] = .3f;
+                    Require((bool)contact.Invoke(machine, new object[] { snow }), "Lowered tool touching snow must stabilize.");
+                    machine.Tool.ResetRaised();
+                    Require(!(bool)contact.Invoke(machine, new object[] { snow }), "Raised tool on flat snow must retain freer suspension.");
+                    UnityEngine.Object.DestroyImmediate(snowObject);
                     UnityEngine.Object.DestroyImmediate(clone);
                 }
             }
