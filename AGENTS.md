@@ -1,5 +1,19 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Editor and mobile focus behavior - 12 November 2026
+
+Editor Play enables Application.runInBackground and ignores focus/pause loss for
+session navigation, so clicking another Editor window keeps gameplay running.
+Focus loss clears held controls. Menus retain timeScale=0. Player builds disable
+background running; focus loss or application suspension opens Pause only while
+driving. If a menu is already open, that menu is retained with simulation stopped,
+controls cleared, machinery audio stopped and state saved. Returning to foreground
+does not automatically resume gameplay. Android recent tasks / app switching uses
+Unity lifecycle callbacks. Device acceptance requires an Android build; operating
+system suspension can prevent further background work.
+Android-defined runtime/Editor compilation and the running Editor's ID-matched
+forced compile/domain reload passed. No Play run or device lifecycle test performed.
+
 ## Cabin-height chassis and physical attachments — 12 November 2026
 
 User requested extending both chassis boxes to cabin roofs and adding blade

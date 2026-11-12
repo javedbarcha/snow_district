@@ -14,6 +14,7 @@ namespace Snowglow {
   float nextSave;bool ready;string pendingDummy="";
   void Awake(){
    Instance=this;Time.timeScale=0;Application.targetFrameRate=30;QualitySettings.vSyncCount=0;
+   Application.runInBackground=Application.isEditor;
    Profile=SaveStore.Load();Profile.active=Mathf.Clamp(Profile.active,0,Fleet.Length-1);
    for(int i=0;i<Fleet.Length;i++){
     var m=Fleet[i];m.Initialize();m.Owned=i==0;m.Fuel=m.definition.fuelCapacity;
@@ -132,8 +133,17 @@ namespace Snowglow {
    for(int i=0;i<Fleet.Length;i++){var m=Fleet[i];Profile.machines[i]=new MachineSave{id=m.definition.id,owned=m.Owned,fuel=m.Fuel,condition=m.Condition,tyres=m.Tyres,engine=m.Engine,position=m.transform.position,rotation=m.transform.rotation,load=m.Tool.Load,lift=m.Tool.Lift,tilt=m.Tool.Tilt,angle=m.Tool.Angle,auto=m.Tool.Auto,working=m.Tool.Working};}
    Profile.snow=Profile.inJob?Snow.Grid:null;SaveStore.Write(Profile);
   }
-  void OnApplicationPause(bool pause){if(pause&&ready){Open("pause");Save();}}
-  void OnApplicationFocus(bool focus){if(!focus&&ready&&IsRunning)Open("pause");}
+  void PauseForBackground(){
+   if(!ready)return;
+   if(IsRunning)Open("pause");
+   else{Input.Clear();Time.timeScale=0;Audio.Reverse(false);Audio.StopMachinery();Save();}
+  }
+  void OnApplicationPause(bool pause){if(pause&&!Application.isEditor)PauseForBackground();}
+  void OnApplicationFocus(bool focus){
+   if(focus)return;
+   if(Input)Input.Clear();
+   if(!Application.isEditor)PauseForBackground();
+  }
   void OnApplicationQuit(){Save();}
   void OnDestroy(){if(Instance==this)Instance=null;Time.timeScale=1;}
  }
