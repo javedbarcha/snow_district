@@ -1,5 +1,70 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Shared winter banner strip - 13 November 2026
+
+User requested replacing the solid navy menu header with supplied Navy Winter
+Banner with Tractor Treads artwork across all menu screens. Original 2172 x 724
+PNG is retained under SourceAssets/WinterMenuBanner. Extracted strip x5/y293,
+2162 x 129, is imported as winter-banner.png (2048 maximum, Android ASTC 6x6).
+PrepareHeaderArt / ApplyHeader reuse the existing shared 1280 x 78 Image, white
+tint, Simple full-box fill and no raycast interception. Title/wallet/controls and
+card layout retain positions. Shared hierarchy covers all ten menu screens;
+driving HUD retains its existing appearance. Full authoring and the existing
+Logs/QuickJobMenu.request targeted update reuse this header. Backup/evidence is
+retained under Logs/QuickJobMenu and copied to Logs/WinterMenuBanner.
+Android-defined compilation and native forced compile/reload passed. Unity saved
+and reopened the shared Image change; sprite/tint/size/input and existing menu
+binding/scene checks passed. Main Menu and Settings header captures inspected.
+Settings capture uses saved Edit-mode tab visibility without a live session;
+overlapping body panels in that fixture are not Settings runtime acceptance.
+Scene/profile gameplay was not entered; no player-save writes. Phone appearance
+remains untested.
+
+## Garage card screenshot - 13 November 2026
+
+User supplied Garage.PNG (1254 x 561), allowing top/bottom or right cropping.
+The standard 382 x 185.83784 image box is retained. New quality-95 garage.jpg
+derivative keeps 1153 x 561, removing 101 pixels from the right, preserving both
+machines, garage and fuel pump. Existing sprite GUID/bindings remain; PrepareArt
+uses the existing 1024 maximum / Android ASTC 6x6 settings. Original retained at
+SourceAssets/GarageMenu. Evidence/backup: Logs/GarageMenu; targeted repeat uses
+Logs/QuickJobMenu.request after native compilation. No layout changes requested.
+Native forced compile/reload and targeted import/save/reopen completed. Binding,
+layout and scene validation passed; Logs/GarageMenu/MainMenu.png was visually
+checked for image-box coverage and both vehicles/fuel pump. No Play entry or
+player-save writes; phone appearance remains untested.
+
+## Career image fills the standard box - 13 November 2026
+
+User superseded the full-frame Career fit: keep the standard 382 x 185.83784
+image box and crop from the left as needed. Career's JPEG derivative is now
+1207 x 587, removing 152 pixels from the original's left edge while retaining
+the right edge and full height. Original PNG remains intact in SourceAssets.
+Card geometry, text/button alignment and other artwork retain existing values.
+Integer pixel rounding changes the aspect by under .04%; no visible letterbox.
+Unity reimported the derivative and saved/reopened Pinefall; binding/layout and
+scene validation passed. Updated Logs/CareerMenu/MainMenu.png was visually checked
+for full box coverage. No Play entry or player-save writes.
+
+## Career card screenshot - 13 November 2026
+
+User supplied Career_mode.PNG (1359 x 587) for the main-menu Career card. Original
+is retained under SourceAssets/CareerMenu; a dedicated career.jpg goes through
+PrepareArt with the existing 1024 maximum / Android ASTC 6x6 settings. Other
+pinefall.jpg uses remain unchanged. Full authoring and targeted FitDashboardCards
+bind the new sprite; aspect preservation keeps full framing with small vertical
+margins inside the existing aligned card layout. Targeted authoring repeats via
+Logs/QuickJobMenu.request after native compilation. Current evidence is copied
+to Logs/CareerMenu; phone appearance remains separate acceptance.
+The targeted authoring now follows the existing full-menu installer policy for
+unsaved edits: preserve both disk scene and an unsaved scene copy under Logs
+before applying/saving. Existing in-memory edits are retained in the saved scene;
+authoring stops if their backup fails. No implicit scene discard.
+Android-defined compilation and native forced compile/reload passed. Unity saved/
+reopened the scene; binding/layout/scene validation passed and the native menu
+capture was inspected. Final scene diff is only the Career image sprite reference.
+No Play entry or player-save writes.
+
 ## Full-frame Quick Job card capture - 13 November 2026
 
 User requested fitting the original 2960 x 1440 screenshot into the upper image

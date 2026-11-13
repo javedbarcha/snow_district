@@ -23,7 +23,7 @@ namespace Snowglow.Editor {
   static Image Art(Transform parent,string name,float x,float y,float w,float h){var r=Rect("Game capture | "+name,parent,x,y,w,h);r.pivot=new Vector2(.5f,.5f);r.anchoredPosition=new Vector2(x+w*.5f,-y-h*.5f);var im=Fill(r,Color.white);im.sprite=AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/"+name+".jpg");im.preserveAspect=true;im.raycastTarget=false;return im;}
   static void Title(Transform parent,string eyebrow,string title,string subtitle=""){Text(parent,eyebrow,44,100,1160,24,15,Muted);var h=Text(parent,title,44,130,1160,48,34);h.fontStyle=FontStyle.Bold;if(subtitle!="")Text(parent,subtitle,44,184,1160,42,18,Muted);}
   static GameObject Group(Transform parent,string name,float x,float y,float w,float h)=>Rect(name,parent,x,y,w,h).gameObject;
-  internal static void PrepareArt(){Directory.CreateDirectory(ArtFolder);foreach(string name in new[]{"pinefall","quick","garage","tractor","loader","mountains"}){string to=ArtFolder+"/"+name+".jpg";if(!File.Exists(to))File.Copy("work/ui-preview/"+name+".jpg",to);AssetDatabase.ImportAsset(to,ImportAssetOptions.ForceSynchronousImport);var imp=(TextureImporter)AssetImporter.GetAtPath(to);imp.textureType=TextureImporterType.Sprite;imp.spriteImportMode=SpriteImportMode.Single;imp.mipmapEnabled=false;imp.npotScale=TextureImporterNPOTScale.None;imp.maxTextureSize=1024;imp.wrapMode=TextureWrapMode.Clamp;imp.alphaIsTransparency=false;var android=imp.GetPlatformTextureSettings("Android");android.name="Android";android.overridden=true;android.maxTextureSize=1024;android.format=TextureImporterFormat.ASTC_6x6;imp.SetPlatformTextureSettings(android);imp.SaveAndReimport();}}
+  internal static void PrepareArt(){Directory.CreateDirectory(ArtFolder);foreach(string name in new[]{"pinefall","quick","career","garage","tractor","loader","mountains"}){string to=ArtFolder+"/"+name+".jpg";if(!File.Exists(to))File.Copy("work/ui-preview/"+name+".jpg",to);AssetDatabase.ImportAsset(to,ImportAssetOptions.ForceSynchronousImport);var imp=(TextureImporter)AssetImporter.GetAtPath(to);imp.textureType=TextureImporterType.Sprite;imp.spriteImportMode=SpriteImportMode.Single;imp.mipmapEnabled=false;imp.npotScale=TextureImporterNPOTScale.None;imp.maxTextureSize=1024;imp.wrapMode=TextureWrapMode.Clamp;imp.alphaIsTransparency=false;var android=imp.GetPlatformTextureSettings("Android");android.name="Android";android.overridden=true;android.maxTextureSize=1024;android.format=TextureImporterFormat.ASTC_6x6;imp.SetPlatformTextureSettings(android);imp.SaveAndReimport();}PrepareHeaderArt();}
   internal static void FitDashboardCards(Transform dashboard){
    const float imageHeight=382f*1440/2960;
    foreach(string name in new[]{"Quick Job","Career","Garage"}){
@@ -35,7 +35,25 @@ namespace Snowglow.Editor {
     art.rectTransform.sizeDelta=new Vector2(382,imageHeight);art.rectTransform.anchoredPosition=new Vector2(191,-imageHeight*.5f);
     art.preserveAspect=true;
     if(name=="Quick Job")art.sprite=AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/quick.jpg");
+    if(name=="Career")art.sprite=AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/career.jpg");
    }
+  }
+  internal static void PrepareHeaderArt(){
+   const string path=ArtFolder+"/winter-banner.png";
+   AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);
+   var importer=(TextureImporter)AssetImporter.GetAtPath(path);
+   importer.textureType=TextureImporterType.Sprite;importer.spriteImportMode=SpriteImportMode.Single;
+   importer.mipmapEnabled=false;importer.npotScale=TextureImporterNPOTScale.None;
+   importer.maxTextureSize=2048;importer.wrapMode=TextureWrapMode.Clamp;importer.alphaIsTransparency=false;
+   var android=importer.GetPlatformTextureSettings("Android");android.name="Android";android.overridden=true;
+   android.maxTextureSize=2048;android.format=TextureImporterFormat.ASTC_6x6;importer.SetPlatformTextureSettings(android);
+   importer.SaveAndReimport();
+  }
+  internal static void ApplyHeader(PrototypeHUD hud){
+   var header=hud.productionMenu.transform.Find("Screen content/Navy header").GetComponent<Image>();
+   header.sprite=AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/winter-banner.png");
+   if(!header.sprite)throw new InvalidOperationException("Import winter menu banner before authoring.");
+   header.color=Color.white;header.type=Image.Type.Simple;header.preserveAspect=false;header.raycastTarget=false;
   }
   public static void ApplyIfPrepared(PrototypeHUD hud){if(AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/tractor.jpg"))Apply(hud);}
   public static void Apply(PrototypeHUD hud){
@@ -44,13 +62,13 @@ namespace Snowglow.Editor {
    var old=hud.layout.Find("Menu layer");if(old)old.gameObject.SetActive(false);
    var root=Rect("Production menus | saved before Play",hud.layout,0,0,1280,720);Fill(root,Paper);ui=root.gameObject.AddComponent<ProductionMenu>();hud.productionMenu=ui;hud.menuRoot=root.gameObject;
    var content=Rect("Screen content",root,0,0,1280,720);ui.contentGroup=content.gameObject.AddComponent<CanvasGroup>();
-   var header=Rect("Navy header",content,0,0,1280,78);Fill(header,Navy);var logo=Text(header,"SNOW DISTRICT",44,14,470,36,30,Color.white);logo.fontStyle=FontStyle.Bold;Text(header,"WINTER OPERATIONS",46,51,440,20,12,new Color(.78f,.87f,.93f));Text(header,"1,800 coins",780,27,210,35,21,Yellow,"wallet");Button(content,"Settings","nav:settings",1100,90,132,42,false,"global-settings");
+   var header=Rect("Navy header",content,0,0,1280,78);Fill(header,Navy);ApplyHeader(hud);var logo=Text(header,"SNOW DISTRICT",44,14,470,36,30,Color.white);logo.fontStyle=FontStyle.Bold;Text(header,"WINTER OPERATIONS",46,51,440,20,12,new Color(.78f,.87f,.93f));Text(header,"1,800 coins",780,27,210,35,21,Yellow,"wallet");Button(content,"Settings","nav:settings",1100,90,132,42,false,"global-settings");
    var names=new[]{"dashboard","regions","towns","contracts","machinery","garage","settings","pause","results","store"};var pages=new List<GameObject>();
    foreach(var name in names){var page=Rect(name,content,0,78,1280,564);pages.Add(page.gameObject);if(name!="dashboard"&&name!="results")Button(page,name=="store"?"< Back to Shop":name=="garage"||name=="pause"||name=="results"?"< Main Menu":"< Back",name=="store"?"nav:shop":name=="garage"||name=="pause"||name=="results"?"nav:dashboard":"back",44,12,175,42,false,name=="store"?"store-back":"back-"+name);
     switch(name){
      case "dashboard":
       Title(page,"YOUR NEXT SHIFT STARTS HERE","A whole town. A fresh snowfall.");
-      string[] cardNames={"Quick Job","Career","Garage"},cardArt={"quick","pinefall","garage"},actions={"quick","career","nav:garage"},descs={"Get straight to the snow.","Build your winter operations.","Your machines. Ready for the next shift."};
+      string[] cardNames={"Quick Job","Career","Garage"},cardArt={"quick","career","garage"},actions={"quick","career","nav:garage"},descs={"Get straight to the snow.","Build your winter operations.","Your machines. Ready for the next shift."};
       for(int i=0;i<3;i++){float x=44+i*405;var card=Rect(cardNames[i],page,x,209,382,316);Fill(card,Color.white);Art(card,cardArt[i],0,0,382,175);Text(card,cardNames[i],18,185,340,35,25);Text(card,descs[i],18,224,346,30,17,Muted);Button(card,i==0?"Start Plowing":i==1?"View Career":"Open Garage",actions[i],18,260,346,44,true);}
       FitDashboardCards(page);
       break;
