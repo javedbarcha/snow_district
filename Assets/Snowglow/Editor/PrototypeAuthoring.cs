@@ -56,17 +56,7 @@ namespace Snowglow.Editor {
     session.Audio.notes=new AudioClip[8];for(int i=0;i<8;i++)session.Audio.notes[i]=AssetDatabase.LoadAssetAtPath<AudioClip>("Assets/Snowglow/Audio/note"+i+".wav");session.Audio.chime=AssetDatabase.LoadAssetAtPath<AudioClip>("Assets/Snowglow/Audio/chime.wav");
     session.HUD=HUDFactory.Build();
     TyreTracksAuthoring.Place(session);
-    // Transparent primitive objective marker: editable, non-colliding, and separate from snow.
-    var marker=PrimitiveKit.Group("07 Contract reference markers",null,Vector3.zero);
-    var targets=new[]{new Vector3(-65,5.2f,-88.5f),new Vector3(92.5f,5.2f,21),new Vector3(0,5.2f,0)};
-    var sizes=new[]{new Vector2(9,31),new Vector2(31,24),new Vector2(70,9)};
-    for(int j=1;j<3;j++){
-     var group=PrimitiveKit.Group("Contract "+j+" boundary",marker,targets[j]);
-     foreach(float side in new[]{-1f,1}){
-      PrimitiveKit.Cube("Long boundary",group,new Vector3(side*sizes[j].x*.5f,0,0),new Vector3(.15f,.03f,sizes[j].y),p.amber);
-      PrimitiveKit.Cube("Short boundary",group,new Vector3(0,0,side*sizes[j].y*.5f),new Vector3(sizes[j].x,.03f,.15f),p.amber);
-     }
-    }
+    JobGuidanceAuthoring.Apply(session);
     PlayerSettings.defaultInterfaceOrientation=UIOrientation.LandscapeLeft;PlayerSettings.allowedAutorotateToPortrait=false;PlayerSettings.allowedAutorotateToPortraitUpsideDown=false;
     PlayerSettings.companyName="SnowglowStudio";PlayerSettings.productName="Snowglow";PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android,"com.snowglow.prototype");
     Time.fixedDeltaTime=.02f;

@@ -97,12 +97,13 @@ namespace Snowglow {
    return (float)removed;
   }
   static bool NearLane(float v){return Mathf.Abs(v)<5||Mathf.Abs(v-65)<5||Mathf.Abs(v+65)<5;}
-  public bool IsTarget(float x,float z) {
-   if(ContractKind==1)return x>77&&x<108&&z>9&&z<33;
-   if(ContractKind==2)return x>-35&&x<35&&Mathf.Abs(z)<4.5f;
-   // The former depot lane is authored clear. Work the snowy road just beyond its exit.
-   return x>-59&&x<-29&&Mathf.Abs(z+65)<4.5f;
+  // X/Y of this Rect represent world X/Z. Shared by progress and saved venue visuals.
+  public static Rect ContractBounds(int kind){
+   if(kind==1)return Rect.MinMaxRect(77,9,108,33);
+   if(kind==2)return Rect.MinMaxRect(-35,-4.5f,35,4.5f);
+   return Rect.MinMaxRect(-59,-69.5f,-29,-60.5f);
   }
+  public bool IsTarget(float x,float z){var bounds=ContractBounds(ContractKind);return x>bounds.xMin&&x<bounds.xMax&&z>bounds.yMin&&z<bounds.yMax;}
   public void Recount() {
    TargetArea=TargetCleared=0;
    for(int i=0;i<Grid.depth.Length;i++)if(IsTarget(Grid.X(i),Grid.Z(i))){TargetArea+=SnowVolumeGrid.Area;if(Grid.depth[i]<.07f)TargetCleared+=SnowVolumeGrid.Area;}

@@ -1,5 +1,39 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Contract direction arrow and venue holograms - 14 November 2026
+
+User requested a 3D arrow above the active vehicle pointing toward the job venue,
+hidden on arrival, and a glowing hologram around the work boundary. JobGuidance
+animates saved objects only. An amber extruded arrow with dark outline follows
+the selected vehicle above its authored roof height and aims at the nearest point
+on the contract rectangle. It hides within 10 m of the edge, reappears beyond
+14 m, and stays hidden inside. Camera/world directions are independent of the
+vehicle heading. Only the active contract's cyan hologram is shown: a 2.2 m
+translucent scanning wall and a bright rim sampling snow height every .25 s.
+The shader has blue contrast against white snow, alpha fading and animated scans;
+normal depth testing lets scenery occlude it. Both hints hide in menus, Free Work
+and after the job ends. Old static reference markers remain saved but inactive.
+
+SnowField.ContractBounds is shared by IsTarget and the visuals, retaining the
+existing strict bounds for Depot Access, Parking Lot and Main Street. No snow,
+reward, physics or save-schema changes. Objects/meshes/materials/line points are
+Editor-authored on non-interactive layer 2 with no colliders or Rigidbody; runtime
+only changes transforms/visibility and existing line heights. No runtime asset or
+model factories or added lights. Future explicit district authoring uses the same
+installer; this task did not rebake Pinefall. Guide: JOB_GUIDANCE.md. Repeat menu:
+Snowglow > UI > Install job direction and venue holograms; background request:
+Logs/JobGuidance.request, after successful native compilation.
+
+Android-defined compile and native forced compile/reload passed. Saved/reopened
+Pinefall passed 268 guidance checks, 637 existing UI/session checks, 187 flow checks,
+scene validation and 19 snow checks. Every cell in all three target footprints
+matches the previous rules. Tests cover direction, arrivals/hysteresis/departure,
+vehicle switching, snow seating, menus/Free Work/completion. Native arrow and all
+three venue captures inspected; final shader contrast was strengthened after the
+first review. All 1,234 protected physics/Terrain/prefab records and both save plus
+all 12 snow-seed hashes match. Evidence/original scene: Logs/JobGuidance. No Play
+entry or device rendering/performance acceptance; fixtures read seed data only.
+
 ## Physics Overlay removed from Settings - 14 November 2026
 
 User requested removing Physics Overlay. Production and legacy Settings no longer
