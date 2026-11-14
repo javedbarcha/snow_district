@@ -15,7 +15,7 @@ namespace Snowglow {
   void Awake(){
    Instance=this;Time.timeScale=0;Application.targetFrameRate=30;QualitySettings.vSyncCount=0;
    Application.runInBackground=Application.isEditor;
-   Profile=SaveStore.Load();Profile.active=Mathf.Clamp(Profile.active,0,Fleet.Length-1);
+   Profile=SaveStore.Load();Profile.debug=false;Profile.active=Mathf.Clamp(Profile.active,0,Fleet.Length-1);
    for(int i=0;i<Fleet.Length;i++){
     var m=Fleet[i];m.Initialize();m.Owned=i==0;m.Fuel=m.definition.fuelCapacity;
     if(Profile.machines!=null)foreach(var save in Profile.machines)if(save.id==m.definition.id){

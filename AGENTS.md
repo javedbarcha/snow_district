@@ -1,5 +1,22 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Physics Overlay removed from Settings - 14 November 2026
+
+User requested removing Physics Overlay. Production and legacy Settings no longer
+contain its button/action. The Graphics description moves up into the freed space.
+Runtime HUD keeps the serialized debugText reference as an inactive compatibility
+placeholder and no longer calculates/renders the old overlay. Existing profile
+schema retains debug for compatibility, but session load clears it in memory;
+normal player saves subsequently persist false. STATS, Graphics and Driving
+Assists remain. No real save-file edits were made by this task.
+
+Native Android compile/reload and targeted saved/reopened scene update passed,
+with 637 UI/session checks, 187 flow checks, scene validation and 19 snow checks.
+Graphics-tab capture inspected. All 1,234 protected physics/Terrain/prefab records
+and both save hashes match. Evidence/backup: Logs/RemovePhysicsOverlay. Repeat
+marker: Logs/RemovePhysicsOverlay.request after native compilation completes.
+Full/legacy authoring also omits the removed button. No Play or phone test.
+
 ## Original vehicle proportions and larger workshop - 14 November 2026
 
 User requested retaining actual tractor/loader proportions and expanding the

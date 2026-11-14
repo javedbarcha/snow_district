@@ -41,10 +41,8 @@ namespace Snowglow {
    objective.text=(p.freeWork?"FREE WORK":("CONTRACT "+(p.job+1)))+"   "+(g.Snow.Progress*100).ToString("F0")+"% cleared\n"+g.Multiplier+"x combo   "+(p.remaining<0?"LATE ":"TIME ")+Mathf.Abs(p.remaining/60).ToString("F0")+" min   "+p.coins+" coins";
    notice.text=g.Notice+"\n"+(m.definition.loader?"Bucket "+a.Load.ToString("F2")+" / "+m.equipment.capacity+" m³":"Blade "+(a.Working?"DOWN":"UP")+" | angle "+a.Angle.ToString("F0"));
    menuInfo.text="PINEFALL, ALASKA-INSPIRED TEST DISTRICT\nWallet: "+p.coins+" coins   |   Level "+g.Level+"   XP "+p.xp+"\n"+m.definition.displayName+" | "+(m.AtDepot?"AT DEPOT":"RETURN TO DEPOT FOR EQUIPMENT / SERVICE")+"\nTyres "+m.Tyres+"/3   Engine "+m.Engine+"/3   Fuel "+m.Fuel.ToString("F1")+" L   Condition "+m.Condition.ToString("F0")+"%\n"+g.Notice;
-   debugText.gameObject.SetActive(p.debug&&g.IsRunning);
-   if(p.debug){float carried=0;foreach(var vehicle in g.Fleet)carried+=vehicle.Tool.Load;
-    float error=g.Snow.Grid.initialVolume-g.Snow.Grid.Total()-carried-g.Snow.Grid.disposed;
-    debugText.text="PHYSICS / SNOW\nSpeed: "+m.Speed.ToString("F1")+" m/s | slip "+m.Slip.ToString("F2")+"\nSnow force: "+m.LastSnowForce.ToString("F0")+" N\nCarried: "+carried.ToString("F2")+" m³ | disposed: "+g.Snow.Grid.disposed.ToString("F2")+"\nLedger error: "+error.ToString("F4")+" m³\nX "+m.transform.position.x.ToString("F0")+" Z "+m.transform.position.z.ToString("F0");}
+   if(debugText)debugText.gameObject.SetActive(false);
+
   }
  }
 }

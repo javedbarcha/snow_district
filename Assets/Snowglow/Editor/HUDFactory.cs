@@ -77,7 +77,7 @@ namespace Snowglow.Editor {
       Button(panel,"NEW TRANSACTION","dummy:new",24,235,260);Button(panel,"SUCCESS / REDELIVER","dummy:success",300,235,290);Button(panel,"CANCEL","dummy:cancel",606,235);Button(panel,"FAIL","dummy:fail",832,235);break;
      case "settings":
       Text(panel,"ANDROID / GALAXY A07 REFERENCE TARGET\n30 FPS target. Low/standard render scale and shadow distance.\nAssistance affects traction and stability. Gameplay menus pause the simulation.\nPerformance, rendering and handling still require testing on the actual phone.",24,75,1140,145);
-      Button(panel,"LOW / STANDARD","quality",24,264,260);Button(panel,"SOUND ON / OFF","sound",300,264,260);Button(panel,"ASSISTS ON / OFF","assist",576,264,260);Button(panel,"DEBUG OVERLAY","debug",852,264,300);break;
+      Button(panel,"LOW / STANDARD","quality",24,264,260);Button(panel,"SOUND ON / OFF","sound",300,264,260);Button(panel,"ASSISTS ON / OFF","assist",576,264,260);break;
      case "pause":
       Text(panel,"The simulation, fuel consumption, deadline and combo are paused.\nResume or visit a menu. Abandoning resets the active worksite.",24,75,1140,100);
       Button(panel,"RESUME","continue",24,222);Button(panel,"DASHBOARD","open:dashboard",250,222);Button(panel,"SETTINGS","open:settings",476,222);Button(panel,"ABANDON JOB","abandon",702,222);Button(panel,"FINISH FREE WORK","finish",928,222);break;

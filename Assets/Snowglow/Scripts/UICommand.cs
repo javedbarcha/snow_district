@@ -17,7 +17,6 @@ namespace Snowglow {
     case "sound":g.Profile.muted=!g.Profile.muted;g.Audio.SetMuted(g.Profile.muted);g.Save();break;
     case "quality":g.Profile.quality=1-g.Profile.quality;g.ApplyQuality();g.Save();break;
     case "assist":g.Profile.assists=!g.Profile.assists;g.ApplyQuality();g.Save();break;
-    case "debug":g.Profile.debug=!g.Profile.debug;g.Save();break;
    }
   }
  }
