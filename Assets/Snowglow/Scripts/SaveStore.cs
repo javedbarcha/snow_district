@@ -10,6 +10,7 @@ namespace Snowglow {
   public int schema=2,coins=1800,xp,job,active;public bool freeWork,inJob;public float remaining=720,earned,chain,chainTime;
   public string transaction="",lastReward="",lastDummy="";public bool muted,assists=true,debug;public int quality=1;
   public MachineSave[] machines;public SnowVolumeGrid snow;
+  public CareerSnowState[] careerSnow=Array.Empty<CareerSnowState>();
   public int careerVersion=1,legacyUnlockedJobs;public string[] careerCompletedJobs=new string[0];
   public string jobTownId=CareerProgression.Pinefall;public bool quickPlay;
  }

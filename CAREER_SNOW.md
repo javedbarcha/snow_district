@@ -1,0 +1,17 @@
+# Persistent Career town snow
+
+Career keeps a town checkpoint whenever a contract finishes. Starting the next Career job restores that checkpoint, retaining the exact cleared patches, residual snow and piles throughout the town. Starting/replaying a contract replenishes only its own strict target rectangle from the authored seed. Other completed areas and work outside venues stay as captured.
+
+Abandoning an unfinished Career contract or replay rolls back to the last completed town checkpoint. Quick Job and Free Work still start with fresh whole-town snow; neither can overwrite Career's checkpoint. Returning to Career restores its town. New jobs still return vehicles to the depot and retain existing fuel, condition, ownership and upgrade behavior. No reward, unlock, deadline or completion-threshold tuning is included.
+
+The save profile keeps its schema 2 and adds town-keyed CareerSnowState records. Each checkpoint stores sparse cell-index/depth differences from the seed plus any held vehicle snow and its mouth location. Active jobs retain the existing full snow grid, credit and disposal ledger. Checkpoints are committed on successful Career completion, not continuously during an unfinished job. This keeps abandoned work separate from completed work and avoids duplicating a full grid for every checkpoint.
+
+When a town checkpoint is restored, held snow is deposited near the prior mouth location using the same bounded drop helper as recovery. Any amount that cannot fit remains in that vehicle's bucket. A fresh per-job volume baseline includes all ground and retained carried snow. Replenishing the selected venue is an intentional job reset; historic disposal totals do not become the new job's ledger. The current Results scene/load is not mutated during checkpoint capture.
+
+Older saves have completion IDs but did not save finished town snow. On first use, completed venues are treated as cleared without awarding coins/XP or inventing completions. Their exact old pile shapes cannot be recovered. An already-active Career job keeps its own saved progress; only other completed venues receive this migration. Subsequent snapshots preserve exact terrain state. Both active and idle loads use the same startup restoration path.
+
+Runtime changes are data/visibility rebuilds through the existing SnowField path. No district rebake, geometry/collider tuning or new scene content is required. The snow seed remains read-only. New/replayed contracts still require physical clearance before another reward can be issued.
+
+Validation: Android-defined compile and native forced compilation/reload passed. Thirty-four Career snow checks cover exact retained residuals, town roads, active/idle JSON reload, next jobs, selected replay, abandon rollback, Quick/Free isolation, old-save migration, held-snow conservation and a completely full-world drop fallback. Existing 637 UI/session, 187 progression/flow, 19 snow and 1,108 recovery physics checks passed. Tests use disposable fixtures and no Play entry; actual Android storage/rendering and touch acceptance remain separate. Scene, both real save files and all twelve snow seed hashes matched their pre-test values.
+
+Repeat native validation: await Tools/EditorAutomation/Invoke-UnityEditor.ps1 -Action Compile, then create Logs/CareerSnow.request with Pinefall open and Play stopped. Evidence: Logs/CareerSnow. No scene save or real player-save write is performed by this marker.

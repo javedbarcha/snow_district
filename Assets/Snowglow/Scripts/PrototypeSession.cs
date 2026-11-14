@@ -29,9 +29,31 @@ namespace Snowglow {
    Fleet[0].Owned=true;
    if(!Active.Owned)Profile.active=0;
    Profile.snow=SnowVolumeGrid.Upgrade(Profile.snow);
-   Snow.Initialize(Profile.job,Profile.inJob?Profile.snow:null);
+   Snow.Initialize(Profile.job,StartupSnow());
    foreach(var m in Fleet)m.SetActiveMachine(m==Active);
    Audio.SetMuted(Profile.muted);ready=true;ApplyQuality();HUD.RefreshMenu();
+  }
+  public SnowVolumeGrid StartupSnow(){
+   string town=string.IsNullOrEmpty(Profile.jobTownId)?CareerProgression.Pinefall:Profile.jobTownId;
+   if(Profile.inJob){
+    if(!Profile.freeWork&&!Profile.quickPlay){
+     bool legacy=CareerSnowState.Find(Profile,town)==null;CareerSnowState.Ensure(Profile,Snow.seed.grid,town);
+     if(Profile.snow==null)return CareerTownSnow(Profile.job);
+     if(legacy)CareerSnowState.ClearLegacyCompleted(Profile.snow,Profile,town,Profile.job);
+    }
+    return Profile.snow;
+   }
+   foreach(var machine in Fleet)machine.Tool.Load=0;
+   bool completed=false;for(int kind=0;kind<CareerProgression.JobNames.Length;kind++)completed|=CareerProgression.Completed(Profile,town,kind);
+   if(CareerSnowState.Find(Profile,town)!=null||completed)return CareerTownSnow(-1);
+   return null;
+  }
+  SnowVolumeGrid CareerTownSnow(int resetVenue){
+   string town=string.IsNullOrEmpty(Profile.jobTownId)?CareerProgression.Pinefall:Profile.jobTownId;
+   var state=CareerSnowState.Ensure(Profile,Snow.seed.grid,town);var grid=state.Restore(Snow.seed.grid,out var loads);
+   foreach(var machine in Fleet){loads.TryGetValue(machine.definition.id,out float load);machine.Tool.Load=load;}
+   if(resetVenue>=0)CareerSnowState.ReseedVenue(grid,Snow.seed.grid,resetVenue);
+   grid.initialVolume=grid.Total();foreach(var machine in Fleet)grid.initialVolume+=machine.Tool.Load;return grid;
   }
   public void Open(string panel){if(panel=="machinery")panel="garage";if(panel==""&&!Profile.inJob)panel="contracts";if(panel==""&&Panel!=""){Input.Reverse=false;foreach(var vehicle in Fleet)vehicle.ResetMotion();}Panel=panel;if(panel!=""){Audio.Reverse(false);Audio.StopMachinery();}Input.Clear();Time.timeScale=panel==""?1:0;HUD.RefreshMenu();if(panel!="")Save();}
   public void TogglePause(){if(Panel=="")Open("pause");else if(Panel=="pause")Open("");}
@@ -44,15 +66,15 @@ namespace Snowglow {
    if(!CanStartJob(kind,free,town)){HUD.RefreshMenu();return;}
    if(Profile.inJob){Notice="Finish or abandon the active job before starting another.";Open("contracts");if(HUD.productionMenu)HUD.productionMenu.ShowJobConflict(kind,free,quick,town);return;}
    Profile.job=kind;Profile.freeWork=free;Profile.quickPlay=quick&&!free;Profile.jobTownId=town;Profile.inJob=true;Profile.remaining=kind==0?720:900;Profile.earned=Profile.chain=Profile.chainTime=0;
-   Profile.transaction=Guid.NewGuid().ToString("N");Snow.ResetToSeed();foreach(var vehicle in Fleet){vehicle.Tool.Load=0;vehicle.RecoverToDepot();if(vehicle.definition.loader)vehicle.Tool.ResetLowered();}RecreditTarget();Open("");Save();
+   Profile.transaction=Guid.NewGuid().ToString("N");if(!Profile.freeWork&&!Profile.quickPlay)Snow.ReplaceGrid(CareerTownSnow(kind));else{Snow.ResetToSeed();foreach(var vehicle in Fleet)vehicle.Tool.Load=0;}foreach(var vehicle in Fleet){vehicle.RecoverToDepot();if(vehicle.definition.loader)vehicle.Tool.ResetLowered();}RecreditTarget();Open("");Save();
   }
   public bool AbandonAndStartJob(int kind,bool free=false,bool quick=false,string town=CareerProgression.Pinefall){
    if(!Profile.inJob||!CanStartJob(kind,free,town))return false;
-   // StartJob resets the worksite and carried loads. Do not reload the scene or grant the old reward.
+   // Replacement discards unfinished work, retaining the last completed Career checkpoint.
    Profile.inJob=false;Profile.snow=null;StartJob(kind,free,quick,town);return true;
   }
   void RecreditTarget(){
-   // Every accepted contract uses current snow. Abandon/restart reloads a fresh worksite.
+   // New/replayed jobs credit only their venue; other Career clearances remain intact.
    Snow.SetContract(Profile.job);for(int i=0;i<Snow.Grid.credit.Length;i++)Snow.Grid.credit[i]=Snow.IsTarget(Snow.Grid.X(i),Snow.Grid.Z(i))?Snow.Grid.depth[i]:0;
   }
   public void Continue(){if(!Profile.inJob){Notice="Choose a contract or Free Work first.";Open("contracts");return;}Open("");}
@@ -75,12 +97,12 @@ namespace Snowglow {
    if(Profile.lastReward==Profile.transaction)return;
    int basePay=Profile.freeWork?0:350;float late=Profile.remaining<0?.7f:1;
    int reward=Mathf.RoundToInt((basePay+Profile.earned)*late);Profile.coins+=reward;Profile.xp+=Profile.freeWork?0:180;
-   if(!Profile.freeWork&&!Profile.quickPlay)CareerProgression.Complete(Profile,Profile.jobTownId,Profile.job);
+   if(!Profile.freeWork&&!Profile.quickPlay){CareerProgression.Complete(Profile,Profile.jobTownId,Profile.job);CareerSnowState.Store(Profile,CareerSnowState.Capture(Profile.jobTownId,Snow.Grid,Snow.seed.grid,Fleet));}
    ResultSummary=(Profile.freeWork?"Free Work":CareerProgression.JobNames[Profile.job]+" - "+(Profile.quickPlay?"Quick Play":"Career"))+"\n"+Mathf.RoundToInt(Snow.Progress*100)+"% cleared\nEarned: "+reward+" coins / "+(Profile.freeWork?0:180)+" XP\n"+(late<1?"Late completion: reduced pay.":"Shift completed.");
    Profile.lastReward=Profile.transaction;Profile.inJob=false;Notice="Shift complete: +"+reward+" coins. "+(late<1?"Late completion: reduced pay.":"Pinefall thanks you.");
    Audio.Chime();Open("results");Save();
   }
-  public void Abandon(){if(!Profile.inJob)return;Profile.inJob=false;Profile.snow=null;Profile.earned=Profile.chain=Profile.chainTime=0;Snow.ResetToSeed();foreach(var m in Fleet){m.Tool.Load=0;m.Tool.ResetRaised();m.RecoverToDepot();}Notice="Job abandoned. Unpaid rewards and current work were reset.";Open("dashboard");Save();}
+  public void Abandon(){if(!Profile.inJob)return;bool career=!Profile.freeWork&&!Profile.quickPlay;Profile.inJob=false;Profile.snow=null;Profile.earned=Profile.chain=Profile.chainTime=0;if(career)Snow.ReplaceGrid(CareerTownSnow(-1));else{Snow.ResetToSeed();foreach(var m in Fleet)m.Tool.Load=0;}foreach(var m in Fleet){m.Tool.ResetRaised();m.RecoverToDepot();}Notice="Job abandoned. Unpaid rewards and current work were reset.";Open("dashboard");Save();}
   public void FreshDistrict(){if(Profile.inJob){Notice="Finish or abandon the active job first.";return;}Profile.snow=null;foreach(var m in Fleet){m.Tool.Load=0;m.RecoverToDepot();}Save();ReloadDistrict();}
   void ReloadDistrict(){Time.timeScale=1;SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);}
   public void Switch(int index){

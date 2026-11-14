@@ -1,5 +1,38 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Persistent Career town snow and venue-only replay - 15 November 2026
+
+User requested keeping completed Career snow plowed unless its job is replayed.
+CareerSnowState adds town-keyed sparse index/depth checkpoints to schema-2 saves,
+including held snow/mouth locations. Successful Career Finish captures the town;
+starting another Career contract restores it and reseeds only that contract's
+existing strict rectangle. Exact previous clearances/residuals and outside-venue
+work remain. Active jobs still save their complete current grid/credit/disposal.
+Idle startup restores the committed town. Replay/abandon/replacement preserve the
+last completed checkpoint; abandoning unfinished Career work rolls back to it.
+Quick Job/Free Work retain fresh whole-town snow and cannot overwrite Career.
+
+Older saves lacked finished-town data. Completed IDs seed a one-time cleared-venue
+fallback without rewards; exact old piles cannot be recovered. Active Career
+migration preserves its current venue's progress while clearing other previously
+completed venues, adjusting the volume baseline for the removed legacy snow.
+On restoring a checkpoint, held snow drops at its former mouth location using the
+shared existing bounded recovery deposit; unplaced volume remains carried. Each
+new contract establishes a new baseline including ground and retained load.
+Reward/unlock/deadline/90% rules, vehicle service/state and seed assets remain.
+Guide: CAREER_SNOW.md. No district rebake or new scene content.
+
+Android-defined compile and native forced compile/reload passed. Thirty-four
+Career snow checks passed: exact residual/town retention, next job, active/idle
+JSON startup, isolated replay, abandoned replay rollback, Quick/Free separation,
+old saves, held snow conservation and full-world undepositable load. Existing 637
+UI/session, 187 flow/progression, 19 snow and 1,108 isolated recovery physics checks
+passed. Scene, both real saves and all 12 snow-seed hashes match pre-test values.
+No Play, scene save or real profile writes. Device storage/performance and actual
+phone acceptance remain separate. Evidence: Logs/CareerSnow. Validation marker:
+Logs/CareerSnow.request, only after native compilation succeeds. This read-only
+marker runs the fixture suite without authoring/saving the scene.
+
 ## Contract direction arrow and venue holograms - 14 November 2026
 
 User requested a 3D arrow above the active vehicle pointing toward the job venue,

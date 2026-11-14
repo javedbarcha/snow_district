@@ -61,7 +61,8 @@ namespace Snowglow {
   }
 #endif
   public void SetContract(int kind){ContractKind=kind;Recount();}
-  public void ResetToSeed(){var src=seed.grid;Grid=new SnowVolumeGrid{depth=(float[])src.depth.Clone(),credit=(float[])src.credit.Clone(),blocked=(bool[])src.blocked.Clone(),initialVolume=src.initialVolume,authoredLayoutVersion=src.authoredLayoutVersion};Grid.WakePiles();foreach(int id in chunks.Keys)MarkChunk(id);Recount();}
+  public void ResetToSeed(){var src=seed.grid;Grid=new SnowVolumeGrid{depth=(float[])src.depth.Clone(),credit=(float[])src.credit.Clone(),blocked=(bool[])src.blocked.Clone(),initialVolume=src.initialVolume,authoredLayoutVersion=src.authoredLayoutVersion};ReplaceGrid(Grid);}
+  public void ReplaceGrid(SnowVolumeGrid grid){Grid=grid;Grid.WakePiles();foreach(int id in chunks.Keys)MarkChunk(id);Recount();}
   void Seed() {
    Grid=new SnowVolumeGrid{authoredLayoutVersion=CurrentLayoutVersion};
    for(int i=0;i<Grid.depth.Length;i++) {
@@ -136,12 +137,13 @@ namespace Snowglow {
   }
   // Recovery unloads before teleporting, preserving the volume ledger even near
   // blocked cells or the playable snow boundary. Prefer the nearest discharge.
-  public float DropRecoveryLoad(Vector3 position,float amount){
+  public float DropRecoveryLoad(Vector3 position,float amount)=>DropRecoveryLoad(Grid,position,amount,Mark);
+  public static float DropRecoveryLoad(SnowVolumeGrid grid,Vector3 position,float amount,System.Action<int> changed){
    float min=SnowVolumeGrid.Origin+5,max=SnowVolumeGrid.Origin+SnowVolumeGrid.Size*SnowVolumeGrid.Cell-5;
    position.x=Mathf.Clamp(position.x,min,max);position.z=Mathf.Clamp(position.z,min,max);
-   float left=amount;left-=Dump(position,left);
+   float left=amount;left-=grid.Deposit(position.x,position.z,left,changed);
    for(float radius=2;left>.000001f&&radius<32;radius+=2)for(int side=0;side<8&&left>.000001f;side++){
-    float angle=side*Mathf.PI*.25f;left-=Dump(position+new Vector3(Mathf.Cos(angle)*radius,0,Mathf.Sin(angle)*radius),left);
+    float angle=side*Mathf.PI*.25f;left-=grid.Deposit(position.x+Mathf.Cos(angle)*radius,position.z+Mathf.Sin(angle)*radius,left,changed);
    }
    return amount-left;
   }
