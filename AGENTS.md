@@ -1,5 +1,62 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Original vehicle proportions and larger workshop - 14 November 2026
+
+User requested retaining actual tractor/loader proportions and expanding the
+platform/garage for future larger machines, accepting a smaller-looking tractor.
+Vehicle copies now preserve source world scale (including authored root scale),
+with only centring and seating; the previous independent 5.5 m fit is removed.
+Part presentation sizing remains. Stage diameter is 16 m, floor 42 x 42 m and
+room approximately 12 m high. Accessories retain their dimensions and move to
+the expanded perimeter. Camera defaults to 20 m, zoom 12?20 m, with raised
+ceiling protection and 65 m far plane. Future oversized machines still need
+platform/pose acceptance; arbitrary dimensions are not automatically supported.
+
+Updating an existing combined Mesh through CopySerialized left stale GPU geometry
+in the live Editor, exposing the old ceiling to the farther camera. Authoring now
+explicitly replaces mesh channels, recalculates bounds and uploads data while
+preserving asset GUIDs. A yellow stage/machinery render check catches that blank
+view; initial visually failed evidence was superseded by the corrected captures.
+Native Android compilation/reload, saved/reopened scene, 638 UI/session checks,
+187 flow checks, scene validation and 19 snow checks passed. Source/display mesh
+scale comparisons pass for both machines. Tractor/loader captures inspected at
+the same camera angle/distance. All 1,234 protected physics/Terrain/prefab records
+and both save hashes match the pre-task snapshot. Evidence/backup:
+Logs/WorkshopScale. No Play or phone acceptance performed. Decorative triangle
+counts and render-target resolution retain their previous values.
+
+## Full-screen 3D Garage and Shop - 14 November 2026
+
+User requested a 3D workshop below the retained winter banner, UI drawn over it,
+and an orbitable central vehicle/part stage. WorkshopPreviewAuthoring now saves
+an enclosed low-poly room with benches/vice/tools, storage crates/shelves, tool
+chests, tyre stacks, drums, compressors, extinguishers, roller doors and ceiling
+fixtures. Eight combined material meshes contain 11,368 vertices / 6,584 triangles
+for the decorative room and stage (excludes vehicle/part meshes). Three local,
+unshadowed lights and the existing layer-12 isolated display are used. Display
+copies have no machinery controllers or colliders. Existing illustrative engine
+preview remains an upgrade illustration. No runtime model/material/UI factories.
+
+The shared 1280 x 642 render target replaces 768 x 288 (~3.7x pixels). The saved
+RawImage covers the body/footer and expands to viewport width at runtime, with
+camera aspect matched. Small translucent UI contrast panels retain readability;
+shared Settings is drawn above the background. Other menu styling is restored
+on exit. Camera/room disable outside Garage/Shop. Drag empty display space for
+360-degree yaw and bounded vertical orbit; mouse wheel changes distance. Arrows
+browse machinery/parts. Angle persists between the two tabs; orbit is independent
+of paused gameplay time. Camera height/distance keep it inside the room.
+
+Android native forced compilation/reload, saved/reopened Pinefall, 622 UI/session
+checks, 187 progression/flow checks, scene validation and 19 snow checks passed.
+Checks include orbit gestures without accidental selection, camera room limits,
+Settings draw order, and existing purchases/service/navigation. Native Garage,
+Shop engine and reverse-view captures inspected. All 1,234 protected collider,
+Rigidbody, Terrain and prefab records match the pre-task scene; both player-save
+hashes match. Full authoring backs up scenes under Logs/ProductionUI. Final
+captures, original scene backup and preservation evidence: Logs/WorkshopInterior.
+Guide: WORKSHOP_INTERIOR.md. No Play entry; actual mobile touch, safe areas,
+Android packaging and phone rendering cost remain untested.
+
 ## Region images and generated town cards - 14 November 2026
 
 User requested generating the previously listed town images here, excluding

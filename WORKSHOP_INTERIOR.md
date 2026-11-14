@@ -1,0 +1,17 @@
+# Garage and Shop workshop
+
+Both tabs share an Editor-authored 3D interior and central machinery stage. Drag empty workshop space to orbit horizontally and vertically; the mouse wheel adjusts distance. Browse arrows change the vehicle or part. Orbiting works while the menu pauses gameplay. Vehicle and part displays share the viewing angle.
+
+The top winter banner stays intact. Stats, purchases, service, upgrades, navigation and confirmations remain Unity UI over the workshop. Small translucent contrast panels protect readability. The workshop camera renders only while Garage/Shop is open.
+
+The room is isolated on layer 12 at the existing preview location, away from Pinefall. Mesh-only copies of the machinery never simulate physics. Decorative room geometry is combined by material into saved meshes. Accessories include benches, tools, storage shelves/crates, tool chests, tyre stacks, drums, compressors, extinguishers, roller doors and ceiling fixtures. Three unshadowed local lights illuminate the display. The existing illustrative engine upgrade model remains a preview, not a replacement engine asset.
+
+The saved render target is 1280 x 642 instead of 768 x 288 (about 3.7 times the pixels). The background expands horizontally to the viewport and the camera adapts its aspect ratio. Orbit pitch and distance are bounded to keep the camera inside the room. No runtime model, material or UI factories are used.
+
+Rebuild using Snowglow > UI > Install reviewed production menus, or queue Logs/ProductionUI.request after the background compilation helper completes. This authoring saves Pinefall and backs up its previous scene under Logs/ProductionUI. Evidence is copied to Logs/WorkshopInterior. Phone rendering cost and actual touch/safe-area appearance require an Android build.
+
+The decorative interior/stage totals 11,368 vertices and 6,584 triangles across eight material meshes; vehicle/part meshes are additional. Native Android-target compilation/reload and saved-scene checks passed: 622 UI/session assertions, 187 flow/progression assertions and 19 snow checks. Front/back Garage and Shop engine captures were inspected. All 1,234 protected physics/Terrain/prefab records and both player-save hashes match the pre-task snapshot. These are Editor fixture results; no Play or device acceptance is implied.
+
+Vehicle scale revision: previews retain each source vehicle's world dimensions, including its authored root scale. They are seated/centred without fitting every machine into a common bounding box. Tyre/illustrative part previews retain their presentation sizing. The platform is 16 m in diameter; the garage floor is 42 x 42 m with approximately 12 m interior height. Current machinery therefore occupies different amounts of the platform. Future vehicles still need an envelope/pose check against the platform; this is not unlimited automatic accommodation. Camera distance is 12?20 m, with a 20 m default and ceiling-height protection. Decorative mesh/triangle counts remain unchanged.
+
+Scale revision validation: native Android-target compilation/reload, saved/reopened scene, 638 UI/session checks, 187 flow checks and 19 snow checks passed. Both vehicle copies match source mesh scales. The combined mesh updater explicitly refreshes CPU/GPU channels rather than relying on CopySerialized. Updated tractor/loader renders were inspected at the same camera framing. Evidence: Logs/WorkshopScale; protected physics records and save hashes match. Device acceptance remains separate.

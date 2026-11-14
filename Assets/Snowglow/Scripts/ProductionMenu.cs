@@ -159,6 +159,7 @@ namespace Snowglow {
    if(machinePicture)machinePicture.sprite=vehiclePictures[PreviewIndex];if(workshopPicture)workshopPicture.sprite=vehiclePictures[garageIndex];
    garageContent.SetActive(!ShopTab);shopContent.SetActive(ShopTab);
    overviewContent.SetActive(false);serviceContent.SetActive(!ShopTab);upgradesContent.SetActive(!ShopTab);
+   var footer=transform.Find("Screen content/Footer");if(footer){bool workshop=ScreenName=="garage";footer.GetComponent<Image>().color=workshop?new Color(.025f,.065f,.09f,.45f):new Color(.85f,.9f,.93f);foreach(var label in footer.GetComponentsInChildren<Text>(true))if(!label.GetComponentInParent<Button>())label.color=workshop?Color.white:new Color(.35f,.44f,.5f);}
    if(workshopPreview){workshopPreview.previewCamera.enabled=ScreenName=="garage";workshopPreview.gameObject.SetActive(ScreenName=="garage");if(ScreenName=="garage")workshopPreview.Show(garageIndex,PartIndex,ShopTab);}
    if(tabImages.Length>=2){tabImages[0].color=ShopTab?tabColor:selectedColor;tabImages[1].color=ShopTab?selectedColor:tabColor;}
    for(int i=0;i<settingsTabImages.Length;i++)settingsTabImages[i].color=SettingsTab==i?selectedColor:tabColor;

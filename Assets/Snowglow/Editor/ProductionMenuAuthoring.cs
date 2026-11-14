@@ -97,11 +97,11 @@ namespace Snowglow.Editor {
       var garageTab=Button(page,"Garage","workshop:garage",44,68,230,46,true);var shopTab=Button(page,"Shop","workshop:shop",286,68,230,46);ui.tabImages=new[]{garageTab.GetComponent<Image>(),shopTab.GetComponent<Image>()};ui.selectedColor=Yellow;ui.tabColor=Line;
       // Three columns follow the supplied sketches: stats / preview / upgrades or description.
       Text(page,"VEHICLE STATS",44,229,245,220,19,Ink,"garage-status");
-      Text(page,"Golden Snow Tractor",326,208,628,36,25,Ink,"garage-name").alignment=TextAnchor.MiddleCenter;
+      Text(page,"Golden Snow Tractor",326,128,628,36,25,Ink,"garage-name").alignment=TextAnchor.MiddleCenter;
       ui.workshopPreview=WorkshopPreviewAuthoring.Build(root,UnityEngine.Object.FindFirstObjectByType<PrototypeSession>().Fleet);
-      var previewRect=Rect("3D vehicle and part view",page,356,250,568,212);var raw=previewRect.gameObject.AddComponent<RawImage>();raw.texture=ui.workshopPreview.previewCamera.targetTexture;var workshopSwipe=previewRect.gameObject.AddComponent<MachinerySwipe>();workshopSwipe.menu=ui;
+      var previewRect=Rect("3D vehicle and part view",page,0,0,1280,642);previewRect.SetAsFirstSibling();var raw=previewRect.gameObject.AddComponent<RawImage>();raw.texture=ui.workshopPreview.previewCamera.targetTexture;var workshopSwipe=previewRect.gameObject.AddComponent<MachinerySwipe>();workshopSwipe.menu=ui;workshopSwipe.orbit=true;
       Button(page,"<","browse:-1",278,320,64,64);Button(page,">","browse:1",938,320,64,64);
-      Text(page,"OWNED",356,465,568,25,16,Muted,"garage-owned").alignment=TextAnchor.MiddleCenter;Text(page,"1 / 2",356,493,568,23,15,Muted,"workshop-position").alignment=TextAnchor.MiddleCenter;
+      Text(page,"OWNED",356,164,400,25,16,Muted,"garage-owned").alignment=TextAnchor.MiddleCenter;Text(page,"1 / 2",765,164,160,23,15,Muted,"workshop-position").alignment=TextAnchor.MiddleCenter;
       Text(page,"AT DEPOT",44,187,1190,24,16,Muted,"workshop-location");
       ui.garageContent=Group(page,"Garage tab",0,0,1280,564);
       ui.overviewContent=Group(ui.garageContent.transform,"Legacy overview",0,0,1,1);
@@ -114,7 +114,12 @@ namespace Snowglow.Editor {
       Button(ui.garageContent.transform,"Select & Drive","drive",356,518,278,42,true,"drive");Button(ui.garageContent.transform,"Buy Vehicle","buy-vehicle",646,518,278,42,false,"vehicle-buy");
       ui.shopContent=Group(page,"Shop tab",0,0,1280,564);Button(ui.shopContent.transform,"Test Transactions","nav:store",846,12,242,42,false,"shop-transactions");Text(ui.shopContent.transform,"Part details",1022,229,210,270,17,Ink,"part-description");Button(ui.shopContent.transform,"Buy & Fit","buy-part",356,518,568,42,true,"part-buy");
       ui.upgradeSegments=new Image[6];for(int i=0;i<6;i++)ui.upgradeSegments[i]=Fill(Rect("Upgrade level "+i,ui.upgradesContent.transform,(i%3)*70,i<3?133:234,64,8),Line);
-      ui.garageTabImages=new Image[0];break;
+      ui.garageTabImages=new Image[0];
+      foreach(var label in page.GetComponentsInChildren<Text>(true))if(!label.GetComponentInParent<Button>()){label.color=Color.white;var outline=label.gameObject.AddComponent<Shadow>();outline.effectColor=new Color(0,0,0,.8f);outline.effectDistance=new Vector2(1,-1);}
+      var statsShade=Rect("Stats contrast",page,30,222,260,310);Fill(statsShade,new Color(.025f,.065f,.09f,.72f)).raycastTarget=false;statsShade.SetSiblingIndex(1);
+      var upgradeShade=Rect("Upgrade contrast",page,1008,222,238,310);Fill(upgradeShade,new Color(.025f,.065f,.09f,.72f)).raycastTarget=false;upgradeShade.SetSiblingIndex(1);
+      Text(page,"DRAG TO ORBIT",400,12,420,25,14,Color.white).alignment=TextAnchor.MiddleCenter;
+      break;
      case "settings":
       Title(page,"PREFERENCES","Make yourself comfortable.");
       ui.settingsTabImages=new Image[3];for(int i=0;i<3;i++)ui.settingsTabImages[i]=Button(page,new[]{"Audio","Graphics","Controls"}[i],"settings-tab:"+i,44,222+i*64,250,48,i==0).GetComponent<Image>();
@@ -135,6 +140,7 @@ namespace Snowglow.Editor {
    // Shared bottom band. Job-specific footer appears only on the selector.
    var footer=Rect("Footer",content,0,642,1280,78);Fill(footer,Line);Text(footer,"Welcome to Pinefall.",44,10,890,48,17,Muted,"notice");Text(footer,"LEVEL 1 · 0 XP",44,57,800,19,13,Muted,"level");Button(footer,"Resume Job","continue",1000,14,232,48,false,"resume-footer");
    var selector=pages[names.ToList().IndexOf("machinery")];Text(selector.transform,"Depot Access",44,530,850,32,18,Ink,"machine-job");Button(selector.transform,"Start Job","start",1000,508,232,48,true,"start");
+   content.Find("global-settings").SetAsLastSibling();
    var modal=Rect("Confirmation overlay",root,0,0,1280,720);Fill(modal,new Color(.03f,.09f,.14f,.88f));ui.dialog=modal.gameObject;var dialog=Rect("Dialog",modal,300,174,680,372);Fill(dialog,Paper);Text(dialog,"Confirm",30,28,530,65,28,Ink,"dialog-title");Text(dialog,"Details",30,107,620,135,20,Muted,"dialog-body");Text(dialog,"Cost",30,220,620,40,22,Ink,"dialog-price");Button(dialog,"Cancel","dialog-secondary",30,290,280,50,false,"cancel");Button(dialog,"Confirm","accept",330,290,320,50,true,"accept");Button(dialog,"\u00D7","cancel",596,16,52,44,false,"dialog-close");modal.gameObject.SetActive(false);
    ui.pages=pages.ToArray();ui.pageNames=names;ui.labels=labels.ToArray();ui.buttons=buttons.ToArray();ui.vehiclePictures=new[]{AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/tractor.jpg"),AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/loader.jpg")};CareerCardAuthoring.ApplyIfPrepared(hud);EditorUtility.SetDirty(hud);EditorUtility.SetDirty(ui);
   }
