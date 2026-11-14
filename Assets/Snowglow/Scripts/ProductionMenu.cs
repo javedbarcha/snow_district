@@ -171,7 +171,7 @@ namespace Snowglow {
    string fittedNames="";foreach(MachineryPartKind kind in Enum.GetValues(typeof(MachineryPartKind)))fittedNames+=MachineryParts.At(m.definition.loader,m.FittedPart(kind)).name+" ["+m.PartLevel(kind)+"/3]\n";
    SetLabel("garage-status",ShopTab?("PART STATS\n"+MachineryParts.Effect(part,partLevel)+"\nBase bonus: "+((part.multiplier-1)*100).ToString("F0")+"%\nUpgrade: +"+(part.PerLevel*100).ToString("F0")+"% / level\n\n"+m.definition.displayName):("FITTED EQUIPMENT\n"+fittedNames+"\nFuel: "+Mathf.RoundToInt(m.FuelRatio*100)+"% / Condition: "+m.Condition.ToString("F0")+"%\nGrip: x"+m.GripMultiplier.ToString("F2")+" / Torque: x"+m.EngineMultiplier.ToString("F2")+"\nSnow rate: x"+m.SnowRateMultiplier.ToString("F2")));
    SetLabel("workshop-position",ShopTab?(PartIndex+1)+" / "+MachineryParts.Count+" PARTS":(garageIndex+1)+" / "+g.Fleet.Length+" VEHICLES");
-   SetLabel("part-description",part.description+"\n\nCompatible with:\n"+m.definition.displayName+"\n\n"+MachineryParts.Effect(part,partLevel)+"\n3 upgrade slots per part.\nFactory parts included.\nPreview uses existing rig.");
+   SetLabel("part-description",part.description+"\n\nCompatible with:\n"+m.definition.displayName+"\n\n"+MachineryParts.Effect(part,partLevel)+"\n3 upgrade slots per part.\nFactory parts included.\nDistinct low-poly display.");
    Enable("drive",m.Owned);Enable("vehicle-buy",!m.Owned);SetLabel("drive",garageIndex==p.active?"Selected / Back":garageReturn==""&&p.inJob?"Select & Resume":"Select & Back");
    Enable("buy",!g.Fleet[1].Owned);Enable("owned",g.Fleet[1].Owned);
    bool service=m.Owned&&g.Active.AtDepot&&g.Active.Speed<=1&&(!g.Active.Body||g.Active.Body.linearVelocity.magnitude<=1);

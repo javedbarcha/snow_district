@@ -18,7 +18,10 @@ namespace Snowglow.Editor {
     File.Copy(scene.path,Folder+"/Pinefall-before-"+DateTime.UtcNow.ToString("yyyyMMdd-HHmmss")+".unity");
     if(scene.isDirty&&!EditorSceneManager.SaveScene(scene,Folder+"/Pinefall-unsaved-before.unity",true))throw new IOException("Unsaved scene backup failed");
     var game=scene.GetRootGameObjects().SelectMany(x=>x.GetComponentsInChildren<PrototypeSession>(true)).Single();
-    WorkshopPreviewAuthoring.BuildParts(game.HUD.productionMenu.workshopPreview,game.Fleet);ProductionMenuAuthoring.ConfigurePartsUI(game.HUD.productionMenu);
+    string factory=MachineryPartModelChecks.FactorySignature(game.HUD.productionMenu.workshopPreview);
+    WorkshopPreviewAuthoring.BuildParts(game.HUD.productionMenu.workshopPreview,game.Fleet);
+    if(factory!=MachineryPartModelChecks.FactorySignature(game.HUD.productionMenu.workshopPreview))throw new InvalidOperationException("Factory blade models changed");
+    MachineryPartModelChecks.Run(game.HUD.productionMenu.workshopPreview);ProductionMenuAuthoring.ConfigurePartsUI(game.HUD.productionMenu);
     SceneValidation.Validate(scene);EditorSceneManager.MarkSceneDirty(scene);if(!EditorSceneManager.SaveScene(scene))throw new IOException("Scene save failed");AssetDatabase.SaveAssets();
     scene=EditorSceneManager.OpenScene(SceneValidation.ScenePath);game=scene.GetRootGameObjects().SelectMany(x=>x.GetComponentsInChildren<PrototypeSession>(true)).Single();
     ProductionMenuChecks.Run(game.HUD);SceneValidation.Validate(scene);MechanicsChecks.Run();RecoveryPhysicsChecks.Run();LoaderCycleChecks.Run();
@@ -73,6 +76,7 @@ namespace Snowglow.Editor {
     m.RestoreParts(null);game.Open("dashboard");
    }
    game.Profile.coins=20000;game.Profile.active=0;game.Notice="Choose equipment in Shop, or upgrade the fitted parts in Garage.";game.Open("garage");ProductionMenuChecks.Capture(game.HUD,"parts-garage",1280,720);ui.Execute("workshop:shop");ui.Browse(6);ProductionMenuChecks.Capture(game.HUD,"parts-blade",1280,720);ui.Browse(-2);ProductionMenuChecks.Capture(game.HUD,"parts-engine",1280,720);ui.Browse(-1);ProductionMenuChecks.Capture(game.HUD,"parts-tyres",1280,720);
+   ui.Execute("garage:1");ui.Browse(2);ui.workshopPreview.Orbit(new Vector2(180/.22f,0));ProductionMenuChecks.Capture(game.HUD,"parts-loader-default-rear",1280,720);ui.workshopPreview.Orbit(new Vector2(-180/.22f,0));
    Directory.CreateDirectory(Folder);File.WriteAllText(Folder+"/Checks.txt","PASS: "+checks+" native checks: catalogue counts, legacy migration, JSON loadouts, per-part levels/caps/effects, independent vehicle ownership, cancel/insufficient/duplicate transactions, refitting and location/motion/ownership gates. Fixture only; no real saves or Play entry.");
   }
  }

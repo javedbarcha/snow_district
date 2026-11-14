@@ -3,8 +3,11 @@
 Each vehicle has seven compatible parts: **three tyre types, two engines and two
 blades** (buckets for the loader). Counts include the three factory parts, which
 start owned and fitted. The other four are purchased separately for that vehicle.
-These are gameplay variants using the current reviewed models and attachment rig;
-the Shop reuses those models as previews. New replacement meshes are not supplied.
+The Shop uses twelve distinct low-poly visual assets: six tyres, four engines
+and two new heavy-duty attachments. The two factory blade/bucket previews retain
+their existing meshes. The playable machinery still uses its reviewed physical
+and visual rigs; these new presentation assets are not automatically fitted to
+those rigs. See MACHINERY_PART_MODELS.md.
 
 | Part | Tractor price | Loader price | Base effect |
 | --- | ---: | ---: | --- |

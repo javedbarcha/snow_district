@@ -1,5 +1,73 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Shop engine connections and attachment mounts - 15 November 2026
+
+User reports floating air cleaners on both tractor engines, primitive rear
+blocks on the standard loader bucket, and missing default-style hydraulics on
+the upgraded tractor plow. Consequences explained before editing: Shop visuals
+only, preserving gameplay rigs, collision, handling and performance values.
+MachineryPartModels adds connected filter support plates, brackets and intake
+pipes on all four engines. RefineLoaderMounts replaces only the Shop copy's
+rear-lug mesh with shaped plates and pins; bucket shell/placement remain.
+The upgraded plow reuses the original tractor lift assembly, extracted by
+Tools/AssetIntake/export_shop_plow_hydraulics.py from the preserved source with
+Blender autoexecution disabled. New TractorDefaultHydraulics.fbx/json preserve
+geometry, source components and checksum; original tractor palette materials
+are reused. Generic new-plow mounting ears are replaced by this assembly.
+FactorySignature excludes the deliberately replaced bucket lugs, retaining
+its checks on the original shell and tractor default attachment. Source mesh
+counts include all renderers on the upgraded plow. Guides: MACHINERY_PART_MODELS.md.
+Evidence/backups: Logs/PartMountRevision; native import uses the existing
+Logs/MachineryParts.request only after forced compile/domain reload success.
+Android-defined compilation and native forced compile/domain reload passed.
+Unity saved/reopened Pinefall; 152 model, 183 parts, 664 UI, 187 flow, 34 Career
+snow, 19 snow-ledger, 1,108 recovery and 1,134 loader-cycle assertions passed.
+Engine rear views, upgraded hydraulic frame and standard loader rear were
+visually inspected. Original tractor default and loader shell signatures remain;
+all 15 protected save/seed/source hashes and 1,234 physics/Terrain/prefab records
+matched. No Play entry, player-save writes, source overwrite or gameplay/physics
+changes. Original reused hydraulic frame is 716 triangles; combined upgraded
+plow is 1,292 triangles / two renderers / eleven slots. New loader Shop lugs are
+320 triangles. A first check compared the mesh display name, which Unity renames;
+corrected to persistent asset path plus geometry. Initial failed report retained.
+Android packaging/device acceptance remains untested.
+
+## Distinct low-poly machinery Shop models - 15 November 2026
+
+User requested correcting flat tyre inner faces and replacing reused/primitive
+Shop parts with distinct models: six tyres, four engines and two new blades /
+buckets, preserving the two predefined attachments. Consequences explained
+before editing: this is visual Shop asset work with added display geometry;
+performance values and physical machinery remain unchanged.
+MachineryPartModels is the retained deterministic Editor source. It prepares
+12 reusable mesh/material/prefab assets under Catalog/Sources/MachineryParts
+and registers stable machinery-shop-* catalogue entries as Needs Review with
+provenance/metrics. No Ready/fitting claims or runtime geometry factories.
+Tyres have dished rims/hubs/bolts on both faces; winter tread differs from
+standard tread, and chains use closed mesh links plus side chains. Engines are
+tractor inline-four / turbo inline-six and loader V6 / twin-turbo V8, with
+radiators, filters, manifolds, fans and mount details. New attachments are a
+curved reinforced plow and an open reinforced five-tooth bucket. The old
+primitive engine builder is removed. Factory attachment mesh/transform signatures
+are checked unchanged before scene save. Saved display copies reuse these assets;
+only the selected part is visible. Gameplay loadout visuals still require
+pair-specific fitting and are not replaced by this presentation revision.
+Guide: MACHINERY_PART_MODELS.md; repeat marker Logs/MachineryParts.request after
+native compile exit 0. Evidence and both-sided renders: Logs/MachineryPartModels.
+
+Android-defined offline compilation and native forced compile/domain reload passed.
+Unity saved/reopened Pinefall. All 150 model geometry/render checks, 183 parts,
+661 UI, 187 flow, 34 Career snow, 19 snow-ledger, 1,108 isolated recovery and
+1,134 loader-cycle assertions passed. Twelve models range from 776 to 5,712
+triangles, each one saved renderer with shared URP materials and 16-bit indices.
+Front/rear model renders and Shop views were inspected. Both predefined blade /
+bucket signatures are unchanged; all 14 save/seed hashes and 1,234 protected
+physics/Terrain/prefab records matched. No Play entry, player-save writes or
+Android packaging/device acceptance. Gameplay fitting/handling remain separate.
+Initial standalone captures were blank because preview-scene geometry was not
+rendered by the camera. The staging was corrected and nonempty front/rear render
+assertions added; the initial blank sheet remains as diagnostic evidence.
+
 ## Per-vehicle parts and individual upgrades - 15 November 2026
 
 User requested per machinery totals of two engines, three tyre types and two

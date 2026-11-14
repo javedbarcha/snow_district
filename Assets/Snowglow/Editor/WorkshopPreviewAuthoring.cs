@@ -28,12 +28,12 @@ namespace Snowglow.Editor {
   public static void BuildParts(WorkshopPreview view,MachineController[] fleet){
    foreach(var old in view.parts)if(old)UnityEngine.Object.DestroyImmediate(old);
    view.parts=new GameObject[fleet.Length*MachineryParts.Count];
-   var steel=Material("WorkshopSteel",new Color(.10f,.16f,.20f));var yellow=Material("WorkshopSafety",new Color(1,.67f,.05f));
+   MachineryPartModels.Prepare();
    for(int vehicle=0;vehicle<fleet.Length;vehicle++)for(int index=0;index<MachineryParts.Count;index++){
     var machine=fleet[vehicle];var part=MachineryParts.At(machine.definition.loader,index);GameObject model;
-    if(part.kind==MachineryPartKind.Tyres){var wheel=machine.wheelVisuals.FirstOrDefault(t=>t&&t.GetComponentsInChildren<MeshFilter>(true).Length>0);model=Copy(wheel?wheel:machine.transform,view.transform,part.name,3.5f);}
-    else if(part.kind==MachineryPartKind.Engine)model=EnginePart(view.transform,vehicle,steel,yellow);
-    else model=Copy(machine.Tool.bucket?machine.Tool.bucket:machine.Tool.mount,view.transform,part.name,4f);
+    if(index==5)model=Copy(machine.Tool.bucket?machine.Tool.bucket:machine.Tool.mount,view.transform,part.name,4f);
+    else {model=UnityEngine.Object.Instantiate(MachineryPartModels.Get(machine.definition.loader,index),view.transform);var meshes=model.GetComponentsInChildren<Renderer>();var bounds=meshes[0].bounds;foreach(var renderer in meshes)bounds.Encapsulate(renderer.bounds);float scale=4.2f/Mathf.Max(bounds.size.x,bounds.size.y,bounds.size.z);model.transform.localScale=Vector3.one*scale;model.transform.localPosition=new Vector3(-bounds.center.x+view.transform.position.x,-bounds.min.y+view.transform.position.y,-bounds.center.z+view.transform.position.z)*scale;}
+    if(machine.definition.loader&&index==5)MachineryPartModels.RefineLoaderMounts(model);
     model.name=machine.definition.id+" / "+part.name;model.transform.localPosition+=Vector3.up*.32f;model.SetActive(false);view.parts[vehicle*MachineryParts.Count+index]=model;
    }
    EditorUtility.SetDirty(view);
@@ -78,8 +78,6 @@ namespace Snowglow.Editor {
   }
   static void Cylinder(Transform p,string name,Vector3 position,Vector3 scale,Material m){var go=GameObject.CreatePrimitive(PrimitiveType.Cylinder);go.name=name;go.layer=Layer;go.transform.SetParent(p,false);go.transform.localPosition=position;go.transform.localScale=scale;UnityEngine.Object.DestroyImmediate(go.GetComponent<Collider>());go.GetComponent<MeshRenderer>().sharedMaterial=m;}
   static Material Material(string name,Color color){string path=ProductionMenuAuthoring.ArtFolder+"/"+name+".mat";var m=AssetDatabase.LoadAssetAtPath<Material>(path);if(!m){m=new Material(Shader.Find("Universal Render Pipeline/Lit"));m.SetColor("_BaseColor",color);m.SetFloat("_Smoothness",.1f);AssetDatabase.CreateAsset(m,path);}return m;}
-  // Generic low-poly upgrade illustration, not a mechanical replacement for the vehicle's source model.
-  static GameObject EnginePart(Transform parent,int index,Material steel,Material yellow){var root=new GameObject("Engine upgrade display "+index);root.transform.SetParent(parent,false);Block(root.transform,"Engine block",new Vector3(0,.9f,0),new Vector3(2.2f,1.2f,1.3f),steel);Block(root.transform,"Oil sump",new Vector3(0,.25f,0),new Vector3(1.8f,.4f,1.1f),steel);for(int i=0;i<3;i++){Block(root.transform,"Cylinder head",new Vector3(-.7f+i*.7f,1.65f,0),new Vector3(.6f,.45f,1.3f),yellow);Block(root.transform,"Exhaust runner",new Vector3(-.7f+i*.7f,1.1f,.85f),new Vector3(.18f,.7f,.35f),steel);}Block(root.transform,"Exhaust manifold",new Vector3(0,.8f,1.05f),new Vector3(2.1f,.25f,.25f),steel);Block(root.transform,"Flywheel casing",new Vector3(1.3f,.85f,0),new Vector3(.35f,1.25f,1.45f),yellow);root.transform.localScale=Vector3.one*1.3f;root.SetActive(false);return root;}
   static void Block(Transform parent,string name,Vector3 position,Vector3 size,Material material){var go=GameObject.CreatePrimitive(PrimitiveType.Cube);go.name=name;go.layer=Layer;go.transform.SetParent(parent,false);go.transform.localPosition=position;go.transform.localScale=size;UnityEngine.Object.DestroyImmediate(go.GetComponent<Collider>());go.GetComponent<MeshRenderer>().sharedMaterial=material;go.GetComponent<MeshRenderer>().shadowCastingMode=ShadowCastingMode.Off;}
   static GameObject Copy(Transform source,Transform parent,string name,float fit=0){
    var root=new GameObject(name);root.transform.SetParent(parent,false);

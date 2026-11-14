@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca395da9c16194d8575fece1ac0cf8, type: 3}
+  m_Name: machinery-shop-loader-tyres-standard
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.CatalogAsset
+  id: machinery-shop-loader-tyres-standard
+  displayName: Standard loader tyres
+  kind: 2
+  status: 1
+  uiSprites: []
+  prefab: {fileID: 7130202702534146047, guid: edf23d36717152b41a0840324454ad85, type: 3}
+  tags: []
+  sourceType: 3
+  sourceGuid: e726b1407c994eab9bf8f0982ae0eb55
+  sourcePath: Assets/Snowglow/Editor/MachineryPartModels.cs
+  creationSourcePath: Assets/Snowglow/Editor/MachineryPartModels.cs
+  reviewedPrefabHash: 
+  provenance: User-directed low-poly Shop models, deterministically authored by the
+    retained Editor generator. Factory blade models preserved.
+  assumptions: Shop presentation asset. Physical rig, source machinery and performance
+    values unchanged. Requires pair-specific fitting before any gameplay visual replacement.
+  reviewNotes: Inspect both tyre faces, chained tread, engine components and both
+    attachment sides. Not a Ready gameplay assembly.
+  visualReviewed: 0
+  localBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0.5653048, y: 1.447588, z: 1.4474173}
+  triangles: 2256
+  renderers: 1
+  materialSlots: 8
+  price: 0
+  vehicle: {fileID: 0}
+  attachment: {fileID: 0}
+  interfaceId: 
+  addedMass: 0
+  torqueMultiplier: 1
+  gripMultiplier: 1
+  wheelRadius: 0.5
+  wheelWidth: 0.3
+  wheelMass: 45
+  mirrorRightWheels: 1
+  minimumScale: 1
+  maximumScale: 1
+  blocksSnow: 0
