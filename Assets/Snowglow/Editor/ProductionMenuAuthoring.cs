@@ -142,7 +142,25 @@ namespace Snowglow.Editor {
    var selector=pages[names.ToList().IndexOf("machinery")];Text(selector.transform,"Depot Access",44,530,850,32,18,Ink,"machine-job");Button(selector.transform,"Start Job","start",1000,508,232,48,true,"start");
    content.Find("global-settings").SetAsLastSibling();
    var modal=Rect("Confirmation overlay",root,0,0,1280,720);Fill(modal,new Color(.03f,.09f,.14f,.88f));ui.dialog=modal.gameObject;var dialog=Rect("Dialog",modal,300,174,680,372);Fill(dialog,Paper);Text(dialog,"Confirm",30,28,530,65,28,Ink,"dialog-title");Text(dialog,"Details",30,107,620,135,20,Muted,"dialog-body");Text(dialog,"Cost",30,220,620,40,22,Ink,"dialog-price");Button(dialog,"Cancel","dialog-secondary",30,290,280,50,false,"cancel");Button(dialog,"Confirm","accept",330,290,320,50,true,"accept");Button(dialog,"\u00D7","cancel",596,16,52,44,false,"dialog-close");modal.gameObject.SetActive(false);
-   ui.pages=pages.ToArray();ui.pageNames=names;ui.labels=labels.ToArray();ui.buttons=buttons.ToArray();ui.vehiclePictures=new[]{AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/tractor.jpg"),AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/loader.jpg")};CareerCardAuthoring.ApplyIfPrepared(hud);EditorUtility.SetDirty(hud);EditorUtility.SetDirty(ui);
+   ui.pages=pages.ToArray();ui.pageNames=names;ui.labels=labels.ToArray();ui.buttons=buttons.ToArray();ui.vehiclePictures=new[]{AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/tractor.jpg"),AssetDatabase.LoadAssetAtPath<Sprite>(ArtFolder+"/loader.jpg")};ConfigurePartsUI(ui);CareerCardAuthoring.ApplyIfPrepared(hud);EditorUtility.SetDirty(hud);EditorUtility.SetDirty(ui);
+  }
+  internal static void ConfigurePartsUI(ProductionMenu menu){
+   ui=menu;font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+   foreach(Transform child in ui.upgradesContent.transform.Cast<Transform>().ToArray())UnityEngine.Object.DestroyImmediate(child.gameObject);
+   labels=ui.labels.Where(x=>x.text).ToList();buttons=ui.buttons.Where(x=>x.button).ToList();
+   Text(ui.upgradesContent.transform,"FITTED PART UPGRADES",0,0,210,28,17,Color.white);
+   var names=new[]{"tyres","engine","blade"};var descriptions=new[]{"+12% grip / level","+18% torque / level","+10% snow rate / level"};
+   ui.upgradeSegments=new Image[9];
+   for(int i=0;i<3;i++){
+    Button(ui.upgradesContent.transform,names[i],"confirm:"+names[i],0,32+i*86,210,44,false,names[i]);
+    Text(ui.upgradesContent.transform,descriptions[i],0,78+i*86,210,22,15,Color.white);
+    for(int j=0;j<3;j++)ui.upgradeSegments[i*3+j]=Fill(Rect("Upgrade level "+(i*3+j),ui.upgradesContent.transform,j*70,100+i*86,64,7),Line);
+   }
+   ((RectTransform)ui.upgradesContent.transform).sizeDelta=new Vector2(210,290);
+   var buy=(RectTransform)ui.Button("part-buy").transform;buy.anchoredPosition=new Vector2(356,-518);buy.sizeDelta=new Vector2(278,42);ui.Label("part-buy").rectTransform.sizeDelta=new Vector2(258,32);
+   if(!ui.Button("part-upgrade"))Button(ui.shopContent.transform,"Upgrade 0 / 3","upgrade-part",646,518,278,42,false,"part-upgrade");
+   ui.Label("garage-status").fontSize=17;
+   ui.labels=labels.ToArray();ui.buttons=buttons.ToArray();EditorUtility.SetDirty(ui);
   }
   static void RemovePhysicsOverlay(){
    const string folder="Logs/RemovePhysicsOverlay";Directory.CreateDirectory(folder);var scene=UnityEngine.SceneManagement.SceneManager.GetActiveScene();if(scene.path!=SceneValidation.ScenePath)throw new InvalidOperationException("Open Pinefall");File.Copy(scene.path,folder+"/Pinefall-before-"+DateTime.Now.ToString("yyyyMMdd-HHmmss")+".unity");if(scene.isDirty&&!EditorSceneManager.SaveScene(scene,folder+"/Pinefall-unsaved-before.unity",true))throw new IOException("Unsaved scene backup failed");

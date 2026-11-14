@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Snowglow {
  [Serializable]public sealed class MachineSave {
   public string id;public bool owned;public float fuel,condition,load,lift,tilt,angle;public bool auto=true,working=true;
-  public int tyres,engine;public Vector3 position;public Quaternion rotation;
+  public int tyres,engine;public MachineryPartSave[] parts;public string[] fittedParts;public Vector3 position;public Quaternion rotation;
  }
  [Serializable]public sealed class ProfileSave {
   public int schema=2,coins=1800,xp,job,active;public bool freeWork,inJob;public float remaining=720,earned,chain,chainTime;

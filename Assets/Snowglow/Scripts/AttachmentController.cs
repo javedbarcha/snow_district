@@ -42,7 +42,7 @@ namespace Snowglow {
    bool low=machine.definition.loader?Lift<.18f&&Tilt<.35f:Working;
    if(!unloading&&!dumping&&low&&Working&&forwardSpeed>.08f&&center.y<SnowField.Ground+PrototypeSession.Instance.Snow.Depth(center)+.7f){
     int samples=haveLast?Mathf.Clamp(Mathf.CeilToInt(Vector3.Distance(center,last)/.45f),1,8):1;
-    float budget=dt*(machine.definition.loader?1.4f:2.2f)*(1+machine.Engine*.18f);float moved=0,fresh=0;
+    float budget=dt*(machine.definition.loader?1.4f:2.2f)*machine.SnowRateMultiplier;float moved=0,fresh=0;
     if(machine.definition.loader)budget=Mathf.Min(budget,Mathf.Max(0,machine.equipment.capacity-Load));
     Vector3 destination=center+machine.transform.forward*2.2f+machine.transform.right*(Angle==0?0:Mathf.Sign(Angle)*(machine.equipment.width*.5f+1.6f));
     for(int s=1;s<=samples;s++){

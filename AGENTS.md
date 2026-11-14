@@ -1,5 +1,36 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Per-vehicle parts and individual upgrades - 15 November 2026
+
+User requested per machinery totals of two engines, three tyre types and two
+blades (loader buckets), including factory-fitted defaults. MachineryParts is a
+stable gameplay catalogue separate from Editor source-model preparation. Seven
+entries per machine; three factory parts start owned/fitted, four alternatives
+are purchased independently. Shop separates Buy & Fit / free Fit from Upgrade;
+every individual owned part has three slots, priced 200/400/600. Garage upgrades
+the fitted tyre, engine or blade with nine saved level segments. Replaced parts
+retain ownership/levels. Confirmations pin the target; backend checks funds,
+ownership, stopped/depot gates and caps. Old saves migrate tyre/engine levels
+onto default equipment; additive MachineSave parts/fittedParts store loadouts.
+
+Consequences explained before editing: grip/torque/snow-throughput change for
+audit, while original model dimensions, blade/bucket poses, capacity, mass,
+colliders and suspension stay unchanged. Variants reuse existing reviewed
+models in saved Editor-authored previews; no new source meshes, Ready catalogue
+claims or runtime factories. Prices/multipliers are audit starting values, not
+validated final balance. Guide: MACHINERY_PARTS.md. Targeted import/save/check
+marker: Logs/MachineryParts.request after native compile exit 0. Preserve disk
+and unsaved scene copies before authoring; no district rebake.
+
+Android-defined offline compilation and native forced compile/domain reload passed.
+Unity saved/reopened Pinefall; 183 new parts checks, 661 UI, 187 flow, 34 Career
+snow, 19 snow-ledger, 1,108 isolated recovery-physics and 1,134 loader-cycle
+assertions passed. Garage, tyre, engine and blade native renders were inspected.
+All 14 protected save/seed file hashes and 1,234 Rigidbody/collider/Terrain/prefab
+blocks matched before/after. Evidence/backups: Logs/MachineryParts. No Play entry
+or real player-save writes; actual combination handling/balance and Android
+packaging/device acceptance remain pending.
+
 ## Persistent Career town snow and venue-only replay - 15 November 2026
 
 User requested keeping completed Career snow plowed unless its job is replayed.

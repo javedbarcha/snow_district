@@ -17,9 +17,9 @@ namespace Snowglow {
    Application.runInBackground=Application.isEditor;
    Profile=SaveStore.Load();Profile.debug=false;Profile.active=Mathf.Clamp(Profile.active,0,Fleet.Length-1);
    for(int i=0;i<Fleet.Length;i++){
-    var m=Fleet[i];m.Initialize();m.Owned=i==0;m.Fuel=m.definition.fuelCapacity;
+    var m=Fleet[i];m.Initialize();m.RestoreParts(null);m.Owned=i==0;m.Fuel=m.definition.fuelCapacity;
     if(Profile.machines!=null)foreach(var save in Profile.machines)if(save.id==m.definition.id){
-     m.Owned=save.owned;m.Fuel=Mathf.Clamp(save.fuel,0,m.definition.fuelCapacity);m.Condition=Mathf.Clamp(save.condition,0,100);m.Tyres=Mathf.Clamp(save.tyres,0,3);m.Engine=Mathf.Clamp(save.engine,0,3);
+     m.Owned=save.owned;m.Fuel=Mathf.Clamp(save.fuel,0,m.definition.fuelCapacity);m.Condition=Mathf.Clamp(save.condition,0,100);m.Tyres=Mathf.Clamp(save.tyres,0,3);m.Engine=Mathf.Clamp(save.engine,0,3);m.RestoreParts(save);
      m.Tool.Load=Mathf.Clamp(save.load,0,m.equipment.capacity);m.Tool.Lift=save.lift;m.Tool.Tilt=save.tilt;m.Tool.Angle=save.angle;m.Tool.Auto=true;m.Tool.Working=save.working;
      if(Profile.inJob&&save.position.y>0&&Mathf.Abs(save.position.x)<480&&Mathf.Abs(save.position.z)<480)m.transform.SetPositionAndRotation(save.position,save.rotation);
     }
@@ -117,10 +117,19 @@ namespace Snowglow {
   }
   public void BuyMachine(int i){if(Fleet[i].Owned){Notice="Already owned.";return;}if(!Pay(Fleet[i].definition.price))return;Fleet[i].Owned=true;Notice="Machine purchased and waiting at the depot.";Save();HUD.RefreshMenu();}
   bool Pay(int cost){if(Profile.coins<cost){Notice="Not enough coins. Use the dummy store for prototype testing.";return false;}Profile.coins-=cost;return true;}
-  public void Upgrade(bool tyres){
-   if(!Active.AtDepot){Notice="Return to the depot to fit parts.";return;}int level=tyres?Active.Tyres:Active.Engine;
-   if(level>=3){Notice="Upgrade already at maximum.";return;}if(!Pay(200+level*200))return;
-   if(tyres)Active.Tyres++;else Active.Engine++;Notice="Compatible part fitted to "+Active.definition.displayName;Audio.Chime();Save();HUD.RefreshMenu();
+  bool CanFitParts(){if(!Active.Owned){Notice="Own the vehicle before buying parts.";return false;}if(!Active.AtDepot||Active.Speed>1||Active.Body&&Active.Body.linearVelocity.magnitude>1){Notice="Stop at the depot to buy, fit or upgrade parts.";return false;}return true;}
+  public void Upgrade(bool tyres){UpgradePart(Active.FittedPart(tyres?MachineryPartKind.Tyres:MachineryPartKind.Engine));}
+  public void BuyOrFitPart(int index){
+   if(index<0||index>=MachineryParts.Count||!CanFitParts())return;
+   var part=MachineryParts.At(Active.definition.loader,index);
+   if(!Active.PartOwned(index)){if(!Pay(part.price))return;Active.SetPartOwned(index);}
+   Active.FitPart(index);Notice=part.name+" fitted. Its own upgrade levels are retained.";Audio.Chime();Save();HUD.RefreshMenu();
+  }
+  public void UpgradePart(int index){
+   if(index<0||index>=MachineryParts.Count||!CanFitParts())return;
+   if(!Active.PartOwned(index)){Notice="Purchase this part first.";return;}
+   int level=Active.PartLevel(index);if(level>=3){Notice="This part already has all three upgrades.";return;}
+   if(!Pay(MachineryParts.UpgradePrice(level)))return;Active.UpgradePart(index);Notice="Part upgraded: "+MachineryParts.At(Active.definition.loader,index).name;Audio.Chime();Save();HUD.RefreshMenu();
   }
   public void Service(bool fuel){
    if(!Active.AtDepot){Notice="Return to the depot for service.";return;}
@@ -152,7 +161,7 @@ namespace Snowglow {
 #endif
    if(!ready)return;
    Profile.machines=new MachineSave[Fleet.Length];
-   for(int i=0;i<Fleet.Length;i++){var m=Fleet[i];Profile.machines[i]=new MachineSave{id=m.definition.id,owned=m.Owned,fuel=m.Fuel,condition=m.Condition,tyres=m.Tyres,engine=m.Engine,position=m.transform.position,rotation=m.transform.rotation,load=m.Tool.Load,lift=m.Tool.Lift,tilt=m.Tool.Tilt,angle=m.Tool.Angle,auto=m.Tool.Auto,working=m.Tool.Working};}
+   for(int i=0;i<Fleet.Length;i++){var m=Fleet[i];Profile.machines[i]=new MachineSave{id=m.definition.id,owned=m.Owned,fuel=m.Fuel,condition=m.Condition,tyres=m.Tyres,engine=m.Engine,parts=m.SaveParts(),fittedParts=m.SaveFittedParts(),position=m.transform.position,rotation=m.transform.rotation,load=m.Tool.Load,lift=m.Tool.Lift,tilt=m.Tool.Tilt,angle=m.Tool.Angle,auto=m.Tool.Auto,working=m.Tool.Working};}
    Profile.snow=Profile.inJob?Snow.Grid:null;SaveStore.Write(Profile);
   }
   void PauseForBackground(){

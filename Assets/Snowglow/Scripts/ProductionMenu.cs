@@ -24,7 +24,7 @@ namespace Snowglow {
   public int TownIndex {get;private set;}
   public GameObject quickTools;public GameObject[] jobCards=new GameObject[0];
   public string PendingConfirmation {get;private set;}="";
-  string lastPanel,garageReturn="dashboard",settingsReturn="dashboard";float nextRefresh;int garageIndex,pendingJob,quickPage;bool pendingFree,pendingQuick;string pendingJobTransaction,pendingTown;
+  string lastPanel,garageReturn="dashboard",settingsReturn="dashboard";float nextRefresh;int garageIndex,pendingJob,quickPage,pendingPart,pendingGarage;bool pendingFree,pendingQuick;string pendingJobTransaction,pendingTown;
   readonly System.Random quickRandom=new System.Random();TownJob[] quickJobs=new TownJob[0];
   static readonly string[] JobNames={"Depot Access","Parking Lot","Main Street"};
   public static readonly string[] RegionNames={"Mountain & Alpine","City & Urban","Highway & Open Country","Suburban & Commercial","Industrial & Extreme Weather"};
@@ -64,7 +64,7 @@ namespace Snowglow {
    int index=quickPage*3+slot;return index<quickJobs.Length?(TownJob?)quickJobs[index]:null;
   }
   void SelectJob(int slot){var job=JobAtSlot(slot);if(!job.HasValue)return;JobIndex=job.Value.kind;Game.StartJob(job.Value.kind,false,QuickJob,job.Value.town);}
-  public void Browse(int step){if(!Game||Game.Fleet.Length==0)return;if(ScreenName=="garage"){if(ShopTab)PartIndex=(PartIndex+step+2)%2;else garageIndex=(garageIndex+step+Game.Fleet.Length)%Game.Fleet.Length;}else PreviewIndex=(PreviewIndex+step+Game.Fleet.Length)%Game.Fleet.Length;Refresh();}
+  public void Browse(int step){if(!Game||Game.Fleet.Length==0||PendingConfirmation!="")return;if(ScreenName=="garage"){if(ShopTab)PartIndex=(PartIndex+step+MachineryParts.Count)%MachineryParts.Count;else garageIndex=(garageIndex+step+Game.Fleet.Length)%Game.Fleet.Length;}else PreviewIndex=(PreviewIndex+step+Game.Fleet.Length)%Game.Fleet.Length;Refresh();}
   public void Execute(string command){
    var g=Game;if(!g||g.Profile==null)return;
    var c=command.Split(':');var arg=c.Length>1?c[1]:"";
@@ -91,7 +91,8 @@ namespace Snowglow {
     case "replay":QuickJob=g.Profile.quickPlay;g.StartJob(g.Profile.job,g.Profile.freeWork,g.Profile.quickPlay,g.Profile.jobTownId);break;
     case "next-job":if(!g.Profile.quickPlay&&!g.Profile.freeWork&&g.Profile.job+1<CareerProgression.JobNames.Length){QuickJob=false;g.StartJob(g.Profile.job+1,false,false,ProfileTown(g.Profile));}break;
     case "buy-vehicle":Confirm("vehicle");return;
-    case "buy-part":Confirm(PartIndex==0?"tyres":"engine");return;
+    case "buy-part":Confirm("part");return;
+    case "upgrade-part":Confirm("part-upgrade");return;
     case "owned":garageIndex=1;ShopTab=false;GarageTab="overview";break;
     case "confirm":Confirm(arg);return;
     case "cancel":PendingConfirmation="";dialog.SetActive(false);contentGroup.interactable=true;break;
@@ -105,11 +106,13 @@ namespace Snowglow {
    }
    Refresh();
   }
-  public int Quote(string action){var g=Game;var m=g.Fleet[Mathf.Clamp(garageIndex,0,g.Fleet.Length-1)];switch(action){case "vehicle":return m.definition.price;case "buy":return g.Fleet[1].definition.price;case "fuel":return Mathf.CeilToInt((m.definition.fuelCapacity-m.Fuel)*2);case "repair":return Mathf.CeilToInt((100-m.Condition)*3);case "tyres":return m.Tyres>=3?0:200+m.Tyres*200;case "engine":return m.Engine>=3?0:200+m.Engine*200;default:return 0;}}
+  public int Quote(string action){var g=Game;var m=g.Fleet[Mathf.Clamp(garageIndex,0,g.Fleet.Length-1)];switch(action){case "vehicle":return m.definition.price;case "buy":return g.Fleet[1].definition.price;case "fuel":return Mathf.CeilToInt((m.definition.fuelCapacity-m.Fuel)*2);case "repair":return Mathf.CeilToInt((100-m.Condition)*3);case "tyres":return m.Tyres>=3?0:200+m.Tyres*200;case "engine":return MachineryParts.UpgradePrice(m.Engine);case "blade":return MachineryParts.UpgradePrice(m.Blade);case "part":return m.PartOwned(PartIndex)?0:MachineryParts.At(m.definition.loader,PartIndex).price;case "part-upgrade":return MachineryParts.UpgradePrice(m.PartLevel(PartIndex));default:return 0;}}
   public void Confirm(string action){
    SetLabel("cancel","Cancel");SetLabel("accept","Confirm");Label("dialog-price").gameObject.SetActive(true);
-   PendingConfirmation=action;int cost=Quote(action);string title=(action=="buy"||action=="vehicle")?"Purchase "+Game.Fleet[action=="buy"?1:garageIndex].definition.displayName+"?":action=="recover"?"Recover to the depot?":action=="abandon"?"Abandon this shift?":action=="finish"?"Finish free work?":"Confirm "+action+"?";
+   pendingPart=PartIndex;pendingGarage=garageIndex;PendingConfirmation=action;int cost=Quote(action);string title=(action=="buy"||action=="vehicle")?"Purchase "+Game.Fleet[action=="buy"?1:garageIndex].definition.displayName+"?":action=="recover"?"Recover to the depot?":action=="abandon"?"Abandon this shift?":action=="finish"?"Finish free work?":"Confirm "+action+"?";
+   if(action=="part"||action=="part-upgrade"){var machine=Game.Fleet[garageIndex];var part=MachineryParts.At(machine.definition.loader,PartIndex);title=(action=="part-upgrade"?"Upgrade ":machine.PartOwned(PartIndex)?"Fit ":"Buy & fit ")+part.name+"?";}
    SetLabel("dialog-title",title);SetLabel("dialog-body",action=="recover"?"Attachment raised. Bucket snow stays at the pickup location. Fuel and condition stay unchanged.":action=="abandon"?"Current job progress resets. Your purchased machinery stays in your fleet.":(action=="buy"||action=="vehicle")?"Includes its compatible snow attachment. Available at the depot.":"Depot service and upgrades use your selected machine. Existing compatibility and location rules apply.");
+   if(action=="part"||action=="part-upgrade")SetLabel("dialog-body",action=="part-upgrade"?"Adds one upgrade to this individual part (maximum three). Other parts keep their own levels. Upgrading does not switch the fitted part.":"Fits this part to its compatible vehicle at the depot. Replaced parts stay owned with their own upgrade levels. Purchase and upgrades are separate.");
    SetLabel("dialog-price",cost>0?cost.ToString("N0")+" coins  ·  Balance after: "+(Game.Profile.coins-cost).ToString("N0"):"No charge");
    Enable("accept",cost<=Game.Profile.coins);contentGroup.interactable=false;dialog.SetActive(true);Button("cancel").Select();
   }
@@ -128,8 +131,8 @@ namespace Snowglow {
    if(action=="replace-job"){if(g.Profile.inJob&&g.Profile.transaction==pendingJobTransaction)g.AbandonAndStartJob(pendingJob,pendingFree,pendingQuick,pendingTown);Refresh();return;}
    if(action=="buy"||action=="vehicle")g.BuyMachine(action=="buy"?1:garageIndex);
    else if(action=="recover")g.Recover();else if(action=="abandon")g.Abandon();else if(action=="finish")g.Finish();
-   else if(garageIndex==g.Profile.active||g.TrySelectMachine(garageIndex,false)){
-    if(action=="fuel"||action=="repair")g.Service(action=="fuel");else if(action=="tyres"||action=="engine")g.Upgrade(action=="tyres");
+   else if(pendingGarage==g.Profile.active||g.TrySelectMachine(pendingGarage,false)){
+    if(action=="fuel"||action=="repair")g.Service(action=="fuel");else if(action=="tyres"||action=="engine")g.Upgrade(action=="tyres");else if(action=="blade")g.UpgradePart(g.Active.FittedPart(MachineryPartKind.Blade));else if(action=="part")g.BuyOrFitPart(pendingPart);else if(action=="part-upgrade")g.UpgradePart(pendingPart);
    }
    Refresh();
   }
@@ -162,18 +165,20 @@ namespace Snowglow {
    if(workshopPreview){workshopPreview.previewCamera.enabled=ScreenName=="garage";workshopPreview.gameObject.SetActive(ScreenName=="garage");if(ScreenName=="garage")workshopPreview.Show(garageIndex,PartIndex,ShopTab);}
    if(tabImages.Length>=2){tabImages[0].color=ShopTab?tabColor:selectedColor;tabImages[1].color=ShopTab?selectedColor:tabColor;}
    for(int i=0;i<settingsTabImages.Length;i++)settingsTabImages[i].color=SettingsTab==i?selectedColor:tabColor;
-   SetLabel("garage-name",ShopTab?(PartIndex==0?"Snow traction tyres":"Heavy-duty engine"):m.definition.displayName);
-   SetLabel("garage-owned",ShopTab?"FOR "+m.definition.displayName:(m.Owned?(garageIndex==p.active?"OWNED / SELECTED":"OWNED"):m.definition.price.ToString("N0")+" COINS"));
-   SetLabel("garage-status",ShopTab?(PartIndex==0?"TRACTION\nGrip bonus: +12% / level\nCurrent level: "+m.Tyres+" / 3":"POWER\nTorque bonus: +18% / level\nCurrent level: "+m.Engine+" / 3"):("VEHICLE STATS\nSpeed: "+(m.definition.maxSpeed*3.6f).ToString("F0")+" km/h\nFuel: "+Mathf.RoundToInt(m.FuelRatio*100)+"%\nCondition: "+m.Condition.ToString("F0")+"%\nTyres: "+m.Tyres+" / 3\nEngine: "+m.Engine+" / 3"));
-   SetLabel("workshop-position",ShopTab?(PartIndex+1)+" / 2 PARTS":(garageIndex+1)+" / "+g.Fleet.Length+" VEHICLES");
-   SetLabel("part-description",(PartIndex==0?"Snow traction tyres\n\n+12% grip per level.\nThree levels available.":"Heavy-duty engine\n\n+18% torque per level.\nThree levels available.")+"\n\nCompatible with: "+m.definition.displayName+"\n\nPurchased and fitted together at the depot.");
+   var part=MachineryParts.At(m.definition.loader,PartIndex);bool partOwned=m.PartOwned(PartIndex),fitted=m.FittedPart(part.kind)==PartIndex;int partLevel=m.PartLevel(PartIndex);
+   SetLabel("garage-name",ShopTab?part.name:m.definition.displayName);
+   SetLabel("garage-owned",ShopTab?((fitted?"FITTED":partOwned?"OWNED":"NOT OWNED")+" / UPGRADES "+partLevel+" / 3"):(m.Owned?(garageIndex==p.active?"OWNED / SELECTED":"OWNED"):m.definition.price.ToString("N0")+" COINS"));
+   string fittedNames="";foreach(MachineryPartKind kind in Enum.GetValues(typeof(MachineryPartKind)))fittedNames+=MachineryParts.At(m.definition.loader,m.FittedPart(kind)).name+" ["+m.PartLevel(kind)+"/3]\n";
+   SetLabel("garage-status",ShopTab?("PART STATS\n"+MachineryParts.Effect(part,partLevel)+"\nBase bonus: "+((part.multiplier-1)*100).ToString("F0")+"%\nUpgrade: +"+(part.PerLevel*100).ToString("F0")+"% / level\n\n"+m.definition.displayName):("FITTED EQUIPMENT\n"+fittedNames+"\nFuel: "+Mathf.RoundToInt(m.FuelRatio*100)+"% / Condition: "+m.Condition.ToString("F0")+"%\nGrip: x"+m.GripMultiplier.ToString("F2")+" / Torque: x"+m.EngineMultiplier.ToString("F2")+"\nSnow rate: x"+m.SnowRateMultiplier.ToString("F2")));
+   SetLabel("workshop-position",ShopTab?(PartIndex+1)+" / "+MachineryParts.Count+" PARTS":(garageIndex+1)+" / "+g.Fleet.Length+" VEHICLES");
+   SetLabel("part-description",part.description+"\n\nCompatible with:\n"+m.definition.displayName+"\n\n"+MachineryParts.Effect(part,partLevel)+"\n3 upgrade slots per part.\nFactory parts included.\nPreview uses existing rig.");
    Enable("drive",m.Owned);Enable("vehicle-buy",!m.Owned);SetLabel("drive",garageIndex==p.active?"Selected / Back":garageReturn==""&&p.inJob?"Select & Resume":"Select & Back");
    Enable("buy",!g.Fleet[1].Owned);Enable("owned",g.Fleet[1].Owned);
-   bool service=m.Owned&&g.Active.AtDepot&&g.Active.Speed<=1;
-   foreach(string action in new[]{"fuel","repair","tyres","engine"}){int level=action=="tyres"?m.Tyres:m.Engine;SetLabel(action,(action=="fuel"?"Refuel":action=="repair"?"Repair":action=="tyres"?"Tyres "+m.Tyres+" / 3":"Engine "+m.Engine+" / 3")+" · "+Quote(action)+" coins");Enable(action,service&&(action!="tyres"||m.Tyres<3)&&(action!="engine"||m.Engine<3));}
-   if(upgradeSegments!=null)for(int i=0;i<upgradeSegments.Length;i++)upgradeSegments[i].color=i%3<(i<3?m.Tyres:m.Engine)?selectedColor:tabColor;
-   string partAction=PartIndex==0?"tyres":"engine";bool max=(PartIndex==0?m.Tyres:m.Engine)>=3;
-   SetLabel("part-buy",max?"OWNED / MAX LEVEL":"Buy & Fit · "+Quote(partAction)+" coins");Enable("part-buy",service&&!max);
+   bool service=m.Owned&&g.Active.AtDepot&&g.Active.Speed<=1&&(!g.Active.Body||g.Active.Body.linearVelocity.magnitude<=1);
+   foreach(string action in new[]{"fuel","repair","tyres","engine","blade"}){int level=action=="tyres"?m.Tyres:action=="engine"?m.Engine:m.Blade;bool upgrade=action!="fuel"&&action!="repair";SetLabel(action,(action=="fuel"?"Refuel":action=="repair"?"Repair":action=="tyres"?"Tyres "+level+" / 3":action=="engine"?"Engine "+level+" / 3":"Blade "+level+" / 3")+" | "+Quote(action)+" coins");Enable(action,service&&(!upgrade||level<3));}
+   if(upgradeSegments!=null)for(int i=0;i<upgradeSegments.Length;i++)upgradeSegments[i].color=i%3<(i<3?m.Tyres:i<6?m.Engine:m.Blade)?selectedColor:tabColor;
+   SetLabel("part-buy",fitted?"FITTED":partOwned?"Fit owned part":"Buy & Fit | "+part.price+" coins");Enable("part-buy",service&&!fitted);
+   SetLabel("part-upgrade",partLevel>=3?"UPGRADES 3 / 3":"Upgrade "+partLevel+" / 3 | "+MachineryParts.UpgradePrice(partLevel)+" coins");Enable("part-upgrade",service&&partOwned&&partLevel<3);
    SetLabel("workshop-location",g.Active.AtDepot?"AT DEPOT · Stop to select, service or fit parts":"Return to the depot to select, service or fit parts");
    SetLabel("settings-sound",p.muted?"Sound: OFF":"Sound: ON");SetLabel("settings-quality",p.quality==0?"Graphics: LOW":"Graphics: STANDARD");SetLabel("settings-assist",p.assists?"Driving assists: ON":"Driving assists: OFF");for(int i=0;i<settingPages.Length;i++)settingPages[i].SetActive(i==SettingsTab);
    for(int i=0;i<RegionNames.Length;i++){bool unlocked=CareerProgression.RegionUnlocked(p,i);SetLabel("region-"+i,RegionNames[i]+"\n"+(unlocked?"UNLOCKED":"LOCKED · Complete previous region"));if(careerGallery)careerGallery.SetRegionUnlocked(i,unlocked);}

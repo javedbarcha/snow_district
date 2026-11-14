@@ -8,16 +8,14 @@ namespace Snowglow.Editor {
   public static WorkshopPreview Build(Transform parent,MachineController[] fleet){
    var tags=new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/TagManager.asset")[0]);var layer=tags.FindProperty("layers").GetArrayElementAtIndex(Layer);if(layer.stringValue!=""&&layer.stringValue!="WorkshopPreview")throw new System.InvalidOperationException("Layer 12 is already used");layer.stringValue="WorkshopPreview";tags.ApplyModifiedPropertiesWithoutUndo();
    var root=new GameObject("Workshop | authored visual display");root.transform.position=new Vector3(10000,100,10000);
-   var view=root.AddComponent<WorkshopPreview>();view.vehicles=new GameObject[fleet.Length];view.parts=new GameObject[fleet.Length*2];
+   var view=root.AddComponent<WorkshopPreview>();view.vehicles=new GameObject[fleet.Length];view.parts=new GameObject[0];
    var wall=Material("WorkshopWall",new Color(.32f,.39f,.44f));var steel=Material("WorkshopSteel",new Color(.10f,.16f,.20f));var yellow=Material("WorkshopSafety",new Color(1,.67f,.05f));
    Interior(root.transform,wall,steel,yellow);
    for(int i=0;i<fleet.Length;i++){
     view.vehicles[i]=Copy(fleet[i].transform,root.transform,"Vehicle "+i);
-    var wheel=fleet[i].wheelVisuals.FirstOrDefault(t=>t&&t.GetComponentsInChildren<MeshFilter>(true).Length>0);
-    view.parts[i*2]=Copy(wheel?wheel:fleet[i].transform,root.transform,"Traction tyre "+i,3.5f);
-    view.parts[i*2+1]=EnginePart(root.transform,i,steel,yellow);
-    view.vehicles[i].transform.localPosition+=Vector3.up*.32f;view.parts[i*2].transform.localPosition+=Vector3.up*.32f;view.parts[i*2+1].transform.localPosition+=Vector3.up*.32f;
+    view.vehicles[i].transform.localPosition+=Vector3.up*.32f;
    }
+   BuildParts(view,fleet);
    string path=ProductionMenuAuthoring.ArtFolder+"/WorkshopPreview.renderTexture";
    var target=AssetDatabase.LoadAssetAtPath<RenderTexture>(path);
    if(!target){target=new RenderTexture(1280,642,24){name="Workshop 3D preview",antiAliasing=1};AssetDatabase.CreateAsset(target,path);}
@@ -26,6 +24,19 @@ namespace Snowglow.Editor {
    var camera=cameraObject.AddComponent<Camera>();view.previewCamera=camera;camera.targetTexture=target;camera.cullingMask=1<<Layer;camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.18f,.25f,.30f);camera.orthographic=false;camera.fieldOfView=44;camera.nearClipPlane=.1f;camera.farClipPlane=65;camera.allowHDR=false;camera.allowMSAA=false;
    view.ApplyOrbit();cameraObject.AddComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>().renderShadows=false;
    camera.enabled=false;root.SetActive(false);return view;
+  }
+  public static void BuildParts(WorkshopPreview view,MachineController[] fleet){
+   foreach(var old in view.parts)if(old)UnityEngine.Object.DestroyImmediate(old);
+   view.parts=new GameObject[fleet.Length*MachineryParts.Count];
+   var steel=Material("WorkshopSteel",new Color(.10f,.16f,.20f));var yellow=Material("WorkshopSafety",new Color(1,.67f,.05f));
+   for(int vehicle=0;vehicle<fleet.Length;vehicle++)for(int index=0;index<MachineryParts.Count;index++){
+    var machine=fleet[vehicle];var part=MachineryParts.At(machine.definition.loader,index);GameObject model;
+    if(part.kind==MachineryPartKind.Tyres){var wheel=machine.wheelVisuals.FirstOrDefault(t=>t&&t.GetComponentsInChildren<MeshFilter>(true).Length>0);model=Copy(wheel?wheel:machine.transform,view.transform,part.name,3.5f);}
+    else if(part.kind==MachineryPartKind.Engine)model=EnginePart(view.transform,vehicle,steel,yellow);
+    else model=Copy(machine.Tool.bucket?machine.Tool.bucket:machine.Tool.mount,view.transform,part.name,4f);
+    model.name=machine.definition.id+" / "+part.name;model.transform.localPosition+=Vector3.up*.32f;model.SetActive(false);view.parts[vehicle*MachineryParts.Count+index]=model;
+   }
+   EditorUtility.SetDirty(view);
   }
   static void Interior(Transform p,Material wall,Material steel,Material yellow){
    var pale=Material("WorkshopPale",new Color(.72f,.79f,.82f));var red=Material("WorkshopRed",new Color(.65f,.09f,.055f));var rubber=Material("WorkshopRubber",new Color(.035f,.045f,.055f));var wood=Material("WorkshopWood",new Color(.43f,.27f,.13f));

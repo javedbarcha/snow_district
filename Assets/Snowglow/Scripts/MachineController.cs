@@ -6,7 +6,29 @@ namespace Snowglow
     {
         public VehicleDefinition definition; public AttachmentDefinition equipment; public WheelCollider[] wheels; public Transform[] wheelVisuals;
         public AttachmentController Tool; public Rigidbody Body { get; private set; }
-        public float Fuel = 70, Condition = 100; public int Tyres, Engine; public bool Owned;
+        public float Fuel = 70, Condition = 100; public int Tyres, Engine, Blade; public bool Owned;
+        [System.NonSerialized] MachineryPartSave[] partInventory;
+        readonly int[] fittedParts={0,1,5};
+        public int PartLevel(MachineryPartKind kind)=>kind==MachineryPartKind.Tyres?Tyres:kind==MachineryPartKind.Engine?Engine:Blade;
+        void SetPartLevel(MachineryPartKind kind,int level){if(kind==MachineryPartKind.Tyres)Tyres=level;else if(kind==MachineryPartKind.Engine)Engine=level;else Blade=level;}
+        void EnsureParts(){if(partInventory==null)partInventory=MachineryParts.Normalize(this,null,Tyres,Engine);}
+        public int FittedPart(MachineryPartKind kind)=>fittedParts[(int)kind];
+        public bool PartOwned(int index){EnsureParts();return index>=0&&index<MachineryParts.Count&&partInventory[index].owned;}
+        public int PartLevel(int index){EnsureParts();var kind=MachineryParts.At(definition.loader,index).kind;return FittedPart(kind)==index?PartLevel(kind):partInventory[index].level;}
+        public void SetPartOwned(int index){EnsureParts();partInventory[index].owned=true;}
+        public bool FitPart(int index){if(!PartOwned(index))return false;var kind=MachineryParts.At(definition.loader,index).kind;partInventory[FittedPart(kind)].level=Mathf.Clamp(PartLevel(kind),0,3);fittedParts[(int)kind]=index;SetPartLevel(kind,partInventory[index].level);if(Tool)Tool.ResetSweep();return true;}
+        public void UpgradePart(int index){EnsureParts();int level=Mathf.Clamp(PartLevel(index)+1,0,3);partInventory[index].level=level;var kind=MachineryParts.At(definition.loader,index).kind;if(FittedPart(kind)==index)SetPartLevel(kind,level);}
+        public MachineryPartSave[] SaveParts(){EnsureParts();foreach(MachineryPartKind kind in System.Enum.GetValues(typeof(MachineryPartKind)))partInventory[FittedPart(kind)].level=Mathf.Clamp(PartLevel(kind),0,3);return MachineryParts.Normalize(this,partInventory);}
+        public string[] SaveFittedParts()=>new[]{MachineryParts.Id(this,fittedParts[0]),MachineryParts.Id(this,fittedParts[1]),MachineryParts.Id(this,fittedParts[2])};
+        public void RestoreParts(MachineSave save){
+            Tyres=save==null?0:Mathf.Clamp(save.tyres,0,3);Engine=save==null?0:Mathf.Clamp(save.engine,0,3);Blade=0;
+            partInventory=MachineryParts.Normalize(this,save?.parts,Tyres,Engine);
+            foreach(MachineryPartKind kind in System.Enum.GetValues(typeof(MachineryPartKind))){int chosen=MachineryParts.DefaultIndex(kind);for(int i=0;i<MachineryParts.Count;i++)if(partInventory[i].owned&&MachineryParts.At(definition.loader,i).kind==kind&&save?.fittedParts!=null&&System.Array.IndexOf(save.fittedParts,partInventory[i].id)>=0){chosen=i;break;}fittedParts[(int)kind]=chosen;SetPartLevel(kind,partInventory[chosen].level);}
+        }
+        public float PartMultiplier(MachineryPartKind kind)=>MachineryParts.At(definition.loader,FittedPart(kind)).multiplier*(1+Mathf.Clamp(PartLevel(kind),0,3)*MachineryParts.At(definition.loader,FittedPart(kind)).PerLevel);
+        public float GripMultiplier=>PartMultiplier(MachineryPartKind.Tyres);
+        public float EngineMultiplier=>PartMultiplier(MachineryPartKind.Engine);
+        public float SnowRateMultiplier=>EngineMultiplier*PartMultiplier(MachineryPartKind.Blade);
         public bool Assistance = true, ActiveMachine; public float Slip, Speed, LastSnowForce;
         DirectionalDriveState driveState;
         float[] normalForcePoints;
@@ -20,6 +42,7 @@ namespace Snowglow
         public bool AtDepot => Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(-95, -90)) < 25;
         public void Initialize()
         {
+            EnsureParts();
             Body = GetComponent<Rigidbody>(); Body.linearDamping = .05f; Body.angularDamping = .8f; Body.interpolation = RigidbodyInterpolation.Interpolate; Body.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
             Body.maxDepenetrationVelocity = 2; Body.maxAngularVelocity = 3.5f; Body.solverIterations = 10; Body.solverVelocityIterations = 4;
             string error = equipment.Validate(definition); if (error != null) { Debug.LogError(error, this); enabled = false; return; }
@@ -57,12 +80,12 @@ namespace Snowglow
                 {
                     wallContact = hit.normal.y < .5f;
                     if (!wallContact) grounded++; Slip += Mathf.Abs(hit.forwardSlip) + Mathf.Abs(hit.sidewaysSlip);
-                    float depth = game.Snow.Depth(hit.point); grip = Mathf.Lerp(SurfaceZone.Sample(hit.point), .67f, Mathf.Clamp01(depth / .25f)); grip *= definition.baseGrip * (1 + Tyres * .12f);
+                    float depth = game.Snow.Depth(hit.point); grip = Mathf.Lerp(SurfaceZone.Sample(hit.point), .67f, Mathf.Clamp01(depth / .25f)); grip *= definition.baseGrip * GripMultiplier;
                 }
                 if (wallContact) grip = 0; // A wall is not a drivable support surface.
                 var f = w.forwardFriction; f.stiffness = grip; w.forwardFriction = f; var s = w.sidewaysFriction; s.stiffness = grip * (Assistance ? 1.2f : 1); w.sidewaysFriction = s;
                 float traction = Assistance && w.GetGroundHit(out WheelHit wh) && Mathf.Abs(wh.forwardSlip) > .65f ? .55f : 1;
-                w.motorTorque = !wallContact && Fuel > 0 && Condition > 0 && Speed < definition.maxSpeed ? driveThrottle * direction * definition.torque * (1 + Engine * .18f) * traction * Mathf.Lerp(.5f, 1, Condition / 100) : 0;
+                w.motorTorque = !wallContact && Fuel > 0 && Condition > 0 && Speed < definition.maxSpeed ? driveThrottle * direction * definition.torque * EngineMultiplier * traction * Mathf.Lerp(.5f, 1, Condition / 100) : 0;
                 w.brakeTorque = serviceBrake * definition.brakeTorque;
             }
             if (Assistance && snowWorking)

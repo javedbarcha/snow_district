@@ -10,7 +10,7 @@ namespace Snowglow {
   public void ApplyOrbit(){if(!previewCamera)return;var target=transform.position+Vector3.up*1.5f;previewCamera.transform.position=target+Quaternion.Euler(-pitch,yaw,0)*new Vector3(0,0,Mathf.Min(distance,10/Mathf.Sin(pitch*Mathf.Deg2Rad)));previewCamera.transform.LookAt(target);}
   public void Show(int vehicle,int part,bool shop){
    for(int i=0;i<vehicles.Length;i++)vehicles[i].SetActive(!shop&&i==vehicle);
-   for(int i=0;i<parts.Length;i++)parts[i].SetActive(shop&&i==vehicle*2+part);
+   for(int i=0;i<parts.Length;i++)parts[i].SetActive(shop&&i==vehicle*MachineryParts.Count+part);
    if(previewCamera)previewCamera.enabled=true;ApplyOrbit();
   }
   void OnDisable(){if(previewCamera)previewCamera.enabled=false;}
