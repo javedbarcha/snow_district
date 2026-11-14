@@ -1,5 +1,32 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Region images and generated town cards - 14 November 2026
+
+User requested generating the previously listed town images here, excluding
+Pinefall, and importing the supplied Snow_District_Region_Card_Images.zip.
+Five region illustrations are preserved under SourceAssets/RegionCards and
+imported into UI/Production/Regions. Fifteen built-in image_gen outputs, one per
+destination, are preserved under SourceAssets/TownCards/Originals; full prompts
+are in Prompts.json. UI/Production/Towns holds fitted 1024 x 498 derivatives.
+All sprites use 1024 maximum / Android ASTC 6x6. Pinefall retains existing capture.
+
+CareerCardAuthoring saves region artwork/scrims/unlocked borders and town images
+in Pinefall. CareerCardGallery switches saved images/layout by region, without
+runtime object factories. Regions retain 382 x 120 cards; town images use the
+2.056:1 ratio with four cards across Alpine and three across other regions.
+Labels, stable location IDs, browsing, progression and Pinefall-only job guards
+remain. Regional labels still cover the recommended landmark towns; no rename.
+Guide: CAREER_CARD_ART.md. Repeat menu: Snowglow > UI > Install region and
+destination card artwork; marker Logs/CareerCards.request after native compile.
+Full production authoring reuses prepared gallery references.
+
+Android-defined compilation and native forced compile/reload passed. Saved/
+reopened scene, image bindings/fit, 607 menu checks and 187 flow/progression
+checks passed. Native region, Alpine, City and Industrial pages were visually
+inspected. Evidence, original scene backup, captures and preservation report:
+Logs/CareerCards. No Play entry; fixtures disable profile writes. Device touch,
+Android packaging and phone costs remain untested.
+
 ## Shared winter banner strip - 13 November 2026
 
 User requested replacing the solid navy menu header with supplied Navy Winter

@@ -10,6 +10,7 @@ namespace Snowglow {
   public MenuTextBinding[] labels;public MenuButtonBinding[] buttons;
   public GameObject dialog,garageContent,shopContent,overviewContent,serviceContent,upgradesContent;
   public Image[] upgradeSegments;public CanvasGroup contentGroup;public WorkshopPreview workshopPreview;public int PartIndex {get;private set;}
+  public CareerCardGallery careerGallery;
   public GameObject[] settingPages;public Image machinePicture,workshopPicture;
   public Sprite[] vehiclePictures;public Image[] tabImages,garageTabImages,settingsTabImages;public Color selectedColor,tabColor;
   public string ScreenName {get;private set;}="dashboard";
@@ -48,6 +49,7 @@ namespace Snowglow {
    }
    ScreenName=panel=="shop"||panel=="parts"||panel=="service"?"garage":panel;
    for(int i=0;i<pages.Length;i++)pages[i].SetActive(pageNames[i]==ScreenName);
+   if(careerGallery)careerGallery.Refresh(RegionIndex);
    Refresh();
   }
   public void Navigate(string screen){PendingConfirmation="";dialog.SetActive(false);contentGroup.interactable=true;Game.Open(screen);}
@@ -174,7 +176,7 @@ namespace Snowglow {
    SetLabel("part-buy",max?"OWNED / MAX LEVEL":"Buy & Fit · "+Quote(partAction)+" coins");Enable("part-buy",service&&!max);
    SetLabel("workshop-location",g.Active.AtDepot?"AT DEPOT · Stop to select, service or fit parts":"Return to the depot to select, service or fit parts");
    SetLabel("settings-sound",p.muted?"Sound: OFF":"Sound: ON");SetLabel("settings-quality",p.quality==0?"Graphics: LOW":"Graphics: STANDARD");SetLabel("settings-assist",p.assists?"Driving assists: ON":"Driving assists: OFF");SetLabel("settings-debug",p.debug?"Physics overlay: ON":"Physics overlay: OFF");for(int i=0;i<settingPages.Length;i++)settingPages[i].SetActive(i==SettingsTab);
-   for(int i=0;i<RegionNames.Length;i++)SetLabel("region-"+i,RegionNames[i]+"\n"+(CareerProgression.RegionUnlocked(p,i)?"UNLOCKED":"LOCKED · Complete previous region"));
+   for(int i=0;i<RegionNames.Length;i++){bool unlocked=CareerProgression.RegionUnlocked(p,i);SetLabel("region-"+i,RegionNames[i]+"\n"+(unlocked?"UNLOCKED":"LOCKED · Complete previous region"));if(careerGallery)careerGallery.SetRegionUnlocked(i,unlocked);}
    SetLabel("town-title",RegionNames[Mathf.Clamp(RegionIndex,0,4)]);for(int i=0;i<4;i++){var b=Button("town-"+i);bool exists=i<Destinations[RegionIndex].Length;b.gameObject.SetActive(exists);if(exists){bool unlocked=CareerProgression.TownUnlocked(p,RegionIndex,i),available=CareerProgression.Available(CareerProgression.TownIds[RegionIndex][i]);SetLabel("town-"+i,Destinations[RegionIndex][i]+"\n"+(unlocked?(available?(CareerProgression.TownComplete(p,CareerProgression.TownIds[RegionIndex][i])?"COMPLETED / REPLAY":"AVAILABLE"):"UNLOCKED / COMING SOON"):"LOCKED"));b.interactable=unlocked&&available;}}
    SetLabel("pause-job",p.freeWork?"PINEFALL / FREE WORK":"PINEFALL / "+JobNames[Mathf.Clamp(p.job,0,2)]);Enable("finish",p.inJob&&p.freeWork);SetLabel("results",(string.IsNullOrEmpty(g.ResultSummary)?"Complete a shift to see your results.":g.ResultSummary)+"\n\nWallet: "+p.coins.ToString("N0")+" coins\nLevel "+g.Level+" · "+p.xp+" XP");
   }

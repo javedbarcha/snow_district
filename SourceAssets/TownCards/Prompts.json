@@ -1,0 +1,81 @@
+{
+  "tool": "built-in image_gen",
+  "basePrompt": "Use case: stylized-concept. Create ONE standalone destination-card illustration for Snow District, a low-poly snow-clearing game. Landscape approximately 2.056:1 (1536 x 748 preferred). Clean angular low-poly 3D game render, simple faceted geometry, white snow, icy blue shadows, restrained navy and warm window accents, clear winter daylight, slightly elevated three-quarter perspective. The real named landmark must dominate and remain identifiable at thumbnail size, complete silhouette comfortably within central 80% of frame. Regionally appropriate architecture and terrain. Broad snowy foreground with ploughed road and roadside banks. No text, letters, numbers, logos, watermarks, frames, UI or collage. No people close-up, no vehicles blocking landmark, no painterly brushwork, no photorealism. Avoid generic invented architecture replacing the named landmark. ",
+  "destinations": [
+    {
+      "id": "alps",
+      "name": "Altdorf, Switzerland",
+      "scene": "Wilhelm Tell Monument: bronze father William Tell with young son beside him, on stone pedestal, with the historic square Türmli tower behind. Alpine Swiss town square and steep snowy mountain backdrop."
+    },
+    {
+      "id": "svalbard",
+      "name": "Longyearbyen, Svalbard, Norway",
+      "scene": "Svalbard Church, a modest red-brown wooden Arctic church with its characteristic square bell tower and pitched roofs. Colourful small houses in a treeless valley, bare snowy Arctic mountains. No forest."
+    },
+    {
+      "id": "andes",
+      "name": "San Carlos de Bariloche, Argentina",
+      "scene": "Centro Cívico civic square and characteristic stone-and-dark-timber civic buildings with clock tower, heavy pitched roofs, snowy Andean mountains and a hint of blue lake beyond."
+    },
+    {
+      "id": "aomori",
+      "name": "Aomori, Japan",
+      "scene": "ASPAM building, the tall unmistakable equilateral triangular A-shaped blue-grey waterfront tower. Low Japanese city buildings, snowy waterfront and distant bay."
+    },
+    {
+      "id": "sapporo",
+      "name": "Sapporo, Hokkaido, Japan",
+      "scene": "Sapporo Clock Tower: white clapboard historic wooden hall with reddish pitched roofs and a central white square clock turret crowned by a steep roof. Modest snowy Japanese urban block behind."
+    },
+    {
+      "id": "harbin",
+      "name": "Harbin, China",
+      "scene": "Saint Sophia Cathedral, rich red-brick Byzantine church with dominant green onion dome and smaller green roofs, snowy open square, softly lit windows and restrained historic city buildings."
+    },
+    {
+      "id": "rogers-pass",
+      "name": "Rogers Pass, British Columbia, Canada",
+      "scene": "Rogers Pass Summit Monument commemorating the Trans-Canada Highway, its distinctive reddish-brown sweeping angular arch over the summit plaza. Snowy mountain highway nearby, immense rugged Selkirk peaks and conifer forest."
+    },
+    {
+      "id": "coquihalla",
+      "name": "Hope / Coquihalla gateway, British Columbia, Canada",
+      "scene": "Othello Tunnels railway heritage canyon near Hope: dark arched tunnel portals cut into steep rock, a narrow trestle footbridge over the Coquihalla River, snow on cliffs and evergreen trees. Dramatic but plausible snowy rocky canyon."
+    },
+    {
+      "id": "tromso",
+      "name": "Tromsø, Norway",
+      "scene": "Arctic Cathedral, the sharply peaked white triangular church with stepped white concrete fins and dark glass end wall, snowy streets, fjord and northern mountains. Clearly its iconic angular silhouette."
+    },
+    {
+      "id": "buffalo",
+      "name": "Buffalo, New York, USA",
+      "scene": "Buffalo City Hall, tall symmetrical stepped Art Deco civic tower in warm pale stone with broad lower wings and characteristic decorated tiered crown, snowy Niagara Square and surrounding American city buildings."
+    },
+    {
+      "id": "anchorage",
+      "name": "Anchorage, Alaska, USA",
+      "scene": "Anchorage Historic Alaska Railroad Depot: long pale cream symmetrical station with dark green hipped roofs and raised central block, snowy railway tracks and jagged Chugach Mountains beyond. No readable signage."
+    },
+    {
+      "id": "minneapolis",
+      "name": "Minneapolis, Minnesota, USA",
+      "scene": "Spoonbridge and Cherry sculpture: giant silver spoon arcing gently over a snowy garden with a single vivid red cherry and tall curved stem on its bowl. Minneapolis downtown skyline in distance. Recognisable sculpture unobstructed."
+    },
+    {
+      "id": "norilsk",
+      "name": "Norilsk, Siberia, Russia",
+      "scene": "First House of Norilsk, a modest historic one-storey dark log cabin with green pitched roof and small framed windows. Put the entire cabin prominently in foreground, with distinctive industrial Arctic apartment blocks and smelter chimneys far behind, deep snow and clear pale cold air."
+    },
+    {
+      "id": "yakutsk",
+      "name": "Yakutsk, Sakha Republic, Russia",
+      "scene": "Mammoth monument at the Melnikov Permafrost Institute: large mammoth statue with sweeping curved tusks and raised trunk on a low rocky base, frost-coated buildings and bare larch trees behind, pale blue winter haze. Statue clearly sculptural."
+    },
+    {
+      "id": "mcmurdo",
+      "name": "McMurdo Station, Antarctica",
+      "scene": "Observation Hill wooden memorial cross prominently on rocky snowy hill in foreground, overlooking compact Antarctic research buildings and sea ice, distant volcanic mountain landscape. No trees or ordinary town houses, scientific-station setting."
+    }
+  ]
+}
