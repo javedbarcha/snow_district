@@ -1,5 +1,80 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Original borrowed garage roof restored - 15 November 2026
+
+User reports roof fit/render problems and explicitly supersedes the earlier
+request to retain the Alps pitched roof: use the borrowed garage as supplied.
+AlpsBorrowedScenery now omits the hybrid roof during first install. Targeted
+`roof` action removes only the added slate/snow roof pair and reenables the
+original borrowed snow cap, preserving red gates and garage pose. Preserve disk
+and unsaved scene copies under Logs/AlpsGarageRoof. Compare every garage shared
+MeshFilter mesh and root-relative transform against Pinefall before saving.
+Review now expects no added gable and the original snow cap enabled. Editor
+captures explicitly use perspective and restore the saved lens afterward.
+No source mesh/material, collider, snow or gameplay change intended. Queue
+Logs/AlpsBorrowedScenery.request containing roof only after native compile exit 0.
+This section supersedes roof statements in the earlier borrowing history below.
+Android-defined offline and native forced compile/domain reload passed. Unity
+saved/reopened the correction; every garage mesh reference and root-relative
+transform matched Pinefall. Native depot render inspected: added gable gone,
+original fitted snow roof/canopy visible, red gates retained. Facility/tree/UI/
+snow and sampled access checks passed. Protected Pinefall/source/save hashes
+and all existing physics/Terrain/prefab records matched. No Play entry, collision
+change or real save writes. Evidence: Logs/AlpsGarageRoof. Alps open, Play stopped.
+
+## Borrowed Pinefall scenery for The Alps - 15 November 2026
+
+User requests Pinefall trees (inspect odd placements), lamps, signs, garage
+with different gate colour and existing Alps roof style, fuel station and snow
+disposal yard. Consequences explained: added rendering/obstacle cost and access
+checks. AlpsBorrowedScenery is a targeted Editor installer, never a district
+rebake. Source scene is opened additively read-only, selected scene instances
+are copied with shared source meshes/materials and Alps placement IDs. Garage
+uses an Alps-only gate palette/material with only the door swatch changed; its
+original Alps pitched slate/snow roof pair is retained and fitted over the shell.
+The imported flat-roof snow cap is hidden. Existing primitive facilities/lanterns
+are replaced; benches, town buildings, terrain, machinery and HUD remain.
+
+The actual pre-task saved scene has 374 forest objects at 200m geometry / 2km
+cards with 12m hysteresis (different from historical Pinefall settings). Preserve
+that count/scale/view configuration. Floating trees were confirmed tens of metres
+above terrain: the old generator treated root-local BoundsOf as world bounds,
+adding height again to already-raised templates. SeatTree now transforms actual
+low mesh support points into world space, keeps trunks upright, and places them
+on the saved Alps terrain. Unsafe road/building/peak/forest overlaps relocate
+within the valley-facing forest belt. Generator and polish seating reuse the fix.
+
+Installer marker Logs/AlpsBorrowedScenery.request: inspect, apply (first install
+only; refuses duplicates), access (finish north yard connection), review. Retry
+preserves a failed unsaved scene copy before reopening the saved scene. Queue
+only after ID-matched native compilation exits zero. Backups, initial failures,
+source inventory and captures remain under Logs/AlpsBorrowedScenery. The initial
+palette guard caught linear-vs-sRGB swatch values before scene save. The initial
+retention guard assumed historical counts/distances; corrected to the actual
+pre-task saved scene rather than changing its forest configuration.
+
+The five signs adapt Pinefall captions to The Alps. Eighteen saved heritage lamps
+reuse emissive meshes without new realtime lights. Fuel/service and disposal
+coordinates remain compatible with existing gameplay. The old west disposal
+spur is replaced with a paved north-entrance connection. Only obstacle flags are
+reconciled in a separate Alps seed revision; snow depth/credit/volume and original
+seed/terrain/source meshes remain. Guide: THE_ALPS_LEVEL.md.
+
+Android-defined offline and ID-matched native forced compile/reload passed.
+Saved/reopened scene checks passed for 374 upright mesh-supported trees, eighteen
+lamps, five signs, garage roof/gates and 3.6m-wide sampled depot/yard corridors.
+Road validation passed 157,326 vertices / 52,442 triangles after removing the old
+two-triangle west spur. Native depot, yard, town, perspective hills/overview
+captures inspected. Seventeen isolated actual Play assertions passed for support,
+coasting, cross-town Career/Quick progression, state transfer and resume reset.
+Both saved scene hashes during Play/preservation checks matched; the new Alps
+scene was unchanged by Play. All 2,334 protected existing files (except the
+intentionally edited new authoring source) and 1,008 original Alps assets matched;
+real save and backup hashes matched again after Play. Forty-two existing prefab
+instance records and the saved Terrain/collider records remain identical. Play
+stopped; Alps open. Android cost, physical full service/disposal driving and
+exhaustive hill handling remain untested. No player-save writes or shared source-asset edits.
+
 ## Editor developer unlock toggle - 15 November 2026
 
 Snowglow > Developer > Unlock everything (Editor only) toggles a per-project,
