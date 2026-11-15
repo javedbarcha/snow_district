@@ -24,6 +24,7 @@ namespace Snowglow {
   public int TownIndex {get;private set;}
   public GameObject quickTools;public GameObject[] jobCards=new GameObject[0];
   public string PendingConfirmation {get;private set;}="";
+  bool townCopyApplied;
   string lastPanel,garageReturn="dashboard",settingsReturn="dashboard";float nextRefresh;int garageIndex,pendingJob,quickPage,pendingPart,pendingGarage;bool pendingFree,pendingQuick;string pendingJobTransaction,pendingTown;
   readonly System.Random quickRandom=new System.Random();TownJob[] quickJobs=new TownJob[0];
   static readonly string[] JobNames={"Depot Access","Parking Lot","Main Street"};
@@ -82,7 +83,7 @@ namespace Snowglow {
     case "preview":PreviewIndex=int.Parse(arg);break;
     case "start":Navigate("garage");break;
     case "continue":if(!g.Profile.inJob){QuickJob=false;RegionIndex=TownIndex=0;}g.Continue();break;
-    case "free":g.StartJob(0,true);break;
+    case "free":g.StartJob(0,true,false,g.TownId);break;
     case "workshop":ShopTab=arg=="shop";break;
     case "garage":garageIndex=int.Parse(arg);break;
     case "garage-tab":GarageTab=arg;break;
@@ -136,8 +137,22 @@ namespace Snowglow {
    }
    Refresh();
   }
+  public void RefreshTownText(string town){
+   string name=TownLevel.NameFor(town).ToUpperInvariant();
+   foreach(var label in GetComponentsInChildren<Text>(true)){
+    string value=label.text;
+    if(value=="Pinefall is available. Other destinations are planned.")label.text="Pinefall and The Alps are playable. More destinations are planned.";
+    else if(value=="Only Pinefall is playable. Destination names are plans, not new districts.")label.text="Complete Pinefall to unlock The Alps. Other destinations are planned.";
+    else if(value=="CAREER / ALPINE / PINEFALL")label.text="CAREER / JOBS";
+    else if(value=="PINEFALL")label.text="WINTER OPERATIONS";
+    else if(value.StartsWith("PINEFALL / JOB PREPARATION"))label.text="VEHICLE SELECTION";
+    else if(value=="PINEFALL WORKSHOP")label.text=name+" WORKSHOP";
+    else if(value=="PINEFALL / SHIFT REPORT")label.text=name+" / SHIFT REPORT";
+   }
+  }
   public void Refresh(){
    var g=Game;if(!g||g.Profile==null||g.Fleet==null||g.Fleet.Length<2)return;
+   if(!townCopyApplied){RefreshTownText(g.TownId);townCopyApplied=true;}
    PreviewIndex=Mathf.Clamp(PreviewIndex,0,g.Fleet.Length-1);garageIndex=Mathf.Clamp(garageIndex,0,g.Fleet.Length-1);
    var p=g.Profile;var selected=g.Fleet[PreviewIndex];var m=g.Fleet[garageIndex];
    SetLabel("wallet",p.coins.ToString("N0")+" coins");SetLabel("notice",g.Notice);SetLabel("level","LEVEL "+g.Level+" · "+p.xp+" XP");
@@ -148,7 +163,7 @@ namespace Snowglow {
    for(int slot=0;slot<3;slot++){
     var job=JobAtSlot(slot);bool exists=job.HasValue;var b=Button("job-"+slot);if(!b)continue;
     b.gameObject.SetActive(exists);if(slot<jobCards.Length&&jobCards[slot])jobCards[slot].SetActive(exists);bool unlocked=exists&&CareerProgression.JobUnlocked(p,job.Value.town,job.Value.kind);b.interactable=unlocked;
-    if(exists)SetLabel("job-"+slot,CareerProgression.JobNames[job.Value.kind]+"\n"+(QuickJob?"Pinefall · ":"")+(unlocked?(CareerProgression.Completed(p,job.Value.town,job.Value.kind)?"COMPLETED / REPLAY":"AVAILABLE"):"LOCKED · Complete previous job"));
+    if(exists)SetLabel("job-"+slot,CareerProgression.JobNames[job.Value.kind]+"\n"+(QuickJob?TownLevel.NameFor(job.Value.town)+" / ":"")+(unlocked?(CareerProgression.Completed(p,job.Value.town,job.Value.kind)?"COMPLETED / REPLAY":"AVAILABLE"):"LOCKED · Complete previous job"));
    }
    SetLabel("resume-footer",p.inJob?"Resume Job":"Choose a Job");
    SetLabel("back-garage","Main Menu");
@@ -183,7 +198,7 @@ namespace Snowglow {
    SetLabel("settings-sound",p.muted?"Sound: OFF":"Sound: ON");SetLabel("settings-quality",p.quality==0?"Graphics: LOW":"Graphics: STANDARD");SetLabel("settings-assist",p.assists?"Driving assists: ON":"Driving assists: OFF");for(int i=0;i<settingPages.Length;i++)settingPages[i].SetActive(i==SettingsTab);
    for(int i=0;i<RegionNames.Length;i++){bool unlocked=CareerProgression.RegionUnlocked(p,i);SetLabel("region-"+i,RegionNames[i]+"\n"+(unlocked?"UNLOCKED":"LOCKED · Complete previous region"));if(careerGallery)careerGallery.SetRegionUnlocked(i,unlocked);}
    SetLabel("town-title",RegionNames[Mathf.Clamp(RegionIndex,0,4)]);for(int i=0;i<4;i++){var b=Button("town-"+i);bool exists=i<Destinations[RegionIndex].Length;b.gameObject.SetActive(exists);if(exists){bool unlocked=CareerProgression.TownUnlocked(p,RegionIndex,i),available=CareerProgression.Available(CareerProgression.TownIds[RegionIndex][i]);SetLabel("town-"+i,Destinations[RegionIndex][i]+"\n"+(unlocked?(available?(CareerProgression.TownComplete(p,CareerProgression.TownIds[RegionIndex][i])?"COMPLETED / REPLAY":"AVAILABLE"):"UNLOCKED / COMING SOON"):"LOCKED"));b.interactable=unlocked&&available;}}
-   SetLabel("pause-job",p.freeWork?"PINEFALL / FREE WORK":"PINEFALL / "+JobNames[Mathf.Clamp(p.job,0,2)]);Enable("finish",p.inJob&&p.freeWork);SetLabel("results",(string.IsNullOrEmpty(g.ResultSummary)?"Complete a shift to see your results.":g.ResultSummary)+"\n\nWallet: "+p.coins.ToString("N0")+" coins\nLevel "+g.Level+" · "+p.xp+" XP");
+   SetLabel("pause-job",p.freeWork?TownLevel.NameFor(g.TownId).ToUpperInvariant()+" / FREE WORK":TownLevel.NameFor(g.TownId).ToUpperInvariant()+" / "+JobNames[Mathf.Clamp(p.job,0,2)]);Enable("finish",p.inJob&&p.freeWork);SetLabel("results",(string.IsNullOrEmpty(g.ResultSummary)?"Complete a shift to see your results.":g.ResultSummary)+"\n\nWallet: "+p.coins.ToString("N0")+" coins\nLevel "+g.Level+" · "+p.xp+" XP");
   }
   static string ProfileTown(ProfileSave p)=>string.IsNullOrEmpty(p.jobTownId)?CareerProgression.Pinefall:p.jobTownId;
   void OnDisable(){if(workshopPreview){workshopPreview.previewCamera.enabled=false;workshopPreview.gameObject.SetActive(false);}}

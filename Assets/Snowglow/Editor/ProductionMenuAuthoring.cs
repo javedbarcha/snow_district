@@ -73,11 +73,11 @@ namespace Snowglow.Editor {
       FitDashboardCards(page);
       break;
      case "regions":
-      Title(page,"CAREER","Choose your region","Pinefall is available. Other destinations are planned.");
+      Title(page,"CAREER","Choose your region","Pinefall and The Alps are playable. More destinations are planned.");
       for(int i=0;i<5;i++){float x=44+(i%3)*405,y=235+(i/3)*142;Button(page,ProductionMenu.RegionNames[i]+"\n"+(i==0?"PINEFALL AVAILABLE":"PLANNED LOCATIONS"),"region:"+i,x,y,382,120,i==0,"region-"+i);}
       break;
      case "towns":
-      Title(page,"CAREER / DESTINATIONS","Choose your town","Only Pinefall is playable. Destination names are plans, not new districts.");Text(page,"Mountain & Alpine",44,220,1150,34,24,Ink,"town-title");
+      Title(page,"CAREER / DESTINATIONS","Choose your town","Complete Pinefall to unlock The Alps. Other destinations are planned.");Text(page,"Mountain & Alpine",44,220,1150,34,24,Ink,"town-title");
       for(int i=0;i<4;i++)Button(page,"Town","town:"+i,44+(i%2)*608,275+(i/2)*115,584,92,i==0,"town-"+i);
       break;
      case "contracts":

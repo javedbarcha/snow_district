@@ -18,21 +18,29 @@ namespace Snowglow {
    if(string.IsNullOrEmpty(p.jobTownId))p.jobTownId=Pinefall;
   }
   public static string Key(string town,int kind)=>town+":"+(kind>=0&&kind<JobIds.Length?JobIds[kind]:"invalid");
-  public static bool Available(string town)=>town==Pinefall;
+  public static bool Available(string town)=>town==Pinefall||town=="alps";
   public static bool Completed(ProfileSave p,string town,int kind)=>Array.IndexOf(p.careerCompletedJobs??Array.Empty<string>(),Key(town,kind))>=0;
   public static bool TownComplete(ProfileSave p,string town){if(!Available(town))return false;for(int k=0;k<3;k++)if(!Completed(p,town,k))return false;return true;}
-  public static bool RegionUnlocked(ProfileSave p,int region){if(region<0||region>=TownIds.Length)return false;if(region==0)return true;foreach(string town in TownIds[region-1])if(!TownComplete(p,town))return false;return RegionUnlocked(p,region-1);}
-  public static bool TownUnlocked(ProfileSave p,int region,int town){if(!RegionUnlocked(p,region)||town<0||town>=TownIds[region].Length)return false;return town==0||TownComplete(p,TownIds[region][town-1]);}
+  public static bool RegionUnlocked(ProfileSave p,int region){if(region<0||region>=TownIds.Length)return false;if(DeveloperUnlocked(p)||region==0)return true;foreach(string town in TownIds[region-1])if(!TownComplete(p,town))return false;return RegionUnlocked(p,region-1);}
+  public static bool TownUnlocked(ProfileSave p,int region,int town){if(!RegionUnlocked(p,region)||town<0||town>=TownIds[region].Length)return false;return DeveloperUnlocked(p)||town==0||TownComplete(p,TownIds[region][town-1]);}
+  static bool DeveloperUnlocked(ProfileSave p){
+#if UNITY_EDITOR
+   return p!=null&&p.developerUnlocked;
+#else
+   return false;
+#endif
+  }
   public static bool JobUnlocked(ProfileSave p,string town,int kind){
    if(!Available(town)||kind<0||kind>=3)return false;
-   return kind==0||kind<p.legacyUnlockedJobs||Completed(p,town,kind)||Completed(p,town,kind-1);
+   return DeveloperUnlocked(p)||kind==0||(town==Pinefall&&kind<p.legacyUnlockedJobs)||Completed(p,town,kind)||Completed(p,town,kind-1);
   }
   public static void Complete(ProfileSave p,string town,int kind){
    if(!Available(town)||kind<0||kind>=3||Completed(p,town,kind))return;
    var jobs=new List<string>(p.careerCompletedJobs??Array.Empty<string>()){Key(town,kind)};p.careerCompletedJobs=jobs.ToArray();
   }
+  public static bool TownIsUnlocked(ProfileSave p,string town){for(int r=0;r<TownIds.Length;r++)for(int t=0;t<TownIds[r].Length;t++)if(TownIds[r][t]==town)return TownUnlocked(p,r,t);return false;}
   public static TownJob[] QuickJobs(ProfileSave p,Random random){
-   var jobs=new List<TownJob>();foreach(var region in TownIds)foreach(string town in region)for(int k=0;k<3;k++)if(JobUnlocked(p,town,k))jobs.Add(new TownJob(town,k));
+   var jobs=new List<TownJob>();foreach(var region in TownIds)foreach(string town in region)for(int k=0;k<3;k++)if(TownIsUnlocked(p,town)&&JobUnlocked(p,town,k))jobs.Add(new TownJob(town,k));
    for(int i=jobs.Count-1;i>0;i--){int j=random.Next(i+1);var a=jobs[i];jobs[i]=jobs[j];jobs[j]=a;}return jobs.ToArray();
   }
  }

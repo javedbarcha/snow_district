@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca395da9c16194d8575fece1ac0cf8, type: 3}
+  m_Name: alps-assembly-19
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.CatalogAsset
+  id: alps-assembly-19
+  displayName: Old-town building 19
+  kind: 4
+  status: 1
+  uiSprites: []
+  prefab: {fileID: 9135166637980632695, guid: 9d42369eaf3b7434b97d809aec9895e4, type: 3}
+  tags:
+  - the-alps
+  - authored-town
+  - reference-inspired
+  sourceType: 2
+  sourceGuid: ef2ffbc3b42f2d64ebe172d4ba467dc3
+  sourcePath: Assets/Snowglow/UI/Production/Towns/alps.jpg
+  creationSourcePath: Assets/Snowglow/Editor/AlpsTownAuthoring.cs
+  reviewedPrefabHash: 
+  provenance: Original stylized Swiss alpine architecture / Tell monument generated
+    in Edit mode using the existing Alps card as visual reference. No external model
+    downloaded. Generator retained.
+  assumptions: Metres, Y-up. Authored colliders and appearance remain reviewable.
+    Presentation is an original interpretation, not a real-town survey.
+  reviewNotes: 
+  visualReviewed: 0
+  localBounds:
+    m_Center: {x: 0, y: 6.825001, z: -0.3375044}
+    m_Extent: {x: 5.925, y: 6.825001, z: 6.312502}
+  triangles: 2388
+  renderers: 8
+  materialSlots: 8
+  price: 0
+  vehicle: {fileID: 0}
+  attachment: {fileID: 0}
+  interfaceId: 
+  addedMass: 0
+  torqueMultiplier: 1
+  gripMultiplier: 1
+  wheelRadius: 0.5
+  wheelWidth: 0.3
+  wheelMass: 45
+  mirrorRightWheels: 1
+  minimumScale: 1
+  maximumScale: 1
+  blocksSnow: 1

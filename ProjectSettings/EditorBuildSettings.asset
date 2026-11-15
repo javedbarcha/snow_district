@@ -8,4 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pinefall.unity
     guid: a10822cd37924f4e81fc1cd253bd7590
+  - enabled: 1
+    path: Assets/Scenes/TheAlps.unity
+    guid: e0836224516ddc44fa32355aa8096fdf
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

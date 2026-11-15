@@ -11,11 +11,18 @@ namespace Snowglow {
   public bool IsRunning=>Panel=="";public int Level=>1+Profile.xp/300;
   public int Multiplier=>Mathf.Clamp(1+(int)(Profile.chain/4),1,8);
   public float Remaining=>Profile.remaining;
+  public string TownId=>GetComponent<TownLevel>()?GetComponent<TownLevel>().townId:CareerProgression.Pinefall;
   float nextSave;bool ready;string pendingDummy="";
   void Awake(){
    Instance=this;Time.timeScale=0;Application.targetFrameRate=30;QualitySettings.vSyncCount=0;
    Application.runInBackground=Application.isEditor;
-   Profile=SaveStore.Load();Profile.debug=false;Profile.active=Mathf.Clamp(Profile.active,0,Fleet.Length-1);
+   Profile=SaveStore.Load();
+   if(Profile.inJob&&TownLevel.SceneFor(Profile.jobTownId)!=gameObject.scene.name){SceneManager.LoadScene(TownLevel.SceneFor(Profile.jobTownId));return;}
+   Notice="Welcome to "+TownLevel.NameFor(TownId)+". Start at the depot.";
+#if UNITY_EDITOR
+   if(UnityEditor.SessionState.GetBool("Snowglow.LevelChecks.Active",false))System.IO.File.AppendAllText("Logs/TheAlps/Transitions.txt","Awake "+gameObject.scene.name+" town="+TownId+" inJob="+Profile.inJob+" profile="+Profile.jobTownId+" pending="+Profile.pendingTownStart+"\n");
+#endif
+   Profile.debug=false;Profile.active=Mathf.Clamp(Profile.active,0,Fleet.Length-1);
    for(int i=0;i<Fleet.Length;i++){
     var m=Fleet[i];m.Initialize();m.RestoreParts(null);m.Owned=i==0;m.Fuel=m.definition.fuelCapacity;
     if(Profile.machines!=null)foreach(var save in Profile.machines)if(save.id==m.definition.id){
@@ -24,17 +31,26 @@ namespace Snowglow {
      if(Profile.inJob&&save.position.y>0&&Mathf.Abs(save.position.x)<480&&Mathf.Abs(save.position.z)<480)m.transform.SetPositionAndRotation(save.position,save.rotation);
     }
    }
+#if UNITY_EDITOR
+   if(Profile.developerUnlocked){foreach(var m in Fleet){m.Owned=true;for(int part=0;part<MachineryParts.Count;part++)m.SetPartOwned(part);}Notice="DEVELOPER MODE: all content unlocked; temporary test save.";}
+#endif
    foreach(var m in Fleet)if(m.definition.loader)m.Tool.ResetLowered();
    // The starter is always free, including profiles that stored owned=false.
    Fleet[0].Owned=true;
    if(!Active.Owned)Profile.active=0;
-   Profile.snow=SnowVolumeGrid.Upgrade(Profile.snow);
+   bool startPending=Profile.pendingTownStart;
+   Profile.snow=startPending?null:SnowVolumeGrid.Upgrade(Profile.snow);
    Snow.Initialize(Profile.job,StartupSnow());
+   Profile.pendingTownStart=false;
    foreach(var m in Fleet)m.SetActiveMachine(m==Active);
    Audio.SetMuted(Profile.muted);ready=true;ApplyQuality();HUD.RefreshMenu();
+   if(startPending){RecreditTarget();Open("");Save();}
+#if UNITY_EDITOR
+   if(UnityEditor.SessionState.GetBool("Snowglow.LevelChecks.Active",false))System.IO.File.AppendAllText("Logs/TheAlps/Transitions.txt","Ready "+TownId+" panel="+Panel+" inJob="+Profile.inJob+" progress="+Snow.Progress+"\n");
+#endif
   }
   public SnowVolumeGrid StartupSnow(){
-   string town=string.IsNullOrEmpty(Profile.jobTownId)?CareerProgression.Pinefall:Profile.jobTownId;
+   string town=TownId;
    if(Profile.inJob){
     if(!Profile.freeWork&&!Profile.quickPlay){
      bool legacy=CareerSnowState.Find(Profile,town)==null;CareerSnowState.Ensure(Profile,Snow.seed.grid,town);
@@ -49,7 +65,7 @@ namespace Snowglow {
    return null;
   }
   SnowVolumeGrid CareerTownSnow(int resetVenue){
-   string town=string.IsNullOrEmpty(Profile.jobTownId)?CareerProgression.Pinefall:Profile.jobTownId;
+   string town=TownId;
    var state=CareerSnowState.Ensure(Profile,Snow.seed.grid,town);var grid=state.Restore(Snow.seed.grid,out var loads);
    foreach(var machine in Fleet){loads.TryGetValue(machine.definition.id,out float load);machine.Tool.Load=load;}
    if(resetVenue>=0)CareerSnowState.ReseedVenue(grid,Snow.seed.grid,resetVenue);
@@ -59,14 +75,20 @@ namespace Snowglow {
   public void TogglePause(){if(Panel=="")Open("pause");else if(Panel=="pause")Open("");}
   public bool CanStartJob(int kind,bool free=false,string town=CareerProgression.Pinefall){
    if(kind<0||kind>2||!CareerProgression.Available(town)){Notice="This town or job is not available yet.";return false;}
-   if(!free&&!CareerProgression.JobUnlocked(Profile,town,kind)){Notice="Complete the previous Career job to unlock this one.";return false;}
+   if(!CareerProgression.TownIsUnlocked(Profile,town)||(!free&&!CareerProgression.JobUnlocked(Profile,town,kind))){Notice="Complete the previous Career job to unlock this one.";return false;}
    if(!Active.Owned){Notice="Select an owned machine in Garage first.";return false;}return true;
   }
   public void StartJob(int kind,bool free=false,bool quick=false,string town=CareerProgression.Pinefall){
    if(!CanStartJob(kind,free,town)){HUD.RefreshMenu();return;}
    if(Profile.inJob){Notice="Finish or abandon the active job before starting another.";Open("contracts");if(HUD.productionMenu)HUD.productionMenu.ShowJobConflict(kind,free,quick,town);return;}
+   bool travel=TownId!=town;if(travel)Save();
    Profile.job=kind;Profile.freeWork=free;Profile.quickPlay=quick&&!free;Profile.jobTownId=town;Profile.inJob=true;Profile.remaining=kind==0?720:900;Profile.earned=Profile.chain=Profile.chainTime=0;
-   Profile.transaction=Guid.NewGuid().ToString("N");if(!Profile.freeWork&&!Profile.quickPlay)Snow.ReplaceGrid(CareerTownSnow(kind));else{Snow.ResetToSeed();foreach(var vehicle in Fleet)vehicle.Tool.Load=0;}foreach(var vehicle in Fleet){vehicle.RecoverToDepot();if(vehicle.definition.loader)vehicle.Tool.ResetLowered();}RecreditTarget();Open("");Save();
+   Profile.transaction=Guid.NewGuid().ToString("N");
+   if(travel){
+    Profile.snow=null;foreach(var state in Profile.machines){state.load=0;state.position=Vector3.zero;}
+    Profile.pendingTownStart=true;PersistProfile();ready=false;Input.Clear();SceneManager.LoadScene(TownLevel.SceneFor(town));return;
+   }
+   if(!Profile.freeWork&&!Profile.quickPlay)Snow.ReplaceGrid(CareerTownSnow(kind));else{Snow.ResetToSeed();foreach(var vehicle in Fleet)vehicle.Tool.Load=0;}foreach(var vehicle in Fleet){vehicle.RecoverToDepot();if(vehicle.definition.loader)vehicle.Tool.ResetLowered();}RecreditTarget();Open("");Save();
   }
   public bool AbandonAndStartJob(int kind,bool free=false,bool quick=false,string town=CareerProgression.Pinefall){
    if(!Profile.inJob||!CanStartJob(kind,free,town))return false;
@@ -99,7 +121,7 @@ namespace Snowglow {
    int reward=Mathf.RoundToInt((basePay+Profile.earned)*late);Profile.coins+=reward;Profile.xp+=Profile.freeWork?0:180;
    if(!Profile.freeWork&&!Profile.quickPlay){CareerProgression.Complete(Profile,Profile.jobTownId,Profile.job);CareerSnowState.Store(Profile,CareerSnowState.Capture(Profile.jobTownId,Snow.Grid,Snow.seed.grid,Fleet));}
    ResultSummary=(Profile.freeWork?"Free Work":CareerProgression.JobNames[Profile.job]+" - "+(Profile.quickPlay?"Quick Play":"Career"))+"\n"+Mathf.RoundToInt(Snow.Progress*100)+"% cleared\nEarned: "+reward+" coins / "+(Profile.freeWork?0:180)+" XP\n"+(late<1?"Late completion: reduced pay.":"Shift completed.");
-   Profile.lastReward=Profile.transaction;Profile.inJob=false;Notice="Shift complete: +"+reward+" coins. "+(late<1?"Late completion: reduced pay.":"Pinefall thanks you.");
+   Profile.lastReward=Profile.transaction;Profile.inJob=false;Notice="Shift complete: +"+reward+" coins. "+(late<1?"Late completion: reduced pay.":TownLevel.NameFor(TownId)+" thanks you.");
    Audio.Chime();Open("results");Save();
   }
   public void Abandon(){if(!Profile.inJob)return;bool career=!Profile.freeWork&&!Profile.quickPlay;Profile.inJob=false;Profile.snow=null;Profile.earned=Profile.chain=Profile.chainTime=0;if(career)Snow.ReplaceGrid(CareerTownSnow(-1));else{Snow.ResetToSeed();foreach(var m in Fleet)m.Tool.Load=0;}foreach(var m in Fleet){m.Tool.ResetRaised();m.RecoverToDepot();}Notice="Job abandoned. Unpaid rewards and current work were reset.";Open("dashboard");Save();}
@@ -162,7 +184,16 @@ namespace Snowglow {
    if(!ready)return;
    Profile.machines=new MachineSave[Fleet.Length];
    for(int i=0;i<Fleet.Length;i++){var m=Fleet[i];Profile.machines[i]=new MachineSave{id=m.definition.id,owned=m.Owned,fuel=m.Fuel,condition=m.Condition,tyres=m.Tyres,engine=m.Engine,parts=m.SaveParts(),fittedParts=m.SaveFittedParts(),position=m.transform.position,rotation=m.transform.rotation,load=m.Tool.Load,lift=m.Tool.Lift,tilt=m.Tool.Tilt,angle=m.Tool.Angle,auto=m.Tool.Auto,working=m.Tool.Working};}
-   Profile.snow=Profile.inJob?Snow.Grid:null;SaveStore.Write(Profile);
+   Profile.snow=Profile.inJob?Snow.Grid:null;PersistProfile();
+  }
+  void PersistProfile(){
+#if UNITY_EDITOR
+   if(UnityEditor.SessionState.GetBool("Snowglow.CollisionPlay.Active",false))return;
+#endif
+   #if UNITY_EDITOR
+   if(UnityEditor.SessionState.GetBool("Snowglow.LevelChecks.Active",false)){UnityEditor.SessionState.SetString("Snowglow.LevelChecks.Profile",JsonUtility.ToJson(Profile));return;}
+   #endif
+   SaveStore.Write(Profile);
   }
   void PauseForBackground(){
    if(!ready)return;

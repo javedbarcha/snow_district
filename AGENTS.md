@@ -1,5 +1,96 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Editor developer unlock toggle - 15 November 2026
+
+Snowglow > Developer > Unlock everything (Editor only) toggles a per-project,
+per-PC EditorPrefs setting while Play is stopped. Enabled Play starts a fresh
+SessionState test profile with 1,000,000 coins, all vehicles and parts owned,
+all regions browsable and all built-town jobs unlocked. Upgrade levels start
+at zero and remain individually adjustable; normal depot/stopped fitting and
+service rules, fuel, condition and physics still apply. No fake completion or
+snow clearance. Unbuilt scenes remain Coming soon. Player builds have no unlock
+bypass or menu. Disable before Play to use normal saved progression.
+
+EditorDeveloperMode keeps test saves only in Editor SessionState through scene
+travel/domain reload, resetting on each new Play entry. SaveStore defensively
+routes marked developer profiles away from real disk files even if disabled.
+Existing LevelChecks/CollisionPlay fixture isolation takes precedence. Do not
+serialize the developer flag. The setting is local; enable it again on another
+PC via the menu. No scene authoring/rebake is required. Native Play checks:
+Logs/DeveloperMode.request, only after native compile exits zero; evidence at
+Logs/DeveloperMode/Checks.txt, including real save/backup hash preservation.
+
+Android-defined offline and native forced compile/domain reload passed. Actual
+Play checks passed for owned fleet/parts, zero starting upgrade levels, all six
+built-town jobs, planned-scene guards, ordinary progression, isolated save/load
+and defensive write routing after disabling. Real save and backup SHA256 plus
+both saved scene hashes are unchanged after Play exit. Toggle restored to its
+prior value; Play stopped. No scene edits or Android device run.
+
+## The Alps second town - 15 November 2026
+
+User requests the next full 1 km x 1 km town using its existing card. The next
+stable destination is `alps` (The Alps), following Pinefall. Reference imagery
+shows a Swiss-style square, Wilhelm Tell and son, a clock/gate tower, shuttered
+plaster houses and snowy ridges. Consequences explained: independent scene and
+assets; existing flat-base snow engine restricts plowable jobs to valley floor,
+with drivable graded mountain roads carrying decorative snow.
+
+`AlpsTownAuthoring` retains the deterministic Edit-mode generator. The new scene
+is `Assets/Scenes/TheAlps.unity`, with terrain/material/mesh/snow assets under
+`Assets/Snowglow/Levels/TheAlps`. It refuses implicit scene overwrite. First-build
+marker `Logs/TheAlps.request`; `polish` and `review` target the authored new scene.
+Queue markers only after native Compile exits 0. Preserve unsaved scene copies.
+Never run the original full district Bake to update this town.
+
+`TownLevel` supplies saved identity and scene-name mapping. Career unlocks Alps
+after Pinefall; Quick pools also require town access. Legacy job access applies
+to Pinefall only. Session travel persists fleet/economy, clears new-job motion
+and transient snow, loads the town scene and resumes. Career checkpoints remain
+town keyed; contracts currently share the existing three venue coordinates.
+Pinefall remains the initial build scene. Guide: THE_ALPS_LEVEL.md.
+
+`AlpsLevelChecks` uses Editor SessionState profile isolation, including scene
+travel; it never writes a diagnostic profile to disk. Evidence: Logs/TheAlps.
+Initial native validation stopped on Body (a Play-initialized property), corrected
+to inspect the saved Rigidbody component. Preserve the initial failure report.
+Cross-town startup now uses the additive persisted `pendingTownStart` flag,
+consumed after destination snow initialization. This avoids treating a JSON
+custom-class null as the new-job signal; departing sessions disable saving
+before scene replacement. The first two Play attempts exposed instant completion
+on returning to completed Pinefall; corrected bidirectional travel, Career/Quick
+separation and preservation subsequently passed 17 live assertions. Failed
+reports remain under Logs/TheAlps. No real profile writes by those tests.
+
+The town contains 28 old-town buildings, 9 hillside chalets, Tell and son,
+a gate/clock tower, 10 fractured ridges and 375 existing forest objects after
+clearing chalet lots. Thirty-nine reusable building/landmark prefabs and catalog
+entries retain provenance and NeedsReview status. Initial decorative batching
+removed 6,944 empty transforms; subsequent road passes remove their new empty
+markers too. Camera evidence covers the square, overview and hills. The old
+hill capture clipped a backdrop peak; the final camera is inside the open valley.
+Native Pinefall regressions passed 664 UI/session, 188 flow, 34 Career snow,
+19 ledger and 1,108 isolated recovery assertions. The protected Pinefall scene,
+existing seeds and both real save hashes matched (10 files in the task guard).
+Final native save/reopen passed: 157,332 road vertices / 52,444 collision
+triangles have finite saved geometry, upward winding and no sampled terrain
+burial at vertices or face centres. Rounded, densely sampled road strips remove
+bend intrusions. Coplanar decorative snow patches were removed from the ridge
+meshes to stop depth flicker. Final overview, Tell square and hill views were
+inspected. The final post-refit Play run again passed all 17 live assertions;
+scene, terrain and new snow-seed hashes matched before/after Play. The final
+Pinefall UI/flow/Career snow/ledger/recovery regressions also passed.
+
+One rendering-only saved scene override sets Terrain heightmapPixelError to 1
+instead of the initial generator's 10, eliminating distant terrain LOD breaking
+through the road. This increases terrain rendering detail, not collision detail.
+Finish/review preserve it. The exact post-Play scene diff is this one property;
+Pinefall and protected seed/save hashes still match. Evidence: VisualLOD.txt,
+RoadChecks.txt, PlayChecks.txt, Regression.txt and PreservationFinal.json.
+The Alps remains open with Play stopped. Android packaging, phone frame costs,
+manual full job completion and exhaustive hill driving are untested.
+
+
 ## Shop engine connections and attachment mounts - 15 November 2026
 
 User reports floating air cleaners on both tractor engines, primitive rear
