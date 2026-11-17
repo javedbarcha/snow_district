@@ -1,5 +1,10 @@
 # Verification record
 
+## Alps rolling outer hills - 17 November 2026
+
+Native compile/save/reopen,441 unchanged inner samples, scene/19 snow checks,2195 static access samples and17 isolated live Play assertions passed.32 mountain views and overview were inspected after replacing the flat shelf with rolling hills and easing the rise beyond465m. Terrain topology and16 natural mountain meshes/XZ/35m margins remain; physical terrain and257 camera query agree. Both scenes/new terrain assets/real saves match pre-Play hashes;2376 protected existing files matched. Outer-hill driving, manual full jobs and Android/A07 performance remain untested. Evidence: Logs/AlpsRollingHills.
+
+
 ## Alps outer mountain belt - 17 November 2026
 
 Native compile/domain reload and save/reopen passed after pinning inner terrain triangles and compressing the hill profile into270-350m.441 inner ground samples are unchanged; all16 mountains have35m outer margins and buried natural rims. Scene/19 snow checks,2195 static access samples and17 isolated Play assertions passed.32 native mountain views and overview inspected.2368 protected files matched; both scenes/new terrain assets/real saves were unchanged by Play. Prior guard failures retained under Logs/AlpsOuterMountainBelt. Changed outer-hill driving, manual full jobs and Android/A07 performance remain untested.
@@ -1935,3 +1940,21 @@ replenishment and 1,000 s bounded-population checks. Native alpha 1/.5/0 brightn
 sums: 15809385/7896624/0. Forest/full/half-opacity renders inspected; four native
 gameplay headings rendered. Logs/Forest500CloudFade/Validation.txt. Phone visuals,
 transparent overdraw/sorting, live traversal and Android packaging untested.
+
+## Alps outward mountains and border extension - 17 November 2026
+
+All16 mountains moved60m outward; supported rims >=.8m buried, no mesh/yaw/scale change. Approved1120m terrain footprint, original5600 triangles/vertical walls and vertex heights retained.
+
+Native forced compilation/reload, save/reopen,441 unchanged inner ground samples, scene/19 snow checks and2195 clear access samples passed.32 mountain views and overview reviewed;75 gameplay isometric views regenerated. All2381 protected source/prefab/previous terrain/Pinefall/save files unchanged. First pass restored the scene when a second legacy1000m validation guard rejected the approved extension; both validators now recognize only the approved Alps derivative. Failed-attempt assets with zero outside references archived under Logs. No Play rerun or Android/device acceptance for this visual placement revision. Alps open, Play stopped.
+
+## Alps1km footprint and8.5m horizon - 17 November2026
+
+Native forced compile/reload, save/reopen,441 unchanged inner ground samples, scene/19 snow and2195 clear access samples passed. All16 nearest boundary margins measured8.5m (within .00004m).32 mountain views and overview inspected;75 gameplay isometric captures regenerated. All2386 protected existing source/prefab/terrain/Pinefall/profile files unchanged. No Play rerun or Android/device acceptance. Alps open, Play stopped.
+
+## Alps hills nearer town - 17 November2026
+
+Native forced compile/reload, save/reopen,441 unchanged town ground samples, scene/19 snow and2195 clear access samples passed. All2386 protected existing files unchanged. Every saved scene Transform record is unchanged.32 mountain views and overview reviewed;75 gameplay isometric captures regenerated. Initial visual review caught a thin crack caused by separately duplicated flat-shaded vertex copies receiving different pin masks; pinning now propagates to all equal-position copies. Final geometry checks confirm zero new duplicate-position separations;3738 vertices actually raised, original9807 vertices/5600 triangles retained. Failed visual attempt and unused assets with zero outside references archived under Logs. No Play rerun or Android/device/outer-hill driving acceptance. Alps open, Play stopped.
+
+## Twelve broader terrain-seated mountains - 17 November2026
+
+Native forced compilation/reload, save/reopen, scene/19 snow and2195 clear access checks passed.24 mountain views and overview reviewed;75 gameplay isometric views regenerated. All2391 protected source/prefab/previous terrain/mesh/Pinefall/profile files unchanged. Saved mesh continuity checks passed for all12 derivatives. Only the mountain group changed among existing scene records. First pass caught a near-rim height tolerance and restored the scene before saving; the corrected rim is projected to a consistent-.8m baseline. Initial failure and unused derivatives with zero outside references retained under Logs. No Play rerun or Android/device acceptance. Alps open, Play stopped.

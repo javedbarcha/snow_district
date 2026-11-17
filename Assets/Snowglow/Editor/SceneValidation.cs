@@ -48,7 +48,7 @@ namespace Snowglow.Editor {
    }
    var terrains=roots.SelectMany(r=>r.GetComponentsInChildren<Terrain>(true)).ToArray();
    Require(terrains.Length==1&&terrains[0].terrainData&&AssetDatabase.Contains(terrains[0].terrainData),"saved terrain missing");
-   Require(terrains[0].terrainData.size.x==1000&&terrains[0].terrainData.size.z==1000,"terrain must span 1000 metres");
+   Require(((terrains[0].terrainData.size.x==1000&&terrains[0].terrainData.size.z==1000)||(session.TownId=="alps"&&terrains[0].terrainData.size.x==1120&&terrains[0].terrainData.size.z==1120&&AssetDatabase.GetAssetPath(terrains[0].terrainData).StartsWith("Assets/Snowglow/Levels/TheAlps/FurtherMountains",System.StringComparison.Ordinal))),"terrain must span1000m or approved Alps1120m extension");
    foreach(var renderer in roots.SelectMany(r=>r.GetComponentsInChildren<Renderer>(true)))
     foreach(var material in renderer.sharedMaterials)Require(material&&material.shader&&material.shader.name!="Hidden/InternalErrorShader"&&AssetDatabase.Contains(material),"invalid saved material on "+renderer.name);
    Require(GraphicsSettings.defaultRenderPipeline is UniversalRenderPipelineAsset,"URP must be assigned");
