@@ -1,6 +1,6 @@
 # Empty Alps terrain driving test
 
-Open `Assets/Scenes/AlpsTerrainTest.unity`. This scene contains only the original
+Open `Assets/Scenes/AlpsTerrainTest.unity`. This scene contains only the latest
 supplied terrain, one existing tractor and the necessary camera/light/control
 helpers. The invisible TerrainData is used only for camera-height queries; the
 supplied mesh provides physical collision. Original 1:1 source metres are used,
@@ -25,15 +25,67 @@ The raised blade, stock parts, full fuel and full condition start fresh each Pla
 It calls the same MachineController driving step as normal gameplay, with no
 snow field. Normal gameplay retains its original session gates and snow logic.
 
-The attachment checksum matches the retained source and reviewed FBX export.
+The revised attachment `Snow_District_Alps_Town_Terrain (1).blend` is preserved
+as `SourceAssets/AlpsTerrainTestRevision/Terrain.blend`, with its checksum and
+export metrics in `Provenance.json`. Its separate FBX and palette are under
+`Assets/Snowglow/Levels/AlpsTerrainTest/Revision2`. The 1000 x 1000 m terrain
+retains its original -35 to 70 m source heights, with no height compression.
+The original terrain assets remain available; only the test scene is replaced.
+Camera heights are sampled from the revised physical mesh and the test tractor
+is reseated at the centre. Export uses Blender with autoexecution disabled.
+
 Authoring is Editor-only: after native compilation succeeds, queue
 `Logs/AlpsTerrainTest.request` with `build` once, or `play` for the isolated live
-checks. Build refuses to overwrite an existing test scene. Evidence and backups
+checks. `replace` installs the prepared Revision2 terrain once and refuses a
+duplicate installation. Build refuses to overwrite an existing test scene. Evidence and backups
 are under Logs/AlpsTerrainTest. This scene is for PC Editor terrain testing;
 mobile controls, snow work and Android performance are outside this test.
+Replacement backups and captures are under Logs/AlpsTerrainTestRevision.
 
 Native scene save/reopen, existing direction/recovery checks and actual Play
 startup/support/acceleration/coasting/reset checks passed. Protected game scenes,
 build settings, source assets, tractor prefab and real profiles are unchanged.
 Before running another Editor Play fixture, clear the test-scene startup override
 and restore it afterward if you want to keep using this sandbox.
+
+## Provisional mountain review
+
+Seven mountain instances occupy the marked NW, N, NE, W, SE, SW and S perimeter
+areas. They reuse the prepared models exported from the exact attached
+`Snow_District_Alps_Mountains.blend` (matching SHA256 in the original intake
+manifest). Each has a uniform scale and yaw to suit its marked footprint, with
+its base initially placed at the terrain height of its centre. Seating is
+deliberately pending: no terrain sculpting, skirts, mesh refits or seam blending.
+The added mountains have static collision using their visible shared meshes.
+
+Test-only derivative palettes replace dark rock swatches with icy blues on the
+terrain and placed mountains; snow swatches and all source textures/materials
+remain intact. Assets live under `MountainPlacement`. Editor-only installer:
+queue `Logs/AlpsTerrainTest.request` containing `mountains` after successful
+native compilation. It refuses duplicate placement. Original scene backups,
+before/after rock views and placement renders are under Logs/AlpsTestMountains.
+
+The subsequent southeast gap addition uses the previously unused fractured rock
+buttress (Mountain_07), making eight mountain instances. `mountaingap` is a
+separate one-time action: it uses the current Editor scene, backs up unsaved user
+edits and checks all seven existing mountain poses before/after saving. It does
+not rerun the original placements. Gap evidence: Logs/AlpsMountainGap.
+The screenshot views from the east, so its near-left gap is southeast in world
+coordinates. The added instance is at x=380, z=-330. Existing placements are
+checked from the current in-memory Editor scene, including unsaved user changes.
+
+## Mountain seating and final dark swatch
+
+All eight mountains now have Y-only seating adjustments. Their source slope/base
+transition rings are sampled every 2 m or less and buried 0.5 m beneath the
+actual terrain, hiding the original short lower walls. Horizontal positions,
+rotations, scales and shared meshes stay as authored by the user. This lowers
+some visible mountain heights; terrain and mountain geometry are unchanged.
+The remaining dark green rock swatch on the rounded mountain is replaced by
+icy blue in a new test-only palette/material under `MountainSeating`.
+
+The one-time `mountainseat` action preserves the current in-memory scene and
+refuses repeat application. Queue only after native compile exits zero.
+Saved/reopened constraints, individual renders, overview, exact Y changes and
+protected file hashes are in Logs/AlpsMountainSeating. All rim samples lie within
+the terrain. No mesh refitting, terrain sculpting or gameplay handling changes.

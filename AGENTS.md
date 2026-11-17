@@ -1,5 +1,120 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Eight test mountains seated by Y only - 18 November 2026
+
+User requests replacing remaining dark colors on the rounded mountain and
+seating each mountain strictly by up/down translation. Consequences explained:
+visible heights may reduce; horizontal layout/rotation/scale stay unchanged.
+TerrainTestMountainSeating operates on the current in-memory AlpsTerrainTest
+scene, backing it up before changes. It samples each unchanged source mesh's
+slope/lower-wall transition ring (8 source metres above its bottom) every <=2m,
+then translates the complete instance along world Y to bury the ring by .5m.
+No deleted faces, fitted skirts, deformation or source/prefab overwrite.
+All eight rims are inside terrain and passed >=.49m burial checks; visible
+peaks remain 36.66-108.74m above terrain. Root Y changes range -11.07 to -32.63m.
+XZ, rotation, scale, original mesh and collider references pass save/reopen.
+
+The last dark green/charcoal palette swatch (x32-35) is changed to RGB157/192/218
+on a new test-only derivative palette/material under Levels/AlpsTerrainTest/
+MountainSeating. Other swatches and original palettes/materials remain unchanged.
+All eight saved instances use that derivative, giving a coherent icy palette.
+Native Android-target forced compile/domain reload and prior Android-defined
+offline C# compilation pass. Eight individual views/contact sheet and overview
+inspected. All 62 protected asset/save hashes match; exactly eight pre-existing
+mountain prefab instance records change, with no scene objects added/removed.
+Evidence/scene backups/offsets: Logs/AlpsMountainSeating. One-time marker
+mountainseat via Logs/AlpsTerrainTest.request only after native compile exit0;
+refuses repeat application. Use atomic marker publication. Play stopped;
+test scene remains open. No Play rerun or exhaustive mountain driving/device
+acceptance for these visual Y translations; game scenes/saves remain protected.
+
+## Additional mountain in user-positioned test scene - 17 November 2026
+
+User repositions seven mountains and requests a new type in a blue marked gap.
+TerrainTestMountains.AddGap uses the current in-memory test scene, preserving
+unsaved user edits under Logs/AlpsMountainGap/User-unsaved-before.unity. Never
+reopen the older disk scene before capturing those edits. The previously unused
+Mountain_07 fractured rock buttress is added with the existing icy material and
+shared static mesh collider. Screenshot camera looks from east: its near-left
+gap is southeast, x380/z-330, terrain-centre base y36.80, yaw20, uniform scale
+.1742928. First preview was on the opposite side; CorrectGapOrientation moves
+only that new eighth instance. Original seven world positions/rotations/local
+scales are checked across save/reopen and retained exactly. No seating repair.
+
+Markers through Logs/AlpsTerrainTest.request after native compile exit0:
+mountaingap adds once; mountaingapcorrect is the narrowly guarded initial
+orientation correction, not a general placement refresh. Use atomic rename
+to submit markers, avoiding a transient sharing violation while writing.
+Native forced compile/reload and saved placement/material/collider checks pass.
+Top and east-facing perspective renders inspected. All 54 protected source,
+terrain data, game/build/profile hashes remain unchanged. Evidence/backups:
+Logs/AlpsMountainGap. Play remains stopped; no Play run was needed for this
+single placement. Terrain/tractor and direct test startup remain unchanged.
+
+## Provisional test mountains and icy rock shades - 17 November 2026
+
+User accepts the revised test terrain and requests lighter icy-blue vertical
+rock faces plus mountains in seven marked perimeter zones, explicitly deferring
+seating fixes. TerrainTestMountains changes only AlpsTerrainTest.unity. Attached
+Snow_District_Alps_Mountains.blend SHA256 f45c406af0ed1446247796e2ac2bfa7f6b40196dd978b19956abe1f33f0f8136
+matches preserved source/export provenance; existing prepared models are reused.
+Seven saved instances (NW, N, NE, W, SE, SW, S) have uniform footprint scales,
+yaw and a single centre terrain-height base placement. No terrain deformation,
+skirt, seam blending or seating repair. Mountains use visible shared meshes
+for static collision. Models remain NeedsReview. Main game scenes stay unchanged.
+
+Test-only derivative palettes/materials under Levels/AlpsTerrainTest/MountainPlacement
+lift the terrain's three dark rock swatches and the mountains' four darkest
+rock swatches toward icy blues. Snow swatches, lights, original source palettes,
+terrain mesh/collision and camera-height data remain unchanged. Direct Play and
+stock tractor are retained. Marker Logs/AlpsTerrainTest.request: mountains
+installs once, mountainsretry preserves an interrupted unsaved scene and reopens
+the saved test scene before retrying. Queue only after native compile exit0.
+Initial collision setup used C# null-coalescing on a Unity missing component;
+corrected to Unity's object truth test. Initial failure retained in evidence.
+Native forced compile/reload and saved/reopened placement validation passed.
+Before/after rock views, top/perspective previews, backups and protected hashes:
+Logs/AlpsTestMountains. Mountain seating remains intentionally pending review.
+Final actual Play passed four wheel contacts, acceleration, coasting and reset;
+Play stopped and test scene/direct startup retained. The first Play support
+check used Editor wall time during startup; fixture stages now wait for elapsed
+Time.fixedTime, while retaining an Editor wall-time timeout. Initial failed
+evidence is retained. All 54 protected source/game/build/profile hashes match
+after Play. Saved-scene diff changes only the original terrain renderer material
+and root list, plus new mountain records; tractor instance and every prior
+physics/query record remain identical. No exhaustive mountain collision/seating
+or Android performance acceptance; the user will review placement first.
+
+## Revised terrain in isolated tractor test - 17 November 2026
+
+User supplies Snow_District_Alps_Town_Terrain (1).blend to replace only the test
+terrain. Consequences explained: new terrain collision and camera-height data;
+test tractor is reseated, main game scenes and controls remain. Preserved source:
+SourceAssets/AlpsTerrainTestRevision/Terrain.blend; SHA256
+b9fe5a5d0a76648a9aff9366aae272673dd57e303862bb01c278d1f801c03fa3.
+Tools/AssetIntake/export_test_terrain_revision.py exports only the evaluated
+terrain and packed palette with Blender factory startup/autoexecution disabled.
+Revision2 under Levels/AlpsTerrainTest retains 1:1 metres, 1000 x 1000 m,
+source heights -35 to 70 m, 9,993 vertices and 19,982 triangles. Original imported
+terrain assets remain untouched. No changes to either town scene or build list.
+
+TerrainTestRevision applies the targeted replace action through the existing
+Logs/AlpsTerrainTest.request marker, only after native compile exits zero.
+It preserves disk/unsaved scene copies, replaces only the visible terrain,
+samples 257 x 257 camera heights from its actual MeshCollider, reseats the test
+tractor at the drivable centre and retains six roots/direct Play override.
+Duplicate replacement is refused. Backups/provenance/checks/capture are under
+Logs/AlpsTerrainTestRevision. The existing play action checks actual wheel
+support, acceleration, coasting and reset with real save hash preservation.
+
+Android-defined offline and ID-matched native forced compile/domain reload
+passed. Replacement saved/reopened at exact source bounds; all 66,049 physical
+camera samples and level centre spawn checks passed. Test view inspected.
+Actual Play passed direct startup, four wheel contacts, acceleration, release
+coasting and zero-motion reset. Nine protected game/source/build/profile files
+match pre-task hashes. Test scene remains open, Play stopped, direct test startup
+enabled. Exhaustive hill driving and Android device performance remain untested.
+
 ## Empty original-scale terrain tractor test - 17 November 2026
 
 User requests a separate empty test scene using the attached terrain Blender,
