@@ -1,5 +1,22 @@
 # Verification record
 
+## Alps outer mountain belt - 17 November 2026
+
+Native compile/domain reload and save/reopen passed after pinning inner terrain triangles and compressing the hill profile into270-350m.441 inner ground samples are unchanged; all16 mountains have35m outer margins and buried natural rims. Scene/19 snow checks,2195 static access samples and17 isolated Play assertions passed.32 native mountain views and overview inspected.2368 protected files matched; both scenes/new terrain assets/real saves were unchanged by Play. Prior guard failures retained under Logs/AlpsOuterMountainBelt. Changed outer-hill driving, manual full jobs and Android/A07 performance remain untested.
+
+
+## Alps natural mountain bases - 17 November 2026
+
+Native compilation/save/reopen, scene validation,19 snow checks and2195 static access samples passed after moving all16 mountains25 m outward and deleting their stretched lower skirts. All32 two-angle native mountain captures were inspected.1320 protected files matched, including Pinefall, sources, existing terrain/snow and real saves. New derivative geometry totals8064 triangles (previously11136). No Play rerun or Android/A07 performance test for this visual-only change. Evidence: Logs/AlpsMountainRevision.
+
+
+## Alps supplied-asset rebuild ? 17 November 2026
+
+Native Android-target compilation, 22-assembly source intake and saved/reopened scene validation passed with 70 homes, single enclosing home colliders, southwest fronts, projected-axis spacing, required session bindings and 19 snow-ledger checks. All twelve planned routes form one connected graph. The camera-reference failure after the first reopen was corrected and the successful retry generated 75 native gameplay-isometric captures. Source preservation matched all 891 protected existing files; Pinefall/profile bytes were preserved during authoring. Evidence: Logs/AlpsRebuild and Reports/AlpsRebuild.
+
+Final saved/reopened refinements passed 2,195 static road/service-envelope samples with zero obstructions; 75 gameplay-isometric captures and the wide audit overview were reviewed. Seventeen isolated actual Play assertions passed for wheel support, coasting, Career/Quick town travel, checkpoint/economy transfer and resume. Both scenes and real profile/backup hashes match pre-Play values. Native compilation and held-reader automation recovery also passed. APK packaging, Samsung Galaxy A07 frame cost, mobile touch, manual full jobs and exhaustive terrain driving are untested. Catalogue status is NeedsReview; desktop captures do not establish mobile acceptance.
+
+
 ## Cabin/tool collider authoring — 12 November 2026
 
 Unity 6000.3.8f1 / Android compiled and saved/reopened Pinefall and both machinery

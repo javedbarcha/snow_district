@@ -1,0 +1,4598 @@
+[
+  {
+    "file": "Snow_District_Alps_Town_Terrain.blend",
+    "objects": [
+      {
+        "name": "Alps_Town_Terrain | 1000m x 1000m",
+        "type": "MESH",
+        "collections": [
+          "Scene Collection"
+        ],
+        "parent": null,
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 2802,
+        "triangles": 5600,
+        "boundsMin": [
+          -500.0,
+          -500.0,
+          -35.0
+        ],
+        "boundsMax": [
+          500.0,
+          500.0,
+          270.5157775878906
+        ],
+        "materials": [
+          "Terrain | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Sun",
+        "type": "LIGHT",
+        "collections": [
+          "Preview lighting and camera | optional"
+        ],
+        "parent": null,
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Terrain preview camera",
+        "type": "CAMERA",
+        "collections": [
+          "Preview lighting and camera | optional"
+        ],
+        "parent": null,
+        "location": [
+          1050.0,
+          -1450.0,
+          1170.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "collections": [
+      {
+        "name": "Preview lighting and camera | optional",
+        "objects": 2,
+        "allObjects": 2,
+        "children": []
+      }
+    ],
+    "materials": [
+      {
+        "name": "Terrain | shared opaque palette",
+        "color": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ]
+      }
+    ],
+    "texts": [
+      "README",
+      "Terrain_generator.py"
+    ],
+    "images": [
+      {
+        "name": "Terrain snow and rock palette | packed",
+        "size": [
+          24,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "file": "Snow_District_Alps_Mountains.blend",
+    "objects": [
+      {
+        "name": "01_Sharp_Alpine_Horn | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "01_Sharp_Alpine_Horn"
+        ],
+        "parent": null,
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "01_Sharp_Alpine_Horn_LOD0",
+        "type": "MESH",
+        "collections": [
+          "01_Sharp_Alpine_Horn"
+        ],
+        "parent": "01_Sharp_Alpine_Horn | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1202,
+        "triangles": 2400,
+        "boundsMin": [
+          -370.1776123046875,
+          -339.625,
+          -8.0
+        ],
+        "boundsMax": [
+          370.1776123046875,
+          318.631103515625,
+          494.0238952636719
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "01_Sharp_Alpine_Horn_LOD1",
+        "type": "MESH",
+        "collections": [
+          "01_Sharp_Alpine_Horn"
+        ],
+        "parent": "01_Sharp_Alpine_Horn | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 350,
+        "triangles": 696,
+        "boundsMin": [
+          -368.8873596191406,
+          -339.625,
+          -8.0
+        ],
+        "boundsMax": [
+          368.8873596191406,
+          318.21173095703125,
+          502.8066101074219
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "01_Sharp_Alpine_Horn_LOD2",
+        "type": "MESH",
+        "collections": [
+          "01_Sharp_Alpine_Horn"
+        ],
+        "parent": "01_Sharp_Alpine_Horn | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 113,
+        "triangles": 222,
+        "boundsMin": [
+          -368.8873596191406,
+          -336.3796691894531,
+          -8.0
+        ],
+        "boundsMax": [
+          368.8873596191406,
+          317.9829406738281,
+          413.2814636230469
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "02_Limestone_Cliff_Wall | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "02_Limestone_Cliff_Wall"
+        ],
+        "parent": null,
+        "location": [
+          1500.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "02_Limestone_Cliff_Wall_LOD0",
+        "type": "MESH",
+        "collections": [
+          "02_Limestone_Cliff_Wall"
+        ],
+        "parent": "02_Limestone_Cliff_Wall | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1202,
+        "triangles": 2400,
+        "boundsMin": [
+          974.6112060546875,
+          -259.4127502441406,
+          -8.0
+        ],
+        "boundsMax": [
+          2047.433837890625,
+          253.53781127929688,
+          398.1910095214844
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "02_Limestone_Cliff_Wall_LOD1",
+        "type": "MESH",
+        "collections": [
+          "02_Limestone_Cliff_Wall"
+        ],
+        "parent": "02_Limestone_Cliff_Wall | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 350,
+        "triangles": 696,
+        "boundsMin": [
+          -524.6889038085938,
+          -259.4127502441406,
+          -8.0
+        ],
+        "boundsMax": [
+          545.6626586914062,
+          253.11619567871094,
+          411.2810363769531
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "02_Limestone_Cliff_Wall_LOD2",
+        "type": "MESH",
+        "collections": [
+          "02_Limestone_Cliff_Wall"
+        ],
+        "parent": "02_Limestone_Cliff_Wall | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 113,
+        "triangles": 222,
+        "boundsMin": [
+          -522.2754516601562,
+          -259.4127502441406,
+          -8.0
+        ],
+        "boundsMax": [
+          545.6626586914062,
+          253.11619567871094,
+          326.33551025390625
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "03_Twin_Peaks_and_Saddle | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "03_Twin_Peaks_and_Saddle"
+        ],
+        "parent": null,
+        "location": [
+          3000.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "03_Twin_Peaks_and_Saddle_LOD0",
+        "type": "MESH",
+        "collections": [
+          "03_Twin_Peaks_and_Saddle"
+        ],
+        "parent": "03_Twin_Peaks_and_Saddle | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1202,
+        "triangles": 2400,
+        "boundsMin": [
+          2551.701904296875,
+          -330.8460998535156,
+          -8.0
+        ],
+        "boundsMax": [
+          3469.62646484375,
+          336.7098388671875,
+          472.1954650878906
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "03_Twin_Peaks_and_Saddle_LOD1",
+        "type": "MESH",
+        "collections": [
+          "03_Twin_Peaks_and_Saddle"
+        ],
+        "parent": "03_Twin_Peaks_and_Saddle | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 350,
+        "triangles": 696,
+        "boundsMin": [
+          -447.1248779296875,
+          -330.39300537109375,
+          -8.0
+        ],
+        "boundsMax": [
+          468.41326904296875,
+          336.2304382324219,
+          473.3974609375
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "03_Twin_Peaks_and_Saddle_LOD2",
+        "type": "MESH",
+        "collections": [
+          "03_Twin_Peaks_and_Saddle"
+        ],
+        "parent": "03_Twin_Peaks_and_Saddle | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 113,
+        "triangles": 222,
+        "boundsMin": [
+          -446.4733581542969,
+          -329.7891845703125,
+          -8.0
+        ],
+        "boundsMax": [
+          467.0829162597656,
+          336.2304382324219,
+          479.0552062988281
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "04_Glacial_Cirque | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "04_Glacial_Cirque"
+        ],
+        "parent": null,
+        "location": [
+          4500.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "04_Glacial_Cirque_LOD0",
+        "type": "MESH",
+        "collections": [
+          "04_Glacial_Cirque"
+        ],
+        "parent": "04_Glacial_Cirque | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1202,
+        "triangles": 2400,
+        "boundsMin": [
+          4013.151123046875,
+          -418.9783630371094,
+          -8.0
+        ],
+        "boundsMax": [
+          4989.63427734375,
+          443.93359375,
+          391.69097900390625
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "04_Glacial_Cirque_LOD1",
+        "type": "MESH",
+        "collections": [
+          "04_Glacial_Cirque"
+        ],
+        "parent": "04_Glacial_Cirque | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 350,
+        "triangles": 696,
+        "boundsMin": [
+          -485.8370056152344,
+          -418.40631103515625,
+          -8.0
+        ],
+        "boundsMax": [
+          488.8381652832031,
+          443.93359375,
+          358.9173583984375
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "04_Glacial_Cirque_LOD2",
+        "type": "MESH",
+        "collections": [
+          "04_Glacial_Cirque"
+        ],
+        "parent": "04_Glacial_Cirque | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 113,
+        "triangles": 222,
+        "boundsMin": [
+          -484.33319091796875,
+          -418.40631103515625,
+          -8.0
+        ],
+        "boundsMax": [
+          488.8381652832031,
+          441.1519470214844,
+          315.9457702636719
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "05_Serrated_Ridgeline | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "05_Serrated_Ridgeline"
+        ],
+        "parent": null,
+        "location": [
+          0.0,
+          1500.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "05_Serrated_Ridgeline_LOD0",
+        "type": "MESH",
+        "collections": [
+          "05_Serrated_Ridgeline"
+        ],
+        "parent": "05_Serrated_Ridgeline | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1202,
+        "triangles": 2400,
+        "boundsMin": [
+          -624.5809936523438,
+          1222.34423828125,
+          -8.0
+        ],
+        "boundsMax": [
+          602.891845703125,
+          1785.9818115234375,
+          409.6166687011719
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "05_Serrated_Ridgeline_LOD1",
+        "type": "MESH",
+        "collections": [
+          "05_Serrated_Ridgeline"
+        ],
+        "parent": "05_Serrated_Ridgeline | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 350,
+        "triangles": 696,
+        "boundsMin": [
+          -623.920166015625,
+          -277.58587646484375,
+          -8.0
+        ],
+        "boundsMax": [
+          602.891845703125,
+          285.9817810058594,
+          401.73175048828125
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "05_Serrated_Ridgeline_LOD2",
+        "type": "MESH",
+        "collections": [
+          "05_Serrated_Ridgeline"
+        ],
+        "parent": "05_Serrated_Ridgeline | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 113,
+        "triangles": 222,
+        "boundsMin": [
+          -623.920166015625,
+          -277.58587646484375,
+          -8.0
+        ],
+        "boundsMax": [
+          597.995361328125,
+          285.9817810058594,
+          402.0882873535156
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "06_Rounded_Foothills | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "06_Rounded_Foothills"
+        ],
+        "parent": null,
+        "location": [
+          1500.0,
+          1500.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "06_Rounded_Foothills_LOD0",
+        "type": "MESH",
+        "collections": [
+          "06_Rounded_Foothills"
+        ],
+        "parent": "06_Rounded_Foothills | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1202,
+        "triangles": 2400,
+        "boundsMin": [
+          1004.2901611328125,
+          1096.8388671875,
+          -8.0
+        ],
+        "boundsMax": [
+          1970.795654296875,
+          1898.23779296875,
+          215.8231658935547
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "06_Rounded_Foothills_LOD1",
+        "type": "MESH",
+        "collections": [
+          "06_Rounded_Foothills"
+        ],
+        "parent": "06_Rounded_Foothills | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 350,
+        "triangles": 696,
+        "boundsMin": [
+          -495.49700927734375,
+          -402.4755859375,
+          -8.0
+        ],
+        "boundsMax": [
+          469.66571044921875,
+          398.23785400390625,
+          208.0343017578125
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "06_Rounded_Foothills_LOD2",
+        "type": "MESH",
+        "collections": [
+          "06_Rounded_Foothills"
+        ],
+        "parent": "06_Rounded_Foothills | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 113,
+        "triangles": 222,
+        "boundsMin": [
+          -491.9615173339844,
+          -401.9762878417969,
+          -8.0
+        ],
+        "boundsMax": [
+          469.66571044921875,
+          396.30670166015625,
+          207.98785400390625
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "07_Fractured_Rock_Buttress | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "07_Fractured_Rock_Buttress"
+        ],
+        "parent": null,
+        "location": [
+          3000.0,
+          1500.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "07_Fractured_Rock_Buttress_LOD0",
+        "type": "MESH",
+        "collections": [
+          "07_Fractured_Rock_Buttress"
+        ],
+        "parent": "07_Fractured_Rock_Buttress | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1202,
+        "triangles": 2400,
+        "boundsMin": [
+          2586.841064453125,
+          1108.4154052734375,
+          -8.0
+        ],
+        "boundsMax": [
+          3408.359130859375,
+          1871.551025390625,
+          406.8023681640625
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "07_Fractured_Rock_Buttress_LOD1",
+        "type": "MESH",
+        "collections": [
+          "07_Fractured_Rock_Buttress"
+        ],
+        "parent": "07_Fractured_Rock_Buttress | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 350,
+        "triangles": 696,
+        "boundsMin": [
+          -413.15899658203125,
+          -391.202880859375,
+          -8.0
+        ],
+        "boundsMax": [
+          408.31005859375,
+          371.3742370605469,
+          409.5622253417969
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "07_Fractured_Rock_Buttress_LOD2",
+        "type": "MESH",
+        "collections": [
+          "07_Fractured_Rock_Buttress"
+        ],
+        "parent": "07_Fractured_Rock_Buttress | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 113,
+        "triangles": 222,
+        "boundsMin": [
+          -413.15899658203125,
+          -390.0655517578125,
+          -8.0
+        ],
+        "boundsMax": [
+          405.6476135253906,
+          371.3742370605469,
+          358.9884338378906
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "08_Broad_Snow_Massif | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "08_Broad_Snow_Massif"
+        ],
+        "parent": null,
+        "location": [
+          4500.0,
+          1500.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "08_Broad_Snow_Massif_LOD0",
+        "type": "MESH",
+        "collections": [
+          "08_Broad_Snow_Massif"
+        ],
+        "parent": "08_Broad_Snow_Massif | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1202,
+        "triangles": 2400,
+        "boundsMin": [
+          3944.643310546875,
+          1005.3550415039062,
+          -8.0
+        ],
+        "boundsMax": [
+          5071.7138671875,
+          1977.665771484375,
+          485.05511474609375
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "08_Broad_Snow_Massif_LOD1",
+        "type": "MESH",
+        "collections": [
+          "08_Broad_Snow_Massif"
+        ],
+        "parent": "08_Broad_Snow_Massif | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 350,
+        "triangles": 696,
+        "boundsMin": [
+          -555.3567504882812,
+          -494.64495849609375,
+          -8.0
+        ],
+        "boundsMax": [
+          571.714111328125,
+          477.6658020019531,
+          464.92584228515625
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "08_Broad_Snow_Massif_LOD2",
+        "type": "MESH",
+        "collections": [
+          "08_Broad_Snow_Massif"
+        ],
+        "parent": "08_Broad_Snow_Massif | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 113,
+        "triangles": 222,
+        "boundsMin": [
+          -548.7194213867188,
+          -494.64495849609375,
+          -8.0
+        ],
+        "boundsMax": [
+          571.714111328125,
+          477.6658020019531,
+          448.5782775878906
+        ],
+        "materials": [
+          "Alps | shared opaque rock and snow palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Overview camera",
+        "type": "CAMERA",
+        "collections": [
+          "PRESENTATION | exclude from exports"
+        ],
+        "parent": null,
+        "location": [
+          5050.0,
+          -6050.0,
+          4370.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Sun",
+        "type": "LIGHT",
+        "collections": [
+          "PRESENTATION | exclude from exports"
+        ],
+        "parent": null,
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "collections": [
+      {
+        "name": "01_Sharp_Alpine_Horn",
+        "objects": 4,
+        "allObjects": 4,
+        "children": []
+      },
+      {
+        "name": "02_Limestone_Cliff_Wall",
+        "objects": 4,
+        "allObjects": 4,
+        "children": []
+      },
+      {
+        "name": "03_Twin_Peaks_and_Saddle",
+        "objects": 4,
+        "allObjects": 4,
+        "children": []
+      },
+      {
+        "name": "04_Glacial_Cirque",
+        "objects": 4,
+        "allObjects": 4,
+        "children": []
+      },
+      {
+        "name": "05_Serrated_Ridgeline",
+        "objects": 4,
+        "allObjects": 4,
+        "children": []
+      },
+      {
+        "name": "06_Rounded_Foothills",
+        "objects": 4,
+        "allObjects": 4,
+        "children": []
+      },
+      {
+        "name": "07_Fractured_Rock_Buttress",
+        "objects": 4,
+        "allObjects": 4,
+        "children": []
+      },
+      {
+        "name": "08_Broad_Snow_Massif",
+        "objects": 4,
+        "allObjects": 4,
+        "children": []
+      },
+      {
+        "name": "MOUNTAIN_ASSETS | eight independent roots",
+        "objects": 0,
+        "allObjects": 32,
+        "children": [
+          "01_Sharp_Alpine_Horn",
+          "02_Limestone_Cliff_Wall",
+          "03_Twin_Peaks_and_Saddle",
+          "04_Glacial_Cirque",
+          "05_Serrated_Ridgeline",
+          "06_Rounded_Foothills",
+          "07_Fractured_Rock_Buttress",
+          "08_Broad_Snow_Massif"
+        ]
+      },
+      {
+        "name": "PRESENTATION | exclude from exports",
+        "objects": 2,
+        "allObjects": 2,
+        "children": []
+      }
+    ],
+    "materials": [
+      {
+        "name": "Alps | shared opaque rock and snow palette",
+        "color": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ]
+      }
+    ],
+    "texts": [
+      "build_source.py",
+      "README"
+    ],
+    "images": [
+      {
+        "name": "Alpine palette | packed",
+        "size": [
+          36,
+          4
+        ]
+      },
+      {
+        "name": "Render Result",
+        "size": [
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "file": "Snow_District_Alps_Buildings.blend",
+    "objects": [
+      {
+        "name": "Altdorf_Clock_Tower | Architecture",
+        "type": "MESH",
+        "collections": [
+          "05 | Altdorf_Clock_Tower"
+        ],
+        "parent": "Altdorf_Clock_Tower | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 813,
+        "triangles": 1180,
+        "boundsMin": [
+          -4.099999904632568,
+          24.899999618530273,
+          0.0
+        ],
+        "boundsMax": [
+          4.099999904632568,
+          33.099998474121094,
+          32.0
+        ],
+        "materials": [
+          "Alps | shared architecture palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Altdorf_Clock_Tower | Opaque_windows",
+        "type": "MESH",
+        "collections": [
+          "05 | Altdorf_Clock_Tower"
+        ],
+        "parent": "Altdorf_Clock_Tower | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 32,
+        "triangles": 16,
+        "boundsMin": [
+          -2.943000078201294,
+          26.05699920654297,
+          18.424999237060547
+        ],
+        "boundsMax": [
+          2.943000078201294,
+          31.94300079345703,
+          22.475000381469727
+        ],
+        "materials": [
+          "Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Altdorf_Clock_Tower | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "05 | Altdorf_Clock_Tower"
+        ],
+        "parent": null,
+        "location": [
+          0.0,
+          29.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Balcony_Villa_and_Garage | Architecture",
+        "type": "MESH",
+        "collections": [
+          "02 | Balcony_Villa_and_Garage"
+        ],
+        "parent": "Balcony_Villa_and_Garage | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1652,
+        "triangles": 2090,
+        "boundsMin": [
+          19.600000381469727,
+          -9.5,
+          -0.014999999664723873
+        ],
+        "boundsMax": [
+          33.20000076293945,
+          5.400000095367432,
+          13.770000457763672
+        ],
+        "materials": [
+          "Alps | shared architecture palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Balcony_Villa_and_Garage | Opaque_windows",
+        "type": "MESH",
+        "collections": [
+          "02 | Balcony_Villa_and_Garage"
+        ],
+        "parent": "Balcony_Villa_and_Garage | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 120,
+        "triangles": 60,
+        "boundsMin": [
+          19.85700035095215,
+          -5.14300012588501,
+          0.875
+        ],
+        "boundsMax": [
+          30.14299964904785,
+          5.14300012588501,
+          11.0
+        ],
+        "materials": [
+          "Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Balcony_Villa_and_Garage | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "02 | Balcony_Villa_and_Garage"
+        ],
+        "parent": null,
+        "location": [
+          25.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Balcony_Villa_and_Garage | Snow_optional",
+        "type": "MESH",
+        "collections": [
+          "02 | Balcony_Villa_and_Garage"
+        ],
+        "parent": "Balcony_Villa_and_Garage | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 18,
+        "triangles": 12,
+        "boundsMin": [
+          19.923999786376953,
+          -9.399999618530273,
+          3.140000104904175
+        ],
+        "boundsMax": [
+          33.007999420166016,
+          5.184000015258789,
+          13.640000343322754
+        ],
+        "materials": [
+          "Snow"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Civic_Palazzo | Architecture",
+        "type": "MESH",
+        "collections": [
+          "07 | Civic_Palazzo"
+        ],
+        "parent": "Civic_Palazzo | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1301,
+        "triangles": 1645,
+        "boundsMin": [
+          43.099998474121094,
+          22.05500030517578,
+          -0.014999999664723873
+        ],
+        "boundsMax": [
+          56.900001525878906,
+          34.900001525878906,
+          13.09000015258789
+        ],
+        "materials": [
+          "Alps | shared architecture palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Civic_Palazzo | Opaque_windows",
+        "type": "MESH",
+        "collections": [
+          "07 | Civic_Palazzo"
+        ],
+        "parent": "Civic_Palazzo | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 112,
+        "triangles": 72,
+        "boundsMin": [
+          43.356998443603516,
+          23.329999923706055,
+          0.5
+        ],
+        "boundsMax": [
+          56.643001556396484,
+          34.643001556396484,
+          8.324999809265137
+        ],
+        "materials": [
+          "Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Civic_Palazzo | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "07 | Civic_Palazzo"
+        ],
+        "parent": null,
+        "location": [
+          50.0,
+          29.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Civic_Palazzo | Snow_optional",
+        "type": "MESH",
+        "collections": [
+          "07 | Civic_Palazzo"
+        ],
+        "parent": "Civic_Palazzo | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 6,
+        "triangles": 6,
+        "boundsMin": [
+          43.099998474121094,
+          23.100000381469727,
+          10.109999656677246
+        ],
+        "boundsMax": [
+          56.900001525878906,
+          34.900001525878906,
+          13.109999656677246
+        ],
+        "materials": [
+          "Snow"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "COLLISION_PROXY | Altdorf_Clock_Tower",
+        "type": "MESH",
+        "collections": [
+          "05 | Altdorf_Clock_Tower"
+        ],
+        "parent": "Altdorf_Clock_Tower | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 8,
+        "triangles": 12,
+        "boundsMin": [
+          -2.799999952316284,
+          -2.799999952316284,
+          0.0
+        ],
+        "boundsMax": [
+          2.799999952316284,
+          2.799999952316284,
+          23.399999618530273
+        ],
+        "materials": [
+          "Ivory",
+          "Sage",
+          "Rose",
+          "Stone",
+          "Trim",
+          "Roof",
+          "Green",
+          "Red",
+          "Glass",
+          "Timber",
+          "Snow",
+          "Gold",
+          "Copper"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "COLLISION_PROXY | Balcony_Villa_and_Garage",
+        "type": "MESH",
+        "collections": [
+          "02 | Balcony_Villa_and_Garage"
+        ],
+        "parent": "Balcony_Villa_and_Garage | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 8,
+        "triangles": 12,
+        "boundsMin": [
+          -5.0,
+          -5.0,
+          0.0
+        ],
+        "boundsMax": [
+          5.0,
+          5.0,
+          8.800000190734863
+        ],
+        "materials": [
+          "Ivory",
+          "Sage",
+          "Rose",
+          "Stone",
+          "Trim",
+          "Roof",
+          "Green",
+          "Red",
+          "Glass",
+          "Timber",
+          "Snow",
+          "Gold",
+          "Copper"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "COLLISION_PROXY | Civic_Palazzo",
+        "type": "MESH",
+        "collections": [
+          "07 | Civic_Palazzo"
+        ],
+        "parent": "Civic_Palazzo | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 8,
+        "triangles": 12,
+        "boundsMin": [
+          -6.5,
+          -5.5,
+          0.0
+        ],
+        "boundsMax": [
+          6.5,
+          5.5,
+          10.0
+        ],
+        "materials": [
+          "Ivory",
+          "Sage",
+          "Rose",
+          "Stone",
+          "Trim",
+          "Roof",
+          "Green",
+          "Red",
+          "Glass",
+          "Timber",
+          "Snow",
+          "Gold",
+          "Copper"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "COLLISION_PROXY | Corner_Arcade_House",
+        "type": "MESH",
+        "collections": [
+          "06 | Corner_Arcade_House"
+        ],
+        "parent": "Corner_Arcade_House | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 8,
+        "triangles": 12,
+        "boundsMin": [
+          -5.5,
+          -5.5,
+          0.0
+        ],
+        "boundsMax": [
+          5.5,
+          5.5,
+          11.699999809265137
+        ],
+        "materials": [
+          "Ivory",
+          "Sage",
+          "Rose",
+          "Stone",
+          "Trim",
+          "Roof",
+          "Green",
+          "Red",
+          "Glass",
+          "Timber",
+          "Snow",
+          "Gold",
+          "Copper"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "COLLISION_PROXY | Gabled_Inn_with_Annex",
+        "type": "MESH",
+        "collections": [
+          "08 | Gabled_Inn_with_Annex"
+        ],
+        "parent": "Gabled_Inn_with_Annex | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 8,
+        "triangles": 12,
+        "boundsMin": [
+          -5.0,
+          -5.0,
+          0.0
+        ],
+        "boundsMax": [
+          5.0,
+          5.0,
+          10.0
+        ],
+        "materials": [
+          "Ivory",
+          "Sage",
+          "Rose",
+          "Stone",
+          "Trim",
+          "Roof",
+          "Green",
+          "Red",
+          "Glass",
+          "Timber",
+          "Snow",
+          "Gold",
+          "Copper"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "COLLISION_PROXY | Green_Shutter_Merchant_House",
+        "type": "MESH",
+        "collections": [
+          "09 | Green_Shutter_Merchant_House"
+        ],
+        "parent": "Green_Shutter_Merchant_House | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 8,
+        "triangles": 12,
+        "boundsMin": [
+          -5.0,
+          -6.5,
+          0.0
+        ],
+        "boundsMax": [
+          5.0,
+          6.5,
+          9.199999809265137
+        ],
+        "materials": [
+          "Ivory",
+          "Sage",
+          "Rose",
+          "Stone",
+          "Trim",
+          "Roof",
+          "Green",
+          "Red",
+          "Glass",
+          "Timber",
+          "Snow",
+          "Gold",
+          "Copper"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "COLLISION_PROXY | Modern_Alpine_Shop_Block",
+        "type": "MESH",
+        "collections": [
+          "03 | Modern_Alpine_Shop_Block"
+        ],
+        "parent": "Modern_Alpine_Shop_Block | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 8,
+        "triangles": 12,
+        "boundsMin": [
+          -7.5,
+          -5.0,
+          0.0
+        ],
+        "boundsMax": [
+          7.5,
+          5.0,
+          10.100000381469727
+        ],
+        "materials": [
+          "Ivory",
+          "Sage",
+          "Rose",
+          "Stone",
+          "Trim",
+          "Roof",
+          "Green",
+          "Red",
+          "Glass",
+          "Timber",
+          "Snow",
+          "Gold",
+          "Copper"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "COLLISION_PROXY | Ornate_Bay_Villa",
+        "type": "MESH",
+        "collections": [
+          "10 | Ornate_Bay_Villa"
+        ],
+        "parent": "Ornate_Bay_Villa | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 8,
+        "triangles": 12,
+        "boundsMin": [
+          -6.0,
+          -4.5,
+          0.0
+        ],
+        "boundsMax": [
+          6.0,
+          4.5,
+          6.800000190734863
+        ],
+        "materials": [
+          "Ivory",
+          "Sage",
+          "Rose",
+          "Stone",
+          "Trim",
+          "Roof",
+          "Green",
+          "Red",
+          "Glass",
+          "Timber",
+          "Snow",
+          "Gold",
+          "Copper"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "COLLISION_PROXY | Rose_Bay_Townhouse",
+        "type": "MESH",
+        "collections": [
+          "04 | Rose_Bay_Townhouse"
+        ],
+        "parent": "Rose_Bay_Townhouse | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 8,
+        "triangles": 12,
+        "boundsMin": [
+          -3.5,
+          -4.5,
+          0.0
+        ],
+        "boundsMax": [
+          3.5,
+          4.5,
+          12.199999809265137
+        ],
+        "materials": [
+          "Ivory",
+          "Sage",
+          "Rose",
+          "Stone",
+          "Trim",
+          "Roof",
+          "Green",
+          "Red",
+          "Glass",
+          "Timber",
+          "Snow",
+          "Gold",
+          "Copper"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "COLLISION_PROXY | Sage_Dormer_House",
+        "type": "MESH",
+        "collections": [
+          "01 | Sage_Dormer_House"
+        ],
+        "parent": "Sage_Dormer_House | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 8,
+        "triangles": 12,
+        "boundsMin": [
+          -5.0,
+          -4.0,
+          0.0
+        ],
+        "boundsMax": [
+          5.0,
+          4.0,
+          6.5
+        ],
+        "materials": [
+          "Ivory",
+          "Sage",
+          "Rose",
+          "Stone",
+          "Trim",
+          "Roof",
+          "Green",
+          "Red",
+          "Glass",
+          "Timber",
+          "Snow",
+          "Gold",
+          "Copper"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "COLLISION_PROXY | Small_Gabled_Timber_House",
+        "type": "MESH",
+        "collections": [
+          "11 | Small_Gabled_Timber_House"
+        ],
+        "parent": "Small_Gabled_Timber_House | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 8,
+        "triangles": 12,
+        "boundsMin": [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        "boundsMax": [
+          4.0,
+          4.0,
+          5.800000190734863
+        ],
+        "materials": [
+          "Ivory",
+          "Sage",
+          "Rose",
+          "Stone",
+          "Trim",
+          "Roof",
+          "Green",
+          "Red",
+          "Glass",
+          "Timber",
+          "Snow",
+          "Gold",
+          "Copper"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Corner_Arcade_House | Architecture",
+        "type": "MESH",
+        "collections": [
+          "06 | Corner_Arcade_House"
+        ],
+        "parent": "Corner_Arcade_House | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1612,
+        "triangles": 1988,
+        "boundsMin": [
+          19.100000381469727,
+          22.12586212158203,
+          0.0
+        ],
+        "boundsMax": [
+          30.899999618530273,
+          34.900001525878906,
+          14.28600025177002
+        ],
+        "materials": [
+          "Alps | shared architecture palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Corner_Arcade_House | Opaque_windows",
+        "type": "MESH",
+        "collections": [
+          "06 | Corner_Arcade_House"
+        ],
+        "parent": "Corner_Arcade_House | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 192,
+        "triangles": 144,
+        "boundsMin": [
+          19.35700035095215,
+          22.25,
+          0.02500000037252903
+        ],
+        "boundsMax": [
+          30.64299964904785,
+          34.643001556396484,
+          11.399999618530273
+        ],
+        "materials": [
+          "Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Corner_Arcade_House | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "06 | Corner_Arcade_House"
+        ],
+        "parent": null,
+        "location": [
+          25.0,
+          29.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Corner_Arcade_House | Snow_optional",
+        "type": "MESH",
+        "collections": [
+          "06 | Corner_Arcade_House"
+        ],
+        "parent": "Corner_Arcade_House | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 6,
+        "triangles": 6,
+        "boundsMin": [
+          19.100000381469727,
+          23.100000381469727,
+          11.8100004196167
+        ],
+        "boundsMax": [
+          30.899999618530273,
+          34.900001525878906,
+          14.109999656677246
+        ],
+        "materials": [
+          "Snow"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Display ground | do not export",
+        "type": "MESH",
+        "collections": [
+          "PRESENTATION | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 8,
+        "triangles": 12,
+        "boundsMin": [
+          -138.0,
+          -148.0,
+          -0.4300000071525574
+        ],
+        "boundsMax": [
+          212.0,
+          202.0,
+          -0.029999999329447746
+        ],
+        "materials": [
+          "Ivory",
+          "Sage",
+          "Rose",
+          "Stone",
+          "Trim",
+          "Roof",
+          "Green",
+          "Red",
+          "Glass",
+          "Timber",
+          "Snow",
+          "Gold",
+          "Copper"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Display label",
+        "type": "FONT",
+        "collections": [
+          "PRESENTATION | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          0.0,
+          -11.0,
+          0.019999999552965164
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Display label.001",
+        "type": "FONT",
+        "collections": [
+          "PRESENTATION | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          25.0,
+          -11.0,
+          0.019999999552965164
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Display label.002",
+        "type": "FONT",
+        "collections": [
+          "PRESENTATION | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          50.0,
+          -11.0,
+          0.019999999552965164
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Display label.003",
+        "type": "FONT",
+        "collections": [
+          "PRESENTATION | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          75.0,
+          -11.0,
+          0.019999999552965164
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Display label.004",
+        "type": "FONT",
+        "collections": [
+          "PRESENTATION | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          0.0,
+          18.0,
+          0.019999999552965164
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Display label.005",
+        "type": "FONT",
+        "collections": [
+          "PRESENTATION | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          25.0,
+          18.0,
+          0.019999999552965164
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Display label.006",
+        "type": "FONT",
+        "collections": [
+          "PRESENTATION | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          50.0,
+          18.0,
+          0.019999999552965164
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Display label.007",
+        "type": "FONT",
+        "collections": [
+          "PRESENTATION | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          75.0,
+          18.0,
+          0.019999999552965164
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Display label.008",
+        "type": "FONT",
+        "collections": [
+          "PRESENTATION | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          0.0,
+          47.0,
+          0.019999999552965164
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Display label.009",
+        "type": "FONT",
+        "collections": [
+          "PRESENTATION | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          25.0,
+          47.0,
+          0.019999999552965164
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Display label.010",
+        "type": "FONT",
+        "collections": [
+          "PRESENTATION | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          50.0,
+          47.0,
+          0.019999999552965164
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Entrance | Altdorf_Clock_Tower",
+        "type": "EMPTY",
+        "collections": [
+          "05 | Altdorf_Clock_Tower"
+        ],
+        "parent": "Altdorf_Clock_Tower | ROOT",
+        "location": [
+          0.0,
+          -3.4000000953674316,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Entrance | Balcony_Villa_and_Garage",
+        "type": "EMPTY",
+        "collections": [
+          "02 | Balcony_Villa_and_Garage"
+        ],
+        "parent": "Balcony_Villa_and_Garage | ROOT",
+        "location": [
+          0.0,
+          -5.599999904632568,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Entrance | Civic_Palazzo",
+        "type": "EMPTY",
+        "collections": [
+          "07 | Civic_Palazzo"
+        ],
+        "parent": "Civic_Palazzo | ROOT",
+        "location": [
+          0.0,
+          -6.099999904632568,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Entrance | Corner_Arcade_House",
+        "type": "EMPTY",
+        "collections": [
+          "06 | Corner_Arcade_House"
+        ],
+        "parent": "Corner_Arcade_House | ROOT",
+        "location": [
+          0.0,
+          -6.099999904632568,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Entrance | Gabled_Inn_with_Annex",
+        "type": "EMPTY",
+        "collections": [
+          "08 | Gabled_Inn_with_Annex"
+        ],
+        "parent": "Gabled_Inn_with_Annex | ROOT",
+        "location": [
+          0.0,
+          -5.599999904632568,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Entrance | Green_Shutter_Merchant_House",
+        "type": "EMPTY",
+        "collections": [
+          "09 | Green_Shutter_Merchant_House"
+        ],
+        "parent": "Green_Shutter_Merchant_House | ROOT",
+        "location": [
+          0.0,
+          -7.099999904632568,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Entrance | Modern_Alpine_Shop_Block",
+        "type": "EMPTY",
+        "collections": [
+          "03 | Modern_Alpine_Shop_Block"
+        ],
+        "parent": "Modern_Alpine_Shop_Block | ROOT",
+        "location": [
+          0.0,
+          -5.599999904632568,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Entrance | Ornate_Bay_Villa",
+        "type": "EMPTY",
+        "collections": [
+          "10 | Ornate_Bay_Villa"
+        ],
+        "parent": "Ornate_Bay_Villa | ROOT",
+        "location": [
+          0.0,
+          -5.099999904632568,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Entrance | Rose_Bay_Townhouse",
+        "type": "EMPTY",
+        "collections": [
+          "04 | Rose_Bay_Townhouse"
+        ],
+        "parent": "Rose_Bay_Townhouse | ROOT",
+        "location": [
+          0.0,
+          -5.099999904632568,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Entrance | Sage_Dormer_House",
+        "type": "EMPTY",
+        "collections": [
+          "01 | Sage_Dormer_House"
+        ],
+        "parent": "Sage_Dormer_House | ROOT",
+        "location": [
+          0.0,
+          -4.599999904632568,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Entrance | Small_Gabled_Timber_House",
+        "type": "EMPTY",
+        "collections": [
+          "11 | Small_Gabled_Timber_House"
+        ],
+        "parent": "Small_Gabled_Timber_House | ROOT",
+        "location": [
+          0.0,
+          -4.599999904632568,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Gabled_Inn_with_Annex | Architecture",
+        "type": "MESH",
+        "collections": [
+          "08 | Gabled_Inn_with_Annex"
+        ],
+        "parent": "Gabled_Inn_with_Annex | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1996,
+        "triangles": 2502,
+        "boundsMin": [
+          69.5999984741211,
+          22.744998931884766,
+          -0.014999999664723873
+        ],
+        "boundsMax": [
+          88.4000015258789,
+          34.400001525878906,
+          14.420000076293945
+        ],
+        "materials": [
+          "Alps | shared architecture palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Gabled_Inn_with_Annex | Opaque_windows",
+        "type": "MESH",
+        "collections": [
+          "08 | Gabled_Inn_with_Annex"
+        ],
+        "parent": "Gabled_Inn_with_Annex | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 216,
+        "triangles": 180,
+        "boundsMin": [
+          69.85700225830078,
+          23.85700035095215,
+          0.7749999761581421
+        ],
+        "boundsMax": [
+          87.30000305175781,
+          34.143001556396484,
+          12.125
+        ],
+        "materials": [
+          "Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Gabled_Inn_with_Annex | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "08 | Gabled_Inn_with_Annex"
+        ],
+        "parent": null,
+        "location": [
+          75.0,
+          29.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Gabled_Inn_with_Annex | Snow_optional",
+        "type": "MESH",
+        "collections": [
+          "08 | Gabled_Inn_with_Annex"
+        ],
+        "parent": "Gabled_Inn_with_Annex | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 30,
+        "triangles": 20,
+        "boundsMin": [
+          69.92399597167969,
+          23.81599998474121,
+          7.539999961853027
+        ],
+        "boundsMax": [
+          88.13600158691406,
+          34.183998107910156,
+          14.539999961853027
+        ],
+        "materials": [
+          "Snow"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Gallery camera",
+        "type": "CAMERA",
+        "collections": [
+          "PRESENTATION | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          139.0,
+          -140.0,
+          126.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Green_Shutter_Merchant_House | Architecture",
+        "type": "MESH",
+        "collections": [
+          "09 | Green_Shutter_Merchant_House"
+        ],
+        "parent": "Green_Shutter_Merchant_House | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1660,
+        "triangles": 1974,
+        "boundsMin": [
+          -5.400000095367432,
+          50.244998931884766,
+          -0.014999999664723873
+        ],
+        "boundsMax": [
+          5.400000095367432,
+          64.9000015258789,
+          12.720000267028809
+        ],
+        "materials": [
+          "Alps | shared architecture palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Green_Shutter_Merchant_House | Opaque_windows",
+        "type": "MESH",
+        "collections": [
+          "09 | Green_Shutter_Merchant_House"
+        ],
+        "parent": "Green_Shutter_Merchant_House | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 168,
+        "triangles": 84,
+        "boundsMin": [
+          -5.14300012588501,
+          51.356998443603516,
+          0.875
+        ],
+        "boundsMax": [
+          5.14300012588501,
+          64.64299774169922,
+          10.850000381469727
+        ],
+        "materials": [
+          "Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Green_Shutter_Merchant_House | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "09 | Green_Shutter_Merchant_House"
+        ],
+        "parent": null,
+        "location": [
+          0.0,
+          58.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Green_Shutter_Merchant_House | Snow_optional",
+        "type": "MESH",
+        "collections": [
+          "09 | Green_Shutter_Merchant_House"
+        ],
+        "parent": "Green_Shutter_Merchant_House | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 6,
+        "triangles": 4,
+        "boundsMin": [
+          -5.076000213623047,
+          51.375999450683594,
+          9.34000015258789
+        ],
+        "boundsMax": [
+          5.076000213623047,
+          64.6240005493164,
+          12.84000015258789
+        ],
+        "materials": [
+          "Snow"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Modern_Alpine_Shop_Block | Architecture",
+        "type": "MESH",
+        "collections": [
+          "03 | Modern_Alpine_Shop_Block"
+        ],
+        "parent": "Modern_Alpine_Shop_Block | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1128,
+        "triangles": 1356,
+        "boundsMin": [
+          42.18000030517578,
+          -5.389999866485596,
+          0.0
+        ],
+        "boundsMax": [
+          57.81999969482422,
+          5.320000171661377,
+          12.039999961853027
+        ],
+        "materials": [
+          "Alps | shared architecture palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Modern_Alpine_Shop_Block | Opaque_windows",
+        "type": "MESH",
+        "collections": [
+          "03 | Modern_Alpine_Shop_Block"
+        ],
+        "parent": "Modern_Alpine_Shop_Block | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 176,
+        "triangles": 152,
+        "boundsMin": [
+          42.356998443603516,
+          -5.210000038146973,
+          0.3499999940395355
+        ],
+        "boundsMax": [
+          57.643001556396484,
+          5.14300012588501,
+          11.5
+        ],
+        "materials": [
+          "Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Modern_Alpine_Shop_Block | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "03 | Modern_Alpine_Shop_Block"
+        ],
+        "parent": null,
+        "location": [
+          50.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Modern_Alpine_Shop_Block | Snow_optional",
+        "type": "MESH",
+        "collections": [
+          "03 | Modern_Alpine_Shop_Block"
+        ],
+        "parent": "Modern_Alpine_Shop_Block | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 8,
+        "triangles": 12,
+        "boundsMin": [
+          45.95000076293945,
+          -2.299999952316284,
+          12.010000228881836
+        ],
+        "boundsMax": [
+          56.04999923706055,
+          4.300000190734863,
+          12.149999618530273
+        ],
+        "materials": [
+          "Snow"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Ornate_Bay_Villa | Architecture",
+        "type": "MESH",
+        "collections": [
+          "10 | Ornate_Bay_Villa"
+        ],
+        "parent": "Ornate_Bay_Villa | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1204,
+        "triangles": 1532,
+        "boundsMin": [
+          18.600000381469727,
+          51.404998779296875,
+          -0.014999999664723873
+        ],
+        "boundsMax": [
+          31.31999969482422,
+          62.900001525878906,
+          10.319999694824219
+        ],
+        "materials": [
+          "Alps | shared architecture palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Ornate_Bay_Villa | Opaque_windows",
+        "type": "MESH",
+        "collections": [
+          "10 | Ornate_Bay_Villa"
+        ],
+        "parent": "Ornate_Bay_Villa | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 108,
+        "triangles": 86,
+        "boundsMin": [
+          18.85700035095215,
+          51.70000076293945,
+          0.875
+        ],
+        "boundsMax": [
+          31.14299964904785,
+          62.643001556396484,
+          6.099999904632568
+        ],
+        "materials": [
+          "Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Ornate_Bay_Villa | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "10 | Ornate_Bay_Villa"
+        ],
+        "parent": null,
+        "location": [
+          25.0,
+          58.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Ornate_Bay_Villa | Snow_optional",
+        "type": "MESH",
+        "collections": [
+          "10 | Ornate_Bay_Villa"
+        ],
+        "parent": "Ornate_Bay_Villa | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 12,
+        "triangles": 10,
+        "boundsMin": [
+          18.600000381469727,
+          52.49599838256836,
+          6.909999847412109
+        ],
+        "boundsMax": [
+          31.05500030517578,
+          62.900001525878906,
+          10.4399995803833
+        ],
+        "materials": [
+          "Snow"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Rose_Bay_Townhouse | Architecture",
+        "type": "MESH",
+        "collections": [
+          "04 | Rose_Bay_Townhouse"
+        ],
+        "parent": "Rose_Bay_Townhouse | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1112,
+        "triangles": 1364,
+        "boundsMin": [
+          71.0999984741211,
+          -5.755000114440918,
+          -0.014999999664723873
+        ],
+        "boundsMax": [
+          78.9000015258789,
+          4.900000095367432,
+          15.289999961853027
+        ],
+        "materials": [
+          "Alps | shared architecture palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Rose_Bay_Townhouse | Opaque_windows",
+        "type": "MESH",
+        "collections": [
+          "04 | Rose_Bay_Townhouse"
+        ],
+        "parent": "Rose_Bay_Townhouse | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 124,
+        "triangles": 86,
+        "boundsMin": [
+          71.35700225830078,
+          -5.289999961853027,
+          3.7750000953674316
+        ],
+        "boundsMax": [
+          78.64299774169922,
+          4.64300012588501,
+          13.649999618530273
+        ],
+        "materials": [
+          "Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Rose_Bay_Townhouse | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "04 | Rose_Bay_Townhouse"
+        ],
+        "parent": null,
+        "location": [
+          75.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Rose_Bay_Townhouse | Snow_optional",
+        "type": "MESH",
+        "collections": [
+          "04 | Rose_Bay_Townhouse"
+        ],
+        "parent": "Rose_Bay_Townhouse | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 6,
+        "triangles": 4,
+        "boundsMin": [
+          71.33399963378906,
+          -4.703999996185303,
+          12.34000015258789
+        ],
+        "boundsMax": [
+          78.66600036621094,
+          4.703999996185303,
+          15.34000015258789
+        ],
+        "materials": [
+          "Snow"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Sage_Dormer_House | Architecture",
+        "type": "MESH",
+        "collections": [
+          "01 | Sage_Dormer_House"
+        ],
+        "parent": "Sage_Dormer_House | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1064,
+        "triangles": 1340,
+        "boundsMin": [
+          -5.400000095367432,
+          -5.255000114440918,
+          -0.014999999664723873
+        ],
+        "boundsMax": [
+          5.400000095367432,
+          4.400000095367432,
+          9.95199966430664
+        ],
+        "materials": [
+          "Alps | shared architecture palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Sage_Dormer_House | Opaque_windows",
+        "type": "MESH",
+        "collections": [
+          "01 | Sage_Dormer_House"
+        ],
+        "parent": "Sage_Dormer_House | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 80,
+        "triangles": 40,
+        "boundsMin": [
+          -5.14300012588501,
+          -4.14300012588501,
+          0.875
+        ],
+        "boundsMax": [
+          5.14300012588501,
+          4.14300012588501,
+          7.75
+        ],
+        "materials": [
+          "Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Sage_Dormer_House | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "01 | Sage_Dormer_House"
+        ],
+        "parent": null,
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Sage_Dormer_House | Snow_optional",
+        "type": "MESH",
+        "collections": [
+          "01 | Sage_Dormer_House"
+        ],
+        "parent": "Sage_Dormer_House | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 12,
+        "triangles": 8,
+        "boundsMin": [
+          -5.076000213623047,
+          -4.311999797821045,
+          6.639999866485596
+        ],
+        "boundsMax": [
+          5.076000213623047,
+          4.223999977111816,
+          9.539999961853027
+        ],
+        "materials": [
+          "Snow"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Small_Gabled_Timber_House | Architecture",
+        "type": "MESH",
+        "collections": [
+          "11 | Small_Gabled_Timber_House"
+        ],
+        "parent": "Small_Gabled_Timber_House | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 924,
+        "triangles": 1134,
+        "boundsMin": [
+          45.599998474121094,
+          52.744998931884766,
+          -0.014999999664723873
+        ],
+        "boundsMax": [
+          55.29999923706055,
+          62.400001525878906,
+          8.890000343322754
+        ],
+        "materials": [
+          "Alps | shared architecture palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Small_Gabled_Timber_House | Opaque_windows",
+        "type": "MESH",
+        "collections": [
+          "11 | Small_Gabled_Timber_House"
+        ],
+        "parent": "Small_Gabled_Timber_House | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 80,
+        "triangles": 40,
+        "boundsMin": [
+          45.856998443603516,
+          53.856998443603516,
+          0.875
+        ],
+        "boundsMax": [
+          54.143001556396484,
+          62.143001556396484,
+          7.400000095367432
+        ],
+        "materials": [
+          "Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Small_Gabled_Timber_House | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "11 | Small_Gabled_Timber_House"
+        ],
+        "parent": null,
+        "location": [
+          50.0,
+          58.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Small_Gabled_Timber_House | Snow_optional",
+        "type": "MESH",
+        "collections": [
+          "11 | Small_Gabled_Timber_House"
+        ],
+        "parent": "Small_Gabled_Timber_House | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 6,
+        "triangles": 4,
+        "boundsMin": [
+          45.86399841308594,
+          53.7760009765625,
+          5.940000057220459
+        ],
+        "boundsMax": [
+          54.13600158691406,
+          62.2239990234375,
+          8.9399995803833
+        ],
+        "materials": [
+          "Snow"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Soft sky",
+        "type": "LIGHT",
+        "collections": [
+          "PRESENTATION | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          10.0,
+          -30.0,
+          60.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Sun",
+        "type": "LIGHT",
+        "collections": [
+          "PRESENTATION | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "collections": [
+      {
+        "name": "01 | Sage_Dormer_House",
+        "objects": 6,
+        "allObjects": 6,
+        "children": []
+      },
+      {
+        "name": "02 | Balcony_Villa_and_Garage",
+        "objects": 6,
+        "allObjects": 6,
+        "children": []
+      },
+      {
+        "name": "03 | Modern_Alpine_Shop_Block",
+        "objects": 6,
+        "allObjects": 6,
+        "children": []
+      },
+      {
+        "name": "04 | Rose_Bay_Townhouse",
+        "objects": 6,
+        "allObjects": 6,
+        "children": []
+      },
+      {
+        "name": "05 | Altdorf_Clock_Tower",
+        "objects": 5,
+        "allObjects": 5,
+        "children": []
+      },
+      {
+        "name": "06 | Corner_Arcade_House",
+        "objects": 6,
+        "allObjects": 6,
+        "children": []
+      },
+      {
+        "name": "07 | Civic_Palazzo",
+        "objects": 6,
+        "allObjects": 6,
+        "children": []
+      },
+      {
+        "name": "08 | Gabled_Inn_with_Annex",
+        "objects": 6,
+        "allObjects": 6,
+        "children": []
+      },
+      {
+        "name": "09 | Green_Shutter_Merchant_House",
+        "objects": 6,
+        "allObjects": 6,
+        "children": []
+      },
+      {
+        "name": "10 | Ornate_Bay_Villa",
+        "objects": 6,
+        "allObjects": 6,
+        "children": []
+      },
+      {
+        "name": "11 | Small_Gabled_Timber_House",
+        "objects": 6,
+        "allObjects": 6,
+        "children": []
+      },
+      {
+        "name": "BUILDINGS | 11 independent assets",
+        "objects": 0,
+        "allObjects": 65,
+        "children": [
+          "01 | Sage_Dormer_House",
+          "02 | Balcony_Villa_and_Garage",
+          "03 | Modern_Alpine_Shop_Block",
+          "04 | Rose_Bay_Townhouse",
+          "05 | Altdorf_Clock_Tower",
+          "06 | Corner_Arcade_House",
+          "07 | Civic_Palazzo",
+          "08 | Gabled_Inn_with_Annex",
+          "09 | Green_Shutter_Merchant_House",
+          "10 | Ornate_Bay_Villa",
+          "11 | Small_Gabled_Timber_House"
+        ]
+      },
+      {
+        "name": "PRESENTATION | exclude from export",
+        "objects": 15,
+        "allObjects": 15,
+        "children": []
+      }
+    ],
+    "materials": [
+      {
+        "name": "Alps | shared architecture palette",
+        "color": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ]
+      },
+      {
+        "name": "Copper",
+        "color": [
+          0.23999999463558197,
+          0.4300000071525574,
+          0.3400000035762787,
+          1.0
+        ]
+      },
+      {
+        "name": "Glass",
+        "color": [
+          0.0949999988079071,
+          0.1899999976158142,
+          0.2199999988079071,
+          1.0
+        ]
+      },
+      {
+        "name": "Gold",
+        "color": [
+          0.6800000071525574,
+          0.46000000834465027,
+          0.1599999964237213,
+          1.0
+        ]
+      },
+      {
+        "name": "Green",
+        "color": [
+          0.11999999731779099,
+          0.27000001072883606,
+          0.23000000417232513,
+          1.0
+        ]
+      },
+      {
+        "name": "Ivory",
+        "color": [
+          0.8199999928474426,
+          0.7900000214576721,
+          0.6800000071525574,
+          1.0
+        ]
+      },
+      {
+        "name": "Red",
+        "color": [
+          0.3799999952316284,
+          0.0949999988079071,
+          0.07500000298023224,
+          1.0
+        ]
+      },
+      {
+        "name": "Roof",
+        "color": [
+          0.23999999463558197,
+          0.1599999964237213,
+          0.11500000208616257,
+          1.0
+        ]
+      },
+      {
+        "name": "Rose",
+        "color": [
+          0.75,
+          0.5899999737739563,
+          0.5299999713897705,
+          1.0
+        ]
+      },
+      {
+        "name": "Sage",
+        "color": [
+          0.46000000834465027,
+          0.5299999713897705,
+          0.46000000834465027,
+          1.0
+        ]
+      },
+      {
+        "name": "Snow",
+        "color": [
+          0.8999999761581421,
+          0.949999988079071,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Stone",
+        "color": [
+          0.5299999713897705,
+          0.550000011920929,
+          0.5199999809265137,
+          1.0
+        ]
+      },
+      {
+        "name": "Timber",
+        "color": [
+          0.20999999344348907,
+          0.11999999731779099,
+          0.07500000298023224,
+          1.0
+        ]
+      },
+      {
+        "name": "Trim",
+        "color": [
+          0.8799999952316284,
+          0.8600000143051147,
+          0.7699999809265137,
+          1.0
+        ]
+      }
+    ],
+    "texts": [
+      "README | assets and budgets"
+    ],
+    "images": [
+      {
+        "name": "Alps_shared_palette | packed",
+        "size": [
+          52,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "file": "Snow_District_Statue_and_Tower.blend",
+    "objects": [
+      {
+        "name": "01_Adult_and_Child_Monument | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "01_Adult_and_Child_Monument"
+        ],
+        "parent": null,
+        "location": [
+          4.0,
+          -4.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "02_Arched_Heraldic_Tower | ROOT",
+        "type": "EMPTY",
+        "collections": [
+          "02_Arched_Heraldic_Tower"
+        ],
+        "parent": null,
+        "location": [
+          -7.0,
+          4.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Adult | angular face ears and features",
+        "type": "MESH",
+        "collections": [
+          "01_Adult_and_Child_Monument"
+        ],
+        "parent": "01_Adult_and_Child_Monument | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 193,
+        "triangles": 350,
+        "boundsMin": [
+          3.558912754058838,
+          -4.5,
+          8.069999694824219
+        ],
+        "boundsMax": [
+          4.449999809265137,
+          -3.674999952316284,
+          8.989999771118164
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Adult | draped cloak",
+        "type": "MESH",
+        "collections": [
+          "01_Adult_and_Child_Monument"
+        ],
+        "parent": "01_Adult_and_Child_Monument | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 8,
+        "triangles": 7,
+        "boundsMin": [
+          2.9800000190734863,
+          -3.7799999713897705,
+          5.920000076293945
+        ],
+        "boundsMax": [
+          4.779999732971191,
+          -3.319999933242798,
+          7.829999923706055
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Adult | legs boots and folded tunic",
+        "type": "MESH",
+        "collections": [
+          "01_Adult_and_Child_Monument"
+        ],
+        "parent": "01_Adult_and_Child_Monument | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 254,
+        "triangles": 464,
+        "boundsMin": [
+          3.0583999156951904,
+          -4.845038890838623,
+          4.019999980926514
+        ],
+        "boundsMax": [
+          4.9415998458862305,
+          -3.507291555404663,
+          8.245000839233398
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Adult | long hair and sculpted beard",
+        "type": "MESH",
+        "collections": [
+          "01_Adult_and_Child_Monument"
+        ],
+        "parent": "01_Adult_and_Child_Monument | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 205,
+        "triangles": 350,
+        "boundsMin": [
+          3.4901230335235596,
+          -4.429686546325684,
+          7.97369384765625
+        ],
+        "boundsMax": [
+          4.5098772048950195,
+          -3.5277304649353027,
+          9.111989974975586
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Adult | posed arms and articulated hands",
+        "type": "MESH",
+        "collections": [
+          "01_Adult_and_Child_Monument"
+        ],
+        "parent": "01_Adult_and_Child_Monument | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 291,
+        "triangles": 526,
+        "boundsMin": [
+          2.6269164085388184,
+          -4.670599937438965,
+          6.281876087188721
+        ],
+        "boundsMax": [
+          5.949999809265137,
+          -3.6033029556274414,
+          8.1899995803833
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Bollard snow | removable",
+        "type": "MESH",
+        "collections": [
+          "01_Adult_and_Child_Monument"
+        ],
+        "parent": "01_Adult_and_Child_Monument | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 160,
+        "triangles": 288,
+        "boundsMin": [
+          0.3678398132324219,
+          -7.2277750968933105,
+          0.9900000095367432
+        ],
+        "boundsMax": [
+          7.632160186767578,
+          -0.7722249031066895,
+          1.190000057220459
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Bronze rock footing",
+        "type": "MESH",
+        "collections": [
+          "01_Adult_and_Child_Monument"
+        ],
+        "parent": "01_Adult_and_Child_Monument | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 88,
+        "triangles": 156,
+        "boundsMin": [
+          1.9495155811309814,
+          -5.632187366485596,
+          3.609999895095825
+        ],
+        "boundsMax": [
+          6.119999885559082,
+          -2.1678123474121094,
+          4.28000020980835
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Child | face and wavy hair",
+        "type": "MESH",
+        "collections": [
+          "01_Adult_and_Child_Monument"
+        ],
+        "parent": "01_Adult_and_Child_Monument | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 204,
+        "triangles": 367,
+        "boundsMin": [
+          5.019999980926514,
+          -4.360000133514404,
+          6.690000057220459
+        ],
+        "boundsMax": [
+          5.679999828338623,
+          -3.653397560119629,
+          7.400000095367432
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Child | legs folded arms tunic and hands",
+        "type": "MESH",
+        "collections": [
+          "01_Adult_and_Child_Monument"
+        ],
+        "parent": "01_Adult_and_Child_Monument | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 305,
+        "triangles": 526,
+        "boundsMin": [
+          4.784687519073486,
+          -4.5867719650268555,
+          4.03000020980835
+        ],
+        "boundsMax": [
+          6.00794792175293,
+          -3.6781482696533203,
+          6.715000152587891
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Crossbow | stock curved bow and string",
+        "type": "MESH",
+        "collections": [
+          "01_Adult_and_Child_Monument"
+        ],
+        "parent": "01_Adult_and_Child_Monument | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 106,
+        "triangles": 176,
+        "boundsMin": [
+          1.963944435119629,
+          -4.5433349609375,
+          7.852872371673584
+        ],
+        "boundsMax": [
+          4.536055564880371,
+          -2.7711234092712402,
+          8.702056884765625
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Enclosure | eight stone bollards",
+        "type": "MESH",
+        "collections": [
+          "01_Adult_and_Child_Monument"
+        ],
+        "parent": "01_Adult_and_Child_Monument | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 128,
+        "triangles": 192,
+        "boundsMin": [
+          0.3928396701812744,
+          -7.237608432769775,
+          0.0
+        ],
+        "boundsMax": [
+          7.607160568237305,
+          -0.7623915672302246,
+          1.059999942779541
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Enclosure | interlocking chain links",
+        "type": "MESH",
+        "collections": [
+          "01_Adult_and_Child_Monument"
+        ],
+        "parent": "01_Adult_and_Child_Monument | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 1296,
+        "triangles": 2592,
+        "boundsMin": [
+          0.5490314960479736,
+          -7.081417083740234,
+          0.6122992634773254
+        ],
+        "boundsMax": [
+          7.4509687423706055,
+          -0.9185831546783447,
+          0.9782756567001343
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Landmark preview camera",
+        "type": "CAMERA",
+        "collections": [
+          "Preview setup | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          19.0,
+          -48.0,
+          24.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Pedestal snow | removable",
+        "type": "MESH",
+        "collections": [
+          "01_Adult_and_Child_Monument"
+        ],
+        "parent": "01_Adult_and_Child_Monument | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 8,
+        "triangles": 12,
+        "boundsMin": [
+          1.3599998950958252,
+          -6.289999961853027,
+          3.490000009536743
+        ],
+        "boundsMax": [
+          6.640000343322754,
+          -1.7100000381469727,
+          3.630000114440918
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Pedestal | editable stone and panel",
+        "type": "MESH",
+        "collections": [
+          "01_Adult_and_Child_Monument"
+        ],
+        "parent": "01_Adult_and_Child_Monument | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 158,
+        "triangles": 218,
+        "boundsMin": [
+          0.5,
+          -7.150000095367432,
+          0.0
+        ],
+        "boundsMax": [
+          7.5,
+          -0.8499999046325684,
+          3.505000114440918
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Soft front",
+        "type": "LIGHT",
+        "collections": [
+          "Preview setup | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          0.0,
+          -15.0,
+          20.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Sun",
+        "type": "LIGHT",
+        "collections": [
+          "Preview setup | exclude from export"
+        ],
+        "parent": null,
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Tower roof snow | removable",
+        "type": "MESH",
+        "collections": [
+          "02_Arched_Heraldic_Tower"
+        ],
+        "parent": "02_Arched_Heraldic_Tower | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 12,
+        "triangles": 10,
+        "boundsMin": [
+          -11.605999946594238,
+          0.7170000076293945,
+          16.829999923706055
+        ],
+        "boundsMax": [
+          -2.3940000534057617,
+          7.2829999923706055,
+          21.729999542236328
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Tower | arch stones and corner quoins",
+        "type": "MESH",
+        "collections": [
+          "02_Arched_Heraldic_Tower"
+        ],
+        "parent": "02_Arched_Heraldic_Tower | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 928,
+        "triangles": 1392,
+        "boundsMin": [
+          -11.210000038146973,
+          1.125,
+          0.014999999664723873
+        ],
+        "boundsMax": [
+          -2.7899999618530273,
+          6.875,
+          15.979999542236328
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Tower | arch tunnel and plaster body",
+        "type": "MESH",
+        "collections": [
+          "02_Arched_Heraldic_Tower"
+        ],
+        "parent": "02_Arched_Heraldic_Tower | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 192,
+        "triangles": 288,
+        "boundsMin": [
+          -11.25,
+          1.0750000476837158,
+          0.0
+        ],
+        "boundsMax": [
+          -2.75,
+          6.925000190734863,
+          16.690000534057617
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Tower | heraldic shield lions and sundial",
+        "type": "MESH",
+        "collections": [
+          "02_Arched_Heraldic_Tower"
+        ],
+        "parent": "02_Arched_Heraldic_Tower | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 330,
+        "triangles": 470,
+        "boundsMin": [
+          -9.992454528808594,
+          0.5,
+          9.201332092285156
+        ],
+        "boundsMax": [
+          -4.007544994354248,
+          1.255000114440918,
+          13.489999771118164
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Tower | roof and dormer",
+        "type": "MESH",
+        "collections": [
+          "02_Arched_Heraldic_Tower"
+        ],
+        "parent": "02_Arched_Heraldic_Tower | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 36,
+        "triangles": 48,
+        "boundsMin": [
+          -11.699999809265137,
+          0.6500000953674316,
+          16.700000762939453
+        ],
+        "boundsMax": [
+          -2.3000001907348633,
+          7.349999904632568,
+          21.600000381469727
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Tower | Swiss flag and pole",
+        "type": "MESH",
+        "collections": [
+          "02_Arched_Heraldic_Tower"
+        ],
+        "parent": "02_Arched_Heraldic_Tower | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 82,
+        "triangles": 96,
+        "boundsMin": [
+          -7.139999866485596,
+          3.859999895095825,
+          21.600000381469727
+        ],
+        "boundsMax": [
+          -5.619999885559082,
+          4.139999866485596,
+          24.0
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Tower | windows and stone surrounds",
+        "type": "MESH",
+        "collections": [
+          "02_Arched_Heraldic_Tower"
+        ],
+        "parent": "02_Arched_Heraldic_Tower | ROOT",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "vertices": 240,
+        "triangles": 360,
+        "boundsMin": [
+          -10.065000534057617,
+          1.0950000286102295,
+          6.360000133514404
+        ],
+        "boundsMax": [
+          -3.934999942779541,
+          6.904999732971191,
+          15.71500015258789
+        ],
+        "materials": [
+          "Landmarks | shared opaque palette"
+        ],
+        "modifiers": []
+      }
+    ],
+    "collections": [
+      {
+        "name": "01_Adult_and_Child_Monument",
+        "objects": 15,
+        "allObjects": 15,
+        "children": []
+      },
+      {
+        "name": "02_Arched_Heraldic_Tower",
+        "objects": 8,
+        "allObjects": 8,
+        "children": []
+      },
+      {
+        "name": "ASSETS | statue and tower",
+        "objects": 0,
+        "allObjects": 23,
+        "children": [
+          "01_Adult_and_Child_Monument",
+          "02_Arched_Heraldic_Tower"
+        ]
+      },
+      {
+        "name": "Preview setup | exclude from export",
+        "objects": 3,
+        "allObjects": 3,
+        "children": []
+      }
+    ],
+    "materials": [
+      {
+        "name": "Landmarks | shared opaque palette",
+        "color": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ]
+      }
+    ],
+    "texts": [
+      "README"
+    ],
+    "images": [
+      {
+        "name": "Landmark palette | packed",
+        "size": [
+          128,
+          4
+        ]
+      }
+    ]
+  }
+]

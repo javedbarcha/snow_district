@@ -9,7 +9,11 @@ $automationFolder = Join-Path $projectRoot 'Logs/EditorAutomation'
 $statusPath = Join-Path $automationFolder 'status.json'
 function Read-JsonFile($path) {
     if (Test-Path -LiteralPath $path) {
-        try { return (Get-Content -LiteralPath $path -Raw | ConvertFrom-Json) } catch { return $null }
+        try {
+            $stream = [IO.File]::Open($path, 'Open', 'Read', ([IO.FileShare]::ReadWrite -bor [IO.FileShare]::Delete))
+            $reader = [IO.StreamReader]::new($stream)
+            try { return ($reader.ReadToEnd() | ConvertFrom-Json) } finally { $reader.Dispose() }
+        } catch { return $null }
     }
     return $null
 }

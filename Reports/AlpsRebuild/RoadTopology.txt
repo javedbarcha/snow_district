@@ -1,0 +1,13 @@
+Connected road strips: 12/12 (sample separation within combined half-widths minus 2m).
+Main street | southwest to north gate: Eastern curved avenue, Western old town crescent, Market cross street, Southern neighbourhood loop, Northern hillside-facing crescent, South village lane
+Eastern curved avenue: Main street | southwest to north gate, Market cross street, Southern neighbourhood loop, Northern hillside-facing crescent
+Western old town crescent: Main street | southwest to north gate, Market cross street, Southern neighbourhood loop, Northern hillside-facing crescent, Northwest village lane, South village lane
+Market cross street: Main street | southwest to north gate, Eastern curved avenue, Western old town crescent, Northwest village lane, Southeast village lane, Visitor parking access
+Southern neighbourhood loop: Main street | southwest to north gate, Eastern curved avenue, Western old town crescent, South village lane, Southeast village lane, Depot access, Disposal access
+Northern hillside-facing crescent: Main street | southwest to north gate, Eastern curved avenue, Western old town crescent, Northwest village lane
+Northwest village lane: Western old town crescent, Market cross street, Northern hillside-facing crescent
+South village lane: Main street | southwest to north gate, Western old town crescent, Southern neighbourhood loop
+Southeast village lane: Market cross street, Southern neighbourhood loop
+Depot access: Southern neighbourhood loop
+Disposal access: Southern neighbourhood loop
+Visitor parking access: Market cross street

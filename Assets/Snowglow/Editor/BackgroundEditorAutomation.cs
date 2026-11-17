@@ -27,6 +27,7 @@ namespace Snowglow.Editor
         [Serializable] class Status
         {
             public string requestId, state, utc, project, unity, domain, error;
+            public string importProtocol="ExplicitScriptImportV1";
             public int processId;
             public bool playing, compiling, updating, automaticRefresh;
         }
@@ -127,6 +128,11 @@ namespace Snowglow.Editor
                         Interlocked.Exchange(ref changed, 0);
                         WriteStatus("refreshing");
                         AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);
+                        // Import newly written scripts explicitly before requesting a clean
+                        // compile; a domain reload alone does not prove they entered the assembly.
+                        foreach (var script in Directory.GetFiles(Path.Combine(Root, "Assets"), "*.cs", SearchOption.AllDirectories))
+                            AssetDatabase.ImportAsset(script.Substring(Root.Length + 1).Replace('\\', '/'), ImportAssetOptions.ForceUpdate);
+
                         // Explicit requests always force a compilation/reload acknowledgement.
                         CompilationPipeline.RequestScriptCompilation(RequestScriptCompilationOptions.CleanBuildCache);
                         return;
@@ -148,14 +154,16 @@ namespace Snowglow.Editor
         }
         static void Finish(string state, string error = null)
         {
-            WriteStatus(state, error);
-            if (pending != null)
-                File.Copy(Path.Combine(Folder, "status.json"), Path.Combine(Folder, "result.json"), true);
+            if (!WriteStatus(state, error)) return;
+            try {
+                if (pending != null)
+                    File.Copy(Path.Combine(Folder, "status.json"), Path.Combine(Folder, "result.json"), true);
+            } catch (IOException) { return; } // Retry on the next tick; keep the request and reload evidence.
             pending = null;
             phase = null;
             SessionState.EraseString(StateKey);
         }
-        static void WriteStatus(string state, string error = null)
+        static bool WriteStatus(string state, string error = null)
         {
             var status = new Status { requestId = pending?.id, state = state,
                 utc = DateTime.UtcNow.ToString("O"), project = Root, unity = Application.unityVersion,
@@ -164,9 +172,12 @@ namespace Snowglow.Editor
                 compiling = EditorApplication.isCompiling, updating = EditorApplication.isUpdating,
                 automaticRefresh = EditorPrefs.GetBool(Preference, true), error = error };
             var path = Path.Combine(Folder, "status.json");
-            File.WriteAllText(path + ".tmp", JsonUtility.ToJson(status, true));
-            if (File.Exists(path)) File.Delete(path);
-            File.Move(path + ".tmp", path);
+            try {
+                File.WriteAllText(path + ".tmp", JsonUtility.ToJson(status, true));
+                if (File.Exists(path)) File.Replace(path + ".tmp", path, null);
+                else File.Move(path + ".tmp", path);
+                return true;
+            } catch (IOException) { return false; } // A reader may briefly deny replacement on Windows.
         }
     }
 }

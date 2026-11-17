@@ -1,5 +1,8 @@
 # The Alps district
 
+The 17 November supplied-source rebuild supersedes the original generated layout below. See [ALPS_REBUILD.md](ALPS_REBUILD.md): 70 imported homes, a connected twelve-route network, supplied 1 km terrain, sixteen surrounding mountains, imported Tell statue and gate tower, and Pinefall facilities. The current scene is saved/reopened; 2,195 static access samples and 17 isolated Play assertions passed. Evidence is in Logs/AlpsRebuild. Original source assets and Pinefall remain preserved.
+
+
 The next Alpine Career town after Pinefall. Reference: the existing `alps.jpg`
 card, with a Swiss-style old town, gate/clock tower, Tell and son monument,
 plaster/shuttered buildings and snow-covered ridges. This is an original stylized

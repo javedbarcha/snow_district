@@ -1,5 +1,10 @@
 # Prototype structure and extension boundaries
 
+## Supplied-asset Alps rebuild ? 17 November 2026
+
+`AlpsRebuildAssets` prepares 22 reusable catalogue assemblies from preserved Blender sources. `AlpsRebuildScene` authors only TheAlps, retaining the source terrain topology with uniform relief compression, fresh saved road meshes, 70 home instances and terrain-fitted mountain derivatives. The physical terrain is a MeshCollider; a hidden 257 TerrainData supplies existing camera height queries. Runtime controllers reuse saved geometry. Catalogue entries remain NeedsReview. Build failure restores the previous saved scene; review uses the real CameraRig. See ALPS_REBUILD.md.
+
+
 `ProductionMenuAuthoring` saves the reviewed menu hierarchy, capture sprites,
 buttons and persistent listeners before Play. `ProductionMenu` owns transient
 screen/tab/browsing state and binds actual session values; `ProductionMenuAction`

@@ -1,0 +1,1 @@
+Generated 70 / 70 building placements; 12 connected road routes. Candidate footprint/road/yard gaps checked; native scene validation and gameplay-camera audit still required.

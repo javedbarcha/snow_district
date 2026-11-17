@@ -1,0 +1,740 @@
+{
+  "assets": [
+    {
+      "slug": "TerrainBase",
+      "kind": "Terrain",
+      "palette": "TerrainPalette",
+      "parts": [
+        "Terrain"
+      ],
+      "metrics": {
+        "Terrain": {
+          "triangles": 5600,
+          "vertices": 2802
+        }
+      },
+      "size": [
+        1000.0,
+        305.5157775878906,
+        1000.0
+      ],
+      "partSources": {
+        "Terrain": [
+          "Alps_Town_Terrain | 1000m x 1000m"
+        ]
+      }
+    },
+    {
+      "slug": "Mountain_01",
+      "kind": "Mountain",
+      "palette": "MountainPalette",
+      "parts": [
+        "Mountain"
+      ],
+      "metrics": {
+        "Mountain": {
+          "triangles": 696,
+          "vertices": 350
+        }
+      },
+      "size": [
+        737.7747192382812,
+        510.8066101074219,
+        657.8367309570312
+      ],
+      "partSources": {
+        "Mountain": [
+          "01_Sharp_Alpine_Horn_LOD1"
+        ]
+      }
+    },
+    {
+      "slug": "Mountain_02",
+      "kind": "Mountain",
+      "palette": "MountainPalette",
+      "parts": [
+        "Mountain"
+      ],
+      "metrics": {
+        "Mountain": {
+          "triangles": 696,
+          "vertices": 350
+        }
+      },
+      "size": [
+        1070.3515625,
+        419.2810363769531,
+        512.5289306640625
+      ],
+      "partSources": {
+        "Mountain": [
+          "02_Limestone_Cliff_Wall_LOD1"
+        ]
+      }
+    },
+    {
+      "slug": "Mountain_03",
+      "kind": "Mountain",
+      "palette": "MountainPalette",
+      "parts": [
+        "Mountain"
+      ],
+      "metrics": {
+        "Mountain": {
+          "triangles": 696,
+          "vertices": 350
+        }
+      },
+      "size": [
+        915.5381469726562,
+        481.3974609375,
+        666.6234130859375
+      ],
+      "partSources": {
+        "Mountain": [
+          "03_Twin_Peaks_and_Saddle_LOD1"
+        ]
+      }
+    },
+    {
+      "slug": "Mountain_04",
+      "kind": "Mountain",
+      "palette": "MountainPalette",
+      "parts": [
+        "Mountain"
+      ],
+      "metrics": {
+        "Mountain": {
+          "triangles": 696,
+          "vertices": 350
+        }
+      },
+      "size": [
+        974.6751708984375,
+        366.9173583984375,
+        862.3399047851562
+      ],
+      "partSources": {
+        "Mountain": [
+          "04_Glacial_Cirque_LOD1"
+        ]
+      }
+    },
+    {
+      "slug": "Mountain_05",
+      "kind": "Mountain",
+      "palette": "MountainPalette",
+      "parts": [
+        "Mountain"
+      ],
+      "metrics": {
+        "Mountain": {
+          "triangles": 696,
+          "vertices": 350
+        }
+      },
+      "size": [
+        1226.81201171875,
+        409.73175048828125,
+        563.567626953125
+      ],
+      "partSources": {
+        "Mountain": [
+          "05_Serrated_Ridgeline_LOD1"
+        ]
+      }
+    },
+    {
+      "slug": "Mountain_06",
+      "kind": "Mountain",
+      "palette": "MountainPalette",
+      "parts": [
+        "Mountain"
+      ],
+      "metrics": {
+        "Mountain": {
+          "triangles": 696,
+          "vertices": 350
+        }
+      },
+      "size": [
+        965.1627197265625,
+        216.0343017578125,
+        800.7134399414062
+      ],
+      "partSources": {
+        "Mountain": [
+          "06_Rounded_Foothills_LOD1"
+        ]
+      }
+    },
+    {
+      "slug": "Mountain_07",
+      "kind": "Mountain",
+      "palette": "MountainPalette",
+      "parts": [
+        "Mountain"
+      ],
+      "metrics": {
+        "Mountain": {
+          "triangles": 696,
+          "vertices": 350
+        }
+      },
+      "size": [
+        821.4690551757812,
+        417.5622253417969,
+        762.5771484375
+      ],
+      "partSources": {
+        "Mountain": [
+          "07_Fractured_Rock_Buttress_LOD1"
+        ]
+      }
+    },
+    {
+      "slug": "Mountain_08",
+      "kind": "Mountain",
+      "palette": "MountainPalette",
+      "parts": [
+        "Mountain"
+      ],
+      "metrics": {
+        "Mountain": {
+          "triangles": 696,
+          "vertices": 350
+        }
+      },
+      "size": [
+        1127.07080078125,
+        472.92584228515625,
+        972.310791015625
+      ],
+      "partSources": {
+        "Mountain": [
+          "08_Broad_Snow_Massif_LOD1"
+        ]
+      }
+    },
+    {
+      "slug": "Building_01",
+      "kind": "Building",
+      "palette": "BuildingPalette",
+      "parts": [
+        "Architecture",
+        "Windows",
+        "SnowCover"
+      ],
+      "metrics": {
+        "Architecture": {
+          "triangles": 1340,
+          "vertices": 1064
+        },
+        "Windows": {
+          "triangles": 40,
+          "vertices": 80
+        },
+        "SnowCover": {
+          "triangles": 8,
+          "vertices": 12
+        }
+      },
+      "size": [
+        10.800000190734863,
+        9.966999663971364,
+        9.65500020980835
+      ],
+      "partSources": {
+        "Architecture": [
+          "Sage_Dormer_House | Architecture"
+        ],
+        "Windows": [
+          "Sage_Dormer_House | Opaque_windows"
+        ],
+        "SnowCover": [
+          "Sage_Dormer_House | Snow_optional"
+        ]
+      }
+    },
+    {
+      "slug": "Building_02",
+      "kind": "Building",
+      "palette": "BuildingPalette",
+      "parts": [
+        "Architecture",
+        "Windows",
+        "SnowCover"
+      ],
+      "metrics": {
+        "Architecture": {
+          "triangles": 2090,
+          "vertices": 1652
+        },
+        "Windows": {
+          "triangles": 60,
+          "vertices": 120
+        },
+        "SnowCover": {
+          "triangles": 12,
+          "vertices": 18
+        }
+      },
+      "size": [
+        13.599999904632568,
+        13.785000457428396,
+        14.900000095367432
+      ],
+      "partSources": {
+        "Architecture": [
+          "Balcony_Villa_and_Garage | Architecture"
+        ],
+        "Windows": [
+          "Balcony_Villa_and_Garage | Opaque_windows"
+        ],
+        "SnowCover": [
+          "Balcony_Villa_and_Garage | Snow_optional"
+        ]
+      }
+    },
+    {
+      "slug": "Building_03",
+      "kind": "Building",
+      "palette": "BuildingPalette",
+      "parts": [
+        "Architecture",
+        "Windows",
+        "SnowCover"
+      ],
+      "metrics": {
+        "Architecture": {
+          "triangles": 1356,
+          "vertices": 1128
+        },
+        "Windows": {
+          "triangles": 152,
+          "vertices": 176
+        },
+        "SnowCover": {
+          "triangles": 12,
+          "vertices": 8
+        }
+      },
+      "size": [
+        15.640000343322754,
+        12.149999618530273,
+        10.710000038146973
+      ],
+      "partSources": {
+        "Architecture": [
+          "Modern_Alpine_Shop_Block | Architecture"
+        ],
+        "Windows": [
+          "Modern_Alpine_Shop_Block | Opaque_windows"
+        ],
+        "SnowCover": [
+          "Modern_Alpine_Shop_Block | Snow_optional"
+        ]
+      }
+    },
+    {
+      "slug": "Building_04",
+      "kind": "Building",
+      "palette": "BuildingPalette",
+      "parts": [
+        "Architecture",
+        "Windows",
+        "SnowCover"
+      ],
+      "metrics": {
+        "Architecture": {
+          "triangles": 1364,
+          "vertices": 1112
+        },
+        "Windows": {
+          "triangles": 86,
+          "vertices": 124
+        },
+        "SnowCover": {
+          "triangles": 4,
+          "vertices": 6
+        }
+      },
+      "size": [
+        7.800000190734863,
+        15.355000152252614,
+        10.65500020980835
+      ],
+      "partSources": {
+        "Architecture": [
+          "Rose_Bay_Townhouse | Architecture"
+        ],
+        "Windows": [
+          "Rose_Bay_Townhouse | Opaque_windows"
+        ],
+        "SnowCover": [
+          "Rose_Bay_Townhouse | Snow_optional"
+        ]
+      }
+    },
+    {
+      "slug": "Building_05",
+      "kind": "Building",
+      "palette": "BuildingPalette",
+      "parts": [
+        "Architecture",
+        "Windows"
+      ],
+      "metrics": {
+        "Architecture": {
+          "triangles": 1180,
+          "vertices": 813
+        },
+        "Windows": {
+          "triangles": 16,
+          "vertices": 32
+        }
+      },
+      "size": [
+        8.199999809265137,
+        32.0,
+        8.199999809265137
+      ],
+      "partSources": {
+        "Architecture": [
+          "Altdorf_Clock_Tower | Architecture"
+        ],
+        "Windows": [
+          "Altdorf_Clock_Tower | Opaque_windows"
+        ]
+      }
+    },
+    {
+      "slug": "Building_06",
+      "kind": "Building",
+      "palette": "BuildingPalette",
+      "parts": [
+        "Architecture",
+        "Windows",
+        "SnowCover"
+      ],
+      "metrics": {
+        "Architecture": {
+          "triangles": 1988,
+          "vertices": 1612
+        },
+        "Windows": {
+          "triangles": 144,
+          "vertices": 192
+        },
+        "SnowCover": {
+          "triangles": 6,
+          "vertices": 6
+        }
+      },
+      "size": [
+        11.800000190734863,
+        14.28600025177002,
+        12.774137496948242
+      ],
+      "partSources": {
+        "Architecture": [
+          "Corner_Arcade_House | Architecture"
+        ],
+        "Windows": [
+          "Corner_Arcade_House | Opaque_windows"
+        ],
+        "SnowCover": [
+          "Corner_Arcade_House | Snow_optional"
+        ]
+      }
+    },
+    {
+      "slug": "Building_07",
+      "kind": "Building",
+      "palette": "BuildingPalette",
+      "parts": [
+        "Architecture",
+        "Windows",
+        "SnowCover"
+      ],
+      "metrics": {
+        "Architecture": {
+          "triangles": 1645,
+          "vertices": 1301
+        },
+        "Windows": {
+          "triangles": 72,
+          "vertices": 112
+        },
+        "SnowCover": {
+          "triangles": 6,
+          "vertices": 6
+        }
+      },
+      "size": [
+        13.800000190734863,
+        13.12499965634197,
+        12.845000267028809
+      ],
+      "partSources": {
+        "Architecture": [
+          "Civic_Palazzo | Architecture"
+        ],
+        "Windows": [
+          "Civic_Palazzo | Opaque_windows"
+        ],
+        "SnowCover": [
+          "Civic_Palazzo | Snow_optional"
+        ]
+      }
+    },
+    {
+      "slug": "Building_08",
+      "kind": "Building",
+      "palette": "BuildingPalette",
+      "parts": [
+        "Architecture",
+        "Windows",
+        "SnowCover"
+      ],
+      "metrics": {
+        "Architecture": {
+          "triangles": 2502,
+          "vertices": 1996
+        },
+        "Windows": {
+          "triangles": 180,
+          "vertices": 216
+        },
+        "SnowCover": {
+          "triangles": 20,
+          "vertices": 30
+        }
+      },
+      "size": [
+        18.799999713897705,
+        14.554999961517751,
+        11.65500020980835
+      ],
+      "partSources": {
+        "Architecture": [
+          "Gabled_Inn_with_Annex | Architecture"
+        ],
+        "Windows": [
+          "Gabled_Inn_with_Annex | Opaque_windows"
+        ],
+        "SnowCover": [
+          "Gabled_Inn_with_Annex | Snow_optional"
+        ]
+      }
+    },
+    {
+      "slug": "Building_09",
+      "kind": "Building",
+      "palette": "BuildingPalette",
+      "parts": [
+        "Architecture",
+        "Windows",
+        "SnowCover"
+      ],
+      "metrics": {
+        "Architecture": {
+          "triangles": 1974,
+          "vertices": 1660
+        },
+        "Windows": {
+          "triangles": 84,
+          "vertices": 168
+        },
+        "SnowCover": {
+          "triangles": 4,
+          "vertices": 6
+        }
+      },
+      "size": [
+        10.800000190734863,
+        12.855000152252614,
+        14.65500020980835
+      ],
+      "partSources": {
+        "Architecture": [
+          "Green_Shutter_Merchant_House | Architecture"
+        ],
+        "Windows": [
+          "Green_Shutter_Merchant_House | Opaque_windows"
+        ],
+        "SnowCover": [
+          "Green_Shutter_Merchant_House | Snow_optional"
+        ]
+      }
+    },
+    {
+      "slug": "Building_10",
+      "kind": "Building",
+      "palette": "BuildingPalette",
+      "parts": [
+        "Architecture",
+        "Windows",
+        "SnowCover"
+      ],
+      "metrics": {
+        "Architecture": {
+          "triangles": 1532,
+          "vertices": 1204
+        },
+        "Windows": {
+          "triangles": 86,
+          "vertices": 108
+        },
+        "SnowCover": {
+          "triangles": 10,
+          "vertices": 12
+        }
+      },
+      "size": [
+        12.720000267028809,
+        10.454999580048025,
+        11.49500036239624
+      ],
+      "partSources": {
+        "Architecture": [
+          "Ornate_Bay_Villa | Architecture"
+        ],
+        "Windows": [
+          "Ornate_Bay_Villa | Opaque_windows"
+        ],
+        "SnowCover": [
+          "Ornate_Bay_Villa | Snow_optional"
+        ]
+      }
+    },
+    {
+      "slug": "Building_11",
+      "kind": "Building",
+      "palette": "BuildingPalette",
+      "parts": [
+        "Architecture",
+        "Windows",
+        "SnowCover"
+      ],
+      "metrics": {
+        "Architecture": {
+          "triangles": 1134,
+          "vertices": 924
+        },
+        "Windows": {
+          "triangles": 40,
+          "vertices": 80
+        },
+        "SnowCover": {
+          "triangles": 4,
+          "vertices": 6
+        }
+      },
+      "size": [
+        9.700000286102295,
+        8.954999580048025,
+        9.65500020980835
+      ],
+      "partSources": {
+        "Architecture": [
+          "Small_Gabled_Timber_House | Architecture"
+        ],
+        "Windows": [
+          "Small_Gabled_Timber_House | Opaque_windows"
+        ],
+        "SnowCover": [
+          "Small_Gabled_Timber_House | Snow_optional"
+        ]
+      }
+    },
+    {
+      "slug": "Monument",
+      "kind": "Landmark",
+      "palette": "LandmarkPalette",
+      "parts": [
+        "Architecture",
+        "SnowCover"
+      ],
+      "metrics": {
+        "Architecture": {
+          "triangles": 5924,
+          "vertices": 3236
+        },
+        "SnowCover": {
+          "triangles": 300,
+          "vertices": 168
+        }
+      },
+      "size": [
+        7.264320373535156,
+        9.111989974975586,
+        6.475216865539551
+      ],
+      "partSources": {
+        "Architecture": [
+          "Pedestal | editable stone and panel",
+          "Bronze rock footing",
+          "Adult | legs boots and folded tunic",
+          "Adult | posed arms and articulated hands",
+          "Adult | angular face ears and features",
+          "Adult | long hair and sculpted beard",
+          "Adult | draped cloak",
+          "Crossbow | stock curved bow and string",
+          "Child | legs folded arms tunic and hands",
+          "Child | face and wavy hair",
+          "Enclosure | eight stone bollards",
+          "Enclosure | interlocking chain links"
+        ],
+        "SnowCover": [
+          "Pedestal snow | removable",
+          "Bollard snow | removable"
+        ]
+      }
+    },
+    {
+      "slug": "GateTower",
+      "kind": "Landmark",
+      "palette": "LandmarkPalette",
+      "parts": [
+        "Architecture",
+        "Windows",
+        "SnowCover"
+      ],
+      "metrics": {
+        "Architecture": {
+          "triangles": 2294,
+          "vertices": 1568
+        },
+        "Windows": {
+          "triangles": 360,
+          "vertices": 240
+        },
+        "SnowCover": {
+          "triangles": 10,
+          "vertices": 12
+        }
+      },
+      "size": [
+        9.399999618530273,
+        24.0,
+        6.849999904632568
+      ],
+      "partSources": {
+        "Architecture": [
+          "Tower | arch tunnel and plaster body",
+          "Tower | arch stones and corner quoins",
+          "Tower | heraldic shield lions and sundial",
+          "Tower | roof and dormer",
+          "Tower | Swiss flag and pole"
+        ],
+        "Windows": [
+          "Tower | windows and stone surrounds"
+        ],
+        "SnowCover": [
+          "Tower roof snow | removable"
+        ]
+      }
+    }
+  ]
+}

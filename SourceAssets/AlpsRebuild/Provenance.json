@@ -1,0 +1,22 @@
+[
+  {
+    "file": "Snow_District_Alps_Town_Terrain.blend",
+    "sha256": "8b67e6127299b88d06f44d6b3bedd2e4d9e38ece3f3e814019ace8eb521a589d",
+    "bytes": 1002412
+  },
+  {
+    "file": "Snow_District_Alps_Mountains.blend",
+    "sha256": "f45c406af0ed1446247796e2ac2bfa7f6b40196dd978b19956abe1f33f0f8136",
+    "bytes": 2496116
+  },
+  {
+    "file": "Snow_District_Alps_Buildings.blend",
+    "sha256": "271f0c304b17dd1619717a31345d72aba6fb178d7e8ba017f3f4543bd2399860",
+    "bytes": 2137188
+  },
+  {
+    "file": "Snow_District_Statue_and_Tower.blend",
+    "sha256": "a611256ca49e1dc79dd384c6a4d912cc7aee4ea01259d11599447a19b66a323e",
+    "bytes": 1035792
+  }
+]

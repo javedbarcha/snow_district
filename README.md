@@ -1,5 +1,10 @@
 # Snowglow — editable primitive district prototype
 
+## Alps supplied-asset rebuild ? 17 November 2026
+
+The Alps now has an independently saved 1 km terrain, 70 imported homes, sixteen mountains, Tell square and an arched tower, with twelve connected straight/curved road routes and borrowed Pinefall facilities. Pinefall is preserved. See [the rebuild guide](ALPS_REBUILD.md) for source provenance, repeat-safe authoring, evidence and outstanding acceptance. This supersedes older statements that only Pinefall is built. Deformable snow remains central; Android/A07 performance is unmeasured.
+
+
 The reviewed [production menus](PRODUCTION_UI.md) are integrated as saved native
 Unity UI: Career browsing, job/machinery selection with swipes, combined Garage /
 Shop tabs, settings, pause, results and confirmations. Existing live economy and
