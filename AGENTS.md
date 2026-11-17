@@ -1,5 +1,72 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Empty original-scale terrain tractor test - 17 November 2026
+
+User requests a separate empty test scene using the attached terrain Blender,
+one tractor, and direct Editor Play startup. AlpsTerrainTest.unity contains only
+the preserved original terrain at 1:1 source metres, stock tractor, Sun/camera,
+input driver and invisible camera-height TerrainData. Attachment SHA256 matches
+SourceAssets/AlpsRebuild/Snow_District_Alps_Town_Terrain.blend and its existing
+export provenance; no new source export or asset replacement. Terrain surface
+and physical collision reuse the original FBX; no game-scene Y compression.
+No town, props, menus, jobs, deformable snow or PrototypeSession; no save access.
+
+TerrainTractorTest drives the saved tractor through MachineController's extracted
+SimulateDriving(input,snow) step, with null snow. Normal FixedUpdate retains its
+session/running gates and recovery and calls the same unchanged handling math
+with game.Snow. Only the standalone null-snow case skips snow contact/work. No
+mass/grip/torque/geometry tuning. Saved tractor/prefabs remain unchanged.
+
+TerrainTractorTestAuthoring build marker Logs/AlpsTerrainTest.request accepts
+build (refuses overwrite) and play (isolated live check), only after native
+compile exit0. EditorSceneManager.playModeStartScene points to AlpsTerrainTest.
+Snowglow > Developer > Play current scene normally clears it; Play terrain test
+directly restores it. Main game build scenes stay unchanged. Other Play fixture
+suites must temporarily clear this start override before expecting a game scene.
+Controls: W/S or arrows for forward/reverse, A/D steering, Space brake, R reset,
+C cameras, Orbit right-drag/scroll. See TERRAIN_TEST.md. The scene intentionally
+has no mobile HUD. Profile/economy settings do not affect this isolated sandbox.
+
+Android-defined offline and native forced compile/domain reload passed. Scene
+saved/reopened with six roots (two visible assets plus necessary helpers).
+Existing direction-buffer/recovery/scene/snow checks passed before authoring.
+Actual Play passed direct startup, no production session, four wheel contacts,
+acceleration, release coasting and reset-motion assertions. Real profile/backup,
+Pinefall/Alps scenes, build settings, source terrain and tractor prefab hashes
+are unchanged. Evidence: Logs/AlpsTerrainTest. Test scene open, Play stopped,
+direct-test start override enabled. No Android build or hill-driving acceptance.
+
+## Original imported Alps terrain restored - 17 November 2026
+
+User rejects the subsequent terrain reshaping and requests the original first
+import, explicitly deferring mountains/buildings and all scenery seating.
+AlpsRestoreImportedTerrain is a terrain-only Editor restoration. Original
+TerrainBase source mesh supplies render and MeshCollider geometry; initial
+Rebuild20261117 1/TerrainQuery.asset supplies matching hidden camera heights.
+The first import's uniform Y factor .33202338 and 5.13m centre remain; no source
+height compression is newly applied. No shelf, rolling relief or town-edge hill
+reshaping remains on the selected mesh. Source/derived assets are preserved.
+All object transforms remain unchanged, including mountains, buildings and roads;
+seating/access problems after terrain restoration are intentionally deferred.
+No snow, profile, gameplay, material or source-asset edit. No full district bake.
+
+Queue Logs/AlpsRestoreImportedTerrain.request only after successful ID-matched
+native Compile. Backups, native saved/reopened reference checks, original-import
+flat-centre assertion, transform preservation and terrain-only preview are under
+Logs/AlpsRestoreImportedTerrain. The preview hides other renderers temporarily,
+restores them afterward and reopens the saved scene. Do not run old hills or
+mountain adjustment migrations on this terrain; their seating assumptions no
+longer apply. Guide: ALPS_REBUILD.md. No Play/device/access acceptance intended.
+
+Android-defined offline compilation and ID-matched native forced compile/reload
+passed. Saved/reopened source render/collision references and original query
+verified; flat centre matches 5.13m. Terrain-only native overview inspected.
+Every Transform unchanged. Serialized diff contains exactly four terrain-related
+records (source mesh prefab override, physical MeshCollider, hidden Terrain and
+its disabled TerrainCollider), no added/removed scene objects. All1341 protected
+source/previous terrain/Pinefall/profile files unchanged. No Play, snow edits,
+scenery reseating, or device/access testing. Alps open, Play stopped.
+
 ## Twelve broader randomized Alps mountains - 17 November2026
 
 User requests12 mountains, no matching opposite pairs, larger widths toward town and visibly seated bases. Targeted `ReviseTwelveMountains` action `twelvemountains` in Logs/AlpsRebuild.request, only after native compilation exits0, requires16 prior mountains and the saved TownEdgeHills terrain. Backup saved/unsaved scene; restore on failure. All8 source variants appear in a seeded12-slot shuffle with no equal adjacent or diametrically opposite entries; bearings jitter +/-3 degrees and yaw varies. Corrected natural504-triangle surfaces are reused as inputs, with radial widths1.6x and tangential1.12x, anchored8.5m inside1km boundary, expanding toward town. Existing terrain and town assets remain unchanged.

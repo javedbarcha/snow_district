@@ -56,7 +56,14 @@ namespace Snowglow
         void FixedUpdate()
         {
             var game = PrototypeSession.Instance; if (!ActiveMachine || game == null || !game.IsRunning) return;
-            var input = game.Input; Speed = Body.linearVelocity.magnitude; float forward = Vector3.Dot(Body.linearVelocity, transform.forward);
+            SimulateDriving(game.Input, game.Snow);
+            if (transform.position.y < 0 || Mathf.Abs(transform.position.x) > 485 || Mathf.Abs(transform.position.z) > 485) game.Recover();
+        }
+        // The empty terrain sandbox shares the production wheel/handling loop without a game session.
+        public void SimulateDriving(PrototypeInput input, SnowField snow)
+        {
+            if (!ActiveMachine || Body == null || input == null) return;
+            Speed = Body.linearVelocity.magnitude; float forward = Vector3.Dot(Body.linearVelocity, transform.forward);
             float direction = input.Reverse ? -1 : 1; float targetSteering = input.Steer * definition.steering / (1 + Speed * .055f);
             steering = Mathf.MoveTowards(steering, targetSteering, 100 * Time.fixedDeltaTime);
             float mass = definition.mass + equipment.mass + Tool.Load * 250;
@@ -65,7 +72,7 @@ namespace Snowglow
             if (!DiagnosticFreezeCenterOfMass)
 #endif
             Body.centerOfMass = (definition.dryCenterOfMass * definition.mass + transform.InverseTransformPoint(Tool.mount.position) * equipment.mass + transform.InverseTransformPoint(Tool.mouth.position) * (Tool.Load * 250)) / mass;
-            bool snowWorking = IsWorkingAgainstSnow(game.Snow);
+            bool snowWorking = snow && IsWorkingAgainstSnow(snow);
             Body.angularDamping = snowWorking ? .8f : .5f;
             float driveThrottle=driveState.Resolve(direction,input.Throttle,input.Brake,forward,Vector3.ProjectOnPlane(Body.linearVelocity,Vector3.up).magnitude,Time.fixedDeltaTime,out float serviceBrake,out bool holdStopped);
             if(holdStopped){Body.linearVelocity=Vector3.Project(Body.linearVelocity,Vector3.up);foreach(var wheel in wheels)wheel.rotationSpeed=0;}
@@ -80,7 +87,7 @@ namespace Snowglow
                 {
                     wallContact = hit.normal.y < .5f;
                     if (!wallContact) grounded++; Slip += Mathf.Abs(hit.forwardSlip) + Mathf.Abs(hit.sidewaysSlip);
-                    float depth = game.Snow.Depth(hit.point); grip = Mathf.Lerp(SurfaceZone.Sample(hit.point), .67f, Mathf.Clamp01(depth / .25f)); grip *= definition.baseGrip * GripMultiplier;
+                    float depth = snow ? snow.Depth(hit.point) : 0; grip = Mathf.Lerp(SurfaceZone.Sample(hit.point), .67f, Mathf.Clamp01(depth / .25f)); grip *= definition.baseGrip * GripMultiplier;
                 }
                 if (wallContact) grip = 0; // A wall is not a drivable support surface.
                 var f = w.forwardFriction; f.stiffness = grip; w.forwardFriction = f; var s = w.sidewaysFriction; s.stiffness = grip * (Assistance ? 1.2f : 1); w.sidewaysFriction = s;
@@ -96,15 +103,14 @@ namespace Snowglow
             }
             if (grounded > 0)
             {
-                float depth = game.Snow.Depth(transform.position); float drag = mass * (.025f + depth * .25f);
+                float depth = snow ? snow.Depth(transform.position) : 0; float drag = mass * (.025f + depth * .25f);
                 if (Speed > .15f) Body.AddForce(-Body.linearVelocity.normalized * drag);
-                ApplyPileResistance(game.Snow);
+                if (snow) ApplyPileResistance(snow);
                 if (Assistance) { AntiRoll(0, 1); AntiRoll(2, 3); Vector3 upright = Vector3.Cross(transform.up, Vector3.up); Body.AddTorque(upright * mass * 1.8f - Body.angularVelocity * mass * .12f); }
             }
-            LastSnowForce = Tool.Simulate(Time.fixedDeltaTime, Mathf.Max(0, forward));
+            LastSnowForce = snow ? Tool.Simulate(Time.fixedDeltaTime, Mathf.Max(0, forward)) : 0;
             if (LastSnowForce > 0 && forward > .1f) Body.AddForce(-transform.forward * LastSnowForce);
             if (input.Throttle > .02f) Fuel = Mathf.Max(0, Fuel - Time.fixedDeltaTime * (.003f + .014f * input.Throttle + LastSnowForce * .0000012f));
-            if (transform.position.y < 0 || Mathf.Abs(transform.position.x) > 485 || Mathf.Abs(transform.position.z) > 485) game.Recover();
         }
         bool IsWorkingAgainstSnow(SnowField snow)
         {

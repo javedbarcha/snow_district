@@ -64,3 +64,23 @@ User requests12 mountains, no matching opposite pairs, larger widths toward town
 Prior whole-model minimum-rim seating hid low mountain shapes. New derivative meshes place each source-height vertex over local terrain (rim -.8m), rather than lowering the whole slope to the lowest rim terrain. Minimum relief45m prevents short low ranges disappearing. Natural rim edges sample every2m; local downward corrections keep them >=.4m buried, without restoring tall walls. Duplicated rim copies share each correction. Source Blender/FBX/catalogue and previous derivative assets remain unchanged. Twelve authored meshes total6048 triangles. Logs/AlpsTwelveMountains contains evidence/backups. Earlier one-time Alps migrations must not run on this layout.
 
 Native forced compilation/reload, save/reopen, scene/19 snow and2195 clear access checks passed.24 mountain views and overview reviewed;75 gameplay isometric views regenerated. All2391 protected source/prefab/previous terrain/mesh/Pinefall/profile files unchanged. Saved mesh continuity checks passed for all12 derivatives. Only the mountain group changed among existing scene records. First pass caught a near-rim height tolerance and restored the scene before saving; the corrected rim is projected to a consistent-.8m baseline. Initial failure and unused derivatives with zero outside references retained under Logs. No Play rerun or Android/device acceptance. Alps open, Play stopped.
+
+
+## Original imported terrain restored ? 17 November 2026
+
+This supersedes the later shelf, rolling-hill and town-edge terrain shape passes.
+Only the terrain mesh (render/collision) and hidden camera-height query return
+to their preserved first-import references. The original 1000m footprint,
+5600-triangle source geometry, import Y factor .33202338 and 5.13m snow datum
+remain. All existing mountain/building/road/tree transforms are deliberately
+left alone; their seating and access are deferred at the user's request.
+
+After native compilation succeeds, queue Logs/AlpsRestoreImportedTerrain.request.
+Backups and a terrain-only overview: Logs/AlpsRestoreImportedTerrain. The source
+Blender/FBX/prefab, previous derived terrain assets, snow and profiles are kept.
+Do not replay historical hill/mountain migrations to refine the restored shape.
+
+Native save/reopen validation passed; all transforms and all 1341 protected
+source/terrain/Pinefall/profile files are unchanged. The serialized scene diff
+contains exactly the four expected terrain-related reference records. The
+terrain-only preview was visually inspected. No Play or seating/access tests.
