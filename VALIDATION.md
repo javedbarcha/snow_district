@@ -22,7 +22,7 @@ Native Android-target compilation, 22-assembly source intake and saved/reopened 
 Final saved/reopened refinements passed 2,195 static road/service-envelope samples with zero obstructions; 75 gameplay-isometric captures and the wide audit overview were reviewed. Seventeen isolated actual Play assertions passed for wheel support, coasting, Career/Quick town travel, checkpoint/economy transfer and resume. Both scenes and real profile/backup hashes match pre-Play values. Native compilation and held-reader automation recovery also passed. APK packaging, Samsung Galaxy A07 frame cost, mobile touch, manual full jobs and exhaustive terrain driving are untested. Catalogue status is NeedsReview; desktop captures do not establish mobile acceptance.
 
 
-## Cabin/tool collider authoring — 12 November 2026
+## Cabin/tool collider authoring â€” 12 November 2026
 
 Unity 6000.3.8f1 / Android compiled and saved/reopened Pinefall and both machinery
 prefabs with roof-height chassis and physical tool boxes. Tractor 2 / loader 5 solid
@@ -32,7 +32,7 @@ No Play entry/player-save writes. Prior 77-case handling acceptance does not cov
 these colliders; impacts, plowing clearances, inertia/rollovers and A07 performance
 remain untested after this change. Evidence: Logs/VehicleCollision/Validation.txt.
 
-## Full handling rerun — 12 November 2026
+## Full handling rerun â€” 12 November 2026
 
 77 actual Play cases (previous 73 plus four full-steering high-speed turns), native
 compile/domain reload and 37 support/vehicle assertions plus scene/19 snow/recovery/
@@ -47,7 +47,7 @@ turning tip risk, so no anti-tip tuning. No guarantee of zero subjective jerk.
 Reports/traces/native checks and inspected motion plots: Logs/HandlingFullReview.
 No Android packaging, A07 performance, touch/manual feel or economy acceptance.
 
-## Recent snow resistance and freer suspension — 12 November 2026
+## Recent snow resistance and freer suspension â€” 12 November 2026
 
 36 actual Pinefall Play cases completed with both vehicles, raised/down tools,
 target 2/4/6.5 m/s, flat .3 m snow, initial 2.4 m narrow piles and 1.5 m uneven snow.
@@ -141,7 +141,7 @@ Logs/CloudFog/Validation.txt and Gameplay-clouds.png.
 ## Circular cloud population - 7 November 2026
 
 Latest policy: random initial disk scatter including centre, 1,500 m root radius,
-10–15 active clouds and staggered upwind arrivals. Current native results are in
+10â€“15 active clouds and staggered upwind arrivals. Current native results are in
 Logs/CloudWind/PopulationRadius/Validation.txt. Earlier fixed-40/plane checks below
 describe the superseded implementation. Live Play and phone acceptance remain
 untested.
@@ -985,7 +985,7 @@ and continuous vehicle clearance remain untested.
 
 - Parsed all 24 C# source files with the tree-sitter C# grammar: no syntax-error nodes.
 - Checked player-side code after excluding UNITY_EDITOR blocks: no `new GameObject`, primitive scene creation or Terrain factory calls. All authored scene construction is confined to Editor code.
-- Checked the authoring source declares a 1000 × 1000 m Terrain, persistent terrain/material/definition/mesh assets, connected machinery prefabs and an explicit scene save.
+- Checked the authoring source declares a 1000 Ã— 1000 m Terrain, persistent terrain/material/definition/mesh assets, connected machinery prefabs and an explicit scene save.
 - Checked URP/Input System/uGUI and Terrain/physics/text/audio module declarations.
 - Verified all 10 synthesized WAV files are readable mono 16-bit PCM.
 - Geometric checks: depot-access, parking and main-street contract footprints contain 248, 744 and 560 cells respectively. Road-based objectives lie within the intended road geometry.
@@ -995,7 +995,7 @@ These checks do not establish Unity compilation or runtime correctness.
 
 ## Repeatable mechanics checks
 
-`Snowglow → Run snow ledger checks` exercises the actual engine-independent C# volume model in Edit mode. Nine invariants cover pushing, source reward credit, recycled snow, carrying, dumping, rejected out-of-bounds/full destinations, randomized transfers and blocked cells. This command requires the scripts to compile in Unity first.
+`Snowglow â†’ Run snow ledger checks` exercises the actual engine-independent C# volume model in Edit mode. Nine invariants cover pushing, source reward credit, recycled snow, carrying, dumping, rejected out-of-bounds/full destinations, randomized transfers and blocked cells. This command requires the scripts to compile in Unity first.
 
 ## Required first-import/editor checks
 
@@ -1970,3 +1970,10 @@ Native compilation, shader and saved/reopened material/geometry/pose checks pass
 ## Altitude-dependent mountain snow - 18 November2026
 
 Native compile/shader checks and eight views/overview passed.4466 vertices gain snow, no coverage loss; all3290 protected files including all scenes match. No Play/device acceptance. Evidence: Logs/AlpsMountainHeightSnow.
+
+
+## Test mountain bases fitted to unchanged terrain - 18 November 2026
+
+User permits up to10% burial and explicitly approves fitting base geometry after an audit showed0/8 mountains could meet that limit with Y translation alone. TestMountainClearance `conform` works on the current in-memory AlpsTerrainTest, backing it up before changes and refusing repeat fitting. It creates eight derivative meshes under Levels/AlpsTerrainTest/FittedMountainBases; original source/import/prefab meshes stay unchanged. Welded buried vertices are raised to physical terrain minus .5m; true open-bottom rim edges sample every <=1m and are lowered locally where required to prevent gaps. Already exposed vertex positions, all root XYZ/rotation/scale, UVs, materials and terrain remain. Matching static MeshColliders use the same saved fitted meshes. No added/removed triangles or vertices:11819 triangles total.
+
+Native forced compile/domain reload request cd031da0e1684eda813a2dc6c5996e96 exited0. Native save/reopen, perimeter and vertex/triangle-centre/edge-midpoint checks passed for all8: maximum sampled burial .597-1.436m (0.52-2.80% original height), minimum perimeter burial .25-.434m. Overview and16 base-level views reviewed; some views have foreground hill/mountain occlusion, so geometric sampling is the clearance evidence. All3290 protected file hashes match, including source/catalogue/prefabs, terrain/materials, production scenes and real saves. Exactly eight prefab-instance records gain render/collider mesh overrides; no scene objects or transforms change. Evidence/backups: Logs/AlpsMountainBaseFit; original audit: Logs/AlpsMountainClearance. Submit atomic Logs/AlpsMountainClearance.request `conform` only after successful native compile; do not rerun old source replacement/Y-seating migrations on this fitted scene. Test scene reopened, Play stopped. No Play/hill-driving or device performance acceptance.
