@@ -1,0 +1,12 @@
+{
+  "Snow_District_Alps_Buildings(1).blend": {
+    "sha256": "271f0c304b17dd1619717a31345d72aba6fb178d7e8ba017f3f4543bd2399860",
+    "preservedSource": "SourceAssets\\AlpsRebuild\\Snow_District_Alps_Buildings.blend",
+    "action": "Force reimport existing evaluated pipeline FBX; source unchanged and byte-identical."
+  },
+  "Snow_District_Statue_and_Tower(1).blend": {
+    "sha256": "a611256ca49e1dc79dd384c6a4d912cc7aee4ea01259d11599447a19b66a323e",
+    "preservedSource": "SourceAssets\\AlpsRebuild\\Snow_District_Statue_and_Tower.blend",
+    "action": "Force reimport existing evaluated pipeline FBX; source unchanged and byte-identical."
+  }
+}

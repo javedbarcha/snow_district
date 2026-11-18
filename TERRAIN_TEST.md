@@ -1,5 +1,13 @@
 # Empty Alps terrain driving test
 
+## Current scene: supplied-map town
+
+AlpsTerrainTest now includes the supplied 400 x400m town plan around the existing tractor. Terrain and eight fitted mountains remain unchanged. The tractor starts on the depot apron. Play directly; W/S or arrows drive, A/D steer, Space brakes, R recovers to the apron, and C cycles cameras. The standalone test still has no production menus, jobs, deformable snow or save access.
+
+The town has75 numbered buildings plus depot, disposal/service facilities, statue/tower,74 lamps and10 signs. Road widths and building/front placements follow the supplied map. Source input/layout: SourceAssets/AlpsTownMap. Assets: Levels/AlpsTerrainTest/TownMap. The building-file extra clock tower is imported but unplaced. Existing terrain, mountain placement, shading, machinery handling and game scenes stay preserved.
+
+Top/iso overview and per-building gameplay-camera captures: Logs/AlpsTownMap. Native layout, save/reopen and a short actual driving/support/coasting/reset check passed. Full-town driving and phone performance remain for review. Historical sections below describe earlier isolated test stages; the town is now deliberately present.
+
 Open `Assets/Scenes/AlpsTerrainTest.unity`. This scene contains only the latest
 supplied terrain, one existing tractor and the necessary camera/light/control
 helpers. The invisible TerrainData is used only for camera-height queries; the
