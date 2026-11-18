@@ -1,5 +1,14 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Supplied V2 mountains in terrain test - 18 November2026
+
+User supplies Snow_District_Alps_Mountains(2).blend and requests replacing test-scene mountains. Source preserved at SourceAssets/AlpsMountainsV2/Mountains.blend with SHA2563cca3f2fc86ba27e43dc6defb16cb45c598f5e4faf60d0d425843787f1ada48b. Evaluated export via Tools/AssetIntake/export_alps_mountains_v2.py with autoexecution disabled; embedded historical/trim text is not executed. Eight source variants,11819 triangles total, original positions/UVs/proportions retained in separateFBX files. Current icy palette derivative is reused for scene consistency; raw source palette retained separately.
+
+TestMountainV2Intake prepares eight NeedsReview catalogue entries/prefabs, shared URP material and matching static MeshColliders. Marker Logs/AlpsMountainsV2.request submitted atomically only after native compile exit0. Work on current in-memory AlpsTerrainTest, backing up unsaved edits first; never reopen stale disk before backup. Existing eight XZ/rotations are kept, uniform scales match prior maximum footprint widths or reduce only to keep replacement geometry within actual terrain edges. All eight variants appear once (second old cliff becomes broad massif). Bottom ring samples <=2m seat via complete-instance Y translation only, .5m buried. No source deformation/skirt or terrain edits. Main Alps/Pinefall and profiles preserved. Evidence/backups: Logs/AlpsMountainsV2.
+
+Native Android-target forced compile/domain reload and saved/reopened catalogue/scene checks passed. Eight individual renders/contact sheet and overview inspected. Source triangle counts match exports (11819 total); matching visible/static collision meshes saved. Three replacements use small uniform boundary-fit reductions (NW .9347, SE massif .8838, S .9170); XZ and rotations remain exact. Visible relief38.83-99.57m. All2934 protected existing asset/terrain/game-scene/build/profile hashes match. Among pre-existing test-scene records, only the mountain group child list changes; eight old prefab records replaced by eight new ones. Embedded Blend texts were not executed. No Play run or phone/performance acceptance; test scene remains open, Play stopped.
+
+
 ## Eight test mountains seated by Y only - 18 November 2026
 
 User requests replacing remaining dark colors on the rounded mountain and

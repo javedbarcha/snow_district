@@ -1,0 +1,103 @@
+{
+  "source": "C:\\Users\\SAP-19\\Downloads\\Snowglow_Unity_Project\\Snowglow\\SourceAssets/AlpsMountainsV2/Mountains.blend",
+  "sha256": "3cca3f2fc86ba27e43dc6defb16cb45c598f5e4faf60d0d425843787f1ada48b",
+  "assets": [
+    {
+      "slug": "Mountain_01",
+      "label": "01_Sharp_Alpine_Horn",
+      "vertices": 700,
+      "triangles": 1316,
+      "closed": false,
+      "size": [
+        740.355224609375,
+        494.0238952636719,
+        658.14794921875
+      ]
+    },
+    {
+      "slug": "Mountain_02",
+      "label": "02_Limestone_Cliff_Wall",
+      "vertices": 656,
+      "triangles": 1205,
+      "closed": false,
+      "size": [
+        1072.8226318359375,
+        398.1910095214844,
+        346.31129455566406
+      ]
+    },
+    {
+      "slug": "Mountain_03",
+      "label": "03_Twin_Peaks_and_Saddle",
+      "vertices": 920,
+      "triangles": 1714,
+      "closed": false,
+      "size": [
+        917.9244384765625,
+        472.1954650878906,
+        667.555908203125
+      ]
+    },
+    {
+      "slug": "Mountain_04",
+      "label": "04_Glacial_Cirque",
+      "vertices": 670,
+      "triangles": 1234,
+      "closed": false,
+      "size": [
+        863.7370300292969,
+        391.69097900390625,
+        764.4420166015625
+      ]
+    },
+    {
+      "slug": "Mountain_05",
+      "label": "05_Serrated_Ridgeline",
+      "vertices": 1039,
+      "triangles": 1953,
+      "closed": false,
+      "size": [
+        1227.472900390625,
+        409.6166687011719,
+        563.6374816894531
+      ]
+    },
+    {
+      "slug": "Mountain_06",
+      "label": "06_Rounded_Foothills",
+      "vertices": 629,
+      "triangles": 1155,
+      "closed": false,
+      "size": [
+        967.1539916992188,
+        215.90171813964844,
+        801.6960144042969
+      ]
+    },
+    {
+      "slug": "Mountain_07",
+      "label": "07_Fractured_Rock_Buttress",
+      "vertices": 973,
+      "triangles": 1826,
+      "closed": false,
+      "size": [
+        821.5182189941406,
+        406.8023681640625,
+        763.1356506347656
+      ]
+    },
+    {
+      "slug": "Mountain_08",
+      "label": "08_Broad_Snow_Massif",
+      "vertices": 755,
+      "triangles": 1416,
+      "closed": false,
+      "size": [
+        1127.0708618164062,
+        485.05511474609375,
+        902.0757141113281
+      ]
+    }
+  ],
+  "embeddedTextExecuted": false
+}

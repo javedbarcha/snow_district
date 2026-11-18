@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca395da9c16194d8575fece1ac0cf8, type: 3}
+  m_Name: V2 05_Serrated_Ridgeline
+  m_EditorClassIdentifier: Assembly-CSharp::Snowglow.CatalogAsset
+  id: alps-mountains-v2-mountain_05
+  displayName: V2 05_Serrated_Ridgeline
+  kind: 6
+  status: 1
+  uiSprites: []
+  prefab: {fileID: 6838628297691975681, guid: 1f27c6ddcfcf4c944ac992094adb48e8, type: 3}
+  tags:
+  - alps
+  - mountains-v2
+  - low-poly
+  - test-scene
+  sourceType: 0
+  sourceGuid: fc5b39566c649a145ac21c26d3eb5978
+  sourcePath: Assets/Snowglow/Catalog/Sources/AlpsMountainsV2/Mountain_05.fbx
+  creationSourcePath: SourceAssets/AlpsMountainsV2/Mountains.blend
+  reviewedPrefabHash: 
+  provenance: User supplied Snow_District_Alps_Mountains(2).blend; checksum 3cca3f2fc86ba27e43dc6defb16cb45c598f5e4faf60d0d425843787f1ada48b.
+    Embedded texts not executed. Evaluated source geometry retained, current icy
+    palette derivative.
+  assumptions: Supplied geometry, original proportions and UVs; shared icy palette;
+    static nonconvex matching mesh collision. Scene fitting is uniform footprint
+    scale plus Y translation only. NeedsReview; no device acceptance.
+  reviewNotes: 
+  visualReviewed: 0
+  localBounds:
+    m_Center: {x: 0, y: 204.80833, z: 0}
+    m_Extent: {x: 613.73645, y: 204.80833, z: 281.81873}
+  triangles: 1953
+  renderers: 1
+  materialSlots: 1
+  price: 0
+  vehicle: {fileID: 0}
+  attachment: {fileID: 0}
+  interfaceId: 
+  addedMass: 0
+  torqueMultiplier: 1
+  gripMultiplier: 1
+  wheelRadius: 0.5
+  wheelWidth: 0.3
+  wheelMass: 45
+  mirrorRightWheels: 1
+  minimumScale: 1
+  maximumScale: 1
+  blocksSnow: 0
