@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MountainSlopeSnow
+  m_Shader: {fileID: 4800000, guid: 36ad5c9a29ea83a4da2b7e2c66e93b23, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _HighSnowSlope: 78
+    - _SlopeBlend: 4
+    - _SnowHeightEnd: 110
+    - _SnowHeightStart: 45
+    - _SnowMaxSlope: 50
+    m_Colors:
+    - _RockLight: {r: 0.76, g: 0.78, b: 0.8, a: 1}
+    - _RockShade: {r: 0.57, g: 0.6, b: 0.63, a: 1}
+    - _SnowColor: {r: 0.98, g: 0.99, b: 1, a: 1}
+    - _SnowShade: {r: 0.83, g: 0.89, b: 0.94, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

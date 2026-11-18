@@ -1962,3 +1962,11 @@ Native forced compilation/reload, save/reopen, scene/19 snow and2195 clear acces
 ## SuppliedV2 test mountains - 18 November2026
 
 Native Android-target forced compile/domain reload and saved/reopened catalogue/scene checks passed. Eight individual renders/contact sheet and overview inspected. Source triangle counts match exports (11819 total); matching visible/static collision meshes saved. Three replacements use small uniform boundary-fit reductions (NW .9347, SE massif .8838, S .9170); XZ and rotations remain exact. Visible relief38.83-99.57m. All2934 protected existing asset/terrain/game-scene/build/profile hashes match. Among pre-existing test-scene records, only the mountain group child list changes; eight old prefab records replaced by eight new ones. Embedded Blend texts were not executed. No Play run or phone/performance acceptance; test scene remains open, Play stopped.
+
+## Light gray slope snow shading - 18 November2026
+
+Native compilation, shader and saved/reopened material/geometry/pose checks passed. Eight native views and overview reviewed.4252 exposed-rock,5374 snow,2193 transition triangles. All3287 protected files match, exactly eight material-override records changed. No Play/device acceptance. Evidence: Logs/AlpsMountainColors.
+
+## Altitude-dependent mountain snow - 18 November2026
+
+Native compile/shader checks and eight views/overview passed.4466 vertices gain snow, no coverage loss; all3290 protected files including all scenes match. No Play/device acceptance. Evidence: Logs/AlpsMountainHeightSnow.
