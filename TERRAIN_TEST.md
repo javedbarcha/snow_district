@@ -1,5 +1,9 @@
 # Empty Alps terrain driving test
 
+## Building surface repair - 19 November 2026
+
+All 75 map buildings and the landmarks use shared test-only FBX derivatives. Inward facade/window/tower-art panels face outward, and roof snow clears the underlying slopes. All 11 source building variants and both landmarks were reviewed from four sides, plus actual gameplay isometric views. Town placement, terrain/mountains, original catalogue assets, materials and triangle counts remain unchanged. Evidence and before/after views: Logs/AlpsBuildingFaces. Play remains stopped; no handling changes or Play rerun.
+
 ## Current scene: supplied-map town
 
 AlpsTerrainTest now includes the supplied 400 x400m town plan around the existing tractor. Terrain and eight fitted mountains remain unchanged. The tractor starts on the depot apron. Play directly; W/S or arrows drive, A/D steer, Space brakes, R recovers to the apron, and C cycles cameras. The standalone test still has no production menus, jobs, deformable snow or save access.

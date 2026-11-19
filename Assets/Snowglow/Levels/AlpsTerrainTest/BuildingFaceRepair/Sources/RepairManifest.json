@@ -1,0 +1,474 @@
+[
+  {
+    "slug": "Building_01",
+    "source": "Snow_District_Alps_Buildings.blend",
+    "sha256": "271f0c304b17dd1619717a31345d72aba6fb178d7e8ba017f3f4543bd2399860",
+    "parts": [
+      {
+        "name": "Sage_Dormer_House | Architecture",
+        "flipped": 3,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Sage_Dormer_House | Opaque_windows",
+        "flipped": 4,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Sage_Dormer_House | Snow_optional",
+        "flipped": 0,
+        "movedSnowVertices": 8,
+        "maxSnowLift": 0.06399986367075172
+      }
+    ],
+    "triangles": {
+      "Architecture": 1340,
+      "SnowCover": 8,
+      "Windows": 40
+    }
+  },
+  {
+    "slug": "Building_02",
+    "source": "Snow_District_Alps_Buildings.blend",
+    "sha256": "271f0c304b17dd1619717a31345d72aba6fb178d7e8ba017f3f4543bd2399860",
+    "parts": [
+      {
+        "name": "Balcony_Villa_and_Garage | Architecture",
+        "flipped": 5,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Balcony_Villa_and_Garage | Opaque_windows",
+        "flipped": 10,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Balcony_Villa_and_Garage | Snow_optional",
+        "flipped": 0,
+        "movedSnowVertices": 12,
+        "maxSnowLift": 0.14800031330878127
+      }
+    ],
+    "triangles": {
+      "Architecture": 2090,
+      "SnowCover": 12,
+      "Windows": 60
+    }
+  },
+  {
+    "slug": "Building_03",
+    "source": "Snow_District_Alps_Buildings.blend",
+    "sha256": "271f0c304b17dd1619717a31345d72aba6fb178d7e8ba017f3f4543bd2399860",
+    "parts": [
+      {
+        "name": "Modern_Alpine_Shop_Block | Architecture",
+        "flipped": 4,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Modern_Alpine_Shop_Block | Opaque_windows",
+        "flipped": 14,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Modern_Alpine_Shop_Block | Snow_optional",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      }
+    ],
+    "triangles": {
+      "Architecture": 1356,
+      "SnowCover": 12,
+      "Windows": 152
+    }
+  },
+  {
+    "slug": "Building_04",
+    "source": "Snow_District_Alps_Buildings.blend",
+    "sha256": "271f0c304b17dd1619717a31345d72aba6fb178d7e8ba017f3f4543bd2399860",
+    "parts": [
+      {
+        "name": "Rose_Bay_Townhouse | Architecture",
+        "flipped": 4,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Rose_Bay_Townhouse | Opaque_windows",
+        "flipped": 4,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Rose_Bay_Townhouse | Snow_optional",
+        "flipped": 0,
+        "movedSnowVertices": 4,
+        "maxSnowLift": 0.14000023621779256
+      }
+    ],
+    "triangles": {
+      "Architecture": 1364,
+      "SnowCover": 4,
+      "Windows": 86
+    }
+  },
+  {
+    "slug": "Building_05",
+    "source": "Snow_District_Alps_Buildings.blend",
+    "sha256": "271f0c304b17dd1619717a31345d72aba6fb178d7e8ba017f3f4543bd2399860",
+    "parts": [
+      {
+        "name": "Altdorf_Clock_Tower | Architecture",
+        "flipped": 2,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Altdorf_Clock_Tower | Opaque_windows",
+        "flipped": 4,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      }
+    ],
+    "triangles": {
+      "Architecture": 1180,
+      "Windows": 16
+    }
+  },
+  {
+    "slug": "Building_06",
+    "source": "Snow_District_Alps_Buildings.blend",
+    "sha256": "271f0c304b17dd1619717a31345d72aba6fb178d7e8ba017f3f4543bd2399860",
+    "parts": [
+      {
+        "name": "Corner_Arcade_House | Architecture",
+        "flipped": 28,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Corner_Arcade_House | Opaque_windows",
+        "flipped": 10,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Corner_Arcade_House | Snow_optional",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      }
+    ],
+    "triangles": {
+      "Architecture": 1988,
+      "SnowCover": 6,
+      "Windows": 144
+    }
+  },
+  {
+    "slug": "Building_07",
+    "source": "Snow_District_Alps_Buildings.blend",
+    "sha256": "271f0c304b17dd1619717a31345d72aba6fb178d7e8ba017f3f4543bd2399860",
+    "parts": [
+      {
+        "name": "Civic_Palazzo | Architecture",
+        "flipped": 28,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Civic_Palazzo | Opaque_windows",
+        "flipped": 6,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Civic_Palazzo | Snow_optional",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      }
+    ],
+    "triangles": {
+      "Architecture": 1645,
+      "SnowCover": 6,
+      "Windows": 72
+    }
+  },
+  {
+    "slug": "Building_08",
+    "source": "Snow_District_Alps_Buildings.blend",
+    "sha256": "271f0c304b17dd1619717a31345d72aba6fb178d7e8ba017f3f4543bd2399860",
+    "parts": [
+      {
+        "name": "Gabled_Inn_with_Annex | Architecture",
+        "flipped": 5,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Gabled_Inn_with_Annex | Opaque_windows",
+        "flipped": 12,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Gabled_Inn_with_Annex | Snow_optional",
+        "flipped": 0,
+        "movedSnowVertices": 20,
+        "maxSnowLift": 0.22400009973039658
+      }
+    ],
+    "triangles": {
+      "Architecture": 2502,
+      "SnowCover": 20,
+      "Windows": 180
+    }
+  },
+  {
+    "slug": "Building_09",
+    "source": "Snow_District_Alps_Buildings.blend",
+    "sha256": "271f0c304b17dd1619717a31345d72aba6fb178d7e8ba017f3f4543bd2399860",
+    "parts": [
+      {
+        "name": "Green_Shutter_Merchant_House | Architecture",
+        "flipped": 28,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Green_Shutter_Merchant_House | Opaque_windows",
+        "flipped": 10,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Green_Shutter_Merchant_House | Snow_optional",
+        "flipped": 0,
+        "movedSnowVertices": 4,
+        "maxSnowLift": 0.17000010377193675
+      }
+    ],
+    "triangles": {
+      "Architecture": 1974,
+      "SnowCover": 4,
+      "Windows": 84
+    }
+  },
+  {
+    "slug": "Building_10",
+    "source": "Snow_District_Alps_Buildings.blend",
+    "sha256": "271f0c304b17dd1619717a31345d72aba6fb178d7e8ba017f3f4543bd2399860",
+    "parts": [
+      {
+        "name": "Ornate_Bay_Villa | Architecture",
+        "flipped": 24,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Ornate_Bay_Villa | Opaque_windows",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Ornate_Bay_Villa | Snow_optional",
+        "flipped": 0,
+        "movedSnowVertices": 4,
+        "maxSnowLift": 0.1640004334968035
+      }
+    ],
+    "triangles": {
+      "Architecture": 1532,
+      "SnowCover": 10,
+      "Windows": 86
+    }
+  },
+  {
+    "slug": "Building_11",
+    "source": "Snow_District_Alps_Buildings.blend",
+    "sha256": "271f0c304b17dd1619717a31345d72aba6fb178d7e8ba017f3f4543bd2399860",
+    "parts": [
+      {
+        "name": "Small_Gabled_Timber_House | Architecture",
+        "flipped": 1,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Small_Gabled_Timber_House | Opaque_windows",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Small_Gabled_Timber_House | Snow_optional",
+        "flipped": 0,
+        "movedSnowVertices": 4,
+        "maxSnowLift": 0.13999991898676445
+      }
+    ],
+    "triangles": {
+      "Architecture": 1134,
+      "SnowCover": 4,
+      "Windows": 40
+    }
+  },
+  {
+    "slug": "Monument",
+    "source": "Snow_District_Statue_and_Tower.blend",
+    "sha256": "a611256ca49e1dc79dd384c6a4d912cc7aee4ea01259d11599447a19b66a323e",
+    "parts": [
+      {
+        "name": "Pedestal | editable stone and panel",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Pedestal snow | removable",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Bronze rock footing",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Adult | legs boots and folded tunic",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Adult | posed arms and articulated hands",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Adult | angular face ears and features",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Adult | long hair and sculpted beard",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Adult | draped cloak",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Crossbow | stock curved bow and string",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Child | legs folded arms tunic and hands",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Child | face and wavy hair",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Enclosure | eight stone bollards",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Enclosure | interlocking chain links",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Bollard snow | removable",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      }
+    ],
+    "triangles": {
+      "Architecture": 5924,
+      "SnowCover": 300
+    }
+  },
+  {
+    "slug": "GateTower",
+    "source": "Snow_District_Statue_and_Tower.blend",
+    "sha256": "a611256ca49e1dc79dd384c6a4d912cc7aee4ea01259d11599447a19b66a323e",
+    "parts": [
+      {
+        "name": "Tower | arch tunnel and plaster body",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Tower | arch stones and corner quoins",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Tower | windows and stone surrounds",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Tower | heraldic shield lions and sundial",
+        "flipped": 4,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Tower | roof and dormer",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      },
+      {
+        "name": "Tower roof snow | removable",
+        "flipped": 0,
+        "movedSnowVertices": 4,
+        "maxSnowLift": 0.07448691645524974
+      },
+      {
+        "name": "Tower | Swiss flag and pole",
+        "flipped": 0,
+        "movedSnowVertices": 0,
+        "maxSnowLift": 0
+      }
+    ],
+    "triangles": {
+      "Architecture": 2294,
+      "SnowCover": 10,
+      "Windows": 360
+    }
+  }
+]
