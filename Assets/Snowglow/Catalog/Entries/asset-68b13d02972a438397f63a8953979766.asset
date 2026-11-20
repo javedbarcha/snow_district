@@ -37,9 +37,9 @@ MonoBehaviour:
   reviewNotes: 
   visualReviewed: 0
   localBounds:
-    m_Center: {x: 0, y: 12, z: 0}
-    m_Extent: {x: 4.7, y: 12, z: 3.425}
-  triangles: 2664
+    m_Center: {x: 0, y: 12, z: 0.074999094}
+    m_Extent: {x: 4.7, y: 12, z: 3.4250007}
+  triangles: 2704
   renderers: 3
   materialSlots: 3
   price: 0

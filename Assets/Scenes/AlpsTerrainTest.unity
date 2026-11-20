@@ -30318,7 +30318,7 @@ PrefabInstance:
     - target: {fileID: 1288875091812220, guid: 377693640bed5dc4996e0c8ee7e96221, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -4153247975500870439, guid: 329795d885bbb8f43ae673089c855e1c, type: 3}
+      objectReference: {fileID: -4153247975500870439, guid: 4afa519843c2e294e96e7ec3cd0b8b28, type: 3}
     - target: {fileID: 2247294560304559096, guid: 377693640bed5dc4996e0c8ee7e96221, type: 3}
       propertyPath: placementId
       value: alps-map-tower
@@ -30326,7 +30326,7 @@ PrefabInstance:
     - target: {fileID: 5732402493867820341, guid: 377693640bed5dc4996e0c8ee7e96221, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -4153247975500870439, guid: 329795d885bbb8f43ae673089c855e1c, type: 3}
+      objectReference: {fileID: -4153247975500870439, guid: 4afa519843c2e294e96e7ec3cd0b8b28, type: 3}
     - target: {fileID: 7689844817531456810, guid: 377693640bed5dc4996e0c8ee7e96221, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -30386,7 +30386,7 @@ PrefabInstance:
     - target: {fileID: 7693776725225544152, guid: 377693640bed5dc4996e0c8ee7e96221, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -8925369838995448053, guid: 329795d885bbb8f43ae673089c855e1c, type: 3}
+      objectReference: {fileID: -8925369838995448053, guid: 4afa519843c2e294e96e7ec3cd0b8b28, type: 3}
     - target: {fileID: 7849981007208905895, guid: 377693640bed5dc4996e0c8ee7e96221, type: 3}
       propertyPath: m_Name
       value: Tower | civic square
@@ -30394,7 +30394,7 @@ PrefabInstance:
     - target: {fileID: 8519342001657969805, guid: 377693640bed5dc4996e0c8ee7e96221, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -4270572096125141525, guid: 329795d885bbb8f43ae673089c855e1c, type: 3}
+      objectReference: {fileID: -4270572096125141525, guid: 4afa519843c2e294e96e7ec3cd0b8b28, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
