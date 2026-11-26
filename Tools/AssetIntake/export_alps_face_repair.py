@@ -1,12 +1,17 @@
 """Test-only derivatives: exterior panel winding and intersecting roof snow.
 
 Run with --factory-startup --disable-autoexec. Never executes source Text blocks.
-Keeps source vertex/face counts, UVs, materials and all architecture positions.
+Keeps source positions, UVs and materials while repairing exterior panel winding.
 """
-import bpy, bmesh, os, json, math, hashlib
+import bpy, bmesh, os, json, math, hashlib, sys, argparse
 from mathutils import Vector, Matrix
 R=os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-OUT=os.path.join(R,'Assets/Snowglow/Levels/AlpsTerrainTest/BuildingFaceRepair/Sources')
+parser=argparse.ArgumentParser()
+parser.add_argument('--buildings-source',default=os.path.join(R,'SourceAssets/AlpsRebuild/Snow_District_Alps_Buildings.blend'))
+parser.add_argument('--output',default=os.path.join(R,'Assets/Snowglow/Levels/AlpsTerrainTest/BuildingFaceRepair/Sources'))
+parser.add_argument('--buildings-only',action='store_true')
+args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
+OUT=os.path.abspath(args.output)
 os.makedirs(OUT,exist_ok=True)
 report=[]
 
@@ -22,13 +27,16 @@ def components(bm):
      if other not in seen:seen.add(other);stack.append(other)
   yield group
 
-for filename in ['Snow_District_Alps_Buildings.blend','Snow_District_Statue_and_Tower.blend']:
- path=os.path.join(R,'SourceAssets/AlpsRebuild',filename)
+sources=[(args.buildings_source,'Buildings')]
+if not args.buildings_only:
+ sources.append((os.path.join(R,'SourceAssets/AlpsRebuild','Snow_District_Statue_and_Tower.blend'),'Landmarks'))
+for path,source_kind in sources:
+ filename=os.path.basename(path)
  bpy.ops.wm.open_mainfile(filepath=path)
  deps=bpy.context.evaluated_depsgraph_get()
  for collection in sorted(bpy.data.collections,key=lambda c:c.name):
   if not collection.name[:2].isdigit():continue
-  slug='Building_'+collection.name[:2] if 'Buildings' in filename else 'Monument' if collection.name.startswith('01') else 'GateTower'
+  slug='Building_'+collection.name[:2] if source_kind=='Buildings' else 'Monument' if collection.name.startswith('01') else 'GateTower'
   origin=next(o for o in collection.objects if o.type=='EMPTY' and o.name.endswith('ROOT')).matrix_world.translation.copy()
   objects=[o for o in collection.objects if o.type=='MESH' and not o.name.startswith('COLLISION_PROXY')]
   meshes=[];roofs=[];details=[]
@@ -37,6 +45,7 @@ for filename in ['Snow_District_Alps_Buildings.blend','Snow_District_Statue_and_
    matrix=Matrix.Translation(-origin)@src.matrix_world;mesh.transform(matrix)
    if matrix.determinant()<0:mesh.flip_normals()
    bm=bmesh.new();bm.from_mesh(mesh);bm.normal_update();flipped=0
+   preserved_garage_walls=0;corrected_garage_roofs=0;matched_garage_gables=0;corrected_garage_gables=0
    # Closed components already have positive signed volume. Only disconnected,
    # vertical single-sided facade panels need exterior-facing winding.
    if slug.startswith('Building_') or src.name=='Tower | heraldic shield lions and sundial':
@@ -44,11 +53,37 @@ for filename in ['Snow_District_Alps_Buildings.blend','Snow_District_Statue_and_
      edges=set(e for f in faces for e in f.edges)
      if all(e.is_manifold for e in edges):continue
      for f in faces:
-      if abs(f.normal.z)>.05:continue
-      # A vertical panel's radial dot is unambiguous on these axis-aligned facades.
       centre=f.calc_center_median();outward=Vector((centre.x,centre.y,0))
+      if slug=='Building_02' and 'architecture' in src.name.lower() and f.calc_area()>4 and abs(centre.x-5)<.02 and abs(centre.z-3.433333)<.03 and min(abs(centre.y+9.5),abs(centre.y+4.5))<.02:
+       expected=Vector((0,-1,0)) if centre.y< -7 else Vector((0,1,0))
+       if f.normal.dot(expected)<.99:f.normal_flip();flipped+=1;corrected_garage_gables+=1
+       if f.normal.dot(expected)<.99:raise RuntimeError('Garage gable face did not orient outward')
+       matched_garage_gables+=1
+       continue
+      if slug=='Building_02' and 'architecture' in src.name.lower() and f.calc_area()>20 and (centre-Vector((5,-7,3))).length<.02:
+       # The horizontal garage ceiling must face into the garage, not the roof void.
+       inward=Vector((0,0,-1))
+       if f.normal.dot(inward)<.99:f.normal_flip();flipped+=1
+       corrected_garage_roofs+=1
+       continue
+      if abs(f.normal.z)>.05:continue
+      if slug=='Building_02' and 'architecture' in src.name.lower():
+       garage_wall=None
+       if f.calc_area()>10 and abs(centre.x-2.2)<.02 and abs(centre.y+7.0)<.02 and abs(centre.z-1.5)<1.5:
+        garage_wall=Vector((-1,0,0))
+       elif f.calc_area()>10 and abs(centre.x-5.0)<.02 and abs(centre.y+4.9)<.02 and abs(centre.z-1.5)<1.5:
+        garage_wall=Vector((0,1,0))
+       if garage_wall is not None:
+        if f.normal.dot(garage_wall)<.99:f.normal_flip();flipped+=1
+        preserved_garage_walls+=1
+        continue
+      # Use the model origin for the remaining axis-aligned exterior panels.
       if f.normal.dot(outward)<-.1:
        f.normal_flip();flipped+=1
+   if slug=='Building_02' and 'architecture' in src.name.lower():
+    if preserved_garage_walls!=2:raise RuntimeError('Expected exactly two identified Building_02 garage walls; found '+str(preserved_garage_walls))
+    if matched_garage_gables!=2:raise RuntimeError('Expected exactly two identified Building_02 garage gable ends; found '+str(matched_garage_gables))
+    if corrected_garage_roofs!=1:raise RuntimeError('Expected exactly one identified Building_02 garage ceiling face; found '+str(corrected_garage_roofs))
    bm.to_mesh(mesh);bm.free();mesh.update()
    key='SnowCover' if 'snow' in src.name.lower() else 'Windows' if 'windows' in src.name.lower() else 'Architecture'
    if key=='Architecture' and slug!='Monument':
@@ -56,7 +91,7 @@ for filename in ['Snow_District_Alps_Buildings.blend','Snow_District_Statue_and_
     for p in mesh.polygons:
      if .15<p.normal.z<.99 and p.area>1:
       roofs.append((p.normal.copy(),p.center.copy(),[mesh.vertices[i].co.copy() for i in p.vertices]))
-   meshes.append((src.name,key,mesh));details.append(dict(name=src.name,flipped=flipped,movedSnowVertices=0,maxSnowLift=0))
+   meshes.append((src.name,key,mesh));details.append(dict(name=src.name,flipped=flipped,preservedGarageWalls=preserved_garage_walls,matchedGarageGableFaces=matched_garage_gables,correctedGarageGableFaces=corrected_garage_gables,correctedGarageRoofFaces=corrected_garage_roofs,movedSnowVertices=0,maxSnowLift=0))
   for (name,key,mesh),detail in zip(meshes,details):
    if key!='SnowCover' or slug=='Monument':continue
    targets={}

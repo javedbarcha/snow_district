@@ -1,5 +1,43 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Attached-garage wall winding corrected - 26 November 2026
+
+The supplied views identify `Building_02` (Balcony Villa and Garage). Its source
+mesh already had outward normals on the garage's left side wall and rear
+attachment wall; the earlier test-only exporter incorrectly flipped both using
+the whole-building origin as the radial reference. The exporter now preserves
+those two specifically identified wall faces and asserts both are found.
+
+Only the `Building_02` test FBX was replaced. Blender round-trip comparison
+confirms exactly two face normals changed back to the source orientation; vertex
+positions, topology, materials and transforms are unchanged (1,580 vertices,
+1,018 polygons). Unity reimported the shared test derivative and refreshed all
+75 AlpsTerrainTest building placements. Save/reopen checks and four-sided
+Building_02 previews passed; the garage walls now render from both exterior
+angles. Production scenes, original sources/catalogue assets and the saved test
+scene layout remain unchanged. Play/device testing was not performed. Previous
+FBX backup, generated export manifest and captures: `Logs/AlpsBuildingFaces/
+GarageWallNormalFix`.
+
+## Revised Alps test buildings reimported - 26 November 2026
+
+User supplied a revised `Snow_District_Alps_Buildings(1).blend`; the preserved
+copy and source hash are documented in
+`SourceAssets/AlpsTerrainTestBuildingsRevision/README.md`. Blender 5.2 ran with
+factory startup and auto-execution disabled. Eleven scene-only building FBXs
+were regenerated under `Levels/AlpsTerrainTest/BuildingFaceRepair/Sources`,
+retaining stable part names/material bindings and test-asset GUIDs. The export
+corrects 214 outward-facing facade panels and raises 62 intersecting roof-snow
+vertices by at most 0.224m; intentional topology changes are accepted.
+
+All 75 building placements in `AlpsTerrainTest.unity` were refreshed from those
+FBXs. Unity native compile, imported geometry checks, scene save/reopen, unchanged
+transforms, box colliders and material bindings passed. Four-sided previews of
+all eleven variants were rendered and inspected. Existing source/catalogue
+prefabs, `TheAlps`, `Pinefall`, terrain, roads, placements and gameplay are
+unchanged. No Play or device test. Source/FBX backups and import evidence:
+`Logs/AlpsBuildingsReimport` and `Logs/AlpsBuildingFaces`.
+
 ## GateTower normals recalculated - 20 November 2026
 
 User requested recalculating normals on the project `GateTower.fbx`. The user-provided source was preserved as `Logs/AlpsTowerSourceReplacement/GateTower-user-replacement-before-normals.fbx`; Blender 5.2 imported it with auto-execution disabled, recalculated outward face orientation for Architecture, SnowCover and Windows, cleared imported custom corner normals, and exported a replacement. New source SHA256 `F0BAB5AD3BE93506D50736D4A6488BA156C0700334FA8CA4CFEB0885F9EBC201`. Comparison confirms vertex positions, topology, UVs, material assignments, dimensions and triangle counts are unchanged; two Architecture faces had reversed winding, SnowCover/Windows winding was already consistent. The same catalogue GUID was force-reimported; prefab and AlpsTerrainTest references/colliders refreshed. Save/reopen and 6m arch-clearance sampling passed. Evidence, comparison and front/back/iso renders remain under `Logs/AlpsTowerSourceReplacement/`. The small rooftop flag still renders one white stroke horizontally on one side and vertically on the reverse in Unity; this normal recalculation did not resolve that separate artwork issue.
@@ -19,6 +57,10 @@ Tools/AssetIntake/export_alps_face_repair.py creates 13 test-only FBX derivative
 AlpsBuildingFaces uses atomic Logs/AlpsBuildingFaces.request actions after native forced compile exit0: audit, preview, apply, review. Apply backs up current in-memory and disk scenes, refuses repetition, and rolls back on failure. All 75 map buildings and both landmarks now reference shared derivative meshes; the tower static MeshCollider matches its repaired Architecture mesh. All transforms, hierarchy, materials and box colliders stay unchanged across save/reopen. Saved-scene diff contains only mesh-reference overrides in 77 existing prefab-instance records, with no added/removed records. No terrain/mountain or production-scene changes.
 
 Native forced compile requests 96de09fcd82940e19bac78a793197c9c, 1757e255b2f8417ba67f4dff01a24c21 and a183b7a040944a1dadb13e47f71199ee passed. Four-sided captures of all 13 variants, 77 actual gameplay CameraRig views and overview reviewed. Existing map-mandated facades can face away from the fixed isometric camera; placements remain unchanged. All 5170 protected files matched before documentation updates, including production scenes, terrain/mountains, original imports/prefabs/materials and real saves. Evidence/backups: Logs/AlpsBuildingFaces. Test scene reopened with Play stopped. No Play rerun or device-performance acceptance for this visual repair.
+
+The attached garage then revealed one horizontal roof/ceiling panel facing away from the interior. The exporter now reverses only this targeted face (source centre `(5,-7,3)`, area `23.52`); Blender round-trip comparison against the wall-corrected FBX confirmed exactly one normal-only face change. The 1,580 vertices, 1,018 polygons, materials, geometry and both repaired garage walls remain unchanged. The updated test-only `Building_02.fbx` SHA256 is `7B68F717C35CEEFAD65902B8691DEC61EB1C25DC1BB91D18B704A63DC2008229`; the prior wall-corrected FBX is backed up under `Logs/AlpsBuildingFaces/BeforeGarageRoofFix/`. After successful native forced compile/domain reload, `apply-buildings` refreshed all 75 map placements; save/reopen checks and four-sided variant captures passed. Production scenes/catalogue assets remain untouched. No Play or device test was run. Evidence: `Logs/AlpsBuildingFaces/GarageRoofNormalFix/` and `Logs/AlpsBuildingFaces/`.
+
+Follow-up user review on 26 November clarified that the remaining fault was the vertical triangular garage gable, not the horizontal ceiling panel. The rear gable at source centre `(5,-4.5,3.433)` had inward winding; the exporter now points it outward and asserts both gable ends are identified, with the opposite/front gable remaining outward. Comparison against the installed ceiling-corrected FBX confirms exactly one normal-only face change; all 1,580 vertices, 1,018 polygons, materials, garage walls and ceiling correction are preserved. Updated test-only FBX SHA256: `C276A8E0159699A183E74974B50DB6E7F1C646155EC03EFBA4916D2C72353AD9`; prior version backed up under `Logs/AlpsBuildingFaces/BeforeGarageGableFix/`. Native forced compile/domain reload passed, then `apply-buildings` refreshed all 75 test-scene placements and passed save/reopen checks. Four-sided Unity views and same-side Blender backface-culling gable comparisons were inspected. Production scenes/catalogue assets remain untouched. No Play/device test. Evidence: `Logs/AlpsBuildingFaces/GarageGableNormalFix/`.
 
 ## Supplied road-map town in terrain test - 18 November 2026
 
