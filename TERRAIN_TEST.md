@@ -6,18 +6,37 @@ All 75 map buildings and the landmarks use shared test-only FBX derivatives. Inw
 
 ## Current scene: supplied-map town
 
-AlpsTerrainTest now includes the supplied 400 x400m town plan around the existing tractor. Terrain and eight fitted mountains remain unchanged. The tractor starts on the depot apron. Play directly; W/S or arrows drive, A/D steer, Space brakes, R recovers to the apron, and C cycles cameras. The standalone test still has no production menus, jobs, deformable snow or save access.
+AlpsTerrainTest now includes the supplied 400 x 400 m town plan around the existing tractor. Terrain and eight fitted mountains remain unchanged. The tractor starts on the depot apron. Play directly; W/S or arrows drive, A/D steer, Space brakes, R recovers to the apron, and C cycles cameras. The standalone test still has no production menus, jobs, deformable snow or save access.
 
-The town has75 numbered buildings plus depot, disposal/service facilities, statue/tower,74 lamps and10 signs. Road widths and building/front placements follow the supplied map. Source input/layout: SourceAssets/AlpsTownMap. Assets: Levels/AlpsTerrainTest/TownMap. The building-file extra clock tower is imported but unplaced. Existing terrain, mountain placement, shading, machinery handling and game scenes stay preserved.
+The town has 75 numbered buildings plus depot, disposal/service facilities, statue/tower, 74 lamps and 30 signs. Road widths and building/front placements follow the supplied map. Source input/layout: SourceAssets/AlpsTownMap. Assets: Levels/AlpsTerrainTest/TownMap. The building-file extra clock tower is imported but unplaced. Existing terrain, mountain placement, shading, machinery handling and game scenes stay preserved.
 
 Top/iso overview and per-building gameplay-camera captures: Logs/AlpsTownMap. Native layout, save/reopen and a short actual driving/support/coasting/reset check passed. Full-town driving and phone performance remain for review. Historical sections below describe earlier isolated test stages; the town is now deliberately present.
 
-Open `Assets/Scenes/AlpsTerrainTest.unity`. This scene contains only the latest
-supplied terrain, one existing tractor and the necessary camera/light/control
-helpers. The invisible TerrainData is used only for camera-height queries; the
-supplied mesh provides physical collision. Original 1:1 source metres are used,
-with no Alps game-scene height compression, edited hills, roads, buildings,
-mountains, props, jobs, menus or deformable snow.
+## Town sign layout
+
+The test town uses 30 prepared Alpine sign prefabs without editing their source
+blend or catalogue assets. Ten supplied-map sign identities and X/Z placements
+are retained, with a mix of directory, timber, noticeboard and hanging-board
+variants. The central four-board directory reads UPPER VILLAGE, TOWN SQUARE,
+SNOW DEPOT and SOUTH ENTRY. Sixteen Alpine Danger boards line the town boundary
+and face inward; four Road Closed boards mark the north, south, east and west
+road termini and face approaching traffic.
+
+The Editor-authored layout was saved and reopened in Unity 6000.3.8f1. Validation
+checks the board count/variants, captions, terrain seating, asphalt/static-collider
+clearance, retained map-sign direction and unchanged non-sign catalogue placements.
+Rendered evidence and the correction backup are under Logs/AlpsTerrainTestSigns.
+This is Editor render/scene evidence only: no Play, Android build or device test.
+The one-time authoring request is `Logs/AlpsTerrainTestSigns.request` with `apply`;
+it refuses to install twice. The already-installed scene also has a guarded
+`correct-facing` action; do not rerun either action on the corrected scene.
+
+Open `Assets/Scenes/AlpsTerrainTest.unity`. The scene contains the supplied
+terrain, one tractor, camera/light/control helpers and the authored town
+(buildings, roads, mountains, facilities and signs). The invisible TerrainData is
+used only for camera-height queries; the supplied mesh provides physical
+collision. Original 1:1 source metres are used, with no Alps game-scene height
+compression. Jobs, production menus, deformable snow and save access are absent.
 
 Editor Play is configured to start this scene directly. To restore ordinary
 Editor Play, choose **Snowglow > Developer > Play current scene normally**.

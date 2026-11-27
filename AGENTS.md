@@ -1,5 +1,25 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Varied signboards in AlpsTerrainTest - 26 November 2026
+
+The supplied-map town now has 30 connected sign instances using the existing
+`alpine-sign-01` through `alpine-sign-12` prepared catalogue prefabs. The ten map
+sign IDs and X/Z placements are retained; the central four-board directory reads
+UPPER VILLAGE, TOWN SQUARE, SNOW DEPOT and SOUTH ENTRY. Sixteen `alpine-sign-04`
+hazards line the town edge facing inward, and four `alpine-sign-05` Road Closed
+boards face approaching traffic at the road termini.
+
+A visual review caught that the sign `label-face` anchor points opposite the
+visible caption side. The guarded `correct-facing` action now preserves the
+physical reading direction for map signs while correcting hazards, road closures
+and evidence-camera viewpoints. Native Unity 6000.3.8f1 saved/reopened the scene;
+count, caption, orientation, terrain seating, road/static-collider clearance and
+non-sign placement checks passed. The directory, timber, hazard and closure
+renders were reviewed. Source blend/catalogue, Pinefall and production scenes
+remain unchanged. No Play, Android build or device test. Evidence and backups:
+`Logs/AlpsTerrainTestSigns`; current guide: `TERRAIN_TEST.md`. Both request
+actions are one-time guarded and must not be rerun on this corrected scene.
+
 ## Attached-garage wall winding corrected - 26 November 2026
 
 The supplied views identify `Building_02` (Balcony Villa and Garage). Its source
