@@ -91,12 +91,17 @@ namespace Snowglow.Editor
             File.Delete(RequestPath);
             try
             {
-                Require(action == "apply" || action == "correct-facing",
-                    "request must contain only 'apply' or 'correct-facing'");
+                Require(action == "apply" || action == "correct-facing" || action == "audit-hazards" ||
+                        action == "seat-hazards",
+                    "request must contain only 'apply', 'correct-facing', 'audit-hazards', or 'seat-hazards'");
                 if (action == "apply")
                     Apply();
-                else
+                else if (action == "correct-facing")
                     CorrectFacing();
+                else if (action == "audit-hazards")
+                    AuditHazards();
+                else
+                    SeatHazards();
             }
             catch (Exception exception)
             {
@@ -599,6 +604,200 @@ namespace Snowglow.Editor
                 return Vector3.right;
 
             return -Face(sign.gameObject).transform.forward;
+        }
+
+        static void AuditHazards()
+        {
+            Require(!EditorApplication.isPlayingOrWillChangePlaymode, "stop Play first");
+            var scene = SceneManager.GetActiveScene();
+            Require(scene.path == ScenePath, "open AlpsTerrainTest only");
+
+            var town = scene.GetRootGameObjects().Single(root => root.name == TownName).transform;
+            var hazardRoot = town.Find(FurnitureName).Find("Boundary hazard boards | 16");
+            Require(hazardRoot, "boundary hazard group missing");
+            var signs = hazardRoot.GetComponentsInChildren<CatalogPlacement>(true)
+                .Where(sign => sign.assetId == "alpine-sign-04")
+                .OrderBy(sign => sign.name, StringComparer.Ordinal)
+                .ToArray();
+            Require(signs.Length == 16, "expected 16 boundary hazard boards");
+            var terrainRoot = scene.GetRootGameObjects()
+                .Single(root => root.name == "Revised attached terrain | 1:1 metres");
+            var terrain = terrainRoot.GetComponentInChildren<MeshCollider>();
+            Require(terrain, "physical terrain collider missing");
+
+            var report = new StringBuilder();
+            report.AppendLine("Hazard board ground-clearance audit | Unity " + Application.unityVersion);
+            report.AppendLine("Scene was not modified or saved. Visible mesh vertices are ray-sampled against the physical terrain.");
+            report.AppendLine("Placement | Root XYZ | Lowest mesh gap (m) | suggested Y correction (m) | Collider gap (m)");
+            foreach (var sign in signs)
+            {
+                var lowestGap = float.PositiveInfinity;
+                var lowestPoint = Vector3.zero;
+                var filters = sign.GetComponentsInChildren<MeshFilter>(true)
+                    .Where(filter => filter.sharedMesh)
+                    .ToArray();
+                Require(filters.Length > 0, "hazard sign has no render mesh: " + sign.placementId);
+                foreach (var filter in filters)
+                {
+                    foreach (var vertex in filter.sharedMesh.vertices)
+                    {
+                        var world = filter.transform.TransformPoint(vertex);
+                        var gap = world.y - Ground(terrain, world);
+                        if (gap < lowestGap)
+                        {
+                            lowestGap = gap;
+                            lowestPoint = world;
+                        }
+                    }
+                }
+
+                var collider = sign.GetComponentInChildren<Collider>();
+                Require(collider, "hazard sign collider missing: " + sign.placementId);
+                var colliderGap = collider.bounds.min.y - Ground(terrain, sign.transform.position);
+                var suggestedCorrection = -.02f - lowestGap;
+                var name = string.IsNullOrEmpty(sign.placementId) ? sign.name : sign.placementId;
+                report.AppendLine(name + " | " + sign.transform.position.ToString("F3") + " | " +
+                                  lowestGap.ToString("F3") + " @ " + lowestPoint.ToString("F3") + " | " +
+                                  suggestedCorrection.ToString("F3") + " | " + colliderGap.ToString("F3"));
+            }
+
+            Directory.CreateDirectory(EvidenceFolder);
+            File.WriteAllText(EvidenceFolder + "/HazardGroundAudit.txt", report.ToString());
+            Debug.Log(report.ToString());
+        }
+
+        static float LowestMeshGap(CatalogPlacement sign, MeshCollider terrain, out Vector3 lowestPoint)
+        {
+            var lowestGap = float.PositiveInfinity;
+            lowestPoint = Vector3.zero;
+            var filters = sign.GetComponentsInChildren<MeshFilter>(true)
+                .Where(filter => filter.sharedMesh)
+                .ToArray();
+            Require(filters.Length > 0, "hazard sign has no render mesh: " + sign.name);
+            foreach (var filter in filters)
+            {
+                foreach (var vertex in filter.sharedMesh.vertices)
+                {
+                    var world = filter.transform.TransformPoint(vertex);
+                    var gap = world.y - Ground(terrain, world);
+                    if (gap < lowestGap)
+                    {
+                        lowestGap = gap;
+                        lowestPoint = world;
+                    }
+                }
+            }
+            return lowestGap;
+        }
+
+        static CatalogPlacement[] HazardPlacements(Scene scene)
+        {
+            var town = scene.GetRootGameObjects().Single(root => root.name == TownName).transform;
+            var hazardRoot = town.Find(FurnitureName).Find("Boundary hazard boards | 16");
+            Require(hazardRoot, "boundary hazard group missing");
+            var signs = hazardRoot.GetComponentsInChildren<CatalogPlacement>(true)
+                .Where(sign => sign.assetId == "alpine-sign-04")
+                .OrderBy(sign => sign.name, StringComparer.Ordinal)
+                .ToArray();
+            Require(signs.Length == 16, "expected 16 boundary hazard boards");
+            return signs;
+        }
+
+        static void SeatHazards()
+        {
+            Require(!EditorApplication.isPlayingOrWillChangePlaymode, "stop Play first");
+            var scene = SceneManager.GetActiveScene();
+            Require(scene.path == ScenePath, "open AlpsTerrainTest only");
+
+            Directory.CreateDirectory(EvidenceFolder);
+            var stamp = DateTime.UtcNow.ToString("yyyyMMdd-HHmmss");
+            var memoryBackup = EvidenceFolder + "/Hazard-seating-in-memory-before-" + stamp + ".unity";
+            var diskBackup = EvidenceFolder + "/Hazard-seating-disk-before-" + stamp + ".unity";
+            Require(EditorSceneManager.SaveScene(scene, memoryBackup, true), "could not preserve current in-memory scene");
+            File.Copy(ScenePath, diskBackup);
+
+            try
+            {
+                var signs = HazardPlacements(scene);
+                var terrainRoot = scene.GetRootGameObjects()
+                    .Single(root => root.name == "Revised attached terrain | 1:1 metres");
+                var terrain = terrainRoot.GetComponentInChildren<MeshCollider>();
+                Require(terrain, "physical terrain collider missing");
+                var protectedPlacements = NonSignPlacements(scene);
+                var roots = signs.ToDictionary(sign => sign.name, sign => Matrix(sign.transform));
+                var colliders = signs.ToDictionary(sign => sign.name,
+                    sign => sign.GetComponentInChildren<Collider>().bounds);
+
+                foreach (var sign in signs)
+                {
+                    var visualRoot = sign.transform.Find("VisualRoot");
+                    Require(visualRoot, "hazard visual root missing: " + sign.name);
+                    var gap = LowestMeshGap(sign, terrain, out _);
+                    visualRoot.localPosition += Vector3.up * (-.02f - gap);
+                    PrefabUtility.RecordPrefabInstancePropertyModifications(visualRoot);
+                }
+
+                Physics.SyncTransforms();
+                ValidateHazardSeating(scene, signs, terrain, roots, colliders, protectedPlacements);
+                EditorSceneManager.MarkSceneDirty(scene);
+                Require(EditorSceneManager.SaveScene(scene, ScenePath), "could not save hazard visual seating");
+                scene = EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Single);
+                signs = HazardPlacements(scene);
+                terrainRoot = scene.GetRootGameObjects()
+                    .Single(root => root.name == "Revised attached terrain | 1:1 metres");
+                terrain = terrainRoot.GetComponentInChildren<MeshCollider>();
+                ValidateHazardSeating(scene, signs, terrain, roots, colliders, protectedPlacements);
+                CaptureEvidence(scene, terrain);
+                scene = SceneManager.GetActiveScene();
+                signs = HazardPlacements(scene);
+                terrainRoot = scene.GetRootGameObjects()
+                    .Single(root => root.name == "Revised attached terrain | 1:1 metres");
+                terrain = terrainRoot.GetComponentInChildren<MeshCollider>();
+                ValidateHazardSeating(scene, signs, terrain, roots, colliders, protectedPlacements);
+
+                var report = new StringBuilder();
+                report.AppendLine("PASS: All 16 AlpsTerrainTest boundary hazard visuals were seated on the physical terrain in Unity " + Application.unityVersion + ".");
+                report.AppendLine("Per-instance VisualRoot Y overrides only; FBX, prefab, hazard root placements, colliders, production scenes and source geometry remain unchanged.");
+                report.AppendLine("Visible mesh lowest-point gaps rechecked after save/reopen within 0.03m below and 0.03m above terrain. Collider bottoms remain at their prior grounded positions.");
+                report.AppendLine("Evidence refreshed: BoundaryHazard.png, BoundaryHazard-PositiveX.png, BoundaryHazard-NegativeX.png.");
+                report.AppendLine("No Play, save-data, or Android/device test.");
+                File.WriteAllText(EvidenceFolder + "/Validation.txt", report.ToString());
+                File.WriteAllText(EvidenceFolder + "/HazardGroundAudit.txt", report.ToString());
+                Debug.Log(report.ToString());
+            }
+            catch
+            {
+                if (scene.IsValid() && scene.isDirty)
+                    EditorSceneManager.SaveScene(scene, EvidenceFolder + "/Hazard-seating-failed-unsaved-" + stamp + ".unity", true);
+                File.Copy(diskBackup, ScenePath, true);
+                AssetDatabase.ImportAsset(ScenePath, ImportAssetOptions.ForceUpdate);
+                EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Single);
+                throw;
+            }
+        }
+
+        static void ValidateHazardSeating(Scene scene, CatalogPlacement[] signs, MeshCollider terrain,
+            Dictionary<string, string> roots, Dictionary<string, Bounds> originalColliders,
+            Dictionary<string, string> protectedPlacements)
+        {
+            foreach (var sign in signs)
+            {
+                var gap = LowestMeshGap(sign, terrain, out _);
+                Require(gap >= -.03f && gap <= .03f, "visible hazard mesh still floats or sinks: " + sign.name + " (" + gap + "m)");
+                Require(roots[sign.name] == Matrix(sign.transform), "hazard root pose changed: " + sign.name);
+                var collider = sign.GetComponentInChildren<Collider>();
+                Require(collider, "hazard collider missing: " + sign.name);
+                var original = originalColliders[sign.name];
+                Require((collider.bounds.center - original.center).sqrMagnitude < .000001f &&
+                        (collider.bounds.size - original.size).sqrMagnitude < .000001f,
+                    "hazard collider moved or resized: " + sign.name);
+            }
+
+            var currentNonSigns = NonSignPlacements(scene);
+            Require(currentNonSigns.Count == protectedPlacements.Count, "catalogue placement count changed");
+            foreach (var pair in protectedPlacements)
+                Require(currentNonSigns.TryGetValue(pair.Key, out var value) && pair.Value == value,
+                    "non-sign catalogue placement changed: " + pair.Key);
         }
 
         static void CorrectFacing()

@@ -1,5 +1,26 @@
 # Snowglow: project instructions, design history and development handoff
 
+## Editable Blender copies for project FBXs - 27 November 2026
+
+All 169 FBX model files under `Assets/Snowglow/` now have editable `.blend`
+sidecars under `SourceAssets/EditableModels/`, with the original relative folder
+structure retained. The Blender files total about 17.7 MiB. The FBX files used by
+Unity remain unchanged; storing the Blender files outside `Assets` prevents
+duplicate Unity imports.
+
+Blender 5.2.0 imported and saved all 169 files with factory startup and automatic
+execution disabled. Every output reopened and matched its imported object/mesh,
+vertex, polygon and material-name metrics. Source and output SHA-256 values are
+in `SourceAssets/EditableModels/conversion_manifest.json`. The repeatable
+`Tools/AssetIntake/convert_project_fbx_to_blend.py` skips existing `.blend` files
+by default to protect user edits; use `--overwrite` only to intentionally replace
+those copies from FBX.
+
+These are FBX-derived editable meshes, not recovery of original Blender
+collections, modifiers, procedural construction or rigs omitted by FBX export.
+Check material/texture appearance and dimensions before exporting edits back to
+the corresponding FBX. Guidance: `SourceAssets/EditableModels/README.md`.
+
 ## Varied signboards in AlpsTerrainTest - 26 November 2026
 
 The supplied-map town now has 30 connected sign instances using the existing

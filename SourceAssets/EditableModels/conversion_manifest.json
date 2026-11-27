@@ -1,0 +1,3053 @@
+{
+  "format": 1,
+  "blender_version": "5.2.0 LTS",
+  "input_root": "Assets/Snowglow",
+  "output_root": "SourceAssets/EditableModels",
+  "source_count_in_run": 169,
+  "converted_count": 169,
+  "preserved_existing_count": 0,
+  "failed_count": 0,
+  "failures": [],
+  "files": [
+    {
+      "source": "Catalog/Sources/AlpineSignBoards/RearPanel04.fbx",
+      "source_sha256": "32ff01e277e9922a4c5bcd3b243867a6dfe9a4812c580a51af2eec0f5134a9b7",
+      "blend": "Catalog/Sources/AlpineSignBoards/RearPanel04.blend",
+      "blend_sha256": "8cfe4d858d227d79108e5855bc19593ced1d6406d2ff68702fa0a539c6d3021b",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 432,
+        "polygons": 380,
+        "materials": [
+          "SignPalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineSignBoards/RearPanel05.fbx",
+      "source_sha256": "df72e389e61145897d13323491f6499ca27478e98c7c5c036911f72829f618da",
+      "blend": "Catalog/Sources/AlpineSignBoards/RearPanel05.blend",
+      "blend_sha256": "a48b8e4b3f6a6763bd4d34616224d0d07cddeeada7d05616e07a1d40c0f8842c",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 239,
+        "polygons": 211,
+        "materials": [
+          "SignPalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineSignBoards/Sign01.fbx",
+      "source_sha256": "e73730d224e01151f8d4c431f1731d6330c8c7a227aae01ef6d17cb1baa8ebdd",
+      "blend": "Catalog/Sources/AlpineSignBoards/Sign01.blend",
+      "blend_sha256": "323d449fa01f1d3f9fd197f3336beb12f9083769f9e76001d94df23c373f5ff2",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 756,
+        "polygons": 614,
+        "materials": [
+          "SignPalette",
+          "SignPalette.001",
+          "SignSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineSignBoards/Sign02.fbx",
+      "source_sha256": "395a2cc442aa4062a14c2ab891a1db87741dcdcfa04138372f9604b2e2a50133",
+      "blend": "Catalog/Sources/AlpineSignBoards/Sign02.blend",
+      "blend_sha256": "98da64eae88f8dce6e93a135a86a2a2279e01c4abc50048eca25ff15a453d1a7",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 254,
+        "polygons": 210,
+        "materials": [
+          "SignPalette",
+          "SignPalette.001",
+          "SignSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineSignBoards/Sign03.fbx",
+      "source_sha256": "93383c12f071940ca88c29dc4e7ec8718db2e8c25fd07bc20d9271f711180a36",
+      "blend": "Catalog/Sources/AlpineSignBoards/Sign03.blend",
+      "blend_sha256": "721b3031ea29b0c1e6c8e11e140d4dbdc48a215b4e1677258f733caae26ded68",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 183,
+        "polygons": 148,
+        "materials": [
+          "SignPalette",
+          "SignPalette.001",
+          "SignSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineSignBoards/Sign04.fbx",
+      "source_sha256": "9c875b580808149776f9b2e99bd579095197eff0d85e76a37076a2c85c99cd9d",
+      "blend": "Catalog/Sources/AlpineSignBoards/Sign04.blend",
+      "blend_sha256": "b4c8226c337a538e1b8075643986accd7c7614eb50991ac254c5f9ef9ebd404e",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 512,
+        "polygons": 438,
+        "materials": [
+          "SignPalette",
+          "SignPalette.001",
+          "SignSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineSignBoards/Sign05.fbx",
+      "source_sha256": "d2a02ac6953615782ff82a83608ca1c47894757654c8e9b78ea84fd9ab356013",
+      "blend": "Catalog/Sources/AlpineSignBoards/Sign05.blend",
+      "blend_sha256": "7eb4d0d82202c4235cd721a6016b87ba18f342eaab5dfebb4e355148ac19f166",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 363,
+        "polygons": 301,
+        "materials": [
+          "SignPalette",
+          "SignPalette.001",
+          "SignSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineSignBoards/Sign06.fbx",
+      "source_sha256": "3de6c3d9b85f1d1b157c7f2228a9425aba877a514bd56fe4e3cb7917782f8927",
+      "blend": "Catalog/Sources/AlpineSignBoards/Sign06.blend",
+      "blend_sha256": "a4f50bc99a5054152527a35d30b145cfaf659f637168f91024ae1a5d96c74c08",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 124,
+        "polygons": 88,
+        "materials": [
+          "SignPalette",
+          "SignSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineSignBoards/Sign07.fbx",
+      "source_sha256": "a7a4bc46b28bd22c68f16aefec1c6ff5d646a7a64f368146d59f11b4c5a92094",
+      "blend": "Catalog/Sources/AlpineSignBoards/Sign07.blend",
+      "blend_sha256": "a74c73d14a340d8db84dcbf3d836d6f2d3109accb9d32c7bc625461fb769e8dc",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 204,
+        "polygons": 146,
+        "materials": [
+          "SignPalette",
+          "SignSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineSignBoards/Sign08.fbx",
+      "source_sha256": "a313f5ce6e7ba258c60b46f696830b07353fcf5d9f492864e2f546e9fefb3c94",
+      "blend": "Catalog/Sources/AlpineSignBoards/Sign08.blend",
+      "blend_sha256": "c2067e66952f0858e81bde537ceb9c8ae64a93fb85b2d50d37a1cbba1bce18f2",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 198,
+        "polygons": 157,
+        "materials": [
+          "SignPalette",
+          "SignPalette.001",
+          "SignSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineSignBoards/Sign09.fbx",
+      "source_sha256": "cfd5e223d65a5a42e62f2146260003c53f712af9282ce6377740fb68b9d0dda5",
+      "blend": "Catalog/Sources/AlpineSignBoards/Sign09.blend",
+      "blend_sha256": "fbee949139a042febb5384ae722f450865e9345d7cd3a4f3475a20a20ec0dec2",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 136,
+        "polygons": 98,
+        "materials": [
+          "SignPalette",
+          "SignSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineSignBoards/Sign10.fbx",
+      "source_sha256": "fa516889dbb06a2d1352336f67829b1da3e33e2db55d46ae924c993c4febbbd0",
+      "blend": "Catalog/Sources/AlpineSignBoards/Sign10.blend",
+      "blend_sha256": "ceb72b614ea9638b14869634a64ab8b9deeb2d71d5bfc37668895f8e96632dc1",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 240,
+        "polygons": 170,
+        "materials": [
+          "SignPalette",
+          "SignSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineSignBoards/Sign11.fbx",
+      "source_sha256": "1ab5e0fd0848944ef75a75e32bb5e145f12c7ad79e7525fc6d9f1a80c1412bfd",
+      "blend": "Catalog/Sources/AlpineSignBoards/Sign11.blend",
+      "blend_sha256": "549c6e72383e6be505c57641ad7f0d7b6fd3baa5a3cb1b261cdbe5e035a0a8db",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 775,
+        "polygons": 701,
+        "materials": [
+          "SignPalette",
+          "SignPalette.001",
+          "SignSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineSignBoards/Sign12.fbx",
+      "source_sha256": "02d4d0bd1ad2c8b5d0065e0d6623d85e1435ddaddba68deca396d52828158610",
+      "blend": "Catalog/Sources/AlpineSignBoards/Sign12.blend",
+      "blend_sha256": "9f4ef1cfa8274a2a38d94bb35099be40a41b3b4f489001a5521075df3f56efe6",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 144,
+        "polygons": 102,
+        "materials": [
+          "SignPalette",
+          "SignSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineStreetLights/AlpineHangingLantern.fbx",
+      "source_sha256": "8d1370cf0aee20feaa30e823654855bb52aabcaf14f5d64fee8f085ccae02a94",
+      "blend": "Catalog/Sources/AlpineStreetLights/AlpineHangingLantern.blend",
+      "blend_sha256": "97bb93dde82df940f19090b684ea1d0d2bbde7e9958e067d192925dc4dbf0001",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 374,
+        "polygons": 280,
+        "materials": [
+          "StreetLightGlow",
+          "StreetLightPalette",
+          "StreetLightSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineStreetLights/CompactVillageLantern.fbx",
+      "source_sha256": "d7aacadc741d3232de211c10aab7726ee2e41c5c5d25356745b4ccfcfd17e0e2",
+      "blend": "Catalog/Sources/AlpineStreetLights/CompactVillageLantern.blend",
+      "blend_sha256": "69e27203b28533150477bc158fbacd433b530da51158638d03b417a624fa3df3",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 366,
+        "polygons": 249,
+        "materials": [
+          "StreetLightGlow",
+          "StreetLightPalette",
+          "StreetLightSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineStreetLights/DualMedianLED.fbx",
+      "source_sha256": "d8c729c568a944961cb066a8efec2cdaee6e8d7c88797d25e9e9e0d48c8a6c7d",
+      "blend": "Catalog/Sources/AlpineStreetLights/DualMedianLED.blend",
+      "blend_sha256": "e93d9602e8268be9ba74ff211e20d033bcee4f40f8d5305d22dc94a16276e99c",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 368,
+        "polygons": 264,
+        "materials": [
+          "StreetLightGlow",
+          "StreetLightPalette",
+          "StreetLightSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineStreetLights/FourWayAreaLight.fbx",
+      "source_sha256": "5aad17f7f1697eb964da6e34b14e3438cb883568e6bf80f8696a2b291eeb940a",
+      "blend": "Catalog/Sources/AlpineStreetLights/FourWayAreaLight.blend",
+      "blend_sha256": "2b838082a176302bbadf90cb36810db7ecc309566294da3fb0202b4c2ce4dfdd",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 580,
+        "polygons": 430,
+        "materials": [
+          "StreetLightGlow",
+          "StreetLightPalette",
+          "StreetLightSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineStreetLights/HeritageSingle.fbx",
+      "source_sha256": "50ee0cac30adf544407342598f382ecc2daa6d217f6f9604dee16f022a0c47c2",
+      "blend": "Catalog/Sources/AlpineStreetLights/HeritageSingle.blend",
+      "blend_sha256": "f2744c85a67c08f9c32afa5a502135b0fc8f782ebe9bc02c4da5726fac4da72c",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 366,
+        "polygons": 249,
+        "materials": [
+          "StreetLightGlow",
+          "StreetLightPalette",
+          "StreetLightSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineStreetLights/HeritageTriple.fbx",
+      "source_sha256": "25f77eef91b9c1233d9703cf6a50b96361927a34d7f3f3a8bde282878c27b190",
+      "blend": "Catalog/Sources/AlpineStreetLights/HeritageTriple.blend",
+      "blend_sha256": "72da85a7d72566b56ee00ae656a4c548e8d142e5fecea0749eab8a39dca0d587",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 754,
+        "polygons": 547,
+        "materials": [
+          "StreetLightGlow",
+          "StreetLightPalette",
+          "StreetLightSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineStreetLights/HeritageTwin.fbx",
+      "source_sha256": "bc83a582359def7d4a91fab31867d315c1646a75f20ca3b49515d7aeb69a8dfe",
+      "blend": "Catalog/Sources/AlpineStreetLights/HeritageTwin.blend",
+      "blend_sha256": "e25218dc4c98c27dd90c57a11cd6c5fca4b0b77fa669dee746bc2cbd3c74ecd0",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 628,
+        "polygons": 452,
+        "materials": [
+          "StreetLightGlow",
+          "StreetLightPalette",
+          "StreetLightSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineStreetLights/MainRoadOutreach.fbx",
+      "source_sha256": "a88b0d9e00d9fc3fa345f8a61734cabdad19fa3d0e5d53de898cf18a0cbe1e08",
+      "blend": "Catalog/Sources/AlpineStreetLights/MainRoadOutreach.blend",
+      "blend_sha256": "32ef1becc358c8d970fc7c159c34cc0ef948cf927f27c389b7bb20c0f8d61b32",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 262,
+        "polygons": 181,
+        "materials": [
+          "StreetLightGlow",
+          "StreetLightPalette",
+          "StreetLightSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineStreetLights/ParkGlobe.fbx",
+      "source_sha256": "bb926ae82d7411422cc57f1b14ef8c467c81af36454eba4ec748e4283522d6ae",
+      "blend": "Catalog/Sources/AlpineStreetLights/ParkGlobe.blend",
+      "blend_sha256": "3e3cc6ca666a521ab3aa1791ba1faa407fed5b4b4ece41bf47919716bb9f96c9",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 330,
+        "polygons": 246,
+        "materials": [
+          "StreetLightGlow",
+          "StreetLightPalette",
+          "StreetLightSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineStreetLights/PathBollard.fbx",
+      "source_sha256": "cf7ccc65742762e1078e781f036fd2a2bcbffdda1193794d7ef7141daffec29a",
+      "blend": "Catalog/Sources/AlpineStreetLights/PathBollard.blend",
+      "blend_sha256": "e87c478b78706698e01f918ec0e27f6a1a626934a20cf4b27623c2845c8ce844",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 132,
+        "polygons": 84,
+        "materials": [
+          "StreetLightGlow",
+          "StreetLightPalette",
+          "StreetLightSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineStreetLights/ResidentialCurvedLED.fbx",
+      "source_sha256": "0ee5969b7f32b154eadef1b5dbf066591532aa0c2fe9712e7885d72d927f3200",
+      "blend": "Catalog/Sources/AlpineStreetLights/ResidentialCurvedLED.blend",
+      "blend_sha256": "e98fd9fcc07dd0b14361f6c1b8aabbed4fec6553d3bd24364161539305abef68",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 262,
+        "polygons": 181,
+        "materials": [
+          "StreetLightGlow",
+          "StreetLightPalette",
+          "StreetLightSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineStreetLights/WallLantern.fbx",
+      "source_sha256": "41ebdfb50f181972eed4db62237daa973cf5f9775821db7251faf218bf6a74bd",
+      "blend": "Catalog/Sources/AlpineStreetLights/WallLantern.blend",
+      "blend_sha256": "ada705b740551414069384262ea633a13451df2a8180c8a6f8b3d3dd27062b80",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 242,
+        "polygons": 191,
+        "materials": [
+          "StreetLightGlow",
+          "StreetLightPalette",
+          "StreetLightSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/BareYoungSapling.fbx",
+      "source_sha256": "e0a7197b3580eddf6a4939c0285b0eb5815496739fdc330ea39d831f00ed6dba",
+      "blend": "Catalog/Sources/AlpineTrees/BareYoungSapling.blend",
+      "blend_sha256": "83fab202f5e9549214c56853a75a22ec8e04dabc0483e8e90e47301df4560b1f",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 323,
+        "polygons": 257,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/BroadFir.fbx",
+      "source_sha256": "763c1bccf61d6ffafc4e988998bba2a9638124e9ae8815aaac370d3f4122ca67",
+      "blend": "Catalog/Sources/AlpineTrees/BroadFir.blend",
+      "blend_sha256": "6d6db1c59bfbbd1528044ef41b76d9b9bfa8f199eb130536a9656505fa7db417",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 401,
+        "polygons": 301,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/BrokenAlpineTrunk.fbx",
+      "source_sha256": "c0145c0dfe3fd1a38d429fa62ece88de5b1c3d3ba79bfb43bcd19ddfd1ec0a28",
+      "blend": "Catalog/Sources/AlpineTrees/BrokenAlpineTrunk.blend",
+      "blend_sha256": "bd92d9b1c742ddc6ecffdd1f3ff57c5f35b01a1ce977b0272b604b231d64b4c3",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 445,
+        "polygons": 346,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/FallenCutLog.fbx",
+      "source_sha256": "7e6d1a6f3024d43cadd769a387fc114083775ec6ca08987944cecd0a36f04f1b",
+      "blend": "Catalog/Sources/AlpineTrees/FallenCutLog.blend",
+      "blend_sha256": "1b4e5cdf6535f652a59dda8abdb5a8fe7dad57d32164f3b23256874e7affa19d",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 135,
+        "polygons": 100,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/IrregularDroopingFir.fbx",
+      "source_sha256": "da551447543f3cce35cc34b9316a705d78fcb67fa93690995d10d715708b8c48",
+      "blend": "Catalog/Sources/AlpineTrees/IrregularDroopingFir.blend",
+      "blend_sha256": "100189f7da406f37aa9ba79b8ec675b78756a08e396709bcafda6be90e812f61",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 452,
+        "polygons": 338,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/LowCutStump.fbx",
+      "source_sha256": "e5842ba6daee59c62590aaa434f29f5e365819ec63b19159b65eedad8fd43ce7",
+      "blend": "Catalog/Sources/AlpineTrees/LowCutStump.blend",
+      "blend_sha256": "fdd7a3aabea11712a50b67fb2bd04479458138f07e1423c74b52dd77afba99a2",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 137,
+        "polygons": 100,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/OpenAlpineLarch.fbx",
+      "source_sha256": "3dffe710c76937f43605d0d7ef22fc1833e7172dc7736dd8dc6ca82d5663b7ee",
+      "blend": "Catalog/Sources/AlpineTrees/OpenAlpineLarch.blend",
+      "blend_sha256": "ddc7ea7e6299be95213c62db8c5427da1a3f9b43dee358f077cbfcefcadfd0bf",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 1133,
+        "polygons": 905,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/SlenderSpruce.fbx",
+      "source_sha256": "e351cfb9c632ad8d5984051244e3a7a377afaa0c000b454526074ac19bc099a4",
+      "blend": "Catalog/Sources/AlpineTrees/SlenderSpruce.blend",
+      "blend_sha256": "bfd6350cf532df369099e86ab6cd7f60811310ba4691dbd614fed5419638a4a1",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 545,
+        "polygons": 407,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/SnowCappedStump.fbx",
+      "source_sha256": "c8e1e443593ac72ddedfe5a09a650f777841f96cab9645830b7f303ebfeb7ec9",
+      "blend": "Catalog/Sources/AlpineTrees/SnowCappedStump.blend",
+      "blend_sha256": "22345b000446dbe21bbb2ec040b862af96985acd83c043b04bd895d200b25d55",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 142,
+        "polygons": 103,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/SnowyBroadFir.fbx",
+      "source_sha256": "575ab5dcfc232ea70eea9521f890e57497eb16e053fbf14bd4f3c9c020233369",
+      "blend": "Catalog/Sources/AlpineTrees/SnowyBroadFir.blend",
+      "blend_sha256": "071c9e296479abfe48cef423280b82f2f9c0c8f5942834d20afc19e7fdc48205",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 584,
+        "polygons": 432,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/SnowyBrokenLog.fbx",
+      "source_sha256": "8522e1423baf4af9e489f5a81cf3cbe9f48dfd8cf5b0cff1b542c4cedaed03a1",
+      "blend": "Catalog/Sources/AlpineTrees/SnowyBrokenLog.blend",
+      "blend_sha256": "1400641eb730582faece4d31849caabf336322830605f1f803be071857c35416",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 191,
+        "polygons": 139,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/SnowyIrregularDroopingFir.fbx",
+      "source_sha256": "de955d86f71b93a75caeeb44f8d5a73a1dfe08de533e8ba889e81e94c7f767d7",
+      "blend": "Catalog/Sources/AlpineTrees/SnowyIrregularDroopingFir.blend",
+      "blend_sha256": "cd2973b479f9ea05fe47d85949533d68ba12fccbf722b28c40a3630349e52192",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 656,
+        "polygons": 484,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/SnowyOpenAlpineLarch.fbx",
+      "source_sha256": "033a2a765f14fbe3b89c3675b443af502e7885c284961d8921eb916cb688cbf2",
+      "blend": "Catalog/Sources/AlpineTrees/SnowyOpenAlpineLarch.blend",
+      "blend_sha256": "45fed15b3cc1ea2610a86205dec8a00977945c62e3935b23e056676bc6275137",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 1568,
+        "polygons": 1224,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/SnowySlenderSpruce.fbx",
+      "source_sha256": "076055489248c46f8304642e35128ea51911e5543b30f8cc610f83acfd97ae11",
+      "blend": "Catalog/Sources/AlpineTrees/SnowySlenderSpruce.blend",
+      "blend_sha256": "11c196997d8269f33705cac7d0a6e404cfb3e0ba18f5239b39d9683673261aa6",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 812,
+        "polygons": 598,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/SnowySpruceSapling.fbx",
+      "source_sha256": "04c6f8386493b9dcd2acf01616844d018c3c69bb4fdb715a5a2481fc3289d1d5",
+      "blend": "Catalog/Sources/AlpineTrees/SnowySpruceSapling.blend",
+      "blend_sha256": "6b31f71e7345e729cb7929af34b126732d73203588867aba5185e4dd9f7cc739",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 338,
+        "polygons": 255,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/SnowyTowerSpruce.fbx",
+      "source_sha256": "53d750263c654d4208ed97fcecfe8d2f6028dbdddcc51a0a40a755ad0760bf5a",
+      "blend": "Catalog/Sources/AlpineTrees/SnowyTowerSpruce.blend",
+      "blend_sha256": "8b864fb5f052b258b61fe9048130386ec1114dcb62af57a9041ad8b1de078f5d",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 770,
+        "polygons": 567,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/SnowyWindBentPine.fbx",
+      "source_sha256": "3bb4fb84eb142bd2aacdc32cd4d75a6b23f9ddf32b8f3ebf6b35c4bac17d9de0",
+      "blend": "Catalog/Sources/AlpineTrees/SnowyWindBentPine.blend",
+      "blend_sha256": "9f4ffd455c4947b815779e65e3d38dfb66bf66f479b4f96835ad4f6f5915b694",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 536,
+        "polygons": 400,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/SnowyYoungFir.fbx",
+      "source_sha256": "ef0971349167d4e3f5174a412241c46ee0cba74022cf70894f3c93b14d38bbf1",
+      "blend": "Catalog/Sources/AlpineTrees/SnowyYoungFir.blend",
+      "blend_sha256": "00f075eaf88e7072ae62a6bc767fccc1d675f0365d7ffd917a441c9d962e4dfa",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 380,
+        "polygons": 286,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/SplitCutStump.fbx",
+      "source_sha256": "e1b8a718dbea02d4c878ca03e505149218e2a06db25e40860516ec43eea22b5b",
+      "blend": "Catalog/Sources/AlpineTrees/SplitCutStump.blend",
+      "blend_sha256": "2228fbf53ec5188c4de7d92b47deccac6ff0b539fff0e138a6bbf45000c3dbaf",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 157,
+        "polygons": 114,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/SpruceSapling.fbx",
+      "source_sha256": "758c5b65cf7b2015f3788f52486742911b61a17d06c64afcf44d864e5b70629f",
+      "blend": "Catalog/Sources/AlpineTrees/SpruceSapling.blend",
+      "blend_sha256": "253c88fd03c397d02f693cdac8e3a64ca12785ba75fbbc70bedc0f3344bbcc49",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 218,
+        "polygons": 169,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/TallCutStump.fbx",
+      "source_sha256": "e5c0486c62b1fde7626eb6ab0ac7a84c244fadf1d285df778032336d41ac0162",
+      "blend": "Catalog/Sources/AlpineTrees/TallCutStump.blend",
+      "blend_sha256": "09581b6ea72397789cacec402a420c0f58c7695e98c95aa018aaf1713d32a3fd",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 137,
+        "polygons": 100,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/TallDeadSnag.fbx",
+      "source_sha256": "7ec3ac5f0b4821a5603640ccd888267267a3440e870bc2bdc150ade6afe04bc0",
+      "blend": "Catalog/Sources/AlpineTrees/TallDeadSnag.blend",
+      "blend_sha256": "606889aa2e46cbb3978eec546307ed8c5fa232e3e890827a8612a43d5f8b1be0",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 623,
+        "polygons": 491,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/ThinBareSnag.fbx",
+      "source_sha256": "8d536e0f14f3d70cb578a06e5189961b413e793125a6ea03749e6b7fcc2d30ea",
+      "blend": "Catalog/Sources/AlpineTrees/ThinBareSnag.blend",
+      "blend_sha256": "7b91719eb0ac99014da792d31e679353dd2c6b1acf7cbec518951c3d78a08d93",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 503,
+        "polygons": 401,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/TowerSpruce.fbx",
+      "source_sha256": "5b1afb766827c2b8c76d7dc28a3f7b37212e7777b21e0bd939efa67d10eeb92c",
+      "blend": "Catalog/Sources/AlpineTrees/TowerSpruce.blend",
+      "blend_sha256": "9dd6bad32522478b7ef88b8a6c84247d43790c2aa0a068a4b0511931d1ab6a95",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 524,
+        "polygons": 391,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/WindBentPine.fbx",
+      "source_sha256": "1a9a1f48c4627599f920cebd3dc5cde509c2d5d6931a285866e6b2f8d5d755df",
+      "blend": "Catalog/Sources/AlpineTrees/WindBentPine.blend",
+      "blend_sha256": "0269628ada7e338443d829c8e1ed9c755ab6cdc5d4936045be53f7eb858357cc",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 377,
+        "polygons": 285,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTrees/YoungFir.fbx",
+      "source_sha256": "6ff1f3bc50b7c6395c3a9a4a5c172188ef91a3e1e774dd2c42feb25c3a12cdb7",
+      "blend": "Catalog/Sources/AlpineTrees/YoungFir.blend",
+      "blend_sha256": "bdfccf2fb9d853fd8d9db3d285ccff8cf0d1e04d210e8f75a7cf9b505612dff1",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 239,
+        "polygons": 185,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/01_LOD3.fbx",
+      "source_sha256": "72bb3a7363dfb2800d8373e0998b403f5162d51c72e4b3f9eeaaa2a495d71b2c",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/01_LOD3.blend",
+      "blend_sha256": "09c30ed680b8563146272c8a41b7074b7ea02ff9f300c9b54648b96ee43dacb6",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 207,
+        "polygons": 252,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/02_LOD3.fbx",
+      "source_sha256": "9cf140279ecf2924ece6ec1a571c6afe61d1d002cbe83a8fc0453193bc2a656d",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/02_LOD3.blend",
+      "blend_sha256": "20979a241e4548b988dc412984bea9e84fb280cdd7cecc2c4847d8825a335b6a",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 158,
+        "polygons": 196,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/03_LOD3.fbx",
+      "source_sha256": "1c6c59bdb49e0fe394ec64f345a7d8813bd590ae888690873c7d7dacdeabc1e8",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/03_LOD3.blend",
+      "blend_sha256": "fce00053e01463d09441221e13236ee7af7a42936eaa9a9487a9611884c0ff4a",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 215,
+        "polygons": 264,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/04_LOD3.fbx",
+      "source_sha256": "2d8160b1a765f5b6cf07425b7a35fd948d57a999332693c9877d4a459cf31a4a",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/04_LOD3.blend",
+      "blend_sha256": "78dd4e239102c66b49fb2e2680f6af74a90429e4f08a6e5b77b35d3cf992db7d",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 179,
+        "polygons": 219,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/05_LOD3.fbx",
+      "source_sha256": "4ff869bb49384fc1f2cb2acb74bdc34c2528b49e60ffa32d631aa7494ed2d3ec",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/05_LOD3.blend",
+      "blend_sha256": "021877bed913abbea966f8cf2e5c4b56ec7a9a046f01f99338317c10ca7f36cd",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 150,
+        "polygons": 180,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/06_LOD3.fbx",
+      "source_sha256": "3d936c3e2e8ca53c4425afc3d3cdffcc59404ab98b33c4e71a300b7c23991f69",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/06_LOD3.blend",
+      "blend_sha256": "5e43f2e114cf9f0b9d0e06e06c65d3fc41a12da872ffe8c6ff00bd07127bb454",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 444,
+        "polygons": 588,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/07_LOD3.fbx",
+      "source_sha256": "6318a367d5dde91ebaca1617b7db8eed3c7e2ce0d1b2cfc5f776bbdbc288ad53",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/07_LOD3.blend",
+      "blend_sha256": "8033ec16ace5b847625b648cfd508c6e37fdd86c809201a052d7bae91ba7a1ca",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 89,
+        "polygons": 121,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/08_LOD3.fbx",
+      "source_sha256": "cd0414e1058d9aae5f6bb4ea6f86044a1f51da240f5fe3293b31a0b328f8ae44",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/08_LOD3.blend",
+      "blend_sha256": "68820d246e49c0ce7f07606a14ac18ccb3084ee130c734518ce3c311a5dff13d",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 82,
+        "polygons": 115,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/09_LOD3.fbx",
+      "source_sha256": "4514ce604eb0c0911172a4814fc20dac59d35e42b8e6c7a6808d7afc09f189f8",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/09_LOD3.blend",
+      "blend_sha256": "a895947246f3546b9c0a7c5fe21255bef628f37a41353c61116c8b59b2ca0b4d",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 447,
+        "polygons": 631,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/10_LOD3.fbx",
+      "source_sha256": "deb56042a010503fc52af6a4ed11110bcdd9387750cc631f7d8bad6f25743338",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/10_LOD3.blend",
+      "blend_sha256": "393f9753f67fab49ef4b977e51d99c1af9a74ec40185d2db9e64a69c19529261",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 338,
+        "polygons": 477,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/11_LOD3.fbx",
+      "source_sha256": "f2e493c38c2681b9e4d27a41a72af4775045ea7fe8a7aa7d2b72c0829bf035fd",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/11_LOD3.blend",
+      "blend_sha256": "1955effce4a1b2e91f34ec7dc39f3950890d04a87895d83d4acb472c74034489",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 471,
+        "polygons": 676,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/12_LOD3.fbx",
+      "source_sha256": "418bba177f7947d3cc54c216ab3f0272faf78513ced52ca5753d6a23c0099a0a",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/12_LOD3.blend",
+      "blend_sha256": "8303c53eec9289530d717aab36d7a6f6add4e625524f9604bbecf08e6a58c032",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 381,
+        "polygons": 547,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/13_LOD3.fbx",
+      "source_sha256": "999ca72a3479b8e2f2260a859e763c357e36485954d87c70043b6e46a77e44ea",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/13_LOD3.blend",
+      "blend_sha256": "b091f4635ad673987503b7d46c5f3d5a0dbc1c15aab864c8d3540d153924954e",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 312,
+        "polygons": 433,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/14_LOD3.fbx",
+      "source_sha256": "51a12ca27ce1d944b333aef48a370dff79ec9d7b509b5272bf76bebe489b8b75",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/14_LOD3.blend",
+      "blend_sha256": "89833f05dda79e92a3502660cc3ce36afada38fc946d5642fff941fb10c991b3",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 909,
+        "polygons": 1315,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/15_LOD3.fbx",
+      "source_sha256": "228d87a1597704d3ab6dafc48c7844820e964cc19d7b91b74870ecb8ab36b799",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/15_LOD3.blend",
+      "blend_sha256": "b4e740d51e73de481b855fa88153e235b7ba2faf1e34e69deb5c31194d1a8d97",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 217,
+        "polygons": 321,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/16_LOD3.fbx",
+      "source_sha256": "1861dabdf46742ed506a92bc534414f181cebc6ac8a8011f3ff8d9b948aaabcd",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/16_LOD3.blend",
+      "blend_sha256": "d30822bbaefa2fcb9dcf17db550c997092ebbb7c55e35ffdb0c5f5b787bd5592",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 194,
+        "polygons": 288,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/17_LOD3.fbx",
+      "source_sha256": "292e7d0e7b6cdf533de85109f679cfe4f8e52c22482e8155f6bdd612f10d66bf",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/17_LOD3.blend",
+      "blend_sha256": "78065a2408f66e2d9ae4a4dca6ac55a515e161baa18e2a8b596f0336bfcd895f",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 254,
+        "polygons": 301,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/18_LOD3.fbx",
+      "source_sha256": "9c0a18b69603ec93a28d8fdb10bc2bfd6a6058aebaabb5eae18a3e49ff35cd0e",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/18_LOD3.blend",
+      "blend_sha256": "a3a1a520de92562932517c776c4126f693b0e46ae79b38d4383d409b96b3a78e",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 197,
+        "polygons": 262,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/19_LOD3.fbx",
+      "source_sha256": "e681be0552617630232c0b36b322b4b952469e45e5bdc58bf3afb0fa23f758a9",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/19_LOD3.blend",
+      "blend_sha256": "9052e7ab8f38d7dae8230c1da0aaab4254b582c52bd671b7eddb52be4412a7dd",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 182,
+        "polygons": 210,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/20_LOD3.fbx",
+      "source_sha256": "b450451a6513f28015fd26dbeff959ed689936f9457da91c7e5d4dd1abc4180b",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/20_LOD3.blend",
+      "blend_sha256": "49b45eddb5196531f0e7dd6044c9c9d00505484da1be9f265fed98fbcd04c9ec",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 126,
+        "polygons": 168,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/21_LOD3.fbx",
+      "source_sha256": "366a3152454d40ba229fae7ddc72f07d2707642a5b8cced0304311a8fc636596",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/21_LOD3.blend",
+      "blend_sha256": "a628d7b29395650b150b52dcd0dbf8a5190b7d04bf9b67f67bc293b9e6a06087",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 59,
+        "polygons": 63,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/22_LOD3.fbx",
+      "source_sha256": "497c82d677cd6152f3c9d804b57508381289aa5bd7741a6fd47be34ebe663ff3",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/22_LOD3.blend",
+      "blend_sha256": "19b14d4066720802211d4f7d217bbc1a8f34704b2e19d4233d2012fb70cfe93e",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 58,
+        "polygons": 63,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/23_LOD3.fbx",
+      "source_sha256": "e42f1962089d47e4e4da590f00fe4ced097be4fbcc40cf5a89425ac35b1cb56e",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/23_LOD3.blend",
+      "blend_sha256": "f5343201cb4c4b6b07812d18386f7d3c215145b12c60fd3b61e440676e928b28",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 67,
+        "polygons": 70,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/24_LOD3.fbx",
+      "source_sha256": "561510fb957d7073ea0f64b6cb953b288d4ad0935150c5400b52b021efe07749",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/24_LOD3.blend",
+      "blend_sha256": "0052a6ac0c91fe212ad665388f8132264cf7a981a6a068aa0292ebd19128bc1f",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 87,
+        "polygons": 110,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/25_LOD3.fbx",
+      "source_sha256": "c836f52bab8485c2a02ae3ae3082285930fb89df3676c4abfc35e1b416efe368",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/25_LOD3.blend",
+      "blend_sha256": "88a43dfd8f3509aa8f910c705f015d2675a236fc3b9b5f84b650f29bdf7a8a52",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 4,
+        "meshes": 1,
+        "vertices": 53,
+        "polygons": 68,
+        "materials": [
+          "AlpineTreePalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpineTreesLowestLOD/26_LOD3.fbx",
+      "source_sha256": "8c19a0ad6e2e2aa6b7132594d140862eb6028969e270d739ca1b809e3d3af498",
+      "blend": "Catalog/Sources/AlpineTreesLowestLOD/26_LOD3.blend",
+      "blend_sha256": "9ef8f43a65bff200496f9a487613c7c5af05854c4365e1c5c3f68ec041d4aa50",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 113,
+        "polygons": 160,
+        "materials": [
+          "AlpineTreePalette",
+          "AlpineTreeSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsMountainsV2/Mountain_01.fbx",
+      "source_sha256": "a49757f96863f563ebc3d9168f92ee5b0f35957d57a55ecf4b66c604489fc4f1",
+      "blend": "Catalog/Sources/AlpsMountainsV2/Mountain_01.blend",
+      "blend_sha256": "ff84dbac8abb24353bab82631269a71c2e0859bf1e542b3aa9c3f81a583fff42",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 700,
+        "polygons": 1302,
+        "materials": [
+          "AlpsV2Palette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsMountainsV2/Mountain_02.fbx",
+      "source_sha256": "7c0cd35df1c4271cfe4594a7be1ec49d711448b92eb5894ea141ed076fb81d50",
+      "blend": "Catalog/Sources/AlpsMountainsV2/Mountain_02.blend",
+      "blend_sha256": "41443b6590897781ee6082baa433b95081624149fd048280bf510fb258b20b05",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 656,
+        "polygons": 1205,
+        "materials": [
+          "AlpsV2Palette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsMountainsV2/Mountain_03.fbx",
+      "source_sha256": "fcc7210cda4ee7b6a577e2f61feee5711ab950238c6fe1d4f4ff62f1103cc4bf",
+      "blend": "Catalog/Sources/AlpsMountainsV2/Mountain_03.blend",
+      "blend_sha256": "ae98362643ce500184dd40c41139bdd54ca18799c9f604fc66535c3bfeae9974",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 920,
+        "polygons": 1685,
+        "materials": [
+          "AlpsV2Palette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsMountainsV2/Mountain_04.fbx",
+      "source_sha256": "df4d6e4e5524c5c490690aa2d4c2b336945fefbf2ef74b459dacf010185f72df",
+      "blend": "Catalog/Sources/AlpsMountainsV2/Mountain_04.blend",
+      "blend_sha256": "14f74e992cce53c5b9f7d4464f40c7ff7299d8f4f0a37e9bea93eb27013cc744",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 670,
+        "polygons": 1234,
+        "materials": [
+          "AlpsV2Palette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsMountainsV2/Mountain_05.fbx",
+      "source_sha256": "631451ca85362d5c85899518c6197d339919e43f5b4333a0c7a59e99acad1d06",
+      "blend": "Catalog/Sources/AlpsMountainsV2/Mountain_05.blend",
+      "blend_sha256": "54b3158aa43d8b8f96dc7d26de3f75ad8d1e28a9153a748ebd1bb84e27fee4db",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 1039,
+        "polygons": 1953,
+        "materials": [
+          "AlpsV2Palette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsMountainsV2/Mountain_06.fbx",
+      "source_sha256": "abcae1842907fdb8ff6f7702028b824dd171015f955b6c8d35459f38b1ee1da9",
+      "blend": "Catalog/Sources/AlpsMountainsV2/Mountain_06.blend",
+      "blend_sha256": "cd7a3ec392ec2c9c7ea9de6b502ffd3bfabd146fc2ebc2a27d8d17117f4a7e59",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 629,
+        "polygons": 1112,
+        "materials": [
+          "AlpsV2Palette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsMountainsV2/Mountain_07.fbx",
+      "source_sha256": "3fc923f2baf2045c61caf469dd6c12121c42df89345e715ebc8ba5394a869c94",
+      "blend": "Catalog/Sources/AlpsMountainsV2/Mountain_07.blend",
+      "blend_sha256": "8ebcc15a1115e37f6a799ddcdc3c282a1e059b7ade051e1663d45dc69987186c",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 973,
+        "polygons": 1810,
+        "materials": [
+          "AlpsV2Palette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsMountainsV2/Mountain_08.fbx",
+      "source_sha256": "94dd7d28a9c484301939a78ad8b3f8a9b7fe43e4d592ca800486187b37bd38fc",
+      "blend": "Catalog/Sources/AlpsMountainsV2/Mountain_08.blend",
+      "blend_sha256": "9d030c1e62eb6e5d2fb811bd14733e13e1adcbd910906553974b1a81223dbcdb",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 755,
+        "polygons": 1398,
+        "materials": [
+          "AlpsV2Palette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Building_01.fbx",
+      "source_sha256": "6cfb1cdd31d2fc83fe99a18139d28ca7346e92dbfbd3317084ce37a20273c2ef",
+      "blend": "Catalog/Sources/AlpsRebuild/Building_01.blend",
+      "blend_sha256": "72f975f5a3e1a105c8d335ba66f3970cde20889afb821a4862f9f2e832b2f16b",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1156,
+        "polygons": 696,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Building_02.fbx",
+      "source_sha256": "182bc2423467813aa3a38505085d39b35c1ccdb6d09712297204f15009e2cda6",
+      "blend": "Catalog/Sources/AlpsRebuild/Building_02.blend",
+      "blend_sha256": "48ae5f0f5cb2bf68332ca8140e77f240d7ab276272e96726f8fd7e25d58002fc",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1790,
+        "polygons": 1084,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Building_03.fbx",
+      "source_sha256": "88cee7093e5d048f9520519ea081f8364c103adf8dae774f237ff1fb4d5ebf32",
+      "blend": "Catalog/Sources/AlpsRebuild/Building_03.blend",
+      "blend_sha256": "3982083d9c454b1b1b2d9c3aaa5bb010a0434619975c4800032333629b310c80",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1312,
+        "polygons": 760,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Building_04.fbx",
+      "source_sha256": "72eaf6db0c7157c9fe6ed5bd3af02622cb7018a3747a89c8cc5396c0f99a8c31",
+      "blend": "Catalog/Sources/AlpsRebuild/Building_04.blend",
+      "blend_sha256": "e45bbf12b4307c58955abbc6d29ea7a49e1f9344f8471ded88b0ec1b689240f9",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1242,
+        "polygons": 728,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Building_05.fbx",
+      "source_sha256": "f2ab1a2ef3055c003d1aa7bd49b1b082ec915b02af9a86b4526de9f7baef356c",
+      "blend": "Catalog/Sources/AlpsRebuild/Building_05.blend",
+      "blend_sha256": "53aa50b6208fa236c8a85efee9c36b1feeb48ee691745dba5bc99ac5759323b8",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 2,
+        "vertices": 845,
+        "polygons": 594,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Building_06.fbx",
+      "source_sha256": "128715c7dd80759dbb53320b265a9554c41a0b36f3b3d62fd03754db34b15422",
+      "blend": "Catalog/Sources/AlpsRebuild/Building_06.blend",
+      "blend_sha256": "b9ce7f287ac60f933ca01a14f3fa51a1db7991b4fef1de555f8127e514f0c41d",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1810,
+        "polygons": 1035,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Building_07.fbx",
+      "source_sha256": "6b1ecec33a0f34a818e440518d160176f438ecf43fc92edb0d1e798627362af4",
+      "blend": "Catalog/Sources/AlpsRebuild/Building_07.blend",
+      "blend_sha256": "b6c9e889bae8629cfd7d8b21257bafd7dafc3be39ad8e2c6bb2b039ed46214cc",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1419,
+        "polygons": 856,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Building_08.fbx",
+      "source_sha256": "0859a079554318e193ec8d297b861d54be676af4c873a67b8754d13c9ab13f9f",
+      "blend": "Catalog/Sources/AlpsRebuild/Building_08.blend",
+      "blend_sha256": "2550e5add976fa37d02e6ea36289c6f96fa943944800a2021b41063f3ec70e8b",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 2242,
+        "polygons": 1356,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Building_09.fbx",
+      "source_sha256": "31e1132f68588988d54e4d44978101ae20fa79860585dce824ef080e9c122660",
+      "blend": "Catalog/Sources/AlpsRebuild/Building_09.blend",
+      "blend_sha256": "441ce527e56045f4b3d904e3101c76ca9668b9613f1a781fd2c7296099ff2c45",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1834,
+        "polygons": 1032,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Building_10.fbx",
+      "source_sha256": "b9f1a5846449e219155f730bbdc48d2c66055265814cc55a2de79f9a3dae7e55",
+      "blend": "Catalog/Sources/AlpsRebuild/Building_10.blend",
+      "blend_sha256": "7fb4d28883e811484cf5cc99def3b912600969432422f2886de974a72c5ec826",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1324,
+        "polygons": 817,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Building_11.fbx",
+      "source_sha256": "912e4e007c523e044a6ead6636ed64381386c270fdf5a653c0c5e6482ff62303",
+      "blend": "Catalog/Sources/AlpsRebuild/Building_11.blend",
+      "blend_sha256": "90f9e04f9ad38889b9232739f3998a505a825dbf900b49cb4c80736214f88a1e",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1010,
+        "polygons": 590,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/GateTower.fbx",
+      "source_sha256": "817e0c6e5b01c6ac63d9ccd11253407a3f420e70da3b36e75538bd8381c3e327",
+      "blend": "Catalog/Sources/AlpsRebuild/GateTower.blend",
+      "blend_sha256": "7ecf42fe12ccc54653a291c1162e4b413b5cfc6d8ac7bbc3172b5b236b84a24d",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1844,
+        "polygons": 1338,
+        "materials": [
+          "Rebuild_LandmarkPalette_Architecture",
+          "Rebuild_LandmarkPalette_SnowCover",
+          "Rebuild_LandmarkPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Monument.fbx",
+      "source_sha256": "c32100948feb4a6846eb7e998d56cf26361858c36a678e10d4cd928a5a0f439c",
+      "blend": "Catalog/Sources/AlpsRebuild/Monument.blend",
+      "blend_sha256": "dbe7b70f1691a2ece39515fca4f61e07049e6b653d4935fcaaac20dab8705643",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 2,
+        "vertices": 3404,
+        "polygons": 3319,
+        "materials": [
+          "Rebuild_LandmarkPalette_Architecture",
+          "Rebuild_LandmarkPalette_SnowCover"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Mountain_01.fbx",
+      "source_sha256": "52a5e51e491f1be3f993d64fb6731719314978789bc16bd27be0944e139cbd50",
+      "blend": "Catalog/Sources/AlpsRebuild/Mountain_01.blend",
+      "blend_sha256": "16dd0cf240c4d43a97c91973c4ac583f6baa7f9ce01f90464e54fd031fdc82ee",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 1,
+        "vertices": 350,
+        "polygons": 632,
+        "materials": [
+          "Rebuild_MountainPalette_Mountain"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Mountain_02.fbx",
+      "source_sha256": "dff39f5449e6fb6049fc444fea60da5c3eaea2216f2506daddf517c4c1aa231c",
+      "blend": "Catalog/Sources/AlpsRebuild/Mountain_02.blend",
+      "blend_sha256": "d22bdb59f2ee8fbac9a48cfe2eb6c5dbc5f5825f559970eea984e831520d2cd4",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 1,
+        "vertices": 350,
+        "polygons": 632,
+        "materials": [
+          "Rebuild_MountainPalette_Mountain"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Mountain_03.fbx",
+      "source_sha256": "32640acc35c7ee37735b99d7312462abb4b2181bb49d0571cc725c72599b96d8",
+      "blend": "Catalog/Sources/AlpsRebuild/Mountain_03.blend",
+      "blend_sha256": "a211534a480b4fbd2198fbb2b5585d1ebe18700f8fb35a81c8f52b78217b4ae3",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 1,
+        "vertices": 350,
+        "polygons": 632,
+        "materials": [
+          "Rebuild_MountainPalette_Mountain"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Mountain_04.fbx",
+      "source_sha256": "3124838fb62c311cf0c92bb65dadc7575849bda98d152d6a9f1956d9a7342ca6",
+      "blend": "Catalog/Sources/AlpsRebuild/Mountain_04.blend",
+      "blend_sha256": "d455611c10e2fb6e9008ceaa3524340e475c3e762b8e0a545eb535b00deb2491",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 1,
+        "vertices": 350,
+        "polygons": 632,
+        "materials": [
+          "Rebuild_MountainPalette_Mountain"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Mountain_05.fbx",
+      "source_sha256": "97fb7466e2a48c4ac42d3c8181e185ec40bccea87461bf3b9c4ae3320e5067c8",
+      "blend": "Catalog/Sources/AlpsRebuild/Mountain_05.blend",
+      "blend_sha256": "f338f611a1d848d9b1e354f56b79ebcbdbd4fc0f1fd5f7c8b47cd905e2c2e07d",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 1,
+        "vertices": 350,
+        "polygons": 632,
+        "materials": [
+          "Rebuild_MountainPalette_Mountain"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Mountain_06.fbx",
+      "source_sha256": "56e0f2e11fb029f7dc7613065447fb440f3b9efb546fdc309055006622a18c3b",
+      "blend": "Catalog/Sources/AlpsRebuild/Mountain_06.blend",
+      "blend_sha256": "1d688787c1b603f2dbba3fc500ed19c1e252f0b0db4825059b56c317947bd71a",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 1,
+        "vertices": 350,
+        "polygons": 632,
+        "materials": [
+          "Rebuild_MountainPalette_Mountain"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Mountain_07.fbx",
+      "source_sha256": "7fd9bdce2fda7f81ae2dc433e94c221c89e04e74f392fa0f85a95d6eab748f5d",
+      "blend": "Catalog/Sources/AlpsRebuild/Mountain_07.blend",
+      "blend_sha256": "cd310e2e3b188fd729c087b02f0e7faccb9541cb8f9800e4487e91ae8294d229",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 1,
+        "vertices": 350,
+        "polygons": 632,
+        "materials": [
+          "Rebuild_MountainPalette_Mountain"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/Mountain_08.fbx",
+      "source_sha256": "49ab6f5451bd7daffd9e87955a364d0a9be4a008b360d3473444453d1b76cd55",
+      "blend": "Catalog/Sources/AlpsRebuild/Mountain_08.blend",
+      "blend_sha256": "3a77ddfc638317439b808930030f0095cdd08b1c97b839ec8612b192a19da3fb",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 1,
+        "vertices": 350,
+        "polygons": 632,
+        "materials": [
+          "Rebuild_MountainPalette_Mountain"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AlpsRebuild/TerrainBase.fbx",
+      "source_sha256": "0b17c5c34e3d705cc6e43ca06f3e5f3e0502521f8e5db07f564c00cd6b0bf4be",
+      "blend": "Catalog/Sources/AlpsRebuild/TerrainBase.blend",
+      "blend_sha256": "30bbeda2af6a18e7870147d090ec02e25a3bc2c0d2e3b88848d3d969d006ccc8",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 1,
+        "vertices": 2802,
+        "polygons": 5400,
+        "materials": [
+          "Rebuild_TerrainPalette_Terrain"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AngularClouds/01_Alpine_Puff.fbx",
+      "source_sha256": "f34310515cfafd1187f0a19367e7bce1ffa1638971c593f9edea45f7c4d89f4c",
+      "blend": "Catalog/Sources/AngularClouds/01_Alpine_Puff.blend",
+      "blend_sha256": "09595cd3c80d43a619b30a0ac674f4e9c47a604b8de8df06ae6955fdbafccf59",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 168,
+        "polygons": 332,
+        "materials": [
+          "AngularCloudPalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AngularClouds/02_Wide_Cumulus.fbx",
+      "source_sha256": "5167ab98ea4889964faac65e4a5d03a01903fa6a67926a016a9c0d90e6120e67",
+      "blend": "Catalog/Sources/AngularClouds/02_Wide_Cumulus.blend",
+      "blend_sha256": "d6f82db40c53b699b119de6db4f73b34647674c51497e91fa23ff28c1ba2f553",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 168,
+        "polygons": 332,
+        "materials": [
+          "AngularCloudPalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AngularClouds/03_Tall_Cluster.fbx",
+      "source_sha256": "2840151deaaab3f563bc695735a686470c5875a091571d4f625ad27c6883ea91",
+      "blend": "Catalog/Sources/AngularClouds/03_Tall_Cluster.blend",
+      "blend_sha256": "2490aec44f08d65068a86a1a18624ec7280bd17a37a361891659d02dad02962a",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 168,
+        "polygons": 332,
+        "materials": [
+          "AngularCloudPalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AngularClouds/04_Long_Cloud_Bank.fbx",
+      "source_sha256": "0a848bedb098d6b852c731d00a4adcf6d3d685ea4a7daf2a5c947fc312db6ccc",
+      "blend": "Catalog/Sources/AngularClouds/04_Long_Cloud_Bank.blend",
+      "blend_sha256": "b06ee43053e1622c1d3de4474c882d417d7becb95781fe7f89527b2f10d6a8ab",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 168,
+        "polygons": 332,
+        "materials": [
+          "AngularCloudPalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AngularClouds/05_Asymmetric_Puff.fbx",
+      "source_sha256": "df8cc8106d61b939f14dea931cf9763b91c4151e69869c5985110cc23916370d",
+      "blend": "Catalog/Sources/AngularClouds/05_Asymmetric_Puff.blend",
+      "blend_sha256": "8e613967739aede99e49711a8f4969ff77db1556a135ec3c6093a3c45cd334f2",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 168,
+        "polygons": 332,
+        "materials": [
+          "AngularCloudPalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AngularClouds/06_Stepped_Cluster.fbx",
+      "source_sha256": "40e5604c17a84eebece942040a1879296dcacaf45018fa4a3b6855d1065d0eed",
+      "blend": "Catalog/Sources/AngularClouds/06_Stepped_Cluster.blend",
+      "blend_sha256": "1c6e81c16433dd05fc661a332ba5e00e3c7165551250a9ddd210138604f5afa3",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 168,
+        "polygons": 332,
+        "materials": [
+          "AngularCloudPalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AngularClouds/07_Compact_Crown.fbx",
+      "source_sha256": "7fffc99a89d294f6ec34dc29a301559bd3b135de404895f89cc43b7053a035bf",
+      "blend": "Catalog/Sources/AngularClouds/07_Compact_Crown.blend",
+      "blend_sha256": "a65643ea05aef402e04a247799f06ca0455a3b88672391a7f743352ba41875b1",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 168,
+        "polygons": 332,
+        "materials": [
+          "AngularCloudPalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/AngularClouds/08_Broad_Alpine_Bank.fbx",
+      "source_sha256": "e4d3f21294332f8b9f8bfac49c199ee10f519dd0672abda53aade6df6aa71255",
+      "blend": "Catalog/Sources/AngularClouds/08_Broad_Alpine_Bank.blend",
+      "blend_sha256": "c30564988192e3c2cdd365a52ff4cd0264a055944c5ed970837b9d9f9e66d25f",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 168,
+        "polygons": 332,
+        "materials": [
+          "AngularCloudPalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/FiveAlpineMountains/AlpineCirque.fbx",
+      "source_sha256": "36bf2d1fea673149733a6da58882e3525784f7ae74a92aacfa82d5d9046784e5",
+      "blend": "Catalog/Sources/FiveAlpineMountains/AlpineCirque.blend",
+      "blend_sha256": "3e022d6eabae8ebddddf1f1167ddb9d1ef637b87ff597dec32a6105f09c5db55",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 2,
+        "meshes": 2,
+        "vertices": 495,
+        "polygons": 872,
+        "materials": [
+          "AlpineRockPalette",
+          "AlpineSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/FiveAlpineMountains/GlacierMassif.fbx",
+      "source_sha256": "155128ab516ed273ebefe5dc27414eb2a43408a8673be68e649bc24d78533844",
+      "blend": "Catalog/Sources/FiveAlpineMountains/GlacierMassif.blend",
+      "blend_sha256": "1253f704c6564c9134aac0783e94d4d4494a40e8b8270970f6e010892e18c9db",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 2,
+        "meshes": 2,
+        "vertices": 469,
+        "polygons": 864,
+        "materials": [
+          "AlpineRockPalette",
+          "AlpineSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/FiveAlpineMountains/NeedlePeak.fbx",
+      "source_sha256": "388ef10c856b117c1724bcb9d858bbf15d909a5a61a3eb8ebde3f873efe941f0",
+      "blend": "Catalog/Sources/FiveAlpineMountains/NeedlePeak.blend",
+      "blend_sha256": "a50ff387425861a5c43716ea9c8b5b977d7a9f51cc0dc275f9352f68dc8cd555",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 2,
+        "meshes": 2,
+        "vertices": 349,
+        "polygons": 641,
+        "materials": [
+          "AlpineRockPalette",
+          "AlpineSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/FiveAlpineMountains/SawtoothRidge.fbx",
+      "source_sha256": "c5894004e7efbc2710b47f9e1604d7bbce07eb3339926efdd9e4628f8083df21",
+      "blend": "Catalog/Sources/FiveAlpineMountains/SawtoothRidge.blend",
+      "blend_sha256": "24b25edfaf799b71f94aa1d79779bc8f50c6cda8ed3fe80fcebf56f6cefe8a24",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 2,
+        "meshes": 2,
+        "vertices": 516,
+        "polygons": 917,
+        "materials": [
+          "AlpineRockPalette",
+          "AlpineSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/FiveAlpineMountains/TwinSummits.fbx",
+      "source_sha256": "c877836b3e55d3d1c11bda4e9a75774ffb448ec26df4830afa4f288b0c37a393",
+      "blend": "Catalog/Sources/FiveAlpineMountains/TwinSummits.blend",
+      "blend_sha256": "400865a3f18ea494fffe147c5437db65c47db3665fa4eacf59c04cabbedae041",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 2,
+        "meshes": 2,
+        "vertices": 369,
+        "polygons": 661,
+        "materials": [
+          "AlpineRockPalette",
+          "AlpineSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/FourBaySnowGarage/FourBayGarage.fbx",
+      "source_sha256": "59a7e40e8dd896f216cc76cd11860a210bb910a369b083c9deffe850be362322",
+      "blend": "Catalog/Sources/FourBaySnowGarage/FourBayGarage.blend",
+      "blend_sha256": "b029016f3d4439bce9f2bcd59e349f9a038cf0e3d423524f8bf58691ca2c381d",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 13,
+        "meshes": 10,
+        "vertices": 2541,
+        "polygons": 1960,
+        "materials": [
+          "GaragePalette",
+          "GarageSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/LowPolySnowLoader/LoaderBody.fbx",
+      "source_sha256": "d1fc0c083fa0b464273249e60a6c596d568e442a0c5f58214269b7f2dcf4d071",
+      "blend": "Catalog/Sources/LowPolySnowLoader/LoaderBody.blend",
+      "blend_sha256": "69b2e9f784a1faba5997f9a72348a42f5338084801f4169637cd43c362a0d9f8",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 6,
+        "vertices": 4560,
+        "polygons": 3364,
+        "materials": [
+          "LoaderGlass",
+          "LoaderPalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/LowPolySnowLoader/LoaderBucket.fbx",
+      "source_sha256": "24e899648167afac3e9986a0706589eaa8454ee3a0b93193f036c98c208e56f0",
+      "blend": "Catalog/Sources/LowPolySnowLoader/LoaderBucket.blend",
+      "blend_sha256": "5586b20cfcbd3e91d65960d78c889ccd540322fec84c5f7f7446375675c0182b",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 180,
+        "polygons": 128,
+        "materials": [
+          "LoaderPalette"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/LowPolySnowPlower/PlowAttachment.fbx",
+      "source_sha256": "a5fc4cf49ac46ada84cc64a76724eadd55cef38eaa2967f2dc7d27d043ac18ee",
+      "blend": "Catalog/Sources/LowPolySnowPlower/PlowAttachment.blend",
+      "blend_sha256": "5801a91b04dda1f0ecf70f1c283e07c4327914b0c36d7a01f66f14250d95ae5a",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 988,
+        "polygons": 693,
+        "materials": [
+          "01 Golden yellow enamel",
+          "02 Orange blade",
+          "04 Dark graphite steel",
+          "05 Cool gray fittings"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/LowPolySnowPlower/RoofBeacon.fbx",
+      "source_sha256": "2b9bce84d336688a8446ce9057606fe2563298165d1b4cdc96efe9e47941f209",
+      "blend": "Catalog/Sources/LowPolySnowPlower/RoofBeacon.blend",
+      "blend_sha256": "ecf2fa9d05e4bbaf13aa018bda57fde476e81cf1c74ead0b08b6cd0531b491cd",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 40,
+        "polygons": 36,
+        "materials": [
+          "02 Orange blade",
+          "04 Dark graphite steel"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/LowPolySnowPlower/TractorBody.fbx",
+      "source_sha256": "43b505dc05ced957c1f33930376fd3ab919b90fe8d88f692513f542b356d1215",
+      "blend": "Catalog/Sources/LowPolySnowPlower/TractorBody.blend",
+      "blend_sha256": "8ae7e4d319c55c237fcf350cac03825f3f0d2c95c2b12a146c1d5724b9d4b0e3",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 5,
+        "vertices": 3312,
+        "polygons": 2450,
+        "materials": [
+          "01 Golden yellow enamel",
+          "02 Orange blade",
+          "03 Charcoal rubber",
+          "04 Dark graphite steel",
+          "05 Cool gray fittings",
+          "06 Warm headlights",
+          "07 Seat fabric",
+          "09 Stylized clear blue glass"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/MachineryParts/TractorDefaultHydraulics.fbx",
+      "source_sha256": "51dea7da0e1ac684e9a650db264585368dc936ff60b2e14cc3613aecb26bd6f7",
+      "blend": "Catalog/Sources/MachineryParts/TractorDefaultHydraulics.blend",
+      "blend_sha256": "cff1a4cdbd916e3a019456786a15ceb97addcdaaab0ac4e88f9099f4506b6c14",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 448,
+        "polygons": 314,
+        "materials": [
+          "01 Golden yellow enamel",
+          "04 Dark graphite steel",
+          "05 Cool gray fittings"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SevenWinterHomes/BrickBarn.fbx",
+      "source_sha256": "d64ee57fb6dcec67dc99cf53e962f1d33c2dc2525a1824e9f1493e9cb361a0a7",
+      "blend": "Catalog/Sources/SevenWinterHomes/BrickBarn.blend",
+      "blend_sha256": "81cc42d56850f55873352be7bdc462ba6e9dc725c05c709b3bb5b79887d4433d",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 4,
+        "vertices": 1874,
+        "polygons": 1494,
+        "materials": [
+          "WinterHomesPalette",
+          "WinterHomesSnow",
+          "WinterHomesWarmWindows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SevenWinterHomes/GarageHome.fbx",
+      "source_sha256": "5b76d0561ef703d339bfc69f2a069091278630729b9c39500cac18445d4e5529",
+      "blend": "Catalog/Sources/SevenWinterHomes/GarageHome.blend",
+      "blend_sha256": "64117293fac7ff28896cc1672cca687b8d99f124493e65f5e505b5ad80835b50",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 4,
+        "vertices": 1192,
+        "polygons": 981,
+        "materials": [
+          "WinterHomesPalette",
+          "WinterHomesSnow",
+          "WinterHomesWarmWindows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SevenWinterHomes/GreenPorch.fbx",
+      "source_sha256": "187c69ab3a8083c874dba8e1044a6ee7a808b273c449e4f3e7179909d2193815",
+      "blend": "Catalog/Sources/SevenWinterHomes/GreenPorch.blend",
+      "blend_sha256": "483ccd97dff9d1bf4c700d0a07e340b25d05d17eeeac95550827eaebd486c263",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 4,
+        "vertices": 1270,
+        "polygons": 1020,
+        "materials": [
+          "WinterHomesPalette",
+          "WinterHomesSnow",
+          "WinterHomesWarmWindows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SevenWinterHomes/RedCottage.fbx",
+      "source_sha256": "f96156d59148b5fe76b7b5e10d4d1a37b3a7ef00af404a6334448c09f621d2cd",
+      "blend": "Catalog/Sources/SevenWinterHomes/RedCottage.blend",
+      "blend_sha256": "c762cdb5d0f72b956f4fa128b108ee2c6ef594c25dc5a36afbf0124083fa98ef",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 4,
+        "vertices": 1124,
+        "polygons": 931,
+        "materials": [
+          "WinterHomesPalette",
+          "WinterHomesSnow",
+          "WinterHomesWarmWindows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SevenWinterHomes/StorybookCottage.fbx",
+      "source_sha256": "1c319e7ecfc53bd59c06ee426e0fee376b1d1d43c6d5bddab246fa3604091389",
+      "blend": "Catalog/Sources/SevenWinterHomes/StorybookCottage.blend",
+      "blend_sha256": "a03bdb5c7e4e90a7cdf96ea51668c6b54e3f5c4637f77ae24cd707f00b323c96",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 4,
+        "vertices": 1126,
+        "polygons": 942,
+        "materials": [
+          "WinterHomesPalette",
+          "WinterHomesSnow",
+          "WinterHomesWarmWindows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SevenWinterHomes/TwinAFrame.fbx",
+      "source_sha256": "bbdde88b64d3d6a135032b36991c32bf53cfa77e0224dac3fee9028772dbe11f",
+      "blend": "Catalog/Sources/SevenWinterHomes/TwinAFrame.blend",
+      "blend_sha256": "0586d1b5ba2663dda0aea2283a58329755288b83c86c8776c4f13337f7031de9",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 4,
+        "vertices": 642,
+        "polygons": 542,
+        "materials": [
+          "WinterHomesPalette",
+          "WinterHomesSnow",
+          "WinterHomesWarmWindows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SevenWinterHomes/WhiteColonial.fbx",
+      "source_sha256": "db25703a80e50886e58693557c2d033125b46ec1a4343aef8fc217436d4cf812",
+      "blend": "Catalog/Sources/SevenWinterHomes/WhiteColonial.blend",
+      "blend_sha256": "4599860bb0938bc0293457f4d6b556262c17dfed7bb1b9803901c40219006fd2",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 4,
+        "vertices": 1126,
+        "polygons": 932,
+        "materials": [
+          "WinterHomesPalette",
+          "WinterHomesSnow",
+          "WinterHomesWarmWindows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SnowDisposalYard/SnowDisposalYard.fbx",
+      "source_sha256": "d3f0ad088dbffdf25c740c8a889400872d3be4531ed32f339389385221274a5e",
+      "blend": "Catalog/Sources/SnowDisposalYard/SnowDisposalYard.blend",
+      "blend_sha256": "b23608b0a197aaf11ecf1282e4af8131000b6c0ae4057f63f3419e94eb637e2c",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 631,
+        "polygons": 972,
+        "materials": [
+          "YardPalette",
+          "YardSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SnowMachineryFuelStation/FuelStation.fbx",
+      "source_sha256": "6d743e15a7617c8b48e585d74fff3288afdceb837304a0f8f4654bd68b3ee3b8",
+      "blend": "Catalog/Sources/SnowMachineryFuelStation/FuelStation.blend",
+      "blend_sha256": "53a132b082bf559dc6dfe70b23d6f5f3d12187273f097c338fa5e27f908ac820",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 1778,
+        "polygons": 3040,
+        "materials": [
+          "FuelPalette",
+          "FuelSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SnowTownVehicles/Vehicle01.fbx",
+      "source_sha256": "3d81e4bde16b462956a9935922f975de92027fc93af36bba981801419037ccb9",
+      "blend": "Catalog/Sources/SnowTownVehicles/Vehicle01.blend",
+      "blend_sha256": "6dfeea96253fa31dab173a59a4b52c329eebb026f9bce881166d53872c404c5a",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 1552,
+        "polygons": 2602,
+        "materials": [
+          "ParkingBody",
+          "ParkingGlazing",
+          "ParkingSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SnowTownVehicles/Vehicle02.fbx",
+      "source_sha256": "e93a64a13fffb2e8b28d554446887d84087f36539edf556a51be521a070bbcad",
+      "blend": "Catalog/Sources/SnowTownVehicles/Vehicle02.blend",
+      "blend_sha256": "c70f7e89892658ec80f7659f2a61428078761cd540480e2ee3336f5422e6c8dd",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 1552,
+        "polygons": 2602,
+        "materials": [
+          "ParkingBody",
+          "ParkingGlazing",
+          "ParkingSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SnowTownVehicles/Vehicle03.fbx",
+      "source_sha256": "8f82dcc028051c09180c00e2a4fa43dc723d753793ca0875d4ac5e622de12100",
+      "blend": "Catalog/Sources/SnowTownVehicles/Vehicle03.blend",
+      "blend_sha256": "49378ac94619ebddbdeebae4de5cc58d1118bf7f97c285abd82d6648ce7786ad",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 1697,
+        "polygons": 2852,
+        "materials": [
+          "ParkingBody",
+          "ParkingGlazing",
+          "ParkingSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SnowTownVehicles/Vehicle04.fbx",
+      "source_sha256": "8e040c36bc281878c4797de2c75e9cd4d6fc11599624c0e65ad45c675d4946f9",
+      "blend": "Catalog/Sources/SnowTownVehicles/Vehicle04.blend",
+      "blend_sha256": "fc7b393dee10b977dfec4aec668db41f2454d1f969b4781e1947b9f57c2b2e56",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 1703,
+        "polygons": 2852,
+        "materials": [
+          "ParkingBody",
+          "ParkingGlazing",
+          "ParkingSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SnowTownVehicles/Vehicle05.fbx",
+      "source_sha256": "c5b451c9a0cc2b71c44dc2c142db09435e0aa3f26224c617fa337418130f886b",
+      "blend": "Catalog/Sources/SnowTownVehicles/Vehicle05.blend",
+      "blend_sha256": "413488f89c2d1ef4480f96c78509803cc403aa10676a692dc7a7dcc0734a8216",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 1576,
+        "polygons": 2642,
+        "materials": [
+          "ParkingBody",
+          "ParkingGlazing",
+          "ParkingSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SnowTownVehicles/Vehicle06.fbx",
+      "source_sha256": "da5e92e19bb6c192c15efcca23d48fa5cb7fdf179694b2cd2b5560f2321169f6",
+      "blend": "Catalog/Sources/SnowTownVehicles/Vehicle06.blend",
+      "blend_sha256": "6d097ebc3b27c32a56cad34b5ee311d46c54d3691d3138e072799111ee6fb6d6",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 1664,
+        "polygons": 2798,
+        "materials": [
+          "ParkingBody",
+          "ParkingGlazing",
+          "ParkingSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SnowTownVehicles/Vehicle07.fbx",
+      "source_sha256": "4cfdc7a9b08ea80477b2a0e099345f92e2bbc52d4d40452cc9dd413b93d14a26",
+      "blend": "Catalog/Sources/SnowTownVehicles/Vehicle07.blend",
+      "blend_sha256": "13a46772d5d807936d876bfc3f8a15e182211e408c83d5b18edba070ba4511e0",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 1709,
+        "polygons": 2788,
+        "materials": [
+          "ParkingBody",
+          "ParkingGlazing",
+          "ParkingSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/SnowTownVehicles/Vehicle08.fbx",
+      "source_sha256": "d0a85d4d7536489c273e2509f85d634aa3d7dd8e9e37b7d004c5a23b7f78aa9a",
+      "blend": "Catalog/Sources/SnowTownVehicles/Vehicle08.blend",
+      "blend_sha256": "b529cd348f07b695d026803b6de0f0e2873de5a0d32f73527a0ffb5992a462f1",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 3,
+        "vertices": 1576,
+        "polygons": 2646,
+        "materials": [
+          "ParkingBody",
+          "ParkingGlazing",
+          "ParkingSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/ThreeSnowmen/Snowman01.fbx",
+      "source_sha256": "6289bdf0ac619c9c2edeb1fe83cf1b93571988944279d39177afd0ac6aa6d0a6",
+      "blend": "Catalog/Sources/ThreeSnowmen/Snowman01.blend",
+      "blend_sha256": "e6fc5f90806e2c9723d08370275188937786fc21bb5d0d0d9f582cdb1cd58416",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 570,
+        "polygons": 1000,
+        "materials": [
+          "SnowmanPalette",
+          "SnowmanSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/ThreeSnowmen/Snowman02.fbx",
+      "source_sha256": "479874d76466835f82cab87d803444765b9515254b9e8e3a1d1ca0c260f54f86",
+      "blend": "Catalog/Sources/ThreeSnowmen/Snowman02.blend",
+      "blend_sha256": "fcb99d88963d43ec3402f644020b96f6f646feb93bffc04485b668033a752754",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 570,
+        "polygons": 1000,
+        "materials": [
+          "SnowmanPalette",
+          "SnowmanSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/ThreeSnowmen/Snowman03.fbx",
+      "source_sha256": "e78a4cb2cfb68d785191e7bc677addfd4257b342b66b6717a530e26192c015ad",
+      "blend": "Catalog/Sources/ThreeSnowmen/Snowman03.blend",
+      "blend_sha256": "116b6f1866d556dc0fb4fb2ba2b83bbf96147dc251976d3efbe6cfc3bbd72a28",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 5,
+        "meshes": 2,
+        "vertices": 584,
+        "polygons": 1000,
+        "materials": [
+          "SnowmanPalette",
+          "SnowmanSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/TractionTestRamp/TractionRamp.fbx",
+      "source_sha256": "fc3c4e76a84f81b69e85cd5f17c6572c8aa5c738bb30a5b634b32d39966f58c6",
+      "blend": "Catalog/Sources/TractionTestRamp/TractionRamp.blend",
+      "blend_sha256": "af2bcc11f9ec4608cb26479caf34852048e334ac44343da46f2d456e3dab6556",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 4,
+        "vertices": 1708,
+        "polygons": 2680,
+        "materials": [
+          "RampPalette",
+          "RampSnow"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/VehicleLights/LoaderBeacon.fbx",
+      "source_sha256": "325274b6ca14930cb62cb88bec4cc9ddf60cd10128a1c47608d379190e655484",
+      "blend": "Catalog/Sources/VehicleLights/LoaderBeacon.blend",
+      "blend_sha256": "e8caf9d5ce195919c751ace043fc2b1f591f19d8883c44b09b3fee787d84a887",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 16,
+        "polygons": 10,
+        "materials": [
+          "OperatingLamp"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/VehicleLights/LoaderFront.fbx",
+      "source_sha256": "5bf396d58cba38d150fe649f4d65ec1f4202da75bfb2b3cf7738f98ffe41483b",
+      "blend": "Catalog/Sources/VehicleLights/LoaderFront.blend",
+      "blend_sha256": "a2aa1a1fbe1d746baf996673d7fb75f7a6d6b2dcb6c11f679203d8ed6dbcad38",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 32,
+        "polygons": 24,
+        "materials": [
+          "OperatingLamp"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/VehicleLights/LoaderRear.fbx",
+      "source_sha256": "d819fab16d5a4386103b3b27e9f577c4d899943acf9b08c0a10de581896cb4ec",
+      "blend": "Catalog/Sources/VehicleLights/LoaderRear.blend",
+      "blend_sha256": "2c3aac6d842a93e70094bf1117cfed8fe42eff109499cd1eed16f9c0c8e5124f",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 16,
+        "polygons": 12,
+        "materials": [
+          "OperatingLamp"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/VehicleLights/TractorBeacon.fbx",
+      "source_sha256": "898c171e9465ab03d4facb1e2d03694cdfb36b208eb85ff5ea3bca6914747787",
+      "blend": "Catalog/Sources/VehicleLights/TractorBeacon.blend",
+      "blend_sha256": "93374a89f9b5454fbb56f64b4a9519274f25f976d00c7aab0afcc396a8119e58",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 16,
+        "polygons": 10,
+        "materials": [
+          "OperatingLamp"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/VehicleLights/TractorFront.fbx",
+      "source_sha256": "c2ff4a5f29cdaaa96a91ed6f8e4ef8c5f6bea38bf7871202c3f5ed78f49ea674",
+      "blend": "Catalog/Sources/VehicleLights/TractorFront.blend",
+      "blend_sha256": "3ee8e9ec2e003891b8063e184beead07f12ff2fb6d3be00b750681fefce29d4c",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 16,
+        "polygons": 12,
+        "materials": [
+          "OperatingLamp"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Catalog/Sources/VehicleLights/TractorRear.fbx",
+      "source_sha256": "55705016d3d116342842554443f95f07af4cc16eb85010a5ebe44ccacb6976cb",
+      "blend": "Catalog/Sources/VehicleLights/TractorRear.blend",
+      "blend_sha256": "7392a7e896c317d74ab2b76bcbd495ead20fec52606724e61ff507da8db7f388",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 1,
+        "meshes": 1,
+        "vertices": 16,
+        "polygons": 12,
+        "materials": [
+          "OperatingLamp"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_01.fbx",
+      "source_sha256": "9ccc5e093615c208d955331a006dd7191a29677e887dde0e9e6b571f4d1f679a",
+      "blend": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_01.blend",
+      "blend_sha256": "76f6ba2ec88bdfc2acffc095f8dd229f2749df5770615fff50c6d79012a4963b",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1156,
+        "polygons": 704,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_02.fbx",
+      "source_sha256": "c276a8e0159699a183e74974b50db6e7f1c646155ec03efba4916d2c72353ad9",
+      "blend": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_02.blend",
+      "blend_sha256": "8cb442ada9a53fb0b4b051abbe4155f1ca6bdb0b878b27fc37dc2babe7840577",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1710,
+        "polygons": 1052,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_03.fbx",
+      "source_sha256": "1d7c128628fb26d72ea5d12cffb1793863dd65bb28779c782fdb9227c72f5378",
+      "blend": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_03.blend",
+      "blend_sha256": "f61e14f4f70e078ba3de2c337629e36bf94f22fbc04a9818374540e2eb6935f6",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1312,
+        "polygons": 760,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_04.fbx",
+      "source_sha256": "48731cd7b441cfbbcbfe0ac0afde2fcb3d0f074fe8c8a328522b4ab714aaadbc",
+      "blend": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_04.blend",
+      "blend_sha256": "459152585733337c6e9f6a34fca7aa9ff70e8d6495ac3664b8f6d7b4b69acd92",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1218,
+        "polygons": 726,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_05.fbx",
+      "source_sha256": "0b52d3f7d1a44e5ac8bc3f581a97131c6d29473d9cca9e78a48c281eb3ab3c5a",
+      "blend": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_05.blend",
+      "blend_sha256": "dced0aafd97fc5f273ac126c18967e6e43c1b59054503f58ce5eb997be6db9dd",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 2,
+        "vertices": 845,
+        "polygons": 594,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_06.fbx",
+      "source_sha256": "e2ab8dc1b9be4f146311ddce70797a52342118903b01c9537a6f86af47c82498",
+      "blend": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_06.blend",
+      "blend_sha256": "d2ee8820aad89ba21551b1485b97797d04e9b0ce96a8dffd1dbff794bf4cbfd9",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1810,
+        "polygons": 1035,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_07.fbx",
+      "source_sha256": "1fef5b9f82638c2ef1b425bc9a9dc47b95d49a5b4a9bcd25e73d903ad5e093cd",
+      "blend": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_07.blend",
+      "blend_sha256": "99a9c02275eb1789c6a4eef0971850ce648d02a91d35e6a784e5c43e1cab34a4",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1419,
+        "polygons": 856,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_08.fbx",
+      "source_sha256": "7f64c63c56b9d33ae8b63874db631aacff8d9b493b92a4d598ef86d57349d667",
+      "blend": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_08.blend",
+      "blend_sha256": "7d79afccda98b84698e0769d776a8f48573a11d72a80c99ba1b975afa10f2c70",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 2242,
+        "polygons": 1376,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_09.fbx",
+      "source_sha256": "6f2a678d4c9bb95287d5abd536a92338ae43b448aa28f355881a60a7c8c7af89",
+      "blend": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_09.blend",
+      "blend_sha256": "f1e78745efad85717e93abde67110abe61d656a9b61f678590e4eefeaa7769c0",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1802,
+        "polygons": 1020,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_10.fbx",
+      "source_sha256": "c97b8cdd6f93457305cf18463b10c6b0f24d84b51ae6be7caf0a0a3a7290d0b8",
+      "blend": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_10.blend",
+      "blend_sha256": "1b001bca7d5e46398af59d477f15f21694b78291b669bdb9eb0e130ca56de35e",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1284,
+        "polygons": 799,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_11.fbx",
+      "source_sha256": "7c21137ac70583376ca3cfacc0dab5de864a0ea2c1bac3d845a69e2c83135df7",
+      "blend": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Building_11.blend",
+      "blend_sha256": "e9d03de11fbd6d8ce6db9377415ff18821fa146b905f25e3dbdd5cc15e294a03",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 914,
+        "polygons": 530,
+        "materials": [
+          "Rebuild_BuildingPalette_Architecture",
+          "Rebuild_BuildingPalette_SnowCover",
+          "Rebuild_BuildingPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/GateTower.fbx",
+      "source_sha256": "302ddc45bf193c4a8e4610b56fda1b556b5a928ceb3c3bd0bdf06e07d85d6c34",
+      "blend": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/GateTower.blend",
+      "blend_sha256": "edd659ad729666955f7104dfaa87a88a3e0e7870ea342ccb24e35397d481438a",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 7,
+        "meshes": 3,
+        "vertices": 1820,
+        "polygons": 1318,
+        "materials": [
+          "Rebuild_LandmarkPalette_Architecture",
+          "Rebuild_LandmarkPalette_SnowCover",
+          "Rebuild_LandmarkPalette_Windows"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Monument.fbx",
+      "source_sha256": "f15bfd7f55ef9cebb2f0752eeb65eb4167ddea2bafda1de9837aac04305e1dbc",
+      "blend": "Levels/AlpsTerrainTest/BuildingFaceRepair/Sources/Monument.blend",
+      "blend_sha256": "a4d43a510150f7176768b6c74d422ff0afe3e5366ebebb5b8c76c7954ec1ae6f",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 6,
+        "meshes": 2,
+        "vertices": 3404,
+        "polygons": 3319,
+        "materials": [
+          "Rebuild_LandmarkPalette_Architecture",
+          "Rebuild_LandmarkPalette_SnowCover"
+        ]
+      },
+      "packed_images": 0
+    },
+    {
+      "source": "Levels/AlpsTerrainTest/Revision2/Terrain.fbx",
+      "source_sha256": "1992c18371fbc6ed40ced3a7fbfe069e1b98cb65983f863415abd2c8964b96ce",
+      "blend": "Levels/AlpsTerrainTest/Revision2/Terrain.blend",
+      "blend_sha256": "df2b3d3b01ee4248be322d8f1f0361538f1c4ae59af9842059aaa303b159cb8f",
+      "status": "converted-and-verified",
+      "metrics": {
+        "objects": 2,
+        "meshes": 1,
+        "vertices": 9993,
+        "polygons": 19594,
+        "materials": [
+          "TestTerrainPalette"
+        ]
+      },
+      "packed_images": 0
+    }
+  ]
+}
